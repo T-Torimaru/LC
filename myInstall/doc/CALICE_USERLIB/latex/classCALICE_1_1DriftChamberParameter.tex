@@ -1,0 +1,119 @@
+\section{CALICE::DriftChamberParameter Class Reference}
+\label{classCALICE_1_1DriftChamberParameter}\index{CALICE::DriftChamberParameter@{CALICE::DriftChamberParameter}}
+
+
+Parameters for one drift chamber.  
+
+
+{\ttfamily \#include $<$DriftChamberParameter.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf DriftChamberParameter} (LCObject $\ast$obj)\label{classCALICE_1_1DriftChamberParameter_ac3f7e30c5f70454126342fe3e192c1be}
+
+\begin{DoxyCompactList}\small\item\em 'Copy constructor' needed to interpret LCCollection read from file/database. \item\end{DoxyCompactList}\item 
+{\bf DriftChamberParameter} \& {\bf setDriftVelocity} (float drift\_\-velocity)\label{classCALICE_1_1DriftChamberParameter_a72ca0c60cfa34e730a99b8ebb557021f}
+
+\begin{DoxyCompactList}\small\item\em Set the drift velocity. \item\end{DoxyCompactList}\item 
+float {\bf getDriftVelocity} () const \label{classCALICE_1_1DriftChamberParameter_a478ffb65ebfcdba16139529f2f19ec72}
+
+\begin{DoxyCompactList}\small\item\em Get the drift velocity. \item\end{DoxyCompactList}\item 
+{\bf DriftChamberParameter} \& {\bf setDelay} (float time\_\-shift)\label{classCALICE_1_1DriftChamberParameter_a6a0f492d3b1cb14da314e777fd5796c9}
+
+\begin{DoxyCompactList}\small\item\em Set the time to be subtracted from the measured time to get the drift time. \item\end{DoxyCompactList}\item 
+float {\bf getDelay} () const \label{classCALICE_1_1DriftChamberParameter_af6f6db7b63df194db0ada6c041a3da79}
+
+\begin{DoxyCompactList}\small\item\em Get the time to be subtracted from the measured time to get the drift time. \item\end{DoxyCompactList}\item 
+{\bf DriftChamberParameter} \& {\bf setOffsetZ} (float offset\_\-z)\label{classCALICE_1_1DriftChamberParameter_a0e43cdb564cb5929fd6785e684c83e85}
+
+\begin{DoxyCompactList}\small\item\em Set the position offset of the chamber in the z-\/direction. \item\end{DoxyCompactList}\item 
+float {\bf getOffsetZ} () const \label{classCALICE_1_1DriftChamberParameter_a1925ac170371b9574a3b4998c4b4f1f0}
+
+\begin{DoxyCompactList}\small\item\em Get the position offset of the chamber in the z-\/direction. \item\end{DoxyCompactList}\item 
+{\bf DriftChamberParameter} \& {\bf setOffsetU} (float offset\_\-u)\label{classCALICE_1_1DriftChamberParameter_a7f9a1ae51dfad2028a0b5993433c98cb}
+
+\begin{DoxyCompactList}\small\item\em Set the position offset of the chamber in the drift direction. \item\end{DoxyCompactList}\item 
+float {\bf getOffsetU} () const \label{classCALICE_1_1DriftChamberParameter_a2dd08e38dd7db22ee48b0272c1903b39}
+
+\begin{DoxyCompactList}\small\item\em Get the position offset of the chamber in the drift direction. \item\end{DoxyCompactList}\item 
+{\bf DriftChamberParameter} \& {\bf setError} (float error)\label{classCALICE_1_1DriftChamberParameter_a0512b63c9b0bee95b8e69d10c27ded14}
+
+\begin{DoxyCompactList}\small\item\em Set the error on the position measurement. \item\end{DoxyCompactList}\item 
+float {\bf getError} () const \label{classCALICE_1_1DriftChamberParameter_a8e971cf949cfad6d401fa191619da841}
+
+\begin{DoxyCompactList}\small\item\em Get the error on the position measurement. \item\end{DoxyCompactList}\item 
+{\bf DriftChamberParameter} \& {\bf setDirectionSign} (int sign)\label{classCALICE_1_1DriftChamberParameter_afd5956ba2128c0f666c64122f15d9d4b}
+
+\begin{DoxyCompactList}\small\item\em Set the sign of the drift direction. \item\end{DoxyCompactList}\item 
+int {\bf getDirectionSign} () const \label{classCALICE_1_1DriftChamberParameter_a8ac5b85049c531796b2f2f06ad011639}
+
+\begin{DoxyCompactList}\small\item\em Get the sign of the drift direction. \item\end{DoxyCompactList}\item 
+float {\bf calcPos} (float time) const 
+\begin{DoxyCompactList}\small\item\em Calculate from the measured time the postion along the drift direction. \item\end{DoxyCompactList}\item 
+float {\bf calcTime} (float pos) const 
+\begin{DoxyCompactList}\small\item\em Calculate from the measured time the postion along the drift direction. \item\end{DoxyCompactList}\item 
+float {\bf calcDelay} (float residual) const 
+\begin{DoxyCompactList}\small\item\em Calculate from the measured residual the shift of the offset to be subtracted from the measured time. \item\end{DoxyCompactList}\item 
+EDriftChamberWireType {\bf getWireType} () const 
+\begin{DoxyCompactList}\small\item\em Return the type of the wire. \item\end{DoxyCompactList}\item 
+void {\bf setWireType} (int wire\_\-type)\label{classCALICE_1_1DriftChamberParameter_a9de6a8d30fab8e57684d3a7d0f00165a}
+
+\begin{DoxyCompactList}\small\item\em Set the wire type. \item\end{DoxyCompactList}\item 
+void {\bf print} (std::ostream \&os)\label{classCALICE_1_1DriftChamberParameter_ab1c4711a572d91c6baff942c93b42241}
+
+\begin{DoxyCompactList}\small\item\em Print all members (for debugging). \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1DriftChamberParameter_a20a1522331c7491a899b118af3bfb4b5}
+
+\begin{DoxyCompactList}\small\item\em Return the type of the class. \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1DriftChamberParameter_affafce2f39862cdf7bb2a757bc95b288}
+
+\begin{DoxyCompactList}\small\item\em Return a brief description of the data members. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Parameters for one drift chamber. 
+
+Definition at line 41 of file DriftChamberParameter.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::DriftChamberParameter@{CALICE::DriftChamberParameter}!calcDelay@{calcDelay}}
+\index{calcDelay@{calcDelay}!CALICE::DriftChamberParameter@{CALICE::DriftChamberParameter}}
+\subsubsection[{calcDelay}]{\setlength{\rightskip}{0pt plus 5cm}float CALICE::DriftChamberParameter::calcDelay (float {\em residual}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1DriftChamberParameter_ab79e1f5bcf0da040c4af2b2ad23b43b5}
+
+
+Calculate from the measured residual the shift of the offset to be subtracted from the measured time. 
+
+Definition at line 163 of file DriftChamberParameter.hh.
+
+References getDelay(), getDirectionSign(), and getDriftVelocity().\index{CALICE::DriftChamberParameter@{CALICE::DriftChamberParameter}!calcPos@{calcPos}}
+\index{calcPos@{calcPos}!CALICE::DriftChamberParameter@{CALICE::DriftChamberParameter}}
+\subsubsection[{calcPos}]{\setlength{\rightskip}{0pt plus 5cm}float CALICE::DriftChamberParameter::calcPos (float {\em time}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1DriftChamberParameter_a7428fac05d35e11805d56bb8dc049f32}
+
+
+Calculate from the measured time the postion along the drift direction. 
+
+Definition at line 153 of file DriftChamberParameter.hh.
+
+References getDelay(), getDirectionSign(), getDriftVelocity(), and getOffsetU().\index{CALICE::DriftChamberParameter@{CALICE::DriftChamberParameter}!calcTime@{calcTime}}
+\index{calcTime@{calcTime}!CALICE::DriftChamberParameter@{CALICE::DriftChamberParameter}}
+\subsubsection[{calcTime}]{\setlength{\rightskip}{0pt plus 5cm}float CALICE::DriftChamberParameter::calcTime (float {\em pos}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1DriftChamberParameter_a8a345729460750459938502986ff4c27}
+
+
+Calculate from the measured time the postion along the drift direction. 
+
+Definition at line 158 of file DriftChamberParameter.hh.
+
+References getDelay(), getDirectionSign(), getDriftVelocity(), and getOffsetU().\index{CALICE::DriftChamberParameter@{CALICE::DriftChamberParameter}!getWireType@{getWireType}}
+\index{getWireType@{getWireType}!CALICE::DriftChamberParameter@{CALICE::DriftChamberParameter}}
+\subsubsection[{getWireType}]{\setlength{\rightskip}{0pt plus 5cm}EDriftChamberWireType CALICE::DriftChamberParameter::getWireType () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1DriftChamberParameter_a056d3a2b0823518ed1fc3d184488d91a}
+
+
+Return the type of the wire. Wires are distinguished by their orientation (x.y) and the position with respect to the beam axis (left or right of the beam axis for x; below or above the beam axis for y wires). 
+
+Definition at line 172 of file DriftChamberParameter.hh.
+
+References CALICE::kDriftChamberParameterIntWireType.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+DriftChamberParameter.hh\item 
+DriftChamberParameter.cc\end{DoxyCompactItemize}

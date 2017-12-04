@@ -1,0 +1,164 @@
+\section{marlin::HodoscopeWriteEngine Class Reference}
+\label{classmarlin_1_1HodoscopeWriteEngine}\index{marlin::HodoscopeWriteEngine@{marlin::HodoscopeWriteEngine}}
+Inheritance diagram for marlin::HodoscopeWriteEngine:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{classmarlin_1_1HodoscopeWriteEngine__inherit__graph}
+\end{center}
+\end{figure}
+Collaboration diagram for marlin::HodoscopeWriteEngine:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classmarlin_1_1HodoscopeWriteEngine__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries HodoscopeWriteEngine} ({\bf RootTreeWriter} $\ast$host)\label{classmarlin_1_1HodoscopeWriteEngine_a9433052aab11d2f791d9d00c50736f24}
+
+\item 
+virtual const std::string \& {\bf getEngineName} ()
+\item 
+virtual void {\bf registerParameters} ()
+\item 
+virtual void {\bf registerBranches} (TTree $\ast$hostTree)
+\item 
+virtual void {\bf fillVariables} (EVENT::LCEvent $\ast$)
+\item 
+double {\bfseries adc2nph} (int adc, int ihod, int ch)\label{classmarlin_1_1HodoscopeWriteEngine_a7bf10e0933db97e9c9c8c6ca354bc61d}
+
+\item 
+void {\bfseries recoverDeadCh} ()\label{classmarlin_1_1HodoscopeWriteEngine_a29e01dd0a00dda87a3c0447480f03d45}
+
+\item 
+void {\bfseries reconstruct} (int ihod)\label{classmarlin_1_1HodoscopeWriteEngine_af0d408d5cfcab0cbf260461499a109f5}
+
+\item 
+double {\bfseries trackDistance} (double x1, double y1, double x2, double y2, float $\ast$pos)\label{classmarlin_1_1HodoscopeWriteEngine_a501f7ec9804408afce356355dfe625ba}
+
+\item 
+void {\bfseries chAt} (int fiber, int ihod, int axis, int $\ast$ch)\label{classmarlin_1_1HodoscopeWriteEngine_af151d302808f3e0fd217312d4c5475d3}
+
+\item 
+double {\bfseries thetaWith} (int fiber)\label{classmarlin_1_1HodoscopeWriteEngine_a690ad4cf2342831993184524ed8a24a5}
+
+\item 
+double {\bfseries fiberWith} (double theta)\label{classmarlin_1_1HodoscopeWriteEngine_ab9288167e661e22f3cc381460a7af0d1}
+
+\item 
+double {\bfseries argWith} (double x, double y)\label{classmarlin_1_1HodoscopeWriteEngine_ab16e9275a74625c3c7ec790e3aeecc9f}
+
+\item 
+double {\bfseries edgeCorrection} (double x)\label{classmarlin_1_1HodoscopeWriteEngine_aa4e1a0f8146ee931b590b9539d654a32}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>int {\bfseries cycle} [2]\\
+\>int {\bfseries tdc} [2]\\
+\>int {\bfseries accept} [2]\\
+\>int {\bfseries adc} [2][64]\\
+\>double {\bfseries nph} [2][64]\\
+\>int {\bfseries nRecoX} [2]\\
+\>int {\bfseries nRecoY} [2]\\
+\>double {\bfseries recoX} [2][8]\\
+\>double {\bfseries recoY} [2][8]\\
+\>double {\bfseries trueRecoX} [2]\\
+\>double {\bfseries trueRecoY} [2]\\
+\} {\bfseries \_hitsFill}\label{classmarlin_1_1HodoscopeWriteEngine_a74db1a943fbb538d08f69bc6e6c33a92}
+\\
+
+\end{tabbing}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>int {\bfseries nHits}\\
+\>int {\bfseries hitI} [MAXCELLS]\\
+\>int {\bfseries hitJ} [MAXCELLS]\\
+\>int {\bfseries hitK} [MAXCELLS]\\
+\>float {\bfseries hitEnergy} [MAXCELLS]\\
+\>float {\bfseries hitPos} [MAXCELLS][3]\\
+\} {\bfseries \_ahcHits}\label{classmarlin_1_1HodoscopeWriteEngine_a605e74b3c3b4f2ef492de9691fe390a2}
+\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned int {\bfseries MAXCELLS} = 7609\label{classmarlin_1_1HodoscopeWriteEngine_a573aa5076f6af8d428ef2e74c5a6c448}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 19 of file HodoscopeWriteEngine.hh.
+
+\subsection{Member Function Documentation}
+\index{marlin::HodoscopeWriteEngine@{marlin::HodoscopeWriteEngine}!fillVariables@{fillVariables}}
+\index{fillVariables@{fillVariables}!marlin::HodoscopeWriteEngine@{marlin::HodoscopeWriteEngine}}
+\subsubsection[{fillVariables}]{\setlength{\rightskip}{0pt plus 5cm}void marlin::HodoscopeWriteEngine::fillVariables (EVENT::LCEvent $\ast$ {\em evt})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classmarlin_1_1HodoscopeWriteEngine_a4db5d7173b75c3a59d2a8ae86fb0de93}
+Implement this to extract the variables which you want to fill into the {\itshape ROOT\/} tree from the event. Write the value of the variables you want to add to the tree to the member variables, which you registered to the {\itshape ROOT\/} tree. The \doxyref{RootTreeWriter}{p.}{classmarlin_1_1RootTreeWriter} will call TTree::Fill() for you. 
+\begin{DoxyParams}{Parameters}
+\item[{\em evt}]the current event \end{DoxyParams}
+
+
+Implements {\bf marlin::RootWriteEngine} \doxyref{}{p.}{classmarlin_1_1RootWriteEngine_ace823bd839cee7e8c8755e60c4cc7134}.
+
+Definition at line 156 of file HodoscopeWriteEngine.cc.
+
+References CALICE::HodoscopeBlock::GetAccept(), CALICE::HodoscopeBlock::GetADC(), CALICE::HodoscopeBlock::GetCycleN(), and CALICE::HodoscopeBlock::GetTDC().\index{marlin::HodoscopeWriteEngine@{marlin::HodoscopeWriteEngine}!getEngineName@{getEngineName}}
+\index{getEngineName@{getEngineName}!marlin::HodoscopeWriteEngine@{marlin::HodoscopeWriteEngine}}
+\subsubsection[{getEngineName}]{\setlength{\rightskip}{0pt plus 5cm}virtual const std::string\& marlin::HodoscopeWriteEngine::getEngineName ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classmarlin_1_1HodoscopeWriteEngine_a18aa5f3029fd0fc951f8770afdf37f8a}
+Returns the name of the engine to the \doxyref{RootTreeWriter}{p.}{classmarlin_1_1RootTreeWriter} processor. \begin{DoxyReturn}{Returns}
+Must return a string with the engine name. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[{\bf Todo}]fixme: should be const, but must be declared const in implementations too. Need to fix all existing engines?!? \end{Desc}
+
+
+Implements {\bf marlin::RootWriteEngine} \doxyref{}{p.}{classmarlin_1_1RootWriteEngine_a31e38120fe60efcb15666fd569ba5862}.
+
+Definition at line 28 of file HodoscopeWriteEngine.hh.\index{marlin::HodoscopeWriteEngine@{marlin::HodoscopeWriteEngine}!registerBranches@{registerBranches}}
+\index{registerBranches@{registerBranches}!marlin::HodoscopeWriteEngine@{marlin::HodoscopeWriteEngine}}
+\subsubsection[{registerBranches}]{\setlength{\rightskip}{0pt plus 5cm}void marlin::HodoscopeWriteEngine::registerBranches (TTree $\ast$)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classmarlin_1_1HodoscopeWriteEngine_ac106fb65ad09c7f41975ae5c355da9d2}
+Implement to register local variables to the output tree 
+\begin{DoxyParams}{Parameters}
+\item[{\em pointer}]to the {\itshape ROOT\/} tree, which the \doxyref{RootTreeWriter}{p.}{classmarlin_1_1RootTreeWriter} processor fills at the end of each event. Usually the implementation looks like \begin{DoxyVerb}
+    /// hostTree->Branch("variable",&_variable" ,"variable/F"  );
+    /// \end{DoxyVerb}
+. But you can add any type of branch you like. \end{DoxyParams}
+
+
+Implements {\bf marlin::RootWriteEngine} \doxyref{}{p.}{classmarlin_1_1RootWriteEngine_ad467dc6e73fdd9fd4311f7277fd02a89}.
+
+Definition at line 102 of file HodoscopeWriteEngine.cc.\index{marlin::HodoscopeWriteEngine@{marlin::HodoscopeWriteEngine}!registerParameters@{registerParameters}}
+\index{registerParameters@{registerParameters}!marlin::HodoscopeWriteEngine@{marlin::HodoscopeWriteEngine}}
+\subsubsection[{registerParameters}]{\setlength{\rightskip}{0pt plus 5cm}void marlin::HodoscopeWriteEngine::registerParameters ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classmarlin_1_1HodoscopeWriteEngine_ad5150110764a1bdd16c8a8eab05ef7bf}
+Used to register steering parameters. Implement to register {\itshape \doxyref{marlin}{p.}{namespacemarlin}\/} steering file parameters. Use {\itshape \doxyref{marlin}{p.}{namespacemarlin}\/} syntax to register parameters for the calling \doxyref{RootTreeWriter}{p.}{classmarlin_1_1RootTreeWriter} processor.
+
+use \begin{DoxyVerb}
+    /// _hostProc.relayRegisterProcessorParameter(...)
+    /// _hostProc.relayRegister...()
+    /// \end{DoxyVerb}
+ instead of {\itshape \doxyref{marlin}{p.}{namespacemarlin}\/} processors \begin{DoxyVerb}register...() \end{DoxyVerb}
+ methods 
+
+Implements {\bf marlin::RootWriteEngine} \doxyref{}{p.}{classmarlin_1_1RootWriteEngine_ae12b70923768043fa5c1438f078c41d3}.
+
+Definition at line 35 of file HodoscopeWriteEngine.cc.
+
+References marlin::RootTreeWriter::relayRegisterInputCollection(), and marlin::RootTreeWriter::relayRegisterProcessorParameter().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+HodoscopeWriteEngine.hh\item 
+HodoscopeWriteEngine.cc\end{DoxyCompactItemize}

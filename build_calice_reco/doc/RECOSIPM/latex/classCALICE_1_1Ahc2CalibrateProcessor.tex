@@ -1,0 +1,223 @@
+\section{CALICE::Ahc2CalibrateProcessor Class Reference}
+\label{classCALICE_1_1Ahc2CalibrateProcessor}\index{CALICE::Ahc2CalibrateProcessor@{CALICE::Ahc2CalibrateProcessor}}
+
+
+Processor that does the SiPM calibration.  
+
+
+{\ttfamily \#include $<$Ahc2CalibrateProcessor.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Ahc2CalibrateProcessor} $\ast$ {\bfseries newProcessor} ()\label{classCALICE_1_1Ahc2CalibrateProcessor_a57d619e6f0986ae6a02cbced83acc6f5}
+
+\item 
+virtual void {\bfseries init} ()\label{classCALICE_1_1Ahc2CalibrateProcessor_ad821f0bc1b0bd316e93eba7a24b7a723}
+
+\item 
+virtual void {\bfseries processEvent} (LCEvent $\ast$evt)\label{classCALICE_1_1Ahc2CalibrateProcessor_a95d7418cc0c13b2e941f64bc222fb8b6}
+
+\item 
+virtual void {\bfseries end} ()\label{classCALICE_1_1Ahc2CalibrateProcessor_a1f22d5d38c38ef430e218e82d532802e}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries FillContainer} (LCEvent $\ast$evt)\label{classCALICE_1_1Ahc2CalibrateProcessor_acaa509d1340c3afffb7f3eea852397f5}
+
+\item 
+void {\bf calibrateEnergyAndFillOutputCollections} (Ahc2Calibrations $\ast$calibration, const int GainBit, const float rawEnergy, const float rawTDC, const int BXID, const int Mem, LCCollection $\ast$ahcHitOutputCol)
+\begin{DoxyCompactList}\small\item\em Calibrate the energy (convert from energy in ADC counts to energy in MIPs). \item\end{DoxyCompactList}\item 
+bool {\bfseries checkHit} (CalorimeterHitImpl $\ast$hit)\label{classCALICE_1_1Ahc2CalibrateProcessor_aaa5a4d84225a0455058ec8ab24f650b1}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bf \_\-inputColName}\label{classCALICE_1_1Ahc2CalibrateProcessor_af40da80c07919fd7ff11c2eea1aeb381}
+
+\begin{DoxyCompactList}\small\item\em name of the input collection \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-ahcHitOutputColName}\label{classCALICE_1_1Ahc2CalibrateProcessor_a3dc06786436feb1670498da3fd69ad94}
+
+\begin{DoxyCompactList}\small\item\em name of the output AHC hit collection \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-mappingProcessorName}\label{classCALICE_1_1Ahc2CalibrateProcessor_ac8d1b19a0ffa72a6ea1427664503921d}
+
+\begin{DoxyCompactList}\small\item\em name of the processor which provides the mapping \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-calibProcessorName}\label{classCALICE_1_1Ahc2CalibrateProcessor_ae410aaaebdd65ba4054169c41266154e}
+
+\begin{DoxyCompactList}\small\item\em name of the processor which provides the SiPM calibrations \item\end{DoxyCompactList}\item 
+std::string {\bfseries \_\-Ahc2HardwareConnectionName}\label{classCALICE_1_1Ahc2CalibrateProcessor_a58a404a600c53c93f2a8d93cdd3d0bdd}
+
+\item 
+std::string {\bf \_\-temperatureProcessorName}\label{classCALICE_1_1Ahc2CalibrateProcessor_acb920d14fbddb7869a6563c9b8e0591d}
+
+\begin{DoxyCompactList}\small\item\em name of the processor which provides the SiPM temperature \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-cellDescriptionProcessorName}\label{classCALICE_1_1Ahc2CalibrateProcessor_abb12c048f5ca0a876f4112580dcd790e}
+
+\begin{DoxyCompactList}\small\item\em name of the processor which provides the cells description \item\end{DoxyCompactList}\item 
+MappedContainer$<$ CellDescription $>$ $\ast$ {\bf \_\-cellDescriptions}\label{classCALICE_1_1Ahc2CalibrateProcessor_a9569a1acebd769a434928d339a069eb3}
+
+\begin{DoxyCompactList}\small\item\em mapped container of cells description \item\end{DoxyCompactList}\item 
+bool {\bf \_\-scaleEnergy}\label{classCALICE_1_1Ahc2CalibrateProcessor_aef2b11d192204ebb3723fb47fe6a0976}
+
+\begin{DoxyCompactList}\small\item\em flag to enable/disable the scaling of the hits energy \item\end{DoxyCompactList}\item 
+float {\bf \_\-energyScaleFactor}\label{classCALICE_1_1Ahc2CalibrateProcessor_af0d0eb5ee2782716f379aff4798f7d0f}
+
+\begin{DoxyCompactList}\small\item\em factor to scale the hits energy \item\end{DoxyCompactList}\item 
+MappedContainer$<$ CalorimeterHitImpl $>$ $\ast$ {\bf \_\-recoContainer}\label{classCALICE_1_1Ahc2CalibrateProcessor_a51ad92c817fd651000dec667467090b5}
+
+\begin{DoxyCompactList}\small\item\em mapped container of reconstructed AHCAL hits \item\end{DoxyCompactList}\item 
+const Mapper $\ast$ {\bf \_\-mapper}\label{classCALICE_1_1Ahc2CalibrateProcessor_a823161d30fc7caff787b92ea8f3fd728}
+
+\begin{DoxyCompactList}\small\item\em the mapper \item\end{DoxyCompactList}\item 
+MappedContainer$<$ Ahc2Calibrations $>$ $\ast$ {\bf \_\-calibContainer}\label{classCALICE_1_1Ahc2CalibrateProcessor_af32eea30839db78e5e5aa45c42dac715}
+
+\begin{DoxyCompactList}\small\item\em mapped container of SiPM calibrations \item\end{DoxyCompactList}\item 
+MappedContainer$<$ SimpleValue $>$ $\ast$ {\bf \_\-temperatureContainer}\label{classCALICE_1_1Ahc2CalibrateProcessor_a8f227d17ea78bb5f560d695725099e93}
+
+\begin{DoxyCompactList}\small\item\em mapped container of cells temperature \item\end{DoxyCompactList}\item 
+bool {\bf \_\-newdataformat}\label{classCALICE_1_1Ahc2CalibrateProcessor_a8bae2aa3700e81f9f739a3d64c3e7cbb}
+
+\begin{DoxyCompactList}\small\item\em flag for the new data format in EUDAQ \item\end{DoxyCompactList}\item 
+bool {\bf \_\-pedestalSubtraction}\label{classCALICE_1_1Ahc2CalibrateProcessor_aad858c334434d3f75b9d993aaf60f076}
+
+\begin{DoxyCompactList}\small\item\em flag to enable/disable pedestal subtraction \item\end{DoxyCompactList}\item 
+bool {\bf \_\-doMipTempCorr}\label{classCALICE_1_1Ahc2CalibrateProcessor_ac36692611bc1dc16e7b613f0f279121b}
+
+\begin{DoxyCompactList}\small\item\em flag to enable/disable the temperature correction of the MIP \item\end{DoxyCompactList}\item 
+bool {\bf \_\-doGainTempCorr}\label{classCALICE_1_1Ahc2CalibrateProcessor_a3d46c30741845b340de59f9b5fd5de40}
+
+\begin{DoxyCompactList}\small\item\em flag to enable/disable the temperature correction of the gain \item\end{DoxyCompactList}\item 
+bool {\bf \_\-doSaturationCorr}\label{classCALICE_1_1Ahc2CalibrateProcessor_a40d7fce6e7e82cb810b6c0a7e016a74d}
+
+\begin{DoxyCompactList}\small\item\em flag to enable/disable the saturation correction \item\end{DoxyCompactList}\item 
+bool {\bf \_\-zeroSuppression}\label{classCALICE_1_1Ahc2CalibrateProcessor_a6498f3913e1c29ca1903001108e5fc23}
+
+\begin{DoxyCompactList}\small\item\em flag to enable/disable the zero suppression, that is if you want to apply the 0.4 MIP cut or not \item\end{DoxyCompactList}\item 
+bool {\bf \_\-skipNoHit}\label{classCALICE_1_1Ahc2CalibrateProcessor_aa44da590aa3e13e6f4645608d6688503}
+
+\begin{DoxyCompactList}\small\item\em flag to skip the cell without hitbit \item\end{DoxyCompactList}\item 
+bool {\bf \_\-isPhysicsMode}\label{classCALICE_1_1Ahc2CalibrateProcessor_a2d753d78ae5426ff61005e48040ad22c}
+
+\begin{DoxyCompactList}\small\item\em flag to enable/disable the physics mode energy calibration \item\end{DoxyCompactList}\item 
+bool {\bf \_\-filterDeadCells}\label{classCALICE_1_1Ahc2CalibrateProcessor_af1da32722c145038b42b025b34d451e9}
+
+\begin{DoxyCompactList}\small\item\em flag to enable/disable the filtering of dead cells \item\end{DoxyCompactList}\item 
+bool {\bf \_\-filterDefaultCells}\label{classCALICE_1_1Ahc2CalibrateProcessor_afd38d20f0310d2ce016d80493a25c651}
+
+\begin{DoxyCompactList}\small\item\em flag to enable/disable the filgering of default cells \item\end{DoxyCompactList}\item 
+bool {\bf \_\-doErrorCalculation}\label{classCALICE_1_1Ahc2CalibrateProcessor_a14fc5b04c571329bde618c70e5aa9885}
+
+\begin{DoxyCompactList}\small\item\em flag to enable/disable the error calculation \item\end{DoxyCompactList}\item 
+float {\bf \_\-mipCut}\label{classCALICE_1_1Ahc2CalibrateProcessor_a07cf5b93b24db2acad37b9c14b65011c}
+
+\begin{DoxyCompactList}\small\item\em value of the MIP cut (default: 0.4 MIPs) \item\end{DoxyCompactList}\item 
+float {\bf \_\-mipToGeVFactor}\label{classCALICE_1_1Ahc2CalibrateProcessor_a7f34123a00ee631895bda7680794cfb6}
+
+\begin{DoxyCompactList}\small\item\em conversion factor from MIPs to GeV \item\end{DoxyCompactList}\item 
+bool {\bfseries \_\-doMipConversion}\label{classCALICE_1_1Ahc2CalibrateProcessor_a263941e7f6da582dd0e4336c2d0443bf}
+
+\item 
+bool {\bf \_\-doTimeConversion}\label{classCALICE_1_1Ahc2CalibrateProcessor_aacfee6708f5ebda2f4f14273a508c345}
+
+\begin{DoxyCompactList}\small\item\em Convert ADC to MIP or not. \item\end{DoxyCompactList}\item 
+FloatVec {\bf \_\-HBUoffsets}\label{classCALICE_1_1Ahc2CalibrateProcessor_acadbcf61c9aa0b2b3abea6cc2e36d0b7}
+
+\begin{DoxyCompactList}\small\item\em Convert TDC to ns or not. \item\end{DoxyCompactList}\item 
+bool {\bf \_\-isDATA}
+\begin{DoxyCompactList}\small\item\em HBU position offsets. \item\end{DoxyCompactList}\item 
+bool {\bf \_\-isMC}\label{classCALICE_1_1Ahc2CalibrateProcessor_ab5809d2c7f3a1e6cf7deb8ed8fb48f90}
+
+\begin{DoxyCompactList}\small\item\em flag to switch to MC processing \item\end{DoxyCompactList}\item 
+bool {\bf \_\-isFirstEvent}
+\begin{DoxyCompactList}\small\item\em flag to switch to DATA/MC at the first event, the following events should be the same. \item\end{DoxyCompactList}\item 
+MappedContainer$<$ CalorimeterHitImpl $>$ $\ast$ {\bf \_\-HitContainer}\label{classCALICE_1_1Ahc2CalibrateProcessor_ab386d03c40a8816dca77af0f9b1b7496}
+
+\begin{DoxyCompactList}\small\item\em mapped container of AHCAL cells \item\end{DoxyCompactList}\item 
+map$<$ int, pair$<$ int, int $>$ $>$ {\bf \_\-HardwareConnnectionContainer}\label{classCALICE_1_1Ahc2CalibrateProcessor_a20c1332ea5ef0de61f3ffb74e104f873}
+
+\begin{DoxyCompactList}\small\item\em map containing relationship between ChipID and Module/ChipNb \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Processor that does the SiPM calibration. The calibration is done according to the formula: $E_{calibrated}=f_{saturation}((E_{raw}-pedestal) \cdot IC/gain) \cdot gain/IC/MIP$
+
+Please note:
+\begin{DoxyItemize}
+\item this processor does the calibration for both data and Monte Carlo, based on the type of the input collection (\char`\"{}LCGenericObject\char`\"{} for data, and \char`\"{}CalorimeterHit\char`\"{} for Monte Carlo);
+\item for noise creation, the saturation correction is disabled (doSaturationCorrection=false), as well as the ZeroSuppression (ZeroSuppression = false)
+\item for Monte Carlo, the pedestal subtraction is disabled (PedestalSubtraction=false)
+\end{DoxyItemize}
+
+\begin{DoxyParagraph}{processor parameters}
+\begin{TabularC}{2}
+\hline
+steering file parameter name &description  \\\cline{1-2}
+{\bfseries {\itshape  InputCollectionName \/}}&name of the input collection, with energy in ADC counts \\\cline{1-2}
+{\bfseries {\itshape  OutputCollectionName \/}}&name of the output collection, with energy in MIPs \\\cline{1-2}
+{\bfseries {\itshape  MappingProcessorName \/}}&name of the mapping processor that provides the necessary Mapper class \\\cline{1-2}
+{\bfseries {\itshape  Ahc2CalibrationsProcessorName \/}}&name of the processor which provides the SiPM calibrations \\\cline{1-2}
+{\bfseries {\itshape  SiPMTemperatureProcessorName \/}}&name of the processor which provides the SiPM temperature \\\cline{1-2}
+{\bfseries {\itshape  PedestalSubtraction \/}}&Flag to enable/disable pedestal subtraction \\\cline{1-2}
+{\bfseries {\itshape  ZeroSuppression \/}}&Flag to enable/disable zero suppression (intention to apply the MIP cut) \\\cline{1-2}
+{\bfseries {\itshape  MipCut \/}}&Value of the MIP cut (default: 0.4 MIPs) \\\cline{1-2}
+{\bfseries {\itshape  doMipConversion \/}}&Flag to enable/disable MIP Calibration \\\cline{1-2}
+{\bfseries {\itshape  doMipTemperatureCorrection \/}}&Flag to enable/disable temperature correction of the MIP \\\cline{1-2}
+{\bfseries {\itshape  doGainTemperatureCorrection \/}}&Flag to enable/disable temperature correction of the gain \\\cline{1-2}
+{\bfseries {\itshape  doSaturationCorrection \/}}&Flag to enable/disable the saturation correction \\\cline{1-2}
+{\bfseries {\itshape  doTimeConversion \/}}&Flag to enable/disable the TDC Calibration \\\cline{1-2}
+{\bfseries {\itshape  doErrorCalculation \/}}&Flag to enable/disable error calculation \\\cline{1-2}
+{\bfseries {\itshape  filterDeadCells \/}}&Flag to enable/disable the filtering of dead cells \\\cline{1-2}
+{\bfseries {\itshape  filterDefaultCells \/}}&Flag to enable/disable the filtering of default dead cells \\\cline{1-2}
+\end{TabularC}
+
+\end{DoxyParagraph}
+\begin{DoxyAuthor}{Author}
+{\tt shaojun.lu@desy.de} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+January 2013 
+\end{DoxyDate}
+
+
+Definition at line 60 of file Ahc2CalibrateProcessor.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::Ahc2CalibrateProcessor@{CALICE::Ahc2CalibrateProcessor}!calibrateEnergyAndFillOutputCollections@{calibrateEnergyAndFillOutputCollections}}
+\index{calibrateEnergyAndFillOutputCollections@{calibrateEnergyAndFillOutputCollections}!CALICE::Ahc2CalibrateProcessor@{CALICE::Ahc2CalibrateProcessor}}
+\subsubsection[{calibrateEnergyAndFillOutputCollections}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::Ahc2CalibrateProcessor::calibrateEnergyAndFillOutputCollections (Ahc2Calibrations $\ast$ {\em calibration}, \/  const int {\em GainBit}, \/  const float {\em rawEnergy}, \/  const float {\em rawTDC}, \/  const int {\em BXID}, \/  const int {\em Mem}, \/  LCCollection $\ast$ {\em ahcHitOutputCol})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1Ahc2CalibrateProcessor_ac9a642a6aea42b6ad22e153e8c5f0fca}
+
+
+Calibrate the energy (convert from energy in ADC counts to energy in MIPs). 
+\begin{DoxyParams}{Parameters}
+\item[{\em calibration}]calibration of the current SiPM \item[{\em rawEnergy}]raw energy, in ADC counts \item[{\em rawTDC}]raw time, in TIC counts \item[{\em RampID}]BunchXID2 \item[{\em MEMCELLNr}]Memory cell ID \item[{\em NCHIPS}]chip ID \item[{\em ahcHitOutputCol}]the AHC hit output collection, of type CalorimeterHit \end{DoxyParams}
+
+
+Definition at line 548 of file Ahc2CalibrateProcessor.cc.
+
+References \_\-ahcHitOutputColName, \_\-cellDescriptions, \_\-doErrorCalculation, \_\-doGainTempCorr, \_\-doMipTempCorr, \_\-doSaturationCorr, \_\-doTimeConversion, \_\-energyScaleFactor, \_\-filterDeadCells, \_\-filterDefaultCells, \_\-HBUoffsets, \_\-isPhysicsMode, \_\-mipCut, \_\-pedestalSubtraction, \_\-scaleEnergy, and \_\-zeroSuppression.
+
+\subsection{Field Documentation}
+\index{CALICE::Ahc2CalibrateProcessor@{CALICE::Ahc2CalibrateProcessor}!\_\-isDATA@{\_\-isDATA}}
+\index{\_\-isDATA@{\_\-isDATA}!CALICE::Ahc2CalibrateProcessor@{CALICE::Ahc2CalibrateProcessor}}
+\subsubsection[{\_\-isDATA}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf CALICE::Ahc2CalibrateProcessor::\_\-isDATA}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1Ahc2CalibrateProcessor_af7fd3817f6aefdd07f107c05ed8f61f4}
+
+
+HBU position offsets. flag to switch to DATA processing 
+
+Definition at line 159 of file Ahc2CalibrateProcessor.hh.\index{CALICE::Ahc2CalibrateProcessor@{CALICE::Ahc2CalibrateProcessor}!\_\-isFirstEvent@{\_\-isFirstEvent}}
+\index{\_\-isFirstEvent@{\_\-isFirstEvent}!CALICE::Ahc2CalibrateProcessor@{CALICE::Ahc2CalibrateProcessor}}
+\subsubsection[{\_\-isFirstEvent}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf CALICE::Ahc2CalibrateProcessor::\_\-isFirstEvent}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1Ahc2CalibrateProcessor_af4cd3d6df2a690c09a6eb2689505a4b4}
+
+
+flag to switch to DATA/MC at the first event, the following events should be the same. 
+
+Definition at line 161 of file Ahc2CalibrateProcessor.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+Ahc2CalibrateProcessor.hh\item 
+Ahc2CalibrateProcessor.cc\end{DoxyCompactItemize}

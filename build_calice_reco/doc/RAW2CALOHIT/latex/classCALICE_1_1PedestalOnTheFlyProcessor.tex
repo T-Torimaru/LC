@@ -1,0 +1,81 @@
+\section{CALICE::PedestalOnTheFlyProcessor Class Reference}
+\label{classCALICE_1_1PedestalOnTheFlyProcessor}\index{CALICE::PedestalOnTheFlyProcessor@{CALICE::PedestalOnTheFlyProcessor}}
+
+
+Processor which calulates the pedestals from pedestal events and subtracts these values from following non-\/pedestal events.  
+
+
+{\ttfamily \#include $<$PedestalOnTheFlyProcessor.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf PedestalOnTheFlyProcessor} $\ast$ {\bfseries newProcessor} ()\label{classCALICE_1_1PedestalOnTheFlyProcessor_a10c562d70b7a3a6822d1d787680a1e2c}
+
+\item 
+virtual void {\bfseries init} ()\label{classCALICE_1_1PedestalOnTheFlyProcessor_a39648da7746870ad75bafa83eab06a09}
+
+\item 
+void {\bfseries processEvent} (lcio::LCEvent $\ast$evt)\label{classCALICE_1_1PedestalOnTheFlyProcessor_ab4d4773fe6ce8137a8e6e8f3b10c97c5}
+
+\item 
+virtual void {\bfseries end} ()\label{classCALICE_1_1PedestalOnTheFlyProcessor_a4150cde3c7b10d8f43bf28f676efefad}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bfseries \_\-inputColName}\label{classCALICE_1_1PedestalOnTheFlyProcessor_a715f7012132a51ed82c00b9e500980aa}
+
+\item 
+std::string {\bfseries \_\-outputColName}\label{classCALICE_1_1PedestalOnTheFlyProcessor_aa4bc9785a48b64ce13a93b087b74cd67}
+
+\item 
+double {\bfseries \_\-pedSum} [HCAL\_\-N\_\-MOD+1][HCAL\_\-N\_\-CELL]\label{classCALICE_1_1PedestalOnTheFlyProcessor_a82b074fc1d3fe2bdc109b85ea8ff703e}
+
+\item 
+double {\bfseries \_\-pedSumSquare} [HCAL\_\-N\_\-MOD+1][HCAL\_\-N\_\-CELL]\label{classCALICE_1_1PedestalOnTheFlyProcessor_abde1f46084ba80f3a20c28b41398cfc1}
+
+\item 
+unsigned {\bfseries \_\-pedNum} [HCAL\_\-N\_\-MOD+1][HCAL\_\-N\_\-CELL]\label{classCALICE_1_1PedestalOnTheFlyProcessor_a3e73753bc10884fa72f30cf89c4d98d1}
+
+\item 
+float {\bfseries \_\-ped} [HCAL\_\-N\_\-MOD+1][HCAL\_\-N\_\-CELL]\label{classCALICE_1_1PedestalOnTheFlyProcessor_a40378847dcd7aff4c79795eb3fceee41}
+
+\item 
+float {\bfseries \_\-pedError} [HCAL\_\-N\_\-MOD+1][HCAL\_\-N\_\-CELL]\label{classCALICE_1_1PedestalOnTheFlyProcessor_ad4a27e50c47ca620894a12248958ddb3}
+
+\item 
+float {\bfseries \_\-significanceCut}\label{classCALICE_1_1PedestalOnTheFlyProcessor_a5776cfb8ca374fbcee4f3ca87bcf9297}
+
+\item 
+int {\bfseries \_\-skipPedestals}\label{classCALICE_1_1PedestalOnTheFlyProcessor_a3528d68a6e0a2465c8550f8da410d44b}
+
+\item 
+int {\bfseries \_\-skipStartUpPedestals}\label{classCALICE_1_1PedestalOnTheFlyProcessor_abdf7d6fec744c128abcaeb987d0ccb50}
+
+\item 
+int {\bfseries \_\-pedCounter}\label{classCALICE_1_1PedestalOnTheFlyProcessor_a33772e03ef01ae351fac171af28920ee}
+
+\item 
+int {\bfseries \_\-minPedNumber}\label{classCALICE_1_1PedestalOnTheFlyProcessor_ab104343f3071e7b73d061149f3d09262}
+
+\item 
+bool {\bfseries \_\-throwSkipEventException}\label{classCALICE_1_1PedestalOnTheFlyProcessor_a3a75fe8a1e9a744048d0c5e4e5e59092}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Processor which calulates the pedestals from pedestal events and subtracts these values from following non-\/pedestal events. \begin{DoxyAuthor}{Author}
+S. Schmidt 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Dec 2006 
+\end{DoxyDate}
+
+
+Definition at line 19 of file PedestalOnTheFlyProcessor.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+PedestalOnTheFlyProcessor.hh\item 
+PedestalOnTheFlyProcessor.cc\end{DoxyCompactItemize}

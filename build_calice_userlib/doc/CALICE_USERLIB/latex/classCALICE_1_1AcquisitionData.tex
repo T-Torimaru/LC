@@ -1,0 +1,131 @@
+\section{CALICE::AcquisitionData Class Reference}
+\label{classCALICE_1_1AcquisitionData}\index{CALICE::AcquisitionData@{CALICE::AcquisitionData}}
+
+
+Class to store acquisition data info, i.e.  
+
+
+{\ttfamily \#include $<$AcquisitionData.hh$>$}Inheritance diagram for CALICE::AcquisitionData::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCALICE_1_1AcquisitionData}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf AcquisitionData} (int acquisitionNumberInRun, int acquisitionNumberInConfiguration)\label{classCALICE_1_1AcquisitionData_aa1f1d0bd5bbb808113b480b760b357ef}
+
+\begin{DoxyCompactList}\small\item\em The constructor. \item\end{DoxyCompactList}\item 
+{\bf AcquisitionData} (LCObject $\ast$obj)\label{classCALICE_1_1AcquisitionData_a80ddf44bcb6c9070a4774aa640072c46}
+
+\begin{DoxyCompactList}\small\item\em A copy constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$AcquisitionData} ()\label{classCALICE_1_1AcquisitionData_a03dba78272df176732377006a3e6415c}
+
+\begin{DoxyCompactList}\small\item\em The destructor. \item\end{DoxyCompactList}\item 
+{\bf AcquisitionData} \& {\bf setAcquisitionState} (bool acqstate)\label{classCALICE_1_1AcquisitionData_a3f6cf1b411af4a4c73822f3843ce5f9d}
+
+\begin{DoxyCompactList}\small\item\em Sets the acquisition state, start=1, end=0. \item\end{DoxyCompactList}\item 
+bool {\bf getAcquisitionState} () const \label{classCALICE_1_1AcquisitionData_afb3d781c28f16db8508bf837864aca54}
+
+\begin{DoxyCompactList}\small\item\em Returns the acquisition state. \item\end{DoxyCompactList}\item 
+{\bf AcquisitionData} \& {\bf setTimeInformationSec} (unsigned int timeinfo)
+\begin{DoxyCompactList}\small\item\em Set the time information for the given state (in sec), note that the meaning is different for start and end. \item\end{DoxyCompactList}\item 
+{\bf AcquisitionData} \& {\bf setTimeInformationMuSec} (unsigned int timeinfo)
+\begin{DoxyCompactList}\small\item\em Set the time information for the given state (in sec), note that the meaning is different for start and end. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getAcquisitionNumberInRun} ()\label{classCALICE_1_1AcquisitionData_a30dc6e6cf5801240dc672e73703de4f3}
+
+\begin{DoxyCompactList}\small\item\em returns the acquisition number in run \item\end{DoxyCompactList}\item 
+unsigned int {\bf getAcquisitionNumberInConfiguration} ()\label{classCALICE_1_1AcquisitionData_a5fdfe4f39cf7c10682eab629243a35f6}
+
+\begin{DoxyCompactList}\small\item\em returns the acquisition number in configuration \item\end{DoxyCompactList}\item 
+{\bf AcquisitionData} \& {\bf setEventNumberInfo} (unsigned int evnuminfo)\label{classCALICE_1_1AcquisitionData_a3bab96bafcf9d8badea581d70a9a1778}
+
+\begin{DoxyCompactList}\small\item\em Sets the eventnumber info. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getMaxEventNumberInAcquisition} ()\label{classCALICE_1_1AcquisitionData_a4bb9e5f8e2e5e7be1705557db6ff579e}
+
+\begin{DoxyCompactList}\small\item\em returns the maximal number of events in Acquisition \item\end{DoxyCompactList}\item 
+unsigned int {\bf getActEventNumberInAcquisition} ()\label{classCALICE_1_1AcquisitionData_a0a3fa8fe5a5a06930597e9b8a3aeb92c}
+
+\begin{DoxyCompactList}\small\item\em returns the actual number of events in Acquisition \item\end{DoxyCompactList}\item 
+unsigned int {\bf getMaxAcquisitionTimeSec} ()\label{classCALICE_1_1AcquisitionData_ac3b5becc7288c4cf71b99e9f81c9a564}
+
+\begin{DoxyCompactList}\small\item\em Returns the maximum acquisition time -\/ seconds. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getMaxAcquisitionTimeMus} ()\label{classCALICE_1_1AcquisitionData_ab076903057bb3f4a85a144661a3d4223}
+
+\begin{DoxyCompactList}\small\item\em Returns the maximum acquisition time -\/ microseconds. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getActAcquisitionTimeSec} ()\label{classCALICE_1_1AcquisitionData_a9c32aed54c8525c4dd143594ebf572e6}
+
+\begin{DoxyCompactList}\small\item\em Returns the actual acquisition time -\/ seconds. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getActAcquisitionTimeMus} ()\label{classCALICE_1_1AcquisitionData_a31cc8badfb06afa9ca37db0af726cd27}
+
+\begin{DoxyCompactList}\small\item\em Returns the actual acquisition time -\/ microseconds. \item\end{DoxyCompactList}\item 
+{\bf AcquisitionData} \& {\bf setDifInfoPresent} (bool difdatapresent)\label{classCALICE_1_1AcquisitionData_a708b7f09773470d122d82594b2aaf743}
+
+\begin{DoxyCompactList}\small\item\em Set whether there are dif data in the acquisition. \item\end{DoxyCompactList}\item 
+bool {\bf getDifDataPresent} () const \label{classCALICE_1_1AcquisitionData_a2f75303f2065483675cc11b596d66fdb}
+
+\begin{DoxyCompactList}\small\item\em Return whether dif data are present in the acquisition. \item\end{DoxyCompactList}\item 
+{\bf AcquisitionData} \& {\bf setDifTriggerCounter} (unsigned int triggercounter)\label{classCALICE_1_1AcquisitionData_a47d04ea74eb9197cb24353b1c3a5d9ea}
+
+\begin{DoxyCompactList}\small\item\em Check dif trigger counter at acquisition start and end. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getDifTriggerCounter} () const \label{classCALICE_1_1AcquisitionData_a5901280a12cf53272af6ea1a903a5616}
+
+\begin{DoxyCompactList}\small\item\em Return dif trigger counter. \item\end{DoxyCompactList}\item 
+{\bf AcquisitionData} \& {\bf setNumberofDifBufferWords} (unsigned int difbufferwords)\label{classCALICE_1_1AcquisitionData_a1a64594b02fe07d2f8c985481a9aedac}
+
+\begin{DoxyCompactList}\small\item\em Check number of dif buffer words. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getNumberofDifBufferWords} ()\label{classCALICE_1_1AcquisitionData_a54292d25b63278bcf9d1f62daf623c8e}
+
+\begin{DoxyCompactList}\small\item\em Return number of dif trigger buffer words. \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1AcquisitionData_af5b75abdb744f5511107bf592abd7564}
+
+\begin{DoxyCompactList}\small\item\em returns the the type name \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1AcquisitionData_aaa8b0ef98afc2ebc20bd111802ad96a2}
+
+\begin{DoxyCompactList}\small\item\em returns a brief description of the data stored \item\end{DoxyCompactList}\item 
+std::ostream \& {\bf print} (std::ostream \&ostrm)\label{classCALICE_1_1AcquisitionData_aaa13de3cfac3a3f6a4babccb767d7cd9}
+
+\begin{DoxyCompactList}\small\item\em dumps data content \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to store acquisition data info, i.e. acquisiton\# in run, acquisition\# in configuration,max. events in acquistion
+
+Note this is for internal use only \begin{Desc}
+\item[{\bf Todo}]should we make a regular userlib class out of it? \end{Desc}
+\begin{DoxyAuthor}{Author}
+R. Pöschl (LAL Orsay) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Feb 27 2006 
+\end{DoxyDate}
+
+
+Definition at line 44 of file AcquisitionData.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::AcquisitionData@{CALICE::AcquisitionData}!setTimeInformationMuSec@{setTimeInformationMuSec}}
+\index{setTimeInformationMuSec@{setTimeInformationMuSec}!CALICE::AcquisitionData@{CALICE::AcquisitionData}}
+\subsubsection[{setTimeInformationMuSec}]{\setlength{\rightskip}{0pt plus 5cm}{\bf AcquisitionData}\& CALICE::AcquisitionData::setTimeInformationMuSec (unsigned int {\em timeinfo})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1AcquisitionData_a0c06ac70f5934b81cc241b447201b881}
+
+
+Set the time information for the given state (in sec), note that the meaning is different for start and end. This will be handled further down 
+
+Definition at line 104 of file AcquisitionData.hh.
+
+References CALICE::LCGenericObjectImplExt::obj().\index{CALICE::AcquisitionData@{CALICE::AcquisitionData}!setTimeInformationSec@{setTimeInformationSec}}
+\index{setTimeInformationSec@{setTimeInformationSec}!CALICE::AcquisitionData@{CALICE::AcquisitionData}}
+\subsubsection[{setTimeInformationSec}]{\setlength{\rightskip}{0pt plus 5cm}{\bf AcquisitionData}\& CALICE::AcquisitionData::setTimeInformationSec (unsigned int {\em timeinfo})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1AcquisitionData_a42d0b8ad6f9ba2bfddb3af8b2683dfa5}
+
+
+Set the time information for the given state (in sec), note that the meaning is different for start and end. This will be handled further down 
+
+Definition at line 97 of file AcquisitionData.hh.
+
+References CALICE::LCGenericObjectImplExt::obj().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+AcquisitionData.hh\item 
+AcquisitionData.cc\end{DoxyCompactItemize}

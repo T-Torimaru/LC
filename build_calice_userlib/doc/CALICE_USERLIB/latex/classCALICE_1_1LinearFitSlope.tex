@@ -1,0 +1,80 @@
+\section{CALICE::LinearFitSlope Class Reference}
+\label{classCALICE_1_1LinearFitSlope}\index{CALICE::LinearFitSlope@{CALICE::LinearFitSlope}}
+
+
+Class to store the slope of a linear fit within the lcio framework.  
+
+
+{\ttfamily \#include $<$LinearFitSlope.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries LinearFitSlope} (lcio::LCObject $\ast$obj)\label{classCALICE_1_1LinearFitSlope_a56c966d126341015453783e858b5afda}
+
+\item 
+{\bfseries LinearFitSlope} (int ID, double slope, double slope\_\-error)\label{classCALICE_1_1LinearFitSlope_a4d769bd2d4bc5bd2d7cc7136f04092da}
+
+\item 
+int {\bf getID} () const \label{classCALICE_1_1LinearFitSlope_af64381cf56c2cae77c77d4a476638197}
+
+\begin{DoxyCompactList}\small\item\em Get the identifier. \item\end{DoxyCompactList}\item 
+double {\bf getSlope} () const 
+\begin{DoxyCompactList}\small\item\em Get the slope/y-\/intercept of the fit. \item\end{DoxyCompactList}\item 
+double {\bf getSlopeError} () const \label{classCALICE_1_1LinearFitSlope_aab0ecd9b3ecff1110159c335e4efd3c2}
+
+\begin{DoxyCompactList}\small\item\em Get the error of the slope. \item\end{DoxyCompactList}\item 
+void {\bf setID} (const int ID)\label{classCALICE_1_1LinearFitSlope_ad6db15cec37ac81794b4ac73c8c4894d}
+
+\begin{DoxyCompactList}\small\item\em Sets an identifier. \item\end{DoxyCompactList}\item 
+void {\bf setSlope} (const double slope)\label{classCALICE_1_1LinearFitSlope_a0d35587b2fb909e93cc04391b6167e37}
+
+\begin{DoxyCompactList}\small\item\em Sets the slope. \item\end{DoxyCompactList}\item 
+void {\bf setSlopeError} (double slopeError)\label{classCALICE_1_1LinearFitSlope_a7ded89ec05a1418e1ee13a83b87d8b47}
+
+\begin{DoxyCompactList}\small\item\em Sets the error of the slope. \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const 
+\begin{DoxyCompactList}\small\item\em Get the type name. \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const 
+\begin{DoxyCompactList}\small\item\em Get the data description. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to store the slope of a linear fit within the lcio framework. \begin{DoxyAuthor}{Author}
+Sebastian Schmitt ({\tt sebastian.richter@desy.de}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+16 February 2009 
+\end{DoxyDate}
+
+
+Definition at line 27 of file LinearFitSlope.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::LinearFitSlope@{CALICE::LinearFitSlope}!getDataDescription@{getDataDescription}}
+\index{getDataDescription@{getDataDescription}!CALICE::LinearFitSlope@{CALICE::LinearFitSlope}}
+\subsubsection[{getDataDescription}]{\setlength{\rightskip}{0pt plus 5cm}const std::string CALICE::LinearFitSlope::getDataDescription () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1LinearFitSlope_a46800ea9d0356523b21f8442f84b2780}
+
+
+Get the data description. The data description gives the meaning of the data fields. 
+
+Definition at line 112 of file LinearFitSlope.hh.\index{CALICE::LinearFitSlope@{CALICE::LinearFitSlope}!getSlope@{getSlope}}
+\index{getSlope@{getSlope}!CALICE::LinearFitSlope@{CALICE::LinearFitSlope}}
+\subsubsection[{getSlope}]{\setlength{\rightskip}{0pt plus 5cm}double CALICE::LinearFitSlope::getSlope () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1LinearFitSlope_a6647803adff8207d96d9c3990c4254f4}
+
+
+Get the slope/y-\/intercept of the fit. The slope is equivalent to eval(0). 
+
+Definition at line 60 of file LinearFitSlope.hh.\index{CALICE::LinearFitSlope@{CALICE::LinearFitSlope}!getTypeName@{getTypeName}}
+\index{getTypeName@{getTypeName}!CALICE::LinearFitSlope@{CALICE::LinearFitSlope}}
+\subsubsection[{getTypeName}]{\setlength{\rightskip}{0pt plus 5cm}const std::string CALICE::LinearFitSlope::getTypeName () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1LinearFitSlope_acead1fa7eff10fa3d589a79410c14f67}
+
+
+Get the type name. The type name is used to determine which class interprets the LCGenericObject which holds the pure data. 
+
+Definition at line 103 of file LinearFitSlope.hh.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+LinearFitSlope.hh\end{DoxyCompactItemize}

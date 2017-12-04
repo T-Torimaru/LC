@@ -1,0 +1,118 @@
+\section{CALICE::LinearFitConstant Class Reference}
+\label{classCALICE_1_1LinearFitConstant}\index{CALICE::LinearFitConstant@{CALICE::LinearFitConstant}}
+
+
+Class to store the constant of a linear fit within the lcio framework.  
+
+
+{\ttfamily \#include $<$LinearFitConstant.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries LinearFitConstant} (lcio::LCObject $\ast$obj)\label{classCALICE_1_1LinearFitConstant_aad304d55b35c64a6ccc10f6678bea491}
+
+\item 
+{\bfseries LinearFitConstant} (int ID, double constant, double constant\_\-error, double constant\_\-reference\_\-point, double constant\_\-reference\_\-point\_\-error)\label{classCALICE_1_1LinearFitConstant_ab237e9f47438621313de684f516b5eea}
+
+\item 
+double {\bf eval} (double x)
+\begin{DoxyCompactList}\small\item\em In the case of a given corresponding slope this functions evaluates the linear fit at the given point. \item\end{DoxyCompactList}\item 
+int {\bf getID} () const \label{classCALICE_1_1LinearFitConstant_ad6dac20732c9065577e04b1057d4cba5}
+
+\begin{DoxyCompactList}\small\item\em Get the identifier. \item\end{DoxyCompactList}\item 
+double {\bf getConstant} () const \label{classCALICE_1_1LinearFitConstant_a4d3578f48272ce09e288dde99c7081bf}
+
+\begin{DoxyCompactList}\small\item\em Get the constant/y-\/intercept of the fit. \item\end{DoxyCompactList}\item 
+double {\bf getConstantError} () const \label{classCALICE_1_1LinearFitConstant_a91e9290960a2d85f39938b46cfe3f92b}
+
+\begin{DoxyCompactList}\small\item\em Get the error of the constant. \item\end{DoxyCompactList}\item 
+double {\bf getConstantReferencePoint} () const \label{classCALICE_1_1LinearFitConstant_aa8748414106f0a3dc6bf7b5f406e2b88}
+
+\begin{DoxyCompactList}\small\item\em Get the reference point of the constant. \item\end{DoxyCompactList}\item 
+double {\bf getConstantReferencePointError} () const \label{classCALICE_1_1LinearFitConstant_a7c977c3a9db317ed19f895e047fc02a2}
+
+\begin{DoxyCompactList}\small\item\em Get the error of the reference point of the constant. \item\end{DoxyCompactList}\item 
+void {\bf setID} (const int ID)\label{classCALICE_1_1LinearFitConstant_a2c386d168d63ee9cf76f2381401daaa0}
+
+\begin{DoxyCompactList}\small\item\em Sets an identifier. \item\end{DoxyCompactList}\item 
+void {\bf setConstant} (const double constant)\label{classCALICE_1_1LinearFitConstant_a3b016378df601216e55545308334e1d8}
+
+\begin{DoxyCompactList}\small\item\em Sets the constant. \item\end{DoxyCompactList}\item 
+void {\bf setConstantError} (double constantError)\label{classCALICE_1_1LinearFitConstant_aa096484667f26f82589cc0745310564d}
+
+\begin{DoxyCompactList}\small\item\em Sets the error of the constant. \item\end{DoxyCompactList}\item 
+void {\bf setConstantReferencePoint} (const double constantReferencePoint)\label{classCALICE_1_1LinearFitConstant_aad5420fa51f86f5fc8a038b97794289b}
+
+\begin{DoxyCompactList}\small\item\em Sets the reference point of the constant. \item\end{DoxyCompactList}\item 
+void {\bf setConstantReferencePointError} (double constantReferencePointError)\label{classCALICE_1_1LinearFitConstant_a7ed2758698bd0da83348812817c4395a}
+
+\begin{DoxyCompactList}\small\item\em Sets the error of the reference point of the constant. \item\end{DoxyCompactList}\item 
+void {\bf setSlope} (double lfs)
+\begin{DoxyCompactList}\small\item\em Sets a corresponding slope. \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const 
+\begin{DoxyCompactList}\small\item\em Get the type name. \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const 
+\begin{DoxyCompactList}\small\item\em Get the data description. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries \_\-linearFitSlopeAvailable}\label{classCALICE_1_1LinearFitConstant_a9e340a4dfbc49f5664a348ea97bf7c5a}
+
+\item 
+double {\bfseries \_\-linearFitSlope}\label{classCALICE_1_1LinearFitConstant_aa335a19743f509655fe5bf8a00563a82}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to store the constant of a linear fit within the lcio framework. \begin{DoxyAuthor}{Author}
+Sebastian Schmitt ({\tt sebastian.richter@desy.de}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+16 February 2009 
+\end{DoxyDate}
+
+
+Definition at line 32 of file LinearFitConstant.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::LinearFitConstant@{CALICE::LinearFitConstant}!eval@{eval}}
+\index{eval@{eval}!CALICE::LinearFitConstant@{CALICE::LinearFitConstant}}
+\subsubsection[{eval}]{\setlength{\rightskip}{0pt plus 5cm}double CALICE::LinearFitConstant::eval (double {\em x})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1LinearFitConstant_a24c9412dcfa0de7b06a4083610afb68f}
+
+
+In the case of a given corresponding slope this functions evaluates the linear fit at the given point. 
+\begin{DoxyParams}{Parameters}
+\item[{\em x}]-\/ the point at which the fit is evaluated \end{DoxyParams}
+
+
+Definition at line 72 of file LinearFitConstant.hh.
+
+References getConstant(), and getConstantReferencePoint().\index{CALICE::LinearFitConstant@{CALICE::LinearFitConstant}!getDataDescription@{getDataDescription}}
+\index{getDataDescription@{getDataDescription}!CALICE::LinearFitConstant@{CALICE::LinearFitConstant}}
+\subsubsection[{getDataDescription}]{\setlength{\rightskip}{0pt plus 5cm}const std::string CALICE::LinearFitConstant::getDataDescription () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1LinearFitConstant_ae2b2c8efbda731c2968ecc5ca4da5772}
+
+
+Get the data description. The data description gives the meaning of the data fields. 
+
+Definition at line 209 of file LinearFitConstant.hh.\index{CALICE::LinearFitConstant@{CALICE::LinearFitConstant}!getTypeName@{getTypeName}}
+\index{getTypeName@{getTypeName}!CALICE::LinearFitConstant@{CALICE::LinearFitConstant}}
+\subsubsection[{getTypeName}]{\setlength{\rightskip}{0pt plus 5cm}const std::string CALICE::LinearFitConstant::getTypeName () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1LinearFitConstant_a1929abfb9351d5273fed48ab3609c1c8}
+
+
+Get the type name. The type name is used to determine which class interprets the LCGenericObject which holds the pure data. 
+
+Definition at line 200 of file LinearFitConstant.hh.\index{CALICE::LinearFitConstant@{CALICE::LinearFitConstant}!setSlope@{setSlope}}
+\index{setSlope@{setSlope}!CALICE::LinearFitConstant@{CALICE::LinearFitConstant}}
+\subsubsection[{setSlope}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::LinearFitConstant::setSlope (double {\em lfs})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1LinearFitConstant_ad2b647ad849fd025df318e9722d3673d}
+
+
+Sets a corresponding slope. It is \_\-bad\_\- design to have this function here. But I really want to avoid another wrapping function combining the constant and the slope. So, sorry! 
+
+Definition at line 187 of file LinearFitConstant.hh.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+LinearFitConstant.hh\end{DoxyCompactItemize}

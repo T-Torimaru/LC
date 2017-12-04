@@ -1,0 +1,358 @@
+\section{CALICE::SiPmPropertiesProcessor Class Reference}
+\label{classCALICE_1_1SiPmPropertiesProcessor}\index{CALICE::SiPmPropertiesProcessor@{CALICE::SiPmPropertiesProcessor}}
+Inheritance diagram for CALICE::SiPmPropertiesProcessor::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCALICE_1_1SiPmPropertiesProcessor}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf SiPmPropertiesProcessor} $\ast$ {\bfseries newProcessor} ()\label{classCALICE_1_1SiPmPropertiesProcessor_afd454eeb6fff1290816bf47ea42f898c}
+
+\item 
+{\bfseries SiPmPropertiesProcessor} (const std::string processorName=\char`\"{}SiPmPropertiesProcessor\char`\"{})\label{classCALICE_1_1SiPmPropertiesProcessor_a044da56a6b19162530ec61e971cfb3aa}
+
+\item 
+void {\bfseries init} ()\label{classCALICE_1_1SiPmPropertiesProcessor_a18867a127570598ad26694719ab3c771}
+
+\item 
+void {\bfseries processEvent} (LCEvent $\ast$evtP)\label{classCALICE_1_1SiPmPropertiesProcessor_aee931cd7fc7aae6d8cac48383ccf7ddb}
+
+\item 
+void {\bfseries processRunHeader} (LCRunHeader $\ast$run)\label{classCALICE_1_1SiPmPropertiesProcessor_aecd18f72518fdf995c5b4f4999f9cc0f}
+
+\item 
+bool {\bfseries empty} () const \label{classCALICE_1_1SiPmPropertiesProcessor_a96c5115d41b6e12ac39c9cd0a26f09f7}
+
+\item 
+float {\bfseries getSipmVoltage} (const unsigned sipm) const \label{classCALICE_1_1SiPmPropertiesProcessor_a2307382303dd5bb2c08d3295990a4f60}
+
+\item 
+float {\bfseries getSipmVoltage} (const unsigned module, const unsigned chip, const unsigned chan) const \label{classCALICE_1_1SiPmPropertiesProcessor_a1de2cff608caca6853e6dd49548cc850}
+
+\item 
+float {\bfseries getSipmVoltageBreakdown} (const unsigned sipm) const \label{classCALICE_1_1SiPmPropertiesProcessor_a8a39af189b46542e8d1856c57c5d188c}
+
+\item 
+float {\bfseries getSipmVoltageBreakdown} (const unsigned module, const unsigned chip, const unsigned chan) const \label{classCALICE_1_1SiPmPropertiesProcessor_a14383cb4e8ea51d094b7fa26da0ff285}
+
+\item 
+float {\bfseries getDelta\_\-SPE} (const unsigned sipm) const \label{classCALICE_1_1SiPmPropertiesProcessor_abfdc56fb42ad7b8bf6e03214bb0b8469}
+
+\item 
+float {\bfseries getDelta\_\-SPE} (const unsigned module, const unsigned chip, const unsigned chan) const \label{classCALICE_1_1SiPmPropertiesProcessor_a021746c535440dd242e6b20905de0a1c}
+
+\item 
+float {\bfseries getPhe\_\-MIP} (const unsigned sipm) const \label{classCALICE_1_1SiPmPropertiesProcessor_a64772de1f9b49b8ed47fda7d6cc57333}
+
+\item 
+float {\bfseries getPhe\_\-MIP} (const unsigned module, const unsigned chip, const unsigned chan) const \label{classCALICE_1_1SiPmPropertiesProcessor_a9db41320e1716882cb33723aa551e836}
+
+\item 
+float {\bfseries getTemp} (const unsigned sipm) const \label{classCALICE_1_1SiPmPropertiesProcessor_a91d70d19cf8b218cc0517f334cc07854}
+
+\item 
+float {\bfseries getTemp} (const unsigned module, const unsigned chip, const unsigned chan) const \label{classCALICE_1_1SiPmPropertiesProcessor_ad13cd4fa8844c174a70d053ecff3cad1}
+
+\item 
+float {\bfseries getCurrent} (const unsigned sipm) const \label{classCALICE_1_1SiPmPropertiesProcessor_a788712be73ed68655e86fd3daed1ec45}
+
+\item 
+float {\bfseries getCurrent} (const unsigned module, const unsigned chip, const unsigned chan) const \label{classCALICE_1_1SiPmPropertiesProcessor_ae87066c5331155c15148adc1098afe31}
+
+\item 
+float {\bfseries getCurrentRMS} (const unsigned sipm) const \label{classCALICE_1_1SiPmPropertiesProcessor_adcf12d0d6c7817e2f6a606788149695e}
+
+\item 
+float {\bfseries getCurrentRMS} (const unsigned module, const unsigned chip, const unsigned chan) const \label{classCALICE_1_1SiPmPropertiesProcessor_ac5701f48c8621fe51e9456f54b7586dc}
+
+\item 
+float {\bfseries getDarkRate0} (const unsigned sipm) const \label{classCALICE_1_1SiPmPropertiesProcessor_a83b705eca630fe53acc7e9ccd46f046a}
+
+\item 
+float {\bfseries getDarkRate0} (const unsigned module, const unsigned chip, const unsigned chan) const \label{classCALICE_1_1SiPmPropertiesProcessor_a8dda757457c5f5f7be9cbe82a31c611e}
+
+\item 
+float {\bfseries getDarkRateHalf} (const unsigned sipm) const \label{classCALICE_1_1SiPmPropertiesProcessor_af67aa9d6cd8306769a804d329092e997}
+
+\item 
+float {\bfseries getDarkRateHalf} (const unsigned module, const unsigned chip, const unsigned chan) const \label{classCALICE_1_1SiPmPropertiesProcessor_a51b2b403c16e111b0074849370609d4d}
+
+\item 
+float {\bfseries getDarkRateHalfCorr} (const unsigned sipm) const \label{classCALICE_1_1SiPmPropertiesProcessor_ac01a00304f1671020af7089dd869a63c}
+
+\item 
+float {\bfseries getDarkRateHalfCorr} (const unsigned module, const unsigned chip, const unsigned chan) const \label{classCALICE_1_1SiPmPropertiesProcessor_afeb80918c3af62a8ea86bd10afb28164}
+
+\item 
+float {\bfseries getPedRMS} (const unsigned sipm) const \label{classCALICE_1_1SiPmPropertiesProcessor_a10069f2e761eeab5b2f8a5b46de4a7c1}
+
+\item 
+float {\bfseries getPedRMS} (const unsigned module, const unsigned chip, const unsigned chan) const \label{classCALICE_1_1SiPmPropertiesProcessor_abd317d4bf9019e63864b41945a08c5b4}
+
+\item 
+float {\bfseries getPeakWidth} (const unsigned sipm) const \label{classCALICE_1_1SiPmPropertiesProcessor_a122927747aaaf7962f73950415e69be2}
+
+\item 
+float {\bfseries getPeakWidth} (const unsigned module, const unsigned chip, const unsigned chan) const \label{classCALICE_1_1SiPmPropertiesProcessor_a821960e9dea7268b585c04af86278729}
+
+\item 
+float {\bfseries getXTalk} (const unsigned sipm) const \label{classCALICE_1_1SiPmPropertiesProcessor_a49ccb27604b3989489866b70385a9c38}
+
+\item 
+float {\bfseries getXTalk} (const unsigned module, const unsigned chip, const unsigned chan) const \label{classCALICE_1_1SiPmPropertiesProcessor_a9a89b6008d0d60bb0b60b6b9d266d236}
+
+\item 
+unsigned {\bfseries getSatPointNr} (const unsigned sipm) const \label{classCALICE_1_1SiPmPropertiesProcessor_ad68505357900fde5b0581d213c2e0857}
+
+\item 
+unsigned {\bfseries getSatPointNr} (const unsigned module, const unsigned chip, const unsigned chan) const \label{classCALICE_1_1SiPmPropertiesProcessor_aa172924dd56f0c70743c851756e32d74}
+
+\item 
+float {\bfseries getSipmPixelSat} (const unsigned sipm, const unsigned point) const \label{classCALICE_1_1SiPmPropertiesProcessor_a1ecb6b6213167728a638f44e2bab3e30}
+
+\item 
+float {\bfseries getSipmPixelSat} (const unsigned module, const unsigned chip, const unsigned chan, const unsigned point) const \label{classCALICE_1_1SiPmPropertiesProcessor_a0dcb61b92932aa21ad7d7543fdb00bd8}
+
+\item 
+float {\bfseries getPmtMipSat} (const unsigned sipm, const unsigned point) const \label{classCALICE_1_1SiPmPropertiesProcessor_abb586ffb2881f2ff95cd2db60b724de7}
+
+\item 
+float {\bfseries getPmtMipSat} (const unsigned module, const unsigned chip, const unsigned chan, const unsigned point) const \label{classCALICE_1_1SiPmPropertiesProcessor_ae144f3314db5a24a359bd0e2f6823a37}
+
+\item 
+float {\bfseries getSiPmSaturationCorrection} (const unsigned module, const unsigned chip, const unsigned chan, const float pixel) const \label{classCALICE_1_1SiPmPropertiesProcessor_afd545661631706206e67218f3ef898eb}
+
+\item 
+float {\bfseries getSiPmSaturationCorrection} (const unsigned module, const unsigned cell, const float pixel) const \label{classCALICE_1_1SiPmPropertiesProcessor_a8358f97372e0e5d63d95393497420f7f}
+
+\item 
+float {\bfseries getInverseSiPmSaturationCorrection} (const unsigned module, const unsigned chip, const unsigned chan, const float pixel) const \label{classCALICE_1_1SiPmPropertiesProcessor_a13dd5628d87e88900168bd676c2426e9}
+
+\item 
+float {\bfseries getInverseSiPmSaturationCorrection} (const unsigned module, const unsigned cell, const float pixel) const \label{classCALICE_1_1SiPmPropertiesProcessor_a93644c4c6c78e16498362b7fdde0ddfa}
+
+\item 
+unsigned {\bfseries getSipmID} (const unsigned module, const unsigned chip, const unsigned chan) const \label{classCALICE_1_1SiPmPropertiesProcessor_a97b7fa11542d26267b5cd2cc5c0e6a1f}
+
+\item 
+unsigned {\bfseries getTileSize} (const unsigned module, const unsigned chip, const unsigned chan) const \label{classCALICE_1_1SiPmPropertiesProcessor_a6b1b49d43a6efbf729f512b863b209fc}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries SipmInfoChanged} (lcio::LCCollection $\ast$col)\label{classCALICE_1_1SiPmPropertiesProcessor_a04285d3e49408159a442ee2d18a055b8}
+
+\item 
+virtual void {\bfseries SipmSaturationChanged} (lcio::LCCollection $\ast$col)\label{classCALICE_1_1SiPmPropertiesProcessor_a1f624cf4c071d6b43ec3947bec494d6e}
+
+\item 
+virtual void {\bfseries ModuleProductionChanged} (lcio::LCCollection $\ast$col)\label{classCALICE_1_1SiPmPropertiesProcessor_ac5eaa7848cada4dc39deb90cb222146d}
+
+\item 
+virtual void {\bfseries pixelScaleFactorsChanged} (lcio::LCCollection $\ast$col)\label{classCALICE_1_1SiPmPropertiesProcessor_a932baad6aff178854e72621ccfa03110}
+
+\item 
+virtual void {\bfseries defaultPixelScaleFactorsChanged} (lcio::LCCollection $\ast$col)\label{classCALICE_1_1SiPmPropertiesProcessor_a51b045d2ee4749ce79000a6204653263}
+
+\item 
+virtual void {\bfseries UpdateVectors} ()\label{classCALICE_1_1SiPmPropertiesProcessor_aba0a07bc0dbb840965bf3a18f6b0defa}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bfseries \_\-SiPmInfoColName}\label{classCALICE_1_1SiPmPropertiesProcessor_acb6749fb1dcb670ca6206a0fc5478196}
+
+\item 
+std::string {\bfseries \_\-SiPmSaturationColName}\label{classCALICE_1_1SiPmPropertiesProcessor_a66c56f04af769b028268647ddeffe705}
+
+\item 
+std::string {\bfseries \_\-ModuleProductionColName}\label{classCALICE_1_1SiPmPropertiesProcessor_a46c6cf33232fba705301d00d02088adc}
+
+\item 
+std::string {\bfseries \_\-pixelScaleFactorsColName}\label{classCALICE_1_1SiPmPropertiesProcessor_a2ef504d7d9c26e1303b99de4da217a41}
+
+\item 
+std::string {\bfseries \_\-defaultPixelScaleFactorsColName}\label{classCALICE_1_1SiPmPropertiesProcessor_a19a7832e60bdff54a927cbbc53b1cca4}
+
+\item 
+int {\bfseries \_\-assumeIncrease}\label{classCALICE_1_1SiPmPropertiesProcessor_a506a0e660344a9b36912b6eae69b6f94}
+
+\item 
+int {\bfseries \_\-reduceFluctuations}\label{classCALICE_1_1SiPmPropertiesProcessor_ac5cc7412d5336f3f2e911b2aaf212649}
+
+\item 
+float {\bfseries \_\-defaultPixelScaleFactor}\label{classCALICE_1_1SiPmPropertiesProcessor_a90bcbbe027b24839e1968c9b84a555af}
+
+\item 
+float {\bfseries \_\-additionalOverallPixelScaleFactor}\label{classCALICE_1_1SiPmPropertiesProcessor_afad2b42ffbb0391e63a263686e6f5f94}
+
+\item 
+bool {\bfseries \_\-defaultPixelScaleFactorsEmpty}\label{classCALICE_1_1SiPmPropertiesProcessor_aad80ef59255bbbacf9d31637d642b045}
+
+\item 
+lccd::ConditionsMap$<$ int, CALICE::SimpleValue $>$ {\bfseries \_\-defaultPixelScaleFactorsMap}\label{classCALICE_1_1SiPmPropertiesProcessor_ab881fc07e0db31700f84de9a851d4070}
+
+\item 
+bool {\bfseries \_\-pixelScaleFactorsEmpty}\label{classCALICE_1_1SiPmPropertiesProcessor_ad0f2dd1b49e6ce68019984f64ca5e994}
+
+\item 
+lccd::ConditionsMap$<$ int, CALICE::SimpleValue $>$ {\bfseries \_\-pixelScaleFactorsMap}\label{classCALICE_1_1SiPmPropertiesProcessor_a00f1e01ad1c585c5fa33ff048ad3e17a}
+
+\item 
+ConditionsChangeDelegator$<$ {\bf SiPmPropertiesProcessor} $>$ {\bfseries \_\-SiPmInfoChange}\label{classCALICE_1_1SiPmPropertiesProcessor_abfa2958127c2f592a9cf1861bf6f8b8a}
+
+\item 
+ConditionsChangeDelegator$<$ {\bf SiPmPropertiesProcessor} $>$ {\bfseries \_\-SiPmSaturationChange}\label{classCALICE_1_1SiPmPropertiesProcessor_afffde1d70dd6fc1d52b50f12c13de3ef}
+
+\item 
+ConditionsChangeDelegator$<$ {\bf SiPmPropertiesProcessor} $>$ {\bfseries \_\-ModuleProductionChange}\label{classCALICE_1_1SiPmPropertiesProcessor_a0d2cbe6dab804d78d8eb27a8f3af787f}
+
+\item 
+ConditionsChangeDelegator$<$ {\bf SiPmPropertiesProcessor} $>$ {\bfseries \_\-pixelScaleFactorsChange}\label{classCALICE_1_1SiPmPropertiesProcessor_a11a48bdf9a5840d090ef9047b03fcfd4}
+
+\item 
+ConditionsChangeDelegator$<$ {\bf SiPmPropertiesProcessor} $>$ {\bfseries \_\-defaultPixelScaleFactorsChange}\label{classCALICE_1_1SiPmPropertiesProcessor_ace4d68c1d75ec060bc60a8ba69014dc1}
+
+\item 
+bool {\bfseries \_\-SiPmInfoEmpty}\label{classCALICE_1_1SiPmPropertiesProcessor_adba4eeb5243a0fd5198ab9ffb0979998}
+
+\item 
+bool {\bfseries \_\-SiPmSaturationEmpty}\label{classCALICE_1_1SiPmPropertiesProcessor_acb305e30ef61ea06ee84d4188d51aeaf}
+
+\item 
+bool {\bfseries \_\-ModuleProductionEmpty}\label{classCALICE_1_1SiPmPropertiesProcessor_a24b9c0152d25707562bca6f25335cbfe}
+
+\item 
+std::map$<$ unsigned int, float $>$ {\bfseries \_\-SIPMID\_\-to\_\-scaleFactor}\label{classCALICE_1_1SiPmPropertiesProcessor_ab54d5d21a513778cf3e3f4553f5be538}
+
+\item 
+std::map$<$ unsigned, float $>$ {\bfseries \_\-SipmVoltageMap}\label{classCALICE_1_1SiPmPropertiesProcessor_a63365171f3bf33d2134b1897875cba83}
+
+\item 
+std::map$<$ unsigned, float $>$ {\bfseries \_\-SipmVoltageBreakdownMap}\label{classCALICE_1_1SiPmPropertiesProcessor_abebd280f89c688a481b501a4510c435b}
+
+\item 
+std::map$<$ unsigned, float $>$ {\bfseries \_\-Delta\_\-SPEMap}\label{classCALICE_1_1SiPmPropertiesProcessor_a2b53b09013432289bbf15a422b10b599}
+
+\item 
+std::map$<$ unsigned, float $>$ {\bfseries \_\-Phe\_\-MIPMap}\label{classCALICE_1_1SiPmPropertiesProcessor_a587b49d56165a88a3938f7fd26b82110}
+
+\item 
+std::map$<$ unsigned, float $>$ {\bfseries \_\-TempMap}\label{classCALICE_1_1SiPmPropertiesProcessor_af04cc739127d761f2b1ae305b574cdb3}
+
+\item 
+std::map$<$ unsigned, float $>$ {\bfseries \_\-CurrentMap}\label{classCALICE_1_1SiPmPropertiesProcessor_a3481e547f6872a3b8c61f81f79dd2a57}
+
+\item 
+std::map$<$ unsigned, float $>$ {\bfseries \_\-CurrentRMSMap}\label{classCALICE_1_1SiPmPropertiesProcessor_a6650a16201f45447c8f0e1187747ab6a}
+
+\item 
+std::map$<$ unsigned, float $>$ {\bfseries \_\-DarkRate0Map}\label{classCALICE_1_1SiPmPropertiesProcessor_a6cb7ed611c785639effe2b6d776fde93}
+
+\item 
+std::map$<$ unsigned, float $>$ {\bfseries \_\-DarkRateHalfMap}\label{classCALICE_1_1SiPmPropertiesProcessor_ad8580b0ff0a779571753ae4e7312bad5}
+
+\item 
+std::map$<$ unsigned, float $>$ {\bfseries \_\-DarkRateHalfCorrMap}\label{classCALICE_1_1SiPmPropertiesProcessor_a87fcb0172fd11803f6df6d98d4263481}
+
+\item 
+std::map$<$ unsigned, float $>$ {\bfseries \_\-PedRMSMap}\label{classCALICE_1_1SiPmPropertiesProcessor_a6a9b968b7530a1395cce90166158ffdb}
+
+\item 
+std::map$<$ unsigned, float $>$ {\bfseries \_\-PeakWidthMap}\label{classCALICE_1_1SiPmPropertiesProcessor_aa7a3db0ca5b0c1814fdc1dfdc8a4b69f}
+
+\item 
+std::map$<$ unsigned, float $>$ {\bfseries \_\-XTalkMap}\label{classCALICE_1_1SiPmPropertiesProcessor_a38d20696ef1e2cb20b0bf86f2351b0d8}
+
+\item 
+std::vector$<$ float $>$ {\bfseries \_\-SipmVoltageVector}\label{classCALICE_1_1SiPmPropertiesProcessor_ac8b3a5950031ca74ab882c224042e451}
+
+\item 
+std::vector$<$ float $>$ {\bfseries \_\-SipmVoltageBreakdownVector}\label{classCALICE_1_1SiPmPropertiesProcessor_a633aa5eb479e59866e21f038d1428dad}
+
+\item 
+std::vector$<$ float $>$ {\bfseries \_\-Delta\_\-SPEVector}\label{classCALICE_1_1SiPmPropertiesProcessor_a59e24efe83279c1ad2d35f4a0ff47978}
+
+\item 
+std::vector$<$ float $>$ {\bfseries \_\-Phe\_\-MIPVector}\label{classCALICE_1_1SiPmPropertiesProcessor_a8735696ed23d99a31fe78b9458ca6ea4}
+
+\item 
+std::vector$<$ float $>$ {\bfseries \_\-TempVector}\label{classCALICE_1_1SiPmPropertiesProcessor_a062963e5878e6510f5e05ed477f0d7b5}
+
+\item 
+std::vector$<$ float $>$ {\bfseries \_\-CurrentVector}\label{classCALICE_1_1SiPmPropertiesProcessor_ac4b06cb71b779bc05186055e15e4d76b}
+
+\item 
+std::vector$<$ float $>$ {\bfseries \_\-CurrentRMSVector}\label{classCALICE_1_1SiPmPropertiesProcessor_a048c286afd43ffe74a8a00f17ab1052b}
+
+\item 
+std::vector$<$ float $>$ {\bfseries \_\-DarkRate0Vector}\label{classCALICE_1_1SiPmPropertiesProcessor_a9f1349bd2083fc0c83a637e3fec5cbe9}
+
+\item 
+std::vector$<$ float $>$ {\bfseries \_\-DarkRateHalfVector}\label{classCALICE_1_1SiPmPropertiesProcessor_a4e424b5ebbb1f20d053d3865be63f53e}
+
+\item 
+std::vector$<$ float $>$ {\bfseries \_\-DarkRateHalfCorrVector}\label{classCALICE_1_1SiPmPropertiesProcessor_a6111cc7e9b04e0855f48b4ec5b758190}
+
+\item 
+std::vector$<$ float $>$ {\bfseries \_\-PedRMSVector}\label{classCALICE_1_1SiPmPropertiesProcessor_abc8201a9b8ebbfd0943863c3ea44d988}
+
+\item 
+std::vector$<$ float $>$ {\bfseries \_\-PeakWidthVector}\label{classCALICE_1_1SiPmPropertiesProcessor_ac51ad1f3b42c8d4e6ed22a578cab93e1}
+
+\item 
+std::vector$<$ float $>$ {\bfseries \_\-XTalkVector}\label{classCALICE_1_1SiPmPropertiesProcessor_aaed7eb60832cf27397c07d29f02b3655}
+
+\item 
+std::map$<$ unsigned, float $>$ {\bfseries \_\-SipmPixelSatMap} [SATPOINTS]\label{classCALICE_1_1SiPmPropertiesProcessor_aac2e9c79a36b6b8a2142f90a43d49ac0}
+
+\item 
+std::map$<$ unsigned, float $>$ {\bfseries \_\-PmtMipSatMap} [SATPOINTS]\label{classCALICE_1_1SiPmPropertiesProcessor_af66eeb8207a9f06138ebdd3691ca87b3}
+
+\item 
+std::vector$<$ float $>$ {\bfseries \_\-SipmPixelSatVector} [SATPOINTS]\label{classCALICE_1_1SiPmPropertiesProcessor_a7ffbe1262a0e69b16409c0a0b6f6d7dc}
+
+\item 
+std::vector$<$ float $>$ {\bfseries \_\-PmtMipSatVector} [SATPOINTS]\label{classCALICE_1_1SiPmPropertiesProcessor_ab16b4671505857cddbd7bed4e0976677}
+
+\item 
+std::vector$<$ float $>$ {\bfseries \_\-InterpolationA} [SATPOINTS]\label{classCALICE_1_1SiPmPropertiesProcessor_acba8a855860b9dcf60e7d2af825f6ffb}
+
+\item 
+std::vector$<$ float $>$ {\bfseries \_\-InterpolationB} [SATPOINTS]\label{classCALICE_1_1SiPmPropertiesProcessor_a6140eb844de35c9d12005f07ca703bf2}
+
+\item 
+std::map$<$ unsigned, unsigned $>$ {\bfseries \_\-SIPMMap}\label{classCALICE_1_1SiPmPropertiesProcessor_a74ce5786f56b407136f1296c52186217}
+
+\item 
+std::map$<$ unsigned, unsigned $>$ {\bfseries \_\-TileSizeMap}\label{classCALICE_1_1SiPmPropertiesProcessor_a2809f9f20605f6b9e45413fdd366acc8}
+
+\item 
+std::vector$<$ unsigned $>$ {\bfseries \_\-SIPMVector}\label{classCALICE_1_1SiPmPropertiesProcessor_a4b3c0339d341c2644acd956c3c94ae30}
+
+\item 
+std::vector$<$ unsigned $>$ {\bfseries \_\-TileSizeVector}\label{classCALICE_1_1SiPmPropertiesProcessor_ae794aaa1cbba31e6b41928f2c39c2110}
+
+\item 
+std::vector$<$ TGraph $\ast$ $>$ {\bfseries \_\-corGraphVector}\label{classCALICE_1_1SiPmPropertiesProcessor_a05341072000f27ed32a970efa463dfaf}
+
+\item 
+std::vector$<$ TGraph $\ast$ $>$ {\bfseries \_\-satGraphVector}\label{classCALICE_1_1SiPmPropertiesProcessor_ac6fda8c85d1d6883fa424c7d19c26b1c}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 28 of file SiPmPropertiesProcessor.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+SiPmPropertiesProcessor.hh\item 
+SiPmPropertiesProcessor.cc\end{DoxyCompactItemize}

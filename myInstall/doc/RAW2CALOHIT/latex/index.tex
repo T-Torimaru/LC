@@ -1,0 +1,37 @@
+This package contains the source files for the reconstruction\par
+ of the hits in the calice calorimeters and of the tracks in the drift chamber (if present). At the end it delivers\par
+ pedestal subtracted and calibrated LCIOCalorimeterHits with a geometrical mapping.\par
+
+
+Dependencies on other packages: \par
+
+
+lcio v01-\/08 (or higher, {\bfseries not} compatible with older versions, v01-\/08-\/02 was used for release)\par
+ marlin v00-\/09-\/03 (or higher, v00-\/09-\/07 was used for release)\par
+ lccd v00-\/03-\/00 (or higher, v00-\/03-\/05 recommended )\par
+ CondbMySql CondDBMySQL\_\-ILC-\/0-\/5-\/10 (available in calice cvs repository)\par
+ calice userlib v04-\/10 (or higher) \par
+ root package 5.12.00e or higher \par
+ Links to older releases:\par
+ {\tt v03-\/01} \par
+ {\tt v04-\/00-\/07} \par
+ {\tt v04-\/02} \par
+ {\tt v04-\/02-\/01} \par
+ {\tt v04-\/03-\/pre2} \par
+ {\tt v04-\/03-\/pre3} \par
+ {\tt v04-\/03-\/pre4} \par
+ {\tt v04-\/03} \par
+ {\tt v04-\/04} \par
+ {\tt v04-\/05} \par
+  Changes w.r.t v04-\/05 \par
+
+\begin{DoxyItemize}
+\item CalibrateAndApplyThreshold, fastMappingIIProcessor, TcmtMappingIIProcessor: Cell decoding added to output collection.\par
+
+\item TBTrack -\/ Minor bug fixes.\par
+
+\item RunInfoProcessor -\/ Incomplete or missing beam parameters are handled by using the BeamParameterException db table.\par
+  Changes implemented 12/5/11 (and earlier) 
+\item DhcRawHitProcessor: New (still primitive) class for dhc data, processes hits and DhcReadoutConfigurationData. \par
+ 
+\end{DoxyItemize}

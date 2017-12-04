@@ -1,0 +1,89 @@
+\section{CALICE::LCGenericObjectImplExt Class Reference}
+\label{classCALICE_1_1LCGenericObjectImplExt}\index{CALICE::LCGenericObjectImplExt@{CALICE::LCGenericObjectImplExt}}
+
+
+Extends functionality of the LCGenericObjectImpl Class It simply adds a new constructor to the LCGenericObject Class such that we can construct an interface class around without being restricted by the LCFixedObject It uses an instance of LCGenericObjectImpl that holds the data, thus there is no overhead when the data is read from a database or file for copying it to some local structure (Decorator pattern).  
+
+
+{\ttfamily \#include $<$LCGenericObjectImplExt.hh$>$}Inheritance diagram for CALICE::LCGenericObjectImplExt::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12cm]{classCALICE_1_1LCGenericObjectImplExt}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf LCGenericObjectImplExt} ()\label{classCALICE_1_1LCGenericObjectImplExt_aa3a6bb969c7cc736d88587960b663cba}
+
+\begin{DoxyCompactList}\small\item\em Default c'tor. \item\end{DoxyCompactList}\item 
+{\bfseries LCGenericObjectImplExt} (LCObject $\ast$obj)\label{classCALICE_1_1LCGenericObjectImplExt_a5e58ebbd98f49efeee560fd6bda8aae4}
+
+\item 
+LCGenericObjectImpl $\ast$ {\bf obj} ()
+\begin{DoxyCompactList}\small\item\em The LCGenericObjectImpl . \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$LCGenericObjectImplExt} ()\label{classCALICE_1_1LCGenericObjectImplExt_a6326844158718441a0e984402e9c2f8b}
+
+\begin{DoxyCompactList}\small\item\em Clean up if we created a new LCGenericObjectImpl. \item\end{DoxyCompactList}\item 
+virtual int {\bf id} ()\label{classCALICE_1_1LCGenericObjectImplExt_a13e336bf7a902820651dadb79271cd37}
+
+\begin{DoxyCompactList}\small\item\em Return the id of the underlying LCGenericObjectImpl. \item\end{DoxyCompactList}\item 
+int {\bfseries getNInt} () const \label{classCALICE_1_1LCGenericObjectImplExt_aee1c6e2485d45b6dcba643210f840224}
+
+\item 
+int {\bfseries getNFloat} () const \label{classCALICE_1_1LCGenericObjectImplExt_a09d41f70b6a4894b0f79806c32ead2b3}
+
+\item 
+int {\bfseries getNDouble} () const \label{classCALICE_1_1LCGenericObjectImplExt_aa8503a0fc8e66c4e0e374e32bb594231}
+
+\item 
+int {\bfseries getIntVal} (int index) const \label{classCALICE_1_1LCGenericObjectImplExt_a57a61745bb48cd3917ddf1ba37f8a3e0}
+
+\item 
+float {\bfseries getFloatVal} (int index) const \label{classCALICE_1_1LCGenericObjectImplExt_adda599738de7681f6c0d1b2aa3b09f79}
+
+\item 
+double {\bfseries getDoubleVal} (int index) const \label{classCALICE_1_1LCGenericObjectImplExt_ae10468f12c1a49ce00fceeb3f6664cbe}
+
+\item 
+bool {\bfseries isFixedSize} () const \label{classCALICE_1_1LCGenericObjectImplExt_ae546a36a343a9376e818e0b2d9a96e4d}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+LCGenericObjectImpl $\ast$ {\bfseries \_\-obj}\label{classCALICE_1_1LCGenericObjectImplExt_a29179cf5508768d2cdbc9e2e6997bfdf}
+
+\item 
+bool {\bfseries \_\-createdObject}\label{classCALICE_1_1LCGenericObjectImplExt_a65c76ade794ece6642ce4a6fc0ed1a8f}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Extends functionality of the LCGenericObjectImpl Class It simply adds a new constructor to the LCGenericObject Class such that we can construct an interface class around without being restricted by the LCFixedObject It uses an instance of LCGenericObjectImpl that holds the data, thus there is no overhead when the data is read from a database or file for copying it to some local structure (Decorator pattern). \par
+ This is still an abstract class: subclasses have to implement LCGenericObj ect::getTypeName() and LCGenericObject::getDataDescription(). It is basically a copy of the lcio::UTIL::LCFixedObject class I don't know whether this is the best solution, maybe it is better to use later on a real extension of the LCGenericObjectImpl \begin{DoxyAuthor}{Author}
+Roman Poeschl, LAL Orsay 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Feb. 2006 
+\end{DoxyDate}
+
+
+Definition at line 30 of file LCGenericObjectImplExt.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::LCGenericObjectImplExt@{CALICE::LCGenericObjectImplExt}!obj@{obj}}
+\index{obj@{obj}!CALICE::LCGenericObjectImplExt@{CALICE::LCGenericObjectImplExt}}
+\subsubsection[{obj}]{\setlength{\rightskip}{0pt plus 5cm}LCGenericObjectImpl$\ast$ CALICE::LCGenericObjectImplExt::obj ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1LCGenericObjectImplExt_a7a6258e61fee4d6c67481e9e58a6062d}
+
+
+The LCGenericObjectImpl . Sublcasses use this to access their data. 
+
+Definition at line 74 of file LCGenericObjectImplExt.hh.
+
+Referenced by CALICE::AcquisitionData::AcquisitionData(), CALICE::BmlEventData::addTDCChannels(), CALICE::AhcVfeConfigurationBlock::AhcVfeConfigurationBlock(), CALICE::BeTrgConf::BeTrgConf(), CALICE::BeTrgPollData::BeTrgPollData(), CALICE::FeConfigurationBlock::clearCalibEnable(), CALICE::FeConfigurationBlock::clearHoldInvert(), CALICE::DhcRawChipContent::DhcRawChipContent(), CALICE::DhcReadoutConfBlock::DhcReadoutConfBlock(), CALICE::FeConfigurationBlock::FeConfigurationBlock(), CALICE::DhcReadoutConfBlock::fillMethod(), CALICE::DhcReadoutConfBlock::fillSlotToWordsAssociationMask(), CALICE::DaqTypeDataBlock::finalize(), CALICE::AcquisitionData::getAcquisitionNumberInConfiguration(), CALICE::AcquisitionData::getAcquisitionNumberInRun(), CALICE::AcquisitionData::getActAcquisitionTimeMus(), CALICE::AcquisitionData::getActAcquisitionTimeSec(), CALICE::AcquisitionData::getActEventNumberInAcquisition(), CALICE::BeTrgPollData::getEndTime(), CALICE::EventHeader::getEventNumberInAcquisition(), CALICE::EventHeader::getEventNumberInConfiguration(), CALICE::EventHeader::getEventNumberInRun(), CALICE::AcquisitionData::getMaxAcquisitionTimeMus(), CALICE::AcquisitionData::getMaxAcquisitionTimeSec(), CALICE::AcquisitionData::getMaxEventNumberInAcquisition(), CALICE::BeTrgPollData::getMaximumTimeMus(), CALICE::BeTrgPollData::getMaximumTimeSec(), CALICE::BeTrgPollData::getNumberOfPolls(), CALICE::AhcVfeConfigurationBlock::getShiftRegisterData(), CALICE::BeTrgPollData::getStartTime(), CALICE::ScintCaloSlowReadoutModBlock::getTimeStamp(), CALICE::AhcVfeConfigurationBlock::getVerificationData(), CALICE::BeTrgPollData::isTimeout(), CALICE::DaqTypeDataBlock::RestoreMaps(), CALICE::BmlSlowRunDataBlock::setAbsorberPosition(), CALICE::AcquisitionData::setAcquisitionState(), CALICE::FeConfigurationBlock::setAdcControlBits(), CALICE::FeConfigurationBlock::setAdcDelay(), CALICE::FeConfigurationBlock::setAdcEnd(), CALICE::FeConfigurationBlock::setAdcStart(), CALICE::FeTrgData::setAllFifoWords(), CALICE::BeTrgEvent::setAllFifoWords(), CALICE::BeTrgConf::setAndEnable(), CALICE::BmlEventData::setBaseAddress(), CALICE::BeamParameterException::setBeamEnergy(), CALICE::ReadOutConfigurationBlock::setBecPeriod(), CALICE::ReadOutConfigurationBlock::setBePeriod(), CALICE::ReadOutConfigurationBlock::setBeSoftTrigger(), CALICE::TrgReadoutConfigurationBlock::setBeTrgPollNumber(), CALICE::TrgReadoutConfigurationBlock::setBeTrgPollTime(), CALICE::TrgReadoutConfigurationBlock::setBeTrgSoftSpill(), CALICE::TrgReadoutConfigurationBlock::setBeTrgSoftTrg(), CALICE::TrgReadoutConfigurationBlock::setBeTrgSpillNumber(), CALICE::TrgReadoutConfigurationBlock::setBeTrgSpillTime(), CALICE::TrgReadoutConfigurationBlock::setBeTrgSquirt(), CALICE::TrgReadoutConfigurationBlock::setBeTrgVlink(), CALICE::DhcReadoutConfBlock::setBeWaitInterval(), CALICE::FeConfigurationBlock::setBoardComponentNumber(), CALICE::AhcVfeConfigurationBlock::setBoardComponentNumber(), CALICE::FeTrgData::setBoardID(), CALICE::FeEvent::setBoardID(), CALICE::FeConfigurationBlock::setBoardID(), CALICE::BmlEventData::setBoardID(), CALICE::BeTrgPollData::setBoardID(), CALICE::BeTrgEvent::setBoardID(), CALICE::BeTrgConf::setBoardID(), CALICE::BeEvent::setBoardID(), CALICE::AhcVfeConfigurationBlock::setBoardID(), CALICE::BmlCaen767ReadoutConfigurationBlock::setBools(), CALICE::BmlEventDataSup::setBufferOverflow(), CALICE::BmlEventDataSup::setBunchID(), CALICE::BeTrgConf::setBurstCounter(), CALICE::BeTrgConf::setBurstTimeout(), CALICE::BeTrgConf::setBusyTimeout(), CALICE::BeEvent::setBxCounter(), CALICE::FeConfigurationBlock::setCalibEnable(), CALICE::FeConfigurationBlock::setCalibStart(), CALICE::FeConfigurationBlock::setCalibWidth(), CALICE::EmcStageDataBlock::setCheckSum(), CALICE::TrgReadoutConfigurationBlock::setClearBeTrg(), CALICE::ScintCaloSlowReadoutModBlock::setCmbHeight(), CALICE::ScintCaloSlowReadoutModBlock::setCmbWidth(), CALICE::BeTrgConf::setConfiguration(), CALICE::ReadOutConfigurationBlock::setConfMode(), CALICE::BeTrgEvent::setControl(), CALICE::ReadOutConfigurationBlock::setCrateID(), CALICE::FeConfigurationBlock::setCrateID(), CALICE::AhcVfeConfigurationBlock::setCrateID(), CALICE::DhcRawChipContent::setCrateNumber(), CALICE::BmlCaen767ReadoutConfigurationBlock::setCrateNumber(), CALICE::FeConfigurationBlock::setDacData(), CALICE::ScintCaloSlowReadoutModBlock::setDblArrays(), CALICE::BmlSlowRunDataBlock::setDblArrays(), CALICE::DhcRawChipContent::setDhcTimeStamp(), CALICE::AcquisitionData::setDifInfoPresent(), CALICE::AcquisitionData::setDifTriggerCounter(), CALICE::DhcRawChipContent::setElecChannel(), CALICE::FeConfigurationBlock::setEmcVfeInfo(), CALICE::TrgReadoutConfigurationBlock::setEnable(), CALICE::BeTrgPollData::setEndTime(), CALICE::BmlEventData::setEventDataCounter(), CALICE::BmlEventDataSup::setEventFifoCont(), CALICE::BmlEventDataSup::setEventIDTrailer(), CALICE::BmlEventData::setEventNumber(), CALICE::EventHeader::setEventNumberInAcquisition(), CALICE::EventHeader::setEventNumberInConfiguration(), CALICE::AcquisitionData::setEventNumberInfo(), CALICE::EventHeader::setEventNumberInRun(), CALICE::BeTrgConf::setExtBeamMode(), CALICE::ReadOutConfigurationBlock::setFeBrcSoftTrigger(), CALICE::ReadOutConfigurationBlock::setFePeriod(), CALICE::ReadOutConfigurationBlock::setFeSlotEnable(), CALICE::ReadOutConfigurationBlock::setFeSoftTrigger(), CALICE::BeTrgConf::setFifoIdleDepth(), CALICE::FeTrgData::setFifoWord(), CALICE::BeTrgEvent::setFifoWord(), CALICE::BeTrgEvent::setFinalFifoStatus(), CALICE::FeConfigurationBlock::setFrameSyncDelay(), CALICE::BeTrgConf::setGeneralEnable(), CALICE::BmlEventData::setGeoAddress(), CALICE::EmcStageDataBlock::setHeader(), CALICE::FeTrgData::setHeaderWord(), CALICE::DhcRawChipContent::setHitsHi(), CALICE::DhcRawChipContent::setHitsLo(), CALICE::FeConfigurationBlock::setHoldInvert(), CALICE::FeConfigurationBlock::setHoldStart(), CALICE::BeTrgEvent::setInitialFifoStatus(), CALICE::BeTrgEvent::setInputCatch(), CALICE::BeTrgConf::setInputEnableMask(), CALICE::BeTrgConf::setInputInvert(), CALICE::BeTrgEvent::setInputStatus(), CALICE::BeEvent::setL1aCounter(), CALICE::ScintCaloSlowReadoutModBlock::setLedSetting(), CALICE::DaqTypeDataBlock::setLengthIndexOfDblTypeNames(), CALICE::DaqTypeDataBlock::setLengthIndexOfFloatTypeNames(), CALICE::DaqTypeDataBlock::setLengthIndexOfIntTypeNames(), CALICE::DaqTypeDataBlock::setLengthIndexOfTimeStampNames(), CALICE::BeTrgPollData::setMaximumTime(), CALICE::DhcRawChipContent::setMiscInfo(), CALICE::BmlCaen767ReadoutConfigurationBlock::setMode(), CALICE::ScintCaloSlowReadoutModBlock::setModuleNumber(), CALICE::DaqRunSummaryBlock::setNumberOfAcquisitions(), CALICE::DaqRunSummaryBlock::setNumberOfConfigurations(), CALICE::DaqTypeDataBlock::setNumberOfDblTypes(), CALICE::AcquisitionData::setNumberofDifBufferWords(), CALICE::DaqRunSummaryBlock::setNumberOfEvents(), CALICE::DaqTypeDataBlock::setNumberOfFloatTypes(), CALICE::DaqTypeDataBlock::setNumberOfIntTypes(), CALICE::BeTrgPollData::setNumberOfPolls(), CALICE::BmlEventData::setNumberOfSignalChannels(), CALICE::DhcReadoutConfBlock::setNumberOfSlots(), CALICE::DaqRunSummaryBlock::setNumberOfSlowReadouts(), CALICE::DaqTypeDataBlock::setNumberOfTimeStamps(), CALICE::BmlEventData::setNumberOfWords(), CALICE::DhcReadoutConfBlock::setNumbers(), CALICE::ScintCaloSlowReadoutModBlock::setNumPos(), CALICE::BmlSlowRunDataBlock::setNumPos(), CALICE::BeTrgConf::setOscillationPeriod(), CALICE::BeTrgConf::setOscillatorEnable(), CALICE::DaqTypeDataBlock::setPointerToIndexOfDblTypeNames(), CALICE::DaqTypeDataBlock::setPointerToIndexOfFloatTypeNames(), CALICE::DaqTypeDataBlock::setPointerToIndexOfIntTypeNames(), CALICE::DaqTypeDataBlock::setPointerToIndexOfTimeStampNames(), CALICE::BeTrgEvent::setPreBusyCatch(), CALICE::BeTrgEvent::setPreBusyTriggerCounter(), CALICE::BeTrgConf::setQdrConfiguration(), CALICE::BeEvent::setQdrDataCounter(), CALICE::BeEvent::setQdrFrameCounter(), CALICE::TrgReadoutConfigurationBlock::setReadCounterPeriod(), CALICE::TrgReadoutConfigurationBlock::setReadPeriod(), CALICE::BmlCaen767ReadoutConfigurationBlock::setReadPeriod(), CALICE::FeTrgData::setRecordLabel(), CALICE::FeEvent::setRecordLabel(), CALICE::FeConfigurationBlock::setRecordLabel(), CALICE::BmlEventData::setRecordLabel(), CALICE::BeTrgPollData::setRecordLabel(), CALICE::BeTrgConf::setRecordLabel(), CALICE::BeEvent::setRecordLabel(), CALICE::AhcVfeConfigurationBlock::setRecordLabel(), CALICE::DaqRunSummaryBlock::setRunDuration(), CALICE::RunLocation::setRunLocationParameters(), CALICE::DaqRunSummaryBlock::setRunNumber(), CALICE::BeTrgConf::setSequencerControl(), CALICE::AhcVfeConfigurationBlock::setShiftRegisterData(), CALICE::BeTrgEvent::setSignalCatch(), CALICE::DaqTypeDataBlock::setSizeIndexOfDblType(), CALICE::DaqTypeDataBlock::setSizeIndexOfFloatType(), CALICE::DaqTypeDataBlock::setSizeIndexOfIntType(), CALICE::ReadOutConfigurationBlock::setSlotEnable(), CALICE::DhcReadoutConfBlock::setSlotEnable(), CALICE::DhcReadoutConfBlock::setSlotEnableMask(), CALICE::FeConfigurationBlock::setSlotID(), CALICE::AhcVfeConfigurationBlock::setSlotID(), CALICE::TrgReadoutConfigurationBlock::setSpillInvert(), CALICE::FeEvent::setSpyRegister(), CALICE::BeTrgPollData::setStartTime(), CALICE::BmlEventData::setStatus(), CALICE::BmlEventData::setStatusRegister(), CALICE::BeEvent::setStatusWord(), CALICE::BmlSlowRunDataBlock::setT4Position(), CALICE::BmlSlowRunDataBlock::setTargetPosition(), CALICE::BmlEventDataSup::setTDCErrors(), CALICE::BmlEventDataSup::setTDCType(), CALICE::BmlEventDataSup::setTDCWordCountTrailer(), CALICE::HodoscopeEventDataBlock::setTimeCounter(), CALICE::AcquisitionData::setTimeInformationMuSec(), CALICE::AcquisitionData::setTimeInformationSec(), CALICE::BeTrgPollData::setTimeout(), CALICE::ScintCaloSlowReadoutModBlock::setTimeStamp(), CALICE::BmlSlowRunDataBlock::setTimeStamp(), CALICE::BeEvent::setTotalFrameCounter(), CALICE::FeTrgData::setTrailerWord(), CALICE::FeTrgData::setTriggerCounter(), CALICE::FeEvent::setTriggerCounter(), CALICE::DifTrigger::setTriggerCounter(), CALICE::BeTrgEvent::setTriggerCounter(), CALICE::BmlEventDataSup::setTriggerLost(), CALICE::DaqTypeDataBlock::setTypeIndex(), CALICE::BmlEventDataSup::setTypeIndex(), CALICE::AhcVfeConfigurationBlock::setVerificationData(), CALICE::FeConfigurationBlock::setVfeInfo(), CALICE::FeConfigurationBlock::setVfeResetEnd(), CALICE::FeConfigurationBlock::setVfeResetStart(), CALICE::FeConfigurationBlock::setVfeSrinStart(), CALICE::ReadOutConfigurationBlock::setVmePeriod(), CALICE::EmcStageDataBlock::setXYStatus(), and CALICE::EmcStageDataBlock::setXYValues().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+LCGenericObjectImplExt.hh\end{DoxyCompactItemize}

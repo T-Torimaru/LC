@@ -1,0 +1,156 @@
+\section{DeepAnalysis::Detector Class Reference}
+\label{classDeepAnalysis_1_1Detector}\index{DeepAnalysis::Detector@{DeepAnalysis::Detector}}
+
+
+Class for detector and algorithm parameters.  
+
+
+{\ttfamily \#include $<$DeepAnalysis.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Detector} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+void {\bf init} (double hit\_\-dist)
+\begin{DoxyCompactList}\small\item\em Initialize detector constants and parameters from that has direct input values. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+double {\bf sampling}\label{classDeepAnalysis_1_1Detector_a5d4e2fd38f01156c20f84816433b369d}
+
+\begin{DoxyCompactList}\small\item\em thickness of one calorimeter layer [mm] \item\end{DoxyCompactList}\item 
+double {\bf cell\_\-size}\label{classDeepAnalysis_1_1Detector_afabe7007b58b1375246c18dd7d9d20d3}
+
+\begin{DoxyCompactList}\small\item\em cell size [mm] \item\end{DoxyCompactList}\item 
+double {\bf ext\_\-cell\_\-size}\label{classDeepAnalysis_1_1Detector_a314297278178abfed53b28212aaf3403}
+
+\begin{DoxyCompactList}\small\item\em used as intermediate cell size [mm] \item\end{DoxyCompactList}\item 
+double {\bf neut\_\-thresh}\label{classDeepAnalysis_1_1Detector_a114be573c7073f49bf04b1998ba7b87b}
+
+\begin{DoxyCompactList}\small\item\em neutron threshold [MIP] (influents the neutron hits collection efficiency) \item\end{DoxyCompactList}\item 
+double {\bf normal\_\-thresh}\label{classDeepAnalysis_1_1Detector_a5f70ea7b0b17eade3462cf0da58e7655}
+
+\begin{DoxyCompactList}\small\item\em normal threshold [MIP] \item\end{DoxyCompactList}\item 
+double {\bf zoom\_\-dist}
+\begin{DoxyCompactList}\small\item\em distance to look at the event [mm]; by changing this value one changes the spherical shell curvature; should be recalculated using real distance to the first event hit. \item\end{DoxyCompactList}\item 
+double {\bf shift}\label{classDeepAnalysis_1_1Detector_a9d492b2a1c405d6eea0c7c7273d87e18}
+
+\begin{DoxyCompactList}\small\item\em distance to move event, calculated [mm] \item\end{DoxyCompactList}\item 
+double {\bf a\_\-delta}
+\begin{DoxyCompactList}\small\item\em bin size for angular histogram [radians]. \item\end{DoxyCompactList}\item 
+double {\bf elips\_\-trans\_\-to\_\-catch}\label{classDeepAnalysis_1_1Detector_a5dd97d0cc7dabe089212ab639aefb9bc}
+
+\begin{DoxyCompactList}\small\item\em coefficient to increase ellipsoid \item\end{DoxyCompactList}\item 
+double {\bf elips\_\-forw\_\-to\_\-catch}\label{classDeepAnalysis_1_1Detector_a77b3bf04bab6b285f2fb3808706e7b42}
+
+\begin{DoxyCompactList}\small\item\em coefficient to increase ellipsoid \item\end{DoxyCompactList}\item 
+double {\bf elips\_\-back\_\-to\_\-catch}\label{classDeepAnalysis_1_1Detector_add94b7d17684d76847b8170da5918a6f}
+
+\begin{DoxyCompactList}\small\item\em coefficient to increase ellipsoid \item\end{DoxyCompactList}\item 
+double {\bf join\_\-factor}\label{classDeepAnalysis_1_1Detector_a186726eac821fd90e8638c0ba9d0cc9c}
+
+\begin{DoxyCompactList}\small\item\em coefficient to calculated distance to join in 3-\/d \item\end{DoxyCompactList}\item 
+double {\bf sph\_\-cut}
+\begin{DoxyCompactList}\small\item\em coefficient to convert energy to angular size. \item\end{DoxyCompactList}\item 
+double {\bf cut\_\-3d\_\-em}\label{classDeepAnalysis_1_1Detector_adf47a8478cdfedfc4265a9641a44e568}
+
+\begin{DoxyCompactList}\small\item\em criteria for cluster to join [mm] \item\end{DoxyCompactList}\item 
+double {\bf cut\_\-3d\_\-had}
+\begin{DoxyCompactList}\small\item\em criteria for cluster to join [mm]. \item\end{DoxyCompactList}\item 
+double {\bf ecc\_\-trk\_\-hadr\_\-sel}\label{classDeepAnalysis_1_1Detector_a165ef75ffb1ffba3a833c00d346a9728}
+
+\begin{DoxyCompactList}\small\item\em eccentricity selection cut level \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for detector and algorithm parameters. 
+
+Definition at line 58 of file DeepAnalysis.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{DeepAnalysis::Detector@{DeepAnalysis::Detector}!Detector@{Detector}}
+\index{Detector@{Detector}!DeepAnalysis::Detector@{DeepAnalysis::Detector}}
+\subsubsection[{Detector}]{\setlength{\rightskip}{0pt plus 5cm}DeepAnalysis::Detector::Detector ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classDeepAnalysis_1_1Detector_a509e9cb64988132ac7862c61704231be}
+
+
+Constructor. The parameters are set to as default for HCAL (it is not valid for ECAL):
+\begin{DoxyItemize}
+\item sampling = 30.0;
+\item cell\_\-size = 30.0;
+\item ext\_\-cell\_\-size = 30.0;
+\item neut\_\-thresh = 0.6;
+\item normal\_\-thresh = 0.5;
+\item elips\_\-trans\_\-to\_\-catch= 1.5;
+\item elips\_\-forw\_\-to\_\-catch = 1.5;
+\item elips\_\-back\_\-to\_\-catch = 1.0;
+\item ecc\_\-trk\_\-hadr\_\-sel = 0.3;
+\item a\_\-delta = 0.01;
+\item sph\_\-cut = 0.05; // about 3 degree
+\item cut\_\-3d\_\-em = 31.0;
+\item cut\_\-3d\_\-had = 81.0;
+\item join\_\-factor = 1.0;
+\item zoom\_\-dist = 200.0. 
+\end{DoxyItemize}
+
+Definition at line 100 of file DeepAnalysis.hh.
+
+References a\_\-delta, cell\_\-size, cut\_\-3d\_\-em, cut\_\-3d\_\-had, ecc\_\-trk\_\-hadr\_\-sel, elips\_\-back\_\-to\_\-catch, elips\_\-forw\_\-to\_\-catch, elips\_\-trans\_\-to\_\-catch, ext\_\-cell\_\-size, join\_\-factor, neut\_\-thresh, normal\_\-thresh, sampling, sph\_\-cut, and zoom\_\-dist.
+
+\subsection{Member Function Documentation}
+\index{DeepAnalysis::Detector@{DeepAnalysis::Detector}!init@{init}}
+\index{init@{init}!DeepAnalysis::Detector@{DeepAnalysis::Detector}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void DeepAnalysis::Detector::init (double {\em hit\_\-dist})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classDeepAnalysis_1_1Detector_af1367d6f7b438f4a33bd5fe86fcb5281}
+
+
+Initialize detector constants and parameters from that has direct input values. 
+\begin{DoxyParams}{Parameters}
+\item[{\em hit\_\-dist}]\end{DoxyParams}
+
+
+Definition at line 123 of file DeepAnalysis.hh.
+
+References a\_\-delta, cell\_\-size, cut\_\-3d\_\-em, cut\_\-3d\_\-had, ext\_\-cell\_\-size, join\_\-factor, neut\_\-thresh, normal\_\-thresh, sampling, shift, sph\_\-cut, and zoom\_\-dist.
+
+Referenced by DeepAnalysis::reconstruction().
+
+\subsection{Field Documentation}
+\index{DeepAnalysis::Detector@{DeepAnalysis::Detector}!a\_\-delta@{a\_\-delta}}
+\index{a\_\-delta@{a\_\-delta}!DeepAnalysis::Detector@{DeepAnalysis::Detector}}
+\subsubsection[{a\_\-delta}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf DeepAnalysis::Detector::a\_\-delta}}\label{classDeepAnalysis_1_1Detector_a73833e2ee36a7ade0f7960a9344692be}
+
+
+bin size for angular histogram [radians]. Used for EM part of shower only to catch hits around em-\/shower core 
+
+Definition at line 70 of file DeepAnalysis.hh.
+
+Referenced by DeepAnalysis::cluster\_\-finder\_\-2d(), Detector(), and init().\index{DeepAnalysis::Detector@{DeepAnalysis::Detector}!cut\_\-3d\_\-had@{cut\_\-3d\_\-had}}
+\index{cut\_\-3d\_\-had@{cut\_\-3d\_\-had}!DeepAnalysis::Detector@{DeepAnalysis::Detector}}
+\subsubsection[{cut\_\-3d\_\-had}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf DeepAnalysis::Detector::cut\_\-3d\_\-had}}\label{classDeepAnalysis_1_1Detector_a5cbc531fe713289bc6682f4086129b5c}
+
+
+criteria for cluster to join [mm]. /Used at the cluster ID definition. 
+
+Definition at line 79 of file DeepAnalysis.hh.
+
+Referenced by DeepAnalysis::cluster\_\-join(), Detector(), and init().\index{DeepAnalysis::Detector@{DeepAnalysis::Detector}!sph\_\-cut@{sph\_\-cut}}
+\index{sph\_\-cut@{sph\_\-cut}!DeepAnalysis::Detector@{DeepAnalysis::Detector}}
+\subsubsection[{sph\_\-cut}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf DeepAnalysis::Detector::sph\_\-cut}}\label{classDeepAnalysis_1_1Detector_a0c215c59b599b6a585056c880278b860}
+
+
+coefficient to convert energy to angular size. Used in cluster joining function as cuts. 
+
+Definition at line 76 of file DeepAnalysis.hh.
+
+Referenced by DeepAnalysis::cluster\_\-finder\_\-2d(), Detector(), and init().\index{DeepAnalysis::Detector@{DeepAnalysis::Detector}!zoom\_\-dist@{zoom\_\-dist}}
+\index{zoom\_\-dist@{zoom\_\-dist}!DeepAnalysis::Detector@{DeepAnalysis::Detector}}
+\subsubsection[{zoom\_\-dist}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf DeepAnalysis::Detector::zoom\_\-dist}}\label{classDeepAnalysis_1_1Detector_a33227b51d64d96fdaba6c0c52e6caa5e}
+
+
+distance to look at the event [mm]; by changing this value one changes the spherical shell curvature; should be recalculated using real distance to the first event hit. 
+
+Definition at line 66 of file DeepAnalysis.hh.
+
+Referenced by Detector(), and init().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+DeepAnalysis.hh\end{DoxyCompactItemize}

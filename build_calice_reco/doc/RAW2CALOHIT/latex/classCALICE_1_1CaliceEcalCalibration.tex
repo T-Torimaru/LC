@@ -1,0 +1,188 @@
+\section{CALICE::CaliceEcalCalibration Class Reference}
+\label{classCALICE_1_1CaliceEcalCalibration}\index{CALICE::CaliceEcalCalibration@{CALICE::CaliceEcalCalibration}}
+
+
+\doxyref{Calibration}{p.}{classCalibration} of the Calice ECAL modules.  
+
+
+{\ttfamily \#include $<$CaliceEcalCalibration.hh$>$}Inheritance diagram for CALICE::CaliceEcalCalibration::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCALICE_1_1CaliceEcalCalibration}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CaliceEcalCalibration} (const std::string \&module\_\-type\_\-col\_\-name, const std::string \&calibration\_\-constants\_\-col\_\-name)  throw (std::runtime\_\-error)
+\begin{DoxyCompactList}\small\item\em Create the calibration object for the Calice Ecal. \item\end{DoxyCompactList}\item 
+{\bf $\sim$CaliceEcalCalibration} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+Float\_\-t {\bf getCalibratedValue} (UInt\_\-t module\_\-id, UInt\_\-t module\_\-type, UInt\_\-t cell\_\-index, Float\_\-t adc\_\-value) const 
+\begin{DoxyCompactList}\small\item\em Determine from a pedestal subtracted ADC value a calibrated value. \item\end{DoxyCompactList}\item 
+Bool\_\-t {\bf isValid} (UInt\_\-t module\_\-id, UInt\_\-t module\_\-type, UInt\_\-t cell\_\-index) const 
+\begin{DoxyCompactList}\small\item\em Return true if a the calibration constants for the given cell are in the allowed range. \item\end{DoxyCompactList}\item 
+Bool\_\-t {\bf checkForCalibrationConstantsOfModule} (UInt\_\-t module\_\-id, UInt\_\-t module\_\-type, UInt\_\-t n\_\-cells) const 
+\begin{DoxyCompactList}\small\item\em Verify that calibration constants exist for a certain module. \item\end{DoxyCompactList}\item 
+Int\_\-t {\bf getMiniumADCForMipThreshold} (Float\_\-t mip\_\-energy\_\-fraction) const 
+\begin{DoxyCompactList}\small\item\em Get the minimum adc value mips will have for the given energy fraction on all pads. \item\end{DoxyCompactList}\item 
+void {\bf moduleTypeChanged} (lcio::LCCollection $\ast$col)
+\begin{DoxyCompactList}\small\item\em Notify the calibration object in case the definition of the module types has changed. \item\end{DoxyCompactList}\item 
+void {\bf calibrationConstantChanged} (lcio::LCCollection $\ast$col)
+\begin{DoxyCompactList}\small\item\em Notify the calibration object when ever the calibration constants change. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::vector$<$ EcalModuleCalibration $>$ {\bfseries ModuleTypeCalibrationConstantList\_\-t}\label{classCALICE_1_1CaliceEcalCalibration_a7c5d9af5b11b804071982e5292422646}
+
+\item 
+typedef std::vector$<$ std::pair$<$ const ModuleTypeCalibrationConstantList\_\-t $\ast$, std::string $>$ $>$ {\bfseries CalibrationConstantPerTypeList\_\-t}\label{classCALICE_1_1CaliceEcalCalibration_aab75d417a8477f123384473c932b1d3e}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::map$<$ std::string, ModuleTypeCalibrationConstantList\_\-t $>$ {\bfseries \_\-calibrationConstants}\label{classCALICE_1_1CaliceEcalCalibration_a3a4ba7bfc9da0dcae8acc075f74eff24}
+
+\item 
+CalibrationConstantPerTypeList\_\-t {\bf \_\-calibrationConstantsPerType}
+\begin{DoxyCompactList}\small\item\em \doxyref{Calibration}{p.}{classCalibration} constatns per Module. \item\end{DoxyCompactList}\item 
+ConditionsChangeDelegator$<$ {\bf CaliceEcalCalibration} $>$ {\bfseries \_\-moduleTypeChange}\label{classCALICE_1_1CaliceEcalCalibration_a49a0c1cccc53314ec3e8e44a7186031d}
+
+\item 
+ConditionsChangeDelegator$<$ {\bf CaliceEcalCalibration} $>$ {\bfseries \_\-calibrationConstantChange}\label{classCALICE_1_1CaliceEcalCalibration_a3c8999e65ff7276c3acdeb7b19eeea0c}
+
+\item 
+Float\_\-t {\bfseries \_\-minInvCalibrationConstant}\label{classCALICE_1_1CaliceEcalCalibration_ac9690f336fa6c193427f12d4504ad6b4}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static EcalModuleCalibration {\bf \_\-empty}
+\begin{DoxyCompactList}\small\item\em Used to initialise the vector. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Calibration}{p.}{classCalibration} of the Calice ECAL modules. 
+
+Definition at line 18 of file CaliceEcalCalibration.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CALICE::CaliceEcalCalibration@{CALICE::CaliceEcalCalibration}!CaliceEcalCalibration@{CaliceEcalCalibration}}
+\index{CaliceEcalCalibration@{CaliceEcalCalibration}!CALICE::CaliceEcalCalibration@{CALICE::CaliceEcalCalibration}}
+\subsubsection[{CaliceEcalCalibration}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::CaliceEcalCalibration::CaliceEcalCalibration (const std::string \& {\em module\_\-type\_\-col\_\-name}, \/  const std::string \& {\em calibration\_\-constants\_\-col\_\-name})  throw (std::runtime\_\-error)}\label{classCALICE_1_1CaliceEcalCalibration_ae18842d582f1c8acac63137903aa0bf7}
+
+
+Create the calibration object for the Calice Ecal. The constructor will register handlers for conditions data changes: changes of the module types and the calibration constants. 
+
+Definition at line 54 of file CaliceEcalCalibration.cc.\index{CALICE::CaliceEcalCalibration@{CALICE::CaliceEcalCalibration}!$\sim$CaliceEcalCalibration@{$\sim$CaliceEcalCalibration}}
+\index{$\sim$CaliceEcalCalibration@{$\sim$CaliceEcalCalibration}!CALICE::CaliceEcalCalibration@{CALICE::CaliceEcalCalibration}}
+\subsubsection[{$\sim$CaliceEcalCalibration}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::CaliceEcalCalibration::$\sim$CaliceEcalCalibration ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CaliceEcalCalibration_a90c221567561015797ff5c1b035dda71}
+
+
+Destructor. FIXME: The destructor should deregister the conditions change handler. Unfortuneatly, this is not forseen in the Conditions Processor. 
+
+Definition at line 32 of file CaliceEcalCalibration.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::CaliceEcalCalibration@{CALICE::CaliceEcalCalibration}!calibrationConstantChanged@{calibrationConstantChanged}}
+\index{calibrationConstantChanged@{calibrationConstantChanged}!CALICE::CaliceEcalCalibration@{CALICE::CaliceEcalCalibration}}
+\subsubsection[{calibrationConstantChanged}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CaliceEcalCalibration::calibrationConstantChanged (lcio::LCCollection $\ast$ {\em col})}\label{classCALICE_1_1CaliceEcalCalibration_a0a82a3215a4e35f444904cb80cea3f46}
+
+
+Notify the calibration object when ever the calibration constants change. This function must be called at least once before \doxyref{getCalibratedValue()}{p.}{classCALICE_1_1CaliceEcalCalibration_a4ffba5606c463a2b7419e85bc9008853} is used. 
+
+Definition at line 121 of file CaliceEcalCalibration.cc.
+
+References \_\-calibrationConstantsPerType, and \_\-empty.\index{CALICE::CaliceEcalCalibration@{CALICE::CaliceEcalCalibration}!checkForCalibrationConstantsOfModule@{checkForCalibrationConstantsOfModule}}
+\index{checkForCalibrationConstantsOfModule@{checkForCalibrationConstantsOfModule}!CALICE::CaliceEcalCalibration@{CALICE::CaliceEcalCalibration}}
+\subsubsection[{checkForCalibrationConstantsOfModule}]{\setlength{\rightskip}{0pt plus 5cm}Bool\_\-t CALICE::CaliceEcalCalibration::checkForCalibrationConstantsOfModule (UInt\_\-t {\em module\_\-id}, \/  UInt\_\-t {\em module\_\-type}, \/  UInt\_\-t {\em n\_\-cells}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CaliceEcalCalibration_ae6cb1b990f7c4eb7dc274089df464772}
+
+
+Verify that calibration constants exist for a certain module. 
+\begin{DoxyParams}{Parameters}
+\item[{\em module\_\-id}]id Or serial number of a module which uniquely identifies a detector module of a certain type. \item[{\em module\_\-type}]the type of the detector module \item[{\em n\_\-cells}]the number of cells on this module. Return true if calibration constants exist for the given module and the number of cells matches the number of calibration constants. \end{DoxyParams}
+
+
+Definition at line 99 of file CaliceEcalCalibration.hh.
+
+References \_\-calibrationConstantsPerType.\index{CALICE::CaliceEcalCalibration@{CALICE::CaliceEcalCalibration}!getCalibratedValue@{getCalibratedValue}}
+\index{getCalibratedValue@{getCalibratedValue}!CALICE::CaliceEcalCalibration@{CALICE::CaliceEcalCalibration}}
+\subsubsection[{getCalibratedValue}]{\setlength{\rightskip}{0pt plus 5cm}Float\_\-t CALICE::CaliceEcalCalibration::getCalibratedValue (UInt\_\-t {\em module\_\-id}, \/  UInt\_\-t {\em module\_\-type}, \/  UInt\_\-t {\em cell\_\-index}, \/  Float\_\-t {\em adc\_\-value}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CaliceEcalCalibration_a4ffba5606c463a2b7419e85bc9008853}
+
+
+Determine from a pedestal subtracted ADC value a calibrated value. 
+\begin{DoxyParams}{Parameters}
+\item[{\em module\_\-id}]id Or serial number of a module which uniquely identifies a detector module of a certain type. \item[{\em module\_\-type}]the type of the detector module \item[{\em cell\_\-index}]the cell\_\-index in read order: first the ADC values of the first sample from all chips, then the next sample ... \item[{\em adc\_\-value}]the ADC value which should be calibrated. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the calibrated value. 
+\end{DoxyReturn}
+
+
+Definition at line 42 of file CaliceEcalCalibration.hh.
+
+References \_\-calibrationConstantsPerType.\index{CALICE::CaliceEcalCalibration@{CALICE::CaliceEcalCalibration}!getMiniumADCForMipThreshold@{getMiniumADCForMipThreshold}}
+\index{getMiniumADCForMipThreshold@{getMiniumADCForMipThreshold}!CALICE::CaliceEcalCalibration@{CALICE::CaliceEcalCalibration}}
+\subsubsection[{getMiniumADCForMipThreshold}]{\setlength{\rightskip}{0pt plus 5cm}Int\_\-t CALICE::CaliceEcalCalibration::getMiniumADCForMipThreshold (Float\_\-t {\em mip\_\-energy\_\-fraction}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CaliceEcalCalibration_af23ff60b95893d5ab5c09132c678805d}
+
+
+Get the minimum adc value mips will have for the given energy fraction on all pads. 
+\begin{DoxyParams}{Parameters}
+\item[{\em mip\_\-energy\_\-fraction}]the energy in mips \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+minimum adc value which is below the given energy on all pads. This method can be used to get the lowest adc value a mip of the given energy fraction will have on all pads. This value is useful to select candidates before actually performing th calibration. This function is intended to be called at the beginning of each event. 
+\end{DoxyReturn}
+
+
+Definition at line 114 of file CaliceEcalCalibration.hh.\index{CALICE::CaliceEcalCalibration@{CALICE::CaliceEcalCalibration}!isValid@{isValid}}
+\index{isValid@{isValid}!CALICE::CaliceEcalCalibration@{CALICE::CaliceEcalCalibration}}
+\subsubsection[{isValid}]{\setlength{\rightskip}{0pt plus 5cm}Bool\_\-t CALICE::CaliceEcalCalibration::isValid (UInt\_\-t {\em module\_\-id}, \/  UInt\_\-t {\em module\_\-type}, \/  UInt\_\-t {\em cell\_\-index}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CaliceEcalCalibration_a15dc169487e5d13c4da34f56387f2218}
+
+
+Return true if a the calibration constants for the given cell are in the allowed range. 
+\begin{DoxyParams}{Parameters}
+\item[{\em module\_\-id}]id Or serial number of a module which uniquely identifies a detector module of a certain type. \item[{\em module\_\-type}]the type of the detector module \item[{\em cell\_\-index}]the cell\_\-index in read order: first the ADC values of the first sample from all chips, then the next sample ... \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true for cells with valid calibration constants, false for cells which should be declared dead.
+\end{DoxyReturn}
+This method is used to find, after module connection changes, cells which should be declared dead. 
+
+Definition at line 68 of file CaliceEcalCalibration.hh.
+
+References \_\-calibrationConstantsPerType.\index{CALICE::CaliceEcalCalibration@{CALICE::CaliceEcalCalibration}!moduleTypeChanged@{moduleTypeChanged}}
+\index{moduleTypeChanged@{moduleTypeChanged}!CALICE::CaliceEcalCalibration@{CALICE::CaliceEcalCalibration}}
+\subsubsection[{moduleTypeChanged}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CaliceEcalCalibration::moduleTypeChanged (lcio::LCCollection $\ast$ {\em col})}\label{classCALICE_1_1CaliceEcalCalibration_ab29f2d5fdc65d38388ca8d3a57f3a419}
+
+
+Notify the calibration object in case the definition of the module types has changed. This function must be called at least once before \doxyref{getCalibratedValue()}{p.}{classCALICE_1_1CaliceEcalCalibration_a4ffba5606c463a2b7419e85bc9008853} is used. 
+
+Definition at line 79 of file CaliceEcalCalibration.cc.
+
+References \_\-calibrationConstantsPerType.
+
+\subsection{Field Documentation}
+\index{CALICE::CaliceEcalCalibration@{CALICE::CaliceEcalCalibration}!\_\-calibrationConstantsPerType@{\_\-calibrationConstantsPerType}}
+\index{\_\-calibrationConstantsPerType@{\_\-calibrationConstantsPerType}!CALICE::CaliceEcalCalibration@{CALICE::CaliceEcalCalibration}}
+\subsubsection[{\_\-calibrationConstantsPerType}]{\setlength{\rightskip}{0pt plus 5cm}CalibrationConstantPerTypeList\_\-t {\bf CALICE::CaliceEcalCalibration::\_\-calibrationConstantsPerType}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1CaliceEcalCalibration_ae5dc90ad764f76fc60628267eb5e5504}
+
+
+\doxyref{Calibration}{p.}{classCalibration} constatns per Module. The first array component is the module type, the second the serial number of the module. 
+
+Definition at line 136 of file CaliceEcalCalibration.hh.
+
+Referenced by calibrationConstantChanged(), checkForCalibrationConstantsOfModule(), getCalibratedValue(), isValid(), and moduleTypeChanged().\index{CALICE::CaliceEcalCalibration@{CALICE::CaliceEcalCalibration}!\_\-empty@{\_\-empty}}
+\index{\_\-empty@{\_\-empty}!CALICE::CaliceEcalCalibration@{CALICE::CaliceEcalCalibration}}
+\subsubsection[{\_\-empty}]{\setlength{\rightskip}{0pt plus 5cm}EcalModuleCalibration {\bf CALICE::CaliceEcalCalibration::\_\-empty}\hspace{0.3cm}{\ttfamily  [static, private]}}\label{classCALICE_1_1CaliceEcalCalibration_a659518967a2207c6cf2e216994450898}
+
+
+Used to initialise the vector. Otherwise for each element for which the default constructor is called an object is created. 
+
+Definition at line 141 of file CaliceEcalCalibration.hh.
+
+Referenced by calibrationConstantChanged().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+CaliceEcalCalibration.hh\item 
+CaliceEcalCalibration.cc\end{DoxyCompactItemize}

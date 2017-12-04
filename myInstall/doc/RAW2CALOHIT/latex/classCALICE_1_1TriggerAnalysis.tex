@@ -1,0 +1,100 @@
+\section{CALICE::TriggerAnalysis Class Reference}
+\label{classCALICE_1_1TriggerAnalysis}\index{CALICE::TriggerAnalysis@{CALICE::TriggerAnalysis}}
+
+
+Search for good trigger words.  
+
+
+{\ttfamily \#include $<$TriggerAnalysis.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Processor $\ast$ {\bfseries newProcessor} ()\label{classCALICE_1_1TriggerAnalysis_ab21f54611eb9ddd3ad43fc21503d4e33}
+
+\item 
+void {\bf init} ()\label{classCALICE_1_1TriggerAnalysis_a7a51af68dccbac1354f5246cdcea5c83}
+
+\begin{DoxyCompactList}\small\item\em Set up conditions data handler, verify parameters et.c. \item\end{DoxyCompactList}\item 
+void {\bf processEvent} (LCEvent $\ast$evtP)
+\begin{DoxyCompactList}\small\item\em Called for every run (does nothing. \item\end{DoxyCompactList}\item 
+void {\bfseries end} ()\label{classCALICE_1_1TriggerAnalysis_a3dc3f0ae7a921facafc54fa4e271f664}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bf \_\-parNameTriggerMainWord}
+\begin{DoxyCompactList}\small\item\em Par. \item\end{DoxyCompactList}\item 
+unsigned int {\bfseries \_\-nEvents}\label{classCALICE_1_1TriggerAnalysis_ad08524b6d02fb2d7b75b172652b1d435}
+
+\item 
+unsigned int {\bfseries \_\-missingTriggerEventData}\label{classCALICE_1_1TriggerAnalysis_aee5bbae4a0166c2432de8eaa16fa6dca}
+
+\item 
+{\bf histmgr::Key\_\-t} {\bf \_\-histGroupKey}
+\begin{DoxyCompactList}\small\item\em Key for the histogram group. \item\end{DoxyCompactList}\item 
+{\bf histmgr::Key\_\-t} {\bf \_\-histTriggerOnPosisitonKey}
+\begin{DoxyCompactList}\small\item\em Key for the trigger on position histograms. \item\end{DoxyCompactList}\item 
+{\bf histmgr::Key\_\-t} {\bf \_\-histTriggerLengthKey}
+\begin{DoxyCompactList}\small\item\em Key for the trigger pulse length histograms. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Search for good trigger words. 
+
+Definition at line 22 of file TriggerAnalysis.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::TriggerAnalysis@{CALICE::TriggerAnalysis}!processEvent@{processEvent}}
+\index{processEvent@{processEvent}!CALICE::TriggerAnalysis@{CALICE::TriggerAnalysis}}
+\subsubsection[{processEvent}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::TriggerAnalysis::processEvent (LCEvent $\ast$ {\em evtP})}\label{classCALICE_1_1TriggerAnalysis_a687740dc2b5d83e9bbcd705dede331ef}
+
+
+Called for every run (does nothing. ) Search good trigger words. If no good trigger word is found a damaged flag is set in the event header. 
+
+Definition at line 135 of file TriggerAnalysis.cc.
+
+References \_\-histGroupKey, \_\-histTriggerLengthKey, \_\-histTriggerOnPosisitonKey, \_\-parNameTriggerMainWord, histmgr::HistMgr::getHistogramCollection(), and histmgr::HistogramCollection\_\-t::histogram().
+
+\subsection{Field Documentation}
+\index{CALICE::TriggerAnalysis@{CALICE::TriggerAnalysis}!\_\-histGroupKey@{\_\-histGroupKey}}
+\index{\_\-histGroupKey@{\_\-histGroupKey}!CALICE::TriggerAnalysis@{CALICE::TriggerAnalysis}}
+\subsubsection[{\_\-histGroupKey}]{\setlength{\rightskip}{0pt plus 5cm}{\bf histmgr::Key\_\-t} {\bf CALICE::TriggerAnalysis::\_\-histGroupKey}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1TriggerAnalysis_ac6c3ea8f3ff2b56e809f4969f59704d3}
+
+
+Key for the histogram group. 
+
+Definition at line 58 of file TriggerAnalysis.hh.
+
+Referenced by init(), and processEvent().\index{CALICE::TriggerAnalysis@{CALICE::TriggerAnalysis}!\_\-histTriggerLengthKey@{\_\-histTriggerLengthKey}}
+\index{\_\-histTriggerLengthKey@{\_\-histTriggerLengthKey}!CALICE::TriggerAnalysis@{CALICE::TriggerAnalysis}}
+\subsubsection[{\_\-histTriggerLengthKey}]{\setlength{\rightskip}{0pt plus 5cm}{\bf histmgr::Key\_\-t} {\bf CALICE::TriggerAnalysis::\_\-histTriggerLengthKey}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1TriggerAnalysis_a4af95b807dcdd3389a2b64663f31e6db}
+
+
+Key for the trigger pulse length histograms. 
+
+Definition at line 60 of file TriggerAnalysis.hh.
+
+Referenced by init(), and processEvent().\index{CALICE::TriggerAnalysis@{CALICE::TriggerAnalysis}!\_\-histTriggerOnPosisitonKey@{\_\-histTriggerOnPosisitonKey}}
+\index{\_\-histTriggerOnPosisitonKey@{\_\-histTriggerOnPosisitonKey}!CALICE::TriggerAnalysis@{CALICE::TriggerAnalysis}}
+\subsubsection[{\_\-histTriggerOnPosisitonKey}]{\setlength{\rightskip}{0pt plus 5cm}{\bf histmgr::Key\_\-t} {\bf CALICE::TriggerAnalysis::\_\-histTriggerOnPosisitonKey}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1TriggerAnalysis_a9e02480c102f82efe0629255b7bc1bd3}
+
+
+Key for the trigger on position histograms. 
+
+Definition at line 59 of file TriggerAnalysis.hh.
+
+Referenced by init(), and processEvent().\index{CALICE::TriggerAnalysis@{CALICE::TriggerAnalysis}!\_\-parNameTriggerMainWord@{\_\-parNameTriggerMainWord}}
+\index{\_\-parNameTriggerMainWord@{\_\-parNameTriggerMainWord}!CALICE::TriggerAnalysis@{CALICE::TriggerAnalysis}}
+\subsubsection[{\_\-parNameTriggerMainWord}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf CALICE::TriggerAnalysis::\_\-parNameTriggerMainWord}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1TriggerAnalysis_a4601167e6fe8aa42e2336a893bf83a21}
+
+
+Par. name of the trigger main word. 
+
+Definition at line 53 of file TriggerAnalysis.hh.
+
+Referenced by processEvent().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+TriggerAnalysis.hh\item 
+TriggerAnalysis.cc\end{DoxyCompactItemize}

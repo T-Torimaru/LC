@@ -1,0 +1,112 @@
+\section{CALICE::AhcVfeConfigurationBlock Class Reference}
+\label{classCALICE_1_1AhcVfeConfigurationBlock}\index{CALICE::AhcVfeConfigurationBlock@{CALICE::AhcVfeConfigurationBlock}}
+
+
+Interface Class to access the AhcVfeConfigurationData.  
+
+
+{\ttfamily \#include $<$AhcVfeConfigurationBlock.hh$>$}Inheritance diagram for CALICE::AhcVfeConfigurationBlock::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCALICE_1_1AhcVfeConfigurationBlock}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf AhcVfeConfigurationBlock} (int boardID)
+\begin{DoxyCompactList}\small\item\em Convenient c'tor. \item\end{DoxyCompactList}\item 
+{\bf AhcVfeConfigurationBlock} \& {\bf setCrateID} (short crateID)\label{classCALICE_1_1AhcVfeConfigurationBlock_a201e36bf403cffb9903f1566be72818e}
+
+\begin{DoxyCompactList}\small\item\em Set the crateID. \item\end{DoxyCompactList}\item 
+short {\bf getCrateID} () const \label{classCALICE_1_1AhcVfeConfigurationBlock_a19695e1a48f9901745283f645c813a59}
+
+\begin{DoxyCompactList}\small\item\em Get the crate ID. \item\end{DoxyCompactList}\item 
+{\bf AhcVfeConfigurationBlock} \& {\bf setSlotID} (short slotID)\label{classCALICE_1_1AhcVfeConfigurationBlock_a6ef47b059a3b1d255c99df87c30782d2}
+
+\begin{DoxyCompactList}\small\item\em Set the Slot ID. \item\end{DoxyCompactList}\item 
+short {\bf getSlotID} () const \label{classCALICE_1_1AhcVfeConfigurationBlock_adba054e559e65594f1477cd578a4230e}
+
+\begin{DoxyCompactList}\small\item\em Get the Slot ID. \item\end{DoxyCompactList}\item 
+{\bf AhcVfeConfigurationBlock} \& {\bf setBoardComponentNumber} (short componentNumber)\label{classCALICE_1_1AhcVfeConfigurationBlock_a30f5dff217b1fa44326c86902c1b88ee}
+
+\begin{DoxyCompactList}\small\item\em Set the BoardComponentNumber. \item\end{DoxyCompactList}\item 
+short {\bf getBoardComponentNumber} () const \label{classCALICE_1_1AhcVfeConfigurationBlock_a434b41151c72986819bf924ae024345c}
+
+\begin{DoxyCompactList}\small\item\em Get the BoardComponentNumber. \item\end{DoxyCompactList}\item 
+void {\bf setRecordLabel} (int label)\label{classCALICE_1_1AhcVfeConfigurationBlock_ab74486109cf73a0bae48ef7a222a73cb}
+
+\begin{DoxyCompactList}\small\item\em Set the Record Label. \item\end{DoxyCompactList}\item 
+short {\bf getRecordLabel} () const \label{classCALICE_1_1AhcVfeConfigurationBlock_a95166f80fa388544cefd9bff2bcdf83c}
+
+\begin{DoxyCompactList}\small\item\em Get the Record Label. \item\end{DoxyCompactList}\item 
+{\bf AhcVfeConfigurationBlock} \& {\bf setBoardID} (int boardID)\label{classCALICE_1_1AhcVfeConfigurationBlock_a4ac33c3ed60f3fb3fd20e3ba993ee515}
+
+\begin{DoxyCompactList}\small\item\em Set the board ID. \item\end{DoxyCompactList}\item 
+int {\bfseries getBoardID} () const \label{classCALICE_1_1AhcVfeConfigurationBlock_ac2842de93b26e2b33512debed50b48b2}
+
+\item 
+{\bf AhcVfeConfigurationBlock} (LCObject $\ast$obj)\label{classCALICE_1_1AhcVfeConfigurationBlock_a368a7db6a5636970f2966b9b544efcb0}
+
+\begin{DoxyCompactList}\small\item\em 'Copy constructor' needed to interpret LCCollection read from file/database. \item\end{DoxyCompactList}\item 
+{\bf AhcVfeConfigurationBlock} \& {\bf setVerificationData} (int verifData)\label{classCALICE_1_1AhcVfeConfigurationBlock_a0c2a00f1d35ab1a2049fd5c056f30b26}
+
+\begin{DoxyCompactList}\small\item\em Set Vfe Verification Data. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getVerificationData} ()\label{classCALICE_1_1AhcVfeConfigurationBlock_ada572f7f63fb95508b50a2893f6dd418}
+
+\begin{DoxyCompactList}\small\item\em Get Vfe Verification Data. \item\end{DoxyCompactList}\item 
+{\bf AhcVfeConfigurationBlock} \& {\bf setShiftRegisterData} (int ipos, int ival)\label{classCALICE_1_1AhcVfeConfigurationBlock_abd1529f8eaaa39f8a9e9c3b6d70c614d}
+
+\begin{DoxyCompactList}\small\item\em Set the Shiftregister data. \item\end{DoxyCompactList}\item 
+bool {\bfseries isCoarseLayer} ()\label{classCALICE_1_1AhcVfeConfigurationBlock_ac95e9cd52673830425cb41130f9fb9fd}
+
+\item 
+int {\bf getShiftRegisterData} (int ipos)\label{classCALICE_1_1AhcVfeConfigurationBlock_a0ee9e9c4be33ee5146a4d979e1949026}
+
+\begin{DoxyCompactList}\small\item\em Get the Shiftregister data. \item\end{DoxyCompactList}\item 
+void {\bf print} (std::ostream \&os)\label{classCALICE_1_1AhcVfeConfigurationBlock_a1762058d56a4bed8fe64599bd7473f3c}
+
+\begin{DoxyCompactList}\small\item\em Convenient print method. \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1AhcVfeConfigurationBlock_a9644528d361e0a8a548a2feb34f02f92}
+
+\begin{DoxyCompactList}\small\item\em Return the type of the class. \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1AhcVfeConfigurationBlock_a3fa9acfa0903309b37d23d22c30cf165}
+
+\begin{DoxyCompactList}\small\item\em Return a brief description of the data members. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned int {\bfseries makeBoardID} (const short crateID, const short slotID, const short boardComponentNumber)\label{classCALICE_1_1AhcVfeConfigurationBlock_a7073a54fe28524a7accbe91606eee989}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interface Class to access the AhcVfeConfigurationData. \begin{DoxyAuthor}{Author}
+Roman Pöschl DESY 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Nov 2005 
+\end{DoxyDate}
+
+
+Definition at line 33 of file AhcVfeConfigurationBlock.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CALICE::AhcVfeConfigurationBlock@{CALICE::AhcVfeConfigurationBlock}!AhcVfeConfigurationBlock@{AhcVfeConfigurationBlock}}
+\index{AhcVfeConfigurationBlock@{AhcVfeConfigurationBlock}!CALICE::AhcVfeConfigurationBlock@{CALICE::AhcVfeConfigurationBlock}}
+\subsubsection[{AhcVfeConfigurationBlock}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::AhcVfeConfigurationBlock::AhcVfeConfigurationBlock (int {\em boardID})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1AhcVfeConfigurationBlock_ae545b6dfccdb15c9af4ac0243e9898f4}
+
+
+Convenient c'tor. 
+\begin{DoxyParams}{Parameters}
+\item[{\em boardID}]CERC board ID (VME crate channel)) \end{DoxyParams}
+
+
+Definition at line 46 of file AhcVfeConfigurationBlock.hh.
+
+References CALICE::LCGenericObjectImplExt::obj().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+AhcVfeConfigurationBlock.hh\end{DoxyCompactItemize}

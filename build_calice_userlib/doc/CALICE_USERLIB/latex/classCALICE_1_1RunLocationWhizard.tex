@@ -1,0 +1,68 @@
+\section{CALICE::RunLocationWhizard Class Reference}
+\label{classCALICE_1_1RunLocationWhizard}\index{CALICE::RunLocationWhizard@{CALICE::RunLocationWhizard}}
+
+
+Simple interface class to retrieve information about the location of a run It accesses the runlocation folder in the database.  
+
+
+{\ttfamily \#include $<$RunLocationWhizard.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf RunLocationWhizard} (std::string, std::string)\label{classCALICE_1_1RunLocationWhizard_a095f755854c8c2fec432ff278f9ba36a}
+
+\begin{DoxyCompactList}\small\item\em Constructor taking db collection name and the string to access the db as input. \item\end{DoxyCompactList}\item 
+{\bf RunLocationWhizard} ()\label{classCALICE_1_1RunLocationWhizard_a5f638ca8c316fcd8cb9c0f0f23d05514}
+
+\begin{DoxyCompactList}\small\item\em Simple Constructor with using defaults for the values. \item\end{DoxyCompactList}\item 
+{\bf $\sim$RunLocationWhizard} ()\label{classCALICE_1_1RunLocationWhizard_a9de4453338108b8466a145c0604604c4}
+
+\begin{DoxyCompactList}\small\item\em Important for memory handling. \item\end{DoxyCompactList}\item 
+std::string {\bf getRunLocation} (int)\label{classCALICE_1_1RunLocationWhizard_a3db0d8e2c9290da2ff053df78a6c1d58}
+
+\begin{DoxyCompactList}\small\item\em get the run location, input is runnumber \item\end{DoxyCompactList}\item 
+std::string {\bf getGenericRunType} (int)\label{classCALICE_1_1RunLocationWhizard_a600a0bd53a7bb09075e1ed3c96fa3ee2}
+
+\begin{DoxyCompactList}\small\item\em get the generic run, type input is runnumber \item\end{DoxyCompactList}\item 
+std::string {\bf getGenericRunMonth} (int)\label{classCALICE_1_1RunLocationWhizard_a2ab07e3feac0ec3dc7f71df06029a7b6}
+
+\begin{DoxyCompactList}\small\item\em get the generic month of running, type input is runnumber \item\end{DoxyCompactList}\item 
+void {\bf print} (int, std::ostream \&os)\label{classCALICE_1_1RunLocationWhizard_a361b56dadac488123034eec312ad891c}
+
+\begin{DoxyCompactList}\small\item\em Convenient print method. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf createConditionsHandler} ()\label{classCALICE_1_1RunLocationWhizard_ab4eb27f5fb121858ead5d27be5bf45f3}
+
+\begin{DoxyCompactList}\small\item\em A suimple method to create the conditions handler. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bf \_\-folder}\label{classCALICE_1_1RunLocationWhizard_a1c7eeff9f0411c3a885ecee2d7bfbfc8}
+
+\begin{DoxyCompactList}\small\item\em Folder name. \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-dbinit}\label{classCALICE_1_1RunLocationWhizard_a61b7efac157c2370d83ee627efbc3563}
+
+\begin{DoxyCompactList}\small\item\em dbinit string \item\end{DoxyCompactList}\item 
+lccd::IConditionsHandler $\ast$ {\bf \_\-conData}\label{classCALICE_1_1RunLocationWhizard_a06e4848ddb058006abe9343dc9c4127c}
+
+\begin{DoxyCompactList}\small\item\em A conditions data handler. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Simple interface class to retrieve information about the location of a run It accesses the runlocation folder in the database. The access to this should happen via this class. 
+
+\begin{DoxyAuthor}{Author}
+R. Poeschl LAL 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Jun. 2007 
+\end{DoxyDate}
+
+
+Definition at line 30 of file RunLocationWhizard.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+RunLocationWhizard.hh\item 
+RunLocationWhizard.cc\end{DoxyCompactItemize}

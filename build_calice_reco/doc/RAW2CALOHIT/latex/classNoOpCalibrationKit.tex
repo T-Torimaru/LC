@@ -1,0 +1,50 @@
+\section{NoOpCalibrationKit Class Reference}
+\label{classNoOpCalibrationKit}\index{NoOpCalibrationKit@{NoOpCalibrationKit}}
+
+
+Create a calibration object which just returns the uncalibrated values.  
+Inheritance diagram for NoOpCalibrationKit::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classNoOpCalibrationKit}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Calibration} $\ast$ {\bf create} (const std::string \&module\_\-type\_\-col\_\-name, const std::string \&module\_\-calibration\_\-col\_\-name) const 
+\begin{DoxyCompactList}\small\item\em create calibration object. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf NoOpCalibrationKit} {\bfseries \_\-\_\-instance}\label{classNoOpCalibrationKit_a5eb71ed34d9b318427d462277381a6da}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Create a calibration object which just returns the uncalibrated values. \begin{DoxySeeAlso}{See also}
+\doxyref{NoOpCalibration}{p.}{classNoOpCalibration}. 
+\end{DoxySeeAlso}
+
+
+Definition at line 9 of file NoOpCalibration.cc.
+
+\subsection{Member Function Documentation}
+\index{NoOpCalibrationKit@{NoOpCalibrationKit}!create@{create}}
+\index{create@{create}!NoOpCalibrationKit@{NoOpCalibrationKit}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Calibration}$\ast$ NoOpCalibrationKit::create (const std::string \& {\em module\_\-type\_\-col\_\-name}, \/  const std::string \& {\em module\_\-calibration\_\-col\_\-name}) const\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classNoOpCalibrationKit_ac197f7bf5528b484d5b70e664655474b}
+
+
+create calibration object. 
+\begin{DoxyParams}{Parameters}
+\item[{\em module\_\-type\_\-col\_\-name}]the name of the conditions data collection with the module types. \item[{\em module\_\-calibration\_\-col\_\-name}]the name of the conditions data collection which contains the calibration constants. FIXME: There should be a better method to hand parameters to \doxyref{Calibration}{p.}{classCalibration} objects. \end{DoxyParams}
+
+
+Implements {\bf CalibrationKit} \doxyref{}{p.}{classCalibrationKit_ab3aea5671d91a7b6f5e839324cf45a70}.
+
+Definition at line 20 of file NoOpCalibration.cc.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+NoOpCalibration.cc\end{DoxyCompactItemize}

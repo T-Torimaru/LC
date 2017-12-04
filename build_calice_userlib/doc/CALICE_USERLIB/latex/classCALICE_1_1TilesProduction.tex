@@ -1,0 +1,63 @@
+\section{CALICE::TilesProduction Class Reference}
+\label{classCALICE_1_1TilesProduction}\index{CALICE::TilesProduction@{CALICE::TilesProduction}}
+
+
+Parameters of the sipm delivered by PRODUCTION.  
+
+
+{\ttfamily \#include $<$TilesProduction.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf TilesProduction} (int SIPM, int TileSize, int Module, int Chip, int Chan)\label{classCALICE_1_1TilesProduction_aaae665726387c446a308232ed3243340}
+
+\begin{DoxyCompactList}\small\item\em Convenient c'tor. \item\end{DoxyCompactList}\item 
+{\bf TilesProduction} (LCObject $\ast$obj)\label{classCALICE_1_1TilesProduction_a24af53b6d0bc286ec0e4348a24fb461a}
+
+\begin{DoxyCompactList}\small\item\em 'Copy constructor' needed to interpret LCCollection read from file/database. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$TilesProduction} ()\label{classCALICE_1_1TilesProduction_abc1f291e49c75e4c61920ed7f77cd2d6}
+
+\begin{DoxyCompactList}\small\item\em Important for memory handling. \item\end{DoxyCompactList}\item 
+int {\bf getTileSize} ()\label{classCALICE_1_1TilesProduction_a9b0ce86037b8292cb5d51b453f25b065}
+
+\begin{DoxyCompactList}\small\item\em the class interface: \item\end{DoxyCompactList}\item 
+int {\bfseries getSIPMID} ()\label{classCALICE_1_1TilesProduction_ab040f65159706d933c8b2d251782fa86}
+
+\item 
+int {\bfseries getModule} ()\label{classCALICE_1_1TilesProduction_a3dabeea49b7615deb2664aae17842d13}
+
+\item 
+int {\bfseries getChip} ()\label{classCALICE_1_1TilesProduction_a37933d4fc27281b950049577a0f387ab}
+
+\item 
+int {\bfseries getChan} ()\label{classCALICE_1_1TilesProduction_a5f3437ca70d5d1e2641cb750e3ece6a6}
+
+\item 
+int {\bfseries getHardwareID} ()\label{classCALICE_1_1TilesProduction_a0e231fffa77a4871cf14b6abbb654c62}
+
+\item 
+void {\bf print} (std::ostream \&os)\label{classCALICE_1_1TilesProduction_a87511cf3aa3319007a2909baed09ea8e}
+
+\begin{DoxyCompactList}\small\item\em convenient print function \item\end{DoxyCompactList}\item 
+const std::string {\bfseries getTypeName} () const \label{classCALICE_1_1TilesProduction_abe1b268a8c5ec422c44be2ac431f2546}
+
+\item 
+const std::string {\bfseries getDataDescription} () const \label{classCALICE_1_1TilesProduction_a7a6f5cf764abcee38722460321c9d8e9}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf HcalTileIndex} {\bfseries \_\-hti}\label{classCALICE_1_1TilesProduction_a7292957b19e4f50605378a3a51545973}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Parameters of the sipm delivered by PRODUCTION. 
+
+Definition at line 25 of file TilesProduction.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+TilesProduction.hh\item 
+TilesProduction.cc\end{DoxyCompactItemize}

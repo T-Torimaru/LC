@@ -1,0 +1,103 @@
+\section{TBTrackMapper Class Reference}
+\label{classTBTrackMapper}\index{TBTrackMapper@{TBTrackMapper}}
+Inheritance diagram for TBTrackMapper::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classTBTrackMapper}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf TBTrackMapper} ()\label{classTBTrackMapper_ab5ebcbd9676bf78ae9633c8de9890842}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. \item\end{DoxyCompactList}\item 
+void {\bf Init} ()\label{classTBTrackMapper_afc74449035c4cdfa91e5cdb7ac510c7f}
+
+\begin{DoxyCompactList}\small\item\em Initialize the job -\/ called at the end of the \doxyref{TBTrackBaseProcessor::init}{p.}{classTBTrackBaseProcessor_a179b559dd67f1777b0622775918ae5f5} method. \item\end{DoxyCompactList}\item 
+void {\bf ProcessRunHeader} (LCRunHeader $\ast$run)\label{classTBTrackMapper_a3992257a50060452146847f947787ee3}
+
+\begin{DoxyCompactList}\small\item\em Process a RunHeader -\/ called at the end of the \doxyref{TBTrackBaseProcessor::processRunHeader}{p.}{classTBTrackBaseProcessor_a0fc18422f19b4c46ec4356df49b216c9} method. \item\end{DoxyCompactList}\item 
+void {\bf ProcessEvent} (LCEvent $\ast$evtP)\label{classTBTrackMapper_a062f7399a3685671bc37e85636dba413}
+
+\begin{DoxyCompactList}\small\item\em Process an Event -\/ called at the end of the \doxyref{TBTrackBaseProcessor::processEvent}{p.}{classTBTrackBaseProcessor_aba4e5b25679936687667e81f3a73df72} method. \item\end{DoxyCompactList}\item 
+void {\bf End} ()\label{classTBTrackMapper_acd9bc1df4545f12184a40c8f0de8fb44}
+
+\begin{DoxyCompactList}\small\item\em End of job -\/ called at the end of the \doxyref{TBTrackBaseProcessor::end}{p.}{classTBTrackBaseProcessor_aafbf0e1c1af756ea03748e482883d763} method. \item\end{DoxyCompactList}\item 
+Processor $\ast$ {\bfseries newProcessor} ()\label{classTBTrackMapper_a109169447ef39058c87f0c90cf083960}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::map$<$ int, CALICE::TdcConnection $>$ {\bfseries mMap\_\-t}\label{classTBTrackMapper_ab98758e67c8c14c2f6eeb7cf9ca32148}
+
+\item 
+typedef lccd::ConditionsMap$<$ int, CALICE::TdcConnection $>$ {\bfseries cMap\_\-t}\label{classTBTrackMapper_a2a5e17aaeb3c5c804d61c3fad958c037}
+
+\item 
+typedef std::vector$<$ int $>$ {\bfseries value\_\-t}\label{classTBTrackMapper_a9e308f613981ec6f042eb2fc2abc86be}
+
+\item 
+typedef std::map$<$ int, value\_\-t $>$ {\bfseries vMap\_\-t}\label{classTBTrackMapper_afac11c19152680213f1aeb5635063f09}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries reset} ()\label{classTBTrackMapper_aeae4c8ff7fc12d0fa84d72f4c4f206fd}
+
+\item 
+void {\bfseries findEdges} (LCEvent $\ast$evtP, EVENT::LCCollection $\ast$)\label{classTBTrackMapper_ad19dc2f9ee3eb973e27917e0c5f2400b}
+
+\item 
+void {\bfseries findHits} ()\label{classTBTrackMapper_a539cb5f99393b6100941569457931acb}
+
+\item 
+EVENT::LCCollection $\ast$ {\bfseries outputCollection} (const vMap\_\-t \&)\label{classTBTrackMapper_a22832aad26dcdab437dcb8227e209805}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bfseries \_\-TDCHitColName}\label{classTBTrackMapper_a84f41d60fa4d903d6b9b72f0fd7a8434}
+
+\item 
+std::string {\bfseries \_\-mappingColName}\label{classTBTrackMapper_acccd87de333eb8fc4ccd259536c51e3f}
+
+\item 
+int {\bfseries \_\-TDC\_\-Upper\_\-Limit}\label{classTBTrackMapper_a1a12022244828150ad3d298587f2eb66}
+
+\item 
+int {\bfseries \_\-TDC\_\-Lower\_\-Limit}\label{classTBTrackMapper_a0ab5b929b377e27f458b2fbd02af098d}
+
+\item 
+bool {\bfseries \_\-TDC\_\-CAEN1290}\label{classTBTrackMapper_afbbcdc5d206eed3c3e9b98182127c9cb}
+
+\item 
+cMap\_\-t $\ast$ {\bfseries \_\-mapping}\label{classTBTrackMapper_a50fddfd0670abbe51afd7c4b172e2ac7}
+
+\item 
+vMap\_\-t {\bfseries \_\-edges}\label{classTBTrackMapper_a5928cb0b84cd019aba35998fd8145fa5}
+
+\item 
+vMap\_\-t {\bfseries \_\-hits}\label{classTBTrackMapper_a900dee2c64d639ad2d153c31fdad7929}
+
+\item 
+bool {\bfseries \_\-twoLines}\label{classTBTrackMapper_a63f57f4d4e27254b508a628bd3a89d29}
+
+\item 
+bool {\bfseries \_\-firstEvent}\label{classTBTrackMapper_a6960324522d074a94d1e78b21e5a4724}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 14 of file TBTrackMapper.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+TBTrackMapper.hh\item 
+TBTrackMapper.cc\end{DoxyCompactItemize}

@@ -1,0 +1,60 @@
+\section{CALICE::ConnCellMappingHcal Class Reference}
+\label{classCALICE_1_1ConnCellMappingHcal}\index{CALICE::ConnCellMappingHcal@{CALICE::ConnCellMappingHcal}}
+
+
+Mapping class based on the LCFixedObject template.  
+
+
+{\ttfamily \#include $<$ConnCellMappingHcal.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ConnCellMappingHcal} (int connpin, int icd\_\-fine, int jcd\_\-fine, int kcd\_\-fine, int icd\_\-coarse, int jcd\_\-coarse, int kcd\_\-coarse)\label{classCALICE_1_1ConnCellMappingHcal_ab42f668b5748b8dfa9b3fc97fa6c7fee}
+
+\begin{DoxyCompactList}\small\item\em Convenient c'tor. \item\end{DoxyCompactList}\item 
+{\bf ConnCellMappingHcal} (LCObject $\ast$obj)\label{classCALICE_1_1ConnCellMappingHcal_a081e0f8e841d6f434e17b670cab48d7e}
+
+\begin{DoxyCompactList}\small\item\em 'Copy constructor' needed to interpret LCCollection read from file/database. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$ConnCellMappingHcal} ()\label{classCALICE_1_1ConnCellMappingHcal_a7a197aeb49859189e104e3d5d94d0391}
+
+\begin{DoxyCompactList}\small\item\em Important for memory handling. \item\end{DoxyCompactList}\item 
+int {\bf getConnpin} ()\label{classCALICE_1_1ConnCellMappingHcal_a98cddfbd965baa2a65f830c4b19c9dfc}
+
+\begin{DoxyCompactList}\small\item\em the class interface: \item\end{DoxyCompactList}\item 
+int {\bfseries getCellID\_\-fine} ()\label{classCALICE_1_1ConnCellMappingHcal_a86446b579f23ddac044afa98f83be109}
+
+\item 
+int {\bfseries getCellID\_\-coarse} ()\label{classCALICE_1_1ConnCellMappingHcal_a8136c2a1622f865fcdab81cda25284e5}
+
+\item 
+short {\bf getCellIndex\_\-fine} (std::string)\label{classCALICE_1_1ConnCellMappingHcal_acede8240bf218adff8d40e23d7c7903a}
+
+\begin{DoxyCompactList}\small\item\em convenient getter functions \item\end{DoxyCompactList}\item 
+short {\bfseries getCellIndex\_\-coarse} (std::string)\label{classCALICE_1_1ConnCellMappingHcal_aeb22fd5dbacc508100ff4b34d8d6d5e4}
+
+\item 
+void {\bfseries print} (std::ostream \&os)\label{classCALICE_1_1ConnCellMappingHcal_ad40f3d45f299b067ba913d53651c9102}
+
+\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1ConnCellMappingHcal_a824a0896a35021b8ea42da52c9bfae38}
+
+\begin{DoxyCompactList}\small\item\em Type definition. \item\end{DoxyCompactList}\item 
+const std::string {\bfseries getDataDescription} () const \label{classCALICE_1_1ConnCellMappingHcal_a826f2d60b31e3329b5a68dccd014244f}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+short {\bf \_\-index}\label{classCALICE_1_1ConnCellMappingHcal_a63ebe04fafeb25e26b642d38b768cd71}
+
+\begin{DoxyCompactList}\small\item\em i,j or k Index of the cell id \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Mapping class based on the LCFixedObject template. that relates the mapping of the hcal connectors to the cellids 
+
+Definition at line 33 of file ConnCellMappingHcal.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+ConnCellMappingHcal.hh\item 
+ConnCellMappingHcal.cc\end{DoxyCompactItemize}

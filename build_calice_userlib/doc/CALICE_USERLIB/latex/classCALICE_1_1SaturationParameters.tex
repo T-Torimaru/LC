@@ -1,0 +1,76 @@
+\section{CALICE::SaturationParameters Class Reference}
+\label{classCALICE_1_1SaturationParameters}\index{CALICE::SaturationParameters@{CALICE::SaturationParameters}}
+
+
+Class to store float values for Saturation Correction Curves plus integer cell index in LCIO.  
+
+
+{\ttfamily \#include $<$SaturationParameters.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf SaturationParameters} ()\label{classCALICE_1_1SaturationParameters_a6bcce091aa42264d16ef47dcd08e821c}
+
+\begin{DoxyCompactList}\small\item\em Empty constructor. \item\end{DoxyCompactList}\item 
+{\bf SaturationParameters} (const int id, const float npix, const float fraction, const float epsilon)\label{classCALICE_1_1SaturationParameters_ac81175a971ef70d31a35736b67f2bf21}
+
+\begin{DoxyCompactList}\small\item\em Constructor with initial values. \item\end{DoxyCompactList}\item 
+{\bf SaturationParameters} (EVENT::LCObject $\ast$obj)\label{classCALICE_1_1SaturationParameters_a0b239df29e12436f287567b36b0764c7}
+
+\begin{DoxyCompactList}\small\item\em Constructor from LCObject. \item\end{DoxyCompactList}\item 
+{\bf $\sim$SaturationParameters} ()\label{classCALICE_1_1SaturationParameters_ad14c91e7e73ffb8760d28a4d03111e18}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+int {\bf getCellID} () const \label{classCALICE_1_1SaturationParameters_a5c652e82d47d3d527bab74c7cfcfc33e}
+
+\begin{DoxyCompactList}\small\item\em Return index identifier. \item\end{DoxyCompactList}\item 
+float {\bf getNpix} () const \label{classCALICE_1_1SaturationParameters_a6c0537cf991175491fd93d925bbc5f39}
+
+\begin{DoxyCompactList}\small\item\em Return the value. \item\end{DoxyCompactList}\item 
+float {\bf getFraction} () const \label{classCALICE_1_1SaturationParameters_a6a8d38ce8423fd0d339fb23199f7b39b}
+
+\begin{DoxyCompactList}\small\item\em Return the error on the value. \item\end{DoxyCompactList}\item 
+float {\bf getEpsilon} () const \label{classCALICE_1_1SaturationParameters_a8ae9b72141c04d4737efecaed397561f}
+
+\begin{DoxyCompactList}\small\item\em Return the status. \item\end{DoxyCompactList}\item 
+void {\bf setCellID} (const int ID)\label{classCALICE_1_1SaturationParameters_a18580ee23f36d2ab14f070aab1eb3b87}
+
+\begin{DoxyCompactList}\small\item\em set index identifier \item\end{DoxyCompactList}\item 
+void {\bf setNpix} (const float npix)\label{classCALICE_1_1SaturationParameters_a2a05f0a0d82bc61e6143b02d4f7413ea}
+
+\begin{DoxyCompactList}\small\item\em set the value \item\end{DoxyCompactList}\item 
+void {\bf setFraction} (const float fraction)\label{classCALICE_1_1SaturationParameters_a7959da20d57e2d14422b6543854706c0}
+
+\begin{DoxyCompactList}\small\item\em set the error on the value \item\end{DoxyCompactList}\item 
+void {\bf setEpsilon} (const float epsilon)\label{classCALICE_1_1SaturationParameters_a30a1dfd7727fbc4d06daed2ac90cbf80}
+
+\begin{DoxyCompactList}\small\item\em set the status \item\end{DoxyCompactList}\item 
+virtual const std::string {\bf getTypeName} () const \label{classCALICE_1_1SaturationParameters_a002bce0457608d0922e5c9c8d681e780}
+
+\begin{DoxyCompactList}\small\item\em Implementation of LCGenericObject::getTypeName. \item\end{DoxyCompactList}\item 
+virtual const std::string {\bf getDataDescription} () const \label{classCALICE_1_1SaturationParameters_a093e3b01f25cbb982a7ee779198e1280}
+
+\begin{DoxyCompactList}\small\item\em Implementation of LCGenericObject::getDataDescription. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to store float values for Saturation Correction Curves plus integer cell index in LCIO. This class provides an interface to store four numbers inside an LCIO object:
+\begin{DoxyItemize}
+\item an integer identifier, e.g. the index of a calorimeter cell
+\item a 1st float value, [0], e.g. a maximum number of effective SiPM pixels
+\item a 2nd float value, [1], e.g. a fraction of 2-\/exp function
+\item a 3rd float value, [2], e.g. an epsilon of 2-\/exp function The 2-\/exp function is used: N = [0]$\ast$([1]$\ast$(1-\/exp(-\/[2]$\ast$x/[0]))+(1-\/[1])$\ast$(1-\/exp(-\/(1-\/[2]$\ast$[1])$\ast$x/([0]$\ast$(1-\/[1]))))) where x is the unsaturated amplitude, N is the saturated amplitude
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Sergey Morozov 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+August 2013 
+\end{DoxyDate}
+
+
+Definition at line 26 of file SaturationParameters.hh.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+SaturationParameters.hh\end{DoxyCompactItemize}

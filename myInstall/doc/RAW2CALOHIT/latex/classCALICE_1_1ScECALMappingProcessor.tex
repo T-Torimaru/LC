@@ -1,0 +1,78 @@
+\section{CALICE::ScECALMappingProcessor Class Reference}
+\label{classCALICE_1_1ScECALMappingProcessor}\index{CALICE::ScECALMappingProcessor@{CALICE::ScECALMappingProcessor}}
+
+
+A class which converts ADCColl to CalorimeterHits with mapping change Copied and modified from \doxyref{fastMappingIIProcessor}{p.}{classCALICE_1_1fastMappingIIProcessor} Satoru Uozumi.  
+
+
+{\ttfamily \#include $<$ScECALMappingProcessor.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Processor $\ast$ {\bfseries newProcessor} ()\label{classCALICE_1_1ScECALMappingProcessor_aa5b4adc79f73832a1cd3bec1dbca3195}
+
+\item 
+virtual void {\bfseries conditionsChanged} (LCCollection $\ast$col)\label{classCALICE_1_1ScECALMappingProcessor_a6b292729ea8e95d8e7205b78d4275341}
+
+\item 
+virtual void {\bfseries init} ()\label{classCALICE_1_1ScECALMappingProcessor_a1e61afb80b2e210042e0771158b4df01}
+
+\item 
+virtual void {\bfseries processRunHeader} (LCRunHeader $\ast$run)\label{classCALICE_1_1ScECALMappingProcessor_a33aaaa7705715939c77d50e7186c27fe}
+
+\item 
+virtual void {\bfseries processEvent} (LCEvent $\ast$evt)\label{classCALICE_1_1ScECALMappingProcessor_adc4ca95b8fbc768edf6304d657ecda42}
+
+\item 
+virtual void {\bfseries check} (LCEvent $\ast$evt)\label{classCALICE_1_1ScECALMappingProcessor_afd9f32d4bf080574d6c4fcdcf8d3a09e}
+
+\item 
+virtual void {\bfseries end} ()\label{classCALICE_1_1ScECALMappingProcessor_a85f7c30babd95235b54d9e4a9f707451}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+std::pair$<$ int, int $>$ {\bfseries getScECALChannelID} (int slot, int fe, int chip, int chan)\label{classCALICE_1_1ScECALMappingProcessor_a3a07ca0b030309ec61270c833df815c8}
+
+\item 
+{\bf ThreeVector\_\-t} {\bfseries getChannelPosition} (int layer, int strip)\label{classCALICE_1_1ScECALMappingProcessor_a66a91d0d6264634c48993fa8a4db4fcd}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bfseries \_\-ScECALMappingColName}\label{classCALICE_1_1ScECALMappingProcessor_ab89f9ded31a25bed66874c93731073eb}
+
+\item 
+LCCollection $\ast$ {\bfseries \_\-ScECALMappingCol}\label{classCALICE_1_1ScECALMappingProcessor_a996e63095b6c93e9a4b3927a5d0f0de8}
+
+\item 
+bool {\bfseries \_\-MappingChanged}\label{classCALICE_1_1ScECALMappingProcessor_a4a3be9d3b632b7948eac5969eea2f234}
+
+\item 
+std::string {\bfseries \_\-mappingData}\label{classCALICE_1_1ScECALMappingProcessor_a51c51a8668cb86ed04e3ca132fd5b671}
+
+\item 
+std::string {\bfseries \_\-inputColName}\label{classCALICE_1_1ScECALMappingProcessor_ab9b8252616d8e15930dd46736c0961e7}
+
+\item 
+std::string {\bfseries \_\-outputColName}\label{classCALICE_1_1ScECALMappingProcessor_a6586adf6dee846329fbeb9f68615542b}
+
+\item 
+std::pair$<$ int, int $>$ {\bfseries \_\-ScECALmap} [ScECAL\_\-NSLOT][ScECAL\_\-NFE][ScECAL\_\-NCHIP][ScECAL\_\-NCHAN]\label{classCALICE_1_1ScECALMappingProcessor_aeca6d12726f390ac358a014adf2d78f8}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class which converts ADCColl to CalorimeterHits with mapping change Copied and modified from \doxyref{fastMappingIIProcessor}{p.}{classCALICE_1_1fastMappingIIProcessor} Satoru Uozumi. \begin{DoxyDate}{Date}
+Nov 5 2008 
+\end{DoxyDate}
+
+
+Definition at line 39 of file ScECALMappingProcessor.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+ScECALMappingProcessor.hh\item 
+ScECALMappingProcessor.cc\end{DoxyCompactItemize}

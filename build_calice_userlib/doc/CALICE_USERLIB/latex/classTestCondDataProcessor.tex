@@ -1,0 +1,168 @@
+\section{TestCondDataProcessor Class Reference}
+\label{classTestCondDataProcessor}\index{TestCondDataProcessor@{TestCondDataProcessor}}
+
+
+Test processor to verify that the conditions data from the database and the converter matches.  
+
+
+{\ttfamily \#include $<$TestCondDataProcessor.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+marlin::Processor $\ast$ {\bfseries newProcessor} ()\label{classTestCondDataProcessor_a41bcc6ef81e323c404329239e3c91b33}
+
+\item 
+void {\bfseries init} ()\label{classTestCondDataProcessor_af8f6a10ec8f52851c570e0befe6a2cd6}
+
+\item 
+void {\bfseries processEvent} (LCEvent $\ast$evtP)\label{classTestCondDataProcessor_a64b807904fd307bce9c2ebd4a826a7a9}
+
+\item 
+void {\bfseries eventInfo} (LCEvent $\ast$evtP)\label{classTestCondDataProcessor_a4b1593ba8eae5216c73375d958fc6ac0}
+
+\item 
+void {\bfseries end} ()\label{classTestCondDataProcessor_adf755fd78a25fa7582d147dd6b12a6ab}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries dbCondDataChanged} (EVENT::LCCollection $\ast$col)\label{classTestCondDataProcessor_a11d117de5b81da6e3246171f56d78d08}
+
+\item 
+virtual void {\bfseries conversionCondDataChanged} (EVENT::LCCollection $\ast$col)\label{classTestCondDataProcessor_a2fc2e10fcae642399e67708808dba688}
+
+\item 
+void {\bfseries compareCondData} ()\label{classTestCondDataProcessor_a0b664c9a1fed4642636cba44a3d98947}
+
+\item 
+void {\bfseries verifyCondDataValidity} (LCEvent $\ast$evtP)\label{classTestCondDataProcessor_ae0539d5334c95c21a9e6a8df40db6993}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ConditionsChangeDelegator}$<$ {\bf TestCondDataProcessor} $>$ {\bfseries \_\-dbCondDataChange}\label{classTestCondDataProcessor_ab49c37286bd6ac0b403d1b8063f6bcde}
+
+\item 
+lccd::IConditionsHandler $\ast$ {\bfseries \_\-dbCondDataHandler}\label{classTestCondDataProcessor_ae03a6373512f70ad3691243833b50fc5}
+
+\item 
+{\bf ConditionsChangeDelegator}$<$ {\bf TestCondDataProcessor} $>$ {\bfseries \_\-conversionCondDataChange}\label{classTestCondDataProcessor_ab98e3556c74baf67a8ce442fe9cecf93}
+
+\item 
+lccd::IConditionsHandler $\ast$ {\bfseries \_\-conversionCondDataHandler}\label{classTestCondDataProcessor_a2bbe530d11b1b857ce8bd5ddd2cc1c4c}
+
+\item 
+std::string {\bfseries \_\-colNameFromDB}\label{classTestCondDataProcessor_adbf9b678cf507bc9d964e2b40199d2ad}
+
+\item 
+std::string {\bfseries \_\-colNameFromConversion}\label{classTestCondDataProcessor_a0e4d01ed84ec9bb9985fe9ec84049295}
+
+\item 
+EVENT::LCCollection $\ast$ {\bfseries \_\-conversionCondDataCol}\label{classTestCondDataProcessor_a7a29dd0b074438f7c31d3fe920240c1d}
+
+\item 
+unsigned int {\bfseries \_\-conversionSerialID}\label{classTestCondDataProcessor_af0b3f5595528c4f7a4f507dc9b45d89f}
+
+\item 
+unsigned int {\bfseries \_\-realConversionSerialID}\label{classTestCondDataProcessor_aacdd9af5954291ecd0e7b02bd545c772}
+
+\item 
+EVENT::LCCollection $\ast$ {\bfseries \_\-dbCondDataCol}\label{classTestCondDataProcessor_afc8c3bce6dae88d7abe3f6655af277fb}
+
+\item 
+unsigned int {\bfseries \_\-dbSerialID}\label{classTestCondDataProcessor_ac51866b83d58c3df68a9aad5cc3f361c}
+
+\item 
+unsigned int {\bfseries \_\-nComparisons}\label{classTestCondDataProcessor_a99239f4d1dea89a63a6a5aaf9335234f}
+
+\item 
+{\bf Average\_\-t} {\bfseries \_\-dbCondDataColStat}\label{classTestCondDataProcessor_afd771b2d29220eba7939d808a2bc2649}
+
+\item 
+{\bf Average\_\-t} {\bfseries \_\-conversionCondDataColStat}\label{classTestCondDataProcessor_a497455f92c3e9d25c6e5196d524f23fa}
+
+\item 
+{\bf Average\_\-t} {\bfseries \_\-dbCondDataParStat}\label{classTestCondDataProcessor_ab36e64ae6efd5beda7394b10a4a35cfe}
+
+\item 
+{\bf Average\_\-t} {\bfseries \_\-conversionCondDataParStat}\label{classTestCondDataProcessor_a96b2e4b44453e3e665fc85c3f2151085}
+
+\item 
+unsigned int {\bfseries \_\-dbThisId}\label{classTestCondDataProcessor_a8d19763767c1c22599790ada414cae0f}
+
+\item 
+unsigned int {\bfseries \_\-dbOldId}\label{classTestCondDataProcessor_abb286759ea8799f0ac1297689869c185}
+
+\item 
+unsigned int {\bfseries \_\-dbOlderId}\label{classTestCondDataProcessor_a99017f95cb539604e69267c9e6d825ac}
+
+\item 
+long64 {\bfseries \_\-dbSince}\label{classTestCondDataProcessor_ad05bec5578a01fc52ad4ce3d84f3aade}
+
+\item 
+long64 {\bfseries \_\-dbTill}\label{classTestCondDataProcessor_a344dc9a4fc25a9c9bcae9fd9c38cb067}
+
+\item 
+long64 {\bfseries \_\-dbOldSince}\label{classTestCondDataProcessor_ad233d7eadb8628d8630e7e472dd54e0d}
+
+\item 
+long64 {\bfseries \_\-dbOldTill}\label{classTestCondDataProcessor_a289234a58bddccd87f6468259c1d4c11}
+
+\item 
+long64 {\bfseries \_\-dbOlderSince}\label{classTestCondDataProcessor_a583de6d8771a9bb9f456b00aed5a2156}
+
+\item 
+long64 {\bfseries \_\-dbOlderTill}\label{classTestCondDataProcessor_ad22a60287fb2832a0d63c384c2153697}
+
+\item 
+unsigned int {\bfseries \_\-conversionThisId}\label{classTestCondDataProcessor_a3f4afe455b079294200d50a7d06e25ff}
+
+\item 
+unsigned int {\bfseries \_\-conversionOldId}\label{classTestCondDataProcessor_abdd4c175f828b67ff078f8072794dd9a}
+
+\item 
+unsigned int {\bfseries \_\-conversionOlderId}\label{classTestCondDataProcessor_a55eeec30d100acfa72bb32861b251dd7}
+
+\item 
+long64 {\bfseries \_\-conversionSince}\label{classTestCondDataProcessor_ae247e8c77442ae59dbe85769a6e6e913}
+
+\item 
+long64 {\bfseries \_\-conversionTill}\label{classTestCondDataProcessor_a1aa7fc8bf8a7ddea31a9cd6c5a408051}
+
+\item 
+long64 {\bfseries \_\-conversionOldSince}\label{classTestCondDataProcessor_a934a82f1318df98035c50cdf2c3f8c27}
+
+\item 
+long64 {\bfseries \_\-conversionOldTill}\label{classTestCondDataProcessor_a7898024668fd8e6257bc435262dda884}
+
+\item 
+long64 {\bfseries \_\-conversionOlderSince}\label{classTestCondDataProcessor_ae930fc00b6884a40cd5b316f681a5879}
+
+\item 
+long64 {\bfseries \_\-conversionOlderTill}\label{classTestCondDataProcessor_af3d750a4a4a75defaaffc3de72784696}
+
+\item 
+unsigned int {\bfseries \_\-eventOfLastConversionChange}\label{classTestCondDataProcessor_a38a245f1958e98eb1e30b77b00a7da42}
+
+\item 
+unsigned int {\bfseries \_\-lastEventNumber}\label{classTestCondDataProcessor_a35e011c605f61bc2d17cfa2b883669ec}
+
+\item 
+std::vector$<$ std::string $>$ {\bfseries \_\-removeIntKeys}\label{classTestCondDataProcessor_a00f3686cf22f78880505bbbbbad633f0}
+
+\item 
+std::vector$<$ std::string $>$ {\bfseries \_\-removeStringKeys}\label{classTestCondDataProcessor_a9dcf5ad17bcae719fcc7e810610593d1}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Test processor to verify that the conditions data from the database and the converter matches. 
+
+Definition at line 17 of file TestCondDataProcessor.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+TestCondDataProcessor.hh\item 
+TestCondDataProcessor.cc\end{DoxyCompactItemize}

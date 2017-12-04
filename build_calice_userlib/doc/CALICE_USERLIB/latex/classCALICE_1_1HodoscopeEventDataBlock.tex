@@ -1,0 +1,99 @@
+\section{CALICE::HodoscopeEventDataBlock Class Reference}
+\label{classCALICE_1_1HodoscopeEventDataBlock}\index{CALICE::HodoscopeEventDataBlock@{CALICE::HodoscopeEventDataBlock}}
+
+
+Interface class to the (LAL) Hodoscope data.  
+
+
+{\ttfamily \#include $<$HodoscopeEventDataBlock.hh$>$}Inheritance diagram for CALICE::HodoscopeEventDataBlock::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCALICE_1_1HodoscopeEventDataBlock}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf HodoscopeEventDataBlock} ()\label{classCALICE_1_1HodoscopeEventDataBlock_a737bf8e239af349eee5ff61472f0d181}
+
+\begin{DoxyCompactList}\small\item\em Default Constructor. \item\end{DoxyCompactList}\item 
+{\bf HodoscopeEventDataBlock} (LCObject $\ast$obj)\label{classCALICE_1_1HodoscopeEventDataBlock_ab99ff6344343b01653080763d612294a}
+
+\begin{DoxyCompactList}\small\item\em 'Copy constructor' needed to interpret LCCollection read from file/database. \item\end{DoxyCompactList}\item 
+{\bf HodoscopeEventDataBlock} \& {\bfseries setStatusWord} (int status)\label{classCALICE_1_1HodoscopeEventDataBlock_a8c84a40787e11df246f568c9a71ceee3}
+
+\item 
+int {\bf getStatusWord} () const \label{classCALICE_1_1HodoscopeEventDataBlock_af60190fb30f52df3a5697322a8965381}
+
+\begin{DoxyCompactList}\small\item\em Get the Hodoscope Status. \item\end{DoxyCompactList}\item 
+{\bf HodoscopeEventDataBlock} \& {\bfseries setEventCounter} (int counter)\label{classCALICE_1_1HodoscopeEventDataBlock_aa900a9d896467976dd716c3bbab1f99f}
+
+\item 
+int {\bf getEventCounter} () const \label{classCALICE_1_1HodoscopeEventDataBlock_a76db2626be9c0cd318bcf1fd0fced760}
+
+\begin{DoxyCompactList}\small\item\em Get the Event counter. \item\end{DoxyCompactList}\item 
+{\bf HodoscopeEventDataBlock} \& {\bf setTimeCounter} (int timecounter)\label{classCALICE_1_1HodoscopeEventDataBlock_abb2c7d94d1148d184c54ae66e98c3be4}
+
+\begin{DoxyCompactList}\small\item\em Set time counter. \item\end{DoxyCompactList}\item 
+int {\bf getTimeCounter} () const \label{classCALICE_1_1HodoscopeEventDataBlock_a50fb6763875658f8b91a186ec470a2da}
+
+\begin{DoxyCompactList}\small\item\em Get the time counter. \item\end{DoxyCompactList}\item 
+void {\bfseries storeHitMaps} (std::vector$<$ int $>$ \&, std::vector$<$ int $>$ \&)\label{classCALICE_1_1HodoscopeEventDataBlock_af6847f3dc217a31f37d5e0a3be862248}
+
+\item 
+unsigned int {\bf getNumHitsX} () const \label{classCALICE_1_1HodoscopeEventDataBlock_a854a79d6e112dc7153809afbcb71e40c}
+
+\begin{DoxyCompactList}\small\item\em Get the Number of Hits in X direction. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getNumHitsY} () const \label{classCALICE_1_1HodoscopeEventDataBlock_ae70c4a92cef77cc73726cd40ead186d3}
+
+\begin{DoxyCompactList}\small\item\em Get the Number of Hits in Y direction. \item\end{DoxyCompactList}\item 
+HodoscopeHitMap\_\-t {\bf getHitMapX} () const \label{classCALICE_1_1HodoscopeEventDataBlock_a56ff52ae20c90600f4268e2a9ec11015}
+
+\begin{DoxyCompactList}\small\item\em Give the hit maps to the user. \item\end{DoxyCompactList}\item 
+HodoscopeHitMap\_\-t {\bfseries getHitMapY} () const \label{classCALICE_1_1HodoscopeEventDataBlock_a536eb4acf8bebaa40022d7cc874779ee}
+
+\item 
+void {\bf print} (std::ostream \&os)\label{classCALICE_1_1HodoscopeEventDataBlock_aaeb17542763207334de0346c9c02f8c8}
+
+\begin{DoxyCompactList}\small\item\em Convenient print method. \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1HodoscopeEventDataBlock_a94f5e904602e4d9a4256c232a9e18068}
+
+\begin{DoxyCompactList}\small\item\em Return the type of the class. \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1HodoscopeEventDataBlock_a736f44f539d1f896242cbc3682e32a79}
+
+\begin{DoxyCompactList}\small\item\em Return a brief description of the data members. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf createHitMaps} ()\label{classCALICE_1_1HodoscopeEventDataBlock_aa2133e011daaf804ee14b31f53084b69}
+
+\begin{DoxyCompactList}\small\item\em A method to create the hitmaps (to be called by the constructor at access time. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+HodoscopeHitMap\_\-t {\bf \_\-hitMapX}\label{classCALICE_1_1HodoscopeEventDataBlock_aca7b8496ec0403b0ac1dae0e137b6660}
+
+\begin{DoxyCompactList}\small\item\em The hitmaps measured by the hodoscope. \item\end{DoxyCompactList}\item 
+HodoscopeHitMap\_\-t {\bfseries \_\-hitMapY}\label{classCALICE_1_1HodoscopeEventDataBlock_a5e9c5d17dbc060cc176b3bf26c099a4d}
+
+\item 
+bool {\bf \_\-hitMapsCreated}\label{classCALICE_1_1HodoscopeEventDataBlock_a64ba1b45e7d59de63a972a762f976791}
+
+\begin{DoxyCompactList}\small\item\em A pool which checks whetherthe hit map has already been recreated. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interface class to the (LAL) Hodoscope data. From the user point of view the class returns maps containing the hits in x and y respectively, but also other values like the timecounter and eventcounter are returned. The latter is useful to check whether the hodoscope has been in synch with the daq. \begin{DoxyAuthor}{Author}
+R. Poeschl LAL (based on the other interface classes)
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Aug 2007 
+\end{DoxyDate}
+
+
+Definition at line 41 of file HodoscopeEventDataBlock.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+HodoscopeEventDataBlock.hh\item 
+HodoscopeEventDataBlock.cc\end{DoxyCompactItemize}

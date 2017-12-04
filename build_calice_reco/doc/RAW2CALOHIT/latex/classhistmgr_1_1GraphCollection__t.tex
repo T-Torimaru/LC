@@ -1,0 +1,415 @@
+\section{histmgr::GraphCollection\_\-t Class Reference}
+\label{classhistmgr_1_1GraphCollection__t}\index{histmgr::GraphCollection\_\-t@{histmgr::GraphCollection\_\-t}}
+
+
+Light wrapper around a LCCollection to facilitate the handling of collections of graphs.  
+
+
+{\ttfamily \#include $<$GraphCollection\_\-t.hh$>$}Inheritance diagram for histmgr::GraphCollection\_\-t::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classhistmgr_1_1GraphCollection__t}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries GraphCollection\_\-t} (const std::string \&collection\_\-name, unsigned int n\_\-graphs, const EVENT::StringVec \&type\_\-names, unsigned int n\_\-expected\_\-values, const EVENT::StringVec \&opt\_\-major\_\-names)  throw (std::bad\_\-alloc, std::runtime\_\-error)\label{classhistmgr_1_1GraphCollection__t_ac8a65ff881a2bcd7831a5eaaab485a7d}
+
+\item 
+{\bfseries GraphCollection\_\-t} (const std::string \&collection\_\-name, const std::vector$<$ unsigned int $>$ \&n\_\-graphs, const std::vector$<$ std::string $>$ \&type\_\-names, unsigned int n\_\-expected\_\-values, const std::vector$<$ std::string $>$ \&opt\_\-major\_\-names)  throw (std::bad\_\-alloc, std::runtime\_\-error)\label{classhistmgr_1_1GraphCollection__t_a333affcaa9a51f0c6fb31512a6a7ba24}
+
+\item 
+{\bf GraphCollection\_\-t} (lcio::LCCollection $\ast$graphs, lcio::IntVec $\ast$indices)
+\item 
+{\bf GraphCollection\_\-t} (lcio::LCCollection $\ast$graphs)
+\begin{DoxyCompactList}\small\item\em Create a histogram collection from lcio collection. \item\end{DoxyCompactList}\item 
+{\bf GraphCollection\_\-t} (const {\bf GraphCollection\_\-t} \&a)\label{classhistmgr_1_1GraphCollection__t_a8beca08f62d11c86c76e861678e0a256}
+
+\begin{DoxyCompactList}\small\item\em copy constructor. \item\end{DoxyCompactList}\item 
+void {\bf deleteCollection} ()\label{classhistmgr_1_1GraphCollection__t_a9e80261bb734fb1f63480aee46764ffe}
+
+\begin{DoxyCompactList}\small\item\em delete the histogram collection and the index array This method exists instead of a destrctor to prevent copying the arrays (FIXME) \item\end{DoxyCompactList}\item 
+void {\bfseries deleteSharedStorage} ()\label{classhistmgr_1_1GraphCollection__t_aa3c1de2ff8e58f55dd92b68ce42d0535}
+
+\item 
+lcio::LCCollection $\ast$ {\bf collection} ()
+\begin{DoxyCompactList}\small\item\em get the unique group id \item\end{DoxyCompactList}\item 
+const lcio::LCCollection $\ast$ {\bf collection} () const 
+\begin{DoxyCompactList}\small\item\em get the collection of graphs (read only). \item\end{DoxyCompactList}\item 
+unsigned int {\bf n} () const 
+\begin{DoxyCompactList}\small\item\em Get the number of graphs. \item\end{DoxyCompactList}\item 
+bool {\bf is2D} () const 
+\begin{DoxyCompactList}\small\item\em Check whether the graph collection contains more than one graph group. \item\end{DoxyCompactList}\item 
+unsigned int {\bfseries nTypes} () const \label{classhistmgr_1_1GraphCollection__t_aa2092b41bf92f55d260e754ff26e48f2}
+
+\item 
+unsigned int {\bf nMajor} () const 
+\begin{DoxyCompactList}\small\item\em Get the number of major indices. \item\end{DoxyCompactList}\item 
+unsigned int {\bf nMinor} (unsigned int major\_\-index) const 
+\begin{DoxyCompactList}\small\item\em Get the number of elements for the collection slice addressed by the given major index. \item\end{DoxyCompactList}\item 
+{\bf GraphCollection\_\-t} (const std::string \&collection\_\-name, unsigned int n\_\-graphs, const EVENT::StringVec \&type\_\-names, unsigned int n\_\-expected\_\-values, const EVENT::StringVec \&opt\_\-major\_\-names, bool may\_\-overwrite=false)  throw (std::bad\_\-alloc, std::runtime\_\-error)
+\begin{DoxyCompactList}\small\item\em Create a collection of graphs. \item\end{DoxyCompactList}\item 
+{\bf GraphCollection\_\-t} (const std::string \&collection\_\-name, const std::vector$<$ int $>$ \&n\_\-graphs, const std::vector$<$ std::string $>$ \&type\_\-names, unsigned int n\_\-expected\_\-values, const std::vector$<$ std::string $>$ \&opt\_\-major\_\-names, bool may\_\-overwrite=false)  throw (std::bad\_\-alloc, std::runtime\_\-error)
+\begin{DoxyCompactList}\small\item\em Create a 2D collection of graphs. \item\end{DoxyCompactList}\item 
+std::string \& {\bf getMajorName} (unsigned int major\_\-index, unsigned int type\_\-index) const 
+\begin{DoxyCompactList}\small\item\em Get the name of the graph group addressed by the major index. \item\end{DoxyCompactList}\item 
+std::string \& {\bf getName} (unsigned int major\_\-index, unsigned int minor\_\-index, unsigned int type\_\-index) const 
+\begin{DoxyCompactList}\small\item\em Get the full name of the graph which is part of a specfic graph group addressed by the major index. \item\end{DoxyCompactList}\item 
+std::string \& {\bf getName} (unsigned int index, unsigned int type\_\-index) const 
+\begin{DoxyCompactList}\small\item\em Get the full name of the graph addressed by the index. \item\end{DoxyCompactList}\item 
+unsigned int {\bf appendXValue} (double x\_\-value)
+\begin{DoxyCompactList}\small\item\em Set the common x value of all the graphs of the graph collection. \item\end{DoxyCompactList}\item 
+void {\bf setYValue} (unsigned int major\_\-index, unsigned int minor\_\-index, unsigned int type\_\-index, unsigned int value\_\-index, float a\_\-value)\label{classhistmgr_1_1GraphCollection__t_a2d86a21418a91537e8cb831673b4e88b}
+
+\begin{DoxyCompactList}\small\item\em Set the y-\/value of the adddressed graph. \item\end{DoxyCompactList}\item 
+void {\bf setYValue} (unsigned int index, unsigned int type\_\-index, unsigned int value\_\-index, float a\_\-value)\label{classhistmgr_1_1GraphCollection__t_afa630f68afc52b4f115fe35e1c652119}
+
+\begin{DoxyCompactList}\small\item\em Set the y-\/value of the adddressed graph. \item\end{DoxyCompactList}\item 
+float {\bf getYValue} (unsigned int index, unsigned int type\_\-index, unsigned int value\_\-index) const \label{classhistmgr_1_1GraphCollection__t_aa897bd01a3c31af0e8b82dbef6b57271}
+
+\begin{DoxyCompactList}\small\item\em Get the y-\/value of the adddressed graph. \item\end{DoxyCompactList}\item 
+float {\bf getYValue} (unsigned int major\_\-index, unsigned int minor\_\-index, unsigned int type\_\-index, unsigned int value\_\-index) const \label{classhistmgr_1_1GraphCollection__t_a16f16887fc54666fca9fb47c8d45a6d0}
+
+\begin{DoxyCompactList}\small\item\em Get the y-\/value of the adddressed graph. \item\end{DoxyCompactList}\item 
+double {\bf getXValue} (unsigned int index, unsigned int value\_\-index) const \label{classhistmgr_1_1GraphCollection__t_a7dd9e9ac73e5e5ba7bf9f2786a73af0b}
+
+\begin{DoxyCompactList}\small\item\em Get the x-\/value of the adddressed graph. \item\end{DoxyCompactList}\item 
+const std::string \& {\bf getName} (unsigned int major\_\-index) const 
+\begin{DoxyCompactList}\small\item\em Get the name of the specified element of the graph collection. \item\end{DoxyCompactList}\item 
+const std::string \& {\bf getTypeName} (unsigned int type\_\-index) const 
+\begin{DoxyCompactList}\small\item\em Get the addressed type name. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const std::string {\bfseries \_\-\_\-colorParameterName}\label{classhistmgr_1_1GraphCollection__t_a1934a2578324612aa48e561e45058694}
+
+\item 
+static const std::string {\bfseries \_\-\_\-widthParameterName}\label{classhistmgr_1_1GraphCollection__t_ac0f6932a278f313baffc9939f4cb06b3}
+
+\item 
+static const std::string {\bfseries \_\-\_\-styleParameterName}\label{classhistmgr_1_1GraphCollection__t_acd025c2ba443992253384db6a7d17a8e}
+
+\item 
+static const std::string {\bfseries \_\-\_\-majorColorParameterName}\label{classhistmgr_1_1GraphCollection__t_a8dfd0bff85a2211a1e7090aa43506c4d}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int {\bf appendFloatValue} (unsigned int full\_\-index, float a\_\-value)\label{classhistmgr_1_1GraphCollection__t_a28fd99da38b507b16d24dff9e7b6b1eb}
+
+\begin{DoxyCompactList}\small\item\em append a new value to the addressed graph, \item\end{DoxyCompactList}\item 
+unsigned int {\bf appendValue} (unsigned int full\_\-index, double a\_\-value)\label{classhistmgr_1_1GraphCollection__t_a28ab4fba47b05ef353dd81c76ee4b1b3}
+
+\begin{DoxyCompactList}\small\item\em append a new value to the addressed graph, \item\end{DoxyCompactList}\item 
+void {\bf setFloatValue} (unsigned int full\_\-index, unsigned int value\_\-index, float a\_\-value)\label{classhistmgr_1_1GraphCollection__t_a2768ffebabe6eb28b985a622697d263e}
+
+\begin{DoxyCompactList}\small\item\em set a value of the addressed graph, \item\end{DoxyCompactList}\item 
+void {\bf setValue} (unsigned int full\_\-index, unsigned int value\_\-index, float a\_\-value)\label{classhistmgr_1_1GraphCollection__t_afe1fbbf9ce02123a6f0d13af1ccf48ab}
+
+\begin{DoxyCompactList}\small\item\em set a value of the addressed graph, \item\end{DoxyCompactList}\item 
+double {\bf getValue} (unsigned int full\_\-index, unsigned int value\_\-index) const \label{classhistmgr_1_1GraphCollection__t_a85dd0752c73cfdd78909e1e3e7e55cbf}
+
+\begin{DoxyCompactList}\small\item\em set a value of the addressed graph, \item\end{DoxyCompactList}\item 
+double {\bf getFloatValue} (unsigned int full\_\-index, unsigned int value\_\-index) const \label{classhistmgr_1_1GraphCollection__t_a55ab641e3179a97e4d609deea290eb37}
+
+\begin{DoxyCompactList}\small\item\em set a value of the addressed graph, \item\end{DoxyCompactList}\item 
+void {\bf addToFloatValue} (unsigned int full\_\-index, unsigned int value\_\-index, float a\_\-value)\label{classhistmgr_1_1GraphCollection__t_a5e747206119488483b0b46c11342dace}
+
+\begin{DoxyCompactList}\small\item\em Add the given value to a certain value of the addressed graph. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getIndex} (unsigned int major\_\-index, unsigned int minor\_\-index, unsigned int type\_\-index) const \label{classhistmgr_1_1GraphCollection__t_ae56f52a4ec2a8188b7a3be59c2f90090}
+
+\begin{DoxyCompactList}\small\item\em Calculate the full graph index in case of 2d graph groups. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getIndex} (unsigned int index, unsigned int type\_\-index) const \label{classhistmgr_1_1GraphCollection__t_a6babd769d8db88965939660a221ea4b9}
+
+\begin{DoxyCompactList}\small\item\em Calculate the full graph index in case of a flat graph group. \item\end{DoxyCompactList}\item 
+EVENT::LCGenericObject $\ast$ {\bfseries getXArray} ()\label{classhistmgr_1_1GraphCollection__t_a2dbf7fc55d252547d24cbac999f0f55e}
+
+\item 
+EVENT::LCGenericObject $\ast$ {\bfseries getArray} (unsigned int full\_\-index)\label{classhistmgr_1_1GraphCollection__t_a3e2a4928f2ff0d2249771d76be53c82e}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const std::string {\bfseries \_\-\_\-graphNameParameterName}\label{classhistmgr_1_1GraphCollection__t_a1c88428395aa2448fa920b2fd3fc21c1}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf copyNames} () const 
+\begin{DoxyCompactList}\small\item\em Assignment operation which deletes the old collections. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+lcio::LCCollection $\ast$ {\bf \_\-graphCol}\label{classhistmgr_1_1GraphCollection__t_a1196d28c374dfd4e4fdd291542b392f2}
+
+\begin{DoxyCompactList}\small\item\em the histogram collection \item\end{DoxyCompactList}\item 
+unsigned int {\bf \_\-nGraphs}\label{classhistmgr_1_1GraphCollection__t_ab839badb20a05434321be1bf9ff36831}
+
+\begin{DoxyCompactList}\small\item\em the number of graphs \item\end{DoxyCompactList}\item 
+lcio::IntVec $\ast$ {\bf \_\-majorIndex}
+\begin{DoxyCompactList}\small\item\em optional list of offset to form a two dimensional array out of the list. \item\end{DoxyCompactList}\item 
+unsigned int {\bf \_\-nTypes}
+\begin{DoxyCompactList}\small\item\em number of types. \item\end{DoxyCompactList}\item 
+lcio::StringVec {\bf \_\-typeNameList}
+\begin{DoxyCompactList}\small\item\em A vector which contains one name for all graphs of the collection or a name for each element (this list is only filled if a names are accessed). \item\end{DoxyCompactList}\item 
+lcio::StringVec {\bf \_\-nameList}
+\begin{DoxyCompactList}\small\item\em A vector which contains one name for all graphs of the collection or a name for each element. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const std::string {\bfseries \_\-\_\-majorIndexParameterName}\label{classhistmgr_1_1GraphCollection__t_adaba3b377fc3c74c4b34fcae6b032849}
+
+\item 
+static const std::string {\bfseries \_\-\_\-typeNameParameterName}\label{classhistmgr_1_1GraphCollection__t_aab8c996982d62a8eab7cd537394a07b1}
+
+\item 
+static const std::string {\bfseries \_\-\_\-defaultGraphName}\label{classhistmgr_1_1GraphCollection__t_ad7c3d4148ee7dcfbab8485fb3e7872c0}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries HistMgr}\label{classhistmgr_1_1GraphCollection__t_a3cc85db784d7651390e41024125eb3a0}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Light wrapper around a LCCollection to facilitate the handling of collections of graphs. All the graphs of the collection share the same x values. The wrapper supports 1 or 2 dimensional collections of graphs. Where each graph collection is composed of several graph groups and each graph group contains a fixed set of graphs of different types. More correctly the collection has a 2 dimensional or 3d diemensional structure. 
+
+Definition at line 27 of file GraphCollection\_\-t.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{histmgr::GraphCollection\_\-t@{histmgr::GraphCollection\_\-t}!GraphCollection\_\-t@{GraphCollection\_\-t}}
+\index{GraphCollection\_\-t@{GraphCollection\_\-t}!histmgr::GraphCollection_t@{histmgr::GraphCollection\_\-t}}
+\subsubsection[{GraphCollection\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}histmgr::GraphCollection\_\-t::GraphCollection\_\-t (lcio::LCCollection $\ast$ {\em graphs}, \/  lcio::IntVec $\ast$ {\em indices})}\label{classhistmgr_1_1GraphCollection__t_a740ae9b62df86330c2734fdf061b119a}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em graphs}]the linearised one or two dimensional collection of graphs \item[{\em indices}]optional list of indicies used to give two dimensional access to the histogram list. for each possible index of the first dimension is needed which contains the offset in the list. The second index is added to this offset. \end{DoxyParams}
+
+
+Definition at line 124 of file GraphCollection\_\-t.cc.
+
+References \_\-graphCol, \_\-majorIndex, \_\-nGraphs, and \_\-nTypes.\index{histmgr::GraphCollection\_\-t@{histmgr::GraphCollection\_\-t}!GraphCollection\_\-t@{GraphCollection\_\-t}}
+\index{GraphCollection\_\-t@{GraphCollection\_\-t}!histmgr::GraphCollection_t@{histmgr::GraphCollection\_\-t}}
+\subsubsection[{GraphCollection\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}histmgr::GraphCollection\_\-t::GraphCollection\_\-t (lcio::LCCollection $\ast$ {\em graphs})}\label{classhistmgr_1_1GraphCollection__t_a1f8d2f420b8735f4ff9ae71d976f6622}
+
+
+Create a histogram collection from lcio collection. 
+\begin{DoxyParams}{Parameters}
+\item[{\em graphs}]the linearised one or two dimensional collection of graphs (two dimensional collections have the collection parameter \char`\"{}major\char`\"{}). The method does not verify whether the lcio collection really is a histogram collection. However, if the collection has the parameter \char`\"{}major\char`\"{} it creates an index vector (costly operation) assuming that it is a 2d array instead of a 1d array(i.e. collection). The unique group id remains undedfined since it is not stored in the lcio collection. \end{DoxyParams}
+
+
+Definition at line 151 of file GraphCollection\_\-t.cc.
+
+References \_\-graphCol, \_\-majorIndex, \_\-nGraphs, and \_\-nTypes.\index{histmgr::GraphCollection\_\-t@{histmgr::GraphCollection\_\-t}!GraphCollection\_\-t@{GraphCollection\_\-t}}
+\index{GraphCollection\_\-t@{GraphCollection\_\-t}!histmgr::GraphCollection_t@{histmgr::GraphCollection\_\-t}}
+\subsubsection[{GraphCollection\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}histmgr::GraphCollection\_\-t::GraphCollection\_\-t (const std::string \& {\em collection\_\-name}, \/  unsigned int {\em n\_\-graphs}, \/  const EVENT::StringVec \& {\em type\_\-names}, \/  unsigned int {\em n\_\-expected\_\-values}, \/  const EVENT::StringVec \& {\em opt\_\-major\_\-names}, \/  bool {\em may\_\-overwrite} = {\ttfamily false})  throw (std::bad\_\-alloc, std::runtime\_\-error)}\label{classhistmgr_1_1GraphCollection__t_adb06c0097232711c8f9e3f1cd9f13781}
+
+
+Create a collection of graphs. Where for each element the given number of graph types is created. 
+
+Definition at line 17 of file GraphCollection\_\-t.cc.\index{histmgr::GraphCollection\_\-t@{histmgr::GraphCollection\_\-t}!GraphCollection\_\-t@{GraphCollection\_\-t}}
+\index{GraphCollection\_\-t@{GraphCollection\_\-t}!histmgr::GraphCollection_t@{histmgr::GraphCollection\_\-t}}
+\subsubsection[{GraphCollection\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}histmgr::GraphCollection\_\-t::GraphCollection\_\-t (const std::string \& {\em collection\_\-name}, \/  const std::vector$<$ int $>$ \& {\em n\_\-graphs}, \/  const std::vector$<$ std::string $>$ \& {\em type\_\-names}, \/  unsigned int {\em n\_\-expected\_\-values}, \/  const std::vector$<$ std::string $>$ \& {\em opt\_\-major\_\-names}, \/  bool {\em may\_\-overwrite} = {\ttfamily false})  throw (std::bad\_\-alloc, std::runtime\_\-error)}\label{classhistmgr_1_1GraphCollection__t_a6f1026c0d3a09485010e792b05bbc0d2}
+
+
+Create a 2D collection of graphs. Where for each element of the 2 dimensional collection, the not only a single but for each graph type one.. 
+
+Definition at line 63 of file GraphCollection\_\-t.cc.
+
+\subsection{Member Function Documentation}
+\index{histmgr::GraphCollection\_\-t@{histmgr::GraphCollection\_\-t}!appendXValue@{appendXValue}}
+\index{appendXValue@{appendXValue}!histmgr::GraphCollection_t@{histmgr::GraphCollection\_\-t}}
+\subsubsection[{appendXValue}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int histmgr::GraphCollection\_\-t::appendXValue (double {\em x\_\-value})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1GraphCollection__t_ae9c83cf79211ef808f75343c7c3c3c3d}
+
+
+Set the common x value of all the graphs of the graph collection. \begin{DoxyReturn}{Returns}
+the index of the new value which can be used to set the corresponding values in all the other graphs. 
+\end{DoxyReturn}
+
+
+Definition at line 204 of file GraphCollection\_\-t.hh.
+
+References appendValue().
+
+Referenced by CALICE::AverageHistoryGraphs::processEvent().\index{histmgr::GraphCollection\_\-t@{histmgr::GraphCollection\_\-t}!collection@{collection}}
+\index{collection@{collection}!histmgr::GraphCollection_t@{histmgr::GraphCollection\_\-t}}
+\subsubsection[{collection}]{\setlength{\rightskip}{0pt plus 5cm}const lcio::LCCollection$\ast$ histmgr::GraphCollection\_\-t::collection () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1GraphCollection__t_ab8754e9146c1fe855d176fe472413cf1}
+
+
+get the collection of graphs (read only). The index array needed for the two dimensional acces is added as a parameter named \char`\"{}major\char`\"{}. 
+
+Definition at line 118 of file GraphCollection\_\-t.hh.
+
+References \_\-graphCol.\index{histmgr::GraphCollection\_\-t@{histmgr::GraphCollection\_\-t}!collection@{collection}}
+\index{collection@{collection}!histmgr::GraphCollection_t@{histmgr::GraphCollection\_\-t}}
+\subsubsection[{collection}]{\setlength{\rightskip}{0pt plus 5cm}lcio::LCCollection$\ast$ histmgr::GraphCollection\_\-t::collection ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1GraphCollection__t_a10bbe40ded94d3664d9eca002986075e}
+
+
+get the unique group id get the collection of graphs. The index array needed for the two dimensional acces is added as a parameter named \char`\"{}major\char`\"{}. 
+
+Definition at line 113 of file GraphCollection\_\-t.hh.
+
+References \_\-graphCol.\index{histmgr::GraphCollection\_\-t@{histmgr::GraphCollection\_\-t}!copyNames@{copyNames}}
+\index{copyNames@{copyNames}!histmgr::GraphCollection_t@{histmgr::GraphCollection\_\-t}}
+\subsubsection[{copyNames}]{\setlength{\rightskip}{0pt plus 5cm}void histmgr::GraphCollection\_\-t::copyNames () const\hspace{0.3cm}{\ttfamily  [inline, private]}}\label{classhistmgr_1_1GraphCollection__t_abf045126bb8f97d49b3e07d776c5724a}
+
+
+Assignment operation which deletes the old collections. Copy the names from the collection to an accessible vector. The vector of histogram names is attached as a parameter to the LCCollection. 
+
+Definition at line 444 of file GraphCollection\_\-t.hh.
+
+References \_\-graphCol, \_\-nameList, and nMajor().
+
+Referenced by getName().\index{histmgr::GraphCollection\_\-t@{histmgr::GraphCollection\_\-t}!getMajorName@{getMajorName}}
+\index{getMajorName@{getMajorName}!histmgr::GraphCollection_t@{histmgr::GraphCollection\_\-t}}
+\subsubsection[{getMajorName}]{\setlength{\rightskip}{0pt plus 5cm}std::string\& histmgr::GraphCollection\_\-t::getMajorName (unsigned int {\em major\_\-index}, \/  unsigned int {\em type\_\-index}) const}\label{classhistmgr_1_1GraphCollection__t_a83cbcc31d10a4ee5ad144dbbab667b28}
+
+
+Get the name of the graph group addressed by the major index. The result is undefined if the graph group is not 2D. \index{histmgr::GraphCollection\_\-t@{histmgr::GraphCollection\_\-t}!getName@{getName}}
+\index{getName@{getName}!histmgr::GraphCollection_t@{histmgr::GraphCollection\_\-t}}
+\subsubsection[{getName}]{\setlength{\rightskip}{0pt plus 5cm}const std::string\& histmgr::GraphCollection\_\-t::getName (unsigned int {\em major\_\-index}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1GraphCollection__t_a89505919c7802e21324986f342afe48e}
+
+
+Get the name of the specified element of the graph collection. 
+\begin{DoxyParams}{Parameters}
+\item[{\em major\_\-index}]the index of the histogram element or in case of an 2D histogram array the major index. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to the name. The index must be valid. 
+\end{DoxyReturn}
+
+
+Definition at line 381 of file GraphCollection\_\-t.hh.
+
+References \_\-nameList, and copyNames().\index{histmgr::GraphCollection\_\-t@{histmgr::GraphCollection\_\-t}!getName@{getName}}
+\index{getName@{getName}!histmgr::GraphCollection_t@{histmgr::GraphCollection\_\-t}}
+\subsubsection[{getName}]{\setlength{\rightskip}{0pt plus 5cm}std::string\& histmgr::GraphCollection\_\-t::getName (unsigned int {\em index}, \/  unsigned int {\em type\_\-index}) const}\label{classhistmgr_1_1GraphCollection__t_a92a1dd0f7dbd265d4fffc81a7fd77ec6}
+
+
+Get the full name of the graph addressed by the index. 
+\begin{DoxyParams}{Parameters}
+\item[{\em index}]the index of the graph in the graph group. \item[{\em type\_\-index}]the index of the graph type. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the full graph name. The result is undefined if the graph group is not 2D. 
+\end{DoxyReturn}
+\index{histmgr::GraphCollection\_\-t@{histmgr::GraphCollection\_\-t}!getName@{getName}}
+\index{getName@{getName}!histmgr::GraphCollection_t@{histmgr::GraphCollection\_\-t}}
+\subsubsection[{getName}]{\setlength{\rightskip}{0pt plus 5cm}std::string\& histmgr::GraphCollection\_\-t::getName (unsigned int {\em major\_\-index}, \/  unsigned int {\em minor\_\-index}, \/  unsigned int {\em type\_\-index}) const}\label{classhistmgr_1_1GraphCollection__t_a2da46bcaf8e6e11f58b7d0dba88061c8}
+
+
+Get the full name of the graph which is part of a specfic graph group addressed by the major index. 
+\begin{DoxyParams}{Parameters}
+\item[{\em major\_\-index}]the index of the sub graph group. \item[{\em minor\_\-index}]the index of the graph in the graph group. \item[{\em type\_\-index}]the index of the graph type. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the full graph name. The result is undefined if the graph group is not 2D. 
+\end{DoxyReturn}
+\index{histmgr::GraphCollection\_\-t@{histmgr::GraphCollection\_\-t}!getTypeName@{getTypeName}}
+\index{getTypeName@{getTypeName}!histmgr::GraphCollection_t@{histmgr::GraphCollection\_\-t}}
+\subsubsection[{getTypeName}]{\setlength{\rightskip}{0pt plus 5cm}const std::string\& histmgr::GraphCollection\_\-t::getTypeName (unsigned int {\em type\_\-index}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1GraphCollection__t_aec15ce9e41b61e235c0b017d47974a08}
+
+
+Get the addressed type name. 
+\begin{DoxyParams}{Parameters}
+\item[{\em type\_\-index}]the index of the type. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to the type name. The index must be valid. 
+\end{DoxyReturn}
+
+
+Definition at line 397 of file GraphCollection\_\-t.hh.
+
+References \_\-graphCol, and \_\-typeNameList.\index{histmgr::GraphCollection\_\-t@{histmgr::GraphCollection\_\-t}!is2D@{is2D}}
+\index{is2D@{is2D}!histmgr::GraphCollection_t@{histmgr::GraphCollection\_\-t}}
+\subsubsection[{is2D}]{\setlength{\rightskip}{0pt plus 5cm}bool histmgr::GraphCollection\_\-t::is2D () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1GraphCollection__t_a67af785a9177d9c41e5f7f3251c2d75b}
+
+
+Check whether the graph collection contains more than one graph group. \begin{DoxyReturn}{Returns}
+true if the graph collection contains more than one graph group which can be addressed by a major index. 
+\end{DoxyReturn}
+
+
+Definition at line 130 of file GraphCollection\_\-t.hh.
+
+References \_\-majorIndex.
+
+Referenced by getIndex().\index{histmgr::GraphCollection\_\-t@{histmgr::GraphCollection\_\-t}!n@{n}}
+\index{n@{n}!histmgr::GraphCollection_t@{histmgr::GraphCollection\_\-t}}
+\subsubsection[{n}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int histmgr::GraphCollection\_\-t::n () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1GraphCollection__t_a6ee4913773c2949d5cf3a167038f9a3d}
+
+
+Get the number of graphs. This value does not take into account that for each graph several types are created. 
+
+Definition at line 123 of file GraphCollection\_\-t.hh.
+
+References \_\-nGraphs.
+
+Referenced by histmgr::HistMgr::fillHistogramCollectionList().\index{histmgr::GraphCollection\_\-t@{histmgr::GraphCollection\_\-t}!nMajor@{nMajor}}
+\index{nMajor@{nMajor}!histmgr::GraphCollection_t@{histmgr::GraphCollection\_\-t}}
+\subsubsection[{nMajor}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int histmgr::GraphCollection\_\-t::nMajor () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1GraphCollection__t_ac28f1f78b0326c5e91c40a8d74bb0b49}
+
+
+Get the number of major indices. The collection is sliced in nMajor slices each having nMinor(major\_\-index) elements. 
+
+Definition at line 144 of file GraphCollection\_\-t.hh.
+
+References \_\-majorIndex.
+
+Referenced by copyNames().\index{histmgr::GraphCollection\_\-t@{histmgr::GraphCollection\_\-t}!nMinor@{nMinor}}
+\index{nMinor@{nMinor}!histmgr::GraphCollection_t@{histmgr::GraphCollection\_\-t}}
+\subsubsection[{nMinor}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int histmgr::GraphCollection\_\-t::nMinor (unsigned int {\em major\_\-index}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1GraphCollection__t_a3428f5d67d892f34f6c5856638873e52}
+
+
+Get the number of elements for the collection slice addressed by the given major index. The major index must be valid. 
+
+Definition at line 154 of file GraphCollection\_\-t.hh.
+
+References \_\-majorIndex.
+
+\subsection{Field Documentation}
+\index{histmgr::GraphCollection\_\-t@{histmgr::GraphCollection\_\-t}!\_\-majorIndex@{\_\-majorIndex}}
+\index{\_\-majorIndex@{\_\-majorIndex}!histmgr::GraphCollection_t@{histmgr::GraphCollection\_\-t}}
+\subsubsection[{\_\-majorIndex}]{\setlength{\rightskip}{0pt plus 5cm}lcio::IntVec$\ast$ {\bf histmgr::GraphCollection\_\-t::\_\-majorIndex}\hspace{0.3cm}{\ttfamily  [private]}}\label{classhistmgr_1_1GraphCollection__t_aed8f07d8d9e9dc0579ac46468f7102a5}
+
+
+optional list of offset to form a two dimensional array out of the list. 
+
+Definition at line 459 of file GraphCollection\_\-t.hh.
+
+Referenced by deleteCollection(), getIndex(), GraphCollection\_\-t(), is2D(), nMajor(), and nMinor().\index{histmgr::GraphCollection\_\-t@{histmgr::GraphCollection\_\-t}!\_\-nameList@{\_\-nameList}}
+\index{\_\-nameList@{\_\-nameList}!histmgr::GraphCollection_t@{histmgr::GraphCollection\_\-t}}
+\subsubsection[{\_\-nameList}]{\setlength{\rightskip}{0pt plus 5cm}lcio::StringVec {\bf histmgr::GraphCollection\_\-t::\_\-nameList}\hspace{0.3cm}{\ttfamily  [mutable, private]}}\label{classhistmgr_1_1GraphCollection__t_a49f968e20a9fa50f9d0d828c61d36028}
+
+
+A vector which contains one name for all graphs of the collection or a name for each element. 
+
+Definition at line 466 of file GraphCollection\_\-t.hh.
+
+Referenced by copyNames(), and getName().\index{histmgr::GraphCollection\_\-t@{histmgr::GraphCollection\_\-t}!\_\-nTypes@{\_\-nTypes}}
+\index{\_\-nTypes@{\_\-nTypes}!histmgr::GraphCollection_t@{histmgr::GraphCollection\_\-t}}
+\subsubsection[{\_\-nTypes}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf histmgr::GraphCollection\_\-t::\_\-nTypes}\hspace{0.3cm}{\ttfamily  [private]}}\label{classhistmgr_1_1GraphCollection__t_ab1a67d796536013057dc680c9f215f36}
+
+
+number of types. 
+
+Definition at line 461 of file GraphCollection\_\-t.hh.
+
+Referenced by GraphCollection\_\-t().\index{histmgr::GraphCollection\_\-t@{histmgr::GraphCollection\_\-t}!\_\-typeNameList@{\_\-typeNameList}}
+\index{\_\-typeNameList@{\_\-typeNameList}!histmgr::GraphCollection_t@{histmgr::GraphCollection\_\-t}}
+\subsubsection[{\_\-typeNameList}]{\setlength{\rightskip}{0pt plus 5cm}lcio::StringVec {\bf histmgr::GraphCollection\_\-t::\_\-typeNameList}\hspace{0.3cm}{\ttfamily  [mutable, private]}}\label{classhistmgr_1_1GraphCollection__t_a17189e48d52996372e1fd52c558fbb4a}
+
+
+A vector which contains one name for all graphs of the collection or a name for each element (this list is only filled if a names are accessed). 
+
+Definition at line 463 of file GraphCollection\_\-t.hh.
+
+Referenced by getTypeName().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+GraphCollection\_\-t.hh\item 
+GraphCollection\_\-t.cc\end{DoxyCompactItemize}

@@ -1,0 +1,66 @@
+\section{CALICE::MappingProcessor Class Reference}
+\label{classCALICE_1_1MappingProcessor}\index{CALICE::MappingProcessor@{CALICE::MappingProcessor}}
+
+
+{\ttfamily \#include $<$MappingProcessor.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Processor $\ast$ {\bfseries newProcessor} ()\label{classCALICE_1_1MappingProcessor_a7e51a6ba3abaf252cc5734ff9f192c43}
+
+\item 
+virtual void {\bfseries init} ()\label{classCALICE_1_1MappingProcessor_a8260b005f18c7d7dd26f78fca7c5f901}
+
+\item 
+virtual void {\bfseries processEvent} (LCEvent $\ast$evt)\label{classCALICE_1_1MappingProcessor_afd6f7befe771c3e261b3eb3033ccba0c}
+
+\item 
+virtual void {\bfseries end} ()\label{classCALICE_1_1MappingProcessor_abcc44104c737ea4dc9b8e40121391df4}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const Mapper $\ast$ {\bf getMapper} (const std::string \&processorName)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Processor that provides a CALICE Mapper object.
+
+The processor generates and updates a CALICE Mapper object from the conditions data. To obtain the object in other processors use: \doxyref{MappingProcessor::getMapper}{p.}{classCALICE_1_1MappingProcessor_a0ab9895933daf9f277135afb8aa24376}( \char`\"{}mapping processor name\char`\"{} )
+
+\begin{DoxyAuthor}{Author}
+{\tt Benjamin.Lutz@desy.de} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.2 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+November 2009 
+\end{DoxyDate}
+
+
+Definition at line 32 of file MappingProcessor.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::MappingProcessor@{CALICE::MappingProcessor}!getMapper@{getMapper}}
+\index{getMapper@{getMapper}!CALICE::MappingProcessor@{CALICE::MappingProcessor}}
+\subsubsection[{getMapper}]{\setlength{\rightskip}{0pt plus 5cm}const Mapper $\ast$ CALICE::MappingProcessor::getMapper (const std::string \& {\em processorName})\hspace{0.3cm}{\ttfamily  [static]}}\label{classCALICE_1_1MappingProcessor_a0ab9895933daf9f277135afb8aa24376}
+static function to obtain mapper
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em processorName}]name of the \doxyref{MappingProcessor}{p.}{classCALICE_1_1MappingProcessor} that takes care of this Mapper. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the mapper 
+\end{DoxyReturn}
+
+
+Definition at line 24 of file MappingProcessor.cc.
+
+Referenced by CALICE::CorrectPositionProcessor::init().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+MappingProcessor.hh\item 
+MappingProcessor.cc\end{DoxyCompactItemize}

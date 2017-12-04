@@ -1,0 +1,238 @@
+\section{CALICE::IntegratedScECALCalibrationProcessor Class Reference}
+\label{classCALICE_1_1IntegratedScECALCalibrationProcessor}\index{CALICE::IntegratedScECALCalibrationProcessor@{CALICE::IntegratedScECALCalibrationProcessor}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf IntegratedScECALCalibrationProcessor} $\ast$ {\bfseries newProcessor} ()\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a80d8d7e14fa1e0838dc6b95f087a2705}
+
+\item 
+virtual void {\bfseries init} ()\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_aa1eab42e9957dfcf3eb2c6c6fb91a13f}
+
+\item 
+virtual void {\bfseries processRunHeader} (LCRunHeader $\ast$run)\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_acdffaa1d6fc44f196e4cb7a70cd02fcc}
+
+\item 
+virtual void {\bfseries processEvent} (lcio::LCEvent $\ast$evt)\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_ab52608ef6b36d9af3a84eedf6654cece}
+
+\item 
+virtual void {\bfseries conditionsChanged} (LCCollection $\ast$col)\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a50ff3bbb91c9e9f16882507b10b4edf7}
+
+\item 
+virtual void {\bfseries end} ()\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a4d3b93362d14bec35af499d016a21cd2}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries \_\-listReadCounter}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_aa242bf8b17ea06ba0c3a29651ccf03c7}
+
+\item 
+std::map$<$ long64, float $>$ {\bfseries \_\-templist}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_ad97e4e34867d7fa28a1eb07ea6220af7}
+
+\item 
+std::map$<$ int, map$<$ long64, float $>$ $>$ {\bfseries \_\-tempOrder}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_af562fe94a00b1e2a214d23dfc6046082}
+
+\item 
+int {\bfseries \_\-dataYear}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_adabbfd2f9d989e06a31acf5df9404018}
+
+\item 
+bool {\bfseries \_\-forMIPCalibration}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a5954f01e887988d58dfb4d0c449f671a}
+
+\item 
+bool {\bfseries \_\-tempcorrgainOn}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a5b2f5d0be9d2564c1f26136dc19c2812}
+
+\item 
+bool {\bfseries \_\-tempcorrmipOn}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a26685b20a13b1ec113ed710f5066f3da}
+
+\item 
+std::vector$<$ float $>$ {\bfseries \_\-tempcorr\_\-gain}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a6bea424148f94a17f5b1bcaa9560b4f1}
+
+\item 
+std::vector$<$ float $>$ {\bfseries \_\-tempcorr\_\-mip}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a96a833648299a5ac4ab5e961e5ce5425}
+
+\item 
+std::vector$<$ int $>$ {\bfseries \_\-offsetTimeStamp}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a8156f18fe252c98f723382db01ce9d80}
+
+\item 
+std::vector$<$ int $>$ {\bfseries \_\-ondotori2stamp}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a8a2a540275a5de1c440ea6389f549868}
+
+\item 
+int {\bfseries \_\-nnoisy}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a9ce2884633802f471e62c13483ced0a2}
+
+\item 
+int {\bfseries \_\-noisychanLayer} [ScECAL\_\-NLAYERS $\ast$ScECAL\_\-NSTRIPS]\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_aadbc356c230573212c8c1e9f9f3f41cc}
+
+\item 
+int {\bfseries \_\-noisychanStrip} [ScECAL\_\-NLAYERS $\ast$ScECAL\_\-NSTRIPS]\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_ad5fb35024421a55936030f4f7469fbd7}
+
+\item 
+float {\bfseries \_\-effNpix}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_afede1e6bc146049a6553c9801fe839dd}
+
+\item 
+std::string {\bfseries \_\-inputColName}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_ac42a0277e9b4dc421591e8d3df6e76c4}
+
+\item 
+std::string {\bfseries \_\-outputColName}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_afc10b206d4c70c3254ee8db9c7983e8f}
+
+\item 
+bool {\bfseries \_\-zeroSuppression}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a3bc7d6f1828510d0a9588f23f8c201eb}
+
+\item 
+float {\bfseries \_\-significanceCut}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a30185444af319ee6da502b64817e82f6}
+
+\item 
+bool {\bfseries \_\-skipPedestals}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a78af7130e141695755c6e3448ca73283}
+
+\item 
+int {\bfseries \_\-minPedNumber}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a1a2f99e38ea563324ffbeff1f342848b}
+
+\item 
+int {\bfseries \_\-pedCounter}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_ad2e2dfb9ed38a0fb477e49422affe3db}
+
+\item 
+bool {\bfseries \_\-pedestalSubtraction}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_abb28167c1947ecb2fa63693acb5088a7}
+
+\item 
+float {\bfseries \_\-mipCut}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a9aa1b3b1267dfb7d9f93779f365171e2}
+
+\item 
+unsigned long {\bfseries \_\-hitCounter}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_ae7f0adccf76ae6c22c6e5f748d8c9899}
+
+\item 
+unsigned long {\bfseries \_\-invalidMIPCounter}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a32073bf9073c927af764495b53a0dc97}
+
+\item 
+unsigned long {\bfseries \_\-invalidSaturationCorrectionCounter}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a99fd828abc1342d785aaf6a68d78a94b}
+
+\item 
+unsigned long {\bfseries \_\-saturationCounter}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a2d2db54c3e186e77f0f3a02ce8bf2254}
+
+\item 
+unsigned long {\bfseries \_\-eventCounter}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a934d12f20ce5258bd13386757d521b0f}
+
+\item 
+std::vector$<$ float $>$ {\bfseries \_\-gainLim}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a11b496da02ff2a2fe2b96fdd4b4dde44}
+
+\item 
+std::vector$<$ float $>$ {\bfseries \_\-gainErrLim}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a0eda6f27afb85a12b296cbc9340d2459}
+
+\item 
+std::vector$<$ float $>$ {\bfseries \_\-uniformGainSlope}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a42ae562273b47e5733ea2d3c2473a68c}
+
+\item 
+std::map$<$ unsigned, unsigned $>$ {\bfseries \_\-invalidMIPCalibrations}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a2699b026f88dd2671d112a050ba71b03}
+
+\item 
+std::map$<$ unsigned, unsigned $>$ {\bfseries \_\-invalidSaturationCorrections}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a14bbf47f43ebe5e33683b1d47ef4b45d}
+
+\item 
+std::map$<$ unsigned, unsigned $>$ {\bfseries \_\-saturations}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_ac6a2ff79eb4fab82925e36edae58d22a}
+
+\item 
+double {\bfseries \_\-pedSum} [ScECAL\_\-NLAYERS][ScECAL\_\-NSTRIPS]\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a09e83cb1d46116f9bddd9f5f8259758e}
+
+\item 
+double {\bfseries \_\-pedSumSquare} [ScECAL\_\-NLAYERS][ScECAL\_\-NSTRIPS]\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a22ca651c37cdca77e318183ac28d124b}
+
+\item 
+unsigned {\bfseries \_\-pedNum} [ScECAL\_\-NLAYERS][ScECAL\_\-NSTRIPS]\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_adaa3b48097f3a56add3a9dbaaac9d288}
+
+\item 
+float {\bfseries \_\-ped} [ScECAL\_\-NLAYERS][ScECAL\_\-NSTRIPS]\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a9d86971a1ebd696affd4df5702f84d93}
+
+\item 
+float {\bfseries \_\-pedError} [ScECAL\_\-NLAYERS][ScECAL\_\-NSTRIPS]\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_ada246c89a647be0ab4b33365e461a0c2}
+
+\item 
+double {\bfseries \_\-mipcalibconst} [ScECAL\_\-NLAYERS][ScECAL\_\-NSTRIPS]\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_acf61619680c7df4ffab1cf1a759b6f92}
+
+\item 
+double {\bfseries \_\-mipcalibconst\_\-err} [ScECAL\_\-NLAYERS][ScECAL\_\-NSTRIPS]\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a1fe73446252d0efa3e77523e2c645b1a}
+
+\item 
+double {\bfseries \_\-mipSlope} [ScECAL\_\-NLAYERS][ScECAL\_\-NSTRIPS]\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a51de70a9fb886693481b7c7e3173fed1}
+
+\item 
+double {\bfseries \_\-mipSlopeErr} [ScECAL\_\-NLAYERS][ScECAL\_\-NSTRIPS]\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a883ef441c0a3098f7319e1e8d48aada2}
+
+\item 
+double {\bfseries \_\-mipSetTemp} [ScECAL\_\-NLAYERS][ScECAL\_\-NSTRIPS]\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a256c3d9ae521ccef87b79c161616be65}
+
+\item 
+double {\bfseries \_\-gaincalibconst} [ScECAL\_\-NLAYERS][ScECAL\_\-NSTRIPS]\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_ac01bc7902f8f262fa3590f0facb31ebc}
+
+\item 
+double {\bfseries \_\-gaincalibconst\_\-err} [ScECAL\_\-NLAYERS][ScECAL\_\-NSTRIPS]\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_ad6651fc69410049bdde46bfda31192e3}
+
+\item 
+double {\bfseries \_\-gainSlope} [ScECAL\_\-NLAYERS][ScECAL\_\-NSTRIPS]\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a0c09c5acb333c533ac0dc9d5081c6076}
+
+\item 
+double {\bfseries \_\-gainSlopeErr} [ScECAL\_\-NLAYERS][ScECAL\_\-NSTRIPS]\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_ad9122fb35196a1e8c128bc810dd73f48}
+
+\item 
+double {\bfseries \_\-gainSetTemp} [ScECAL\_\-NLAYERS][ScECAL\_\-NSTRIPS]\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a0d302f9a7fe000202b8e2b3315e37a42}
+
+\item 
+double {\bfseries \_\-intercalibconst} [ScECAL\_\-NLAYERS][ScECAL\_\-NSTRIPS]\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a19843391c2f2d492ee8d07cf560d61b3}
+
+\item 
+double {\bfseries \_\-intercalibconst\_\-err} [ScECAL\_\-NLAYERS][ScECAL\_\-NSTRIPS]\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a447fee3ab3e691f7753e77849a3f5156}
+
+\item 
+std::string {\bfseries \_\-ScECALMIPColName}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a23fa64acf0c4c56a27cd218e45a72a95}
+
+\item 
+LCCollection $\ast$ {\bfseries \_\-ScECALMIPCol}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_af9da8b814eec1d7428a50f752826816b}
+
+\item 
+bool {\bfseries \_\-MIPConstantChanged}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a7adcc04792d1e9c91be42fffb9650ecb}
+
+\item 
+std::string {\bfseries \_\-ScECALIntCalibColName}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a06cf578e8d2e90e83423c4cda9212719}
+
+\item 
+LCCollection $\ast$ {\bfseries \_\-ScECALIntCalibCol}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a0ff44ca5a38c2b4b95b6f66e532c0f0f}
+
+\item 
+bool {\bfseries \_\-IntCalibConstChanged}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a79ad2dea374a18735ecf63568815738e}
+
+\item 
+std::string {\bfseries \_\-ScECALGainColName}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a35226bdbae7c441b3537037d5100d27c}
+
+\item 
+LCCollection $\ast$ {\bfseries \_\-ScECALGainCol}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_aafd6b24dd5fbfcf0abeeb5c887faa07a}
+
+\item 
+bool {\bfseries \_\-GainConstChanged}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_ab7f94c6e651268e510283572be35fb5f}
+
+\item 
+std::string {\bfseries \_\-ScECALTemperatureColName}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a3965c116379097f3dd18979b694d23e4}
+
+\item 
+LCCollection $\ast$ {\bfseries \_\-ScECALTemperatureCol}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a48a9a574f0f7377f9e8dc16a99b7a45a}
+
+\item 
+bool {\bfseries \_\-TemperatureChanged}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_ab2e5c24c94b27fd94a70bebb8a071aea}
+
+\item 
+std::string {\bfseries \_\-ScECALNoisyChannelColName}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a234c5e12f557aebf5752f95e53ca68a7}
+
+\item 
+LCCollection $\ast$ {\bfseries \_\-ScECALNoisyChannelCol}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_aa04542cfddd279b2c0254916e9d830a2}
+
+\item 
+bool {\bfseries \_\-NoisyChannelChanged}\label{classCALICE_1_1IntegratedScECALCalibrationProcessor_a920d09ab58c742d08d16599ab661eae2}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 47 of file IntegratedScECALCalibrationProcessor.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+IntegratedScECALCalibrationProcessor.hh\item 
+IntegratedScECALCalibrationProcessor.cc\end{DoxyCompactItemize}

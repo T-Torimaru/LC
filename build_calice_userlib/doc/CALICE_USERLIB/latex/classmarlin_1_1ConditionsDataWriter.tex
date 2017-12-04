@@ -1,0 +1,118 @@
+\section{marlin::ConditionsDataWriter Class Reference}
+\label{classmarlin_1_1ConditionsDataWriter}\index{marlin::ConditionsDataWriter@{marlin::ConditionsDataWriter}}
+
+
+Marlin processr which catches selected conditions data changes and writes them to the conditions data base.  
+
+
+{\ttfamily \#include $<$ConditionsDataWriter.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Processor $\ast$ {\bfseries newProcessor} ()\label{classmarlin_1_1ConditionsDataWriter_a360478d5d28f2e5012ef5e0e5201821a}
+
+\item 
+void {\bf init} ()
+\begin{DoxyCompactList}\small\item\em Install conditions change listener. \item\end{DoxyCompactList}\item 
+void {\bf processRunHeader} (LCRunHeader $\ast$run)\label{classmarlin_1_1ConditionsDataWriter_a943dd58f7e315e2ded7f49a77211eb82}
+
+\begin{DoxyCompactList}\small\item\em Do nothing at run start. \item\end{DoxyCompactList}\item 
+void {\bf processEvent} (LCEvent $\ast$evtP)
+\begin{DoxyCompactList}\small\item\em Memorise the event time stamps. \item\end{DoxyCompactList}\item 
+void {\bf end} ()
+\begin{DoxyCompactList}\small\item\em Write all not yet written conditions data to the conditions data base. \item\end{DoxyCompactList}\item 
+long64 {\bfseries getTimeStampOfLastEvent} () const \label{classmarlin_1_1ConditionsDataWriter_a8c8683f0e6055c27c991a6f31d5d69a9}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bf \_\-dbInit}
+\begin{DoxyCompactList}\small\item\em parameter to be filled with the host name, database name,user name and the password. \item\end{DoxyCompactList}\item 
+StringVec {\bf \_\-condDataCollections}
+\begin{DoxyCompactList}\small\item\em collection name, destination CondDB folder and version of the conditions data to be written to the conditions database. \item\end{DoxyCompactList}\item 
+long64 {\bf \_\-timeStampOfLastEvent}
+\begin{DoxyCompactList}\small\item\em The time stamp of the last event that was processed. \item\end{DoxyCompactList}\item 
+std::vector$<$ {\bf CALICE::ConditionsDataWriteHandler} $\ast$ $>$ {\bfseries \_\-handler}\label{classmarlin_1_1ConditionsDataWriter_a68d96e4787ed480558b5b3088cd3321f}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf CALICE::ConditionsDataWriteHandler}\label{classmarlin_1_1ConditionsDataWriter_a0e401bb1bfedeba5808934499877adf4}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Marlin processr which catches selected conditions data changes and writes them to the conditions data base. The processor does not verify whether the data already exists it writes every change to the database.
+
+The conditions data changes are catched by individual handlers which clone the conditions data collection and store the cloned collection when the handler is notified of the next change.
+
+The conditions data change handler does not have any knowledge of the record time which triggered the conditions data change. To solve this problem, the handlers request a correction of the since time stamp. This request will be approximatively fulfilled by setting the since time stamp to the time stamp of the event which arrived just after the conditions data change. 
+
+Definition at line 36 of file ConditionsDataWriter.hh.
+
+\subsection{Member Function Documentation}
+\index{marlin::ConditionsDataWriter@{marlin::ConditionsDataWriter}!end@{end}}
+\index{end@{end}!marlin::ConditionsDataWriter@{marlin::ConditionsDataWriter}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}void marlin::ConditionsDataWriter::end ()}\label{classmarlin_1_1ConditionsDataWriter_a8ece634cea5d95989d574c128d303006}
+
+
+Write all not yet written conditions data to the conditions data base. The writing of the conditions data is delayed until the conditions data changes to set the \char`\"{}since\char`\"{} and \char`\"{}till\char`\"{} time stamps. All the conditions data which is not yet stored in the conditions database is written now. Finally if the the version is not HEAD, the folders are tagged. 
+
+Definition at line 109 of file ConditionsDataWriter.cc.
+
+References \_\-timeStampOfLastEvent.\index{marlin::ConditionsDataWriter@{marlin::ConditionsDataWriter}!init@{init}}
+\index{init@{init}!marlin::ConditionsDataWriter@{marlin::ConditionsDataWriter}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void marlin::ConditionsDataWriter::init ()}\label{classmarlin_1_1ConditionsDataWriter_a71c0b9b141b58a82aaf7df60939bf114}
+
+
+Install conditions change listener. The listeners are installed for the conditions data specified by the processor parameters. 
+
+Definition at line 41 of file ConditionsDataWriter.cc.
+
+References \_\-condDataCollections, \_\-dbInit, and \_\-timeStampOfLastEvent.\index{marlin::ConditionsDataWriter@{marlin::ConditionsDataWriter}!processEvent@{processEvent}}
+\index{processEvent@{processEvent}!marlin::ConditionsDataWriter@{marlin::ConditionsDataWriter}}
+\subsubsection[{processEvent}]{\setlength{\rightskip}{0pt plus 5cm}void marlin::ConditionsDataWriter::processEvent (LCEvent $\ast$ {\em evtP})}\label{classmarlin_1_1ConditionsDataWriter_afa20ee1d0fcaa87334896a5e5b86920e}
+
+
+Memorise the event time stamps. The time stamp of the last event before the member function end is called is needed to write the dangling conditions data with correct \char`\"{}since\char`\"{} and \char`\"{}till\char`\"{} time stamps to the conditions data base. 
+
+Definition at line 94 of file ConditionsDataWriter.cc.
+
+References \_\-timeStampOfLastEvent.
+
+\subsection{Field Documentation}
+\index{marlin::ConditionsDataWriter@{marlin::ConditionsDataWriter}!\_\-condDataCollections@{\_\-condDataCollections}}
+\index{\_\-condDataCollections@{\_\-condDataCollections}!marlin::ConditionsDataWriter@{marlin::ConditionsDataWriter}}
+\subsubsection[{\_\-condDataCollections}]{\setlength{\rightskip}{0pt plus 5cm}StringVec {\bf marlin::ConditionsDataWriter::\_\-condDataCollections}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classmarlin_1_1ConditionsDataWriter_aec7c975d8f23f11e20dc1911ce57bb2c}
+
+
+collection name, destination CondDB folder and version of the conditions data to be written to the conditions database. 
+
+Definition at line 77 of file ConditionsDataWriter.hh.
+
+Referenced by init().\index{marlin::ConditionsDataWriter@{marlin::ConditionsDataWriter}!\_\-dbInit@{\_\-dbInit}}
+\index{\_\-dbInit@{\_\-dbInit}!marlin::ConditionsDataWriter@{marlin::ConditionsDataWriter}}
+\subsubsection[{\_\-dbInit}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf marlin::ConditionsDataWriter::\_\-dbInit}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classmarlin_1_1ConditionsDataWriter_ad87dadf50a9e475515ea26bce299e449}
+
+
+parameter to be filled with the host name, database name,user name and the password. 
+
+Definition at line 72 of file ConditionsDataWriter.hh.
+
+Referenced by init().\index{marlin::ConditionsDataWriter@{marlin::ConditionsDataWriter}!\_\-timeStampOfLastEvent@{\_\-timeStampOfLastEvent}}
+\index{\_\-timeStampOfLastEvent@{\_\-timeStampOfLastEvent}!marlin::ConditionsDataWriter@{marlin::ConditionsDataWriter}}
+\subsubsection[{\_\-timeStampOfLastEvent}]{\setlength{\rightskip}{0pt plus 5cm}long64 {\bf marlin::ConditionsDataWriter::\_\-timeStampOfLastEvent}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classmarlin_1_1ConditionsDataWriter_af2c6e1b189e2f665f8ef6beb7ad9c10b}
+
+
+The time stamp of the last event that was processed. 
+
+Definition at line 80 of file ConditionsDataWriter.hh.
+
+Referenced by end(), init(), processEvent(), and processRunHeader().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+ConditionsDataWriter.hh\item 
+ConditionsDataWriter.cc\end{DoxyCompactItemize}

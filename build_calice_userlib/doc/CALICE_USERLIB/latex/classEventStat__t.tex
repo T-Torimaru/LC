@@ -1,0 +1,173 @@
+\section{EventStat\_\-t Class Reference}
+\label{classEventStat__t}\index{EventStat\_\-t@{EventStat\_\-t}}
+
+
+Statistics about event data record errors.  
+
+
+{\ttfamily \#include $<$EventStatList\_\-t.hh$>$}Inheritance diagram for EventStat\_\-t::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classEventStat__t}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf finish} ()\label{classEventStat__t_a3de34c1b75654309a34e3c59baaf3e3c}
+
+\begin{DoxyCompactList}\small\item\em does nothing. \item\end{DoxyCompactList}\item 
+void {\bf printTableHeader} (std::ostream \&out) const \label{classEventStat__t_a04a45113ff065d22de59ed2ead6d773d}
+
+\begin{DoxyCompactList}\small\item\em Print the table header. \item\end{DoxyCompactList}\item 
+void {\bf print} (std::ostream \&out)
+\begin{DoxyCompactList}\small\item\em Print the statistics of one object (one table row). \item\end{DoxyCompactList}\item 
+bool {\bf hasInfo} () const 
+\begin{DoxyCompactList}\small\item\em Return true if at least one error was detected for the corresponding front-\/end. \item\end{DoxyCompactList}\item 
+void {\bf sameEvent} ()\label{classEventStat__t_ab748cfcf7a8c6adf7704990d45f4cd32}
+
+\begin{DoxyCompactList}\small\item\em Notify that the same event was read out twice. \item\end{DoxyCompactList}\item 
+void {\bf corruptRecord} ()\label{classEventStat__t_a06b8038060c09957b59d9559c59e5e69}
+
+\begin{DoxyCompactList}\small\item\em Notify that the record is corrupt. \item\end{DoxyCompactList}\item 
+void {\bf triggerCounterMismatch} ()
+\begin{DoxyCompactList}\small\item\em Notify about a trigger counter mismitch wrt. \item\end{DoxyCompactList}\item 
+void {\bf slotTriggerCounterMismatch} ()
+\begin{DoxyCompactList}\small\item\em Notify about a trigger counter mismitch wrt. \item\end{DoxyCompactList}\item 
+void {\bf noFeData} ()
+\begin{DoxyCompactList}\small\item\em Notify missing front-\/end event data. \item\end{DoxyCompactList}\item 
+void {\bf feData} ()
+\begin{DoxyCompactList}\small\item\em Notify about available front-\/end event data. \item\end{DoxyCompactList}\item 
+void {\bf setBadVLinkHeader} ()\label{classEventStat__t_a20178de3ef951d0f652c5e09d4b4f8b3}
+
+\begin{DoxyCompactList}\small\item\em Notify bad Vlink Headers according to Pauls verify function. \item\end{DoxyCompactList}\item 
+void {\bf setDestroyedCrcVLinkRecords} ()
+\begin{DoxyCompactList}\small\item\em Notify completetly corrupt ADC records (e.g. \item\end{DoxyCompactList}\item 
+unsigned int {\bf refreshErrors} () const \label{classEventStat__t_a40c058f85ad9be40b3dc392c38b3ff91}
+
+\begin{DoxyCompactList}\small\item\em The total number of events for which the previous event was read again instead of a new one. \item\end{DoxyCompactList}\item 
+unsigned int {\bf recordErrors} () const \label{classEventStat__t_a3a7d8aee8e1bf39263d8c3a10d197953}
+
+\begin{DoxyCompactList}\small\item\em The total number of events for which the event data record was corrupt. \item\end{DoxyCompactList}\item 
+unsigned int {\bf triggerCounterErrors} () const \label{classEventStat__t_a9b63de0930de74c3827ed75df652c2e6}
+
+\begin{DoxyCompactList}\small\item\em The total number of events for which the trigger counter did not match the one of the previous front-\/end. \item\end{DoxyCompactList}\item 
+unsigned int {\bf slotTriggerCounterErrors} () const \label{classEventStat__t_af44aefda07aef191437386190d0998be}
+
+\begin{DoxyCompactList}\small\item\em The total number of events for which the trigger counter did not match the one of the previous slot. \item\end{DoxyCompactList}\item 
+unsigned int {\bf eventsWithoutFeData} () const \label{classEventStat__t_a95a0af550b916e6e2680129805f6c19b}
+
+\begin{DoxyCompactList}\small\item\em The total number of events for which the front-\/end event data was missing. \item\end{DoxyCompactList}\item 
+unsigned int {\bf badVLinkHeaders} ()\label{classEventStat__t_a5909605a8f59205ca411ebf168dd586e}
+
+\begin{DoxyCompactList}\small\item\em Return the number of bad VLink Headers. \item\end{DoxyCompactList}\item 
+unsigned int {\bf destroyedCrcVLinkRecords} ()\label{classEventStat__t_a1346627746f75d2b4705676d9bacc253}
+
+\begin{DoxyCompactList}\small\item\em Return the number of destroyed CrcVLinkData. \item\end{DoxyCompactList}\item 
+unsigned int {\bf error} () const \label{classEventStat__t_ae4ef03c2850a29ba8352eb390339d1f3}
+
+\begin{DoxyCompactList}\small\item\em The total number of errors. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int {\bfseries \_\-sameEvent}\label{classEventStat__t_af47df69fa27240a369ea766830a0115f}
+
+\item 
+unsigned int {\bfseries \_\-corruptRecord}\label{classEventStat__t_a741c0870676516c066bee748da17946f}
+
+\item 
+unsigned int {\bfseries \_\-triggerCounterMismatch}\label{classEventStat__t_ad981f571d83750d02892285c752138b6}
+
+\item 
+unsigned int {\bfseries \_\-slotTriggerCounterMismatch}\label{classEventStat__t_a317b5d148ff956fb911d567054179a8a}
+
+\item 
+unsigned int {\bfseries \_\-missingFeData}\label{classEventStat__t_a8fd34eec37ae8aff59e361685272d217}
+
+\item 
+unsigned int {\bfseries \_\-nFeData}\label{classEventStat__t_a3cbd7d4a994750f7b5bd681813dca063}
+
+\item 
+unsigned int {\bf \_\-nBadHeader}\label{classEventStat__t_a994ba3454f481e8a05e2a7a1dad0f912}
+
+\begin{DoxyCompactList}\small\item\em variables counting missing header info \item\end{DoxyCompactList}\item 
+unsigned int {\bfseries \_\-nDesCrcVLink}\label{classEventStat__t_a09b8fe6143725978872e3a4746925f9b}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Statistics about event data record errors. The object is meant to be used together with \doxyref{FeStatList\_\-t}{p.}{classFeStatList__t}. This object collects statistics about bad event data records The following errors are counted: the same event was read out twice; the trigger counter does not match the trigger counter of another Crc Board; the record is corrupt. \begin{DoxyAuthor}{Author}
+Goetz Gaycken, LLR -\/ Ecole polytechnique 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+feb, 2006 
+\end{DoxyDate}
+
+
+Definition at line 16 of file EventStatList\_\-t.hh.
+
+\subsection{Member Function Documentation}
+\index{EventStat\_\-t@{EventStat\_\-t}!feData@{feData}}
+\index{feData@{feData}!EventStat_t@{EventStat\_\-t}}
+\subsubsection[{feData}]{\setlength{\rightskip}{0pt plus 5cm}void EventStat\_\-t::feData ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classEventStat__t_a43220a2eae852d1f48b0a79fd0ea9a9a}
+
+
+Notify about available front-\/end event data. If front-\/end data is missing always than it is not an error. 
+
+Definition at line 61 of file EventStatList\_\-t.hh.\index{EventStat\_\-t@{EventStat\_\-t}!hasInfo@{hasInfo}}
+\index{hasInfo@{hasInfo}!EventStat_t@{EventStat\_\-t}}
+\subsubsection[{hasInfo}]{\setlength{\rightskip}{0pt plus 5cm}bool EventStat\_\-t::hasInfo () const\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classEventStat__t_aa34365be6467dd0a2567513a3368c1f2}
+
+
+Return true if at least one error was detected for the corresponding front-\/end. 
+
+Implements {\bf StatObj\_\-t} \doxyref{}{p.}{classStatObj__t_a4eb553db0bda3666cab1c390092841a1}.
+
+Definition at line 35 of file EventStatList\_\-t.hh.
+
+References error().\index{EventStat\_\-t@{EventStat\_\-t}!noFeData@{noFeData}}
+\index{noFeData@{noFeData}!EventStat_t@{EventStat\_\-t}}
+\subsubsection[{noFeData}]{\setlength{\rightskip}{0pt plus 5cm}void EventStat\_\-t::noFeData ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classEventStat__t_a97f8a0c024af090610b7b2015d0ce60f}
+
+
+Notify missing front-\/end event data. The front-\/end event data is needed to identify corrupt records and find trigger counter mismatches. 
+
+Definition at line 56 of file EventStatList\_\-t.hh.\index{EventStat\_\-t@{EventStat\_\-t}!print@{print}}
+\index{print@{print}!EventStat_t@{EventStat\_\-t}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}void EventStat\_\-t::print (std::ostream \& {\em out})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classEventStat__t_a518be219247fbd9108e6d186796d9b64}
+
+
+Print the statistics of one object (one table row). 
+
+Implements {\bf StatObj\_\-t} \doxyref{}{p.}{classStatObj__t_a2763586ba61eb2c37f076e266b0a331e}.
+
+Definition at line 16 of file EventStatList\_\-t.cc.
+
+References badVLinkHeaders(), destroyedCrcVLinkRecords(), eventsWithoutFeData(), recordErrors(), refreshErrors(), slotTriggerCounterErrors(), and triggerCounterErrors().\index{EventStat\_\-t@{EventStat\_\-t}!setDestroyedCrcVLinkRecords@{setDestroyedCrcVLinkRecords}}
+\index{setDestroyedCrcVLinkRecords@{setDestroyedCrcVLinkRecords}!EventStat_t@{EventStat\_\-t}}
+\subsubsection[{setDestroyedCrcVLinkRecords}]{\setlength{\rightskip}{0pt plus 5cm}void EventStat\_\-t::setDestroyedCrcVLinkRecords ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classEventStat__t_affecaa835813d871d69af374935c4c5e}
+
+
+Notify completetly corrupt ADC records (e.g. at beginning of config 
+
+Definition at line 70 of file EventStatList\_\-t.hh.\index{EventStat\_\-t@{EventStat\_\-t}!slotTriggerCounterMismatch@{slotTriggerCounterMismatch}}
+\index{slotTriggerCounterMismatch@{slotTriggerCounterMismatch}!EventStat_t@{EventStat\_\-t}}
+\subsubsection[{slotTriggerCounterMismatch}]{\setlength{\rightskip}{0pt plus 5cm}void EventStat\_\-t::slotTriggerCounterMismatch ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classEventStat__t_a15423117d12b710fe046d2c7474b68cf}
+
+
+Notify about a trigger counter mismitch wrt. to the previous Crc board. 
+
+Definition at line 51 of file EventStatList\_\-t.hh.\index{EventStat\_\-t@{EventStat\_\-t}!triggerCounterMismatch@{triggerCounterMismatch}}
+\index{triggerCounterMismatch@{triggerCounterMismatch}!EventStat_t@{EventStat\_\-t}}
+\subsubsection[{triggerCounterMismatch}]{\setlength{\rightskip}{0pt plus 5cm}void EventStat\_\-t::triggerCounterMismatch ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classEventStat__t_ab2b08c993ac66fed880d26a01e3fbda7}
+
+
+Notify about a trigger counter mismitch wrt. to the last \char`\"{}good\char`\"{} front-\/end. 
+
+Definition at line 47 of file EventStatList\_\-t.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+EventStatList\_\-t.hh\item 
+EventStatList\_\-t.cc\end{DoxyCompactItemize}

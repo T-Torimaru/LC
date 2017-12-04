@@ -1,0 +1,93 @@
+\section{CALICE::CaliceHit Class Reference}
+\label{classCALICE_1_1CaliceHit}\index{CALICE::CaliceHit@{CALICE::CaliceHit}}
+
+
+Class for the \doxyref{CALICE}{p.}{namespaceCALICE} Hcal calorimeter hit information during the reconstruction.  
+
+
+{\ttfamily \#include $<$CaliceHit.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CaliceHit} ()\label{classCALICE_1_1CaliceHit_a98ecad92603cd9e49ccd8189563c1295}
+
+\begin{DoxyCompactList}\small\item\em default constructor \item\end{DoxyCompactList}\item 
+{\bf CaliceHit} (unsigned moduleID, unsigned chip, unsigned channel, float valueEnergy, float errorEnergy, int timeStamp, unsigned type)
+\begin{DoxyCompactList}\small\item\em constructor, initialise \doxyref{CaliceHit}{p.}{classCALICE_1_1CaliceHit} according to parameters \item\end{DoxyCompactList}\item 
+{\bfseries CaliceHit} (LCObject $\ast$obj)\label{classCALICE_1_1CaliceHit_a2581b54e9f99b7fcdb7e96510e7ee08b}
+
+\item 
+unsigned {\bf getModuleID} () const \label{classCALICE_1_1CaliceHit_ab9a38707cc073a27926c30565c9ec824}
+
+\begin{DoxyCompactList}\small\item\em get module number of hit \item\end{DoxyCompactList}\item 
+unsigned {\bf getChip} () const \label{classCALICE_1_1CaliceHit_ab6d1980c258c243d66f0e78e5e9cc3ab}
+
+\begin{DoxyCompactList}\small\item\em get chip number of hit \item\end{DoxyCompactList}\item 
+unsigned {\bf getChannel} () const \label{classCALICE_1_1CaliceHit_aa204afaa3c519bb2e1ede393fcb071a6}
+
+\begin{DoxyCompactList}\small\item\em get channel number of hit \item\end{DoxyCompactList}\item 
+unsigned {\bf getCellKey} () const \label{classCALICE_1_1CaliceHit_a17eacb1d5795af85c01636784185e457}
+
+\begin{DoxyCompactList}\small\item\em get cellKey \item\end{DoxyCompactList}\item 
+float {\bf getEnergyValue} () const \label{classCALICE_1_1CaliceHit_ab88be7f3019bee7021d98e6e36bb0e5e}
+
+\begin{DoxyCompactList}\small\item\em get energy value of hit \item\end{DoxyCompactList}\item 
+float {\bf getEnergyError} () const \label{classCALICE_1_1CaliceHit_a36f21345ae212fca7b7fcc51a1620f2d}
+
+\begin{DoxyCompactList}\small\item\em get energy error of hit \item\end{DoxyCompactList}\item 
+int {\bf getTimeStamp} () const \label{classCALICE_1_1CaliceHit_a1795a0cec41e5509b39cdc86bccae3ac}
+
+\begin{DoxyCompactList}\small\item\em get time stamp \item\end{DoxyCompactList}\item 
+unsigned {\bf getType} () const \label{classCALICE_1_1CaliceHit_ac30e29cb253ab4c4065606a432c62da9}
+
+\begin{DoxyCompactList}\small\item\em get reconstruction status of hit \item\end{DoxyCompactList}\item 
+void {\bf setEnergyValue} (float energyValue)\label{classCALICE_1_1CaliceHit_a2ea22b2f7b0ba157dc379958f99d07e0}
+
+\begin{DoxyCompactList}\small\item\em set energy value of hit \item\end{DoxyCompactList}\item 
+void {\bf setEnergyError} (float energyError)\label{classCALICE_1_1CaliceHit_aa9ba1721dd909e8723a7af83aee8f57b}
+
+\begin{DoxyCompactList}\small\item\em set energy error of hit \item\end{DoxyCompactList}\item 
+void {\bf setTimeStamp} (unsigned timeStamp)\label{classCALICE_1_1CaliceHit_a9d7c96ae4e6524f98ede0aa9bb35a7d9}
+
+\begin{DoxyCompactList}\small\item\em set time stamp \item\end{DoxyCompactList}\item 
+void {\bf setType} (unsigned type)\label{classCALICE_1_1CaliceHit_af7b49ed9c0ac03cb4877152174022e5a}
+
+\begin{DoxyCompactList}\small\item\em set reconstruction status of hit \item\end{DoxyCompactList}\item 
+void {\bf print} (std::ostream \&os)\label{classCALICE_1_1CaliceHit_a327920f1c5d85d67e813b3e5b61c24bf}
+
+\begin{DoxyCompactList}\small\item\em convenient print method \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1CaliceHit_ae4b8e7ded0d4c496bc680b69492610e8}
+
+\begin{DoxyCompactList}\small\item\em return the type of the class \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1CaliceHit_a973929d198a57c6adbe1912c1ed0fc9c}
+
+\begin{DoxyCompactList}\small\item\em return a brief description of the data memeber \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for the \doxyref{CALICE}{p.}{namespaceCALICE} Hcal calorimeter hit information during the reconstruction. Information is stored module wise (compared to x,y,z position in CalorimeterHits). Energies are stored as float (compared to ADC counts in RawCalorimeterHits). \begin{DoxyAuthor}{Author}
+S. Schmidt DESY 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Jun 15 2006 
+\end{DoxyDate}
+
+
+Definition at line 28 of file CaliceHit.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CALICE::CaliceHit@{CALICE::CaliceHit}!CaliceHit@{CaliceHit}}
+\index{CaliceHit@{CaliceHit}!CALICE::CaliceHit@{CALICE::CaliceHit}}
+\subsubsection[{CaliceHit}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::CaliceHit::CaliceHit (unsigned {\em moduleID}, \/  unsigned {\em chip}, \/  unsigned {\em channel}, \/  float {\em valueEnergy}, \/  float {\em errorEnergy}, \/  int {\em timeStamp}, \/  unsigned {\em type})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CaliceHit_ab0d5c66345681f9892c889ce2c97364c}
+
+
+constructor, initialise \doxyref{CaliceHit}{p.}{classCALICE_1_1CaliceHit} according to parameters 
+\begin{DoxyParams}{Parameters}
+\item[{\em moduleID}]module ID of the module the hit is in, low byte gives upper or lower half, high byte gives module \char`\"{}stamp\char`\"{}, used to find correct calibration \item[{\em chip}]number of the chip the hit is in, used to find correct calibration \item[{\em channel}]number of the channel the hist is in, used to find correct calibration \item[{\em valueEnergy}]\char`\"{}energy\char`\"{} property of the hit (also ADC hits, energy in units of MIPs, etc.) \item[{\em errorEnergy}]error on the \char`\"{}energy\char`\"{} property of the hit \item[{\em timeStamp}]timeStamp of the hit \item[{\em type}]of the hit, can be used to differentiate between different levels of CaliceHits (e.g. hits with pedestal subtraction, with MIP calibration, etc.) \end{DoxyParams}
+
+
+Definition at line 47 of file CaliceHit.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+CaliceHit.hh\item 
+CaliceHit.cc\end{DoxyCompactItemize}

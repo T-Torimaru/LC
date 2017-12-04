@@ -1,0 +1,493 @@
+\section{CALICE::MappingAndAlignment Class Reference}
+\label{classCALICE_1_1MappingAndAlignment}\index{CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}}
+
+
+Class to comunicate/handle the translation into unique layer/cell ids and 3D spacial coordinates.  
+
+
+{\ttfamily \#include $<$MappingAndAlignment.hh$>$}Inheritance diagram for CALICE::MappingAndAlignment::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCALICE_1_1MappingAndAlignment}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf MappingAndAlignment} ()
+\begin{DoxyCompactList}\small\item\em default constructor. \item\end{DoxyCompactList}\item 
+void {\bf init} ()\label{classCALICE_1_1MappingAndAlignment_ab65734fd9a72ab2d06cc6d9943f426b5}
+
+\begin{DoxyCompactList}\small\item\em Does noting for the time beeing. \item\end{DoxyCompactList}\item 
+std::pair$<$ UInt\_\-t, UInt\_\-t $>$ {\bf getModuleIndex} (UInt\_\-t crate\_\-id, UInt\_\-t slot\_\-id, UInt\_\-t front\_\-end\_\-nr) const   throw (runtime\_\-error	   )
+\begin{DoxyCompactList}\small\item\em Get the module indices connected to the right and left side of the given front-\/end. \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bf getCellIndex} (UInt\_\-t module\_\-index, UInt\_\-t multiplex\_\-position, UInt\_\-t line\_\-i) const 
+\begin{DoxyCompactList}\small\item\em get the cell index for the given module according to the current multiplex position and line index. \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bf getModuleID} (UInt\_\-t module\_\-index) const 
+\begin{DoxyCompactList}\small\item\em Get the module and the cell index using the information of the electrical connection. \item\end{DoxyCompactList}\item 
+string {\bf getModuleName} (UInt\_\-t module\_\-index) const   throw (logic\_\-error)
+\begin{DoxyCompactList}\small\item\em Get the name containing the type specifier and the module ID. \item\end{DoxyCompactList}\item 
+bool {\bf isModuleConnected} (UInt\_\-t module\_\-index) const 
+\begin{DoxyCompactList}\small\item\em Verify whether the module location is connected to an active front-\/end. \item\end{DoxyCompactList}\item 
+Int\_\-t {\bf getModuleIndexFromCellIndex} (UInt\_\-t)
+\begin{DoxyCompactList}\small\item\em Return the module index for a given ($\ast$Mokka$\ast$) Cellindex All this assumes that the \doxyref{ModuleLocation}{p.}{classCALICE_1_1ModuleLocation} class has got set properly the index of the lower left cell e.g. \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bf getNCellsTotal} () const 
+\begin{DoxyCompactList}\small\item\em Return the total number of defined cells. \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bf getNConnectedCells} () const \label{classCALICE_1_1MappingAndAlignment_a46301567d4816d91e621600a33322cee}
+
+\begin{DoxyCompactList}\small\item\em Return the number of cells connected to the DAQ. \item\end{DoxyCompactList}\item 
+Bool\_\-t {\bf isCellDead} (UInt\_\-t module\_\-index, UInt\_\-t cell\_\-index)
+\begin{DoxyCompactList}\small\item\em Verify whether the given cell is dead. \item\end{DoxyCompactList}\item 
+void {\bf moduleTypeChanged} (lcio::LCCollection $\ast$col)
+\begin{DoxyCompactList}\small\item\em Inform the object about changes of the module types. \item\end{DoxyCompactList}\item 
+void {\bf moduleLocationChanged} (lcio::LCCollection $\ast$col)
+\begin{DoxyCompactList}\small\item\em Inform the object about changes of the module locations. \item\end{DoxyCompactList}\item 
+void {\bf moduleConnectionChanged} (lcio::LCCollection $\ast$col)
+\begin{DoxyCompactList}\small\item\em Inform the object about changes of the module connection. \item\end{DoxyCompactList}\item 
+void {\bf print} (std::ostream \&os)\label{classCALICE_1_1MappingAndAlignment_a287c144d8b3df57eb3bea2d22b37e816}
+
+\begin{DoxyCompactList}\small\item\em To debug. \item\end{DoxyCompactList}\item 
+void {\bfseries printTcmtConnections} (std::ostream \&os)\label{classCALICE_1_1MappingAndAlignment_a83b86ef9d0152f7166acb21e0c219a9a}
+
+\item 
+bool {\bf isValidCrate} (UInt\_\-t crate) const 
+\begin{DoxyCompactList}\small\item\em Validates a crate number based on mapping. \item\end{DoxyCompactList}\item 
+void {\bf setViewConnectionTree} (bool view\_\-connection=true)
+\begin{DoxyCompactList}\small\item\em Toggle printing of the connecting tree after each rebuild (conditions data change: \doxyref{ModuleConnection}{p.}{classCALICE_1_1ModuleConnection}, \doxyref{ModuleLocation}{p.}{classCALICE_1_1ModuleLocation}). \item\end{DoxyCompactList}\item 
+bool {\bf hasRightSide} (const std::pair$<$ UInt\_\-t, UInt\_\-t $>$ \&module\_\-indices) const 
+\begin{DoxyCompactList}\small\item\em Return true if the front-\/end has a right side connected. \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bf getNumberOfLines} (const std::pair$<$ UInt\_\-t, UInt\_\-t $>$ \&module\_\-indices, bool right\_\-instead\_\-of\_\-left) const 
+\begin{DoxyCompactList}\small\item\em Return the number above the last line which should be used for the left or the right index. \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bf getLineIndexOfLeftSide} () const \label{classCALICE_1_1MappingAndAlignment_a5a476cb79ba69482760288820ded99e5}
+
+\begin{DoxyCompactList}\small\item\em Return the first line associated to the module connected to the left side of the front-\/end. \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bf getLineIndexOfRightSide} () const \label{classCALICE_1_1MappingAndAlignment_ace30c8f6d801e2fc395516bc669e09c6}
+
+\begin{DoxyCompactList}\small\item\em Return the first line associated to the module connected to the right side of the front-\/end. \item\end{DoxyCompactList}\item 
+Bool\_\-t {\bf isModuleConditionsDataComplete} () const \label{classCALICE_1_1MappingAndAlignment_a62f40cce6e79ea54a52983d8538f01c8}
+
+\begin{DoxyCompactList}\small\item\em Basic completeness test of conditions data. \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bfseries getMaxCellsPerFrontEnd} () const \label{classCALICE_1_1MappingAndAlignment_ae9ecc9d0eaed57b3831138af4e312376}
+
+\item 
+const {\bf TcmtConnection} $\ast$ {\bf getTcmtConnection} (UInt\_\-t crate, UInt\_\-t slot, UInt\_\-t fe, UInt\_\-t chip, UInt\_\-t chan) const 
+\begin{DoxyCompactList}\small\item\em Get the connection object associated to an electronic channel. \item\end{DoxyCompactList}\item 
+void {\bf rebuildConnectionTree} ()\label{classCALICE_1_1MappingAndAlignment_a3979f678d52819accc77b415aaaf3aa1}
+
+\begin{DoxyCompactList}\small\item\em Builds Ecal/Hcal connection mappings. \item\end{DoxyCompactList}\item 
+const std::string {\bf getCellIDEncoding} ()\label{classCALICE_1_1MappingAndAlignment_a4406a7799f33545f2911fe95ca320944}
+
+\begin{DoxyCompactList}\small\item\em Returns the cell id encoding for the given detector. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf rebuildTcmtConnectionTree} ()\label{classCALICE_1_1MappingAndAlignment_ad694ddef557f4fe05ae2419e87f22dda}
+
+\begin{DoxyCompactList}\small\item\em Builds TCMT connection mappings. \item\end{DoxyCompactList}\item 
+void {\bf clearTcmtConnections} ()
+\begin{DoxyCompactList}\small\item\em Reset TCMT connection mappings. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef {\bf SimpleArray\_\-t}$<$ UInt\_\-t $>$ {\bf FrontEndList\_\-t}
+\begin{DoxyCompactList}\small\item\em Array which contains the module ID of the front-\/end to which it is connected. \item\end{DoxyCompactList}\item 
+typedef {\bf SimpleArray\_\-t}$<$ {\bf FrontEndList\_\-t} $>$ {\bf SlotList\_\-t}
+\begin{DoxyCompactList}\small\item\em List of slots. \item\end{DoxyCompactList}\item 
+typedef {\bf SimpleArray\_\-t}$<$ pair$<$ UInt\_\-t, {\bf SlotList\_\-t} $>$ $>$ {\bf CrateList\_\-t}
+\begin{DoxyCompactList}\small\item\em list of crates: first argument crate ID. \item\end{DoxyCompactList}\item 
+typedef {\bf SimpleArray\_\-t}$<$ {\bf ModuleConnection} $>$ {\bf ModuleConnectionList\_\-t}\label{classCALICE_1_1MappingAndAlignment_a11deca040a915bfa0b2bb41cde0c6bd0}
+
+\begin{DoxyCompactList}\small\item\em List which stores the module connection information provided by the conditions data handler (TODO: just store a pointer to the collection?). \item\end{DoxyCompactList}\item 
+typedef map$<$ int, {\bf TcmtConnection} $\ast$ $>$ {\bf TcmtConnectionList\_\-t}\label{classCALICE_1_1MappingAndAlignment_a4a2d15f2206d6729a7a913eb03934e1f}
+
+\begin{DoxyCompactList}\small\item\em map of TCMT connections, keyed by elecID (slot,fe,chip,chan) \item\end{DoxyCompactList}\item 
+typedef map$<$ UInt\_\-t, UInt\_\-t $>$ {\bf ModuleIndex\_\-t}
+\begin{DoxyCompactList}\small\item\em The first component is a uniqe module index (the index offset) , the second component the array index in \_\-moduleLocationList. \item\end{DoxyCompactList}\item 
+typedef std::map$<$ UInt\_\-t, UInt\_\-t $>$ {\bf MapCelltoModuleIndex\_\-t}\label{classCALICE_1_1MappingAndAlignment_adb2c356a3c031c3b76a2fa39b33452c3}
+
+\begin{DoxyCompactList}\small\item\em A map which relates indices (M,K) of a given cell to a module. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf correctFullHalfConnectorErrors} ()
+\begin{DoxyCompactList}\small\item\em Cludge to correct configuration errors. \item\end{DoxyCompactList}\item 
+void {\bf determineMaximumCellNumberPerFrontEnd} ()
+\begin{DoxyCompactList}\small\item\em Determine the maximum number of cells per front end. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ModuleConnectionList\_\-t} {\bfseries \_\-moduleConnectionList}\label{classCALICE_1_1MappingAndAlignment_ac733fc6ba9d616d2df42c463a48b4030}
+
+\item 
+{\bf TcmtConnectionList\_\-t} {\bfseries \_\-tcmtConnectionList}\label{classCALICE_1_1MappingAndAlignment_afe70ae28f6d338ea5fd318a4bd0d4fc1}
+
+\item 
+{\bf ModuleIndex\_\-t} {\bfseries \_\-moduleIndex}\label{classCALICE_1_1MappingAndAlignment_a9957bbdcd0e508beb91a3e057b3f32c6}
+
+\item 
+{\bf CrateList\_\-t} {\bfseries \_\-crateList}\label{classCALICE_1_1MappingAndAlignment_a292b468cfa2e32cb2651544535b15b48}
+
+\item 
+UInt\_\-t {\bf \_\-nCells}\label{classCALICE_1_1MappingAndAlignment_a19b8f6a67746c23c116c97c467622079}
+
+\begin{DoxyCompactList}\small\item\em total number of cells; \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bf \_\-nConnectedCells}\label{classCALICE_1_1MappingAndAlignment_aa1b0b2441f98af871ea184677e6a45e6}
+
+\begin{DoxyCompactList}\small\item\em total number of cells which are connected to the DAQ; \item\end{DoxyCompactList}\item 
+Bool\_\-t {\bfseries \_\-viewConnectionTree}\label{classCALICE_1_1MappingAndAlignment_a11281471aa9548845ea8c33045e6ff59}
+
+\item 
+{\bf MapCelltoModuleIndex\_\-t} {\bfseries \_\-mapCelltoModuleIndex}\label{classCALICE_1_1MappingAndAlignment_a38d71ec8db47cdc6a07dcdb37d570336}
+
+\item 
+std::string {\bf \_\-cellIDEncoding}\label{classCALICE_1_1MappingAndAlignment_a28f0de5a05fe4d2e298836b63db2967a}
+
+\begin{DoxyCompactList}\small\item\em A string which constains the cell id encoding. \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bfseries \_\-maxNCells}\label{classCALICE_1_1MappingAndAlignment_abec431705b22b12cbb78b1aab103b67d}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const UInt\_\-t {\bf \_\-\_\-nLines} = 12\label{classCALICE_1_1MappingAndAlignment_a251b86e88d0f7c13697e9bdce8a324f8}
+
+\begin{DoxyCompactList}\small\item\em some constants \item\end{DoxyCompactList}\item 
+static const UInt\_\-t {\bfseries \_\-\_\-nLinesHalf} = 6\label{classCALICE_1_1MappingAndAlignment_aaa24d0c93f80ae30dab87fa0918572a0}
+
+\item 
+static const UInt\_\-t {\bfseries \_\-\_\-nFrontEnds} = 8\label{classCALICE_1_1MappingAndAlignment_a67aa6824271f96655c51520395958b8b}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries VRawADCValueProcessor}\label{classCALICE_1_1MappingAndAlignment_a1060eb3029e99c96ee8dfd4d10d4db42}
+
+\item 
+class {\bfseries ModuleIndexReverseLookup}\label{classCALICE_1_1MappingAndAlignment_a5472b0a328fc7a12404ebfb1be1d0f8d}
+
+\item 
+class {\bfseries HcalModuleIndexReverseLookup}\label{classCALICE_1_1MappingAndAlignment_a50ed2a9c32996f0dbb44b55cd0e9690a}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to comunicate/handle the translation into unique layer/cell ids and 3D spacial coordinates. The class has to be informed about changes of the detector configuration using the methods \doxyref{CALICE::MappingAndAlignment::moduleTypeChanged}{p.}{classCALICE_1_1MappingAndAlignment_a5564c399de481a023b702a39a04fea7f}, \doxyref{CALICE::MappingAndAlignment::moduleLocationChanged}{p.}{classCALICE_1_1MappingAndAlignment_ab9d17873aeb090388556547cb6b67ba8} and \doxyref{CALICE::MappingAndAlignment::moduleConnectionChanged}{p.}{classCALICE_1_1MappingAndAlignment_a3717c2ea27a5a60ff2a41d17803ff148} This information is used to map the DAQ signals to cells and calculate 3D spacial coordinates for hits.
+
+The class performs range checks only if BOUNDARY\_\-CHECK is defined. 
+
+Definition at line 43 of file MappingAndAlignment.hh.
+
+\subsection{Member Typedef Documentation}
+\index{CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}!CrateList\_\-t@{CrateList\_\-t}}
+\index{CrateList\_\-t@{CrateList\_\-t}!CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}}
+\subsubsection[{CrateList\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf SimpleArray\_\-t}$<$pair$<$UInt\_\-t,{\bf SlotList\_\-t} $>$ $>$ {\bf CALICE::MappingAndAlignment::CrateList\_\-t}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1MappingAndAlignment_ad781275a2200261d7900283ad388fce0}
+
+
+list of crates: first argument crate ID. 
+
+Definition at line 397 of file MappingAndAlignment.hh.\index{CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}!FrontEndList\_\-t@{FrontEndList\_\-t}}
+\index{FrontEndList\_\-t@{FrontEndList\_\-t}!CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}}
+\subsubsection[{FrontEndList\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf SimpleArray\_\-t}$<$UInt\_\-t$>$ {\bf CALICE::MappingAndAlignment::FrontEndList\_\-t}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1MappingAndAlignment_a4afbca274b2208db1f1fd688cd11cf06}
+
+
+Array which contains the module ID of the front-\/end to which it is connected. The frond-\/end ID$\ast$2+ front-\/end sid (0/1) is used as an array index 
+
+Definition at line 393 of file MappingAndAlignment.hh.\index{CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}!ModuleIndex\_\-t@{ModuleIndex\_\-t}}
+\index{ModuleIndex\_\-t@{ModuleIndex\_\-t}!CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}}
+\subsubsection[{ModuleIndex\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef map$<$UInt\_\-t , UInt\_\-t $>$ {\bf CALICE::MappingAndAlignment::ModuleIndex\_\-t}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1MappingAndAlignment_a248150849e7ee949b96327de20ab3d55}
+
+
+The first component is a uniqe module index (the index offset) , the second component the array index in \_\-moduleLocationList. 
+
+Definition at line 408 of file MappingAndAlignment.hh.\index{CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}!SlotList\_\-t@{SlotList\_\-t}}
+\index{SlotList\_\-t@{SlotList\_\-t}!CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}}
+\subsubsection[{SlotList\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf SimpleArray\_\-t}$<${\bf FrontEndList\_\-t}$>$ {\bf CALICE::MappingAndAlignment::SlotList\_\-t}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1MappingAndAlignment_a83157b1d568890919c1504e9f784d3c1}
+
+
+List of slots. It is assumed that the slot ID is small and can be used as an array index (without requiring very large unused arrays) 
+
+Definition at line 395 of file MappingAndAlignment.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}!MappingAndAlignment@{MappingAndAlignment}}
+\index{MappingAndAlignment@{MappingAndAlignment}!CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}}
+\subsubsection[{MappingAndAlignment}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::MappingAndAlignment::MappingAndAlignment ()}\label{classCALICE_1_1MappingAndAlignment_a14eb3de5a8df0c6929a768d33f4efd08}
+
+
+default constructor. The default constructor configures the conditions data change delegators. 
+
+Definition at line 24 of file MappingAndAlignment.cc.
+
+\subsection{Member Function Documentation}
+\index{CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}!clearTcmtConnections@{clearTcmtConnections}}
+\index{clearTcmtConnections@{clearTcmtConnections}!CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}}
+\subsubsection[{clearTcmtConnections}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::MappingAndAlignment::clearTcmtConnections ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1MappingAndAlignment_ac0bfe9fec7fc2b8a6c0196e61429b558}
+
+
+Reset TCMT connection mappings. Automatically called before these connection mappings are (re)built. 
+
+Definition at line 562 of file MappingAndAlignment.cc.
+
+Referenced by moduleConnectionChanged().\index{CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}!correctFullHalfConnectorErrors@{correctFullHalfConnectorErrors}}
+\index{correctFullHalfConnectorErrors@{correctFullHalfConnectorErrors}!CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}}
+\subsubsection[{correctFullHalfConnectorErrors}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::MappingAndAlignment::correctFullHalfConnectorErrors ()\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1MappingAndAlignment_a13ba7dc3c8e53ac73350fc5f81b3797f}
+
+
+Cludge to correct configuration errors. Initially there was only support for full connectors 
+
+Definition at line 509 of file MappingAndAlignment.cc.
+
+References CALICE::ModuleDescription::getModuleTypeName(), and CALICE::Alignment::isModule().
+
+Referenced by moduleConnectionChanged(), moduleLocationChanged(), and moduleTypeChanged().\index{CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}!determineMaximumCellNumberPerFrontEnd@{determineMaximumCellNumberPerFrontEnd}}
+\index{determineMaximumCellNumberPerFrontEnd@{determineMaximumCellNumberPerFrontEnd}!CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}}
+\subsubsection[{determineMaximumCellNumberPerFrontEnd}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::MappingAndAlignment::determineMaximumCellNumberPerFrontEnd ()\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1MappingAndAlignment_a9f5684ddcdc43087817c2882e4e60760}
+
+
+Determine the maximum number of cells per front end. The maxmimum number of cells per front-\/end is defined such that this number is equal or larger than the number of cells per front end of all front ends which only have left sides and half this number is equal or large than the maximum number of cells of all right sides and all left sides respectively. 
+
+Definition at line 457 of file MappingAndAlignment.cc.
+
+References isModuleConditionsDataComplete().
+
+Referenced by moduleConnectionChanged(), moduleLocationChanged(), and moduleTypeChanged().\index{CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}!getCellIndex@{getCellIndex}}
+\index{getCellIndex@{getCellIndex}!CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}}
+\subsubsection[{getCellIndex}]{\setlength{\rightskip}{0pt plus 5cm}UInt\_\-t CALICE::MappingAndAlignment::getCellIndex (UInt\_\-t {\em module\_\-index}, \/  UInt\_\-t {\em multiplex\_\-position}, \/  UInt\_\-t {\em line\_\-i}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1MappingAndAlignment_ab51a0f33e8d02234ddc96a399a02e9be}
+
+
+get the cell index for the given module according to the current multiplex position and line index. 
+\begin{DoxyParams}{Parameters}
+\item[{\em module\_\-index}]a valid index of a conencted module (\doxyref{getModuleIndex}{p.}{classCALICE_1_1MappingAndAlignment_aa6ce2c69a9cb90058716e5bdb757d358}) \item[{\em multiplex\_\-position}]the multiplex sequence number (0-\/17). \item[{\em line\_\-i}]the number of the input line/ chip (0-\/11). \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the cell index for the given multiplex position and line index. The cell index can be savely increment for the remaining lines (0 $<$ line\_\-i $<$ getNLinesOfLeftIndex, getNLinesOfRightIndex). 
+\end{DoxyReturn}
+\begin{Desc}
+\item[{\bf Todo}]need more robust method to determine the number of lines per modules \end{Desc}
+
+
+Definition at line 134 of file MappingAndAlignment.hh.
+
+References \_\-\_\-nLines.\index{CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}!getModuleID@{getModuleID}}
+\index{getModuleID@{getModuleID}!CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}}
+\subsubsection[{getModuleID}]{\setlength{\rightskip}{0pt plus 5cm}UInt\_\-t CALICE::MappingAndAlignment::getModuleID (UInt\_\-t {\em module\_\-index}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1MappingAndAlignment_a4446637bff9619ec7750593d70ec46ba}
+
+
+Get the module and the cell index using the information of the electrical connection. The ADC values are grouped in modules. In case of the Calice ECAL a module is one PCB. The pads are labeled by the cell index. The number of cells per module may not be the same (In case of the Calice ECAL there are modules composed of 6 or 3 wafers with 36 pads each).
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em adc\_\-block}]reference to the current \doxyref{AdcBlock}{p.}{classCALICE_1_1AdcBlock} \item[{\em line\_\-i}]the line/chip of the current adc value \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pair continaing first the module index and second the cell index (e.g. pad )
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em std::runtime\_\-error}]if the crate of the current adc\_\-block is not registered or \item[{\em std::range\_\-error}]if the BOUNDARY\_\-CHECK is defined and the crate and slot numbers are valid but the front-\/end number of the current adc\_\-block is out of the considered range. ({\bfseries Attention{\bfseries : If the slot or fron-\/end numbers are within the range, but not assigend to valid modules no exception is thrown i.e. these errors pass unoticed!) Get the layer number of the specified module. }}\end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em group\_\-index}]{\bfseries {\bfseries the first component of the index returned by getIndex }}\item[{\em sub\_\-group\_\-index}]{\bfseries {\bfseries the second component of the index returned by getIndex }}\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries {\bfseries  the layer number (0 ... Number of Calorimeter layers -\/ 1 ) }}
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em range\_\-error}]{\bfseries {\bfseries if the module index is out of range and BOUNDARY\_\-CHECK is defined Get the ID of module which uniquely identifies a certain module of one module type. Different modules of one type always have different IDs but modules of different types may have the same ID. In case of the ECAL the module ID is the serial number of the PCBs. }}\end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em module\_\-index}]{\bfseries {\bfseries the index of the module within the detector (not necessarily the same as the module ID) }}\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\bfseries {\bfseries  the ID of a module. }}
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em range\_\-error}]{\bfseries {\bfseries if the module specified by module\_\-index is not defined but only if BOUNDARY\_\-CHECK is defined. }}\end{DoxyExceptions}
+\begin{DoxySeeAlso}{See also}
+{\bfseries {\bfseries  \doxyref{getModuleType()}{p.}{classCALICE_1_1Alignment_a6347626acbfc5dfcbca3c97c89fcad70} }}
+\end{DoxySeeAlso}
+
+
+Definition at line 192 of file MappingAndAlignment.hh.\index{CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}!getModuleIndex@{getModuleIndex}}
+\index{getModuleIndex@{getModuleIndex}!CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}}
+\subsubsection[{getModuleIndex}]{\setlength{\rightskip}{0pt plus 5cm}std::pair$<$UInt\_\-t,UInt\_\-t$>$ CALICE::MappingAndAlignment::getModuleIndex (UInt\_\-t {\em crate\_\-id}, \/  UInt\_\-t {\em slot\_\-id}, \/  UInt\_\-t {\em front\_\-end\_\-nr}) const  throw (runtime\_\-error	   )\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1MappingAndAlignment_aa6ce2c69a9cb90058716e5bdb757d358}
+
+
+Get the module indices connected to the right and left side of the given front-\/end. 
+\begin{DoxyParams}{Parameters}
+\item[{\em crate\_\-id}]the identifier of the crate. \item[{\em slot\_\-id}]the identifier of the slot of the vme crate (usually 0-\/22) \item[{\em front\_\-end\_\-nr}]the identifier of the front-\/end (0-\/7, 8 has special meaning which is not supported). \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pair containing the module indices of the modules connected to the left and the right side of the front-\/end.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em std::runtime\_\-error}]if the crate is not registered or the slot of the crate has no connected front-\/ends. \item[{\em std::range\_\-error}]if the BOUNDARY\_\-CHECK is defined and the crate and slot numbers are valid but the front-\/end number is out of the considered range.\end{DoxyExceptions}
+Each front-\/end has two sides. the left side can be connected with a full connector (12 lines) or both sides can be connected with half connectors (6 lines). In case the left side is connected to a full connector the left and the rigtht module index will be the same. 
+
+Definition at line 76 of file MappingAndAlignment.hh.
+
+References CALICE::Alignment::isModule().\index{CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}!getModuleIndexFromCellIndex@{getModuleIndexFromCellIndex}}
+\index{getModuleIndexFromCellIndex@{getModuleIndexFromCellIndex}!CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}}
+\subsubsection[{getModuleIndexFromCellIndex}]{\setlength{\rightskip}{0pt plus 5cm}Int\_\-t CALICE::MappingAndAlignment::getModuleIndexFromCellIndex (UInt\_\-t {\em cellindex})}\label{classCALICE_1_1MappingAndAlignment_a7c80e28c748f3238cf2edca2a8190dc3}
+
+
+Return the module index for a given ($\ast$Mokka$\ast$) Cellindex All this assumes that the \doxyref{ModuleLocation}{p.}{classCALICE_1_1ModuleLocation} class has got set properly the index of the lower left cell e.g. \doxyref{CALICE::CellIndex}{p.}{classCALICE_1_1CellIndex}(0,1,0,0,layer\_\-i+1) , \doxyref{CALICE::CellIndex}{p.}{classCALICE_1_1CellIndex}(a,1,0,0,layer\_\-i+1) where the first argument is the wafer row (in case of SiW Ecal). \begin{Desc}
+\item[{\bf Todo}]Extend function to handle situation in which a layer k does not exist in data but is simulated \end{Desc}
+
+
+Definition at line 351 of file MappingAndAlignment.cc.\index{CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}!getModuleName@{getModuleName}}
+\index{getModuleName@{getModuleName}!CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}}
+\subsubsection[{getModuleName}]{\setlength{\rightskip}{0pt plus 5cm}string CALICE::MappingAndAlignment::getModuleName (UInt\_\-t {\em module\_\-index}) const  throw (logic\_\-error)}\label{classCALICE_1_1MappingAndAlignment_a22517d7a1f82fe0326cf62784e67d4c7}
+
+
+Get the name containing the type specifier and the module ID. A string is formed from th ID of the specified module and the module type name. 
+\begin{DoxyParams}{Parameters}
+\item[{\em module\_\-index}]the index of the module within the detector (not necessarily the same as the module ID) \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a string which uniquely identifies a module 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em range\_\-error}]if the module specified by module\_\-index is not defined but only if BOUNDARY\_\-CHECK is defined. \end{DoxyExceptions}
+\begin{DoxySeeAlso}{See also}
+\doxyref{ModuleDescription::getModuleTypeName()}{p.}{classCALICE_1_1ModuleDescription_a8d595c654170721c3de730f63008d3b6}, \doxyref{ModuleConnection::getModuleID()}{p.}{classCALICE_1_1ModuleConnection_ab2af8a960291746f02dc9b68fd5ec40f} 
+\end{DoxySeeAlso}
+
+
+Definition at line 38 of file MappingAndAlignment.cc.\index{CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}!getNCellsTotal@{getNCellsTotal}}
+\index{getNCellsTotal@{getNCellsTotal}!CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}}
+\subsubsection[{getNCellsTotal}]{\setlength{\rightskip}{0pt plus 5cm}UInt\_\-t CALICE::MappingAndAlignment::getNCellsTotal () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1MappingAndAlignment_a2ad32a5d8e7975eec6dc08d8e9062ee7}
+
+
+Return the total number of defined cells. The total number of cells includes cells of all modules also modules which are not connected to the DAQ but which are defined. 
+
+Definition at line 255 of file MappingAndAlignment.hh.
+
+References \_\-nCells.\index{CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}!getNumberOfLines@{getNumberOfLines}}
+\index{getNumberOfLines@{getNumberOfLines}!CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}}
+\subsubsection[{getNumberOfLines}]{\setlength{\rightskip}{0pt plus 5cm}UInt\_\-t CALICE::MappingAndAlignment::getNumberOfLines (const std::pair$<$ UInt\_\-t, UInt\_\-t $>$ \& {\em module\_\-indices}, \/  bool {\em right\_\-instead\_\-of\_\-left}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1MappingAndAlignment_a6a1819aca1589b9b289606c4628bdd0a}
+
+
+Return the number above the last line which should be used for the left or the right index. 
+\begin{DoxyParams}{Parameters}
+\item[{\em module\_\-indices}]the left and the right module indec. \item[{\em right\_\-instead\_\-of\_\-left}]if true the right index is used instead of the left. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the line after the last line which may be use for the specified module index. 
+\end{DoxyReturn}
+
+
+Definition at line 324 of file MappingAndAlignment.hh.
+
+References \_\-\_\-nLines.\index{CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}!getTcmtConnection@{getTcmtConnection}}
+\index{getTcmtConnection@{getTcmtConnection}!CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}}
+\subsubsection[{getTcmtConnection}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf TcmtConnection} $\ast$ CALICE::MappingAndAlignment::getTcmtConnection (UInt\_\-t {\em crate}, \/  UInt\_\-t {\em slot}, \/  UInt\_\-t {\em fe}, \/  UInt\_\-t {\em chip}, \/  UInt\_\-t {\em chan}) const}\label{classCALICE_1_1MappingAndAlignment_a0a65816e125db8d947ea0db2d9614a90}
+
+
+Get the connection object associated to an electronic channel. 
+\begin{DoxyParams}{Parameters}
+\item[{\em crate}]Crate number \item[{\em slot}]Slot number \item[{\em fe}]Front end number \item[{\em chip}]Chip number \item[{\em chan}]Channel number \end{DoxyParams}
+
+
+Definition at line 571 of file MappingAndAlignment.cc.\index{CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}!hasRightSide@{hasRightSide}}
+\index{hasRightSide@{hasRightSide}!CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}}
+\subsubsection[{hasRightSide}]{\setlength{\rightskip}{0pt plus 5cm}bool CALICE::MappingAndAlignment::hasRightSide (const std::pair$<$ UInt\_\-t, UInt\_\-t $>$ \& {\em module\_\-indices}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1MappingAndAlignment_a35fd3d56055b90ee536669971ff4e842}
+
+
+Return true if the front-\/end has a right side connected. \begin{DoxyReturn}{Returns}
+true if the right side is connected and is not conencted to the same module as the left side. If the left and the right side is connected to the same module, then it is considered that a full connector was connected to the left side and the right side was not directly connected. 
+\end{DoxyReturn}
+
+
+Definition at line 315 of file MappingAndAlignment.hh.\index{CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}!isCellDead@{isCellDead}}
+\index{isCellDead@{isCellDead}!CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}}
+\subsubsection[{isCellDead}]{\setlength{\rightskip}{0pt plus 5cm}Bool\_\-t CALICE::MappingAndAlignment::isCellDead (UInt\_\-t {\em module\_\-index}, \/  UInt\_\-t {\em cell\_\-index})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1MappingAndAlignment_a773b6a3deaa508092682424c757c6f21}
+
+
+Verify whether the given cell is dead. 
+\begin{DoxyParams}{Parameters}
+\item[{\em module\_\-index}]the index of the module location \item[{\em cell\_\-index}]the index of the cell on the module. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the cell is dead. 
+\end{DoxyReturn}
+
+
+Definition at line 266 of file MappingAndAlignment.hh.
+
+References isModuleConnected().\index{CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}!isModuleConnected@{isModuleConnected}}
+\index{isModuleConnected@{isModuleConnected}!CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}}
+\subsubsection[{isModuleConnected}]{\setlength{\rightskip}{0pt plus 5cm}bool CALICE::MappingAndAlignment::isModuleConnected (UInt\_\-t {\em module\_\-index}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1MappingAndAlignment_aba32017e2f902ec6cfdca96d9590dde4}
+
+
+Verify whether the module location is connected to an active front-\/end. 
+\begin{DoxyParams}{Parameters}
+\item[{\em module\_\-index}]the index of the module location. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the module location is connected to a front-\/end otherwise false. 
+\end{DoxyReturn}
+
+
+Definition at line 226 of file MappingAndAlignment.hh.
+
+Referenced by isCellDead(), and print().\index{CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}!isValidCrate@{isValidCrate}}
+\index{isValidCrate@{isValidCrate}!CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}}
+\subsubsection[{isValidCrate}]{\setlength{\rightskip}{0pt plus 5cm}bool CALICE::MappingAndAlignment::isValidCrate (UInt\_\-t {\em crate}) const}\label{classCALICE_1_1MappingAndAlignment_a01f7691dff98340b5a5b198109726b3c}
+
+
+Validates a crate number based on mapping. It can be used to skip processing of unused crates as early as possible. 
+\begin{DoxyParams}{Parameters}
+\item[{\em crate}]Crate number to be validated \end{DoxyParams}
+
+
+Definition at line 599 of file MappingAndAlignment.cc.\index{CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}!moduleConnectionChanged@{moduleConnectionChanged}}
+\index{moduleConnectionChanged@{moduleConnectionChanged}!CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}}
+\subsubsection[{moduleConnectionChanged}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::MappingAndAlignment::moduleConnectionChanged (lcio::LCCollection $\ast$ {\em col})}\label{classCALICE_1_1MappingAndAlignment_a3717c2ea27a5a60ff2a41d17803ff148}
+
+
+Inform the object about changes of the module connection. 
+\begin{DoxyParams}{Parameters}
+\item[{\em col}]collection of \doxyref{ModuleConnection}{p.}{classCALICE_1_1ModuleConnection} objects This class must be called before using any(most) of the other methods. The function call will cause a rebuild of the module DAQ front-\/end connection tree. \end{DoxyParams}
+
+
+Definition at line 92 of file MappingAndAlignment.cc.
+
+References clearTcmtConnections(), correctFullHalfConnectorErrors(), determineMaximumCellNumberPerFrontEnd(), and rebuildConnectionTree().\index{CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}!moduleLocationChanged@{moduleLocationChanged}}
+\index{moduleLocationChanged@{moduleLocationChanged}!CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}}
+\subsubsection[{moduleLocationChanged}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::MappingAndAlignment::moduleLocationChanged (lcio::LCCollection $\ast$ {\em col})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCALICE_1_1MappingAndAlignment_ab9d17873aeb090388556547cb6b67ba8}
+
+
+Inform the object about changes of the module locations. 
+\begin{DoxyParams}{Parameters}
+\item[{\em col}]collection of \doxyref{ModuleLocation}{p.}{classCALICE_1_1ModuleLocation} objects This class must be called before using any(most) of the other methods. The function call will cause a rebuild of the module DAQ front-\/end connection tree. \end{DoxyParams}
+
+
+Reimplemented from {\bf CALICE::Alignment} \doxyref{}{p.}{classCALICE_1_1Alignment_a3ea188d0a90c7e0881d735cf55ef5604}.
+
+Definition at line 77 of file MappingAndAlignment.cc.
+
+References correctFullHalfConnectorErrors(), determineMaximumCellNumberPerFrontEnd(), CALICE::ModuleLocation::getCellIndexOffset(), and rebuildConnectionTree().\index{CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}!moduleTypeChanged@{moduleTypeChanged}}
+\index{moduleTypeChanged@{moduleTypeChanged}!CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}}
+\subsubsection[{moduleTypeChanged}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::MappingAndAlignment::moduleTypeChanged (lcio::LCCollection $\ast$ {\em col})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCALICE_1_1MappingAndAlignment_a5564c399de481a023b702a39a04fea7f}
+
+
+Inform the object about changes of the module types. 
+\begin{DoxyParams}{Parameters}
+\item[{\em col}]collection of \doxyref{ModuleDescription}{p.}{classCALICE_1_1ModuleDescription} objects This class must be called before using any(most) of the other methods. The function call will cause a rebuild of the module DAQ front-\/end connection tree. \end{DoxyParams}
+
+
+Reimplemented from {\bf CALICE::Alignment} \doxyref{}{p.}{classCALICE_1_1Alignment_adc041696a184db384a57bca51df7bc25}.
+
+Definition at line 65 of file MappingAndAlignment.cc.
+
+References \_\-cellIDEncoding, correctFullHalfConnectorErrors(), determineMaximumCellNumberPerFrontEnd(), and rebuildConnectionTree().\index{CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}!setViewConnectionTree@{setViewConnectionTree}}
+\index{setViewConnectionTree@{setViewConnectionTree}!CALICE::MappingAndAlignment@{CALICE::MappingAndAlignment}}
+\subsubsection[{setViewConnectionTree}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::MappingAndAlignment::setViewConnectionTree (bool {\em view\_\-connection} = {\ttfamily true})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1MappingAndAlignment_a7f185408e77829624349e0e857a6eca3}
+
+
+Toggle printing of the connecting tree after each rebuild (conditions data change: \doxyref{ModuleConnection}{p.}{classCALICE_1_1ModuleConnection}, \doxyref{ModuleLocation}{p.}{classCALICE_1_1ModuleLocation}). Set to true if the connection tree should be displayed after each call to rebuild the connection tree. The latter is initiated after module location or module connection changes. 
+
+Definition at line 308 of file MappingAndAlignment.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+MappingAndAlignment.hh\item 
+MappingAndAlignment.cc\end{DoxyCompactItemize}

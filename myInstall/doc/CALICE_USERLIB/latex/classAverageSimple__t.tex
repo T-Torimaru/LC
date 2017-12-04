@@ -1,0 +1,113 @@
+\section{AverageSimple\_\-t Class Reference}
+\label{classAverageSimple__t}\index{AverageSimple\_\-t@{AverageSimple\_\-t}}
+
+
+Calculate mean and standard deviation.  
+
+
+{\ttfamily \#include $<$AverageSimple\_\-t.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf AverageSimple\_\-t} ()\label{classAverageSimple__t_ae833f15db3394a0815c3ff9cf2930a83}
+
+\begin{DoxyCompactList}\small\item\em Default constructor initialses all arrays to be ready to gather statastics of a variable. \item\end{DoxyCompactList}\item 
+void {\bf add} (Float\_\-t value)
+\begin{DoxyCompactList}\small\item\em build the sum and the sum of squares. \item\end{DoxyCompactList}\item 
+void {\bf calculate} ()
+\begin{DoxyCompactList}\small\item\em calculate the standard deviation and the mean. \item\end{DoxyCompactList}\item 
+Double\_\-t {\bf mean} () const 
+\begin{DoxyCompactList}\small\item\em return the mean value. \item\end{DoxyCompactList}\item 
+Double\_\-t {\bf sigma} () const 
+\begin{DoxyCompactList}\small\item\em return the standard deviation. \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bf n} () const \label{classAverageSimple__t_a7cc2397693a23fbdfe17bb47e1db2242}
+
+\begin{DoxyCompactList}\small\item\em return the sample size. \item\end{DoxyCompactList}\item 
+Double\_\-t {\bf sum} () const \label{classAverageSimple__t_aef347ef1de5a8fbbf05e2e8dc58706b9}
+
+\begin{DoxyCompactList}\small\item\em Get the total accumulated data. \item\end{DoxyCompactList}\item 
+void {\bfseries operator+=} (Float\_\-t val)\label{classAverageSimple__t_add61dc4626c1add4679a8fa3339587f9}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+UInt\_\-t {\bfseries \_\-n}\label{classAverageSimple__t_ae9f5cf86663225669d2e41907be9e82a}
+
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>Double\_t {\bfseries \_sum}\\
+\>Double\_t {\bfseries \_mean}\\
+\}; \label{classAverageSimple__t_acf269ad62ad8de3768972f6af1806b85}
+\\
+
+\end{tabbing}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>Double\_t {\bfseries \_sum2}\\
+\>Double\_t {\bfseries \_sigma}\\
+\}; \label{classAverageSimple__t_a34b758dc91f2f0c2da280cb6562dd15d}
+\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std::ostream \& {\bfseries operator$<$$<$} (std::ostream \&os, {\bf AverageSimple\_\-t} \&a)\label{classAverageSimple__t_ab024ccd7e8aa9eff2cbd3abd5aa7944a}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Calculate mean and standard deviation. 
+
+Definition at line 13 of file AverageSimple\_\-t.hh.
+
+\subsection{Member Function Documentation}
+\index{AverageSimple\_\-t@{AverageSimple\_\-t}!add@{add}}
+\index{add@{add}!AverageSimple_t@{AverageSimple\_\-t}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}void AverageSimple\_\-t::add (Float\_\-t {\em value})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classAverageSimple__t_a636dd721ed6feb5c24f4c3f61b7afbca}
+
+
+build the sum and the sum of squares. The sums can be used later to calculate the mean and the standard deviation 
+\begin{DoxyParams}{Parameters}
+\item[{\em value}]the value to be added to the sum and the sum of squares (\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxyref{calculate}{p.}{classAverageSimple__t_a674aaff8a0a3aab9800ac5dc9446dc3e}) 
+\end{DoxySeeAlso}
+
+
+Definition at line 28 of file AverageSimple\_\-t.hh.\index{AverageSimple\_\-t@{AverageSimple\_\-t}!calculate@{calculate}}
+\index{calculate@{calculate}!AverageSimple_t@{AverageSimple\_\-t}}
+\subsubsection[{calculate}]{\setlength{\rightskip}{0pt plus 5cm}void AverageSimple\_\-t::calculate ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classAverageSimple__t_a674aaff8a0a3aab9800ac5dc9446dc3e}
+
+
+calculate the standard deviation and the mean. The mean and the standard deviation are stored in the locations which are also used for the sums. Therefore if further values are added after \doxyref{calculate()}{p.}{classAverageSimple__t_a674aaff8a0a3aab9800ac5dc9446dc3e} was called, the result is undefined. 
+
+Definition at line 38 of file AverageSimple\_\-t.hh.
+
+References mean(), and sigma().\index{AverageSimple\_\-t@{AverageSimple\_\-t}!mean@{mean}}
+\index{mean@{mean}!AverageSimple_t@{AverageSimple\_\-t}}
+\subsubsection[{mean}]{\setlength{\rightskip}{0pt plus 5cm}Double\_\-t AverageSimple\_\-t::mean () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classAverageSimple__t_a7ad917110e1c2e958c1a76ac56d0211b}
+
+
+return the mean value. returns only a correct result after at least 1 value was added and calculate was called. 
+
+Definition at line 50 of file AverageSimple\_\-t.hh.
+
+Referenced by calculate().\index{AverageSimple\_\-t@{AverageSimple\_\-t}!sigma@{sigma}}
+\index{sigma@{sigma}!AverageSimple_t@{AverageSimple\_\-t}}
+\subsubsection[{sigma}]{\setlength{\rightskip}{0pt plus 5cm}Double\_\-t AverageSimple\_\-t::sigma () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classAverageSimple__t_a49f1cca725a5a3cbcae71b87631d4e66}
+
+
+return the standard deviation. returns only a correct result after at least 1 value was added and calculate was called. 
+
+Definition at line 55 of file AverageSimple\_\-t.hh.
+
+Referenced by calculate().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+AverageSimple\_\-t.hh\end{DoxyCompactItemize}

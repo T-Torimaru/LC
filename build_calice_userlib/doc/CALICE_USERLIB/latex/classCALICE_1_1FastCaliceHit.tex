@@ -1,0 +1,95 @@
+\section{CALICE::FastCaliceHit Class Reference}
+\label{classCALICE_1_1FastCaliceHit}\index{CALICE::FastCaliceHit@{CALICE::FastCaliceHit}}
+
+
+Using RawCalorimeterHits as FastCaliceHits.  
+
+
+{\ttfamily \#include $<$FastCaliceHit.hh$>$}\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+union {\bf flt\_\-or\_\-int}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries FastCaliceHit} (unsigned short moduleID, unsigned short chip, unsigned short channel, float valueEnergy, float errorEnergy, int timeStamp)\label{classCALICE_1_1FastCaliceHit_a22c649875ac7a9f7b0ac38ea1ae789ae}
+
+\item 
+{\bfseries FastCaliceHit} (int cellID, float valueEnergy, float errorEnergy, int timeStamp)\label{classCALICE_1_1FastCaliceHit_afa1ca731d2cdab39f0fe8fbcea15983e}
+
+\item 
+{\bfseries FastCaliceHit} (RawCalorimeterHit $\ast$aRawCalorimeterHit)\label{classCALICE_1_1FastCaliceHit_a665bc62cc28038a7b70bd18628e2145b}
+
+\item 
+void $\ast$ {\bfseries operator new} (size\_\-t size)\label{classCALICE_1_1FastCaliceHit_a03a6a5d8859d1794b056aa50e0974809}
+
+\item 
+void {\bfseries operator delete} (void $\ast$mem)\label{classCALICE_1_1FastCaliceHit_acbac30f6dd302258c7559b537114fc59}
+
+\item 
+unsigned short {\bf getModule} () const \label{classCALICE_1_1FastCaliceHit_aadfac38851d88ca9c4010ebab3113476}
+
+\begin{DoxyCompactList}\small\item\em get module number of hit \item\end{DoxyCompactList}\item 
+unsigned short {\bf getModuleID} () const \label{classCALICE_1_1FastCaliceHit_a84f13425e266acdadd12213e7237fd64}
+
+\begin{DoxyCompactList}\small\item\em deprecated, try to avoid! \item\end{DoxyCompactList}\item 
+unsigned short {\bf getModuleType} () const \label{classCALICE_1_1FastCaliceHit_ac872982d82f4d3ca071ba6cd0e8327fb}
+
+\begin{DoxyCompactList}\small\item\em get module type \item\end{DoxyCompactList}\item 
+unsigned short {\bf getChip} () const \label{classCALICE_1_1FastCaliceHit_a0a444a980af6af9dc994734d1322e5a2}
+
+\begin{DoxyCompactList}\small\item\em get chip number of hit \item\end{DoxyCompactList}\item 
+unsigned short {\bf getChannel} () const \label{classCALICE_1_1FastCaliceHit_aea784ebab76a5378c22bf35acaffad40}
+
+\begin{DoxyCompactList}\small\item\em get channel number of hit \item\end{DoxyCompactList}\item 
+unsigned short {\bf getCellKey} () const \label{classCALICE_1_1FastCaliceHit_a6a7ed0f354e5716034558c3ebd881588}
+
+\begin{DoxyCompactList}\small\item\em deprecated, try to avoid! \item\end{DoxyCompactList}\item 
+int {\bf getCellID} () const \label{classCALICE_1_1FastCaliceHit_a2896e2bad301a964cbb9f9c0049af9a6}
+
+\begin{DoxyCompactList}\small\item\em get cellID \item\end{DoxyCompactList}\item 
+float {\bf getEnergyValue} () const \label{classCALICE_1_1FastCaliceHit_a2081b986cd2e5ad9a06563ee4a1dfcc0}
+
+\begin{DoxyCompactList}\small\item\em get energy value of hit \item\end{DoxyCompactList}\item 
+float {\bf getEnergyError} () const \label{classCALICE_1_1FastCaliceHit_ad79796ee0e58277061722fae2a654d9a}
+
+\begin{DoxyCompactList}\small\item\em get energy error of hit \item\end{DoxyCompactList}\item 
+int {\bf getTimeStamp} () const \label{classCALICE_1_1FastCaliceHit_a355c049e63db1b3a27894717e54afa13}
+
+\begin{DoxyCompactList}\small\item\em get time stamp \item\end{DoxyCompactList}\item 
+void {\bf setEnergyValue} (float energyValue)\label{classCALICE_1_1FastCaliceHit_aa8727dcee64eafb0be6eb69336533bf2}
+
+\begin{DoxyCompactList}\small\item\em set energy value of hit \item\end{DoxyCompactList}\item 
+void {\bf setEnergyError} (float energyError)\label{classCALICE_1_1FastCaliceHit_a79b95a3bf3f8f43f98c988be60e5c127}
+
+\begin{DoxyCompactList}\small\item\em set energy error of hit \item\end{DoxyCompactList}\item 
+void {\bf setTimeStamp} (unsigned timeStamp)\label{classCALICE_1_1FastCaliceHit_ae49ff82334b53eac61fd97352bb24c50}
+
+\begin{DoxyCompactList}\small\item\em set time stamp \item\end{DoxyCompactList}\item 
+void {\bf print} (std::ostream \&os)\label{classCALICE_1_1FastCaliceHit_a67effa384a3160a5dcbee1097e5caebb}
+
+\begin{DoxyCompactList}\small\item\em convenient print method \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf HcalTileIndex} {\bfseries \_\-hti}\label{classCALICE_1_1FastCaliceHit_afcd522542e0b7bf6c7ac5f04b5a8359d}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Using RawCalorimeterHits as FastCaliceHits. \begin{DoxyAuthor}{Author}
+S. Schmidt DESY 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+1 Oct 2006
+\end{DoxyDate}
+change log: Feb 2008 -\/ {\tt Niels.Meyer@desy.de}: use \doxyref{HcalTileIndex}{p.}{classCALICE_1_1HcalTileIndex} for index decoding 
+
+Definition at line 36 of file FastCaliceHit.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+FastCaliceHit.hh\item 
+FastCaliceHit.cc\end{DoxyCompactItemize}

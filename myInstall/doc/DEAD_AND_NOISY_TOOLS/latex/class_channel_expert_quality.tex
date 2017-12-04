@@ -1,0 +1,102 @@
+\hypertarget{class_channel_expert_quality}{
+\section{ChannelExpertQuality Class Reference}
+\label{class_channel_expert_quality}\index{ChannelExpertQuality@{ChannelExpertQuality}}
+}
+
+
+A class holing the constants with define the detailed (expert) channel quality flags.  
+
+
+{\ttfamily \#include $<$ChannelExpertQuality.h$>$}\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const UInt\_\-t \hyperlink{class_channel_expert_quality_aabde82530d3975d698fbff3e33d7972c}{dead} = 0x1
+\begin{DoxyCompactList}\small\item\em the dead bit: 0x1 \item\end{DoxyCompactList}\item 
+static const UInt\_\-t \hyperlink{class_channel_expert_quality_a0b17164b19cdc8619c1a93fe1728c4c3}{highRMS} = 0x2
+\begin{DoxyCompactList}\small\item\em the righ RMS bit: 0x2 \item\end{DoxyCompactList}\item 
+static const UInt\_\-t \hyperlink{class_channel_expert_quality_a7ec5758ee03b6f11af837adad6b4a676}{highNoiseRate} = 0x4
+\begin{DoxyCompactList}\small\item\em the high noise rate bit: 0x4 \item\end{DoxyCompactList}\item 
+static const UInt\_\-t \hyperlink{class_channel_expert_quality_a13046f6e61373f907a79326530ee2e07}{multiPeakNoise} = 0x8
+\begin{DoxyCompactList}\small\item\em the multi peak noise bit: 0x8 \item\end{DoxyCompactList}\item 
+static const UInt\_\-t \hyperlink{class_channel_expert_quality_a260970cb0e2fe88bfc6cf741ca95b104}{zombie} = 0x10
+\begin{DoxyCompactList}\small\item\em the zombie bit: 0x10; \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class holing the constants with define the detailed (expert) channel quality flags. These flags are for detailed analysis in the deadAndNoisyChannels expert package. They are to be interpreted as a states of a bit field. Usage: 
+\begin{DoxyCode}
+  // compose a quality word, use bitwise or
+  UInt_t thisChannelQuality = ChannelExpertQuality::highRMS | 
+      ChannelExpertQuality::multiPeakNoise;
+  // thisChannelQuality now is 0xA, bits 1 and 3 set
+  
+  // check if a specific bit is set, use bitwise and
+  if ( thisChannelQuality & ChannelExpertQuality::dead ) {continue;} // skip if d
+      ead bit is set
+\end{DoxyCode}
+
+
+\begin{DoxyAttention}{Attention}
+These are not the flags written to the data base! These are defined in CellQuality object of the userlib, which is the LCGenericObject written to the data base.
+\end{DoxyAttention}
+Explanation of the meaning/ current definitions (as of 12. Dec. 2010) \begin{DoxyItemize}
+\item {\ttfamily dead:} rms in the PMNoise spectrum is below a certain value \item {\ttfamily highRMS:} rms in the PMNoise spectrum is above a certain value \item {\ttfamily highNoiseRate:} (not implemented yet) channel is above MIP/noise cut in more than 10 \% of all events in an noise run \item {\ttfamily multiPeakNoise:} (not implemented yet) PMNoise spectrum has more than one peak \item {\ttfamily zombie:} (not implemented yet) Channel is dead in a certain period and sees signals again later \end{DoxyItemize}
+
+
+Definition at line 29 of file ChannelExpertQuality.h.
+
+\subsection{Field Documentation}
+\hypertarget{class_channel_expert_quality_aabde82530d3975d698fbff3e33d7972c}{
+\index{ChannelExpertQuality@{ChannelExpertQuality}!dead@{dead}}
+\index{dead@{dead}!ChannelExpertQuality@{ChannelExpertQuality}}
+\subsubsection[{dead}]{\setlength{\rightskip}{0pt plus 5cm}const UInt\_\-t {\bf ChannelExpertQuality::dead} = 0x1\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_channel_expert_quality_aabde82530d3975d698fbff3e33d7972c}
+
+
+the dead bit: 0x1 
+
+Definition at line 32 of file ChannelExpertQuality.h.
+
+Referenced by main().\hypertarget{class_channel_expert_quality_a7ec5758ee03b6f11af837adad6b4a676}{
+\index{ChannelExpertQuality@{ChannelExpertQuality}!highNoiseRate@{highNoiseRate}}
+\index{highNoiseRate@{highNoiseRate}!ChannelExpertQuality@{ChannelExpertQuality}}
+\subsubsection[{highNoiseRate}]{\setlength{\rightskip}{0pt plus 5cm}const UInt\_\-t {\bf ChannelExpertQuality::highNoiseRate} = 0x4\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_channel_expert_quality_a7ec5758ee03b6f11af837adad6b4a676}
+
+
+the high noise rate bit: 0x4 
+
+Definition at line 34 of file ChannelExpertQuality.h.\hypertarget{class_channel_expert_quality_a0b17164b19cdc8619c1a93fe1728c4c3}{
+\index{ChannelExpertQuality@{ChannelExpertQuality}!highRMS@{highRMS}}
+\index{highRMS@{highRMS}!ChannelExpertQuality@{ChannelExpertQuality}}
+\subsubsection[{highRMS}]{\setlength{\rightskip}{0pt plus 5cm}const UInt\_\-t {\bf ChannelExpertQuality::highRMS} = 0x2\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_channel_expert_quality_a0b17164b19cdc8619c1a93fe1728c4c3}
+
+
+the righ RMS bit: 0x2 
+
+Definition at line 33 of file ChannelExpertQuality.h.
+
+Referenced by main().\hypertarget{class_channel_expert_quality_a13046f6e61373f907a79326530ee2e07}{
+\index{ChannelExpertQuality@{ChannelExpertQuality}!multiPeakNoise@{multiPeakNoise}}
+\index{multiPeakNoise@{multiPeakNoise}!ChannelExpertQuality@{ChannelExpertQuality}}
+\subsubsection[{multiPeakNoise}]{\setlength{\rightskip}{0pt plus 5cm}const UInt\_\-t {\bf ChannelExpertQuality::multiPeakNoise} = 0x8\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_channel_expert_quality_a13046f6e61373f907a79326530ee2e07}
+
+
+the multi peak noise bit: 0x8 
+
+Definition at line 35 of file ChannelExpertQuality.h.\hypertarget{class_channel_expert_quality_a260970cb0e2fe88bfc6cf741ca95b104}{
+\index{ChannelExpertQuality@{ChannelExpertQuality}!zombie@{zombie}}
+\index{zombie@{zombie}!ChannelExpertQuality@{ChannelExpertQuality}}
+\subsubsection[{zombie}]{\setlength{\rightskip}{0pt plus 5cm}const UInt\_\-t {\bf ChannelExpertQuality::zombie} = 0x10\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_channel_expert_quality_a260970cb0e2fe88bfc6cf741ca95b104}
+
+
+the zombie bit: 0x10; 
+
+Definition at line 36 of file ChannelExpertQuality.h.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_channel_expert_quality_8h}{ChannelExpertQuality.h}\end{DoxyCompactItemize}

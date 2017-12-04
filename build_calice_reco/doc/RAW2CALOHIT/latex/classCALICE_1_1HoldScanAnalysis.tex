@@ -1,0 +1,204 @@
+\section{CALICE::HoldScanAnalysis Class Reference}
+\label{classCALICE_1_1HoldScanAnalysis}\index{CALICE::HoldScanAnalysis@{CALICE::HoldScanAnalysis}}
+
+
+Create Signal histograms per pad of all hits of all reconstructed clusters.  
+
+
+{\ttfamily \#include $<$HoldScanAnalysis.hh$>$}Inheritance diagram for CALICE::HoldScanAnalysis::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCALICE_1_1HoldScanAnalysis}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Processor $\ast$ {\bfseries newProcessor} ()\label{classCALICE_1_1HoldScanAnalysis_ad5990596dee1b8767277be9526521161}
+
+\item 
+void {\bf init} ()
+\begin{DoxyCompactList}\small\item\em Called at the begin of the job before anything is read. \item\end{DoxyCompactList}\item 
+void {\bf processRunHeader} (LCRunHeader $\ast$run)
+\begin{DoxyCompactList}\small\item\em Called for every run, e.g. \item\end{DoxyCompactList}\item 
+void {\bf processEvent} (LCEvent $\ast$evtP)
+\begin{DoxyCompactList}\small\item\em Called for every event -\/ the working horse. \item\end{DoxyCompactList}\item 
+void {\bfseries end} ()\label{classCALICE_1_1HoldScanAnalysis_a13ed162b61891ce64fb6cfff41719b18}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries EHistType} \{ {\bfseries kHistSignalPerHoldValue}, 
+{\bfseries kHistTotalSignalPerHoldValue}, 
+{\bfseries kNHist}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf createHistograms} ()
+\begin{DoxyCompactList}\small\item\em create and register histogram collections. \item\end{DoxyCompactList}\item 
+void {\bf feConfChanged} (EVENT::LCCollection $\ast$col)\label{classCALICE_1_1HoldScanAnalysis_a59d01b5f9111a355a98087f22edda54c}
+
+\begin{DoxyCompactList}\small\item\em Handle changes of Fe configuration data. \item\end{DoxyCompactList}\item 
+void {\bfseries moduleTypeChanged} (lcio::LCCollection $\ast$col)\label{classCALICE_1_1HoldScanAnalysis_a13f67124dfbac5a43384720d728cd79d}
+
+\item 
+void {\bfseries moduleLocationChanged} (lcio::LCCollection $\ast$col)\label{classCALICE_1_1HoldScanAnalysis_ac7853b9f5030f2cffff1763c803c6ed4}
+
+\item 
+void {\bfseries moduleConnectionChanged} (lcio::LCCollection $\ast$col)\label{classCALICE_1_1HoldScanAnalysis_a8b1ef0f8b1806f814f738179a0c94773}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+FloatVec {\bf \_\-signalHistPar}
+\begin{DoxyCompactList}\small\item\em binning of the per hold value histograms. \item\end{DoxyCompactList}\item 
+std::string {\bfseries \_\-clusterColName}\label{classCALICE_1_1HoldScanAnalysis_a821525b65e2b0658befe4572ff2b5a5b}
+
+\item 
+std::string {\bfseries \_\-feConfColName}\label{classCALICE_1_1HoldScanAnalysis_a05396b051321b994175ab5c26bc36ccd}
+
+\item 
+{\bf histmgr::Key\_\-t} {\bf \_\-histGroupKey}
+\begin{DoxyCompactList}\small\item\em Key for the histogram group. \item\end{DoxyCompactList}\item 
+int {\bf \_\-nHistMax}\label{classCALICE_1_1HoldScanAnalysis_a9d4b44b172ef158fc0cc865ff00c8200}
+
+\begin{DoxyCompactList}\small\item\em Maximum number of hold values for which signal histograms can be created (parameter). \item\end{DoxyCompactList}\item 
+int {\bf \_\-minNumberOfHits}
+\begin{DoxyCompactList}\small\item\em Minimum number of hits of accepted clusters (parameter). \item\end{DoxyCompactList}\item 
+Float\_\-t {\bf \_\-minClusterSignal}
+\begin{DoxyCompactList}\small\item\em Minimum signal of accepted clusters (parameter). \item\end{DoxyCompactList}\item 
+ConditionsChangeDelegator$<$ {\bf HoldScanAnalysis} $>$ {\bfseries \_\-feConfChange}\label{classCALICE_1_1HoldScanAnalysis_abc178bb058507f39db6a6b9434153141}
+
+\item 
+{\bf ModuleIndexReverseLookup} {\bfseries \_\-indexLookup}\label{classCALICE_1_1HoldScanAnalysis_a19e9e6c81508e9e2a993f980448b0255}
+
+\item 
+LCCollection $\ast$ {\bfseries \_\-nHitsHistogram}\label{classCALICE_1_1HoldScanAnalysis_a62943d737949a663b3ea9583adeb56d8}
+
+\item 
+LCCollection $\ast$ {\bfseries \_\-clusterSignalHistogram}\label{classCALICE_1_1HoldScanAnalysis_accdd2109f252c0a48d601dd3f675cbf1}
+
+\item 
+LCCollection $\ast$ {\bfseries \_\-holdValueContainer}\label{classCALICE_1_1HoldScanAnalysis_aee61abfbb2658d6b4e184604e58b6dcb}
+
+\item 
+{\bf histmgr::Key\_\-t} {\bfseries \_\-histKey} [kNHist]\label{classCALICE_1_1HoldScanAnalysis_a2d3c6efe1f8a31b54998e8fc548db0e4}
+
+\item 
+UInt\_\-t {\bfseries \_\-nHist}\label{classCALICE_1_1HoldScanAnalysis_ac9cacb21c7c4e771c1f288bb68e390d2}
+
+\item 
+std::map$<$ int, UInt\_\-t $>$ {\bfseries \_\-holdStartMap}\label{classCALICE_1_1HoldScanAnalysis_a9f62a744912af880d609661590b59cb0}
+
+\item 
+std::vector$<$ UInt\_\-t $>$ {\bfseries \_\-histogramIndex}\label{classCALICE_1_1HoldScanAnalysis_a4d69205cdc09cb052ac036b530c7ae41}
+
+\item 
+UInt\_\-t {\bfseries \_\-nClusters}\label{classCALICE_1_1HoldScanAnalysis_a1a8fa6dbaaabcf4e2059a828bd6c05e1}
+
+\item 
+UInt\_\-t {\bfseries \_\-nMissingHoldChanges}\label{classCALICE_1_1HoldScanAnalysis_afea5db3b613767acb605be6f4f6a20ca}
+
+\item 
+UInt\_\-t {\bfseries \_\-moduleIndexOutOfRange}\label{classCALICE_1_1HoldScanAnalysis_ae9a8dcd16dde44f63bc083ceabd98616}
+
+\item 
+UInt\_\-t {\bfseries \_\-nBeamOrCosmicsEvents}\label{classCALICE_1_1HoldScanAnalysis_aae4c0032da689c8bd59a62dc1a9fb23e}
+
+\item 
+UInt\_\-t {\bfseries \_\-currentCommonHoldStart}\label{classCALICE_1_1HoldScanAnalysis_a9bc44aaf4bbc5147174b8e3d813df954}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Create Signal histograms per pad of all hits of all reconstructed clusters. This class derives from \doxyref{VRawADCValueProcessor}{p.}{classCALICE_1_1VRawADCValueProcessor}, since the information about the detector is needed to setup the signal histograms. 
+
+Definition at line 25 of file HoldScanAnalysis.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::HoldScanAnalysis@{CALICE::HoldScanAnalysis}!createHistograms@{createHistograms}}
+\index{createHistograms@{createHistograms}!CALICE::HoldScanAnalysis@{CALICE::HoldScanAnalysis}}
+\subsubsection[{createHistograms}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::HoldScanAnalysis::createHistograms ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1HoldScanAnalysis_af9b442f35ad6b560ecf6736fdaa39314}
+
+
+create and register histogram collections. 
+
+Definition at line 105 of file HoldScanAnalysis.cc.
+
+References \_\-histGroupKey, \_\-nHistMax, \_\-signalHistPar, histmgr::HistMgr::createHistogramGroup(), and histmgr::HistMgr::createHistograms().
+
+Referenced by init().\index{CALICE::HoldScanAnalysis@{CALICE::HoldScanAnalysis}!init@{init}}
+\index{init@{init}!CALICE::HoldScanAnalysis@{CALICE::HoldScanAnalysis}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::HoldScanAnalysis::init ()}\label{classCALICE_1_1HoldScanAnalysis_aa879bdea19cfbf5e5533174dc7a24c0f}
+
+
+Called at the begin of the job before anything is read. Use to initialize the processor, e.g. book histograms. 
+
+Reimplemented from {\bf CALICE::VRawADCValueProcessor} \doxyref{}{p.}{classCALICE_1_1VRawADCValueProcessor}.
+
+Definition at line 128 of file HoldScanAnalysis.cc.
+
+References \_\-histGroupKey, \_\-nHistMax, histmgr::HistMgr::createHistograms(), and createHistograms().\index{CALICE::HoldScanAnalysis@{CALICE::HoldScanAnalysis}!processEvent@{processEvent}}
+\index{processEvent@{processEvent}!CALICE::HoldScanAnalysis@{CALICE::HoldScanAnalysis}}
+\subsubsection[{processEvent}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::HoldScanAnalysis::processEvent (LCEvent $\ast$ {\em evtP})}\label{classCALICE_1_1HoldScanAnalysis_ae6c771d770ca5b456f82efe1e8c19d13}
+
+
+Called for every event -\/ the working horse. 
+
+Definition at line 161 of file HoldScanAnalysis.cc.
+
+References \_\-histGroupKey, \_\-minClusterSignal, histmgr::HistMgr::getHistogramCollection(), CALICE::ModuleIndexReverseLookup::getModuleAndCellIndex(), and histmgr::HistogramCollection\_\-t::histogram().\index{CALICE::HoldScanAnalysis@{CALICE::HoldScanAnalysis}!processRunHeader@{processRunHeader}}
+\index{processRunHeader@{processRunHeader}!CALICE::HoldScanAnalysis@{CALICE::HoldScanAnalysis}}
+\subsubsection[{processRunHeader}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::HoldScanAnalysis::processRunHeader (LCRunHeader $\ast$ {\em run})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1HoldScanAnalysis_ae23825d881a551a473319f0dc518bd20}
+
+
+Called for every run, e.g. overwrite to initialize run dependent histograms. 
+
+Definition at line 43 of file HoldScanAnalysis.hh.
+
+\subsection{Field Documentation}
+\index{CALICE::HoldScanAnalysis@{CALICE::HoldScanAnalysis}!\_\-histGroupKey@{\_\-histGroupKey}}
+\index{\_\-histGroupKey@{\_\-histGroupKey}!CALICE::HoldScanAnalysis@{CALICE::HoldScanAnalysis}}
+\subsubsection[{\_\-histGroupKey}]{\setlength{\rightskip}{0pt plus 5cm}{\bf histmgr::Key\_\-t} {\bf CALICE::HoldScanAnalysis::\_\-histGroupKey}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1HoldScanAnalysis_a85e98fffce43215e0edabf5afc2b346b}
+
+
+Key for the histogram group. 
+
+Definition at line 63 of file HoldScanAnalysis.hh.
+
+Referenced by createHistograms(), init(), and processEvent().\index{CALICE::HoldScanAnalysis@{CALICE::HoldScanAnalysis}!\_\-minClusterSignal@{\_\-minClusterSignal}}
+\index{\_\-minClusterSignal@{\_\-minClusterSignal}!CALICE::HoldScanAnalysis@{CALICE::HoldScanAnalysis}}
+\subsubsection[{\_\-minClusterSignal}]{\setlength{\rightskip}{0pt plus 5cm}Float\_\-t {\bf CALICE::HoldScanAnalysis::\_\-minClusterSignal}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1HoldScanAnalysis_aaa4aecb1608fddf7a791e6a00e8d9aac}
+
+
+Minimum signal of accepted clusters (parameter). 
+
+Definition at line 68 of file HoldScanAnalysis.hh.
+
+Referenced by processEvent().\index{CALICE::HoldScanAnalysis@{CALICE::HoldScanAnalysis}!\_\-minNumberOfHits@{\_\-minNumberOfHits}}
+\index{\_\-minNumberOfHits@{\_\-minNumberOfHits}!CALICE::HoldScanAnalysis@{CALICE::HoldScanAnalysis}}
+\subsubsection[{\_\-minNumberOfHits}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf CALICE::HoldScanAnalysis::\_\-minNumberOfHits}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1HoldScanAnalysis_aa13f8c6d7a4c85a4a7eb70c1ec9a02a0}
+
+
+Minimum number of hits of accepted clusters (parameter). 
+
+Definition at line 67 of file HoldScanAnalysis.hh.\index{CALICE::HoldScanAnalysis@{CALICE::HoldScanAnalysis}!\_\-signalHistPar@{\_\-signalHistPar}}
+\index{\_\-signalHistPar@{\_\-signalHistPar}!CALICE::HoldScanAnalysis@{CALICE::HoldScanAnalysis}}
+\subsubsection[{\_\-signalHistPar}]{\setlength{\rightskip}{0pt plus 5cm}FloatVec {\bf CALICE::HoldScanAnalysis::\_\-signalHistPar}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1HoldScanAnalysis_af5d6fa8f5fce15286a9fbb3390f35391}
+
+
+binning of the per hold value histograms. 
+
+Definition at line 56 of file HoldScanAnalysis.hh.
+
+Referenced by createHistograms().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+HoldScanAnalysis.hh\item 
+HoldScanAnalysis.cc\end{DoxyCompactItemize}

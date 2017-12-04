@@ -1,0 +1,115 @@
+\section{TBTrack::TrackFitResult Class Reference}
+\label{classTBTrack_1_1TrackFitResult}\index{TBTrack::TrackFitResult@{TBTrack::TrackFitResult}}
+Inheritance diagram for TBTrack::TrackFitResult::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classTBTrack_1_1TrackFitResult}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ {\bfseries numberOfInts} = 0
+ \}
+\item 
+enum \{ {\bfseries numberOfFloats} = 0
+ \}
+\item 
+enum \{ {\bfseries numberOfDoubles} = 6
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries TrackFitResult} (double p0, double p1, const TMatrixDSym \&e, double c, unsigned h)\label{classTBTrack_1_1TrackFitResult_a9be66e8f2f6a85ee13202b35b3e49698}
+
+\item 
+void {\bfseries parameters} (double p0, double p1)\label{classTBTrack_1_1TrackFitResult_ad13aa283509c0e7ddca6815ef7a1cc57}
+
+\item 
+double {\bfseries intercept} (double z=0.0, double a=0.0) const \label{classTBTrack_1_1TrackFitResult_a7fbbf8ae46fa2ede02b6e9993608bf00}
+
+\item 
+double {\bfseries gradient} (double a=0.0) const \label{classTBTrack_1_1TrackFitResult_a4a5441700a888610c735ee01fd13e6d9}
+
+\item 
+TMatrixDSym {\bfseries errorMatrix} (double z=0.0, double a=0.0) const \label{classTBTrack_1_1TrackFitResult_a2c0e2dafabfbc64f26dd27497ea2fd75}
+
+\item 
+void {\bfseries errorMatrix} (const TMatrixDSym \&e)\label{classTBTrack_1_1TrackFitResult_ae70ea377e10c83a093cfc33680958f14}
+
+\item 
+double {\bfseries interceptError} (double z=0.0, double a=0.0) const \label{classTBTrack_1_1TrackFitResult_ae6cb4a2bba4e7f0e3fd18a764b7af88f}
+
+\item 
+double {\bfseries gradientError} (double a=0.0) const \label{classTBTrack_1_1TrackFitResult_a41f9c1f909254c6f08c2e755b15fd0c1}
+
+\item 
+double {\bfseries chiSquared} () const \label{classTBTrack_1_1TrackFitResult_a6e664b5e02b50c77e7036d0f500f8b86}
+
+\item 
+void {\bfseries chiSquared} (double c)\label{classTBTrack_1_1TrackFitResult_a6be030fd4473e6b5f1c49d3818e3449b}
+
+\item 
+int {\bfseries numberOfDof} () const \label{classTBTrack_1_1TrackFitResult_a1384e826d2e5e24b8edd6cf5ae3350d9}
+
+\item 
+double {\bfseries probability} () const \label{classTBTrack_1_1TrackFitResult_aba9d5aa99ef6d3c0c7c767f63e21191a}
+
+\item 
+unsigned {\bfseries hitPattern} () const \label{classTBTrack_1_1TrackFitResult_ad1988c2b480b8d45d9b92e6643a8f2b9}
+
+\item 
+void {\bfseries hitPattern} (unsigned h)\label{classTBTrack_1_1TrackFitResult_ac5b77c597472fbcf86b440940dbffc75}
+
+\item 
+unsigned {\bfseries numberOfHits} () const \label{classTBTrack_1_1TrackFitResult_a1911052615673f6341b65b4e874a7725}
+
+\item 
+std::ostream \& {\bfseries print} (std::ostream \&o=std::cout, const std::string \&s=\char`\"{}\char`\"{}) const \label{classTBTrack_1_1TrackFitResult_af6cc54a8c28eed7faf1a25680619c74e}
+
+\item 
+const int $\ast$ {\bfseries intData} () const \label{classTBTrack_1_1TrackFitResult_ad008025d62102edd1b766bcda8fca9d8}
+
+\item 
+int $\ast$ {\bfseries intData} ()\label{classTBTrack_1_1TrackFitResult_a9f6a52850d0d7fccf2fa679fefb156f9}
+
+\item 
+const float $\ast$ {\bfseries floatData} () const \label{classTBTrack_1_1TrackFitResult_af915d2a26e54410317c50e52072352a4}
+
+\item 
+float $\ast$ {\bfseries floatData} ()\label{classTBTrack_1_1TrackFitResult_acb8d400156d3413b0e1062530b87ecc9}
+
+\item 
+const double $\ast$ {\bfseries doubleData} () const \label{classTBTrack_1_1TrackFitResult_a91f32c7b577a192a2a97e645fec1c83c}
+
+\item 
+double $\ast$ {\bfseries doubleData} ()\label{classTBTrack_1_1TrackFitResult_a362625e95ba94f5de728a2cb3042c0cb}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double {\bfseries \_\-parameters} [2]\label{classTBTrack_1_1TrackFitResult_ae9b05a73283ac5d325e9bf1a07658854}
+
+\item 
+double {\bfseries \_\-errorMatrix} [3]\label{classTBTrack_1_1TrackFitResult_ac56f2127f056edc21a142686304b2acc}
+
+\item 
+double {\bfseries \_\-chiSquared}\label{classTBTrack_1_1TrackFitResult_acdb3c7423e9cb577feb311f30a8f31e7}
+
+\item 
+int {\bfseries \_\-hitPattern}\label{classTBTrack_1_1TrackFitResult_a585ab993aa74efcb9a0852df862d2be4}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 12 of file TrackFitResult.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+TrackFitResult.hh\item 
+TrackFitResult.cc\end{DoxyCompactItemize}

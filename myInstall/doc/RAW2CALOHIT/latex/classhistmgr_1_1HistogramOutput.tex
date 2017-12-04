@@ -1,0 +1,55 @@
+\section{histmgr::HistogramOutput Class Reference}
+\label{classhistmgr_1_1HistogramOutput}\index{histmgr::HistogramOutput@{histmgr::HistogramOutput}}
+
+
+Processor which writes histogram groups to files at the end of the processing.  
+
+
+{\ttfamily \#include $<$HistogramOutput.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Processor $\ast$ {\bfseries newProcessor} ()\label{classhistmgr_1_1HistogramOutput_aec1ae9dabcace0c5d9c425d4305153aa}
+
+\item 
+void {\bf init} ()
+\begin{DoxyCompactList}\small\item\em Called at the begin of the job before anything is read. \item\end{DoxyCompactList}\item 
+void {\bf end} ()
+\begin{DoxyCompactList}\small\item\em Called for every run, e.g. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+StringVec {\bfseries \_\-fileFolderAssignment}\label{classhistmgr_1_1HistogramOutput_acf932812a8468eb3106dca6a5b9040ea}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Processor which writes histogram groups to files at the end of the processing. The histogram groups and their destination files are specified by marlin processor parameters. Each histogram group can be written to a seperate file. 
+
+Definition at line 22 of file HistogramOutput.hh.
+
+\subsection{Member Function Documentation}
+\index{histmgr::HistogramOutput@{histmgr::HistogramOutput}!end@{end}}
+\index{end@{end}!histmgr::HistogramOutput@{histmgr::HistogramOutput}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}void histmgr::HistogramOutput::end ()}\label{classhistmgr_1_1HistogramOutput_ae9d8650a0e3d0608fa1fa86849ab48ad}
+
+
+Called for every run, e.g. overwrite to initialize run dependent histograms. Called for every event -\/ the working horse. 
+
+Definition at line 117 of file HistogramOutput.cc.
+
+References histmgr::HistMgr::writeHistograms().\index{histmgr::HistogramOutput@{histmgr::HistogramOutput}!init@{init}}
+\index{init@{init}!histmgr::HistogramOutput@{histmgr::HistogramOutput}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void histmgr::HistogramOutput::init ()}\label{classhistmgr_1_1HistogramOutput_a191f76c80a79ad920e2e209426e7c2fe}
+
+
+Called at the begin of the job before anything is read. Use to initialize the processor, e.g. book histograms. 
+
+Definition at line 57 of file HistogramOutput.cc.
+
+References histmgr::HistMgr::assignFileName(), and histmgr::HistMgr::warnOnUnassigned().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+HistogramOutput.hh\item 
+HistogramOutput.cc\end{DoxyCompactItemize}

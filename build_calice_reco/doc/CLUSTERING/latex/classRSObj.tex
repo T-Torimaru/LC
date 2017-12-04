@@ -1,0 +1,78 @@
+\section{RSObj Class Reference}
+\label{classRSObj}\index{RSObj@{RSObj}}
+
+
+Class for ???  
+
+
+{\ttfamily \#include $<$RecoUtil.hh$>$}Inheritance diagram for RSObj::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.54545cm]{classRSObj}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class \_\-Tp $>$ }\\bool {\bf IsA} ()\label{classRSObj_af997cbf6eb1ca78a2ae26919322139cd}
+
+\begin{DoxyCompactList}\small\item\em Check if the class is a real \doxyref{RSObj}{p.}{classRSObj}. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$class \_\-Tp $>$ }\\unsigned {\bfseries getNumberOf} ()\label{classRSObj_a7bf3818a093b0fecca70622665f18831}
+
+\item 
+{\footnotesize template$<$class \_\-Tp $>$ }\\\_\-Tp $\ast$ {\bfseries getChild} ()\label{classRSObj_a5b3e9f2b277060e6eab66baca7882cbc}
+
+\item 
+{\footnotesize template$<$class \_\-Tp $>$ }\\unsigned {\bfseries getNumberOfParents} ()\label{classRSObj_a4b9640e76f27becb8a2cfa3fb1b2c499}
+
+\item 
+{\footnotesize template$<$class \_\-Tp $>$ }\\\_\-Tp $\ast$ {\bfseries getParent} ()\label{classRSObj_a84ab8185d507640a6b5cb992de276f27}
+
+\item 
+{\bf RSLink} $\ast$ {\bfseries getPrtLink} ({\bf RSObj} $\ast$\_\-prt)\label{classRSObj_af5deb1b2ef4aa69891710ccd2e8ce7ff}
+
+\item 
+void {\bfseries remove} ({\bf RSLinkGroup} $\ast$lg)\label{classRSObj_a7b22f5e142588135000e6da11ee010a6}
+
+\item 
+unsigned {\bfseries getNumberOf} (RSType type)\label{classRSObj_ab307a0d0940c25a39dd9a1e62c3b8897}
+
+\item 
+{\bf RSObj} $\ast$ {\bfseries getParent} (RSType type)\label{classRSObj_a2e987891a30b45701052fd6655df5212}
+
+\item 
+bool {\bfseries IsA} (RSType type)\label{classRSObj_a416c4b1b47144ae97331b91bded592ab}
+
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+RSTypeMask {\bfseries rs\_\-type\_\-mask}\label{classRSObj_a3ba7c192ba8c0b4f672e107a4ad058ba}
+
+\item 
+{\bf RSLinkGroup} $\ast$ {\bfseries cld}\label{classRSObj_ac928b0eb5f69e665a5b5c34ff629e9da}
+
+\item 
+{\bf RSLink} $\ast$ {\bfseries prt}\label{classRSObj_a6fea94d99cb0257d1a889110d7ff3f0f}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries RSObj} (RSType type)\label{classRSObj_af465287275f7776fdd5f0f8cd6c313f8}
+
+\item 
+void {\bfseries AddRSType} (RSType type)\label{classRSObj_a4a343567a829b0ca685bfaa03b37d8b9}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for ??? 
+
+Definition at line 217 of file RecoUtil.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+RecoUtil.hh\item 
+RecoUtil.cc\end{DoxyCompactItemize}

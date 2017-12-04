@@ -1,0 +1,42 @@
+\section{CALICE::EncodingStringHelper Class Reference}
+\label{classCALICE_1_1EncodingStringHelper}\index{CALICE::EncodingStringHelper@{CALICE::EncodingStringHelper}}
+
+
+Utility class to get the field description according to an lcio BitField64.  
+
+
+{\ttfamily \#include $<$EncodingStringHelper.hh$>$}\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std::string {\bf GetFieldDesc} (const std::string FieldName, const unsigned int FieldMask, const unsigned int FieldShift, const unsigned int startbit)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Utility class to get the field description according to an lcio BitField64. \begin{DoxyAuthor}{Author}
+S. Richter (DESY) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+March 13 2007 
+\end{DoxyDate}
+
+
+Definition at line 13 of file EncodingStringHelper.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::EncodingStringHelper@{CALICE::EncodingStringHelper}!GetFieldDesc@{GetFieldDesc}}
+\index{GetFieldDesc@{GetFieldDesc}!CALICE::EncodingStringHelper@{CALICE::EncodingStringHelper}}
+\subsubsection[{GetFieldDesc}]{\setlength{\rightskip}{0pt plus 5cm}std::string CALICE::EncodingStringHelper::GetFieldDesc (const std::string {\em FieldName}, \/  const unsigned int {\em FieldMask}, \/  const unsigned int {\em FieldShift}, \/  const unsigned int {\em startbit})\hspace{0.3cm}{\ttfamily  [static]}}\label{classCALICE_1_1EncodingStringHelper_acf70b62844698b1cc0fb9e04531d5ba4}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em FieldName}]-\/ the identifier of the field, e.g. \char`\"{}module\char`\"{} \item[{\em FieldMask}]-\/ the bitmask which specifies the bits used for this field \item[{\em FieldShift}]-\/ using the shift together with the mask you get field at the lowest bits \item[{\em startbit}]-\/ an overall shift of all fields \end{DoxyParams}
+
+
+Definition at line 7 of file EncodingStringHelper.cc.
+
+Referenced by CALICE::HcalTileIndex::getEncodingString(), and CALICE::HcalCellIndex::getEncodingString().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+EncodingStringHelper.hh\item 
+EncodingStringHelper.cc\end{DoxyCompactItemize}

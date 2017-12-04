@@ -1,0 +1,107 @@
+\section{AhcSROmappingProcessor Class Reference}
+\label{classAhcSROmappingProcessor}\index{AhcSROmappingProcessor@{AhcSROmappingProcessor}}
+
+
+Processor to fix the mapping of a collection of AhcSlowReadoutModBlock.  
+
+
+{\ttfamily \#include $<$AhcSROmappingProcessor.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Processor $\ast$ {\bfseries newProcessor} ()\label{classAhcSROmappingProcessor_acdb27fbf3cabcefac542316a507e4ecd}
+
+\item 
+virtual void {\bf init} ()
+\begin{DoxyCompactList}\small\item\em Called at the begin of the job before anything is read. \item\end{DoxyCompactList}\item 
+virtual void {\bf processEvent} (LCEvent $\ast$evt)\label{classAhcSROmappingProcessor_a6aed22ae961f2d83301ef5bd3ecbac22}
+
+\begin{DoxyCompactList}\small\item\em Called for every event -\/ the working horse. \item\end{DoxyCompactList}\item 
+virtual void {\bf end} ()\label{classAhcSROmappingProcessor_a1e2654e41cb9d86e674d671e2dffddf8}
+
+\begin{DoxyCompactList}\small\item\em Called after data processing for clean up. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bfseries \_\-inColName}\label{classAhcSROmappingProcessor_a79fb23db5c3484c5943e6e16f696a4b2}
+
+\item 
+std::string {\bfseries \_\-outColName}\label{classAhcSROmappingProcessor_aea0657c8950e0ebce40bac16f59ec2d8}
+
+\item 
+std::string {\bfseries \_\-mappingColName}\label{classAhcSROmappingProcessor_a0418b9e5c81b0b44fde4b77a7290366f}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries conditionsChanged} (lcio::LCCollection $\ast$col)\label{classAhcSROmappingProcessor_ae67481b63f80aba4e19fdd12c4a74da4}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+CALICE::AhcSlowReadoutModMapper {\bfseries \_\-mapper}\label{classAhcSROmappingProcessor_a7d712eeff246abd6edd2ecee49fb5777}
+
+\item 
+bool {\bfseries \_\-mappingChanged}\label{classAhcSROmappingProcessor_a8486c29c571d160450e616e6484ee243}
+
+\item 
+bool {\bfseries \_\-inputChanged}\label{classAhcSROmappingProcessor_a285e84531df4faeaea3018b8a0a06b32}
+
+\item 
+lcio::LCCollection $\ast$ {\bfseries \_\-mappingCol}\label{classAhcSROmappingProcessor_a631ea134f436b99ee520fd705a8d392a}
+
+\item 
+lcio::LCCollection $\ast$ {\bfseries \_\-inCol}\label{classAhcSROmappingProcessor_ad60fb94a5944f4575563149537e02feb}
+
+\item 
+CALICE::RunTimeConditionsHandler $\ast$ {\bfseries \_\-conditionsHandler}\label{classAhcSROmappingProcessor_a13e326e568c0a3ba6b6b4fe6cfca5ab1}
+
+\item 
+bool {\bfseries \_\-mappingAvailable}\label{classAhcSROmappingProcessor_a33de2e4f529735385931b547914446b2}
+
+\item 
+lcio::LCCollection $\ast$ {\bfseries \_\-lastDataCol}\label{classAhcSROmappingProcessor_a0df24f16b476f7d484caefc258294e5a}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Processor to fix the mapping of a collection of AhcSlowReadoutModBlock. This processor retrieves the data by ConditionsChangeListener for the input-\/ and mapping-\/collection.
+
+The output is added to the event by a RunTimeConditionsHandler to propagate the change to possible further ConditionsChangeListener.
+
+\begin{DoxySeeAlso}{See also}
+lccd::IConditionsChangeListener 
+
+CALICE::RunTimeConditionsHandler 
+
+marlin::ConditionsProcessor
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Author}
+{\tt Benjamin.Lutz@desy.de} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Dec 2008 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.0 
+\end{DoxyVersion}
+
+
+Definition at line 30 of file AhcSROmappingProcessor.hh.
+
+\subsection{Member Function Documentation}
+\index{AhcSROmappingProcessor@{AhcSROmappingProcessor}!init@{init}}
+\index{init@{init}!AhcSROmappingProcessor@{AhcSROmappingProcessor}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void AhcSROmappingProcessor::init ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classAhcSROmappingProcessor_a4b86cdb371c629d8a5919c5ddedb60d5}
+
+
+Called at the begin of the job before anything is read. Use to initialize the processor, e.g. book histograms. 
+
+Definition at line 44 of file AhcSROmappingProcessor.cc.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+AhcSROmappingProcessor.hh\item 
+AhcSROmappingProcessor.cc\end{DoxyCompactItemize}

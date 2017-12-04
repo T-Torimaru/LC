@@ -1,0 +1,133 @@
+\section{CALICE::FeEvent Class Reference}
+\label{classCALICE_1_1FeEvent}\index{CALICE::FeEvent@{CALICE::FeEvent}}
+
+
+Stores the trigger history (i.e.  
+
+
+{\ttfamily \#include $<$FeEvent.hh$>$}Inheritance diagram for CALICE::FeEvent::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCALICE_1_1FeEvent}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf FeEvent} ()\label{classCALICE_1_1FeEvent_a647e478499ef41c568ebce39db6f31fd}
+
+\begin{DoxyCompactList}\small\item\em Simple Constructor. \item\end{DoxyCompactList}\item 
+{\bf FeEvent} (unsigned int board\_\-id)
+\begin{DoxyCompactList}\small\item\em UsefulConstructor. \item\end{DoxyCompactList}\item 
+{\bf FeEvent} (LCObject $\ast$obj)\label{classCALICE_1_1FeEvent_a7930cd30edc113eb203985a695163c1e}
+
+\begin{DoxyCompactList}\small\item\em 'Copy constructor' needed to interpret LCCollection read from file/database. \item\end{DoxyCompactList}\item 
+{\bf FeEvent} \& {\bf setBoardID} (int boardID)
+\begin{DoxyCompactList}\small\item\em Set the packed board id. \item\end{DoxyCompactList}\item 
+int {\bf getBoardID} () const \label{classCALICE_1_1FeEvent_a8f65bf0bc42c48f9ba41cf2952369052}
+
+\begin{DoxyCompactList}\small\item\em Get the board id. \item\end{DoxyCompactList}\item 
+{\bf FeEvent} \& {\bf setRecordLabel} (int label)\label{classCALICE_1_1FeEvent_a75321d2164e0aa9a095f52a0d804e98b}
+
+\begin{DoxyCompactList}\small\item\em Set the Record Label. \item\end{DoxyCompactList}\item 
+short {\bf getRecordLabel} () const \label{classCALICE_1_1FeEvent_a36c159cc3f3f014b9dc07978c9016073}
+
+\begin{DoxyCompactList}\small\item\em Return the Record Label. \item\end{DoxyCompactList}\item 
+{\bf FeEvent} \& {\bf setTriggerCounter} (int trigger\_\-counter)\label{classCALICE_1_1FeEvent_ad53ef089cf0fd5d1677e3dec63d2f205}
+
+\begin{DoxyCompactList}\small\item\em Set the trigger counter. \item\end{DoxyCompactList}\item 
+int {\bf getTriggerCounter} () const \label{classCALICE_1_1FeEvent_a41cc7a30f725675aba016cdbbfbd4953}
+
+\begin{DoxyCompactList}\small\item\em Get the Trigger Counter. \item\end{DoxyCompactList}\item 
+{\bf FeEvent} \& {\bf setSpyRegister} (int spyregister)
+\begin{DoxyCompactList}\small\item\em Set the Spy Register Value (Whatever this is . \item\end{DoxyCompactList}\item 
+int {\bf getSpyRegister} () const \label{classCALICE_1_1FeEvent_a1f3e1d775791b4f28a816def9df16ac2}
+
+\begin{DoxyCompactList}\small\item\em Get the Spy Register Value. \item\end{DoxyCompactList}\item 
+void {\bf print} (std::ostream \&os) const \label{classCALICE_1_1FeEvent_a2dd6aa0d8cbd18fe429058cd85197791}
+
+\begin{DoxyCompactList}\small\item\em Convenient print method. \item\end{DoxyCompactList}\item 
+const std::string {\bfseries getTypeName} () const \label{classCALICE_1_1FeEvent_a850d7019cf4bcfea521154fe358ba6bc}
+
+\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1FeEvent_ab41ae53dc108e8699b26453a46a7884c}
+
+\begin{DoxyCompactList}\small\item\em Return a brief description of the data members. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Stores the trigger history (i.e. fifo content).when it appears in the front end as realized for runs starting in May 2006 (Ask Paul for firmware version) in older versions of the DAQ these data came along wiith the BeTrgEventData which still contains information related to the data handled by the present interface class.
+
+To acces the configuration: 
+\begin{DoxyPre}
+   void processEvent(LCEvent *event)  \{
+       try \{
+        // string \_colName = "BeTrgEventData"
+        LCCollection *col=event->getCollection(\_colName);
+        for (unsigned int element\_i=0; element\_i<col->getNumberOfElements(); element\_i++) \{
+           \doxyref{FeEvent}{p.}{classCALICE_1_1FeEvent} event(col->getElementAt(element\_i));\end{DoxyPre}
+
+
+
+\begin{DoxyPre}        \}
+   \}
+ \end{DoxyPre}
+
+
+\begin{DoxyAuthor}{Author}
+R. Pöschl (LAL Orsay) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Jul 2006 
+\end{DoxyDate}
+
+
+Definition at line 53 of file FeEvent.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CALICE::FeEvent@{CALICE::FeEvent}!FeEvent@{FeEvent}}
+\index{FeEvent@{FeEvent}!CALICE::FeEvent@{CALICE::FeEvent}}
+\subsubsection[{FeEvent}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::FeEvent::FeEvent (unsigned int {\em board\_\-id})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1FeEvent_a01ee223b5c9ef6ff15712edf275018c8}
+
+
+UsefulConstructor. 
+\begin{DoxyParams}{Parameters}
+\item[{\em board\_\-id}]the packed board id (\doxyref{CALICE::BoardID}{p.}{classCALICE_1_1BoardID}). \end{DoxyParams}
+
+
+Definition at line 72 of file FeEvent.hh.
+
+References setBoardID(), setRecordLabel(), setSpyRegister(), and setTriggerCounter().
+
+\subsection{Member Function Documentation}
+\index{CALICE::FeEvent@{CALICE::FeEvent}!setBoardID@{setBoardID}}
+\index{setBoardID@{setBoardID}!CALICE::FeEvent@{CALICE::FeEvent}}
+\subsubsection[{setBoardID}]{\setlength{\rightskip}{0pt plus 5cm}{\bf FeEvent}\& CALICE::FeEvent::setBoardID (int {\em boardID})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1FeEvent_a58128a913587df8b1c25ef444d36b6df}
+
+
+Set the packed board id. \begin{DoxySeeAlso}{See also}
+\doxyref{BoardID}{p.}{classCALICE_1_1BoardID} 
+\end{DoxySeeAlso}
+
+
+Definition at line 91 of file FeEvent.hh.
+
+References CALICE::LCGenericObjectImplExt::obj().
+
+Referenced by FeEvent().\index{CALICE::FeEvent@{CALICE::FeEvent}!setSpyRegister@{setSpyRegister}}
+\index{setSpyRegister@{setSpyRegister}!CALICE::FeEvent@{CALICE::FeEvent}}
+\subsubsection[{setSpyRegister}]{\setlength{\rightskip}{0pt plus 5cm}{\bf FeEvent}\& CALICE::FeEvent::setSpyRegister (int {\em spyregister})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1FeEvent_aa06c38ae89d0db47897f0781e2103115}
+
+
+Set the Spy Register Value (Whatever this is . ... 
+
+Definition at line 118 of file FeEvent.hh.
+
+References CALICE::LCGenericObjectImplExt::obj().
+
+Referenced by FeEvent().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+FeEvent.hh\item 
+FeEvent.cc\end{DoxyCompactItemize}

@@ -1,0 +1,203 @@
+\section{CALICE::ExperimentalSetup Class Reference}
+\label{classCALICE_1_1ExperimentalSetup}\index{CALICE::ExperimentalSetup@{CALICE::ExperimentalSetup}}
+
+
+Define the experimental setup: beam energy, position, angle and detector position, angle.  
+
+
+{\ttfamily \#include $<$ExperimentalSetup.hh$>$}\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries EBeamType} \{ \par
+{\bfseries kElectronBeam}, 
+{\bfseries kMuonBeam}, 
+{\bfseries kPionBeam}, 
+{\bfseries kProtonBeam}, 
+\par
+{\bfseries kCosmics}, 
+{\bfseries kUnknown}, 
+{\bfseries kMixed}, 
+{\bfseries kPionElectronBeam}, 
+\par
+{\bfseries kPionProtonBeam}, 
+{\bfseries kCalibrationPulse}, 
+{\bfseries kNoise}, 
+{\bfseries kNBeamTypes}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ExperimentalSetup} (LCObject $\ast$obj)\label{classCALICE_1_1ExperimentalSetup_a88f1b7e3e0bcfa5ef4a7941aa73e9695}
+
+\begin{DoxyCompactList}\small\item\em 'Copy constructor' needed to interpret LCCollection read from file/database. \item\end{DoxyCompactList}\item 
+{\bf ExperimentalSetup} \& {\bf setBeamType} (EBeamType beam\_\-type)\label{classCALICE_1_1ExperimentalSetup_a20e8811ecac60c745309792aeaf309c3}
+
+\begin{DoxyCompactList}\small\item\em Set the particle type. \item\end{DoxyCompactList}\item 
+EBeamType {\bf getBeamType} () const \label{classCALICE_1_1ExperimentalSetup_aed66233c7e7f7aaab32bf2fc52be38a6}
+
+\begin{DoxyCompactList}\small\item\em Get the particle type. \item\end{DoxyCompactList}\item 
+const char $\ast$ {\bf getBeamTypeName} () const \label{classCALICE_1_1ExperimentalSetup_ac337adc9b904f67631ca5686fe348c77}
+
+\begin{DoxyCompactList}\small\item\em Return the beam type name. \item\end{DoxyCompactList}\item 
+{\bf ExperimentalSetup} \& {\bf setPeakEnergy} (float peak\_\-energy)\label{classCALICE_1_1ExperimentalSetup_a6bdbbf294d4f9a219c11000887845a42}
+
+\begin{DoxyCompactList}\small\item\em Set the maximum of the beam energy distribution. \item\end{DoxyCompactList}\item 
+float {\bf getPeakEnergy} () const \label{classCALICE_1_1ExperimentalSetup_adc0d1f521ba8c3cca79caa412f05f807}
+
+\begin{DoxyCompactList}\small\item\em Get the maximum of the beam energy distribution. \item\end{DoxyCompactList}\item 
+{\bf ExperimentalSetup} \& {\bf setBeamAngleZX} (float beam\_\-angle\_\-zx)\label{classCALICE_1_1ExperimentalSetup_a560946155aed8298f1e27d898674928f}
+
+\begin{DoxyCompactList}\small\item\em Set the angle between the beam and the z-\/axis in thr ZX plane. \item\end{DoxyCompactList}\item 
+float {\bf getBeamAngleZX} () const \label{classCALICE_1_1ExperimentalSetup_a135bccef5d9b62b3b30f031eb0c55a3b}
+
+\begin{DoxyCompactList}\small\item\em Get Set the angle between the beam and the z-\/axis in thr ZX plane. \item\end{DoxyCompactList}\item 
+{\bf ExperimentalSetup} \& {\bf setBeamAngleZY} (float beam\_\-angle\_\-zy)\label{classCALICE_1_1ExperimentalSetup_ad64841d5c4e5f36fae1e2be1f6bf2c37}
+
+\begin{DoxyCompactList}\small\item\em Set the angle between the beam and the z-\/axis in thr ZY plane. \item\end{DoxyCompactList}\item 
+float {\bf getBeamAngleZY} () const \label{classCALICE_1_1ExperimentalSetup_ad4b57b1e659c5a205c681406e6504992}
+
+\begin{DoxyCompactList}\small\item\em Get the angle between the beam and the z-\/axis in thr ZY plane. \item\end{DoxyCompactList}\item 
+{\bf ExperimentalSetup} \& {\bf setBeamImpactPosition} (float beam\_\-impact\_\-x0, float beam\_\-impact\_\-y0)\label{classCALICE_1_1ExperimentalSetup_a2fe99a87c6c6f3dcb2bcf00fe50ac620}
+
+\begin{DoxyCompactList}\small\item\em Set the mean impact position of the beam on the detector in the XY-\/plane (convenience method). \item\end{DoxyCompactList}\item 
+{\bf ExperimentalSetup} \& {\bf setBeamImpactPosition} (float $\ast$beam\_\-impact\_\-position\_\-tupel)\label{classCALICE_1_1ExperimentalSetup_af81b450d886c0e9857555fb1a9e9222a}
+
+\begin{DoxyCompactList}\small\item\em Set the mean impact position of the beam on the detector in the XY-\/plane (convenience method). \item\end{DoxyCompactList}\item 
+{\bf ExperimentalSetup} \& {\bf setBeamImpactPositionX0} (float beam\_\-impact\_\-x0)\label{classCALICE_1_1ExperimentalSetup_a7384248835a18c483ff922426e372eab}
+
+\begin{DoxyCompactList}\small\item\em Set the mean impact position of the beam on the detector in the XY-\/plane. \item\end{DoxyCompactList}\item 
+float {\bf getBeamImpactPositionX0} () const \label{classCALICE_1_1ExperimentalSetup_a74f73b1fe7ccd42b48f3bc7834826a7b}
+
+\begin{DoxyCompactList}\small\item\em Get the mean impact position of the beam on the detector in the XY-\/plane. \item\end{DoxyCompactList}\item 
+{\bf ExperimentalSetup} \& {\bf setBeamImpactPositionY0} (float beam\_\-impact\_\-y0)\label{classCALICE_1_1ExperimentalSetup_a6e4037224f3d8372ddbc4d5a76a8b12a}
+
+\begin{DoxyCompactList}\small\item\em Set the mean impact position of the beam on the detector in the XY-\/plane. \item\end{DoxyCompactList}\item 
+float {\bf getBeamImpactPositionY0} () const \label{classCALICE_1_1ExperimentalSetup_adb19ccbf3411bf1824939323b71238c7}
+
+\begin{DoxyCompactList}\small\item\em Get the y-\/coordinate of the mean impact position of the beam on the detector in the XY-\/plane. \item\end{DoxyCompactList}\item 
+{\bf ExperimentalSetup} \& {\bf setDetectorAngleZX} (float detector\_\-angle\_\-zx)
+\begin{DoxyCompactList}\small\item\em Set the angle of the detector w.r.t. \item\end{DoxyCompactList}\item 
+float {\bf getDetectorAngleZX} () const 
+\begin{DoxyCompactList}\small\item\em Get the angle of the detector w.r.t. \item\end{DoxyCompactList}\item 
+{\bf ExperimentalSetup} \& {\bf setDetectorRotationX0} (float rotation\_\-origin\_\-x0)\label{classCALICE_1_1ExperimentalSetup_a6f5c242f1cd5a9d626fac9e46193e7a6}
+
+\begin{DoxyCompactList}\small\item\em Set the origin of the detector rotation in the ZX-\/plane. \item\end{DoxyCompactList}\item 
+float {\bf getDetectorRotationX0} () const \label{classCALICE_1_1ExperimentalSetup_a2ff6df503043d3ef5099ea5d6783e8f2}
+
+\begin{DoxyCompactList}\small\item\em Get the origin of the detector rotation in the ZX-\/plane. \item\end{DoxyCompactList}\item 
+{\bf ExperimentalSetup} \& {\bf setDetectorRotationZ0} (float rotation\_\-origin\_\-z0)\label{classCALICE_1_1ExperimentalSetup_ab540bcf4caac6b150e0ba91bb84ab432}
+
+\begin{DoxyCompactList}\small\item\em Set the origin of the detector rotation in the ZX-\/plane. \item\end{DoxyCompactList}\item 
+float {\bf getDetectorRotationZ0} () const \label{classCALICE_1_1ExperimentalSetup_aa8dbf060db859678b27585ceac86ffe5}
+
+\begin{DoxyCompactList}\small\item\em Get the origin of the detector rotation in the ZX-\/plane. \item\end{DoxyCompactList}\item 
+{\bf ExperimentalSetup} \& {\bf setDetectorPosition} (float origin\_\-x0, float origin\_\-y0, float origin\_\-z0)\label{classCALICE_1_1ExperimentalSetup_aaf75664b180814002f19098ec51b3d1d}
+
+\begin{DoxyCompactList}\small\item\em Set the origin of the detector in the 3D-\/space (convenience method). \item\end{DoxyCompactList}\item 
+{\bf ExperimentalSetup} \& {\bf setDetectorPosition} (float $\ast$origin\_\-three\_\-vector)\label{classCALICE_1_1ExperimentalSetup_aab3af41304b7791a7c2a89f8176f2727}
+
+\begin{DoxyCompactList}\small\item\em Set the origin of the detector in the 3D-\/space (convenience method). \item\end{DoxyCompactList}\item 
+{\bf ExperimentalSetup} \& {\bf setDetectorX0} (float origin\_\-x0)\label{classCALICE_1_1ExperimentalSetup_aaa5c739bf5550616dc9daf06e66fa7d3}
+
+\begin{DoxyCompactList}\small\item\em Set the origin of the detector in the 3D-\/space. \item\end{DoxyCompactList}\item 
+float {\bf getDetectorX0} () const \label{classCALICE_1_1ExperimentalSetup_a7f4e4616fa5a304aea5ad88e79522871}
+
+\begin{DoxyCompactList}\small\item\em Get the origin of the detector in the 3D-\/space. \item\end{DoxyCompactList}\item 
+{\bf ExperimentalSetup} \& {\bf setDetectorY0} (float origin\_\-y0)\label{classCALICE_1_1ExperimentalSetup_aa8f94b2b4eaac33011c13df005e4141d}
+
+\begin{DoxyCompactList}\small\item\em Set the origin of the detector in the 3D-\/space. \item\end{DoxyCompactList}\item 
+float {\bf getDetectorY0} () const \label{classCALICE_1_1ExperimentalSetup_a70298a2312261febaaee1440369b8667}
+
+\begin{DoxyCompactList}\small\item\em Get the origin of the detector in the 3D-\/space. \item\end{DoxyCompactList}\item 
+{\bf ExperimentalSetup} \& {\bf setDetectorZ0} (float origin\_\-z0)\label{classCALICE_1_1ExperimentalSetup_a20c69d5737d7afa4d3ca5ba61f80a324}
+
+\begin{DoxyCompactList}\small\item\em Set the origin of the detector in the 3D-\/space. \item\end{DoxyCompactList}\item 
+float {\bf getDetectorZ0} () const \label{classCALICE_1_1ExperimentalSetup_ac90c01cf3383bfc43094309d5bb7a677}
+
+\begin{DoxyCompactList}\small\item\em Get the origin of the detector in the 3D-\/space. \item\end{DoxyCompactList}\item 
+void {\bf print} (std::ostream \&os)\label{classCALICE_1_1ExperimentalSetup_a526e124a082191bf6a06d1ddc6a1ea38}
+
+\begin{DoxyCompactList}\small\item\em Print all members (for debugging). \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1ExperimentalSetup_ae1b3cfdebacc3300684be0ada84173dd}
+
+\begin{DoxyCompactList}\small\item\em Return the type of the class. \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1ExperimentalSetup_a5f0b3c312b3b1d53eac95192e39b5211}
+
+\begin{DoxyCompactList}\small\item\em Return a brief description of the data members. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ {\bf getBeamTypeName} (unsigned int beam\_\-type\_\-i)\label{classCALICE_1_1ExperimentalSetup_a2fe50b694e5828226cf432403bf4a9a2}
+
+\begin{DoxyCompactList}\small\item\em Return the beam type name for a given type id. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ {\bfseries \_\-\_\-beamTypeNames} [CALICE::ExperimentalSetup::kNBeamTypes+1]
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Define the experimental setup: beam energy, position, angle and detector position, angle. The experimental setup should be written into the conditions database at least twice: 
+\begin{DoxyItemize}
+\item the nominal values with the tag NOMINAL 
+\item the measured values 
+\end{DoxyItemize}\begin{Desc}
+\item[{\bf Todo}]\{Should this class be split into two? One for the beam and one for the detector parameters? Should the nominal and measured values be stored in separate folders?\} \end{Desc}
+
+
+Definition at line 43 of file ExperimentalSetup.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::ExperimentalSetup@{CALICE::ExperimentalSetup}!getDetectorAngleZX@{getDetectorAngleZX}}
+\index{getDetectorAngleZX@{getDetectorAngleZX}!CALICE::ExperimentalSetup@{CALICE::ExperimentalSetup}}
+\subsubsection[{getDetectorAngleZX}]{\setlength{\rightskip}{0pt plus 5cm}float CALICE::ExperimentalSetup::getDetectorAngleZX () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1ExperimentalSetup_a5b8502ad820a72a192e5eb71c82898ab}
+
+
+Get the angle of the detector w.r.t. z-\/axis in the ZX-\/plane. 
+
+Definition at line 180 of file ExperimentalSetup.hh.
+
+References CALICE::kExperimentalSetupFloatDetectorAngleZX.
+
+Referenced by print().\index{CALICE::ExperimentalSetup@{CALICE::ExperimentalSetup}!setDetectorAngleZX@{setDetectorAngleZX}}
+\index{setDetectorAngleZX@{setDetectorAngleZX}!CALICE::ExperimentalSetup@{CALICE::ExperimentalSetup}}
+\subsubsection[{setDetectorAngleZX}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ExperimentalSetup}\& CALICE::ExperimentalSetup::setDetectorAngleZX (float {\em detector\_\-angle\_\-zx})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1ExperimentalSetup_abbb90a6beb24b835bddffa9eb774bf8d}
+
+
+Set the angle of the detector w.r.t. z-\/axis in the ZX-\/plane. 
+
+Definition at line 172 of file ExperimentalSetup.hh.
+
+References CALICE::kExperimentalSetupFloatDetectorAngleZX.
+
+\subsection{Field Documentation}
+\index{CALICE::ExperimentalSetup@{CALICE::ExperimentalSetup}!\_\-\_\-beamTypeNames@{\_\-\_\-beamTypeNames}}
+\index{\_\-\_\-beamTypeNames@{\_\-\_\-beamTypeNames}!CALICE::ExperimentalSetup@{CALICE::ExperimentalSetup}}
+\subsubsection[{\_\-\_\-beamTypeNames}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ CALICE::ExperimentalSetup::\_\-\_\-beamTypeNames\hspace{0.3cm}{\ttfamily  [static]}}\label{classCALICE_1_1ExperimentalSetup_aeefc3ac2b27cb5189f3ef0cca488c36e}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+{
+    "electron",
+    "muon",
+    "pion",
+    "proton",
+    "cosmics",
+    "unknown",
+    "mixed", 
+    "pion+electron",
+    "pion+proton",
+    "calibration",
+    "noise",
+    "(out of range)",
+  }
+\end{DoxyCode}
+
+
+Definition at line 299 of file ExperimentalSetup.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+ExperimentalSetup.hh\item 
+ExperimentalSetup.cc\end{DoxyCompactItemize}

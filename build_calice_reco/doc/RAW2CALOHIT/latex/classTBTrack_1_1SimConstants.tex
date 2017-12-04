@@ -1,0 +1,100 @@
+\section{TBTrack::SimConstants Class Reference}
+\label{classTBTrack_1_1SimConstants}\index{TBTrack::SimConstants@{TBTrack::SimConstants}}
+Inheritance diagram for TBTrack::SimConstants::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classTBTrack_1_1SimConstants}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ {\bfseries numberOfInts} = 1
+ \}
+\item 
+enum \{ {\bfseries numberOfFloats} = 0
+ \}
+\item 
+enum \{ {\bfseries numberOfDoubles} = 4$\ast$2$\ast$4 + AlnConstants::numberOfDoubles
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries SimConstants} (int p=0)\label{classTBTrack_1_1SimConstants_ac985b42953f6a9db670ac9ebe4491dd3}
+
+\item 
+double {\bfseries cEffic} (unsigned d, unsigned l) const \label{classTBTrack_1_1SimConstants_a95b2a640d1fdf43d0e138df1c59097da}
+
+\item 
+void {\bfseries cEffic} (unsigned d, unsigned l, double e)\label{classTBTrack_1_1SimConstants_a57422e75c11ad31c3f76d5ed5357685f}
+
+\item 
+double {\bfseries cSmear} (unsigned d, unsigned l) const \label{classTBTrack_1_1SimConstants_a5ad8399a9a26ae1a2c8a143a0e34b54d}
+
+\item 
+void {\bfseries cSmear} (unsigned d, unsigned l, double s)\label{classTBTrack_1_1SimConstants_aef787d85563deecf9fcaf23130e1e6af}
+
+\item 
+double {\bfseries cNoise} (unsigned d, unsigned l) const \label{classTBTrack_1_1SimConstants_a05135b1be10f15e90b164c2aabd8ae1b}
+
+\item 
+void {\bfseries cNoise} (unsigned d, unsigned l, double n)\label{classTBTrack_1_1SimConstants_a206034df73ce2b627ca441e078abe2da}
+
+\item 
+double {\bfseries tTzero} (unsigned d, unsigned l) const \label{classTBTrack_1_1SimConstants_ac2537bcd88e2578122285edd4387ca1f}
+
+\item 
+void {\bfseries tTzero} (unsigned d, unsigned l, double t)\label{classTBTrack_1_1SimConstants_a326a04e3e174301b65c5d8a2605dc531}
+
+\item 
+std::ostream \& {\bfseries print} (std::ostream \&o=std::cout, const std::string \&s=\char`\"{}\char`\"{}) const \label{classTBTrack_1_1SimConstants_aa6e784ee0e469dd84e9ce779a0a627b4}
+
+\item 
+const int $\ast$ {\bfseries intData} () const \label{classTBTrack_1_1SimConstants_a84fb5877bd702e25394576f9b9b8853f}
+
+\item 
+int $\ast$ {\bfseries intData} ()\label{classTBTrack_1_1SimConstants_a6ed02c18a4bf75b1697b96115d4aded8}
+
+\item 
+const float $\ast$ {\bfseries floatData} () const \label{classTBTrack_1_1SimConstants_a2391df4a1c758c629a9b4d41c3b67575}
+
+\item 
+float $\ast$ {\bfseries floatData} ()\label{classTBTrack_1_1SimConstants_a174d1d454c38e840c51072a7517d1a6f}
+
+\item 
+const double $\ast$ {\bfseries doubleData} () const \label{classTBTrack_1_1SimConstants_a39f0137c046cfcf045501494a9d6bcb4}
+
+\item 
+double $\ast$ {\bfseries doubleData} ()\label{classTBTrack_1_1SimConstants_af88c1287049c36b8a0cd8e3dbc571ec6}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double {\bfseries \_\-cEffic} [2][4]\label{classTBTrack_1_1SimConstants_af89d5f24d72339ca570c1c608d49416e}
+
+\item 
+double {\bfseries \_\-cSmear} [2][4]\label{classTBTrack_1_1SimConstants_a141d5c2bcd3f0fa0c147b97f70ed2658}
+
+\item 
+double {\bfseries \_\-cNoise} [2][4]\label{classTBTrack_1_1SimConstants_a6d7e1f44e008e7aa7c080a5b8bd1bd68}
+
+\item 
+double {\bfseries \_\-tTzero} [2][4]\label{classTBTrack_1_1SimConstants_a7a3697758c4dcfd8eb19d99679f7bea1}
+
+\item 
+int {\bfseries \_\-period}\label{classTBTrack_1_1SimConstants_a821162c3bd18ea4c010a705e82c8aa01}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 16 of file SimConstants.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+SimConstants.hh\item 
+SimConstants.cc\end{DoxyCompactItemize}

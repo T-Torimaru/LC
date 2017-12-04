@@ -1,0 +1,94 @@
+\section{Calibration Class Reference}
+\label{classCalibration}\index{Calibration@{Calibration}}
+
+
+Abstract interface of a calibration object.  
+
+
+{\ttfamily \#include $<$Calibration.hh$>$}Inheritance diagram for Calibration::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.93437cm]{classCalibration}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Float\_\-t {\bf getCalibratedValue} (UInt\_\-t module\_\-id, UInt\_\-t module\_\-type, UInt\_\-t cell\_\-index, Float\_\-t adc\_\-value) const =0
+\begin{DoxyCompactList}\small\item\em Determine from a pedestal subtracted ADC value a calibrated value. \item\end{DoxyCompactList}\item 
+virtual Bool\_\-t {\bf isValid} (UInt\_\-t module\_\-id, UInt\_\-t module\_\-type, UInt\_\-t cell\_\-index) const 
+\begin{DoxyCompactList}\small\item\em Return true if a the calibration constants for the given cell are in the allowed range. \item\end{DoxyCompactList}\item 
+virtual Bool\_\-t {\bf checkForCalibrationConstantsOfModule} (UInt\_\-t module\_\-id, UInt\_\-t module\_\-type, UInt\_\-t n\_\-cells) const =0
+\begin{DoxyCompactList}\small\item\em Verify that calibration constants exist for a certain module. \item\end{DoxyCompactList}\item 
+virtual Int\_\-t {\bf getMiniumADCForMipThreshold} (Float\_\-t mip\_\-energy\_\-fraction) const =0
+\begin{DoxyCompactList}\small\item\em Get the minimum adc value mips will have for the given energy fraction on all pads. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract interface of a calibration object. The calibration object returns for a value measured with a certain cell a calibrated value. 
+
+Definition at line 9 of file Calibration.hh.
+
+\subsection{Member Function Documentation}
+\index{Calibration@{Calibration}!checkForCalibrationConstantsOfModule@{checkForCalibrationConstantsOfModule}}
+\index{checkForCalibrationConstantsOfModule@{checkForCalibrationConstantsOfModule}!Calibration@{Calibration}}
+\subsubsection[{checkForCalibrationConstantsOfModule}]{\setlength{\rightskip}{0pt plus 5cm}virtual Bool\_\-t Calibration::checkForCalibrationConstantsOfModule (UInt\_\-t {\em module\_\-id}, \/  UInt\_\-t {\em module\_\-type}, \/  UInt\_\-t {\em n\_\-cells}) const\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classCalibration_a04c8f21c6e77cd3c91c858ca2c9373c4}
+
+
+Verify that calibration constants exist for a certain module. 
+\begin{DoxyParams}{Parameters}
+\item[{\em module\_\-id}]id Or serial number of a module which uniquely identifies a detector module of a certain type. \item[{\em module\_\-type}]the type of the detector module \item[{\em n\_\-cells}]the number of cells on this module. Return true if calibration constants exist for the given module and the number of cells matches the number of calibration constants. \end{DoxyParams}
+
+
+Implemented in {\bf ConstantCalibration} \doxyref{}{p.}{classConstantCalibration_aec30f5342ec651fa61708d2675e14d05}, and {\bf NoOpCalibration} \doxyref{}{p.}{classNoOpCalibration_acdb31ec76cef7720c0cda5fb15ffa2fb}.
+
+Referenced by CALICE::SimpleHitSearch::buildCellParameters().\index{Calibration@{Calibration}!getCalibratedValue@{getCalibratedValue}}
+\index{getCalibratedValue@{getCalibratedValue}!Calibration@{Calibration}}
+\subsubsection[{getCalibratedValue}]{\setlength{\rightskip}{0pt plus 5cm}virtual Float\_\-t Calibration::getCalibratedValue (UInt\_\-t {\em module\_\-id}, \/  UInt\_\-t {\em module\_\-type}, \/  UInt\_\-t {\em cell\_\-index}, \/  Float\_\-t {\em adc\_\-value}) const\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classCalibration_aca88d93a445ba3021c05dd61b293568c}
+
+
+Determine from a pedestal subtracted ADC value a calibrated value. 
+\begin{DoxyParams}{Parameters}
+\item[{\em module\_\-id}]id Or serial number of a module which uniquely identifies a detector module of a certain type. \item[{\em module\_\-type}]the type of the detector module \item[{\em cell\_\-index}]the cell\_\-index in read order: first the ADC values of the first sample from all chips, then the next sample ... \item[{\em adc\_\-value}]the ADC value which should be calibrated. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the calibrated value. 
+\end{DoxyReturn}
+
+
+Implemented in {\bf ConstantCalibration} \doxyref{}{p.}{classConstantCalibration_a347808435c2c9e499af4c9a83d1c6915}, and {\bf NoOpCalibration} \doxyref{}{p.}{classNoOpCalibration_a8dd43819c4e5bb09e097f4db360a57fe}.
+
+Referenced by CALICE::CalibrateAndApplyThreshold::processEvent().\index{Calibration@{Calibration}!getMiniumADCForMipThreshold@{getMiniumADCForMipThreshold}}
+\index{getMiniumADCForMipThreshold@{getMiniumADCForMipThreshold}!Calibration@{Calibration}}
+\subsubsection[{getMiniumADCForMipThreshold}]{\setlength{\rightskip}{0pt plus 5cm}virtual Int\_\-t Calibration::getMiniumADCForMipThreshold (Float\_\-t {\em mip\_\-energy\_\-fraction}) const\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classCalibration_a4e45f1eca0d4fdf19ad76b8f581aee12}
+
+
+Get the minimum adc value mips will have for the given energy fraction on all pads. 
+\begin{DoxyParams}{Parameters}
+\item[{\em mip\_\-energy\_\-fraction}]the energy in mips \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+minimum adc value which is below the given energy on all pads. This method can be used to get the lowest adc value a mip of the given energy fraction will have on all pads. This value is useful to select candidates before actually performing th calibration. This function is intended to be called at the beginning of each event. 
+\end{DoxyReturn}
+
+
+Implemented in {\bf ConstantCalibration} \doxyref{}{p.}{classConstantCalibration_ada035fed7a513d3da391bdea2c1d23f7}, and {\bf NoOpCalibration} \doxyref{}{p.}{classNoOpCalibration_a8b478c6680b5980c2b87cedc8a589989}.
+
+Referenced by CALICE::CalibrateAndApplyThreshold::processEvent(), CALICE::SimpleHitSearch::searchHits(), and CALICE::SimpleHitSearch::searchHitsAndAdjustPedestalsAndNoise().\index{Calibration@{Calibration}!isValid@{isValid}}
+\index{isValid@{isValid}!Calibration@{Calibration}}
+\subsubsection[{isValid}]{\setlength{\rightskip}{0pt plus 5cm}virtual Bool\_\-t Calibration::isValid (UInt\_\-t {\em module\_\-id}, \/  UInt\_\-t {\em module\_\-type}, \/  UInt\_\-t {\em cell\_\-index}) const\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classCalibration_a7d516d7b66b1f20640829d12adfd64d6}
+
+
+Return true if a the calibration constants for the given cell are in the allowed range. 
+\begin{DoxyParams}{Parameters}
+\item[{\em module\_\-id}]id Or serial number of a module which uniquely identifies a detector module of a certain type. \item[{\em module\_\-type}]the type of the detector module \item[{\em cell\_\-index}]the cell\_\-index in read order: first the ADC values of the first sample from all chips, then the next sample ... \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true for cells with valid calibration constants, false for cells which should be declared dead.
+\end{DoxyReturn}
+This method is used to find, after module connection changes, cells which should be declared dead. 
+
+Definition at line 31 of file Calibration.hh.
+
+Referenced by CALICE::SimpleHitSearch::buildCellParameters(), CALICE::CalibrateAndApplyThreshold::processRunHeader(), CALICE::SimpleHitSearch::resetForInitialPedestalNoiseCalculation(), and CALICE::SimpleHitSearch::resetForPedestalNoiseReCalculation().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+Calibration.hh\end{DoxyCompactItemize}

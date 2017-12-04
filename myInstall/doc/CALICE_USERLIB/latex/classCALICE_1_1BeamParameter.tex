@@ -1,0 +1,140 @@
+\section{CALICE::BeamParameter Class Reference}
+\label{classCALICE_1_1BeamParameter}\index{CALICE::BeamParameter@{CALICE::BeamParameter}}
+
+
+Define the experimental setup: beam energy, position, angle and detector position, angle.  
+
+
+{\ttfamily \#include $<$BeamParameter.hh$>$}\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries EBeamType} \{ \par
+{\bfseries kElectronBeam}, 
+{\bfseries kMuonBeam}, 
+{\bfseries kPionBeam}, 
+{\bfseries kProtonBeam}, 
+\par
+{\bfseries kCosmics}, 
+{\bfseries kUnknown}, 
+{\bfseries kMixed}, 
+{\bfseries kPionElectronBeam}, 
+\par
+{\bfseries kPionProtonBeam}, 
+{\bfseries kCalibrationPulse}, 
+{\bfseries kNoise}, 
+{\bfseries kNBeamTypes}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf BeamParameter} (LCObject $\ast$obj)\label{classCALICE_1_1BeamParameter_ac34c61a0ff07d533fa175cdea702b8fe}
+
+\begin{DoxyCompactList}\small\item\em 'Copy constructor' needed to interpret LCCollection read from file/database. \item\end{DoxyCompactList}\item 
+{\bf BeamParameter} \& {\bf setBeamType} (EBeamType beam\_\-type)\label{classCALICE_1_1BeamParameter_a91a84f9a224e2b2840fe1aa1e8bab3ec}
+
+\begin{DoxyCompactList}\small\item\em Set the particle type. \item\end{DoxyCompactList}\item 
+EBeamType {\bf getBeamType} () const \label{classCALICE_1_1BeamParameter_af8ed22618fedce8bd2840c658ed79ee0}
+
+\begin{DoxyCompactList}\small\item\em Get the particle type. \item\end{DoxyCompactList}\item 
+const char $\ast$ {\bf getBeamTypeName} () const \label{classCALICE_1_1BeamParameter_ae2ffbfa7c92c6057139bd4a8b5b1fe8c}
+
+\begin{DoxyCompactList}\small\item\em Return the beam type name. \item\end{DoxyCompactList}\item 
+{\bf BeamParameter} \& {\bf setPeakEnergy} (float peak\_\-energy)\label{classCALICE_1_1BeamParameter_a9868e1e09ffff9f945faa8427f5f5ef5}
+
+\begin{DoxyCompactList}\small\item\em Set the maximum of the beam energy distribution. \item\end{DoxyCompactList}\item 
+float {\bf getPeakEnergy} () const \label{classCALICE_1_1BeamParameter_aecdce6fd9dc5911ea36a41a73ed04c72}
+
+\begin{DoxyCompactList}\small\item\em Get the maximum of the beam energy distribution. \item\end{DoxyCompactList}\item 
+{\bf BeamParameter} \& {\bf setBeamAngleZX} (float beam\_\-angle\_\-zx)\label{classCALICE_1_1BeamParameter_ac1987bb9375229234b7bcd90c401f7bf}
+
+\begin{DoxyCompactList}\small\item\em Set the angle between the beam and the z-\/axis in thr ZX plane. \item\end{DoxyCompactList}\item 
+float {\bf getBeamAngleZX} () const \label{classCALICE_1_1BeamParameter_a0521b37942f8761e317b7780450c746d}
+
+\begin{DoxyCompactList}\small\item\em Get Set the angle between the beam and the z-\/axis in thr ZX plane. \item\end{DoxyCompactList}\item 
+{\bf BeamParameter} \& {\bf setBeamAngleZY} (float beam\_\-angle\_\-zy)\label{classCALICE_1_1BeamParameter_a861b31336d44f2084a325c3968eaa9bb}
+
+\begin{DoxyCompactList}\small\item\em Set the angle between the beam and the z-\/axis in thr ZY plane. \item\end{DoxyCompactList}\item 
+float {\bf getBeamAngleZY} () const \label{classCALICE_1_1BeamParameter_ac32fcba57ab64d4fcfd704bfc2ef627e}
+
+\begin{DoxyCompactList}\small\item\em Get the angle between the beam and the z-\/axis in thr ZY plane. \item\end{DoxyCompactList}\item 
+{\bf BeamParameter} \& {\bf setBeamImpactPosition} (float beam\_\-impact\_\-x0, float beam\_\-impact\_\-y0)\label{classCALICE_1_1BeamParameter_a0e5034d96cf4bad36b3e8757c5b57700}
+
+\begin{DoxyCompactList}\small\item\em Set the mean impact position of the beam on the detector in the XY-\/plane (convenience method). \item\end{DoxyCompactList}\item 
+{\bf BeamParameter} \& {\bf setBeamImpactPosition} (float $\ast$beam\_\-impact\_\-position\_\-tupel)\label{classCALICE_1_1BeamParameter_ac9bbf019b9a990aa64762c4f8383a235}
+
+\begin{DoxyCompactList}\small\item\em Set the mean impact position of the beam on the detector in the XY-\/plane (convenience method). \item\end{DoxyCompactList}\item 
+{\bf BeamParameter} \& {\bf setBeamImpactPositionX0} (float beam\_\-impact\_\-x0)\label{classCALICE_1_1BeamParameter_a1ec83a4202220110e1f149dae22e6a60}
+
+\begin{DoxyCompactList}\small\item\em Set the mean impact position of the beam on the detector in the XY-\/plane. \item\end{DoxyCompactList}\item 
+float {\bf getBeamImpactPositionX0} () const \label{classCALICE_1_1BeamParameter_a3f9caa58f8a6b1dcc3b2a2effc056221}
+
+\begin{DoxyCompactList}\small\item\em Get the mean impact position of the beam on the detector in the XY-\/plane. \item\end{DoxyCompactList}\item 
+{\bf BeamParameter} \& {\bf setBeamImpactPositionY0} (float beam\_\-impact\_\-y0)\label{classCALICE_1_1BeamParameter_a21742c669e7e1319b384a56b9dad9d25}
+
+\begin{DoxyCompactList}\small\item\em Set the mean impact position of the beam on the detector in the XY-\/plane. \item\end{DoxyCompactList}\item 
+float {\bf getBeamImpactPositionY0} () const \label{classCALICE_1_1BeamParameter_a467abe590bc12553cfc297744aeece5c}
+
+\begin{DoxyCompactList}\small\item\em Get the y-\/coordinate of the mean impact position of the beam on the detector in the XY-\/plane. \item\end{DoxyCompactList}\item 
+void {\bf print} (std::ostream \&os)\label{classCALICE_1_1BeamParameter_a17b85ed30ff0f0d9eb1b2d1935ef9bed}
+
+\begin{DoxyCompactList}\small\item\em Print all members (for debugging). \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1BeamParameter_aa5a1c4f371d71c513584a106f69ee940}
+
+\begin{DoxyCompactList}\small\item\em Return the type of the class. \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1BeamParameter_adf804091f7b3991b2dbec8bc9b5db5fb}
+
+\begin{DoxyCompactList}\small\item\em Return a brief description of the data members. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ {\bf getBeamTypeName} (unsigned int beam\_\-type\_\-i)\label{classCALICE_1_1BeamParameter_add13ac5aa7c9fab9a5572f6673ff8dc6}
+
+\begin{DoxyCompactList}\small\item\em Return the beam type name for a given type id. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ {\bfseries \_\-\_\-beamTypeNames} [CALICE::BeamParameter::kNBeamTypes+1]
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Define the experimental setup: beam energy, position, angle and detector position, angle. The experimental setup should be written into the conditions database at least twice: 
+\begin{DoxyItemize}
+\item the nominal values with the tag NOMINAL 
+\item the measured values 
+\end{DoxyItemize}\begin{Desc}
+\item[{\bf Todo}]\{Should this class be split into two? One for the beam and one for the detector parameters? Should the nominal and measured values be stored in separate folders?\} \end{Desc}
+
+
+Definition at line 37 of file BeamParameter.hh.
+
+\subsection{Field Documentation}
+\index{CALICE::BeamParameter@{CALICE::BeamParameter}!\_\-\_\-beamTypeNames@{\_\-\_\-beamTypeNames}}
+\index{\_\-\_\-beamTypeNames@{\_\-\_\-beamTypeNames}!CALICE::BeamParameter@{CALICE::BeamParameter}}
+\subsubsection[{\_\-\_\-beamTypeNames}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ CALICE::BeamParameter::\_\-\_\-beamTypeNames\hspace{0.3cm}{\ttfamily  [static]}}\label{classCALICE_1_1BeamParameter_a5bab90e1ec133f8427213561be2fc669}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+{
+    "electron",
+    "muon",
+    "pion",
+    "proton",
+    "cosmics",
+    "unknown",
+    "mixed", 
+    "pion+electron",
+    "pion+proton",
+    "calibration",
+    "noise",
+    "(out of range)",
+  }
+\end{DoxyCode}
+
+
+Definition at line 184 of file BeamParameter.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+BeamParameter.hh\item 
+BeamParameter.cc\end{DoxyCompactItemize}

@@ -1,0 +1,114 @@
+\section{CALICE::SimpleHcalCalibrationProcessor Class Reference}
+\label{classCALICE_1_1SimpleHcalCalibrationProcessor}\index{CALICE::SimpleHcalCalibrationProcessor@{CALICE::SimpleHcalCalibrationProcessor}}
+
+
+Processor which applies all calibration constants needed for the reconstruction of the HCAL, using input from an ASCII file which lists all the calibration constants.  
+
+
+{\ttfamily \#include $<$SimpleHcalCalibrationProcessor.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf SimpleHcalCalibrationProcessor} $\ast$ {\bfseries newProcessor} ()\label{classCALICE_1_1SimpleHcalCalibrationProcessor_a1682beed2fe00351f65858cbaf7ac0fa}
+
+\item 
+virtual void {\bfseries init} ()\label{classCALICE_1_1SimpleHcalCalibrationProcessor_a2f394a288da039ef7209457ec028b858}
+
+\item 
+void {\bfseries processEvent} (lcio::LCEvent $\ast$evt)\label{classCALICE_1_1SimpleHcalCalibrationProcessor_a91d98edae41d16b962f5acf420d0c898}
+
+\item 
+virtual void {\bfseries end} ()\label{classCALICE_1_1SimpleHcalCalibrationProcessor_ada5724ec6026eb8289567ccbcfdd0ed8}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries resetPedestal} ()\label{classCALICE_1_1SimpleHcalCalibrationProcessor_aadf1394fe327966a3699ff0bbdfc2142}
+
+\item 
+void {\bfseries sumupPedestal} (LCCollection $\ast$)\label{classCALICE_1_1SimpleHcalCalibrationProcessor_ab943f16a6b695d16f806a5d91f4c8176}
+
+\item 
+void {\bfseries calcPedestal} ()\label{classCALICE_1_1SimpleHcalCalibrationProcessor_aec0a7d9911db467b754a4ab79060868b}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bfseries \_\-inputFileName}\label{classCALICE_1_1SimpleHcalCalibrationProcessor_ada93508b2a02a9a4dab8b5ce5e8ffe8a}
+
+\item 
+std::string {\bfseries \_\-inputColName}\label{classCALICE_1_1SimpleHcalCalibrationProcessor_ae474eee8b25a5bfdf2132f87ff548b60}
+
+\item 
+std::string {\bfseries \_\-outputColName}\label{classCALICE_1_1SimpleHcalCalibrationProcessor_ad93fe1c519b7f99ad86a6ec1f624d39b}
+
+\item 
+std::string {\bfseries \_\-correction}\label{classCALICE_1_1SimpleHcalCalibrationProcessor_af698bdfb5a6b93d1d1034a253392a4ee}
+
+\item 
+float {\bfseries \_\-Npix}\label{classCALICE_1_1SimpleHcalCalibrationProcessor_a780cf082fc115f8550d59f9702e532be}
+
+\item 
+float {\bfseries \_\-xTalk}\label{classCALICE_1_1SimpleHcalCalibrationProcessor_a441b3b542c04f43d466fed83f85563d5}
+
+\item 
+float {\bfseries \_\-alpha}\label{classCALICE_1_1SimpleHcalCalibrationProcessor_a0f42d4efbe64af7ad6f99c6f661b7aa5}
+
+\item 
+bool {\bfseries \_\-calcPed}\label{classCALICE_1_1SimpleHcalCalibrationProcessor_a33e3edf193d34df72346964fbec120fc}
+
+\item 
+float {\bfseries \_\-pedSum} [HCAL\_\-N\_\-MOD+1][HCAL\_\-N\_\-CELL]\label{classCALICE_1_1SimpleHcalCalibrationProcessor_ae10ee914952e85b65190db373434d280}
+
+\item 
+float {\bfseries \_\-pedSumSquare} [HCAL\_\-N\_\-MOD+1][HCAL\_\-N\_\-CELL]\label{classCALICE_1_1SimpleHcalCalibrationProcessor_a6ebcb182a15e4ee35546f46f546c2aa6}
+
+\item 
+int {\bfseries \_\-pedNum} [HCAL\_\-N\_\-MOD+1][HCAL\_\-N\_\-CELL]\label{classCALICE_1_1SimpleHcalCalibrationProcessor_a5159b526798ba64ed5e8ba6a53e172da}
+
+\item 
+int {\bfseries \_\-pixCut}\label{classCALICE_1_1SimpleHcalCalibrationProcessor_ac29276fe392b6ac72b23e0f730f1bfc9}
+
+\item 
+int {\bfseries \_\-pedEvents}\label{classCALICE_1_1SimpleHcalCalibrationProcessor_ae6637b017853d6d4e1491bd8298f57dc}
+
+\item 
+bool {\bfseries \_\-pedExists}\label{classCALICE_1_1SimpleHcalCalibrationProcessor_a41ee5ffb331bf97b272e04bfe99bb4ad}
+
+\item 
+float {\bfseries \_\-mip} [HCAL\_\-N\_\-MOD+1][HCAL\_\-N\_\-CELL]\label{classCALICE_1_1SimpleHcalCalibrationProcessor_a9e8d5e6713e6076c79867515faa8328a}
+
+\item 
+float {\bfseries \_\-gain} [HCAL\_\-N\_\-MOD+1][HCAL\_\-N\_\-CELL]\label{classCALICE_1_1SimpleHcalCalibrationProcessor_aa9c38f82b4ea253f1424a994f6dcd1ed}
+
+\item 
+float {\bfseries \_\-ic} [HCAL\_\-N\_\-MOD+1][HCAL\_\-N\_\-CELL]\label{classCALICE_1_1SimpleHcalCalibrationProcessor_aea9c5a1dbd09fa2ff84ed2b5c900742f}
+
+\item 
+float {\bfseries \_\-sat} [HCAL\_\-N\_\-MOD+1][HCAL\_\-N\_\-CELL]\label{classCALICE_1_1SimpleHcalCalibrationProcessor_a48ec62665670a867b702f61f8e195e94}
+
+\item 
+float {\bfseries \_\-ped} [HCAL\_\-N\_\-MOD+1][HCAL\_\-N\_\-CELL]\label{classCALICE_1_1SimpleHcalCalibrationProcessor_a89b5eaa92a71e02127908d83b4915691}
+
+\item 
+short {\bfseries \_\-stat} [HCAL\_\-N\_\-MOD+1][HCAL\_\-N\_\-CELL]\label{classCALICE_1_1SimpleHcalCalibrationProcessor_a98c972c3f3f4931498d94e2588dc8e09}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Processor which applies all calibration constants needed for the reconstruction of the HCAL, using input from an ASCII file which lists all the calibration constants. \begin{DoxyAuthor}{Author}
+N. Meyer 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Dec 2006 
+\end{DoxyDate}
+
+
+Definition at line 19 of file SimpleHcalCalibrationProcessor.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+SimpleHcalCalibrationProcessor.hh\item 
+SimpleHcalCalibrationProcessor.cc\end{DoxyCompactItemize}

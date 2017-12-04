@@ -1,0 +1,81 @@
+\section{CALICE::CellDescriptionProcessor Class Reference}
+\label{classCALICE_1_1CellDescriptionProcessor}\index{CALICE::CellDescriptionProcessor@{CALICE::CellDescriptionProcessor}}
+
+
+{\ttfamily \#include $<$CellDescriptionProcessor.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Processor $\ast$ {\bfseries newProcessor} ()\label{classCALICE_1_1CellDescriptionProcessor_a5e862890c14f596f06bfbbfba622218d}
+
+\item 
+virtual void {\bfseries init} ()\label{classCALICE_1_1CellDescriptionProcessor_afc72f4838174f264a950b8c0fe00bcd3}
+
+\item 
+virtual void {\bfseries processEvent} (LCEvent $\ast$evt)\label{classCALICE_1_1CellDescriptionProcessor_a65bb278cc74192f8aa7c85aa388cdc14}
+
+\item 
+virtual void {\bfseries end} ()\label{classCALICE_1_1CellDescriptionProcessor_a35900c15f5190036b7329bbb99391161}
+
+\item 
+virtual void {\bfseries conditionsChanged} (LCCollection $\ast$col)\label{classCALICE_1_1CellDescriptionProcessor_a9ecddf9e127f6891bfa08fd255fe046f}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static MappedContainer$<$ CellDescription $>$ $\ast$ {\bf getCellDescriptions} (const std::string \&processorName)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Processor that provides CellDescription for all cells.
+
+The processor generates and updates a MappedContainer of CellDescription objects from the conditions data. To obtain the MappedCollection in other processors use: \doxyref{CellDescriptionProcessor::getCellDescriptions}{p.}{classCALICE_1_1CellDescriptionProcessor_a6d60e618b66caabf2cee48b10e6c0ca1}( \char`\"{}cellDescription processor name\char`\"{} )
+
+\begin{DoxyParagraph}{processor parameters}
+\begin{TabularC}{2}
+\hline
+steering file parameter name &description  \\\cline{1-2}
+{\bfseries {\itshape  DetectorTransformation \/}}&Name of the DetectorTransformation collection \\\cline{1-2}
+{\bfseries {\itshape  MappingProcessorName \/}}&Name of the mapping processor that provides the necessary Mapper class \\\cline{1-2}
+{\bfseries {\itshape  ModuleConnection \/}}&Name of the ModuleConnection collection \\\cline{1-2}
+{\bfseries {\itshape  ModuleDescription \/}}&Name of the ModuleDescription collection \\\cline{1-2}
+{\bfseries {\itshape  ModuleLocation \/}}&Name of the ModuleLocation collection \\\cline{1-2}
+\end{TabularC}
+
+\end{DoxyParagraph}
+\begin{DoxyAuthor}{Author}
+{\tt Benjamin.Lutz@desy.de} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.2 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+November 2009 
+\end{DoxyDate}
+
+
+Definition at line 47 of file CellDescriptionProcessor.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::CellDescriptionProcessor@{CALICE::CellDescriptionProcessor}!getCellDescriptions@{getCellDescriptions}}
+\index{getCellDescriptions@{getCellDescriptions}!CALICE::CellDescriptionProcessor@{CALICE::CellDescriptionProcessor}}
+\subsubsection[{getCellDescriptions}]{\setlength{\rightskip}{0pt plus 5cm}MappedContainer$<$ CellDescription $>$ $\ast$ CALICE::CellDescriptionProcessor::getCellDescriptions (const std::string \& {\em processorName})\hspace{0.3cm}{\ttfamily  [static]}}\label{classCALICE_1_1CellDescriptionProcessor_a6d60e618b66caabf2cee48b10e6c0ca1}
+static function to obtain cell description container
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em processorName}]name of the \doxyref{CellDescriptionProcessor}{p.}{classCALICE_1_1CellDescriptionProcessor} that takes care of this cell descriptions. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the MappedContainer of CellDescriptions 
+\end{DoxyReturn}
+
+
+Definition at line 22 of file CellDescriptionProcessor.cc.
+
+Referenced by CALICE::CorrectPositionProcessor::init().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+CellDescriptionProcessor.hh\item 
+CellDescriptionProcessor.cc\end{DoxyCompactItemize}

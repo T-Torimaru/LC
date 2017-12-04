@@ -1,0 +1,103 @@
+\section{CALICE Namespace Reference}
+\label{namespaceCALICE}\index{CALICE@{CALICE}}
+
+
+Processor to read SLCIO EUDAQ files and sort them according to the BXID (now they are sorted in readout cycles) (either a separation between ECAL and AHCAL collections is done by EUDAQ).  
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf BIFBlock}
+\begin{DoxyCompactList}\small\item\em Class for the SLCIO EUDAQ BIF Data as acquired by the EUDAQ system. \item\end{DoxyCompactList}\item 
+class {\bf EUDAQBlock}
+\begin{DoxyCompactList}\small\item\em Class for the SLCIO EUDAQ Data as acquired by the EUDAQ system. \item\end{DoxyCompactList}\item 
+class {\bf EUDAQBlock2016}
+\begin{DoxyCompactList}\small\item\em Class for the SLCIO EUDAQ Data as acquired by the EUDAQ system. \item\end{DoxyCompactList}\item 
+class {\bf EUDAQEventBuilder}
+\begin{DoxyCompactList}\small\item\em Processor for reading the AHCAL EUDAQ SLCIO files. \item\end{DoxyCompactList}\item 
+class {\bf EUDAQEventBuilder2016}
+\begin{DoxyCompactList}\small\item\em Processor for reading the AHCAL EUDAQ SLCIO files. \item\end{DoxyCompactList}\item 
+class {\bf EUDAQEventBuilder2016\_\-woBIF}
+\begin{DoxyCompactList}\small\item\em Processor for reading the AHCAL EUDAQ SLCIO files. \item\end{DoxyCompactList}\item 
+class {\bf EUDAQTempSensorBlock}
+\begin{DoxyCompactList}\small\item\em Class for the temperature sensor data as acquired by the AHCAL EUDAQ. \item\end{DoxyCompactList}\item 
+class {\bf EventChecker}
+\begin{DoxyCompactList}\small\item\em Class to process Labview raw. \item\end{DoxyCompactList}\item 
+class {\bf HBUTemperatureBlock}
+\begin{DoxyCompactList}\small\item\em Class for the Labview Data as acquired by the AHCAL Labview. \item\end{DoxyCompactList}\item 
+class {\bf HodoscopeBlock}
+\begin{DoxyCompactList}\small\item\em Class for the SLCIO hododscope as acquired by the EUDAQ system. \item\end{DoxyCompactList}\item 
+class {\bf LabviewBlock}
+\begin{DoxyCompactList}\small\item\em Class for the Labview Data as acquired by the AHCAL Labview. \item\end{DoxyCompactList}\item 
+class {\bf LabviewBlock2}
+\begin{DoxyCompactList}\small\item\em Class for the Labview Data as acquired by the AHCAL Labview. \item\end{DoxyCompactList}\item 
+class {\bf RootTreeGenerator}
+\begin{DoxyCompactList}\small\item\em Class to process Labview raw. \item\end{DoxyCompactList}\item 
+class {\bf RootTreeGenerator2}
+\begin{DoxyCompactList}\small\item\em Class to process Labview raw. \item\end{DoxyCompactList}\item 
+class {\bf RootTreeGeneratorEUDAQ2016}
+\begin{DoxyCompactList}\small\item\em Class to process Labview raw. \item\end{DoxyCompactList}\item 
+class {\bf TempRootTreeGenerator}
+\begin{DoxyCompactList}\small\item\em Class to process Labview raw. \item\end{DoxyCompactList}\item 
+class {\bf TempSensorBlock}
+\begin{DoxyCompactList}\small\item\em Class for the Labview Data as acquired by the AHCAL Labview. \item\end{DoxyCompactList}\item 
+class {\bf TempSensorBlock2}
+\begin{DoxyCompactList}\small\item\em Class for the Labview Data as acquired by the AHCAL Labview. \item\end{DoxyCompactList}\item 
+class {\bf TempSensorBlockOld}
+\begin{DoxyCompactList}\small\item\em Class for the Labview Data as acquired by the AHCAL Labview. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries LcioEventNr} = 0\label{namespaceCALICE_aef93d129bb9a8a03bea27184c8862746}
+
+\item 
+bool {\bfseries temperaturecollection\_\-write} = false\label{namespaceCALICE_a45af16a9b6b3d291fdd2d67d6fd6e47b}
+
+\item 
+{\bf EUDAQEventBuilder} {\bfseries aEUDAQEventBuilder}\label{namespaceCALICE_abadc03eca9bb995f318d5bb019969dca}
+
+\item 
+{\bf EUDAQEventBuilder2016} {\bfseries aEUDAQEventBuilder2016}\label{namespaceCALICE_ac104d6787431e958ac2822b578d8d59b}
+
+\item 
+{\bf EUDAQEventBuilder2016\_\-woBIF} {\bfseries aEUDAQEventBuilder2016\_\-woBIF}\label{namespaceCALICE_a6172dbafa5ac1993abe77fc1a3399092}
+
+\item 
+{\bf EventChecker} {\bfseries aEventChecker}\label{namespaceCALICE_a8b27ce62b3cd742aa50d08ec67238e89}
+
+\item 
+{\bf RootTreeGenerator} {\bfseries aRootTreeGenerator}\label{namespaceCALICE_a004726fc4a99f62b5f2410df977e9817}
+
+\item 
+{\bf RootTreeGenerator2} {\bfseries aRootTreeGenerator2}\label{namespaceCALICE_a79d6848e77584a62e6229cfca78417ab}
+
+\item 
+RootTreeGenerator3 {\bfseries aRootTreeGenerator3}\label{namespaceCALICE_ad868f3da3104c92caf962d7378bb7008}
+
+\item 
+{\bf RootTreeGeneratorEUDAQ2016} {\bfseries aRootTreeGeneratorEUDAQ2016}\label{namespaceCALICE_ae3b35dba96f273704cbacdbf3f527f45}
+
+\item 
+{\bf TempRootTreeGenerator} {\bfseries aTempRootTreeGenerator}\label{namespaceCALICE_a2c6d0fbf6ac72c3dc7940a9d5e717a62}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Processor to read SLCIO EUDAQ files and sort them according to the BXID (now they are sorted in readout cycles) (either a separation between ECAL and AHCAL collections is done by EUDAQ). \begin{DoxyAuthor}{Author}
+A. Irles, based on the \doxyref{LabviewBlock2}{p.}{classCALICE_1_1LabviewBlock2} writen by S. Lu DESY Hamburg 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+May 20 2015 Created for 2015 testbeams EUDAQ data format.
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+A. Irles, based on the \doxyref{EUDAQEventBuilder}{p.}{classCALICE_1_1EUDAQEventBuilder} writen by A. Irles DESY Hamburg 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+January 12 2016  May 2016, E. Brianne (BIF data and fix bug) Created for 2016 testbeams EUDAQ data format.
+\end{DoxyDate}
+\begin{DoxyAuthor}{Author}
+A. Irles, based on the \doxyref{EUDAQEventBuilder}{p.}{classCALICE_1_1EUDAQEventBuilder} writen by A. Irles DESY Hamburg 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+January 12 2016 Created for 2016 testbeams EUDAQ data format. 
+\end{DoxyDate}

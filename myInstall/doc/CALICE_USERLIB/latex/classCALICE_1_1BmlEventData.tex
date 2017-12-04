@@ -1,0 +1,270 @@
+\section{CALICE::BmlEventData Class Reference}
+\label{classCALICE_1_1BmlEventData}\index{CALICE::BmlEventData@{CALICE::BmlEventData}}
+
+
+Class to store the \doxyref{BmlEventData}{p.}{classCALICE_1_1BmlEventData}.  
+
+
+{\ttfamily \#include $<$BmlEventData.hh$>$}Inheritance diagram for CALICE::BmlEventData::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCALICE_1_1BmlEventData}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf BmlEventData} ()\label{classCALICE_1_1BmlEventData_aa67d8ecf7a32109b97c00cffd6ac68c3}
+
+\begin{DoxyCompactList}\small\item\em Default Constructor. \item\end{DoxyCompactList}\item 
+{\bf BmlEventData} (LCObject $\ast$obj)\label{classCALICE_1_1BmlEventData_a556af620c0b013022a16363eb93d72d6}
+
+\begin{DoxyCompactList}\small\item\em A copy constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$BmlEventData} ()\label{classCALICE_1_1BmlEventData_a465574a0d2cb1c9cec3cc9e0e543f7ae}
+
+\begin{DoxyCompactList}\small\item\em The destructor. \item\end{DoxyCompactList}\item 
+void {\bf addSupplementaryInformation} (LCEvent $\ast$aEvt, unsigned int ielm)
+\begin{DoxyCompactList}\small\item\em Add supplementary information: Feed information not available in the actual \doxyref{BmlEventData}{p.}{classCALICE_1_1BmlEventData} to the object. \item\end{DoxyCompactList}\item 
+{\bf BmlEventData} \& {\bf setBoardID} (int boardID)
+\begin{DoxyCompactList}\small\item\em set the packed board id. \item\end{DoxyCompactList}\item 
+int {\bf getBoardID} () const \label{classCALICE_1_1BmlEventData_a802624fa05776cd6430c6876ef65d950}
+
+\begin{DoxyCompactList}\small\item\em get the board id \item\end{DoxyCompactList}\item 
+{\bf BmlEventData} \& {\bf setBaseAddress} (int baseaddress)\label{classCALICE_1_1BmlEventData_afea25a27f1395bb140196b87c311d4a4}
+
+\begin{DoxyCompactList}\small\item\em Set the Base Address of this TDC. \item\end{DoxyCompactList}\item 
+short {\bf getBaseAddress} () const \label{classCALICE_1_1BmlEventData_a392737613082f9752a2c5e84a45e3201}
+
+\begin{DoxyCompactList}\small\item\em Return the Base Address. \item\end{DoxyCompactList}\item 
+{\bf BmlEventData} \& {\bf setRecordLabel} (int label)\label{classCALICE_1_1BmlEventData_acec730905f3fce6555d2f59fa5ba19cf}
+
+\begin{DoxyCompactList}\small\item\em Set the Record Label. \item\end{DoxyCompactList}\item 
+short {\bf getRecordLabel} () const \label{classCALICE_1_1BmlEventData_ae80cac54546f6f102f069414ed031c3d}
+
+\begin{DoxyCompactList}\small\item\em Return the Record Label. \item\end{DoxyCompactList}\item 
+{\bf BmlEventData} \& {\bf setStatusRegister} (int statreg)\label{classCALICE_1_1BmlEventData_aefe41281cd9af82a4a24c08d2ab1269b}
+
+\begin{DoxyCompactList}\small\item\em Set the status register Value. \item\end{DoxyCompactList}\item 
+int {\bf getStatusRegister} () const \label{classCALICE_1_1BmlEventData_a35bc6ad106c13c03be291494e19904b0}
+
+\begin{DoxyCompactList}\small\item\em Get the status register value. \item\end{DoxyCompactList}\item 
+{\bf BmlEventData} \& {\bf setNumberOfWords} (int numwords)\label{classCALICE_1_1BmlEventData_a7aee8d1aad0f8fe7e2489362a17085be}
+
+\begin{DoxyCompactList}\small\item\em Set the number of words. \item\end{DoxyCompactList}\item 
+int {\bf getNumberOfWords} () const \label{classCALICE_1_1BmlEventData_a62adde679450ee19364121aabe84b419}
+
+\begin{DoxyCompactList}\small\item\em Get the number of words. \item\end{DoxyCompactList}\item 
+{\bf BmlEventData} \& {\bf setGeoAddress} (int geoaddress)\label{classCALICE_1_1BmlEventData_a7932d1fb4d2ee46a8e99cd37967b2b4c}
+
+\begin{DoxyCompactList}\small\item\em Set the geo Address of the TDC. \item\end{DoxyCompactList}\item 
+int {\bf getGeoAddress} () const \label{classCALICE_1_1BmlEventData_a10e6df6233068413112a80f2019aabc0}
+
+\begin{DoxyCompactList}\small\item\em Get the geo Address. \item\end{DoxyCompactList}\item 
+{\bf BmlEventData} \& {\bf setEventNumber} (int eventnumber)\label{classCALICE_1_1BmlEventData_a860cacaab0517981c00347d202237120}
+
+\begin{DoxyCompactList}\small\item\em Set the event number as counted by the TDC. \item\end{DoxyCompactList}\item 
+int {\bf getEventNumber} () const \label{classCALICE_1_1BmlEventData_a82cf900eb42abb77da0a0e85c6a9968f}
+
+\begin{DoxyCompactList}\small\item\em Get the event Number. \item\end{DoxyCompactList}\item 
+{\bf BmlEventData} \& {\bf setStatus} (int status)\label{classCALICE_1_1BmlEventData_a9f65a78e21ff2816ba4fbe96ef240bd9}
+
+\begin{DoxyCompactList}\small\item\em Set status as present when the the eob record appears. \item\end{DoxyCompactList}\item 
+int {\bf getStatus} () const \label{classCALICE_1_1BmlEventData_a30f49cce27697fb66ad59add06094e35}
+
+\begin{DoxyCompactList}\small\item\em Get the status value. \item\end{DoxyCompactList}\item 
+{\bf BmlEventData} \& {\bf setEventDataCounter} (int evtdatacounter)\label{classCALICE_1_1BmlEventData_aabf7d25451c61875c4dde0f33a33f366}
+
+\begin{DoxyCompactList}\small\item\em Set the EventData counter as present when the the eob record appears. \item\end{DoxyCompactList}\item 
+int {\bf getEventDataCounter} () const \label{classCALICE_1_1BmlEventData_a22685cc5c125541fd7dff408bf11a6ea}
+
+\begin{DoxyCompactList}\small\item\em Get the event data counter value. \item\end{DoxyCompactList}\item 
+int {\bf getNumberOfSignalChannels} () const \label{classCALICE_1_1BmlEventData_a1142020abee10914560bf8eba80b6225}
+
+\begin{DoxyCompactList}\small\item\em Get the number of channels which carry a signal. \item\end{DoxyCompactList}\item 
+{\bf BmlEventData} \& {\bf setTDCType} (std::string typeStr)
+\begin{DoxyCompactList}\small\item\em Here follow the setting and getting of the information from the class holding supplementary information. \item\end{DoxyCompactList}\item 
+std::string {\bf getTDCType} ()\label{classCALICE_1_1BmlEventData_a816f61c11888b918a14dad1fc9301c7e}
+
+\begin{DoxyCompactList}\small\item\em retrieve the typename \item\end{DoxyCompactList}\item 
+{\bf BmlEventData} \& {\bf setEventFifoCont} (int fifocont)
+\begin{DoxyCompactList}\small\item\em set the Fifo Cont id. \item\end{DoxyCompactList}\item 
+unsigned short {\bf getWordCount} ()\label{classCALICE_1_1BmlEventData_a2a65e16561e4df0b260561713e982c8d}
+
+\begin{DoxyCompactList}\small\item\em get the word count \item\end{DoxyCompactList}\item 
+unsigned short {\bf getEventCount} ()\label{classCALICE_1_1BmlEventData_af1fce77ca4743c7733dfe0952f960244}
+
+\begin{DoxyCompactList}\small\item\em get the event count \item\end{DoxyCompactList}\item 
+{\bf BmlEventData} \& {\bf setBunchID} (int bunchID)
+\begin{DoxyCompactList}\small\item\em set the bunch id. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getBunchID} ()\label{classCALICE_1_1BmlEventData_a2768e6cfbde1495d057a6cd36e581a3b}
+
+\begin{DoxyCompactList}\small\item\em get the bunch id \item\end{DoxyCompactList}\item 
+{\bf BmlEventData} \& {\bf setEventIDTrailer} (int eventIDTrailer)\label{classCALICE_1_1BmlEventData_a527c6d1ba7a7e575f16dd95a5b5c198b}
+
+\begin{DoxyCompactList}\small\item\em Set the eventid from the TDC trailer. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getEventIDTrailer} ()\label{classCALICE_1_1BmlEventData_a7e5b77a0457590fad53a5983ea7c7e7b}
+
+\begin{DoxyCompactList}\small\item\em get the event id trailer \item\end{DoxyCompactList}\item 
+{\bf BmlEventData} \& {\bf setTDCErrors} (int tdcErrors)\label{classCALICE_1_1BmlEventData_a7d3195e0c08976bfc5e1122efea915cf}
+
+\begin{DoxyCompactList}\small\item\em Set the TDC errors. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getTDCErrors} ()\label{classCALICE_1_1BmlEventData_a30e07f8dc96ecb2aadac9606dbf9b4f9}
+
+\begin{DoxyCompactList}\small\item\em get the tdc errors \item\end{DoxyCompactList}\item 
+{\bf BmlEventData} \& {\bf setBufferOverflow} (int bufferOverflow)\label{classCALICE_1_1BmlEventData_a03eecee3ea4ae146c3320caee9ba813f}
+
+\begin{DoxyCompactList}\small\item\em Set the buffer overflow. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getBufferOverflow} ()\label{classCALICE_1_1BmlEventData_a42a5c16c75f78d794441830c9eae1cb7}
+
+\begin{DoxyCompactList}\small\item\em get the buffer overflow \item\end{DoxyCompactList}\item 
+{\bf BmlEventData} \& {\bf setTriggerLost} (int triggerlost)\label{classCALICE_1_1BmlEventData_ae97639de2ca13acb95d0cbbef7d51b7a}
+
+\begin{DoxyCompactList}\small\item\em Set the number of words in the trailer. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getTriggerLost} ()\label{classCALICE_1_1BmlEventData_a1a250cc192a3874ca587efd9712bc27c}
+
+\begin{DoxyCompactList}\small\item\em Get information on lost triggers. \item\end{DoxyCompactList}\item 
+{\bf BmlEventData} \& {\bf setTDCWordCountTrailer} (int numwords)\label{classCALICE_1_1BmlEventData_a37546da528d855946dfc12faa2a836d4}
+
+\begin{DoxyCompactList}\small\item\em Set the number of words in the trailer. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getTDCWordCountTrailer} ()\label{classCALICE_1_1BmlEventData_a16022acb74c6d58f32ea5388a16ed752}
+
+\begin{DoxyCompactList}\small\item\em Get the number of words in the trailer. \item\end{DoxyCompactList}\item 
+{\bf BmlEventDataSup} $\ast$ {\bf getSupObject} ()\label{classCALICE_1_1BmlEventData_ab7a136495e35b3c0d9ce8e14052b7a38}
+
+\begin{DoxyCompactList}\small\item\em return the supplementary object \item\end{DoxyCompactList}\item 
+void {\bf addTDCChannels} (const TDCChannelContainer\_\-t \&)
+\begin{DoxyCompactList}\small\item\em Get measurements for each tdc channel The data are stored at the end of the collection with the following 'protocol' channelnumber number of signals m startime word, i.e. \item\end{DoxyCompactList}\item 
+const TDCChannelContainer\_\-t \& {\bf getTDCChannelContainer} ()
+\begin{DoxyCompactList}\small\item\em Returns a container with tdc channel info The first part of the map is the channelnumber The second part of the map is a pair consisting of an indicator whether the measurement is a starttime and the actual time measurement (the core of it all) falling egdes are indicated by a minus sign. \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1BmlEventData_a7113442068c692c4a4734204006d1801}
+
+\begin{DoxyCompactList}\small\item\em returns the the type name \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1BmlEventData_ab525cda04a44662b1054fa7d52729e41}
+
+\begin{DoxyCompactList}\small\item\em returns a brief description of the data stored \item\end{DoxyCompactList}\item 
+std::ostream \& {\bf print} (std::ostream \&ostrm)\label{classCALICE_1_1BmlEventData_aef388c90f9b4060f6a14ae4c95cea7f8}
+
+\begin{DoxyCompactList}\small\item\em dumps data content \item\end{DoxyCompactList}\item 
+void {\bf printInitWarning} ()\label{classCALICE_1_1BmlEventData_a4ce6ef2fedee15aa6a22b9efcf2ef47a}
+
+\begin{DoxyCompactList}\small\item\em A convenient method which prints a warning in case the supplementary information is not initialiasied. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf setNumberOfSignalChannels} (int numsig)\label{classCALICE_1_1BmlEventData_a06db71a4d74f2161e9ed473b40a201c4}
+
+\begin{DoxyCompactList}\small\item\em Set the number of channels which carry a signal. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TDCChannelContainer\_\-t {\bf \_\-tdcChannelContainer}\label{classCALICE_1_1BmlEventData_a07eed0229a50826d0f7971ce63908ff5}
+
+\begin{DoxyCompactList}\small\item\em The channel container which we will return to the user. \item\end{DoxyCompactList}\item 
+bool {\bf \_\-isSupInitialised}\label{classCALICE_1_1BmlEventData_af07d35f6779f05e1cd8a6250ea04f03c}
+
+\begin{DoxyCompactList}\small\item\em A bool deciding whether supplementary object has been correctly created. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf BmlEventDataSup} $\ast$ {\bf \_\-bml\_\-event\_\-sup} = 0\label{classCALICE_1_1BmlEventData_a3bfbc46119fcbaf3021a151bbd6f0dfc}
+
+\begin{DoxyCompactList}\small\item\em An object of the associated class. \item\end{DoxyCompactList}\item 
+static bool {\bf \_\-isWarning1Printed} = false\label{classCALICE_1_1BmlEventData_a1db181ffb9adbb6f490bcb71eb8e16e4}
+
+\begin{DoxyCompactList}\small\item\em A bool which prevents prohibitive numerous printing of warnings. \item\end{DoxyCompactList}\item 
+static bool {\bf \_\-isWarning2Printed} = false\label{classCALICE_1_1BmlEventData_afd1b9ffb350aa39b5efb380320126b9d}
+
+\begin{DoxyCompactList}\small\item\em Another bool which prevents prohibitive numerous printing of warnings. \item\end{DoxyCompactList}\item 
+static bool {\bf \_\-isWarning3Printed} = false\label{classCALICE_1_1BmlEventData_af0ef4c5411a8bfba056415651686a8f2}
+
+\begin{DoxyCompactList}\small\item\em Yet Another bool which prevents prohibitive numerous printing of warnings. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to store the \doxyref{BmlEventData}{p.}{classCALICE_1_1BmlEventData}. This is tailored to the data extracted from the Caen767 TDC. \begin{DoxyAuthor}{Author}
+R. P�schl (LAL Orsay) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Jul 24 2006 
+\end{DoxyDate}
+
+
+Definition at line 61 of file BmlEventData.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::BmlEventData@{CALICE::BmlEventData}!addSupplementaryInformation@{addSupplementaryInformation}}
+\index{addSupplementaryInformation@{addSupplementaryInformation}!CALICE::BmlEventData@{CALICE::BmlEventData}}
+\subsubsection[{addSupplementaryInformation}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::BmlEventData::addSupplementaryInformation (LCEvent $\ast$ {\em aEvt}, \/  unsigned int {\em ielm})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1BmlEventData_a8092124f2b78b59f656337647f359c27}
+
+
+Add supplementary information: Feed information not available in the actual \doxyref{BmlEventData}{p.}{classCALICE_1_1BmlEventData} to the object. This is necessary to handle more than 1 TDC type, in fact all information from TDCs others than the Caen767 will be handled as supplementary information, this ensures full backward compatibility and requires minimal code changes if information from other TDC is requested. 
+
+Definition at line 106 of file BmlEventData.hh.
+
+References \_\-bml\_\-event\_\-sup, \_\-isSupInitialised, and \_\-isWarning3Printed.\index{CALICE::BmlEventData@{CALICE::BmlEventData}!addTDCChannels@{addTDCChannels}}
+\index{addTDCChannels@{addTDCChannels}!CALICE::BmlEventData@{CALICE::BmlEventData}}
+\subsubsection[{addTDCChannels}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::BmlEventData::addTDCChannels (const TDCChannelContainer\_\-t \& {\em tdcChannelContainer})}\label{classCALICE_1_1BmlEventData_acb448530583ebab240c3d50efe72bc3d}
+
+
+Get measurements for each tdc channel The data are stored at the end of the collection with the following 'protocol' channelnumber number of signals m startime word, i.e. each measurement occupies one bit in this word signal 1 ... signal m 
+
+Definition at line 11 of file BmlEventData.cc.
+
+References CALICE::LCGenericObjectImplExt::obj(), and setNumberOfSignalChannels().\index{CALICE::BmlEventData@{CALICE::BmlEventData}!getTDCChannelContainer@{getTDCChannelContainer}}
+\index{getTDCChannelContainer@{getTDCChannelContainer}!CALICE::BmlEventData@{CALICE::BmlEventData}}
+\subsubsection[{getTDCChannelContainer}]{\setlength{\rightskip}{0pt plus 5cm}const TDCChannelContainer\_\-t \& CALICE::BmlEventData::getTDCChannelContainer ()}\label{classCALICE_1_1BmlEventData_a9ba0b84d7d9ab8b5728a2cba1fa9f151}
+
+
+Returns a container with tdc channel info The first part of the map is the channelnumber The second part of the map is a pair consisting of an indicator whether the measurement is a starttime and the actual time measurement (the core of it all) falling egdes are indicated by a minus sign. A method which re-\/builds and returns the TCChannelContainer. 
+
+Definition at line 52 of file BmlEventData.cc.
+
+References \_\-tdcChannelContainer, and getNumberOfSignalChannels().
+
+Referenced by print().\index{CALICE::BmlEventData@{CALICE::BmlEventData}!setBoardID@{setBoardID}}
+\index{setBoardID@{setBoardID}!CALICE::BmlEventData@{CALICE::BmlEventData}}
+\subsubsection[{setBoardID}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BmlEventData}\& CALICE::BmlEventData::setBoardID (int {\em boardID})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1BmlEventData_a87da8c5f50787e64485afd71f870d4d4}
+
+
+set the packed board id. \begin{DoxySeeAlso}{See also}
+\doxyref{BoardID}{p.}{classCALICE_1_1BoardID} For the Caen 767 TDC the boardID has a slightly different meaning compared with the CrcBoards slotID and board component numbers are just the MSB and LSB of the base address. 
+\end{DoxySeeAlso}
+
+
+Definition at line 133 of file BmlEventData.hh.
+
+References CALICE::LCGenericObjectImplExt::obj().
+
+Referenced by BmlEventData().\index{CALICE::BmlEventData@{CALICE::BmlEventData}!setBunchID@{setBunchID}}
+\index{setBunchID@{setBunchID}!CALICE::BmlEventData@{CALICE::BmlEventData}}
+\subsubsection[{setBunchID}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BmlEventData}\& CALICE::BmlEventData::setBunchID (int {\em bunchID})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1BmlEventData_ae86922e82f92fbb4018d4ce257971fc0}
+
+
+set the bunch id. 
+
+Definition at line 287 of file BmlEventData.hh.
+
+References \_\-bml\_\-event\_\-sup, and CALICE::BmlEventDataSup::setBunchID().\index{CALICE::BmlEventData@{CALICE::BmlEventData}!setEventFifoCont@{setEventFifoCont}}
+\index{setEventFifoCont@{setEventFifoCont}!CALICE::BmlEventData@{CALICE::BmlEventData}}
+\subsubsection[{setEventFifoCont}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BmlEventData}\& CALICE::BmlEventData::setEventFifoCont (int {\em fifocont})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1BmlEventData_a26c3ac15a946f233f4c27cae463f18ad}
+
+
+set the Fifo Cont id. 
+
+Definition at line 261 of file BmlEventData.hh.
+
+References \_\-bml\_\-event\_\-sup, and CALICE::BmlEventDataSup::setEventFifoCont().\index{CALICE::BmlEventData@{CALICE::BmlEventData}!setTDCType@{setTDCType}}
+\index{setTDCType@{setTDCType}!CALICE::BmlEventData@{CALICE::BmlEventData}}
+\subsubsection[{setTDCType}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BmlEventData}\& CALICE::BmlEventData::setTDCType (std::string {\em typeStr})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1BmlEventData_a9355f03a743f43801ce6d4db6e5fffe1}
+
+
+Here follow the setting and getting of the information from the class holding supplementary information. set the TDC type 
+
+Definition at line 241 of file BmlEventData.hh.
+
+References \_\-bml\_\-event\_\-sup, and CALICE::BmlEventDataSup::setTDCType().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+BmlEventData.hh\item 
+BmlEventData.cc\end{DoxyCompactItemize}

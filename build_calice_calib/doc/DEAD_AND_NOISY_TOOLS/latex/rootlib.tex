@@ -1,0 +1,28 @@
+\hypertarget{rootlib_Idea}{}\section{The idea}\label{rootlib_Idea}
+Root's {\ttfamily TTree::Draw()} command is very powerful and flexibe and allows the user to create many plots in a short time. The libDeadAndNoisyTools library can be loaded in CINT and provides a class to create the tree with the rms and mean values of the channel spectra (see \hyperlink{index_Introduction}{Introduction}). In addition there are convenience functions to create the default plots and to compare two runs.
+
+Like this it is possible to check with just a few lines at the CINT prompt whether a run is OK and which channels are bad, while having full access to all the underlying information and interactively defining all cuts.
+
+Currently the library provides five classes: \begin{DoxyItemize}
+\item \hyperlink{class_simple_mapper}{SimpleMapper} A helper class which contains a map (slot,frontent)-\/$>$(module,layer) \item \hyperlink{class_t_channel_spectrum_properties}{TChannelSpectrumProperties} A data class to put into a TTree. \item \hyperlink{class_spectrum_properties_run_info}{SpectrumPropertiesRunInfo} The main class for information about one run \item \hyperlink{class_run_comparator}{RunComparator} A class to facilitate the comparison of two runs \item \hyperlink{class_channel_expert_quality}{ChannelExpertQuality} A class defining the status quality words used in this code\end{DoxyItemize}
+The idea is the following: The \hyperlink{class_spectrum_properties_run_info}{SpectrumPropertiesRunInfo} will provide a tree with the spectrum properties. The TTree::Draw() command is very powerful and flexibe and allows the user to create many plots in a short time. The tree is filled when instantiating the \hyperlink{class_spectrum_properties_run_info}{SpectrumPropertiesRunInfo} object. The constructor just gets the run number and the file name of the AHC.cfg file. It opens a file named {\itshape runNumber\/}.root to read the histograms.\hypertarget{rootlib_Usage}{}\section{Usage}\label{rootlib_Usage}
+\hypertarget{rootlib_Cplusplus}{}\subsection{in normal C++ programms}\label{rootlib_Cplusplus}
+Just include the header files you need and link the libDeadAndNoisyTools.so\hypertarget{rootlib_Root}{}\subsection{in ROOT's CINT}\label{rootlib_Root}
+Load the libDeadAndNoisyTools.so with \begin{DoxyVerb}.L libDeadAndNoisyTools.so \end{DoxyVerb}
+ or put \begin{DoxyVerb}gSystem->Load("libDeadAndNoisyTools.so"); \end{DoxyVerb}
+ into your rootlogon.C. After this the classes are known to CINT and you can use them interactively.\hypertarget{rootlib_Example}{}\subsection{Example}\label{rootlib_Example}
+\begin{DoxyItemize}
+\item \mbox{[}1\mbox{]} Load the shared library \item \mbox{[}2\mbox{]} Instantiate the \hyperlink{class_spectrum_properties_run_info}{SpectrumPropertiesRunInfo} object. The input file name is {\ttfamily runNumber.root} if no other name is given (360759.root in this case). \item \mbox{[}3\mbox{]} Get a pointer to the tree. \item \mbox{[}4\mbox{]} For convenience: Change the marker stype of the tree to {\ttfamily +}.\end{DoxyItemize}
+Afterwards you can draw the contents of the tree, e. g. \begin{DoxyItemize}
+\item \mbox{[}5\mbox{]} Histogram the mean values for all channels in slot 19 \item \mbox{[}6\mbox{]} Draw a graph rmv vs. channel for all channels in module 9\end{DoxyItemize}
+\begin{DoxyVerb}
+root [1] .L libDeadAndNoisyTools.so
+root [2] SpectrumPropertiesRunInfo spri(360759,"AHCforCERN2010.cfg");
+root [3] TTree *t = spri.getSpectrumPropertiesTree()
+root [4] t->SetMarkerStyle(2);
+root [5] t->Draw("_mean","_slot==19")
+root [6] t->Draw("_rms:_channel+_chip*18","_module==9")
+\end{DoxyVerb}
+
+
+For more examples using the \hyperlink{class_spectrum_properties_run_info}{SpectrumPropertiesRunInfo} have a look at the \hyperlink{examples}{Examples} section. A complete list of all function can be found in the \hyperlink{class_spectrum_properties_run_info}{SpectrumPropertiesRunInfo} class documentation. 

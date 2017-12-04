@@ -1,0 +1,73 @@
+\section{FeStatListBase\_\-t Class Reference}
+\label{classFeStatListBase__t}\index{FeStatListBase\_\-t@{FeStatListBase\_\-t}}
+
+
+Container class which can store statistics objects for all existing front-\/ends.  
+
+
+{\ttfamily \#include $<$FeStatList\_\-t.hh$>$}Inheritance diagram for FeStatListBase\_\-t::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classFeStatListBase__t}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf show} (const char $\ast$label)
+\begin{DoxyCompactList}\small\item\em Print statistics about all front-\/ends. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef {\bf StatObj\_\-t} $\ast$ {\bfseries StatObjPtr}\label{classFeStatListBase__t_a375c72380cafb0c98dfc80cbd1d0305f}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf StatObjPtr} \& {\bf getStat} (unsigned int board\_\-id)
+\begin{DoxyCompactList}\small\item\em Get the statistics object for the given board id. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::map$<$ unsigned int, std::vector$<$ std::vector$<$ {\bf StatObjPtr} $>$ $>$ $>$ {\bfseries \_\-feInfo}\label{classFeStatListBase__t_aa6de25584603d7826ea405b0d56dd0ff}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Container class which can store statistics objects for all existing front-\/ends. The statistics collected from all front-\/ends can be printed to an output stream. {\bfseries This class should not be used directly but the template \doxyref{FeStatList\_\-t}{p.}{classFeStatList__t}} which gives You type safety. 
+
+Definition at line 59 of file FeStatList\_\-t.hh.
+
+\subsection{Member Function Documentation}
+\index{FeStatListBase\_\-t@{FeStatListBase\_\-t}!getStat@{getStat}}
+\index{getStat@{getStat}!FeStatListBase_t@{FeStatListBase\_\-t}}
+\subsubsection[{getStat}]{\setlength{\rightskip}{0pt plus 5cm}{\bf StatObjPtr}\& FeStatListBase\_\-t::getStat (unsigned int {\em board\_\-id})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classFeStatListBase__t_af736c1e9e3e131095ac69d5b7448ce6f}
+
+
+Get the statistics object for the given board id. 
+\begin{DoxyParams}{Parameters}
+\item[{\em board\_\-id}]id which tells the crate, slot and front-\/end. This method should not be used directly but the template \doxyref{FeStatList\_\-t::getStat}{p.}{classFeStatList__t_a5b29ca60859d52c5e2279f9636ac6b01} \end{DoxyParams}
+
+
+Reimplemented in {\bf FeStatList\_\-t$<$ T\_\-StatObj\_\-t $>$} \doxyref{}{p.}{classFeStatList__t_a5b29ca60859d52c5e2279f9636ac6b01}.
+
+Definition at line 86 of file FeStatList\_\-t.hh.
+
+References CALICE::BoardID::getBoardComponentNumber(), CALICE::BoardID::getCrateID(), and CALICE::BoardID::getSlotID().\index{FeStatListBase\_\-t@{FeStatListBase\_\-t}!show@{show}}
+\index{show@{show}!FeStatListBase_t@{FeStatListBase\_\-t}}
+\subsubsection[{show}]{\setlength{\rightskip}{0pt plus 5cm}void FeStatListBase\_\-t::show (const char $\ast$ {\em label})}\label{classFeStatListBase__t_af8d07bf048c14d95c95338c3d1b10f91}
+
+
+Print statistics about all front-\/ends. 
+\begin{DoxyParams}{Parameters}
+\item[{\em label}]text to be printed as a header line. The output depends on the statistics objects used. {\bfseries NOTE:} This method will call the method \doxyref{StatObj\_\-t::finish}{p.}{classStatObj__t_a47e9637e59dc8e2cb5889de98160e553} i.e. the objects should not be changed afterwords otherwise the result will rather undefined. \end{DoxyParams}
+
+
+Definition at line 24 of file FeStatList\_\-t.cc.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+FeStatList\_\-t.hh\item 
+FeStatList\_\-t.cc\end{DoxyCompactItemize}

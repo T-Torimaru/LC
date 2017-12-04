@@ -1,0 +1,56 @@
+\section{CALICE Namespace Reference}
+\label{namespaceCALICE}\index{CALICE@{CALICE}}
+
+
+Processor to read SLCIO EUDAQ files and sort them according to the BXID Then do the AHCAL-\/BIF Offset calibration by counting the number of correlated events (either a separation between ECAL and AHCAL collections is done by EUDAQ).  
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Ahc2GainCalibrator}
+\item 
+class {\bf Ahc2OffsetCalibrator}
+\begin{DoxyCompactList}\small\item\em Processor to read SLCIO EUDAQ files and sort them according to the BXID Then do the AHCAL-\/BIF Offset calibration by counting the number of correlated events (either a separation between ECAL and AHCAL collections is done by EUDAQ). \item\end{DoxyCompactList}\item 
+class {\bf Ahc2PedestalCalibrator}
+\item 
+class {\bf AngleTrackFinder}
+\begin{DoxyCompactList}\small\item\em Processor to extract MIP calibrations from muon beam runs. \item\end{DoxyCompactList}\item 
+class {\bf MipTrackFinder}
+\begin{DoxyCompactList}\small\item\em Processor to extract MIP calibrations from muon beam runs. \item\end{DoxyCompactList}\item 
+class {\bf SingleCellAnalysis}
+\begin{DoxyCompactList}\small\item\em Processor for analysing cellwise properties like mean signal, RMS, hit frequency, . \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double {\bfseries MultiGaus} (double $\ast$x, double $\ast$par)\label{namespaceCALICE_ab027e03d90dee39729ce0c0ff8524bfb}
+
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Ahc2GainCalibrator} {\bfseries aAhc2GainCalibrator}\label{namespaceCALICE_aff0f779ea231c17c5f3447d5f1c85c5a}
+
+\item 
+{\bf Ahc2OffsetCalibrator} {\bfseries aAhc2OffsetCalibrator}\label{namespaceCALICE_a0dfd57d58d988a974ce3c87364e65fc1}
+
+\item 
+{\bf Ahc2PedestalCalibrator} {\bfseries aAhc2PedestalCalibrator}\label{namespaceCALICE_abe03f653dfffe06ae6550343edbbb184}
+
+\item 
+{\bf AngleTrackFinder} {\bfseries AngleTrackFinder}\label{namespaceCALICE_a3a6925ca17e1f05cc97e625f7edd5ed5}
+
+\item 
+{\bf MipTrackFinder} {\bfseries aMipTrackFinder}\label{namespaceCALICE_a63db13b96d3be485b4c57ba60db44bdd}
+
+\item 
+{\bf SingleCellAnalysis} {\bfseries aSingleCellAnalysis}\label{namespaceCALICE_a0c491b351d33b91639df2101f7725139}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Processor to read SLCIO EUDAQ files and sort them according to the BXID Then do the AHCAL-\/BIF Offset calibration by counting the number of correlated events (either a separation between ECAL and AHCAL collections is done by EUDAQ). \begin{DoxyAuthor}{Author}
+E. Brianne, DESY Hamburg 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+May 2016 Created for 2016 testbeams EUDAQ data format and AHCAL-\/BIF Offset calibration. 
+\end{DoxyDate}

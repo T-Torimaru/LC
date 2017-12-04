@@ -1,0 +1,113 @@
+\section{CALICE::AdcValueAccess Class Reference}
+\label{classCALICE_1_1AdcValueAccess}\index{CALICE::AdcValueAccess@{CALICE::AdcValueAccess}}
+
+
+Hide hit reconstruction: ADC value to position mapping, calibration.  
+
+
+{\ttfamily \#include $<$AdcValueAccess.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries AdcValueAccess} (const LCCollection $\ast$adc\_\-collection, const MappingAndAlignment $\ast$alignment, const {\bf Calibration} $\ast$calibration, {\bf CellParameterArray\_\-t} $\ast$cell\_\-parameter)\label{classCALICE_1_1AdcValueAccess_a111487e619a4de8f38932de049576f7d}
+
+\item 
+UInt\_\-t {\bfseries getNBlocks} () const \label{classCALICE_1_1AdcValueAccess_a86ee09caed462571ad485853d674c0bb}
+
+\item 
+UInt\_\-t {\bfseries getNValuesPerBlock} () const \label{classCALICE_1_1AdcValueAccess_ae4f2b137243bd9c72bc73a67332ae27c}
+
+\item 
+void {\bfseries setToFirstBlock} ()\label{classCALICE_1_1AdcValueAccess_a773c54a8ff1f477d51dd94cf64d21a38}
+
+\item 
+bool {\bfseries hasConnectedBlocks} ()\label{classCALICE_1_1AdcValueAccess_afc9447b6f9ee052051c53214f959973a}
+
+\item 
+bool {\bfseries nextBlock} ()\label{classCALICE_1_1AdcValueAccess_a508cdb3b31faf94cff57c4a0b7b2605d}
+
+\item 
+bool {\bfseries nextValue} ()\label{classCALICE_1_1AdcValueAccess_ae4b4f7aabbcd9b715b145ae6f77e64a5}
+
+\item 
+int {\bfseries getAdcValue} () const \label{classCALICE_1_1AdcValueAccess_a178d1b500b340c66862ca31408058cf4}
+
+\item 
+Float\_\-t {\bfseries getCalibratedValue} (Float\_\-t pedestal) const \label{classCALICE_1_1AdcValueAccess_abfe8b2520316fdaca87fb1643039b706}
+
+\item 
+int {\bfseries getModuleIndex} () const \label{classCALICE_1_1AdcValueAccess_a95ca34b9e83c716afdf0d759eb674964}
+
+\item 
+int {\bfseries getCellIndexOnModule} () const \label{classCALICE_1_1AdcValueAccess_a0fb4a1dafca50bc1ea71d845c242f9b5}
+
+\item 
+int {\bfseries getGeometricalCellIndex} () const \label{classCALICE_1_1AdcValueAccess_a6db60f9998a5eff3616f6cd22187127f}
+
+\item 
+{\bf ThreeVector\_\-t} {\bfseries getPosition} () const \label{classCALICE_1_1AdcValueAccess_a6bdb6f20b6c4f0eb84d664af3046ccd6}
+
+\item 
+{\bf CellParameter} \& {\bfseries getParameter} ()\label{classCALICE_1_1AdcValueAccess_a9adee792205759d44248b3cfd455dcd4}
+
+\item 
+const {\bf CellParameter} \& {\bfseries getParameter} () const \label{classCALICE_1_1AdcValueAccess_a5fb1b775c6659d9e93d67521960b69ea}
+
+\item 
+CALICE::BoardID {\bfseries getBoardID} () const \label{classCALICE_1_1AdcValueAccess_a5cf394acd1a40ad4d3881e1eadeaa9d0}
+
+\item 
+UInt\_\-t {\bfseries getBoardFrontEnd} () const \label{classCALICE_1_1AdcValueAccess_af7af31df48307b706d6f4b3631886a4b}
+
+\item 
+UInt\_\-t {\bfseries getSlotID} () const \label{classCALICE_1_1AdcValueAccess_a4895d6a36e954e932cdd472096d8261e}
+
+\item 
+bool {\bfseries isRightSide} () const \label{classCALICE_1_1AdcValueAccess_a179dda795ea999d66c7f7cecf7d6de24}
+
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+UInt\_\-t {\bfseries \_\-nValuesPerBlock}\label{classCALICE_1_1AdcValueAccess_a8f6e0844c088e95c3d473f2aa3633778}
+
+\item 
+bool {\bfseries \_\-useRightSide}\label{classCALICE_1_1AdcValueAccess_aa17c51c82cee702c234740a9037b8a62}
+
+\item 
+UInt\_\-t {\bfseries \_\-blockIndex}\label{classCALICE_1_1AdcValueAccess_a7cbe774ac91cc4fb9d4e62a5d78ab3ea}
+
+\item 
+UInt\_\-t {\bfseries \_\-lineIndex}\label{classCALICE_1_1AdcValueAccess_a5aa2c0e0e9c674df6ddc9dd038e67336}
+
+\item 
+std::pair$<$ UInt\_\-t, UInt\_\-t $>$ {\bfseries \_\-moduleIndices}\label{classCALICE_1_1AdcValueAccess_af373eb64168bf34b92cf85b7f6aba3ce}
+
+\item 
+std::pair$<$ UInt\_\-t, UInt\_\-t $>$ {\bfseries \_\-cellIndex}\label{classCALICE_1_1AdcValueAccess_a2324c0e1891d1fa418e1e1b8bb16dc6e}
+
+\item 
+const LCCollection $\ast$ {\bfseries \_\-adcCollection}\label{classCALICE_1_1AdcValueAccess_acd2fb49d0afa34c7a158baa2b64eacf8}
+
+\item 
+AdcBlock {\bfseries \_\-currentAdcBlock}\label{classCALICE_1_1AdcValueAccess_a0cd454fbfe0e49b54ee7fa7fb2640c4e}
+
+\item 
+const MappingAndAlignment $\ast$ {\bfseries \_\-mapping}\label{classCALICE_1_1AdcValueAccess_a419e13811c64297fa7551e81ab6546fb}
+
+\item 
+const {\bf Calibration} $\ast$ {\bfseries \_\-calibration}\label{classCALICE_1_1AdcValueAccess_aec81ecb16efeb7528211d61389a92308}
+
+\item 
+{\bf CellParameterArray\_\-t} $\ast$ {\bfseries \_\-cellParameter}\label{classCALICE_1_1AdcValueAccess_af589887575dfd47fc70f4db5dcd74c3a}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Hide hit reconstruction: ADC value to position mapping, calibration. The ADC collection must not be empty. 
+
+Definition at line 29 of file AdcValueAccess.hh.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+AdcValueAccess.hh\end{DoxyCompactItemize}

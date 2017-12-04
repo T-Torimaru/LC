@@ -1,0 +1,233 @@
+\section{CALICE::SiPMCalibrateProcessor Class Reference}
+\label{classCALICE_1_1SiPMCalibrateProcessor}\index{CALICE::SiPMCalibrateProcessor@{CALICE::SiPMCalibrateProcessor}}
+
+
+Processor that does the SiPM calibration.  
+
+
+{\ttfamily \#include $<$SiPMCalibrateProcessor.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf SiPMCalibrateProcessor} $\ast$ {\bf newProcessor} ()\label{classCALICE_1_1SiPMCalibrateProcessor_afcf5d46a36704ca28d4b396e3c6c880c}
+
+\begin{DoxyCompactList}\small\item\em Return a new instance of this processor. \item\end{DoxyCompactList}\item 
+{\bf SiPMCalibrateProcessor} ()\label{classCALICE_1_1SiPMCalibrateProcessor_a3bb0d0e2676910428b75c7b8b80ec87a}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. \item\end{DoxyCompactList}\item 
+{\bf $\sim$SiPMCalibrateProcessor} ()\label{classCALICE_1_1SiPMCalibrateProcessor_a428372dc991fcf2593166951c3f0365c}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual void {\bf init} ()\label{classCALICE_1_1SiPMCalibrateProcessor_aab2cba3af1a694e91a0574ffe20275c7}
+
+\begin{DoxyCompactList}\small\item\em Initialise variables, if needed. \item\end{DoxyCompactList}\item 
+virtual void {\bf processEvent} (LCEvent $\ast$evt)
+\begin{DoxyCompactList}\small\item\em Process event (the working horse). \item\end{DoxyCompactList}\item 
+virtual void {\bf end} ()\label{classCALICE_1_1SiPMCalibrateProcessor_a29f890dd2812216940bc4e4a1534da3d}
+
+\begin{DoxyCompactList}\small\item\em Function called after all events have been processed, for cleanup. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf calibrateEnergyAndFillOutputCollections} (SiPMCalibrations $\ast$calibration, const float rawEnergy, LCCollection $\ast$ahcHitOutputCol, LCCollection $\ast$ahcAmplOutputCol, LCRelationNavigator \&relationNavigator)
+\begin{DoxyCompactList}\small\item\em Calibrate the energy (convert from energy in ADC counts to energy in MIPs). \item\end{DoxyCompactList}\item 
+void {\bfseries checkHitAmplRelation} (LCEvent $\ast$evt)\label{classCALICE_1_1SiPMCalibrateProcessor_a0cab17864ce6d8d19c045a2f29d3f385}
+
+\item 
+void {\bfseries createSimRecRelation} (LCEvent $\ast$evt)\label{classCALICE_1_1SiPMCalibrateProcessor_aaac485a2a610b1a3170f3ae697df5e66}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bf \_\-inputColName}\label{classCALICE_1_1SiPMCalibrateProcessor_a57a43fb9e621a67f048f8d7e3eb422fc}
+
+\begin{DoxyCompactList}\small\item\em name of the input collection \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-ahcHitOutputColName}\label{classCALICE_1_1SiPMCalibrateProcessor_aab19ab03aed4e1d2c55517553b01a7bf}
+
+\begin{DoxyCompactList}\small\item\em name of the output AHC hit collection \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-ahcAmplOutputColName}\label{classCALICE_1_1SiPMCalibrateProcessor_ab050d98ccbef256701d52f6bcdbe7360}
+
+\begin{DoxyCompactList}\small\item\em name of the output AHC amplitude collection \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-hitAmplRelationColName}\label{classCALICE_1_1SiPMCalibrateProcessor_a48052d44b45a93f7d1e247e844f311b6}
+
+\begin{DoxyCompactList}\small\item\em name of the LCRelation collection between CalorimeterHit and AhcAmplitude \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-mappingProcessorName}\label{classCALICE_1_1SiPMCalibrateProcessor_a17f68ea31684ff76170b3878eefb1558}
+
+\begin{DoxyCompactList}\small\item\em name of the processor which provides the mapping \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-calibProcessorName}\label{classCALICE_1_1SiPMCalibrateProcessor_a0b8de01a32b442f302706d5678b0bed7}
+
+\begin{DoxyCompactList}\small\item\em name of the processor which provides the SiPM calibrations \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-temperatureProcessorName}\label{classCALICE_1_1SiPMCalibrateProcessor_ad57628decfdca245ff0bc4466e398d2f}
+
+\begin{DoxyCompactList}\small\item\em name of the processor which provides the SiPM temperature \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-cellDescriptionProcessorName}\label{classCALICE_1_1SiPMCalibrateProcessor_a7470eb03aa80ec18c2bcb3bff172411d}
+
+\begin{DoxyCompactList}\small\item\em name of the processor which provides the cells description \item\end{DoxyCompactList}\item 
+MappedContainer$<$ CellDescription $>$ $\ast$ {\bf \_\-cellDescriptions}\label{classCALICE_1_1SiPMCalibrateProcessor_a008a04e60e994e7f5a60e4752808d4cf}
+
+\begin{DoxyCompactList}\small\item\em mapped container of cells description \item\end{DoxyCompactList}\item 
+bool {\bf \_\-scaleEnergy}\label{classCALICE_1_1SiPMCalibrateProcessor_a2d1cc15e62943ab55fe09f85a035e0a8}
+
+\begin{DoxyCompactList}\small\item\em flag to enable/disable the scaling of the hits energy \item\end{DoxyCompactList}\item 
+float {\bf \_\-energyScaleFactor}\label{classCALICE_1_1SiPMCalibrateProcessor_a1bb566afa9919856a28d3e0496d67236}
+
+\begin{DoxyCompactList}\small\item\em factor to scale the hits energy \item\end{DoxyCompactList}\item 
+bool {\bf \_\-createSimRecRelation}\label{classCALICE_1_1SiPMCalibrateProcessor_a3901432aa67fe2cc8045eb1e33f77c18}
+
+\begin{DoxyCompactList}\small\item\em flag to disable/enable the creation of an LCRelation between the Mokka SimCalorimeterHits and the reconstructed CalorimeterHits \item\end{DoxyCompactList}\item 
+MappedContainer$<$ CalorimeterHitImpl $>$ $\ast$ {\bf \_\-recoContainer}\label{classCALICE_1_1SiPMCalibrateProcessor_ad95f8f4f5a8053e41cd19f10869f6308}
+
+\begin{DoxyCompactList}\small\item\em mapped container of reconstructed AHCAL hits \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-simHitColName}\label{classCALICE_1_1SiPMCalibrateProcessor_ace988b5155d638e3a813a7b2a72bbe96}
+
+\begin{DoxyCompactList}\small\item\em name of collection containing SimCalorimeterHits \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-simRecRelationColName}\label{classCALICE_1_1SiPMCalibrateProcessor_a919e77aed15f7167dbdc8636341b26ad}
+
+\begin{DoxyCompactList}\small\item\em name of the relation between Mokka SimCalorimeterHits and reconstructed CalorimeterHits \item\end{DoxyCompactList}\item 
+const Mapper $\ast$ {\bf \_\-mapper}\label{classCALICE_1_1SiPMCalibrateProcessor_a02bb58794a7bfaade36b8ea48174a4b1}
+
+\begin{DoxyCompactList}\small\item\em the mapper \item\end{DoxyCompactList}\item 
+MappedContainer$<$ SiPMCalibrations $>$ $\ast$ {\bf \_\-calibContainer}\label{classCALICE_1_1SiPMCalibrateProcessor_a40e1e74a8da4c3033f4781f466c447fd}
+
+\begin{DoxyCompactList}\small\item\em mapped container of SiPM calibrations \item\end{DoxyCompactList}\item 
+MappedContainer$<$ SimpleValue $>$ $\ast$ {\bf \_\-temperatureContainer}\label{classCALICE_1_1SiPMCalibrateProcessor_a1b48a88d42d7f14a0f70b820765b5ade}
+
+\begin{DoxyCompactList}\small\item\em mapped container of cells temperature \item\end{DoxyCompactList}\item 
+bool {\bf \_\-pedestalSubtraction}\label{classCALICE_1_1SiPMCalibrateProcessor_a62cbf93050afc1ee6e5c7f82fd1f3e66}
+
+\begin{DoxyCompactList}\small\item\em flag to enable/disable pedestal subtraction \item\end{DoxyCompactList}\item 
+bool {\bf \_\-doMipTempCorr}\label{classCALICE_1_1SiPMCalibrateProcessor_ae71be6f56269b829919d429f1a85e3f8}
+
+\begin{DoxyCompactList}\small\item\em flag to enable/disable the temperature correction of the MIP \item\end{DoxyCompactList}\item 
+bool {\bf \_\-doGainTempCorr}\label{classCALICE_1_1SiPMCalibrateProcessor_a2228aa6db6d857d46ce8309bfa4e7026}
+
+\begin{DoxyCompactList}\small\item\em flag to enable/disable the temperature correction of the gain \item\end{DoxyCompactList}\item 
+bool {\bf \_\-doSaturationCorr}\label{classCALICE_1_1SiPMCalibrateProcessor_adda23df94c9acdcc5374d17bb956dfcc}
+
+\begin{DoxyCompactList}\small\item\em flag to enable/disable the saturation correction \item\end{DoxyCompactList}\item 
+bool {\bf \_\-zeroSuppression}\label{classCALICE_1_1SiPMCalibrateProcessor_a1c5afe234b4e0f55c2da524153dbd2ff}
+
+\begin{DoxyCompactList}\small\item\em flag to enable/disable the zero suppression, that is if you want to apply the 0.4 MIP cut or not \item\end{DoxyCompactList}\item 
+bool {\bf \_\-filterDeadCells}\label{classCALICE_1_1SiPMCalibrateProcessor_a12a78cade56b09367209139fac783c14}
+
+\begin{DoxyCompactList}\small\item\em flag to enable/disable the filtering of dead cells \item\end{DoxyCompactList}\item 
+bool {\bf \_\-filterDefaultCells}\label{classCALICE_1_1SiPMCalibrateProcessor_a0c500325fa0048790722ea2526a234e6}
+
+\begin{DoxyCompactList}\small\item\em flag to enable/disable the filgering of default cells \item\end{DoxyCompactList}\item 
+bool {\bf \_\-doErrorCalculation}\label{classCALICE_1_1SiPMCalibrateProcessor_af3d3d2927e61e4c13cbd4342c25687ae}
+
+\begin{DoxyCompactList}\small\item\em flag to enable/disable the error calculation \item\end{DoxyCompactList}\item 
+bool {\bf \_\-doWriteOnlyRawAmplitude}\label{classCALICE_1_1SiPMCalibrateProcessor_ab60bc164b141b85dc9637dab5d88ff52}
+
+\begin{DoxyCompactList}\small\item\em flag to enable/disable the writing of raw AHCal hits (in ADC counts) \item\end{DoxyCompactList}\item 
+float {\bf \_\-mipCut}\label{classCALICE_1_1SiPMCalibrateProcessor_ae7a5dacf9857a1f45074aa7668af970a}
+
+\begin{DoxyCompactList}\small\item\em value of the MIP cut (default: 0.4 MIPs) \item\end{DoxyCompactList}\item 
+float {\bf \_\-mipToGeVFactor}\label{classCALICE_1_1SiPMCalibrateProcessor_aad74cd9ffd52b8b04928f16750382f74}
+
+\begin{DoxyCompactList}\small\item\em conversion factor from MIPs to GeV \item\end{DoxyCompactList}\item 
+bool {\bfseries \_\-correctDefaultGainToLY}\label{classCALICE_1_1SiPMCalibrateProcessor_a9e8a86f294ee86393f3c413bb25fc686}
+
+\item 
+float {\bfseries \_\-fixedLY}\label{classCALICE_1_1SiPMCalibrateProcessor_a29bf0f8380c4f017874bc0dad44d8a00}
+
+\item 
+bool {\bf \_\-isDATA}\label{classCALICE_1_1SiPMCalibrateProcessor_a470adc298f88f9e78ae24aa67be702d3}
+
+\begin{DoxyCompactList}\small\item\em flag to switch to DATA processing \item\end{DoxyCompactList}\item 
+bool {\bf \_\-isMC}\label{classCALICE_1_1SiPMCalibrateProcessor_aa6bcd2af91b68af922b9b34224a0d8b1}
+
+\begin{DoxyCompactList}\small\item\em flag to switch to MC processing \item\end{DoxyCompactList}\item 
+bool {\bf \_\-isFirstEvent}
+\begin{DoxyCompactList}\small\item\em flag to switch to DATA/MC at the first event, the following events should be the same. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Processor that does the SiPM calibration. The calibration is done according to the formula: $E_{calibrated}=f_{saturation}((E_{raw}-pedestal) \cdot IC/gain) \cdot gain/IC/MIP$
+
+Please note:
+\begin{DoxyItemize}
+\item this processor does the calibration for both data and Monte Carlo, based on the type of the input collection (\char`\"{}LCGenericObject\char`\"{} for data, and \char`\"{}CalorimeterHit\char`\"{} for Monte Carlo);
+\item for noise creation, the saturation correction is disabled (doSaturationCorrection=false), as well as the ZeroSuppression (ZeroSuppression = false)
+\item for Monte Carlo, the pedestal subtraction is disabled (PedestalSubtraction=false)
+\end{DoxyItemize}
+
+\begin{DoxyParagraph}{processor parameters}
+\begin{TabularC}{2}
+\hline
+steering file parameter name &description  \\\cline{1-2}
+{\bfseries {\itshape  InputCollectionName \/}}&name of the input collection, with energy in ADC counts \\\cline{1-2}
+{\bfseries {\itshape  OutputCollectionName \/}}&name of the output collection, with energy in MIPs \\\cline{1-2}
+{\bfseries {\itshape  MappingProcessorName \/}}&name of the mapping processor that provides the necessary Mapper class \\\cline{1-2}
+{\bfseries {\itshape  SiPMCalibrationsProcessorName \/}}&name of the processor which provides the SiPM calibrations \\\cline{1-2}
+{\bfseries {\itshape  SiPMTemperatureProcessorName \/}}&name of the processor which provides the SiPM temperature \\\cline{1-2}
+{\bfseries {\itshape  PedestalSubtraction \/}}&Flag to enable/disable pedestal subtraction \\\cline{1-2}
+{\bfseries {\itshape  ZeroSuppression \/}}&Flag to enable/disable zero suppression (intention to apply the MIP cut) \\\cline{1-2}
+{\bfseries {\itshape  MipCut \/}}&Value of the MIP cut (default: 0.4 MIPs) \\\cline{1-2}
+{\bfseries {\itshape  doMipTemperatureCorrection \/}}&Flag to enable/disable temperature correction of the MIP \\\cline{1-2}
+{\bfseries {\itshape  doGainTemperatureCorrection \/}}&Flag to enable/disable temperature correction of the gain \\\cline{1-2}
+{\bfseries {\itshape  doSaturationCorrection \/}}&Flag to enable/disable the saturation correction \\\cline{1-2}
+{\bfseries {\itshape  doErrorCalculation \/}}&Flag to enable/disable error calculation \\\cline{1-2}
+{\bfseries {\itshape  filterDeadCells \/}}&Flag to enable/disable the filtering of dead cells \\\cline{1-2}
+{\bfseries {\itshape  filterDefaultCells \/}}&Flag to enable/disable the filtering of default dead cells \\\cline{1-2}
+\end{TabularC}
+
+\end{DoxyParagraph}
+\begin{DoxyAuthor}{Author}
+{\tt angela-\/isabela.lucaci-\/timoce@desy.de} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.2 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+May 2010 
+\end{DoxyDate}
+
+
+Definition at line 53 of file SiPMCalibrateProcessor.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::SiPMCalibrateProcessor@{CALICE::SiPMCalibrateProcessor}!calibrateEnergyAndFillOutputCollections@{calibrateEnergyAndFillOutputCollections}}
+\index{calibrateEnergyAndFillOutputCollections@{calibrateEnergyAndFillOutputCollections}!CALICE::SiPMCalibrateProcessor@{CALICE::SiPMCalibrateProcessor}}
+\subsubsection[{calibrateEnergyAndFillOutputCollections}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::SiPMCalibrateProcessor::calibrateEnergyAndFillOutputCollections (SiPMCalibrations $\ast$ {\em calibration}, \/  const float {\em rawEnergy}, \/  LCCollection $\ast$ {\em ahcHitOutputCol}, \/  LCCollection $\ast$ {\em ahcAmplOutputCol}, \/  LCRelationNavigator \& {\em relationNavigator})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1SiPMCalibrateProcessor_a21e550aa165c9a32c585642c91f5b436}
+
+
+Calibrate the energy (convert from energy in ADC counts to energy in MIPs). 
+\begin{DoxyParams}{Parameters}
+\item[{\em calibration}]calibration of the current SiPM \item[{\em rawEnergy}]raw energy, in ADC counts \item[{\em ahcHitOutputCol}]the AHC hit output collection, of type CalorimeterHit \item[{\em ahcAmplOutputCol}]the AHC amplitude output collection, of type LCGenericObject \item[{\em relationNavigator}]navigator through the relation between CalorimeterHit and AhcAmplitude \end{DoxyParams}
+
+
+Definition at line 454 of file SiPMCalibrateProcessor.cc.
+
+References \_\-ahcHitOutputColName, \_\-cellDescriptions, \_\-createSimRecRelation, \_\-doErrorCalculation, \_\-doGainTempCorr, \_\-doMipTempCorr, \_\-doSaturationCorr, \_\-energyScaleFactor, \_\-filterDeadCells, \_\-filterDefaultCells, \_\-mapper, \_\-mipCut, \_\-mipToGeVFactor, \_\-pedestalSubtraction, \_\-recoContainer, \_\-scaleEnergy, and \_\-zeroSuppression.
+
+Referenced by processEvent().\index{CALICE::SiPMCalibrateProcessor@{CALICE::SiPMCalibrateProcessor}!processEvent@{processEvent}}
+\index{processEvent@{processEvent}!CALICE::SiPMCalibrateProcessor@{CALICE::SiPMCalibrateProcessor}}
+\subsubsection[{processEvent}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::SiPMCalibrateProcessor::processEvent (LCEvent $\ast$ {\em evt})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCALICE_1_1SiPMCalibrateProcessor_ae71fa4bb6335fbb7ee61ab5d8754e152}
+
+
+Process event (the working horse). 
+\begin{DoxyParams}{Parameters}
+\item[{\em evt}]event to be processed \end{DoxyParams}
+
+
+Definition at line 214 of file SiPMCalibrateProcessor.cc.
+
+References \_\-ahcAmplOutputColName, \_\-ahcHitOutputColName, \_\-calibContainer, \_\-createSimRecRelation, \_\-doWriteOnlyRawAmplitude, \_\-hitAmplRelationColName, \_\-inputColName, \_\-isDATA, \_\-isFirstEvent, \_\-isMC, \_\-mapper, \_\-recoContainer, and calibrateEnergyAndFillOutputCollections().
+
+\subsection{Field Documentation}
+\index{CALICE::SiPMCalibrateProcessor@{CALICE::SiPMCalibrateProcessor}!\_\-isFirstEvent@{\_\-isFirstEvent}}
+\index{\_\-isFirstEvent@{\_\-isFirstEvent}!CALICE::SiPMCalibrateProcessor@{CALICE::SiPMCalibrateProcessor}}
+\subsubsection[{\_\-isFirstEvent}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf CALICE::SiPMCalibrateProcessor::\_\-isFirstEvent}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1SiPMCalibrateProcessor_a33046a6aada7df9b6a5c369d852c6c23}
+
+
+flag to switch to DATA/MC at the first event, the following events should be the same. 
+
+Definition at line 148 of file SiPMCalibrateProcessor.hh.
+
+Referenced by init(), and processEvent().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+SiPMCalibrateProcessor.hh\item 
+SiPMCalibrateProcessor.cc\end{DoxyCompactItemize}

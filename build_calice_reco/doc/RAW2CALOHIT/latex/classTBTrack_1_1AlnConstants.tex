@@ -1,0 +1,103 @@
+\section{TBTrack::AlnConstants Class Reference}
+\label{classTBTrack_1_1AlnConstants}\index{TBTrack::AlnConstants@{TBTrack::AlnConstants}}
+Inheritance diagram for TBTrack::AlnConstants::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classTBTrack_1_1AlnConstants}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ {\bfseries numberOfInts} = 0
+ \}
+\item 
+enum \{ {\bfseries numberOfFloats} = 0
+ \}
+\item 
+enum \{ {\bfseries numberOfDoubles} = 1+3$\ast$2$\ast$4
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries AlnConstants} (int period=0, int dataType=2)\label{classTBTrack_1_1AlnConstants_af91893338898d5c5d60add694f7ad53c}
+
+\item 
+double {\bfseries tdcUnit} () const \label{classTBTrack_1_1AlnConstants_af8ecb4ff47971cea86ea57719657405d}
+
+\item 
+void {\bfseries tdcUnit} (double t)\label{classTBTrack_1_1AlnConstants_a1070adc84db54a491c8ead531aa74bfe}
+
+\item 
+double {\bfseries cTzero} (unsigned d, unsigned l) const \label{classTBTrack_1_1AlnConstants_a92e168a711778633d7629411f6567ec6}
+
+\item 
+void {\bfseries cTzero} (unsigned d, unsigned l, double c)\label{classTBTrack_1_1AlnConstants_a02360b72db926a833aa6883221bb25c1}
+
+\item 
+double {\bfseries vDrift} (unsigned d, unsigned l) const \label{classTBTrack_1_1AlnConstants_a3e0815db478c533f423c090090ac7f58}
+
+\item 
+void {\bfseries vDrift} (unsigned d, unsigned l, double v)\label{classTBTrack_1_1AlnConstants_ab1801a04e89c0d92726ebaf82da6c7ea}
+
+\item 
+double {\bfseries vDquad} (unsigned d, unsigned l) const \label{classTBTrack_1_1AlnConstants_a502d35c057f8703828a8c4772c981372}
+
+\item 
+void {\bfseries vDquad} (unsigned d, unsigned l, double q)\label{classTBTrack_1_1AlnConstants_a69529ea7d72f1d98029aa479ef5f94a6}
+
+\item 
+double {\bfseries coordinate} (unsigned d, unsigned l, int t) const \label{classTBTrack_1_1AlnConstants_a4248f4f0634ada340af67a1e5129c5dc}
+
+\item 
+int {\bfseries tdcValue} (unsigned d, unsigned l, double c, double t=0.0) const \label{classTBTrack_1_1AlnConstants_aa51d47ab24355ca238e1e79ff8acf053}
+
+\item 
+std::ostream \& {\bfseries print} (std::ostream \&o=std::cout, const std::string \&s=\char`\"{}\char`\"{}) const \label{classTBTrack_1_1AlnConstants_aa01bb46450b492761c90392eb81411bc}
+
+\item 
+const int $\ast$ {\bfseries intData} () const \label{classTBTrack_1_1AlnConstants_afb793481bc8c9ea4786e9e52144cb708}
+
+\item 
+int $\ast$ {\bfseries intData} ()\label{classTBTrack_1_1AlnConstants_a5ffc45d080fe15974fca534ae01c3146}
+
+\item 
+const float $\ast$ {\bfseries floatData} () const \label{classTBTrack_1_1AlnConstants_a2d50c758aa6c1a6bbfa4790d7c1d1ed1}
+
+\item 
+float $\ast$ {\bfseries floatData} ()\label{classTBTrack_1_1AlnConstants_a48b746d9e7043bd80d2968bed18f21ef}
+
+\item 
+const double $\ast$ {\bfseries doubleData} () const \label{classTBTrack_1_1AlnConstants_afd83d2588465d22b8ef17cb39326ee5b}
+
+\item 
+double $\ast$ {\bfseries doubleData} ()\label{classTBTrack_1_1AlnConstants_aa07f0bb0b3cdde7eb56afa7050e626d9}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double {\bfseries \_\-tdcUnit}\label{classTBTrack_1_1AlnConstants_a2cf1c1f9615a86de4d37f9a72ff0292b}
+
+\item 
+double {\bfseries \_\-cTzero} [2][4]\label{classTBTrack_1_1AlnConstants_af55cc6424803c2d11d027bcec1b64f82}
+
+\item 
+double {\bfseries \_\-vDrift} [2][4]\label{classTBTrack_1_1AlnConstants_a31dab51bbeacb52b53f8d1bc2cd2466a}
+
+\item 
+double {\bfseries \_\-vDquad} [2][4]\label{classTBTrack_1_1AlnConstants_a91b9a4fcb791b1a3aeade9408633bbcf}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 16 of file AlnConstants.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+AlnConstants.hh\item 
+AlnConstants.cc\end{DoxyCompactItemize}

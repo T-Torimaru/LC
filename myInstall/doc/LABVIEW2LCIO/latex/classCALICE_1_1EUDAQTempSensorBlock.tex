@@ -1,0 +1,74 @@
+\section{CALICE::EUDAQTempSensorBlock Class Reference}
+\label{classCALICE_1_1EUDAQTempSensorBlock}\index{CALICE::EUDAQTempSensorBlock@{CALICE::EUDAQTempSensorBlock}}
+
+
+Class for the temperature sensor data as acquired by the AHCAL EUDAQ.  
+
+
+{\ttfamily \#include $<$EUDAQTempSensorBlock.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf EUDAQTempSensorBlock} (int LDANumber, int PortNumber, int T1, int T2, int T3, int T4, int T5, int T6, int TDIF, int TPWR)\label{classCALICE_1_1EUDAQTempSensorBlock_ae02d2597a925e3e7fd290a0b31d685c3}
+
+\begin{DoxyCompactList}\small\item\em Convenient c'tor. \item\end{DoxyCompactList}\item 
+{\bf EUDAQTempSensorBlock} (LCObject $\ast$obj)\label{classCALICE_1_1EUDAQTempSensorBlock_ac20c9533a2640ee57f741cfca85937eb}
+
+\begin{DoxyCompactList}\small\item\em 'Copy constructor' needed to interpret LCCollection read from file/database. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$EUDAQTempSensorBlock} ()\label{classCALICE_1_1EUDAQTempSensorBlock_a482b674c4674680f57ad441d32d3e7f6}
+
+\begin{DoxyCompactList}\small\item\em Important for memory handling. \item\end{DoxyCompactList}\item 
+int {\bfseries GetLDANumber} () const \label{classCALICE_1_1EUDAQTempSensorBlock_ae2f5861ac123e152117d8086d260ed28}
+
+\item 
+int {\bfseries GetPortNumber} () const \label{classCALICE_1_1EUDAQTempSensorBlock_aa85c8473e68609696ef73732ce2e1c73}
+
+\item 
+int {\bfseries GetT1} () const \label{classCALICE_1_1EUDAQTempSensorBlock_a05f7d3cd2f61b94b7b355dad9ed04e71}
+
+\item 
+int {\bfseries GetT2} () const \label{classCALICE_1_1EUDAQTempSensorBlock_a57fceddca009de039005ae35728279bf}
+
+\item 
+int {\bfseries GetT3} () const \label{classCALICE_1_1EUDAQTempSensorBlock_abfa60426a963bcd31243be0e472451bd}
+
+\item 
+int {\bfseries GetT4} () const \label{classCALICE_1_1EUDAQTempSensorBlock_a02a094c6b095e4aa1a813ba6027b039b}
+
+\item 
+int {\bfseries GetT5} () const \label{classCALICE_1_1EUDAQTempSensorBlock_a7dcee9102c3faddf788cb26584bd991f}
+
+\item 
+int {\bfseries GetT6} () const \label{classCALICE_1_1EUDAQTempSensorBlock_a8dc023707cd85d0617ac89f9ccd04f91}
+
+\item 
+int {\bfseries GetTDIF} () const \label{classCALICE_1_1EUDAQTempSensorBlock_a84eecef47e27057ca1a52c2a771f65ec}
+
+\item 
+int {\bfseries GetTPWR} () const \label{classCALICE_1_1EUDAQTempSensorBlock_a5f8f3e5ed6e1dafbd2bd2e5a6c571ded}
+
+\item 
+void {\bfseries print} (std::ostream \&os, int)\label{classCALICE_1_1EUDAQTempSensorBlock_a573889f528e77c39321d3042d8715301}
+
+\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1EUDAQTempSensorBlock_aaf80776bd59b87c45ef15e10316142c4}
+
+\begin{DoxyCompactList}\small\item\em Return the type of the class. \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1EUDAQTempSensorBlock_a63392b2373970e5d7d4854f5027a96ec}
+
+\begin{DoxyCompactList}\small\item\em Return a brief description of the data members. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for the temperature sensor data as acquired by the AHCAL EUDAQ. The class reflects that the data are received in the EUDAQ \begin{DoxyAuthor}{Author}
+A. Irles DESY Hamburg, based on \doxyref{TempSensorBlock}{p.}{classCALICE_1_1TempSensorBlock} by S. Lu (date Dec 17 2012) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+25june 2015 
+\end{DoxyDate}
+
+
+Definition at line 23 of file EUDAQTempSensorBlock.hh.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+EUDAQTempSensorBlock.hh\end{DoxyCompactItemize}

@@ -1,0 +1,173 @@
+\section{TConvolution Class Reference}
+\label{classTConvolution}\index{TConvolution@{TConvolution}}
+
+
+ROOT class which generates the convolution of two functions.  
+
+
+{\ttfamily \#include $<$TConvolution.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf TConvolution} ()\label{classTConvolution_a5efa34bb8cd60e092581b64224ed8410}
+
+\begin{DoxyCompactList}\small\item\em Standard constructor. The \doxyref{Init()}{p.}{classTConvolution_a432fc14c48910df995d2a7fe6c6a1573} function has to be used to set the parameters. \item\end{DoxyCompactList}\item 
+{\bf TConvolution} (const char $\ast$name, TF1 $\ast$f1, TF1 $\ast$f2, bool addScale=true, Int\_\-t stepsPerPoint=50)\label{classTConvolution_a158f63a9c229919ffe33c2dd5feadcd7}
+
+\begin{DoxyCompactList}\small\item\em Constructor with initialisation parameters. See \doxyref{Init()}{p.}{classTConvolution_a432fc14c48910df995d2a7fe6c6a1573} function for parameter description. \item\end{DoxyCompactList}\item 
+void {\bf Init} (const char $\ast$name, TF1 $\ast$f1, TF1 $\ast$f2, bool addScale=true, Int\_\-t stepsPerPoint=50)
+\begin{DoxyCompactList}\small\item\em Initialisation function. \item\end{DoxyCompactList}\item 
+TF1 $\ast$ {\bf GetConvolutedFunction} ()
+\begin{DoxyCompactList}\small\item\em get the resulting function \item\end{DoxyCompactList}\item 
+TF1 $\ast$ {\bf GetF1} ()
+\begin{DoxyCompactList}\small\item\em get access to the first internal function \item\end{DoxyCompactList}\item 
+TF1 $\ast$ {\bf GetF2} ()
+\begin{DoxyCompactList}\small\item\em get access to the second internal function \item\end{DoxyCompactList}\item 
+Double\_\-t {\bf operator()} (Double\_\-t $\ast$x, Double\_\-t $\ast$par)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Double\_\-t {\bfseries integrand} (Double\_\-t t, Double\_\-t x0)\label{classTConvolution_a0dc90fb152886b2fa811f065c0775bc8}
+
+\item 
+Double\_\-t {\bfseries convolutionFkt} (Double\_\-t $\ast$x, Double\_\-t $\ast$par)\label{classTConvolution_ae040a18550d990845ea41546b88560ae}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bfseries \_\-name}\label{classTConvolution_aae8d0e128e4bb487012cb1ef752c43be}
+
+\item 
+TF1 $\ast$ {\bfseries \_\-f1}\label{classTConvolution_a00ebb43017df7488e21e927e18162c1f}
+
+\item 
+TF1 $\ast$ {\bfseries \_\-f2}\label{classTConvolution_adea7f44d58c4d909e0b75d41157344c2}
+
+\item 
+TF1 $\ast$ {\bfseries \_\-convolution}\label{classTConvolution_ac9a1f348cabcb8b0ed86992c279586ce}
+
+\item 
+Int\_\-t {\bfseries \_\-nPar1}\label{classTConvolution_a06390a21505766c7fd74debd2c15dde7}
+
+\item 
+Int\_\-t {\bfseries \_\-nPar2}\label{classTConvolution_a31ba676b4d6b87c003f32cfc77e9a47a}
+
+\item 
+Int\_\-t {\bfseries \_\-baseNpar}\label{classTConvolution_a706f57e007e699039dd4b5086b4dd554}
+
+\item 
+Int\_\-t {\bfseries \_\-stepsPerPoint}\label{classTConvolution_a2e1a7d63609f597d36687951a65d3f76}
+
+\item 
+Int\_\-t {\bfseries \_\-scaleParNumber}\label{classTConvolution_a9d789055255d62e4382a10ea4a737f07}
+
+\item 
+Double\_\-t {\bfseries \_\-f1Rmin}\label{classTConvolution_a1d4d04a8a3a18837ad56a0c195dbd1fe}
+
+\item 
+Double\_\-t {\bfseries \_\-f1Rmax}\label{classTConvolution_a642c24cf3216b284609800223e082f39}
+
+\item 
+Double\_\-t {\bfseries \_\-f2Rmin}\label{classTConvolution_a351a86c5c23a95c553f47e09769ba12f}
+
+\item 
+Double\_\-t {\bfseries \_\-f2Rmax}\label{classTConvolution_a7b5a24abf8305bd1080c7ee5ed037153}
+
+\item 
+Double\_\-t {\bfseries \_\-Rmin}\label{classTConvolution_a642dd1c40e701d0b41188b4e1bcc6e4b}
+
+\item 
+Double\_\-t {\bfseries \_\-Rmax}\label{classTConvolution_aab18051f17a5697a23e908feee026195}
+
+\item 
+bool {\bfseries \_\-addScale}\label{classTConvolution_afccab6bf0322cc5a07b014c30f52367e}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+ROOT class which generates the convolution of two functions. The convoluted function corresponds to \[ f_{conv}(x) = \int_{min_{i}}^{max_{i}}{f_{1}(t) \cdot f_{2}(x-t) \textrm{d}t} \] where $ min_{i} $ ($ max_{i} $) is the minimum (maximum) of the range of function $ f_{i} $. The integral is calculated as the Riemann sum with selectable number of steps.
+
+The range of the input function $ f_{1} $ and the number of steps in the integration have to be chosen reasonably to achieve a good result with a acceptable computing effort. If the integral of one of the functions is easier to approximate it should be used as $ f_{1} $.
+
+An additional scaling parameter can be muliplied to the result of the convolution. This is for fitting to data.
+
+\begin{DoxyAttention}{Attention}
+This class needs ROOT version 5.16 or above.
+\end{DoxyAttention}
+\begin{DoxyAuthor}{Author}
+{\tt Benjamin.Lutz@desy.de} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+September 2008 
+\end{DoxyDate}
+
+
+Definition at line 31 of file TConvolution.h.
+
+\subsection{Member Function Documentation}
+\index{TConvolution@{TConvolution}!GetConvolutedFunction@{GetConvolutedFunction}}
+\index{GetConvolutedFunction@{GetConvolutedFunction}!TConvolution@{TConvolution}}
+\subsubsection[{GetConvolutedFunction}]{\setlength{\rightskip}{0pt plus 5cm}TF1 $\ast$ TConvolution::GetConvolutedFunction ()}\label{classTConvolution_a4f2e261e138ae00dd6eec73fbfd57cdc}
+
+
+get the resulting function \begin{DoxyReturn}{Returns}
+pointer to the convoluted function 
+\end{DoxyReturn}
+
+
+Definition at line 43 of file TConvolution.cc.\index{TConvolution@{TConvolution}!GetF1@{GetF1}}
+\index{GetF1@{GetF1}!TConvolution@{TConvolution}}
+\subsubsection[{GetF1}]{\setlength{\rightskip}{0pt plus 5cm}TF1$\ast$ TConvolution::GetF1 ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classTConvolution_a57a972c335a8c28fdd2c8ff348544935}
+
+
+get access to the first internal function \begin{DoxyReturn}{Returns}
+pointer to the internal copy of the first function 
+\end{DoxyReturn}
+
+
+Definition at line 68 of file TConvolution.h.\index{TConvolution@{TConvolution}!GetF2@{GetF2}}
+\index{GetF2@{GetF2}!TConvolution@{TConvolution}}
+\subsubsection[{GetF2}]{\setlength{\rightskip}{0pt plus 5cm}TF1$\ast$ TConvolution::GetF2 ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classTConvolution_a8abb64b348b2d26d5cf245984858b144}
+
+
+get access to the second internal function \begin{DoxyReturn}{Returns}
+pointer to the second copy of the first function 
+\end{DoxyReturn}
+
+
+Definition at line 73 of file TConvolution.h.\index{TConvolution@{TConvolution}!Init@{Init}}
+\index{Init@{Init}!TConvolution@{TConvolution}}
+\subsubsection[{Init}]{\setlength{\rightskip}{0pt plus 5cm}void TConvolution::Init (const char $\ast$ {\em name}, \/  TF1 $\ast$ {\em f1}, \/  TF1 $\ast$ {\em f2}, \/  bool {\em addScale} = {\ttfamily true}, \/  Int\_\-t {\em stepsPerPoint} = {\ttfamily 50})}\label{classTConvolution_a432fc14c48910df995d2a7fe6c6a1573}
+
+
+Initialisation function. 
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]Name of the resulting convoluted function. This is the ROOT-\/Object-\/name and has to be unique. \item[{\em f1}]First function of the convolution \item[{\em f2}]Second function of the convolution \item[{\em addScale}]If this is true, a scale parameter is multiplied to the result of the convolution. This allows to use normalized functions in the convolution. The ROOT TF1-\/parameter number will be $ N_{f1} + N_{f2} + 1 $, where $ N_{x} $ is the number of parameters of input funciton $ x $ \item[{\em stepsPerPoint}]Number of steps in the approximation of the convolution integral. \end{DoxyParams}
+
+
+Definition at line 19 of file TConvolution.cc.
+
+Referenced by TConvolution().\index{TConvolution@{TConvolution}!operator()@{operator()}}
+\index{operator()@{operator()}!TConvolution@{TConvolution}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}Double\_\-t TConvolution::operator() (Double\_\-t $\ast$ {\em x}, \/  Double\_\-t $\ast$ {\em par})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classTConvolution_a35cbc0ef409d8128c0ad1363b90f9dc5}
+This operator allows that the class can be used to initialise a ROOT TF1() function
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em x}]pointer to array of input variables (in this case pointer to x) \item[{\em par}]pointer to array of function parameters \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value of the convoluted function 
+\end{DoxyReturn}
+
+
+Definition at line 82 of file TConvolution.h.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+/afs/desy.de/user/t/torimart/work/CosmiTestLCIO/calice\_\-calib/calibmulti/include/TConvolution.h\item 
+/afs/desy.de/user/t/torimart/work/CosmiTestLCIO/calice\_\-calib/calibmulti/src/TConvolution.cc\end{DoxyCompactItemize}

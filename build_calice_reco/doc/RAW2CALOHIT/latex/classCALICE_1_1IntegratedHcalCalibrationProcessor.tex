@@ -1,0 +1,117 @@
+\section{CALICE::IntegratedHcalCalibrationProcessor Class Reference}
+\label{classCALICE_1_1IntegratedHcalCalibrationProcessor}\index{CALICE::IntegratedHcalCalibrationProcessor@{CALICE::IntegratedHcalCalibrationProcessor}}
+
+
+The Ahcal calibration processor.  
+
+
+{\ttfamily \#include $<$IntegratedHcalCalibrationProcessor.hh$>$}Inheritance diagram for CALICE::IntegratedHcalCalibrationProcessor::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCALICE_1_1IntegratedHcalCalibrationProcessor}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf IntegratedHcalCalibrationProcessor} $\ast$ {\bfseries newProcessor} ()\label{classCALICE_1_1IntegratedHcalCalibrationProcessor_a598bbbd1a328ce27442d3a9d026b9867}
+
+\item 
+virtual void {\bfseries init} ()\label{classCALICE_1_1IntegratedHcalCalibrationProcessor_afcb4ac8fef8a5bcc1fd5ae4b8620af85}
+
+\item 
+virtual void {\bfseries processEvent} (lcio::LCEvent $\ast$evt)\label{classCALICE_1_1IntegratedHcalCalibrationProcessor_ae95a64ab3b6bbbd9b239f41f7d6c98c3}
+
+\item 
+virtual void {\bfseries end} ()\label{classCALICE_1_1IntegratedHcalCalibrationProcessor_a8f73d365b94979a80808dc903cfc9c00}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bfseries \_\-inputColName}\label{classCALICE_1_1IntegratedHcalCalibrationProcessor_ad9b166089f6501b37a89d13c0a25bb2e}
+
+\item 
+std::string {\bfseries \_\-outputColName}\label{classCALICE_1_1IntegratedHcalCalibrationProcessor_a7b272632e6fd4e847dbb9dee88b7ceb8}
+
+\item 
+int {\bfseries \_\-zeroSuppression}\label{classCALICE_1_1IntegratedHcalCalibrationProcessor_a50776188b69d33bec8a734fcc082b22b}
+
+\item 
+float {\bfseries \_\-significanceCut}\label{classCALICE_1_1IntegratedHcalCalibrationProcessor_a0f9dbdb9a4ebc2b7955679cc64e19636}
+
+\item 
+int {\bfseries \_\-skipPedestals}\label{classCALICE_1_1IntegratedHcalCalibrationProcessor_a55d12f2aaaab3f29212109bfde96b759}
+
+\item 
+int {\bfseries \_\-minPedNumber}\label{classCALICE_1_1IntegratedHcalCalibrationProcessor_a2d709e61047bcb4cfbad62fde9d140df}
+
+\item 
+int {\bfseries \_\-pedCounter}\label{classCALICE_1_1IntegratedHcalCalibrationProcessor_ae916fee0673eb80e5acc3fdb73adc24a}
+
+\item 
+int {\bfseries \_\-pedestalSubtraction}\label{classCALICE_1_1IntegratedHcalCalibrationProcessor_a1c0d957bc70006c6f071d53799da2c5f}
+
+\item 
+float {\bfseries \_\-mipCut}\label{classCALICE_1_1IntegratedHcalCalibrationProcessor_a5670d938f278f3d4d66fbf481f0ec4c4}
+
+\item 
+bool {\bfseries \_\-doSaturationCorrection}\label{classCALICE_1_1IntegratedHcalCalibrationProcessor_aa022999f9178f6b1a8ea7575362fe8d1}
+
+\item 
+unsigned long {\bfseries \_\-hitCounter}\label{classCALICE_1_1IntegratedHcalCalibrationProcessor_a68d73faf87415a4af9a6e3a0f35476e8}
+
+\item 
+unsigned long {\bfseries \_\-invalidMIPCounter}\label{classCALICE_1_1IntegratedHcalCalibrationProcessor_a8abdbee26c81f4aa9336ff5b07ef9cde}
+
+\item 
+unsigned long {\bfseries \_\-invalidSaturationCorrectionCounter}\label{classCALICE_1_1IntegratedHcalCalibrationProcessor_a34510ab0a63023762ef2eb82b3e57587}
+
+\item 
+unsigned long {\bfseries \_\-saturationCounter}\label{classCALICE_1_1IntegratedHcalCalibrationProcessor_aaf95bbbe9b7d96f34c900eaedc800a15}
+
+\item 
+unsigned long {\bfseries \_\-eventCounter}\label{classCALICE_1_1IntegratedHcalCalibrationProcessor_a244b0feb4e3c0dbc80cdb881d33531a0}
+
+\item 
+std::map$<$ unsigned, unsigned $>$ {\bfseries \_\-invalidMIPCalibrations}\label{classCALICE_1_1IntegratedHcalCalibrationProcessor_a865d6e28f28638bf3af375cb31555db4}
+
+\item 
+std::map$<$ unsigned, unsigned $>$ {\bfseries \_\-invalidSaturationCorrections}\label{classCALICE_1_1IntegratedHcalCalibrationProcessor_a1a8724c11472e790d565b76438f3d6cc}
+
+\item 
+std::map$<$ unsigned, unsigned $>$ {\bfseries \_\-saturations}\label{classCALICE_1_1IntegratedHcalCalibrationProcessor_aec10a6498f7f035f9909bfc1d87aeeb7}
+
+\item 
+double {\bfseries \_\-pedSum} [HCAL\_\-N\_\-MOD+1][HCAL\_\-N\_\-CELL]\label{classCALICE_1_1IntegratedHcalCalibrationProcessor_a62f50a5f4d2f7b8f1a346c01f6b0d8df}
+
+\item 
+double {\bfseries \_\-pedSumSquare} [HCAL\_\-N\_\-MOD+1][HCAL\_\-N\_\-CELL]\label{classCALICE_1_1IntegratedHcalCalibrationProcessor_a452abcc49cbfe1c24f9671d1864c39a8}
+
+\item 
+unsigned {\bfseries \_\-pedNum} [HCAL\_\-N\_\-MOD+1][HCAL\_\-N\_\-CELL]\label{classCALICE_1_1IntegratedHcalCalibrationProcessor_aadb43e8133ddf7a6fc74f6812fa65d53}
+
+\item 
+float {\bfseries \_\-ped} [HCAL\_\-N\_\-MOD+1][HCAL\_\-N\_\-CELL]\label{classCALICE_1_1IntegratedHcalCalibrationProcessor_a15da76dd2514ace90b34ec890ee49f3a}
+
+\item 
+float {\bfseries \_\-pedWidth} [HCAL\_\-N\_\-MOD+1][HCAL\_\-N\_\-CELL]\label{classCALICE_1_1IntegratedHcalCalibrationProcessor_aaf5121c45f2bd9af321b74d6247186fa}
+
+\item 
+float {\bfseries \_\-pedError} [HCAL\_\-N\_\-MOD+1][HCAL\_\-N\_\-CELL]\label{classCALICE_1_1IntegratedHcalCalibrationProcessor_aa0fd128f60f5a4b034660f0ed4c5428c}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The Ahcal calibration processor. \begin{DoxyAuthor}{Author}
+Sebastian Schmidt 
+\end{DoxyAuthor}
+
+
+Definition at line 42 of file IntegratedHcalCalibrationProcessor.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+IntegratedHcalCalibrationProcessor.hh\item 
+IntegratedHcalCalibrationProcessor.cc\end{DoxyCompactItemize}

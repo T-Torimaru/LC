@@ -1,0 +1,109 @@
+\section{CALICE::BmlCaen767ReadoutConfigurationBlock Class Reference}
+\label{classCALICE_1_1BmlCaen767ReadoutConfigurationBlock}\index{CALICE::BmlCaen767ReadoutConfigurationBlock@{CALICE::BmlCaen767ReadoutConfigurationBlock}}
+
+
+Stores the configuration of the Caen767 TDC into the database At the moment I am writing this class I don't know whether they'll serve for something but it is a small uncomplicated class, so here we go.  
+
+
+{\ttfamily \#include $<$BmlCaen767ReadoutConfigurationBlock.hh$>$}Inheritance diagram for CALICE::BmlCaen767ReadoutConfigurationBlock::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCALICE_1_1BmlCaen767ReadoutConfigurationBlock}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf BmlCaen767ReadoutConfigurationBlock} ()\label{classCALICE_1_1BmlCaen767ReadoutConfigurationBlock_a7b9ac595633452fbbdee1892e94773a2}
+
+\begin{DoxyCompactList}\small\item\em Default Constructor. \item\end{DoxyCompactList}\item 
+{\bf BmlCaen767ReadoutConfigurationBlock} (LCObject $\ast$obj)\label{classCALICE_1_1BmlCaen767ReadoutConfigurationBlock_aee0f6722067d06d4583bea18ffb2dc1e}
+
+\begin{DoxyCompactList}\small\item\em 'Copy constructor' needed to interpret LCCollection read from file/database. \item\end{DoxyCompactList}\item 
+{\bf BmlCaen767ReadoutConfigurationBlock} \& {\bf setCrateNumber} (int cratenumber)
+\begin{DoxyCompactList}\small\item\em set the packed board id. \item\end{DoxyCompactList}\item 
+int {\bf getCrateNumber} ()\label{classCALICE_1_1BmlCaen767ReadoutConfigurationBlock_a98283f15edae4729e382eaa0ef556be4}
+
+\begin{DoxyCompactList}\small\item\em Return the crate number. \item\end{DoxyCompactList}\item 
+{\bf BmlCaen767ReadoutConfigurationBlock} \& {\bf setReadPeriod} (int readperiod)\label{classCALICE_1_1BmlCaen767ReadoutConfigurationBlock_ad7910acd3e581a551f968402cb943a5d}
+
+\begin{DoxyCompactList}\small\item\em Set the Read Period. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getReadPeriod} () const \label{classCALICE_1_1BmlCaen767ReadoutConfigurationBlock_a55139c919133134fc95514a97252c99b}
+
+\begin{DoxyCompactList}\small\item\em Return the Read Period. \item\end{DoxyCompactList}\item 
+{\bf BmlCaen767ReadoutConfigurationBlock} \& {\bf setBools} (bool enable, bool softtrigger, bool bltro, bool arrayro)\label{classCALICE_1_1BmlCaen767ReadoutConfigurationBlock_a0f4e57ffa62de58619397cdc8b203f42}
+
+\begin{DoxyCompactList}\small\item\em Store the indicators of the readout mode. \item\end{DoxyCompactList}\item 
+bool {\bfseries isEnabled} ()\label{classCALICE_1_1BmlCaen767ReadoutConfigurationBlock_a6a822edd1400153f4db0d779fa24862b}
+
+\item 
+bool {\bfseries isSoftTrigger} ()\label{classCALICE_1_1BmlCaen767ReadoutConfigurationBlock_ae6a1be49e52e35b4966ebc0c373bcdff}
+
+\item 
+bool {\bfseries isBltReadout} ()\label{classCALICE_1_1BmlCaen767ReadoutConfigurationBlock_a9aad9174d74e8f233e456c807f28ec97}
+
+\item 
+bool {\bfseries isArrayReadout} ()\label{classCALICE_1_1BmlCaen767ReadoutConfigurationBlock_ad67e67c908f7f4a337c9d2ea61a93229}
+
+\item 
+{\bf BmlCaen767ReadoutConfigurationBlock} \& {\bf setMode} (int mode)
+\begin{DoxyCompactList}\small\item\em Store the readout mode word note that this word contains the information which you also get with the isSoftTrigger, isEnable, getCrateNumber etc. \item\end{DoxyCompactList}\item 
+int {\bf getMode} ()\label{classCALICE_1_1BmlCaen767ReadoutConfigurationBlock_a317aceac7a964643ece66c7f280ed79b}
+
+\begin{DoxyCompactList}\small\item\em Return the readout mode word. \item\end{DoxyCompactList}\item 
+void {\bf print} (std::ostream \&os)\label{classCALICE_1_1BmlCaen767ReadoutConfigurationBlock_a2abf8314fda5aab33b4d3bee730f3c77}
+
+\begin{DoxyCompactList}\small\item\em Convenient print method. \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1BmlCaen767ReadoutConfigurationBlock_a72df8e4c6c2ea5a90fe48efe92844010}
+
+\begin{DoxyCompactList}\small\item\em Return the type of the class. \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1BmlCaen767ReadoutConfigurationBlock_a8adf9e63470589b2e516edf3642d297e}
+
+\begin{DoxyCompactList}\small\item\em Return a brief description of the data members. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Stores the configuration of the Caen767 TDC into the database At the moment I am writing this class I don't know whether they'll serve for something but it is a small uncomplicated class, so here we go. \begin{DoxySeeAlso}{See also}
+\doxyref{ConditionsChangeDelegator}{p.}{classCALICE_1_1ConditionsChangeDelegator} 
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Author}
+R. Poeschl LAL (based on the other interface classes)
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Aug 2006 
+\end{DoxyDate}
+
+
+Definition at line 36 of file BmlCaen767ReadoutConfigurationBlock.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::BmlCaen767ReadoutConfigurationBlock@{CALICE::BmlCaen767ReadoutConfigurationBlock}!setCrateNumber@{setCrateNumber}}
+\index{setCrateNumber@{setCrateNumber}!CALICE::BmlCaen767ReadoutConfigurationBlock@{CALICE::BmlCaen767ReadoutConfigurationBlock}}
+\subsubsection[{setCrateNumber}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BmlCaen767ReadoutConfigurationBlock}\& CALICE::BmlCaen767ReadoutConfigurationBlock::setCrateNumber (int {\em cratenumber})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1BmlCaen767ReadoutConfigurationBlock_ae18446e9805a9701e97a7153f9f139ce}
+
+
+set the packed board id. \begin{DoxySeeAlso}{See also}
+\doxyref{BoardID}{p.}{classCALICE_1_1BoardID} For the Caen 767 TDC the boardID has a slightly different meaning compared with the CrcBoards slotID and board component numbers are just the MSB and LSB of the base address. Set the crate number 
+\end{DoxySeeAlso}
+
+
+Definition at line 60 of file BmlCaen767ReadoutConfigurationBlock.hh.
+
+References CALICE::LCGenericObjectImplExt::obj().
+
+Referenced by BmlCaen767ReadoutConfigurationBlock().\index{CALICE::BmlCaen767ReadoutConfigurationBlock@{CALICE::BmlCaen767ReadoutConfigurationBlock}!setMode@{setMode}}
+\index{setMode@{setMode}!CALICE::BmlCaen767ReadoutConfigurationBlock@{CALICE::BmlCaen767ReadoutConfigurationBlock}}
+\subsubsection[{setMode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BmlCaen767ReadoutConfigurationBlock}\& CALICE::BmlCaen767ReadoutConfigurationBlock::setMode (int {\em mode})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1BmlCaen767ReadoutConfigurationBlock_a73230994b130b114873b2f9b87f7fb25}
+
+
+Store the readout mode word note that this word contains the information which you also get with the isSoftTrigger, isEnable, getCrateNumber etc. methods we add the word in case meaning of the bits therein have changed or new inidcators are added and we weren't aware of it. Hence this is just a safety net 
+
+Definition at line 116 of file BmlCaen767ReadoutConfigurationBlock.hh.
+
+References CALICE::LCGenericObjectImplExt::obj().
+
+Referenced by BmlCaen767ReadoutConfigurationBlock().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+BmlCaen767ReadoutConfigurationBlock.hh\end{DoxyCompactItemize}

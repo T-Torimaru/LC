@@ -1,0 +1,103 @@
+\section{marlin::LabviewConverter2 Class Reference}
+\label{classmarlin_1_1LabviewConverter2}\index{marlin::LabviewConverter2@{marlin::LabviewConverter2}}
+
+
+Processor for reading the AHCAL Labview asscii files.  
+
+
+{\ttfamily \#include $<$LabviewConverter2.hh$>$}\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf rawData}
+\begin{DoxyCompactList}\small\item\em The labview data format. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf LabviewConverter2} $\ast$ {\bf newProcessor} ()\label{classmarlin_1_1LabviewConverter2_a675d56e8eeba4d2ad85e8ced3884b090}
+
+\begin{DoxyCompactList}\small\item\em Implementation of new Processor returns pointer to processor. \item\end{DoxyCompactList}\item 
+virtual void {\bf readDataSource} (int numEvents)\label{classmarlin_1_1LabviewConverter2_a1548f59e1de895ed0d6ca0e749dd0261}
+
+\begin{DoxyCompactList}\small\item\em Creates events with LCGenrealObject collections from the Labview input file and calls all active processors' processEvent() and processRunHeader Method. \item\end{DoxyCompactList}\item 
+void {\bf writeSlowControl} ()\label{classmarlin_1_1LabviewConverter2_a55ebf8a0b8a4d3227c106937dba96a39}
+
+\begin{DoxyCompactList}\small\item\em work on slow control data, ASIC \item\end{DoxyCompactList}\item 
+virtual void {\bf init} ()
+\begin{DoxyCompactList}\small\item\em work on slow control data, Temperature \item\end{DoxyCompactList}\item 
+virtual void {\bf end} ()\label{classmarlin_1_1LabviewConverter2_a3afe7b429e0851d276e01ead2115d848}
+
+\begin{DoxyCompactList}\small\item\em end method \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bf \_\-ofile}
+\begin{DoxyCompactList}\small\item\em The string variable to access the data. \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-data}\label{classmarlin_1_1LabviewConverter2_a5256b6a520932eda9430b64bdc57d983}
+
+\begin{DoxyCompactList}\small\item\em The string variable to access the data. \item\end{DoxyCompactList}\item 
+int {\bf \_\-runNumber}\label{classmarlin_1_1LabviewConverter2_a296e5632f4f412b507918e716198644a}
+
+\begin{DoxyCompactList}\small\item\em The run number. \item\end{DoxyCompactList}\item 
+int {\bf \_\-SlowControlLineNumber}\label{classmarlin_1_1LabviewConverter2_ad4d497210ab5766096e996e31c6d4230}
+
+\begin{DoxyCompactList}\small\item\em Slow control line number, HBU: 120, EPT: 1920. \item\end{DoxyCompactList}\item 
+int {\bf \_\-HBUNumber}
+\begin{DoxyCompactList}\small\item\em The HBU number: HBUVI: 6; HBUVI: 7, HBUVIII: 8, HBUIX: 9. \item\end{DoxyCompactList}\item 
+int {\bf \_\-EPTModelNr}\label{classmarlin_1_1LabviewConverter2_acb3e4506ca6a43017cfa26efa5170b99}
+
+\begin{DoxyCompactList}\small\item\em The EPT model number: CERN November testbeam EPT: 1. \item\end{DoxyCompactList}\item 
+int {\bf nCorruptedCycle}\label{classmarlin_1_1LabviewConverter2_a51f65918a12c7a77d03eba15a7d049cd}
+
+\begin{DoxyCompactList}\small\item\em Counter for number of corrupted ROC. \item\end{DoxyCompactList}\item 
+std::stringstream {\bf SlowControl}\label{classmarlin_1_1LabviewConverter2_ab042338dff0484ca2b443b04b548e190}
+
+\begin{DoxyCompactList}\small\item\em Slow Control data block. \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-detectorTypeName}\label{classmarlin_1_1LabviewConverter2_a856b33e1b7efb3a11e3e1f3d857edcc4}
+
+\begin{DoxyCompactList}\small\item\em The string variable of the detector type name, AHC AEC. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Processor for reading the AHCAL Labview asscii files. It processes the input data to create events with LCIO collections of the AHCAL Labview ascii output. Based on F. Gaede's StdHepReader to be found in the marlin package. \begin{DoxyAuthor}{Author}
+: S. Lu (DESY Hamburg) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Aug 15 2012 
+\end{DoxyDate}
+
+
+Definition at line 18 of file LabviewConverter2.hh.
+
+\subsection{Member Function Documentation}
+\index{marlin::LabviewConverter2@{marlin::LabviewConverter2}!init@{init}}
+\index{init@{init}!marlin::LabviewConverter2@{marlin::LabviewConverter2}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void marlin::LabviewConverter2::init ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classmarlin_1_1LabviewConverter2_a69acbbef280d0aa78c058bc43bb7cc2d}
+
+
+work on slow control data, Temperature init method 
+
+Definition at line 66 of file LabviewConverter2.cc.
+
+References nCorruptedCycle.
+
+\subsection{Field Documentation}
+\index{marlin::LabviewConverter2@{marlin::LabviewConverter2}!\_\-HBUNumber@{\_\-HBUNumber}}
+\index{\_\-HBUNumber@{\_\-HBUNumber}!marlin::LabviewConverter2@{marlin::LabviewConverter2}}
+\subsubsection[{\_\-HBUNumber}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf marlin::LabviewConverter2::\_\-HBUNumber}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classmarlin_1_1LabviewConverter2_a8dc9c62b6c335f9af82b17b00b7c6c1b}
+
+
+The HBU number: HBUVI: 6; HBUVI: 7, HBUVIII: 8, HBUIX: 9. 
+
+Definition at line 66 of file LabviewConverter2.hh.\index{marlin::LabviewConverter2@{marlin::LabviewConverter2}!\_\-ofile@{\_\-ofile}}
+\index{\_\-ofile@{\_\-ofile}!marlin::LabviewConverter2@{marlin::LabviewConverter2}}
+\subsubsection[{\_\-ofile}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf marlin::LabviewConverter2::\_\-ofile}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classmarlin_1_1LabviewConverter2_a71f598537b02b4a46c1c2622dbac8d9e}
+
+
+The string variable to access the data. Requires \char`\"{}yourpath/Run\char`\"{} 
+
+Definition at line 53 of file LabviewConverter2.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+LabviewConverter2.hh\item 
+LabviewConverter2.cc\end{DoxyCompactItemize}

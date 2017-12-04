@@ -1,0 +1,706 @@
+\section{Functions for (Mokka) cell ID}
+\label{group__CellIDgroup}\index{Functions for (Mokka) cell ID@{Functions for (Mokka) cell ID}}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf CALICE::CellIterator}
+\begin{DoxyCompactList}\small\item\em iterator to run over all valid (Mokka) cell IDs \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf CALICE::Ahc2Mapper::getCellIDFromModChipChan} (const unsigned int module, const unsigned int chip, const unsigned int channel) const 
+\begin{DoxyCompactList}\small\item\em generate (Mokka) cellID from module, chip, channel \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::Ahc2Mapper::getModuleFromCellID} (const int cellID) const 
+\begin{DoxyCompactList}\small\item\em module number from (Mokka) CellID \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::Ahc2Mapper::getModuleFromCellID} (const int cellID, bool \&valid) const 
+\begin{DoxyCompactList}\small\item\em get module (number) in which this cell is included from (Mokka) cellID \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::Ahc2Mapper::getChipFromCellID} (const int cellID) const 
+\begin{DoxyCompactList}\small\item\em chip number from (Mokka) CellID \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::Ahc2Mapper::getChanFromCellID} (const int cellID) const 
+\begin{DoxyCompactList}\small\item\em channel number from (Mokka) CellID \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::Ahc2Mapper::getCrateFromCellID} (const int cellID) const 
+\begin{DoxyCompactList}\small\item\em crate number from (Mokka) CellID \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::Ahc2Mapper::getSlotFromCellID} (const int cellID) const 
+\begin{DoxyCompactList}\small\item\em slot number from (Mokka) CellID \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::Ahc2Mapper::getFeFromCellID} (const int cellID) const 
+\begin{DoxyCompactList}\small\item\em front end number from (Mokka) CellID \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::Ahc2Mapper::getISizeFromCellID} (const int cellID) const 
+\begin{DoxyCompactList}\small\item\em get cell size in I direction of (Mokka) CellID coordinate \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::Ahc2Mapper::getJSizeFromCellID} (const int cellID) const 
+\begin{DoxyCompactList}\small\item\em get cell size in J direction of (Mokka) CellID coordinate \item\end{DoxyCompactList}\item 
+int {\bf CALICE::AhcMapper::getCellIDFromModChipChan} (const unsigned int module, const unsigned int chip, const unsigned int channel) const 
+\begin{DoxyCompactList}\small\item\em generate (Mokka) cellID from module, chip, channel \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::AhcMapper::getModuleFromCellID} (const int cellID) const 
+\begin{DoxyCompactList}\small\item\em module number from (Mokka) CellID \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::AhcMapper::getModuleFromCellID} (const int cellID, bool \&valid) const 
+\begin{DoxyCompactList}\small\item\em get module (number) in which this cell is included from (Mokka) cellID \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::AhcMapper::getChipFromCellID} (const int cellID) const 
+\begin{DoxyCompactList}\small\item\em chip number from (Mokka) CellID \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::AhcMapper::getChanFromCellID} (const int cellID) const 
+\begin{DoxyCompactList}\small\item\em channel number from (Mokka) CellID \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::AhcMapper::getCrateFromCellID} (const int cellID) const 
+\begin{DoxyCompactList}\small\item\em crate number from (Mokka) CellID \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::AhcMapper::getSlotFromCellID} (const int cellID) const 
+\begin{DoxyCompactList}\small\item\em slot number from (Mokka) CellID \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::AhcMapper::getFeFromCellID} (const int cellID) const 
+\begin{DoxyCompactList}\small\item\em front end number from (Mokka) CellID \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::AhcMapper::getISizeFromCellID} (const int cellID) const 
+\begin{DoxyCompactList}\small\item\em get cell size in I direction of (Mokka) CellID coordinate \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::AhcMapper::getJSizeFromCellID} (const int cellID) const 
+\begin{DoxyCompactList}\small\item\em get cell size in J direction of (Mokka) CellID coordinate \item\end{DoxyCompactList}\item 
+void {\bf CALICE::DecoderSet::setCellIDEncoding} (const std::string \&encoding)
+\begin{DoxyCompactList}\small\item\em set a new cell ID encoding string if an empty string is given the function will use the default encoding string \item\end{DoxyCompactList}\item 
+const std::string \& {\bf CALICE::DecoderSet::getCellIDEncoding} () const 
+\begin{DoxyCompactList}\small\item\em get the current cell ID encoding string \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::DecoderSet::getIFromCellID} (const int cellID) const 
+\begin{DoxyCompactList}\small\item\em get I from (Mokka) CellID The right encoding string has to be set before. \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::DecoderSet::getJFromCellID} (const int cellID) const 
+\begin{DoxyCompactList}\small\item\em get J from (Mokka) CellID The right encoding string has to be set before. \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::DecoderSet::getKFromCellID} (const int cellID) const 
+\begin{DoxyCompactList}\small\item\em get K from (Mokka) CellID The right encoding string has to be set before. \item\end{DoxyCompactList}\item 
+int {\bf CALICE::DecoderSet::getCellID} (const unsigned int I, const unsigned int J, const unsigned int K) const 
+\begin{DoxyCompactList}\small\item\em get CellID from triple I,J,K \item\end{DoxyCompactList}\item 
+virtual unsigned int {\bf CALICE::Mapper::getModuleFromCellID} (const int cellID) const =0
+\begin{DoxyCompactList}\small\item\em get module (number) in which this cell is included from (Mokka) cellID \item\end{DoxyCompactList}\item 
+virtual unsigned int {\bf CALICE::Mapper::getModuleFromCellID} (const int cellID, bool \&valid) const =0
+\begin{DoxyCompactList}\small\item\em get module (number) in which this cell is included from (Mokka) cellID \item\end{DoxyCompactList}\item 
+virtual unsigned int {\bf CALICE::Mapper::getISizeFromCellID} (const int cellID) const =0
+\begin{DoxyCompactList}\small\item\em get cell size in I direction of (Mokka) CellID coordinate \item\end{DoxyCompactList}\item 
+virtual unsigned int {\bf CALICE::Mapper::getJSizeFromCellID} (const int cellID) const =0
+\begin{DoxyCompactList}\small\item\em get cell size in J direction of (Mokka) CellID coordinate \item\end{DoxyCompactList}\item 
+CellIterator {\bf CALICE::Mapper::begin} () const 
+\begin{DoxyCompactList}\small\item\em get an iterator to the first (Mokka) cell ID \item\end{DoxyCompactList}\item 
+CellIterator {\bf CALICE::Mapper::end} () const 
+\begin{DoxyCompactList}\small\item\em get an iterator one after the last (Mokka) cell ID \item\end{DoxyCompactList}\item 
+virtual unsigned int {\bf CALICE::Mapper::getIndexByCellID} (const int cellID) const =0
+\begin{DoxyCompactList}\small\item\em get a compact index for storing data in vectors \item\end{DoxyCompactList}\item 
+virtual int {\bf CALICE::Mapper::getCellIDOfIndex} (unsigned int index) const =0
+\begin{DoxyCompactList}\small\item\em get the cell ID of a certain compact index \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{CellIDgroup@{CellIDgroup}!begin@{begin}}
+\index{begin@{begin}!CellIDgroup@{CellIDgroup}}
+\subsubsection[{begin}]{\setlength{\rightskip}{0pt plus 5cm}CellIterator CALICE::Mapper::begin () const\hspace{0.3cm}{\ttfamily  [inherited]}}\label{group__CellIDgroup_gafa0f81966dd1c1c2d873a44220d8af5a}
+
+
+get an iterator to the first (Mokka) cell ID \begin{DoxyReturn}{Returns}
+iterator 
+\end{DoxyReturn}
+
+
+Definition at line 16 of file Mapper.cc.
+
+Referenced by CALICE::CellNeighbourCalculator::getNeighbours().\index{CellIDgroup@{CellIDgroup}!end@{end}}
+\index{end@{end}!CellIDgroup@{CellIDgroup}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}CellIterator CALICE::Mapper::end () const\hspace{0.3cm}{\ttfamily  [inherited]}}\label{group__CellIDgroup_ga10476e867cfda081d3c00ff2eadc4165}
+
+
+get an iterator one after the last (Mokka) cell ID \begin{DoxyReturn}{Returns}
+iterator 
+\end{DoxyReturn}
+
+
+Definition at line 20 of file Mapper.cc.
+
+References CALICE::Mapper::getMaxIndex().
+
+Referenced by CALICE::CellNeighbourCalculator::getNeighbours().\index{CellIDgroup@{CellIDgroup}!getCellID@{getCellID}}
+\index{getCellID@{getCellID}!CellIDgroup@{CellIDgroup}}
+\subsubsection[{getCellID}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::DecoderSet::getCellID (const unsigned int {\em I}, \/  const unsigned int {\em J}, \/  const unsigned int {\em K}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__CellIDgroup_ga98194da015b87fdf07f0a62da5b8c9e5}
+
+
+get CellID from triple I,J,K The right encoding string has to be set before.
+
+\begin{DoxyWarning}{Warning}
+This cell ID will only contain information about I, J and K. If the encoding string contains additional fields this will have value 0.
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+setCellIDencoding 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em I}]I of cell \item[\mbox{$\leftarrow$} {\em J}]J of cell \item[\mbox{$\leftarrow$} {\em K}]K of cell \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(Mokka) cell ID 
+\end{DoxyReturn}
+
+
+Definition at line 226 of file DecoderSet.hh.
+
+References CALICE::FastDecoder::encodeU().
+
+Referenced by CALICE::AhcMapper::getCellIDFromModChipChan(), CALICE::Ahc2Mapper::getCellIDFromModChipChan(), CALICE::AhcMapper::getCellIDOfIndex(), CALICE::Ahc2Mapper::getCellIDOfIndex(), CALICE::AhcMapper::getTrueCellID(), and CALICE::Ahc2Mapper::getTrueCellID().\index{CellIDgroup@{CellIDgroup}!getCellIDEncoding@{getCellIDEncoding}}
+\index{getCellIDEncoding@{getCellIDEncoding}!CellIDgroup@{CellIDgroup}}
+\subsubsection[{getCellIDEncoding}]{\setlength{\rightskip}{0pt plus 5cm}const std::string\& CALICE::DecoderSet::getCellIDEncoding () const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__CellIDgroup_ga240d50257f1971269a051856b328285c}
+
+
+get the current cell ID encoding string \begin{DoxyReturn}{Returns}
+cell ID encoding string 
+\end{DoxyReturn}
+
+
+Definition at line 84 of file DecoderSet.hh.
+
+Referenced by CALICE::AhcMapper::getModule(), and CALICE::Ahc2Mapper::getModule().\index{CellIDgroup@{CellIDgroup}!getCellIDFromModChipChan@{getCellIDFromModChipChan}}
+\index{getCellIDFromModChipChan@{getCellIDFromModChipChan}!CellIDgroup@{CellIDgroup}}
+\subsubsection[{getCellIDFromModChipChan}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::AhcMapper::getCellIDFromModChipChan (const unsigned int {\em module}, \/  const unsigned int {\em chip}, \/  const unsigned int {\em channel}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__CellIDgroup_ga52286c59e9823e5d31d7ea8a71b4d6bd}
+
+
+generate (Mokka) cellID from module, chip, channel Translates module, chip, channel to (Mokka) CellID using the current encoding string.
+
+\begin{DoxyWarning}{Warning}
+only I,J,K will be set, possible additional variables will be 0
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em module}]module number \item[\mbox{$\leftarrow$} {\em chip}]chip number \item[\mbox{$\leftarrow$} {\em channel}]channel number\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(Mokka) cell ID
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 73 of file AhcMapper.hh.
+
+References CALICE::DecoderSet::getCellID(), CALICE::Mapper::getDecoder(), CALICE::AhcMapper::getI(), CALICE::AhcMapper::getJ(), and CALICE::AhcMapper::getK().\index{CellIDgroup@{CellIDgroup}!getCellIDFromModChipChan@{getCellIDFromModChipChan}}
+\index{getCellIDFromModChipChan@{getCellIDFromModChipChan}!CellIDgroup@{CellIDgroup}}
+\subsubsection[{getCellIDFromModChipChan}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::Ahc2Mapper::getCellIDFromModChipChan (const unsigned int {\em module}, \/  const unsigned int {\em chip}, \/  const unsigned int {\em channel}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__CellIDgroup_ga8dd1fc186e1ad4501115fdeb96d434d7}
+
+
+generate (Mokka) cellID from module, chip, channel Translates module, chip, channel to (Mokka) CellID using the current encoding string.
+
+\begin{DoxyWarning}{Warning}
+only I,J,K will be set, possible additional variables will be 0
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em module}]module number \item[\mbox{$\leftarrow$} {\em chip}]chip number \item[\mbox{$\leftarrow$} {\em channel}]channel number\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+(Mokka) cell ID
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 79 of file Ahc2Mapper.hh.
+
+References CALICE::DecoderSet::getCellID(), CALICE::Mapper::getDecoder(), CALICE::Ahc2Mapper::getI(), CALICE::Ahc2Mapper::getJ(), and CALICE::Ahc2Mapper::getK().\index{CellIDgroup@{CellIDgroup}!getCellIDOfIndex@{getCellIDOfIndex}}
+\index{getCellIDOfIndex@{getCellIDOfIndex}!CellIDgroup@{CellIDgroup}}
+\subsubsection[{getCellIDOfIndex}]{\setlength{\rightskip}{0pt plus 5cm}virtual int CALICE::Mapper::getCellIDOfIndex (unsigned int {\em index}) const\hspace{0.3cm}{\ttfamily  [protected, pure virtual, inherited]}}\label{group__CellIDgroup_ga1157f15cfe97ad035e6f6fb2fd32ce2e}
+
+
+get the cell ID of a certain compact index \begin{DoxyWarning}{Warning}
+This cell ID will only contain information about I, J and K. If the encoding string contains additional fields this will have value 0.
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+setCellIDencoding
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+(Mokka) cell ID 
+\end{DoxyReturn}
+
+
+Implemented in {\bf CALICE::Ahc2Mapper} \doxyref{}{p.}{classCALICE_1_1Ahc2Mapper_aa622a971f22c254c324a817355257bdc}, and {\bf CALICE::AhcMapper} \doxyref{}{p.}{classCALICE_1_1AhcMapper_af53a274b50f0f75e632454a4072113eb}.
+
+Referenced by CALICE::CellIterator::operator++().\index{CellIDgroup@{CellIDgroup}!getChanFromCellID@{getChanFromCellID}}
+\index{getChanFromCellID@{getChanFromCellID}!CellIDgroup@{CellIDgroup}}
+\subsubsection[{getChanFromCellID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getChanFromCellID (const int {\em cellID}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__CellIDgroup_ga62806fe6167022c65d412029c91fe84f}
+
+
+channel number from (Mokka) CellID 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em cellID}](Mokka) cell ID\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+channel number
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 241 of file AhcMapper.hh.
+
+References CALICE::AhcMapper::getChan(), and CALICE::Mapper::getDecoder().\index{CellIDgroup@{CellIDgroup}!getChanFromCellID@{getChanFromCellID}}
+\index{getChanFromCellID@{getChanFromCellID}!CellIDgroup@{CellIDgroup}}
+\subsubsection[{getChanFromCellID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::Ahc2Mapper::getChanFromCellID (const int {\em cellID}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__CellIDgroup_ga4142abdfc361e05889c41f08542cdc28}
+
+
+channel number from (Mokka) CellID 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em cellID}](Mokka) cell ID\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+channel number
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 250 of file Ahc2Mapper.hh.
+
+References CALICE::Ahc2Mapper::getChan(), and CALICE::Mapper::getDecoder().\index{CellIDgroup@{CellIDgroup}!getChipFromCellID@{getChipFromCellID}}
+\index{getChipFromCellID@{getChipFromCellID}!CellIDgroup@{CellIDgroup}}
+\subsubsection[{getChipFromCellID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getChipFromCellID (const int {\em cellID}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__CellIDgroup_ga7f9ad087fbc3282c928f948d5d290de0}
+
+
+chip number from (Mokka) CellID 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em cellID}](Mokka) cell ID\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+chip number
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 205 of file AhcMapper.hh.
+
+References CALICE::AhcMapper::getChip(), and CALICE::Mapper::getDecoder().\index{CellIDgroup@{CellIDgroup}!getChipFromCellID@{getChipFromCellID}}
+\index{getChipFromCellID@{getChipFromCellID}!CellIDgroup@{CellIDgroup}}
+\subsubsection[{getChipFromCellID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::Ahc2Mapper::getChipFromCellID (const int {\em cellID}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__CellIDgroup_ga08318bfa0005d4c792fa6a24bb270635}
+
+
+chip number from (Mokka) CellID 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em cellID}](Mokka) cell ID\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+chip number
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 211 of file Ahc2Mapper.hh.
+
+References CALICE::Ahc2Mapper::getChip(), and CALICE::Mapper::getDecoder().\index{CellIDgroup@{CellIDgroup}!getCrateFromCellID@{getCrateFromCellID}}
+\index{getCrateFromCellID@{getCrateFromCellID}!CellIDgroup@{CellIDgroup}}
+\subsubsection[{getCrateFromCellID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getCrateFromCellID (const int {\em cellID}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__CellIDgroup_ga45ea616a34d7bebc60cdf26d5a915152}
+
+
+crate number from (Mokka) CellID 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em cellID}](Mokka) cell ID\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+crate number
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 277 of file AhcMapper.hh.
+
+References CALICE::AhcMapper::getCrate(), and CALICE::AhcMapper::getModuleFromCellID().\index{CellIDgroup@{CellIDgroup}!getCrateFromCellID@{getCrateFromCellID}}
+\index{getCrateFromCellID@{getCrateFromCellID}!CellIDgroup@{CellIDgroup}}
+\subsubsection[{getCrateFromCellID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::Ahc2Mapper::getCrateFromCellID (const int {\em cellID}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__CellIDgroup_ga8befbda432dc5e3ab8614c39a466e5b7}
+
+
+crate number from (Mokka) CellID 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em cellID}](Mokka) cell ID\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+crate number
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 286 of file Ahc2Mapper.hh.
+
+References CALICE::Ahc2Mapper::getCrate(), and CALICE::Ahc2Mapper::getModuleFromCellID().\index{CellIDgroup@{CellIDgroup}!getFeFromCellID@{getFeFromCellID}}
+\index{getFeFromCellID@{getFeFromCellID}!CellIDgroup@{CellIDgroup}}
+\subsubsection[{getFeFromCellID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getFeFromCellID (const int {\em cellID}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__CellIDgroup_gace615dddab9b971bf6282baec49ad074}
+
+
+front end number from (Mokka) CellID 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em cellID}](Mokka) cell ID\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+front end number
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 364 of file AhcMapper.hh.
+
+References CALICE::AhcMapper::getFe(), and CALICE::AhcMapper::getModuleFromCellID().\index{CellIDgroup@{CellIDgroup}!getFeFromCellID@{getFeFromCellID}}
+\index{getFeFromCellID@{getFeFromCellID}!CellIDgroup@{CellIDgroup}}
+\subsubsection[{getFeFromCellID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::Ahc2Mapper::getFeFromCellID (const int {\em cellID}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__CellIDgroup_gab972133c9f5f2cc3fad4386f2c477124}
+
+
+front end number from (Mokka) CellID 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em cellID}](Mokka) cell ID\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+front end number
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 373 of file Ahc2Mapper.hh.
+
+References CALICE::Ahc2Mapper::getFe(), and CALICE::Ahc2Mapper::getModuleFromCellID().\index{CellIDgroup@{CellIDgroup}!getIFromCellID@{getIFromCellID}}
+\index{getIFromCellID@{getIFromCellID}!CellIDgroup@{CellIDgroup}}
+\subsubsection[{getIFromCellID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::DecoderSet::getIFromCellID (const int {\em cellID}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__CellIDgroup_ga3fdbb446bca5f7ba2636396e96c1ac9c}
+
+
+get I from (Mokka) CellID The right encoding string has to be set before. \begin{DoxySeeAlso}{See also}
+setCellIDencoding 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em cellID}]cell ID to decode \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I 
+\end{DoxyReturn}
+
+
+Definition at line 109 of file DecoderSet.hh.
+
+References CALICE::FastDecoder::decodeU().
+
+Referenced by CALICE::CellDescriptionGenerator::generate(), CALICE::AhcMapper::getIndexByCellID(), and CALICE::Ahc2Mapper::getIndexByCellID().\index{CellIDgroup@{CellIDgroup}!getIndexByCellID@{getIndexByCellID}}
+\index{getIndexByCellID@{getIndexByCellID}!CellIDgroup@{CellIDgroup}}
+\subsubsection[{getIndexByCellID}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned int CALICE::Mapper::getIndexByCellID (const int {\em cellID}) const\hspace{0.3cm}{\ttfamily  [protected, pure virtual, inherited]}}\label{group__CellIDgroup_gaaa6d826a6990c070c769f9754d2fbb76}
+
+
+get a compact index for storing data in vectors 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em cellID}](Mokka) cell ID \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+compact index 
+\end{DoxyReturn}
+
+
+Implemented in {\bf CALICE::Ahc2Mapper} \doxyref{}{p.}{classCALICE_1_1Ahc2Mapper_aa468f8c91286f9452202e0de9dc86179}, and {\bf CALICE::AhcMapper} \doxyref{}{p.}{classCALICE_1_1AhcMapper_a1e4072147112a446171c2892ebe8e3e2}.
+
+Referenced by CALICE::MappedContainer$<$ T $>$::deleteByCellID(), CALICE::MappedContainer$<$ T $>$::fillByCellID(), CALICE::MappedContainer$<$ T $>$::getByCellID(), and CALICE::MappedContainer$<$ T $>$::removeByCellID().\index{CellIDgroup@{CellIDgroup}!getISizeFromCellID@{getISizeFromCellID}}
+\index{getISizeFromCellID@{getISizeFromCellID}!CellIDgroup@{CellIDgroup}}
+\subsubsection[{getISizeFromCellID}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned int CALICE::Mapper::getISizeFromCellID (const int {\em cellID}) const\hspace{0.3cm}{\ttfamily  [pure virtual, inherited]}}\label{group__CellIDgroup_gae19ed16b97aba25772a714a01b5086b1}
+
+
+get cell size in I direction of (Mokka) CellID coordinate 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em cellID}](Mokka) cell ID\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+size in I
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if cell does not exist \end{DoxyExceptions}
+
+
+Implemented in {\bf CALICE::Ahc2Mapper} \doxyref{}{p.}{group__CellIDgroup_ga017ec921a85f3d1efda814bc633a81e7}, and {\bf CALICE::AhcMapper} \doxyref{}{p.}{group__CellIDgroup_gaed58b5c4c61fb5796961d96ad8b66fd8}.\index{CellIDgroup@{CellIDgroup}!getISizeFromCellID@{getISizeFromCellID}}
+\index{getISizeFromCellID@{getISizeFromCellID}!CellIDgroup@{CellIDgroup}}
+\subsubsection[{getISizeFromCellID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getISizeFromCellID (const int {\em cellID}) const\hspace{0.3cm}{\ttfamily  [inline, virtual, inherited]}}\label{group__CellIDgroup_gaed58b5c4c61fb5796961d96ad8b66fd8}
+
+
+get cell size in I direction of (Mokka) CellID coordinate 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em cellID}](Mokka) cell ID\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+size in I
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Implements {\bf CALICE::Mapper} \doxyref{}{p.}{group__CellIDgroup_gae19ed16b97aba25772a714a01b5086b1}.
+
+Definition at line 549 of file AhcMapper.hh.
+
+References CALICE::Mapper::getDecoder(), and CALICE::AhcMapper::getISizeFromIJK().\index{CellIDgroup@{CellIDgroup}!getISizeFromCellID@{getISizeFromCellID}}
+\index{getISizeFromCellID@{getISizeFromCellID}!CellIDgroup@{CellIDgroup}}
+\subsubsection[{getISizeFromCellID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::Ahc2Mapper::getISizeFromCellID (const int {\em cellID}) const\hspace{0.3cm}{\ttfamily  [inline, virtual, inherited]}}\label{group__CellIDgroup_ga017ec921a85f3d1efda814bc633a81e7}
+
+
+get cell size in I direction of (Mokka) CellID coordinate 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em cellID}](Mokka) cell ID\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+size in I
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Implements {\bf CALICE::Mapper} \doxyref{}{p.}{group__CellIDgroup_gae19ed16b97aba25772a714a01b5086b1}.
+
+Definition at line 558 of file Ahc2Mapper.hh.
+
+References CALICE::Mapper::getDecoder(), and CALICE::Ahc2Mapper::getISizeFromIJK().\index{CellIDgroup@{CellIDgroup}!getJFromCellID@{getJFromCellID}}
+\index{getJFromCellID@{getJFromCellID}!CellIDgroup@{CellIDgroup}}
+\subsubsection[{getJFromCellID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::DecoderSet::getJFromCellID (const int {\em cellID}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__CellIDgroup_ga6325aee66a827df07d103b78a399ff5f}
+
+
+get J from (Mokka) CellID The right encoding string has to be set before. \begin{DoxySeeAlso}{See also}
+setCellIDencoding 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em cellID}]cell ID to decode \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+J 
+\end{DoxyReturn}
+
+
+Definition at line 119 of file DecoderSet.hh.
+
+References CALICE::FastDecoder::decodeU().
+
+Referenced by CALICE::CellDescriptionGenerator::generate(), CALICE::AhcMapper::getIndexByCellID(), and CALICE::Ahc2Mapper::getIndexByCellID().\index{CellIDgroup@{CellIDgroup}!getJSizeFromCellID@{getJSizeFromCellID}}
+\index{getJSizeFromCellID@{getJSizeFromCellID}!CellIDgroup@{CellIDgroup}}
+\subsubsection[{getJSizeFromCellID}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned int CALICE::Mapper::getJSizeFromCellID (const int {\em cellID}) const\hspace{0.3cm}{\ttfamily  [pure virtual, inherited]}}\label{group__CellIDgroup_ga08fb2b951ffa08a455f1334644fde36a}
+
+
+get cell size in J direction of (Mokka) CellID coordinate 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em cellID}](Mokka) cell ID\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+size in J
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if cell does not exist \end{DoxyExceptions}
+
+
+Implemented in {\bf CALICE::Ahc2Mapper} \doxyref{}{p.}{group__CellIDgroup_gaef8836f7e3a9f8dad82ba675707f1ed2}, and {\bf CALICE::AhcMapper} \doxyref{}{p.}{group__CellIDgroup_ga6c4e233f3990b756788d4b366b80891d}.\index{CellIDgroup@{CellIDgroup}!getJSizeFromCellID@{getJSizeFromCellID}}
+\index{getJSizeFromCellID@{getJSizeFromCellID}!CellIDgroup@{CellIDgroup}}
+\subsubsection[{getJSizeFromCellID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getJSizeFromCellID (const int {\em cellID}) const\hspace{0.3cm}{\ttfamily  [inline, virtual, inherited]}}\label{group__CellIDgroup_ga6c4e233f3990b756788d4b366b80891d}
+
+
+get cell size in J direction of (Mokka) CellID coordinate 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em cellID}](Mokka) cell ID\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+size in J
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Implements {\bf CALICE::Mapper} \doxyref{}{p.}{group__CellIDgroup_ga08fb2b951ffa08a455f1334644fde36a}.
+
+Definition at line 627 of file AhcMapper.hh.
+
+References CALICE::Mapper::getDecoder(), and CALICE::AhcMapper::getJSizeFromIJK().\index{CellIDgroup@{CellIDgroup}!getJSizeFromCellID@{getJSizeFromCellID}}
+\index{getJSizeFromCellID@{getJSizeFromCellID}!CellIDgroup@{CellIDgroup}}
+\subsubsection[{getJSizeFromCellID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::Ahc2Mapper::getJSizeFromCellID (const int {\em cellID}) const\hspace{0.3cm}{\ttfamily  [inline, virtual, inherited]}}\label{group__CellIDgroup_gaef8836f7e3a9f8dad82ba675707f1ed2}
+
+
+get cell size in J direction of (Mokka) CellID coordinate 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em cellID}](Mokka) cell ID\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+size in J
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Implements {\bf CALICE::Mapper} \doxyref{}{p.}{group__CellIDgroup_ga08fb2b951ffa08a455f1334644fde36a}.
+
+Definition at line 636 of file Ahc2Mapper.hh.
+
+References CALICE::Mapper::getDecoder(), and CALICE::Ahc2Mapper::getJSizeFromIJK().\index{CellIDgroup@{CellIDgroup}!getKFromCellID@{getKFromCellID}}
+\index{getKFromCellID@{getKFromCellID}!CellIDgroup@{CellIDgroup}}
+\subsubsection[{getKFromCellID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::DecoderSet::getKFromCellID (const int {\em cellID}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__CellIDgroup_ga082e821a56c0490acc9d44a58cf285af}
+
+
+get K from (Mokka) CellID The right encoding string has to be set before. \begin{DoxySeeAlso}{See also}
+setCellIDencoding 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em cellID}]cell ID to decode \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+K 
+\end{DoxyReturn}
+
+
+Definition at line 129 of file DecoderSet.hh.
+
+References CALICE::FastDecoder::decodeU().
+
+Referenced by CALICE::CellDescriptionGenerator::generate(), CALICE::AhcMapper::getIndexByCellID(), and CALICE::Ahc2Mapper::getIndexByCellID().\index{CellIDgroup@{CellIDgroup}!getModuleFromCellID@{getModuleFromCellID}}
+\index{getModuleFromCellID@{getModuleFromCellID}!CellIDgroup@{CellIDgroup}}
+\subsubsection[{getModuleFromCellID}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned int CALICE::Mapper::getModuleFromCellID (const int {\em cellID}, \/  bool \& {\em valid}) const\hspace{0.3cm}{\ttfamily  [pure virtual, inherited]}}\label{group__CellIDgroup_ga66aea084e5707616260609f9f547065a}
+
+
+get module (number) in which this cell is included from (Mokka) cellID Checks if the cell ID exists. No exception is thrown.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em cellID}](Mokka) cell ID \item[\mbox{$\rightarrow$} {\em valid}]false if a non valid cell is queried\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+module 
+\end{DoxyReturn}
+
+
+Implemented in {\bf CALICE::Ahc2Mapper} \doxyref{}{p.}{group__CellIDgroup_gaa315bfe2512008cc074dbdf8009c0d57}, and {\bf CALICE::AhcMapper} \doxyref{}{p.}{group__CellIDgroup_ga0c5c3c80806eed788cc8d35f8bbbbeac}.\index{CellIDgroup@{CellIDgroup}!getModuleFromCellID@{getModuleFromCellID}}
+\index{getModuleFromCellID@{getModuleFromCellID}!CellIDgroup@{CellIDgroup}}
+\subsubsection[{getModuleFromCellID}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned int CALICE::Mapper::getModuleFromCellID (const int {\em cellID}) const\hspace{0.3cm}{\ttfamily  [pure virtual, inherited]}}\label{group__CellIDgroup_ga77a4d1417779f628e6539a565629ed7d}
+
+
+get module (number) in which this cell is included from (Mokka) cellID 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em cellID}](Mokka) cell ID\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+module
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if some error is detected, but no full verification is performed \end{DoxyExceptions}
+\begin{DoxySeeAlso}{See also}
+getModuleFromCellID(const int cellID, bool \&valid) 
+\end{DoxySeeAlso}
+
+
+Implemented in {\bf CALICE::Ahc2Mapper} \doxyref{}{p.}{group__CellIDgroup_ga3094adcb1a9a51207cb766f8f8da9460}, and {\bf CALICE::AhcMapper} \doxyref{}{p.}{group__CellIDgroup_gaab2e4194c12c80616e8fe0e535c37443}.\index{CellIDgroup@{CellIDgroup}!getModuleFromCellID@{getModuleFromCellID}}
+\index{getModuleFromCellID@{getModuleFromCellID}!CellIDgroup@{CellIDgroup}}
+\subsubsection[{getModuleFromCellID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getModuleFromCellID (const int {\em cellID}, \/  bool \& {\em valid}) const\hspace{0.3cm}{\ttfamily  [inline, virtual, inherited]}}\label{group__CellIDgroup_ga0c5c3c80806eed788cc8d35f8bbbbeac}
+
+
+get module (number) in which this cell is included from (Mokka) cellID Checks if the cell ID exists. No exception is thrown.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em cellID}](Mokka) cell ID \item[\mbox{$\rightarrow$} {\em valid}]false if a non valid cell is queried\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+module 
+\end{DoxyReturn}
+
+
+Implements {\bf CALICE::Mapper} \doxyref{}{p.}{group__CellIDgroup_ga66aea084e5707616260609f9f547065a}.
+
+Definition at line 157 of file AhcMapper.hh.
+
+References CALICE::AhcMapper::getIndexByCellID().\index{CellIDgroup@{CellIDgroup}!getModuleFromCellID@{getModuleFromCellID}}
+\index{getModuleFromCellID@{getModuleFromCellID}!CellIDgroup@{CellIDgroup}}
+\subsubsection[{getModuleFromCellID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getModuleFromCellID (const int {\em cellID}) const\hspace{0.3cm}{\ttfamily  [inline, virtual, inherited]}}\label{group__CellIDgroup_gaab2e4194c12c80616e8fe0e535c37443}
+
+
+module number from (Mokka) CellID 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em cellID}](Mokka) cell ID\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+module number
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Implements {\bf CALICE::Mapper} \doxyref{}{p.}{group__CellIDgroup_ga77a4d1417779f628e6539a565629ed7d}.
+
+Definition at line 90 of file AhcMapper.hh.
+
+References CALICE::Mapper::getDecoder(), and CALICE::AhcMapper::getModule().
+
+Referenced by CALICE::AhcMapper::getCrateFromCellID(), CALICE::AhcMapper::getFeFromCellID(), and CALICE::AhcMapper::getSlotFromCellID().\index{CellIDgroup@{CellIDgroup}!getModuleFromCellID@{getModuleFromCellID}}
+\index{getModuleFromCellID@{getModuleFromCellID}!CellIDgroup@{CellIDgroup}}
+\subsubsection[{getModuleFromCellID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::Ahc2Mapper::getModuleFromCellID (const int {\em cellID}, \/  bool \& {\em valid}) const\hspace{0.3cm}{\ttfamily  [inline, virtual, inherited]}}\label{group__CellIDgroup_gaa315bfe2512008cc074dbdf8009c0d57}
+
+
+get module (number) in which this cell is included from (Mokka) cellID Checks if the cell ID exists. No exception is thrown.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em cellID}](Mokka) cell ID \item[\mbox{$\rightarrow$} {\em valid}]false if a non valid cell is queried\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+module 
+\end{DoxyReturn}
+
+
+Implements {\bf CALICE::Mapper} \doxyref{}{p.}{group__CellIDgroup_ga66aea084e5707616260609f9f547065a}.
+
+Definition at line 163 of file Ahc2Mapper.hh.
+
+References CALICE::Ahc2Mapper::getIndexByCellID().\index{CellIDgroup@{CellIDgroup}!getModuleFromCellID@{getModuleFromCellID}}
+\index{getModuleFromCellID@{getModuleFromCellID}!CellIDgroup@{CellIDgroup}}
+\subsubsection[{getModuleFromCellID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::Ahc2Mapper::getModuleFromCellID (const int {\em cellID}) const\hspace{0.3cm}{\ttfamily  [inline, virtual, inherited]}}\label{group__CellIDgroup_ga3094adcb1a9a51207cb766f8f8da9460}
+
+
+module number from (Mokka) CellID 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em cellID}](Mokka) cell ID\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+module number
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Implements {\bf CALICE::Mapper} \doxyref{}{p.}{group__CellIDgroup_ga77a4d1417779f628e6539a565629ed7d}.
+
+Definition at line 96 of file Ahc2Mapper.hh.
+
+References CALICE::Mapper::getDecoder(), and CALICE::Ahc2Mapper::getModule().
+
+Referenced by CALICE::Ahc2Mapper::getCrateFromCellID(), CALICE::Ahc2Mapper::getFeFromCellID(), and CALICE::Ahc2Mapper::getSlotFromCellID().\index{CellIDgroup@{CellIDgroup}!getSlotFromCellID@{getSlotFromCellID}}
+\index{getSlotFromCellID@{getSlotFromCellID}!CellIDgroup@{CellIDgroup}}
+\subsubsection[{getSlotFromCellID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getSlotFromCellID (const int {\em cellID}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__CellIDgroup_ga3b25eb31b102beff3e3a0ae887cf1ff9}
+
+
+slot number from (Mokka) CellID 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em cellID}](Mokka) cell ID\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+slot number
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 320 of file AhcMapper.hh.
+
+References CALICE::AhcMapper::getModuleFromCellID(), and CALICE::AhcMapper::getSlot().\index{CellIDgroup@{CellIDgroup}!getSlotFromCellID@{getSlotFromCellID}}
+\index{getSlotFromCellID@{getSlotFromCellID}!CellIDgroup@{CellIDgroup}}
+\subsubsection[{getSlotFromCellID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::Ahc2Mapper::getSlotFromCellID (const int {\em cellID}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__CellIDgroup_gadd39bce577220342c23dae1be9fb8795}
+
+
+slot number from (Mokka) CellID 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em cellID}](Mokka) cell ID\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+slot number
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 329 of file Ahc2Mapper.hh.
+
+References CALICE::Ahc2Mapper::getModuleFromCellID(), and CALICE::Ahc2Mapper::getSlot().\index{CellIDgroup@{CellIDgroup}!setCellIDEncoding@{setCellIDEncoding}}
+\index{setCellIDEncoding@{setCellIDEncoding}!CellIDgroup@{CellIDgroup}}
+\subsubsection[{setCellIDEncoding}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::DecoderSet::setCellIDEncoding (const std::string \& {\em encoding})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{group__CellIDgroup_ga945f56e77ed47b76b5cb650df056ab83}
+
+
+set a new cell ID encoding string if an empty string is given the function will use the default encoding string 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em encoding}]encoding string \end{DoxyParams}
+
+
+Definition at line 39 of file DecoderSet.cc.
+
+References CALICE::FastDecoder::generateDecoder().
+
+Referenced by CALICE::DecoderSet::DecoderSet().

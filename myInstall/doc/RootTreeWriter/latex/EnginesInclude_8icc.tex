@@ -1,0 +1,37 @@
+\section{EnginesInclude.icc File Reference}
+\label{EnginesInclude_8icc}\index{EnginesInclude.icc@{EnginesInclude.icc}}
+
+
+Edit to add new engine.  
+{\ttfamily \#include \char`\"{}HitWriteEngine.hh\char`\"{}}\par
+{\ttfamily \#include \char`\"{}HodoscopeWriteEngine.hh\char`\"{}}\par
+{\ttfamily \#include \char`\"{}TriggerWriteEngine.hh\char`\"{}}\par
+{\ttfamily \#include \char`\"{}DriftChamberWriteEngine.hh\char`\"{}}\par
+{\ttfamily \#include \char`\"{}MCParticleWriteEngine.hh\char`\"{}}\par
+{\ttfamily \#include \char`\"{}ASimCalorimeterHitWriteEngine.hh\char`\"{}}\par
+{\ttfamily \#include \char`\"{}TBTrackWriteEngine.hh\char`\"{}}\par
+{\ttfamily \#include \char`\"{}TrackFinderWriteEngine.hh\char`\"{}}\par
+{\ttfamily \#include \char`\"{}ShowerShapeEngine.hh\char`\"{}}\par
+{\ttfamily \#include \char`\"{}HcalTrackLarsEngine.hh\char`\"{}}\par
+{\ttfamily \#include \char`\"{}BifWriteEngine.hh\char`\"{}}\par
+This graph shows which files directly or indirectly include this file:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=71pt]{EnginesInclude_8icc__dep__incl}
+\end{center}
+\end{figure}
+
+
+\subsection{Detailed Description}
+Edit to add new engine. To activate a new engine you have to add a line like the following in this file:
+
+
+\begin{DoxyCode}
+ #include "MyNewEngineName.hh"
+\end{DoxyCode}
+
+
+{\bfseries  You also have to edit the file \doxyref{engines/EnginesAdd.icc}{p.}{EnginesAdd_8icc}.} 
+
+Definition in file {\bf EnginesInclude.icc}.

@@ -1,0 +1,265 @@
+\section{histmgr::Histogram2DCollection\_\-t Class Reference}
+\label{classhistmgr_1_1Histogram2DCollection__t}\index{histmgr::Histogram2DCollection\_\-t@{histmgr::Histogram2DCollection\_\-t}}
+
+
+One or two dimensional collection of histograms.  
+
+
+{\ttfamily \#include $<$Histogram2DCollection\_\-t.hh$>$}Inheritance diagram for histmgr::Histogram2DCollection\_\-t::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classhistmgr_1_1Histogram2DCollection__t}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Histogram2DCollection\_\-t} (const std::string \&collection\_\-name, const EVENT::StringVec \&name\_\-list, UInt\_\-t n\_\-hist, const {\bf HistPar} \&x\_\-par, const {\bf HistPar} \&y\_\-par)  throw (std::bad\_\-alloc, std::runtime\_\-error)
+\begin{DoxyCompactList}\small\item\em Create a collection of histograms which will have the same binning and the same name (except of a numeric extension). \item\end{DoxyCompactList}\item 
+{\bf Histogram2DCollection\_\-t} (const std::string \&collection\_\-name, const EVENT::StringVec \&name\_\-list, const lcio::IntVec \&n\_\-hist\_\-list, const {\bf HistPar} \&x\_\-par, const {\bf HistPar} \&y\_\-par)
+\begin{DoxyCompactList}\small\item\em Create a collection of histograms which will have the same binning and the same name (except of a numeric extension). \item\end{DoxyCompactList}\item 
+{\bf Histogram2DCollection\_\-t} (lcio::LCCollection $\ast$histograms, lcio::IntVec $\ast$indices)
+\item 
+{\bf Histogram2DCollection\_\-t} (lcio::LCCollection $\ast$histograms)
+\begin{DoxyCompactList}\small\item\em Create a histogram collection from lcio collection. \item\end{DoxyCompactList}\item 
+{\bf Histogram2DCollection\_\-t} (const {\bf Histogram2DCollection\_\-t} \&a)\label{classhistmgr_1_1Histogram2DCollection__t_a2f6e961d72d471440615a4673d3f2de4}
+
+\begin{DoxyCompactList}\small\item\em copy constructor. \item\end{DoxyCompactList}\item 
+{\bf Histogram2DCollection\_\-t} ()\label{classhistmgr_1_1Histogram2DCollection__t_aa51815c63839cc73273232df3cc53d91}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. \item\end{DoxyCompactList}\item 
+void {\bf deleteCollection} ()\label{classhistmgr_1_1Histogram2DCollection__t_a3dc0a213db50d0a0eb58441ce29875c6}
+
+\begin{DoxyCompactList}\small\item\em delete the histogram collection and the index array This method exists instead of a destrctor to prevent copying the arrays (FIXME) \item\end{DoxyCompactList}\item 
+void {\bfseries deleteSharedStorage} ()\label{classhistmgr_1_1Histogram2DCollection__t_aa8f4d87ede0c6bbcc3f22cea2dca2f3f}
+
+\item 
+lcio::LCCollection $\ast$ {\bf createHistograms} (const std::string \&collection\_\-name, const EVENT::StringVec \&name\_\-list, UInt\_\-t n\_\-hist, const {\bf HistPar} \&x\_\-par, const {\bf HistPar} \&y\_\-par)  throw (std::bad\_\-alloc,std::runtime\_\-error)
+\begin{DoxyCompactList}\small\item\em create several histograms which will have the same binning and the same name (except of a numeric extension). \item\end{DoxyCompactList}\item 
+lcio::LCCollection $\ast$ {\bf createHistograms} (const std::string \&collection\_\-name, const EVENT::StringVec \&name\_\-list, const lcio::IntVec \&n\_\-hist\_\-list, const {\bf HistPar} \&x\_\-par, const {\bf HistPar} \&y\_\-par)  throw (std::bad\_\-alloc,std::runtime\_\-error)
+\begin{DoxyCompactList}\small\item\em create several histograms which will have the same binning and the same name (except of a numeric extension). \item\end{DoxyCompactList}\item 
+lcio::LCCollection $\ast$ {\bf collection} ()
+\begin{DoxyCompactList}\small\item\em get the unique group id \item\end{DoxyCompactList}\item 
+const lcio::LCCollection $\ast$ {\bf collection} () const 
+\begin{DoxyCompactList}\small\item\em get the collection of histograms (read only). \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bf n} () const \label{classhistmgr_1_1Histogram2DCollection__t_a4aa15bd76ec1a055afe867e0a59daab6}
+
+\begin{DoxyCompactList}\small\item\em get the number of histograms in the one dimensional collection. \item\end{DoxyCompactList}\item 
+bool {\bf is2D} () const \label{classhistmgr_1_1Histogram2DCollection__t_a915231d0006aa618929865be0717d676}
+
+\begin{DoxyCompactList}\small\item\em Return true if the histogram collection is two instead of one diemensional. \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bf nMajor} () const \label{classhistmgr_1_1Histogram2DCollection__t_a7d589f32e849ee6c2ff62d22f67e596b}
+
+\begin{DoxyCompactList}\small\item\em get the number of histograms in the one dimensional collection. \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bf nMinor} (UInt\_\-t major\_\-index) const \label{classhistmgr_1_1Histogram2DCollection__t_af72ed2b8399f39439bc2b232820696f2}
+
+\begin{DoxyCompactList}\small\item\em get the number of histograms in the one dimensional collection. \item\end{DoxyCompactList}\item 
+const {\bf FloatHistogram2D} $\ast$ {\bf histogram} (UInt\_\-t index) const \label{classhistmgr_1_1Histogram2DCollection__t_abd1f0ccdbc83f9f6fbbea239162d99d8}
+
+\begin{DoxyCompactList}\small\item\em Get one histogram of the collection (read only). \item\end{DoxyCompactList}\item 
+{\bf FloatHistogram2D} $\ast$ {\bf histogram} (UInt\_\-t index)\label{classhistmgr_1_1Histogram2DCollection__t_afc8d2ea4e42d5e6cf283792b819d95c1}
+
+\begin{DoxyCompactList}\small\item\em Get one histogram of the collection. \item\end{DoxyCompactList}\item 
+{\bf FloatHistogram2D} $\ast$ {\bf histogram} (UInt\_\-t major\_\-index, UInt\_\-t minor\_\-index)\label{classhistmgr_1_1Histogram2DCollection__t_a182a4f9dd876337a00a5e57f8358555f}
+
+\begin{DoxyCompactList}\small\item\em Get one histogram of the collection which is organised as a two dimensional array. \item\end{DoxyCompactList}\item 
+const {\bf FloatHistogram2D} $\ast$ {\bf histogram} (UInt\_\-t major\_\-index, UInt\_\-t minor\_\-index) const \label{classhistmgr_1_1Histogram2DCollection__t_a3ea359f9713ea66fe5ceaf0b82539776}
+
+\begin{DoxyCompactList}\small\item\em Get one histogram of the collection which is organised as a two dimensional array (read only). \item\end{DoxyCompactList}\item 
+const std::string \& {\bf getName} (UInt\_\-t major\_\-index) const 
+\begin{DoxyCompactList}\small\item\em Get the name of the specified element of the histogram collection. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const std::string {\bfseries \_\-\_\-histogramNameParameterName}\label{classhistmgr_1_1Histogram2DCollection__t_a9c9c12ef5e660181a010b4e9e3543e8d}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf copyNames} () const 
+\begin{DoxyCompactList}\small\item\em Copy the names from the collection to an accessible vector. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+lcio::LCCollection $\ast$ {\bf \_\-histogramCol}\label{classhistmgr_1_1Histogram2DCollection__t_a935072d41133e1922cfa3372a859bda8}
+
+\begin{DoxyCompactList}\small\item\em the histogram collection \item\end{DoxyCompactList}\item 
+lcio::IntVec $\ast$ {\bf \_\-majorIndex}
+\begin{DoxyCompactList}\small\item\em optional list of offset to form a two dimensional array out of the list. \item\end{DoxyCompactList}\item 
+lcio::StringVec {\bf \_\-nameList}
+\begin{DoxyCompactList}\small\item\em A vector which contains one name for all histograms of the collection or a name for each element. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const std::string {\bfseries \_\-\_\-majorIndexParameterName}\label{classhistmgr_1_1Histogram2DCollection__t_aded8e87a24b7ee1bd042c0bb352fdf1d}
+
+\item 
+static const std::string {\bfseries \_\-\_\-defaultHistogramName}\label{classhistmgr_1_1Histogram2DCollection__t_ac482b686014b906aa2be8da6a4ca9844}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries HistMgr}\label{classhistmgr_1_1Histogram2DCollection__t_a3cc85db784d7651390e41024125eb3a0}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+One or two dimensional collection of histograms. 
+
+Definition at line 16 of file Histogram2DCollection\_\-t.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{histmgr::Histogram2DCollection\_\-t@{histmgr::Histogram2DCollection\_\-t}!Histogram2DCollection\_\-t@{Histogram2DCollection\_\-t}}
+\index{Histogram2DCollection\_\-t@{Histogram2DCollection\_\-t}!histmgr::Histogram2DCollection_t@{histmgr::Histogram2DCollection\_\-t}}
+\subsubsection[{Histogram2DCollection\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}histmgr::Histogram2DCollection\_\-t::Histogram2DCollection\_\-t (const std::string \& {\em collection\_\-name}, \/  const EVENT::StringVec \& {\em name\_\-list}, \/  UInt\_\-t {\em n\_\-hist}, \/  const {\bf HistPar} \& {\em x\_\-par}, \/  const {\bf HistPar} \& {\em y\_\-par})  throw (std::bad\_\-alloc, std::runtime\_\-error)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1Histogram2DCollection__t_a35a0952578e1a6df03a4582455e5a168}
+
+
+Create a collection of histograms which will have the same binning and the same name (except of a numeric extension). 
+\begin{DoxyParams}{Parameters}
+\item[{\em collection\_\-name}]the name of the histogram collection \item[{\em name\_\-list}]a vector containing the names of the histograms whose length is either equals n\_\-hist or is zero. In the latter case the collection name is used for the all histograms. \item[{\em n\_\-hist}]the number of histograms to be created \item[{\em x\_\-par}]the binning of the x-\/axis of the histogram \item[{\em y\_\-par}]the binning of the y-\/axis of the histogram\end{DoxyParams}
+The histograms are only written to a file if the histogram group, to which this histogram belongs, is assigned to a file (\doxyref{histmgr::HistMgr::assignFileName}{p.}{classhistmgr_1_1HistMgr_a20e3c96a8ba6175c8036918ca7acb1e2}). 
+
+Definition at line 33 of file Histogram2DCollection\_\-t.hh.
+
+References createHistograms().\index{histmgr::Histogram2DCollection\_\-t@{histmgr::Histogram2DCollection\_\-t}!Histogram2DCollection\_\-t@{Histogram2DCollection\_\-t}}
+\index{Histogram2DCollection\_\-t@{Histogram2DCollection\_\-t}!histmgr::Histogram2DCollection_t@{histmgr::Histogram2DCollection\_\-t}}
+\subsubsection[{Histogram2DCollection\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}histmgr::Histogram2DCollection\_\-t::Histogram2DCollection\_\-t (const std::string \& {\em collection\_\-name}, \/  const EVENT::StringVec \& {\em name\_\-list}, \/  const lcio::IntVec \& {\em n\_\-hist\_\-list}, \/  const {\bf HistPar} \& {\em x\_\-par}, \/  const {\bf HistPar} \& {\em y\_\-par})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1Histogram2DCollection__t_a787b3b7485747847457337b7e138f0ed}
+
+
+Create a collection of histograms which will have the same binning and the same name (except of a numeric extension). 
+\begin{DoxyParams}{Parameters}
+\item[{\em collection\_\-name}]the of the histogram collection \item[{\em name\_\-list}]a vector containing the names of the histograms whose length is either equals n\_\-hist or is zero. In the latter case the collection name is used for the all histograms. \item[{\em n\_\-hist\_\-list}]the number of histograms to be created \item[{\em x\_\-par}]the binning of the x-\/axis of the histogram \item[{\em y\_\-par}]the binning of the y-\/axis of the histogram\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the histogram collection
+\end{DoxyReturn}
+The histograms are only written to a file if the histogram group, to which this histogram belongs, is assigned to a file (\doxyref{histmgr::HistMgr::assignFileName}{p.}{classhistmgr_1_1HistMgr_a20e3c96a8ba6175c8036918ca7acb1e2}). 
+
+Definition at line 60 of file Histogram2DCollection\_\-t.hh.
+
+References createHistograms().\index{histmgr::Histogram2DCollection\_\-t@{histmgr::Histogram2DCollection\_\-t}!Histogram2DCollection\_\-t@{Histogram2DCollection\_\-t}}
+\index{Histogram2DCollection\_\-t@{Histogram2DCollection\_\-t}!histmgr::Histogram2DCollection_t@{histmgr::Histogram2DCollection\_\-t}}
+\subsubsection[{Histogram2DCollection\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}histmgr::Histogram2DCollection\_\-t::Histogram2DCollection\_\-t (lcio::LCCollection $\ast$ {\em histograms}, \/  lcio::IntVec $\ast$ {\em indices})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1Histogram2DCollection__t_adb283f18b76bde0d93371c93e2ab372d}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em histograms}]the linearised one or two dimensional collection of histograms \item[{\em indices}]optional list of indicies used to give two dimensional access to the histogram list. for each possible index of the first dimension is needed which contains the offset in the list. The second index is added to this offset. \end{DoxyParams}
+
+
+Definition at line 78 of file Histogram2DCollection\_\-t.hh.
+
+References \_\-majorIndex.\index{histmgr::Histogram2DCollection\_\-t@{histmgr::Histogram2DCollection\_\-t}!Histogram2DCollection\_\-t@{Histogram2DCollection\_\-t}}
+\index{Histogram2DCollection\_\-t@{Histogram2DCollection\_\-t}!histmgr::Histogram2DCollection_t@{histmgr::Histogram2DCollection\_\-t}}
+\subsubsection[{Histogram2DCollection\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}histmgr::Histogram2DCollection\_\-t::Histogram2DCollection\_\-t (lcio::LCCollection $\ast$ {\em histograms})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1Histogram2DCollection__t_a0f2cfcb743a248e92180d3b852706ac8}
+
+
+Create a histogram collection from lcio collection. 
+\begin{DoxyParams}{Parameters}
+\item[{\em histograms}]the linearised one or two dimensional collection of histograms (two dimensional collections have the collection parameter \char`\"{}major\char`\"{}). The method does not verify whether the lcio collection really is a histogram collection. However, if the collection has the parameter \char`\"{}major\char`\"{} it creates an index vector (costly operation) assuming that it is a 2d array instead of a 1d array(i.e. collection). The unique group id remains undedfined since it is not stored in the lcio collection. \end{DoxyParams}
+
+
+Definition at line 105 of file Histogram2DCollection\_\-t.hh.
+
+References \_\-majorIndex.
+
+\subsection{Member Function Documentation}
+\index{histmgr::Histogram2DCollection\_\-t@{histmgr::Histogram2DCollection\_\-t}!collection@{collection}}
+\index{collection@{collection}!histmgr::Histogram2DCollection_t@{histmgr::Histogram2DCollection\_\-t}}
+\subsubsection[{collection}]{\setlength{\rightskip}{0pt plus 5cm}const lcio::LCCollection$\ast$ histmgr::Histogram2DCollection\_\-t::collection () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1Histogram2DCollection__t_a17fbf5af12ce7ab4173bf35eab2f5605}
+
+
+get the collection of histograms (read only). The index array needed for the two dimensional acces is added as a parameter named \char`\"{}major\char`\"{}. 
+
+Definition at line 214 of file Histogram2DCollection\_\-t.hh.
+
+References \_\-histogramCol.\index{histmgr::Histogram2DCollection\_\-t@{histmgr::Histogram2DCollection\_\-t}!collection@{collection}}
+\index{collection@{collection}!histmgr::Histogram2DCollection_t@{histmgr::Histogram2DCollection\_\-t}}
+\subsubsection[{collection}]{\setlength{\rightskip}{0pt plus 5cm}lcio::LCCollection$\ast$ histmgr::Histogram2DCollection\_\-t::collection ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1Histogram2DCollection__t_a188140d679c38c1f48a44e0415dabbd6}
+
+
+get the unique group id get the collection of histograms. The index array needed for the two dimensional acces is added as a parameter named \char`\"{}major\char`\"{}. 
+
+Definition at line 209 of file Histogram2DCollection\_\-t.hh.
+
+References \_\-histogramCol.\index{histmgr::Histogram2DCollection\_\-t@{histmgr::Histogram2DCollection\_\-t}!copyNames@{copyNames}}
+\index{copyNames@{copyNames}!histmgr::Histogram2DCollection_t@{histmgr::Histogram2DCollection\_\-t}}
+\subsubsection[{copyNames}]{\setlength{\rightskip}{0pt plus 5cm}void histmgr::Histogram2DCollection\_\-t::copyNames () const\hspace{0.3cm}{\ttfamily  [inline, private]}}\label{classhistmgr_1_1Histogram2DCollection__t_a4dd304e748d23c5f5deba573e1071356}
+
+
+Copy the names from the collection to an accessible vector. The vector of histogram names is attached as a parameter to the LCCollection. 
+
+Definition at line 362 of file Histogram2DCollection\_\-t.hh.
+
+References \_\-histogramCol, and \_\-nameList.
+
+Referenced by getName().\index{histmgr::Histogram2DCollection\_\-t@{histmgr::Histogram2DCollection\_\-t}!createHistograms@{createHistograms}}
+\index{createHistograms@{createHistograms}!histmgr::Histogram2DCollection_t@{histmgr::Histogram2DCollection\_\-t}}
+\subsubsection[{createHistograms}]{\setlength{\rightskip}{0pt plus 5cm}lcio::LCCollection $\ast$ histmgr::Histogram2DCollection\_\-t::createHistograms (const std::string \& {\em collection\_\-name}, \/  const EVENT::StringVec \& {\em name\_\-list}, \/  const lcio::IntVec \& {\em n\_\-hist\_\-list}, \/  const {\bf HistPar} \& {\em x\_\-par}, \/  const {\bf HistPar} \& {\em y\_\-par})  throw (std::bad\_\-alloc,std::runtime\_\-error)}\label{classhistmgr_1_1Histogram2DCollection__t_abff52f3851380b23b55dc311345fb400}
+
+
+create several histograms which will have the same binning and the same name (except of a numeric extension). 
+\begin{DoxyParams}{Parameters}
+\item[{\em collection\_\-name}]the of the histogram collection \item[{\em name\_\-list}]a vector containing the names of the histograms whose length is either equals n\_\-hist or is zero. In the latter case the collection name is used for the all histograms. \item[{\em n\_\-hist\_\-list}]the number of histograms to be created \item[{\em x\_\-par}]the binning of the x-\/axis of the histogram \item[{\em y\_\-par}]the binning of the y-\/axis of the histogram\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the histogram collection
+\end{DoxyReturn}
+The histograms are only written to a file if the histogram group, to which this histogram belongs, is assigned to a file (\doxyref{histmgr::HistMgr::assignFileName}{p.}{classhistmgr_1_1HistMgr_a20e3c96a8ba6175c8036918ca7acb1e2}). 
+
+Definition at line 70 of file Histogram2DCollection\_\-t.cc.\index{histmgr::Histogram2DCollection\_\-t@{histmgr::Histogram2DCollection\_\-t}!createHistograms@{createHistograms}}
+\index{createHistograms@{createHistograms}!histmgr::Histogram2DCollection_t@{histmgr::Histogram2DCollection\_\-t}}
+\subsubsection[{createHistograms}]{\setlength{\rightskip}{0pt plus 5cm}lcio::LCCollection $\ast$ histmgr::Histogram2DCollection\_\-t::createHistograms (const std::string \& {\em collection\_\-name}, \/  const EVENT::StringVec \& {\em name\_\-list}, \/  UInt\_\-t {\em n\_\-hist}, \/  const {\bf HistPar} \& {\em x\_\-par}, \/  const {\bf HistPar} \& {\em y\_\-par})  throw (std::bad\_\-alloc,std::runtime\_\-error)}\label{classhistmgr_1_1Histogram2DCollection__t_a3ee9c9b75d9b166ebb894a5ef232862f}
+
+
+create several histograms which will have the same binning and the same name (except of a numeric extension). 
+\begin{DoxyParams}{Parameters}
+\item[{\em collection\_\-name}]the of the histogram collection \item[{\em name\_\-list}]a vector containing the names of the histograms whose length is either equals n\_\-hist or is zero. In the latter case the collection name is used for the all histograms. \item[{\em n\_\-hist}]the number of histograms to be created \item[{\em x\_\-par}]the binning of the x-\/axis of the histogram \item[{\em y\_\-par}]the binning of the y-\/axis of the histogram\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the histogram collection.
+\end{DoxyReturn}
+The histograms are only written to a file if the histogram group, to which this histogram belongs, is assigned to a file (\doxyref{histmgr::HistMgr::assignFileName}{p.}{classhistmgr_1_1HistMgr_a20e3c96a8ba6175c8036918ca7acb1e2}). 
+
+Definition at line 16 of file Histogram2DCollection\_\-t.cc.
+
+Referenced by Histogram2DCollection\_\-t().\index{histmgr::Histogram2DCollection\_\-t@{histmgr::Histogram2DCollection\_\-t}!getName@{getName}}
+\index{getName@{getName}!histmgr::Histogram2DCollection_t@{histmgr::Histogram2DCollection\_\-t}}
+\subsubsection[{getName}]{\setlength{\rightskip}{0pt plus 5cm}const std::string\& histmgr::Histogram2DCollection\_\-t::getName (UInt\_\-t {\em major\_\-index}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1Histogram2DCollection__t_af3b3d5ea47b48bade82960964d812f81}
+
+
+Get the name of the specified element of the histogram collection. 
+\begin{DoxyParams}{Parameters}
+\item[{\em major\_\-index}]the index of the histogram element or in case of an 2D histogram array the major index. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to the name. 
+\end{DoxyReturn}
+
+
+Definition at line 332 of file Histogram2DCollection\_\-t.hh.
+
+References \_\-nameList, and copyNames().
+
+\subsection{Field Documentation}
+\index{histmgr::Histogram2DCollection\_\-t@{histmgr::Histogram2DCollection\_\-t}!\_\-majorIndex@{\_\-majorIndex}}
+\index{\_\-majorIndex@{\_\-majorIndex}!histmgr::Histogram2DCollection_t@{histmgr::Histogram2DCollection\_\-t}}
+\subsubsection[{\_\-majorIndex}]{\setlength{\rightskip}{0pt plus 5cm}lcio::IntVec$\ast$ {\bf histmgr::Histogram2DCollection\_\-t::\_\-majorIndex}\hspace{0.3cm}{\ttfamily  [private]}}\label{classhistmgr_1_1Histogram2DCollection__t_a5cf6937dc68176cb4d65e424ed566acb}
+
+
+optional list of offset to form a two dimensional array out of the list. 
+
+Definition at line 373 of file Histogram2DCollection\_\-t.hh.
+
+Referenced by deleteCollection(), histogram(), Histogram2DCollection\_\-t(), is2D(), nMajor(), and nMinor().\index{histmgr::Histogram2DCollection\_\-t@{histmgr::Histogram2DCollection\_\-t}!\_\-nameList@{\_\-nameList}}
+\index{\_\-nameList@{\_\-nameList}!histmgr::Histogram2DCollection_t@{histmgr::Histogram2DCollection\_\-t}}
+\subsubsection[{\_\-nameList}]{\setlength{\rightskip}{0pt plus 5cm}lcio::StringVec {\bf histmgr::Histogram2DCollection\_\-t::\_\-nameList}\hspace{0.3cm}{\ttfamily  [mutable, private]}}\label{classhistmgr_1_1Histogram2DCollection__t_a1de57f0f5cb991d9355792fed7faa639}
+
+
+A vector which contains one name for all histograms of the collection or a name for each element. 
+
+Definition at line 375 of file Histogram2DCollection\_\-t.hh.
+
+Referenced by copyNames(), and getName().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+Histogram2DCollection\_\-t.hh\item 
+Histogram2DCollection\_\-t.cc\end{DoxyCompactItemize}

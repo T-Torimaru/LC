@@ -1,0 +1,158 @@
+\section{CALICE::BmlEventDataSup Class Reference}
+\label{classCALICE_1_1BmlEventDataSup}\index{CALICE::BmlEventDataSup@{CALICE::BmlEventDataSup}}
+
+
+Class to store supplementary \doxyref{BmlEventData}{p.}{classCALICE_1_1BmlEventData}.  
+
+
+{\ttfamily \#include $<$BmlEventDataSup.hh$>$}Inheritance diagram for CALICE::BmlEventDataSup::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCALICE_1_1BmlEventDataSup}
+\end{center}
+\end{figure}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf BmlEventDataSup} ()\label{classCALICE_1_1BmlEventDataSup_a1b777ba65db201936af16ba56dc197de}
+
+\begin{DoxyCompactList}\small\item\em Default Constructor. \item\end{DoxyCompactList}\item 
+{\bf BmlEventDataSup} (LCObject $\ast$obj)\label{classCALICE_1_1BmlEventDataSup_ababa5fa292e17ad8181dd30149f4d87e}
+
+\begin{DoxyCompactList}\small\item\em A copy constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$BmlEventDataSup} ()\label{classCALICE_1_1BmlEventDataSup_a8b5715bd0afdd93a7a5573bede6c047a}
+
+\begin{DoxyCompactList}\small\item\em The destructor. \item\end{DoxyCompactList}\item 
+{\bf BmlEventDataSup} \& {\bf setTDCType} (std::string typeStr)
+\begin{DoxyCompactList}\small\item\em set the tdc type \item\end{DoxyCompactList}\item 
+void {\bfseries setPointerToIndexOfIntTypeNames} (int nameind)\label{classCALICE_1_1BmlEventDataSup_a9fa4191baf23435b722322fb1ca8b56e}
+
+\item 
+void {\bfseries setLengthIndexOfIntTypeNames} (int lengthindex)\label{classCALICE_1_1BmlEventDataSup_ad5cfea715dbde1072b8c8a47f61c656e}
+
+\item 
+int {\bf getLengthIndexOfIntTypeNames} () const \label{classCALICE_1_1BmlEventDataSup_a21ebe68dd1e819533a2af15879b1653d}
+
+\begin{DoxyCompactList}\small\item\em Retrieve the index at which the lengths of the names of the int data types do start. \item\end{DoxyCompactList}\item 
+int {\bf getPointerToIndexOfIntTypeNames} () const \label{classCALICE_1_1BmlEventDataSup_afc31491a2fe74e80c3bf4b98b1a6ec1c}
+
+\begin{DoxyCompactList}\small\item\em Retrieve the index at which the pointer to the names of int data types do start. \item\end{DoxyCompactList}\item 
+void {\bf setTypeIndex} (int pos, int value)\label{classCALICE_1_1BmlEventDataSup_afeadf8495ac708b6eb4f372e262b4115}
+
+\begin{DoxyCompactList}\small\item\em Set the index of a given data type name. \item\end{DoxyCompactList}\item 
+std::string {\bf getTDCType} () const 
+\begin{DoxyCompactList}\small\item\em get the tdc type \item\end{DoxyCompactList}\item 
+{\bf BmlEventDataSup} \& {\bf setEventFifoCont} (int fifocont)\label{classCALICE_1_1BmlEventDataSup_ac3263e6f4c8a3be3b1ca36308b0f32c8}
+
+\begin{DoxyCompactList}\small\item\em Store the FIFO content. \item\end{DoxyCompactList}\item 
+unsigned short {\bf getEventCount} () const \label{classCALICE_1_1BmlEventDataSup_a1284d5d9b342180a65d3aef2cd593a50}
+
+\begin{DoxyCompactList}\small\item\em get the event count \item\end{DoxyCompactList}\item 
+unsigned short {\bf getWordCount} () const \label{classCALICE_1_1BmlEventDataSup_a75f899e45c6c056103e25fce6acb0851}
+
+\begin{DoxyCompactList}\small\item\em get the word count \item\end{DoxyCompactList}\item 
+{\bf BmlEventDataSup} \& {\bf setBunchID} (int bunchid)\label{classCALICE_1_1BmlEventDataSup_acef67a0bc90854904fb4382501ecaf8d}
+
+\begin{DoxyCompactList}\small\item\em set the bunch id \item\end{DoxyCompactList}\item 
+int {\bf getBunchID} () const \label{classCALICE_1_1BmlEventDataSup_a402a35429e1fb4cefc030246d6a7dc8d}
+
+\begin{DoxyCompactList}\small\item\em get the bunch id \item\end{DoxyCompactList}\item 
+{\bf BmlEventDataSup} \& {\bf setEventIDTrailer} (int eventIDTrailer)\label{classCALICE_1_1BmlEventDataSup_ac1a762c3a809585cb908e1f9edce15ac}
+
+\begin{DoxyCompactList}\small\item\em Set the eventid from the TDC trailer. \item\end{DoxyCompactList}\item 
+short {\bf getEventIDTrailer} () const \label{classCALICE_1_1BmlEventDataSup_af98ba50b8fb39a943bc35067ffaf337b}
+
+\begin{DoxyCompactList}\small\item\em Return the eventid from the TDC trailer. \item\end{DoxyCompactList}\item 
+{\bf BmlEventDataSup} \& {\bf setTDCErrors} (int tdcErrors)\label{classCALICE_1_1BmlEventDataSup_a812f9190cf1962203e1588669fc98f25}
+
+\begin{DoxyCompactList}\small\item\em Set the TDC errors. \item\end{DoxyCompactList}\item 
+int {\bf getTDCErrors} () const \label{classCALICE_1_1BmlEventDataSup_a53367b022e3100a0e3bd613ef2b70935}
+
+\begin{DoxyCompactList}\small\item\em Get the TDC errors. \item\end{DoxyCompactList}\item 
+{\bf BmlEventDataSup} \& {\bf setBufferOverflow} (int bufferOverflow)\label{classCALICE_1_1BmlEventDataSup_a90c7ac60defd7bb8a827f1aea40aedc6}
+
+\begin{DoxyCompactList}\small\item\em Set the buffer overflow. \item\end{DoxyCompactList}\item 
+int {\bf getBufferOverflow} () const \label{classCALICE_1_1BmlEventDataSup_a5d6652dad161f253768ae01418d2c669}
+
+\begin{DoxyCompactList}\small\item\em Get the buffer overflow. \item\end{DoxyCompactList}\item 
+{\bf BmlEventDataSup} \& {\bf setTriggerLost} (int triggerlost)\label{classCALICE_1_1BmlEventDataSup_ad432619ccacb13abb181a12ab4662822}
+
+\begin{DoxyCompactList}\small\item\em Set the number of words in the trailer. \item\end{DoxyCompactList}\item 
+int {\bf getTriggerLost} () const \label{classCALICE_1_1BmlEventDataSup_a7110357892a453499f8e3bbd2b0ff535}
+
+\begin{DoxyCompactList}\small\item\em Get the number of lost triggers. \item\end{DoxyCompactList}\item 
+{\bf BmlEventDataSup} \& {\bf setTDCWordCountTrailer} (int numwords)\label{classCALICE_1_1BmlEventDataSup_aa8e12d29d2060db9c3657a6e4f9d8ac7}
+
+\begin{DoxyCompactList}\small\item\em Set the number of lost triggers. \item\end{DoxyCompactList}\item 
+int {\bf getTDCWordCountTrailer} () const \label{classCALICE_1_1BmlEventDataSup_a688bc2f933ce1011e4a03ca904539f3c}
+
+\begin{DoxyCompactList}\small\item\em Get the number of words in the trailer. \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1BmlEventDataSup_a075786d44470d270e1e931bcfa896394}
+
+\begin{DoxyCompactList}\small\item\em returns the the type name \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1BmlEventDataSup_acebe6fba59eced039cc6bad225e9bc71}
+
+\begin{DoxyCompactList}\small\item\em returns a brief description of the data stored \item\end{DoxyCompactList}\item 
+std::ostream \& {\bf print} (std::ostream \&ostrmsup)\label{classCALICE_1_1BmlEventDataSup_ae4684c1d74d640dd5b4258d1af5d2e70}
+
+\begin{DoxyCompactList}\small\item\em dumps data content \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries BmlEventData}\label{classCALICE_1_1BmlEventDataSup_af03b3108e540123cf6fb29facde51e29}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to store supplementary \doxyref{BmlEventData}{p.}{classCALICE_1_1BmlEventData}. This is tailored to the data extracted from the Caen TDCs in extension of the actual class \doxyref{BmlEventData}{p.}{classCALICE_1_1BmlEventData} This class is written such that it should be only accessed via the aforementioned class The user is strongly discouraged to instantiate by him/herself. It has only private functions and declares \doxyref{BmlEventData}{p.}{classCALICE_1_1BmlEventData} to be its friend. \begin{DoxyAuthor}{Author}
+R. Pöschl (LAL Orsay) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Oct 13 2010 
+\end{DoxyDate}
+
+
+Definition at line 52 of file BmlEventDataSup.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::BmlEventDataSup@{CALICE::BmlEventDataSup}!getTDCType@{getTDCType}}
+\index{getTDCType@{getTDCType}!CALICE::BmlEventDataSup@{CALICE::BmlEventDataSup}}
+\subsubsection[{getTDCType}]{\setlength{\rightskip}{0pt plus 5cm}std::string CALICE::BmlEventDataSup::getTDCType () const\hspace{0.3cm}{\ttfamily  [inline, private]}}\label{classCALICE_1_1BmlEventDataSup_a2e28417799fb6b46b4fd5bd798bffed3}
+
+
+get the tdc type Currently since only one string in object -\/$>$ to be modified if more strings 
+
+Definition at line 144 of file BmlEventDataSup.hh.
+
+References getLengthIndexOfIntTypeNames(), getPointerToIndexOfIntTypeNames(), and CALICE::getStringFromInts().
+
+Referenced by CALICE::BmlEventData::getTDCType(), and print().\index{CALICE::BmlEventDataSup@{CALICE::BmlEventDataSup}!setTDCType@{setTDCType}}
+\index{setTDCType@{setTDCType}!CALICE::BmlEventDataSup@{CALICE::BmlEventDataSup}}
+\subsubsection[{setTDCType}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BmlEventDataSup}\& CALICE::BmlEventDataSup::setTDCType (std::string {\em typeStr})\hspace{0.3cm}{\ttfamily  [inline, private]}}\label{classCALICE_1_1BmlEventDataSup_ab3677309acfd81396e1333ff9b967f2a}
+
+
+set the tdc type 
+
+Store the index at which the pointer to the names of the int data data types do start
+
+This written such that it can be extended in case more strings need to be stored
+
+Would however trigger a bit of re-\/writing but at least it \_\-sure\_\- that it remains always
+
+compatible and flexible
+
+We use the same ugly but successful technique as in \doxyref{DaqTypeDataBlock}{p.}{classCALICE_1_1DaqTypeDataBlock} (we may even be able to inherit from it
+
+now we've simply copied a few useful methods -\/$>$ to be checked 
+
+Definition at line 94 of file BmlEventDataSup.hh.
+
+References CALICE::convertStringToInts(), getLengthIndexOfIntTypeNames(), getPointerToIndexOfIntTypeNames(), CALICE::LCGenericObjectImplExt::obj(), and setTypeIndex().
+
+Referenced by BmlEventDataSup(), and CALICE::BmlEventData::setTDCType().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+BmlEventDataSup.hh\item 
+BmlEventDataSup.cc\end{DoxyCompactItemize}

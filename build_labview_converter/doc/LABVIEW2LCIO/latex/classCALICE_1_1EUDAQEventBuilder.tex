@@ -1,0 +1,82 @@
+\section{CALICE::EUDAQEventBuilder Class Reference}
+\label{classCALICE_1_1EUDAQEventBuilder}\index{CALICE::EUDAQEventBuilder@{CALICE::EUDAQEventBuilder}}
+
+
+Processor for reading the AHCAL EUDAQ SLCIO files.  
+
+
+{\ttfamily \#include $<$EUDAQEventBuilder.hh$>$}\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf rawData}
+\begin{DoxyCompactList}\small\item\em The slcio data format. \item\end{DoxyCompactList}\item 
+struct {\bf rawTemp}
+\begin{DoxyCompactList}\small\item\em The slcio data format for the temperature sensor. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Processor $\ast$ {\bf newProcessor} ()\label{classCALICE_1_1EUDAQEventBuilder_aa3dc57e6961542850ee8a4690ced210c}
+
+\begin{DoxyCompactList}\small\item\em Implementation of new Processor returns pointer to processor. \item\end{DoxyCompactList}\item 
+void {\bf processEvent} (LCEvent $\ast$evt)\label{classCALICE_1_1EUDAQEventBuilder_ac54decb0cf83f95f25eeb56e6a68e7a1}
+
+\begin{DoxyCompactList}\small\item\em Creates events with LCGenrealObject collections from the EUDAQ input file and calls all active processors' \doxyref{processEvent()}{p.}{classCALICE_1_1EUDAQEventBuilder_ac54decb0cf83f95f25eeb56e6a68e7a1} and processRunHeader Method. \item\end{DoxyCompactList}\item 
+void {\bf writeSlowControl} ()\label{classCALICE_1_1EUDAQEventBuilder_a0bda9d7aec8ee7ca6ce1c3b8dc6b9795}
+
+\begin{DoxyCompactList}\small\item\em work on slow control data, ASIC \item\end{DoxyCompactList}\item 
+virtual void {\bf init} ()
+\begin{DoxyCompactList}\small\item\em work on slow control data, Temperature \item\end{DoxyCompactList}\item 
+virtual void {\bf end} ()\label{classCALICE_1_1EUDAQEventBuilder_a0d15b17c115c16b310055d504ede10a4}
+
+\begin{DoxyCompactList}\small\item\em end method \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bfseries \_\-inputColName}\label{classCALICE_1_1EUDAQEventBuilder_af7d60899294e8381b5d81adc95c99ac0}
+
+\item 
+std::string {\bfseries \_\-inputColNameTemp}\label{classCALICE_1_1EUDAQEventBuilder_a2e49295b97dea6c2bdf8edfd95186b7f}
+
+\item 
+std::string {\bfseries \_\-outputColNameECAL}\label{classCALICE_1_1EUDAQEventBuilder_a1dde63ebdba4c9c0f22c6643f4469aa4}
+
+\item 
+std::string {\bfseries \_\-outputColNameHCAL}\label{classCALICE_1_1EUDAQEventBuilder_ac24b9dbaa1e79ba913d0ed6b74a8b272}
+
+\item 
+std::string {\bfseries \_\-outputColNameTemp}\label{classCALICE_1_1EUDAQEventBuilder_aadd12063b4970b51ed417c88c429ca1c}
+
+\item 
+std::string {\bfseries \_\-detectorTypeName}\label{classCALICE_1_1EUDAQEventBuilder_ae35b525b53a88d398005f79c985c9bca}
+
+\item 
+int {\bf \_\-runNumber}\label{classCALICE_1_1EUDAQEventBuilder_a8f4ada65b09422974d99c770bb00307b}
+
+\begin{DoxyCompactList}\small\item\em The run number. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Processor for reading the AHCAL EUDAQ SLCIO files. It processes the input data to create events with LCIO collections of the AHCAL EUDAQ SLCIO output (sorted by readout cycles). Based on F. Gaede's StdHepReader to be found in the marlin package. \begin{DoxyAuthor}{Author}
+: A. Irles (DESY), based on the S. Lu's (DESY Hamburg) LabviewConverter2 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+May 20 2015 
+\end{DoxyDate}
+
+
+Definition at line 22 of file EUDAQEventBuilder.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::EUDAQEventBuilder@{CALICE::EUDAQEventBuilder}!init@{init}}
+\index{init@{init}!CALICE::EUDAQEventBuilder@{CALICE::EUDAQEventBuilder}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::EUDAQEventBuilder::init ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCALICE_1_1EUDAQEventBuilder_a7a1f441b5b85da27e467689be7db0a4c}
+
+
+work on slow control data, Temperature init method 
+
+Definition at line 85 of file EUDAQEventBuilder.cc.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+EUDAQEventBuilder.hh\item 
+EUDAQEventBuilder.cc\end{DoxyCompactItemize}

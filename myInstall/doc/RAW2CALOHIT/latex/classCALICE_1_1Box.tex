@@ -1,0 +1,147 @@
+\section{CALICE::Box Class Reference}
+\label{classCALICE_1_1Box}\index{CALICE::Box@{CALICE::Box}}
+
+
+Helper class to calculate an envelop cuboid around hit collections.  
+
+
+{\ttfamily \#include $<$Box.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf reset} ()\label{classCALICE_1_1Box_ab3f1dc40177112886cf159f568efa6d7}
+
+\begin{DoxyCompactList}\small\item\em Remove all hits from the box. \item\end{DoxyCompactList}\item 
+void {\bf add} (const EVENT::CalorimeterHit $\ast$a\_\-hit)
+\begin{DoxyCompactList}\small\item\em Add a new hit to the box. \item\end{DoxyCompactList}\item 
+void {\bf add} (const {\bf Box} \&a)
+\begin{DoxyCompactList}\small\item\em Add all hits from the given box and recalculate the envelop. \item\end{DoxyCompactList}\item 
+Bool\_\-t {\bf closerToEnvelopThan} (Float\_\-t distance, const {\bf ThreeVector\_\-t} $\ast$a) const \label{classCALICE_1_1Box_a7aaf4c49b26f3a3840eb24679247367b}
+
+\begin{DoxyCompactList}\small\item\em Return true if the given position is closer to the envelop than the specified distance. \item\end{DoxyCompactList}\item 
+Bool\_\-t {\bf closerToEnvelopThan} (Float\_\-t distance, const {\bf Box} \&a\_\-cluster) const \label{classCALICE_1_1Box_a99e38c13ebdb9aeabad211ac3911d234}
+
+\begin{DoxyCompactList}\small\item\em Return true if the given box is closer to this box than the specified distance. \item\end{DoxyCompactList}\item 
+Double\_\-t {\bf minDistanceToPoints} (const EVENT::CalorimeterHit $\ast$a\_\-hit) const \label{classCALICE_1_1Box_af4a9209ec249071bb52fdd40ef6a194c}
+
+\begin{DoxyCompactList}\small\item\em Return the minimum distance of the given hits from the hits contained in this box. \item\end{DoxyCompactList}\item 
+Double\_\-t {\bf minDistanceToPoints} (const {\bf ThreeVector\_\-t} $\ast$hit\_\-point) const \label{classCALICE_1_1Box_a2479a14154dddc489776721efd5f036d}
+
+\begin{DoxyCompactList}\small\item\em Return the minimum distance of the given position from the hits contained in this box. \item\end{DoxyCompactList}\item 
+void {\bf show} ()\label{classCALICE_1_1Box_a87a483695664352615623730f05fd441}
+
+\begin{DoxyCompactList}\small\item\em Print out the positiosn of all contained hits. \item\end{DoxyCompactList}\item 
+void {\bf calculateSize} ()\label{classCALICE_1_1Box_aa4bac160c1d2eadeb5f7e61ddec4f664}
+
+\begin{DoxyCompactList}\small\item\em Calculate the envelop. \item\end{DoxyCompactList}\item 
+Double\_\-t {\bf getSize} (UInt\_\-t i) const 
+\begin{DoxyCompactList}\small\item\em Get the dimensions of one axis. \item\end{DoxyCompactList}\item 
+Bool\_\-t {\bf isMerged} () const 
+\begin{DoxyCompactList}\small\item\em Return true if this box was merged with another one. \item\end{DoxyCompactList}\item 
+void {\bf setMerged} ()\label{classCALICE_1_1Box_a263ee0e337921d5ddd2090bfa7b69713}
+
+\begin{DoxyCompactList}\small\item\em Set the status to \char`\"{}merged\char`\"{}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ThreeVector\_\-t} {\bfseries \_\-low}\label{classCALICE_1_1Box_adbb71adc36a978ff83b6c3ebb21c9705}
+
+\item 
+{\bf ThreeVector\_\-t} {\bfseries \_\-high}\label{classCALICE_1_1Box_a1146f0bc27c7e6beb495cf697ef9d0b1}
+
+\item 
+std::vector$<$ const EVENT::CalorimeterHit $\ast$ $>$ {\bf \_\-hits}
+\begin{DoxyCompactList}\small\item\em the hit collection contained in this box. \item\end{DoxyCompactList}\item 
+{\bf Stat\_\-t} {\bf \_\-mean} [3]
+\begin{DoxyCompactList}\small\item\em the position of the box centre and its dimesnion (all three axis). \item\end{DoxyCompactList}\item 
+Bool\_\-t {\bf \_\-merged}
+\begin{DoxyCompactList}\small\item\em true if this box is merged with another one. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Helper class to calculate an envelop cuboid around hit collections. This class can be used to quickly reject hits which are far away from the hit collection contained in this box. 
+
+Definition at line 42 of file Box.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::Box@{CALICE::Box}!add@{add}}
+\index{add@{add}!CALICE::Box@{CALICE::Box}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::Box::add (const {\bf Box} \& {\em a})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1Box_af8071d168d578b5c4046ed25da089d4c}
+
+
+Add all hits from the given box and recalculate the envelop. The envelop is not calculated automatically. \begin{DoxySeeAlso}{See also}
+\doxyref{calculateSize}{p.}{classCALICE_1_1Box_aa4bac160c1d2eadeb5f7e61ddec4f664}. 
+\end{DoxySeeAlso}
+
+
+Definition at line 77 of file Box.hh.
+
+References \_\-hits, and add().\index{CALICE::Box@{CALICE::Box}!add@{add}}
+\index{add@{add}!CALICE::Box@{CALICE::Box}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::Box::add (const EVENT::CalorimeterHit $\ast$ {\em a\_\-hit})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1Box_ad1fbc523839d5544ac0def273f3b6042}
+
+
+Add a new hit to the box. The envelop is not calculated automatically. \begin{DoxySeeAlso}{See also}
+\doxyref{calculateSize}{p.}{classCALICE_1_1Box_aa4bac160c1d2eadeb5f7e61ddec4f664}. 
+\end{DoxySeeAlso}
+
+
+Definition at line 55 of file Box.hh.
+
+References \_\-hits, and \_\-mean.
+
+Referenced by add().\index{CALICE::Box@{CALICE::Box}!getSize@{getSize}}
+\index{getSize@{getSize}!CALICE::Box@{CALICE::Box}}
+\subsubsection[{getSize}]{\setlength{\rightskip}{0pt plus 5cm}Double\_\-t CALICE::Box::getSize (UInt\_\-t {\em i}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1Box_a8c499525edb4c0ea185df58b2a0a89d3}
+
+
+Get the dimensions of one axis. 
+\begin{DoxyParams}{Parameters}
+\item[{\em i}]axis (0-\/2). \end{DoxyParams}
+
+
+Definition at line 173 of file Box.hh.
+
+References \_\-mean.\index{CALICE::Box@{CALICE::Box}!isMerged@{isMerged}}
+\index{isMerged@{isMerged}!CALICE::Box@{CALICE::Box}}
+\subsubsection[{isMerged}]{\setlength{\rightskip}{0pt plus 5cm}Bool\_\-t CALICE::Box::isMerged () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1Box_a5ae481b0b52563ce15dc6e8312e729b3}
+
+
+Return true if this box was merged with another one. If a box is merged all hits are added to the box with which it is merged. Thus, the same hits are stored in two boxes. 
+
+Definition at line 179 of file Box.hh.
+
+References \_\-merged.
+
+\subsection{Field Documentation}
+\index{CALICE::Box@{CALICE::Box}!\_\-hits@{\_\-hits}}
+\index{\_\-hits@{\_\-hits}!CALICE::Box@{CALICE::Box}}
+\subsubsection[{\_\-hits}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$const EVENT::CalorimeterHit$\ast$$>$ {\bf CALICE::Box::\_\-hits}}\label{classCALICE_1_1Box_a59a8242b3a5b00a253a997fe3e2c977a}
+
+
+the hit collection contained in this box. 
+
+Definition at line 188 of file Box.hh.
+
+Referenced by add(), minDistanceToPoints(), reset(), and show().\index{CALICE::Box@{CALICE::Box}!\_\-mean@{\_\-mean}}
+\index{\_\-mean@{\_\-mean}!CALICE::Box@{CALICE::Box}}
+\subsubsection[{\_\-mean}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Stat\_\-t} {\bf CALICE::Box::\_\-mean}[3]}\label{classCALICE_1_1Box_ae964c5ea0f130bc42b090d82cd909ee8}
+
+
+the position of the box centre and its dimesnion (all three axis). 
+
+Definition at line 189 of file Box.hh.
+
+Referenced by add(), calculateSize(), getSize(), reset(), and show().\index{CALICE::Box@{CALICE::Box}!\_\-merged@{\_\-merged}}
+\index{\_\-merged@{\_\-merged}!CALICE::Box@{CALICE::Box}}
+\subsubsection[{\_\-merged}]{\setlength{\rightskip}{0pt plus 5cm}Bool\_\-t {\bf CALICE::Box::\_\-merged}}\label{classCALICE_1_1Box_a746e0bdaa3f3039bf02d81e045659963}
+
+
+true if this box is merged with another one. 
+
+Definition at line 190 of file Box.hh.
+
+Referenced by isMerged(), reset(), and setMerged().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+Box.hh\end{DoxyCompactItemize}

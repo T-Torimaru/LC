@@ -1,0 +1,46 @@
+\section{CALICE::Ahc2GainCalibrator::PedestalCalibrator Class Reference}
+\label{classCALICE_1_1Ahc2GainCalibrator_1_1PedestalCalibrator}\index{CALICE::Ahc2GainCalibrator::PedestalCalibrator@{CALICE::Ahc2GainCalibrator::PedestalCalibrator}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries FillPedestal} ()\label{classCALICE_1_1Ahc2GainCalibrator_1_1PedestalCalibrator_ac8495f26ef09163ccdc5e362c2d6821d}
+
+\item 
+void {\bfseries setPath} (std::string PATH)\label{classCALICE_1_1Ahc2GainCalibrator_1_1PedestalCalibrator_a3d8ff605481b2ae0d82b6efffecede38}
+
+\item 
+double {\bfseries getOffset} (int chip, int chn, int memCell)\label{classCALICE_1_1Ahc2GainCalibrator_1_1PedestalCalibrator_a00171a69b81f4e2ac6ca24b73b4b9327}
+
+\item 
+double {\bfseries getWidthTotal} (int chip, int chn)\label{classCALICE_1_1Ahc2GainCalibrator_1_1PedestalCalibrator_a7164284c298c314cb3db32210a88cc8c}
+
+\item 
+double {\bfseries getPositionTotal} (int chip, int chn)\label{classCALICE_1_1Ahc2GainCalibrator_1_1PedestalCalibrator_a92d1724e50988de6acff8f92da87f188}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bfseries path}\label{classCALICE_1_1Ahc2GainCalibrator_1_1PedestalCalibrator_ad9e48a9fea8ab725064fd89010bea802}
+
+\item 
+std::map$<$ int, std::vector$<$ std::vector$<$ double $>$ $>$ $>$ {\bfseries pedOffsets}\label{classCALICE_1_1Ahc2GainCalibrator_1_1PedestalCalibrator_aaaae6b293fabca77df498630602cd855}
+
+\item 
+std::map$<$ int, std::vector$<$ double $>$ $>$ {\bfseries pedPossAll}\label{classCALICE_1_1Ahc2GainCalibrator_1_1PedestalCalibrator_af030b52d51d501b355bcffcefd621e4e}
+
+\item 
+std::map$<$ int, std::vector$<$ double $>$ $>$ {\bfseries pedWidthsAll}\label{classCALICE_1_1Ahc2GainCalibrator_1_1PedestalCalibrator_a4738b2623dc8561000d33a3e348415d7}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 170 of file Ahc2GainCalibrator.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+Ahc2GainCalibrator.hh\item 
+Ahc2GainCalibrator.cc\end{DoxyCompactItemize}

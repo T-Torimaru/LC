@@ -1,0 +1,199 @@
+\section{CALICE::FeTrgData Class Reference}
+\label{classCALICE_1_1FeTrgData}\index{CALICE::FeTrgData@{CALICE::FeTrgData}}
+
+
+Stores the trigger history (i.e.  
+
+
+{\ttfamily \#include $<$FeTrgData.hh$>$}Inheritance diagram for CALICE::FeTrgData::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCALICE_1_1FeTrgData}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf FeTrgData} (unsigned int board\_\-id)
+\begin{DoxyCompactList}\small\item\em UsefulConstructor. \item\end{DoxyCompactList}\item 
+{\bf FeTrgData} (LCObject $\ast$obj)\label{classCALICE_1_1FeTrgData_ae4699322e9026b8a3ee23a30d41eb286}
+
+\begin{DoxyCompactList}\small\item\em 'Copy constructor' needed to interpret LCCollection read from file/database. \item\end{DoxyCompactList}\item 
+{\bf FeTrgData} \& {\bf setBoardID} (int boardID)
+\begin{DoxyCompactList}\small\item\em set the packed board id. \item\end{DoxyCompactList}\item 
+int {\bf getBoardID} () const \label{classCALICE_1_1FeTrgData_ab209441abacd771419e405827eedbf9b}
+
+\begin{DoxyCompactList}\small\item\em Get the board id. \item\end{DoxyCompactList}\item 
+{\bf FeTrgData} \& {\bf setRecordLabel} (int label)
+\begin{DoxyCompactList}\small\item\em set the record label. \item\end{DoxyCompactList}\item 
+int {\bf getRecordLabel} () const \label{classCALICE_1_1FeTrgData_a8af2b4f79f761ed922bda71ca34a2e35}
+
+\begin{DoxyCompactList}\small\item\em get the record label \item\end{DoxyCompactList}\item 
+{\bf FeTrgData} \& {\bf setHeaderWord} (int header)\label{classCALICE_1_1FeTrgData_a031101248fdcc6bd674f5f0a20076519}
+
+\begin{DoxyCompactList}\small\item\em The header which comes along with the CrcVlinkTrgData. \item\end{DoxyCompactList}\item 
+int {\bf getHeaderWord} () const \label{classCALICE_1_1FeTrgData_aee7c5d27435bb47dcc5a0fa7195f19de}
+
+\begin{DoxyCompactList}\small\item\em Get the header word. \item\end{DoxyCompactList}\item 
+{\bf FeTrgData} \& {\bf setTrailerWord} (int trailer)\label{classCALICE_1_1FeTrgData_aba4ddaa52d268934f26a4c7bfa9c7726}
+
+\begin{DoxyCompactList}\small\item\em The trailer which comes along with the CrcVlinkTrgData. \item\end{DoxyCompactList}\item 
+int {\bf getTrailerWord} () const \label{classCALICE_1_1FeTrgData_a5ffb1789508a8dde836d3da88ef5b872}
+
+\begin{DoxyCompactList}\small\item\em Get the trailer word. \item\end{DoxyCompactList}\item 
+{\bf FeTrgData} \& {\bf setTriggerCounter} (int trigcount)\label{classCALICE_1_1FeTrgData_a1f7fda609b65e41d3d6622139a75b015}
+
+\begin{DoxyCompactList}\small\item\em Set the trigger counter (=trigger number). \item\end{DoxyCompactList}\item 
+int {\bf getTriggerCounter} () const \label{classCALICE_1_1FeTrgData_a2084f1b7da4ba0606e8a861ab67be29c}
+
+\begin{DoxyCompactList}\small\item\em Get the trigger number. \item\end{DoxyCompactList}\item 
+{\bf FeTrgData} \& {\bf setFifoWord} (unsigned int word\_\-index, unsigned int word)
+\begin{DoxyCompactList}\small\item\em Set the fifo word. \item\end{DoxyCompactList}\item 
+{\bf FeTrgData} \& {\bf setAllFifoWords} (unsigned int n\_\-words, const unsigned int $\ast$const word\_\-list)
+\begin{DoxyCompactList}\small\item\em Set all the fifo words. \item\end{DoxyCompactList}\item 
+int {\bf getNFifoWords} () const \label{classCALICE_1_1FeTrgData_a6a008a08e6e3c7b13c9feecb7287dcbe}
+
+\begin{DoxyCompactList}\small\item\em Get the number of words contained in the fifo. \item\end{DoxyCompactList}\item 
+int {\bf getFifoWord} (unsigned int word\_\-index) const 
+\begin{DoxyCompactList}\small\item\em Get a fifo word. \item\end{DoxyCompactList}\item 
+IntVec \& {\bf getFifoWords} (IntVec \&dest) const 
+\begin{DoxyCompactList}\small\item\em Get a fifo word. \item\end{DoxyCompactList}\item 
+void {\bf print} (std::ostream \&os)\label{classCALICE_1_1FeTrgData_a6bc8fda20344fc0554c651285d3dfa1a}
+
+\begin{DoxyCompactList}\small\item\em Convenient print method. \item\end{DoxyCompactList}\item 
+const std::string {\bfseries getTypeName} () const \label{classCALICE_1_1FeTrgData_a4923ab06fbee197d93dad21ca8f30ed2}
+
+\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1FeTrgData_abf24441f6eb134ea939fd4028b6b5cf7}
+
+\begin{DoxyCompactList}\small\item\em Return a brief description of the data members. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Stores the trigger history (i.e. fifo content).when it appears in the front end as realized for runs starting in May 2006 (Ask Paul for firmware version) in older versions of the DAQ these data came along wiith the BeTrgEventData which still contains information related to the data handled by the present interface class.
+
+To acces the configuration: 
+\begin{DoxyPre}
+   void processEvent(LCEvent *event)  \{
+       try \{
+        // string \_colName = "BeTrgEventData"
+        LCCollection *col=event->getCollection(\_colName);
+        for (unsigned int element\_i=0; element\_i<col->getNumberOfElements(); element\_i++) \{
+           \doxyref{BeTrgEvent}{p.}{classCALICE_1_1BeTrgEvent} event(col->getElementAt(element\_i));\end{DoxyPre}
+
+
+
+\begin{DoxyPre}        \}
+   \}
+ \end{DoxyPre}
+
+
+\begin{DoxyAuthor}{Author}
+R. Pöschl (LAL Orsay) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Jul 2006 
+\end{DoxyDate}
+
+
+Definition at line 56 of file FeTrgData.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CALICE::FeTrgData@{CALICE::FeTrgData}!FeTrgData@{FeTrgData}}
+\index{FeTrgData@{FeTrgData}!CALICE::FeTrgData@{CALICE::FeTrgData}}
+\subsubsection[{FeTrgData}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::FeTrgData::FeTrgData (unsigned int {\em board\_\-id})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1FeTrgData_a1839aae65e73c22b7827f32e3f2acc04}
+
+
+UsefulConstructor. 
+\begin{DoxyParams}{Parameters}
+\item[{\em board\_\-id}]the packed board id (\doxyref{CALICE::BoardID}{p.}{classCALICE_1_1BoardID}). \end{DoxyParams}
+
+
+Definition at line 64 of file FeTrgData.hh.
+
+References setBoardID(), setHeaderWord(), setRecordLabel(), setTrailerWord(), and setTriggerCounter().
+
+\subsection{Member Function Documentation}
+\index{CALICE::FeTrgData@{CALICE::FeTrgData}!getFifoWord@{getFifoWord}}
+\index{getFifoWord@{getFifoWord}!CALICE::FeTrgData@{CALICE::FeTrgData}}
+\subsubsection[{getFifoWord}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::FeTrgData::getFifoWord (unsigned int {\em word\_\-index}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1FeTrgData_acec138b6d2208c16c2918ce7a94050db}
+
+
+Get a fifo word. 
+\begin{DoxyParams}{Parameters}
+\item[{\em word\_\-index}]of the word in the fifo. \end{DoxyParams}
+
+
+Definition at line 156 of file FeTrgData.hh.
+
+References getNFifoWords().
+
+Referenced by getFifoWords(), and print().\index{CALICE::FeTrgData@{CALICE::FeTrgData}!getFifoWords@{getFifoWords}}
+\index{getFifoWords@{getFifoWords}!CALICE::FeTrgData@{CALICE::FeTrgData}}
+\subsubsection[{getFifoWords}]{\setlength{\rightskip}{0pt plus 5cm}IntVec\& CALICE::FeTrgData::getFifoWords (IntVec \& {\em dest}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1FeTrgData_a948057cbcdd6783699a7571654582e83}
+
+
+Get a fifo word. 
+\begin{DoxyParams}{Parameters}
+\item[{\em dest}]reference to a vector of integers whiich will be cleared in filled with the contents of the fifo. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+for convenience a reference to the filled vector (i.e. is the one given as argument).
+\end{DoxyReturn}
+NOTE: Unless a vector is needed to pass the data to some function, it is adviced to get the individual values with \doxyref{getFifoWord()}{p.}{classCALICE_1_1FeTrgData_acec138b6d2208c16c2918ce7a94050db} since this avoids copying (On the other hand, each access has the penalty of a virtual function call, so in some cases it might be advantages to make a copy which will allow faster element acces in subsequent calls.) 
+
+Definition at line 177 of file FeTrgData.hh.
+
+References getFifoWord(), and getNFifoWords().\index{CALICE::FeTrgData@{CALICE::FeTrgData}!setAllFifoWords@{setAllFifoWords}}
+\index{setAllFifoWords@{setAllFifoWords}!CALICE::FeTrgData@{CALICE::FeTrgData}}
+\subsubsection[{setAllFifoWords}]{\setlength{\rightskip}{0pt plus 5cm}{\bf FeTrgData}\& CALICE::FeTrgData::setAllFifoWords (unsigned int {\em n\_\-words}, \/  const unsigned int $\ast$const  {\em word\_\-list})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1FeTrgData_a59880354541d66c1d33a4255a15dd3cd}
+
+
+Set all the fifo words. 
+\begin{DoxyParams}{Parameters}
+\item[{\em n\_\-words}]the number of words in the fifo. \item[{\em word\_\-list}]a pointer to the fifo words. \end{DoxyParams}
+
+
+Definition at line 137 of file FeTrgData.hh.
+
+References CALICE::LCGenericObjectImplExt::obj().\index{CALICE::FeTrgData@{CALICE::FeTrgData}!setBoardID@{setBoardID}}
+\index{setBoardID@{setBoardID}!CALICE::FeTrgData@{CALICE::FeTrgData}}
+\subsubsection[{setBoardID}]{\setlength{\rightskip}{0pt plus 5cm}{\bf FeTrgData}\& CALICE::FeTrgData::setBoardID (int {\em boardID})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1FeTrgData_abdc3be6bea6d9b97f79d2aeae91e3c05}
+
+
+set the packed board id. \begin{DoxySeeAlso}{See also}
+\doxyref{BoardID}{p.}{classCALICE_1_1BoardID} 
+\end{DoxySeeAlso}
+
+
+Definition at line 87 of file FeTrgData.hh.
+
+References CALICE::LCGenericObjectImplExt::obj().
+
+Referenced by FeTrgData().\index{CALICE::FeTrgData@{CALICE::FeTrgData}!setFifoWord@{setFifoWord}}
+\index{setFifoWord@{setFifoWord}!CALICE::FeTrgData@{CALICE::FeTrgData}}
+\subsubsection[{setFifoWord}]{\setlength{\rightskip}{0pt plus 5cm}{\bf FeTrgData}\& CALICE::FeTrgData::setFifoWord (unsigned int {\em word\_\-index}, \/  unsigned int {\em word})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1FeTrgData_a6273f9e3f9b0331a85e4b14056084f31}
+
+
+Set the fifo word. Remmeber the fifo contains the -\/trigger history-\/ 
+\begin{DoxyParams}{Parameters}
+\item[{\em word\_\-index}]of the word in the fifo. \item[{\em word}]the value of the word. \end{DoxyParams}
+
+
+Definition at line 130 of file FeTrgData.hh.
+
+References CALICE::LCGenericObjectImplExt::obj().\index{CALICE::FeTrgData@{CALICE::FeTrgData}!setRecordLabel@{setRecordLabel}}
+\index{setRecordLabel@{setRecordLabel}!CALICE::FeTrgData@{CALICE::FeTrgData}}
+\subsubsection[{setRecordLabel}]{\setlength{\rightskip}{0pt plus 5cm}{\bf FeTrgData}\& CALICE::FeTrgData::setRecordLabel (int {\em label})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1FeTrgData_a87b26a9e8d417a4bb7da8979ccccb705}
+
+
+set the record label. 
+
+Definition at line 93 of file FeTrgData.hh.
+
+References CALICE::LCGenericObjectImplExt::obj().
+
+Referenced by FeTrgData().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+FeTrgData.hh\end{DoxyCompactItemize}

@@ -1,0 +1,270 @@
+\section{CALICE::ErrorBits Class Reference}
+\label{classCALICE_1_1ErrorBits}\index{CALICE::ErrorBits@{CALICE::ErrorBits}}
+
+
+Helper class to query or set the event errors.  
+
+
+{\ttfamily \#include $<$ErrorBits.hh$>$}\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries EErrorBits} \{ \par
+{\bfseries kNoEventData}, 
+{\bfseries kMissingAdcBlock}, 
+{\bfseries kMissingVLinkHeader}, 
+{\bfseries kInvalidTrigger}, 
+\par
+{\bfseries kBadConfigData}, 
+{\bfseries kWrongTriggerCounter}, 
+{\bfseries kCorruptEventRecord}, 
+{\bfseries kMissingTriggerRecord}, 
+\par
+{\bfseries kCorruptAcquisition}, 
+{\bfseries kTDCOutOfSynch}, 
+{\bfseries kDirtyEvent}, 
+{\bfseries kLargeNegativeSignal}, 
+\par
+{\bfseries kCorruptBmlRecord}, 
+{\bfseries kCorruptDifTrigCounter}, 
+{\bfseries kNErrorBits}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries ErrorBits} (int trigger\_\-bits)\label{classCALICE_1_1ErrorBits_a927b74aac9ca3f891c36c473ff4442dc}
+
+\item 
+bool {\bf operator!} () const \label{classCALICE_1_1ErrorBits_ad93c6729233b5798daa61b312fa762ea}
+
+\begin{DoxyCompactList}\small\item\em Return true if NO error was detected. \item\end{DoxyCompactList}\item 
+{\bf operator bool} () const \label{classCALICE_1_1ErrorBits_a61ab35bd38f6357c663a5bc3af3e5aa7}
+
+\begin{DoxyCompactList}\small\item\em Return true if an error was detected. \item\end{DoxyCompactList}\item 
+bool {\bf noEventData} () const \label{classCALICE_1_1ErrorBits_a375385c62d316d1961fa31180546c8b6}
+
+\begin{DoxyCompactList}\small\item\em Was the event data missing for this event? return true if all ADC blocks were missing;. \item\end{DoxyCompactList}\item 
+void {\bf setNoEventData} ()\label{classCALICE_1_1ErrorBits_ab4b06519a8a5108fb722f7e5f67bfe3f}
+
+\begin{DoxyCompactList}\small\item\em Set the missing event data flag. \item\end{DoxyCompactList}\item 
+bool {\bf missingADCBlock} () const \label{classCALICE_1_1ErrorBits_a7bf182209fc6806fb29c427378bccc49}
+
+\begin{DoxyCompactList}\small\item\em Is one or more ADC blocks missing? return true if one or more ADC blocks are missing. \item\end{DoxyCompactList}\item 
+void {\bf setMissingADCBlock} ()\label{classCALICE_1_1ErrorBits_a3995149a7c9509b200aa39aa199b845d}
+
+\begin{DoxyCompactList}\small\item\em Set the error bit to flag missing ADC blocks. \item\end{DoxyCompactList}\item 
+bool {\bf missingVLinkHeader} () const \label{classCALICE_1_1ErrorBits_acdc6a1950dcfb3bd6ae8582b05642aa9}
+
+\begin{DoxyCompactList}\small\item\em Is the VLink Header missing? return true if the VLink header is missing. \item\end{DoxyCompactList}\item 
+void {\bf setMissingVLinkHeader} ()\label{classCALICE_1_1ErrorBits_af424a5412ff42f2cb9f17ab903b5d9af}
+
+\begin{DoxyCompactList}\small\item\em Set the error bit to flag missing VLink headers. \item\end{DoxyCompactList}\item 
+bool {\bf wrongTriggerCounter} () const 
+\begin{DoxyCompactList}\small\item\em Return true if the trigger counter did not change or is not the same for all \char`\"{}valid\char`\"{} front-\/ends. \item\end{DoxyCompactList}\item 
+void {\bf setWrongTriggerCounter} ()\label{classCALICE_1_1ErrorBits_a15c07fc0003b77ea84cea8f6f02ca9af}
+
+\begin{DoxyCompactList}\small\item\em Set the error bit to flag errors in the trigger counter field. \item\end{DoxyCompactList}\item 
+bool {\bf corruptEventRecord} () const \label{classCALICE_1_1ErrorBits_aefd9055151234a0a9d075985494e3891}
+
+\begin{DoxyCompactList}\small\item\em Return true if the event record of one front-\/end was corrupt. \item\end{DoxyCompactList}\item 
+void {\bf setCorruptEventRecord} ()\label{classCALICE_1_1ErrorBits_affd6ab2f3ebe14933e8bf3dd035f68ae}
+
+\begin{DoxyCompactList}\small\item\em Set the error bit to flag events with corrupt event records. \item\end{DoxyCompactList}\item 
+bool {\bf invalidTrigger} () const 
+\begin{DoxyCompactList}\small\item\em Is the Vlink header missing ?. \item\end{DoxyCompactList}\item 
+void {\bf setInvalidTrigger} ()\label{classCALICE_1_1ErrorBits_acd20ea1331d9aea5f77338117c38831a}
+
+\begin{DoxyCompactList}\small\item\em Set the error bit to flag missing VLink headers. \item\end{DoxyCompactList}\item 
+bool {\bf badConfigurationData} () const \label{classCALICE_1_1ErrorBits_ab59c0f2e38e8813f64590675ce87ffa5}
+
+\begin{DoxyCompactList}\small\item\em Error in the verification of the Configuration Data. \item\end{DoxyCompactList}\item 
+void {\bf setBadConfigurationData} ()\label{classCALICE_1_1ErrorBits_a3c660d52477a79185cd5e7ad3dc78461}
+
+\begin{DoxyCompactList}\small\item\em Set the error bit to flag bad Configuration Data. \item\end{DoxyCompactList}\item 
+bool {\bf noTrigger} () const \label{classCALICE_1_1ErrorBits_a7396f0ba339785a399c04b9ce2d6f485}
+
+\begin{DoxyCompactList}\small\item\em No trigger exists for a given event. \item\end{DoxyCompactList}\item 
+void {\bf setNoTrigger} ()\label{classCALICE_1_1ErrorBits_afea7c27ccb3a9572c8d130c5996a8455}
+
+\begin{DoxyCompactList}\small\item\em Set the error bit to flag bad Configuration Data. \item\end{DoxyCompactList}\item 
+bool {\bf corruptAcquisition} () const 
+\begin{DoxyCompactList}\small\item\em The acquisition sequence is screwed up i.e. \item\end{DoxyCompactList}\item 
+void {\bf setCorruptAcquisition} ()\label{classCALICE_1_1ErrorBits_a3558273df772aed0bd6df136d60ec2b6}
+
+\begin{DoxyCompactList}\small\item\em Set the error bit to flag a wrong acquistion. \item\end{DoxyCompactList}\item 
+bool {\bf tdcOutOfSynch} () const \label{classCALICE_1_1ErrorBits_a0052f24179e97549b33e74e48c509d5c}
+
+\begin{DoxyCompactList}\small\item\em The event number in the TDC does not agree with the the event number as derived from the CrcBoards. \item\end{DoxyCompactList}\item 
+void {\bf setTDCOutOfSynch} ()\label{classCALICE_1_1ErrorBits_a78ea112b365a2a78e139e62797975f73}
+
+\begin{DoxyCompactList}\small\item\em Set the error bit to flag suspicious TDC data. \item\end{DoxyCompactList}\item 
+bool {\bf corruptBmlRecord} () const \label{classCALICE_1_1ErrorBits_a583406b4227795d92a8df89891e7eb71}
+
+\begin{DoxyCompactList}\small\item\em Return true if the event record of one front-\/end was corrupt. \item\end{DoxyCompactList}\item 
+void {\bf setCorruptBmlRecord} ()\label{classCALICE_1_1ErrorBits_a051549408253fec1193735666535fe76}
+
+\begin{DoxyCompactList}\small\item\em Set the error bit to flag events with corrupt event records. \item\end{DoxyCompactList}\item 
+bool {\bf largeNegativeSignal} () const 
+\begin{DoxyCompactList}\small\item\em The event contained a significant fraction of negative signals. \item\end{DoxyCompactList}\item 
+void {\bf setLargeNegativeSignal} ()
+\begin{DoxyCompactList}\small\item\em Set this error bit if the event contains a significant fraction of negative signals. \item\end{DoxyCompactList}\item 
+bool {\bf dirtyEvent} () const \label{classCALICE_1_1ErrorBits_a7f26f5604b4cff6ed6f9282bda47385a}
+
+\begin{DoxyCompactList}\small\item\em Thers is additional trigger activity close to or at the main word. \item\end{DoxyCompactList}\item 
+void {\bf setDirtyEvent} ()\label{classCALICE_1_1ErrorBits_af8303261caeb9a0806fa061c9edb6eff}
+
+\begin{DoxyCompactList}\small\item\em Set this error bit if there is additional trigger activity close to or at the main word. \item\end{DoxyCompactList}\item 
+bool {\bf corruptDifTrigCounter} () const \label{classCALICE_1_1ErrorBits_a93415444d09fa1b245de4501b35ce325}
+
+\begin{DoxyCompactList}\small\item\em Return true if one of the dif trigger counters gets out of synch. \item\end{DoxyCompactList}\item 
+void {\bf setCorruptDifTrigCounter} ()\label{classCALICE_1_1ErrorBits_ab189195a448fce19a6441366e9ce3337}
+
+\begin{DoxyCompactList}\small\item\em Set the error bit to flag events with corrupt dif counter. \item\end{DoxyCompactList}\item 
+bool {\bf isSet} () const \label{classCALICE_1_1ErrorBits_a1e38b12fe5037dd02b26f17cb32da7e8}
+
+\begin{DoxyCompactList}\small\item\em Has an error occurred? \item\end{DoxyCompactList}\item 
+int {\bf getBits} () const \label{classCALICE_1_1ErrorBits_a9095dd6bfc5635b4acf1b3075f64896d}
+
+\begin{DoxyCompactList}\small\item\em return the error bits. \item\end{DoxyCompactList}\item 
+std::ostream \& {\bf print} (std::ostream \&out) const \label{classCALICE_1_1ErrorBits_a57f38311627524b0a880eee60384a96d}
+
+\begin{DoxyCompactList}\small\item\em print the current errors. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned int {\bf getErrorBit} (const std::string \&name)\label{classCALICE_1_1ErrorBits_aa77e243148d98a950c3a973babea5c4f}
+
+\begin{DoxyCompactList}\small\item\em Translate an error name into a bit. \item\end{DoxyCompactList}\item 
+static const char $\ast$ {\bf getErrorName} (unsigned int bit\_\-i)\label{classCALICE_1_1ErrorBits_ae207446de0aca583ea7959531c4043d8}
+
+\begin{DoxyCompactList}\small\item\em Get the name assigned to an error bit. \item\end{DoxyCompactList}\item 
+static unsigned int {\bf getErrorBitMask} (const std::vector$<$ std::string $>$ \&error\_\-names)\label{classCALICE_1_1ErrorBits_a19612286cd3ea90c228cd913a22a958a}
+
+\begin{DoxyCompactList}\small\item\em Create a error bit mask from a vector of error names. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf getBit} (unsigned int bit) const \label{classCALICE_1_1ErrorBits_a2a8cbd878f868fd75e85710f9af16bbb}
+
+\begin{DoxyCompactList}\small\item\em get an error bit. \item\end{DoxyCompactList}\item 
+void {\bf setBit} (unsigned int bit)\label{classCALICE_1_1ErrorBits_a647e5048a691fac67036503fabc7d2d7}
+
+\begin{DoxyCompactList}\small\item\em set an error bit. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf \_\-errorBits}
+\begin{DoxyCompactList}\small\item\em The error bits. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ {\bfseries \_\-\_\-name} [kNErrorBits]
+\item 
+static std::map$<$ std::string, unsigned short $>$ {\bfseries \_\-\_\-nameToBit}\label{classCALICE_1_1ErrorBits_a68e0b7db3f43e82cce09c946571a8323}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Helper class to query or set the event errors. usage:
+
+\doxyref{ErrorBits}{p.}{classCALICE_1_1ErrorBits} error(((LCEvent $\ast$) evt)-\/$>$getParameters().getIntVal(PAR\_\-ERROR\_\-BITS));
+
+\begin{DoxyAuthor}{Author}
+Götz Gaycken LLR (Ecole Polytechnique) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Apr 2005 
+\end{DoxyDate}
+
+
+Definition at line 21 of file ErrorBits.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::ErrorBits@{CALICE::ErrorBits}!corruptAcquisition@{corruptAcquisition}}
+\index{corruptAcquisition@{corruptAcquisition}!CALICE::ErrorBits@{CALICE::ErrorBits}}
+\subsubsection[{corruptAcquisition}]{\setlength{\rightskip}{0pt plus 5cm}bool CALICE::ErrorBits::corruptAcquisition () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1ErrorBits_a1ae3ecf26cbb5f59fa0f5bc99fca5bdd}
+
+
+The acquisition sequence is screwed up i.e. unequal numbers of event and trigger records 
+
+Definition at line 134 of file ErrorBits.hh.
+
+References getBit().\index{CALICE::ErrorBits@{CALICE::ErrorBits}!invalidTrigger@{invalidTrigger}}
+\index{invalidTrigger@{invalidTrigger}!CALICE::ErrorBits@{CALICE::ErrorBits}}
+\subsubsection[{invalidTrigger}]{\setlength{\rightskip}{0pt plus 5cm}bool CALICE::ErrorBits::invalidTrigger () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1ErrorBits_af0c5d30fbfe9bda5d36a5e1ef90ec346}
+
+
+Is the Vlink header missing ?. return true if the VLink header is missing. 
+
+Definition at line 110 of file ErrorBits.hh.
+
+References getBit().\index{CALICE::ErrorBits@{CALICE::ErrorBits}!largeNegativeSignal@{largeNegativeSignal}}
+\index{largeNegativeSignal@{largeNegativeSignal}!CALICE::ErrorBits@{CALICE::ErrorBits}}
+\subsubsection[{largeNegativeSignal}]{\setlength{\rightskip}{0pt plus 5cm}bool CALICE::ErrorBits::largeNegativeSignal () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1ErrorBits_ad92789bf9a35f690109baf8c5eef5e60}
+
+
+The event contained a significant fraction of negative signals. This may indicate pedestal drift, overlapping events, ... 
+
+Definition at line 161 of file ErrorBits.hh.
+
+References getBit().\index{CALICE::ErrorBits@{CALICE::ErrorBits}!setLargeNegativeSignal@{setLargeNegativeSignal}}
+\index{setLargeNegativeSignal@{setLargeNegativeSignal}!CALICE::ErrorBits@{CALICE::ErrorBits}}
+\subsubsection[{setLargeNegativeSignal}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::ErrorBits::setLargeNegativeSignal ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1ErrorBits_a60ac8277f0a3317e4f03db73edd67683}
+
+
+Set this error bit if the event contains a significant fraction of negative signals. This may indicate pedestal drift, overlapping events, ... 
+
+Definition at line 166 of file ErrorBits.hh.
+
+References setBit().\index{CALICE::ErrorBits@{CALICE::ErrorBits}!wrongTriggerCounter@{wrongTriggerCounter}}
+\index{wrongTriggerCounter@{wrongTriggerCounter}!CALICE::ErrorBits@{CALICE::ErrorBits}}
+\subsubsection[{wrongTriggerCounter}]{\setlength{\rightskip}{0pt plus 5cm}bool CALICE::ErrorBits::wrongTriggerCounter () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1ErrorBits_ae34f2f123e83861911656f112e32e5fe}
+
+
+Return true if the trigger counter did not change or is not the same for all \char`\"{}valid\char`\"{} front-\/ends. Front-\/ends with missing front-\/end data are not considered also not connected front-\/ends. 
+
+Definition at line 92 of file ErrorBits.hh.
+
+References getBit().
+
+\subsection{Field Documentation}
+\index{CALICE::ErrorBits@{CALICE::ErrorBits}!\_\-\_\-name@{\_\-\_\-name}}
+\index{\_\-\_\-name@{\_\-\_\-name}!CALICE::ErrorBits@{CALICE::ErrorBits}}
+\subsubsection[{\_\-\_\-name}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ CALICE::ErrorBits::\_\-\_\-name\hspace{0.3cm}{\ttfamily  [static, private]}}\label{classCALICE_1_1ErrorBits_a6bd32c898b1541fd337f7ba89719d622}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+{
+  "NoEventData",
+  "MissingAdcBlock", 
+  "MissingVLinkHeader",
+  "InvalidTrigger", 
+  "BadConfigData", 
+  "WrongTriggerCounter",
+  "CorruptEventRecord",
+  "MissingTriggerRecord", 
+  "CorruptAcquisition",
+  "TDCOutOfSynch",
+  "DirtyEvent",
+  "LargeNegativeSignal",
+  "CorruptBmlRecord",
+  "CorruptDifTriggerCounter"
+}
+\end{DoxyCode}
+
+
+Definition at line 231 of file ErrorBits.hh.\index{CALICE::ErrorBits@{CALICE::ErrorBits}!\_\-errorBits@{\_\-errorBits}}
+\index{\_\-errorBits@{\_\-errorBits}!CALICE::ErrorBits@{CALICE::ErrorBits}}
+\subsubsection[{\_\-errorBits}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf CALICE::ErrorBits::\_\-errorBits}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1ErrorBits_a58333445921ccb3bcb89b637037257e9}
+
+
+The error bits. If non zero an error has occurred. 
+
+Definition at line 227 of file ErrorBits.hh.
+
+Referenced by getBit(), getBits(), isSet(), operator bool(), operator!(), print(), and setBit().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+ErrorBits.hh\item 
+ErrorBits.cc\end{DoxyCompactItemize}

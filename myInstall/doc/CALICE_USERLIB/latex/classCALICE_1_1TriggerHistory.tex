@@ -1,0 +1,67 @@
+\section{CALICE::TriggerHistory Class Reference}
+\label{classCALICE_1_1TriggerHistory}\index{CALICE::TriggerHistory@{CALICE::TriggerHistory}}
+
+
+Utility class to chech the zero suppressed trigger history which will be atteched to the lcio event.  
+
+
+{\ttfamily \#include $<$TriggerHistory.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries TriggerHistory} (const EVENT::LCEvent \&evt, const std::string \&history\_\-name)\label{classCALICE_1_1TriggerHistory_a0ace29a5ef70b51158c0a18cd45f5210}
+
+\item 
+unsigned int {\bf getNumberOfElements} () const \label{classCALICE_1_1TriggerHistory_a78e509a8ddba7a8dba943413a76683f5}
+
+\begin{DoxyCompactList}\small\item\em Get the number of elements in the zero suppressed trigger history. \item\end{DoxyCompactList}\item 
+int {\bf getTimeDifferenceAt} (unsigned int element\_\-i) const \label{classCALICE_1_1TriggerHistory_a7dbd50d2f2a00717b301f23612a19a70}
+
+\begin{DoxyCompactList}\small\item\em Get the time difference to the main word in ns. \item\end{DoxyCompactList}\item 
+int {\bf getBitsAt} (unsigned int element\_\-i) const \label{classCALICE_1_1TriggerHistory_a8fa2b8146acbeac095128994c81fc81f}
+
+\begin{DoxyCompactList}\small\item\em Get the trigger bits which were set for the given element. \item\end{DoxyCompactList}\item 
+unsigned int {\bf cleanUntil} (int length\_\-in\_\-ns, unsigned int trigger\_\-bit\_\-mask) const 
+\begin{DoxyCompactList}\small\item\em Return the position with in the given range where there is trigger activity. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::vector$<$ int $>$ {\bfseries \_\-position}\label{classCALICE_1_1TriggerHistory_ad59b4b6e6e84d9df1d5bd324e2617d7c}
+
+\item 
+std::vector$<$ int $>$ {\bfseries \_\-bits}\label{classCALICE_1_1TriggerHistory_a430ba6e3d127804159a1b4cd90975139}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Utility class to chech the zero suppressed trigger history which will be atteched to the lcio event. \begin{DoxyAuthor}{Author}
+G. Gaycken LLR 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Dec 2 2005 
+\end{DoxyDate}
+
+
+Definition at line 23 of file TriggerHistory.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::TriggerHistory@{CALICE::TriggerHistory}!cleanUntil@{cleanUntil}}
+\index{cleanUntil@{cleanUntil}!CALICE::TriggerHistory@{CALICE::TriggerHistory}}
+\subsubsection[{cleanUntil}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::TriggerHistory::cleanUntil (int {\em length\_\-in\_\-ns}, \/  unsigned int {\em trigger\_\-bit\_\-mask}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1TriggerHistory_ad30c03af25d0fdad13676b74d7f7ac43}
+
+
+Return the position with in the given range where there is trigger activity. 
+\begin{DoxyParams}{Parameters}
+\item[{\em length\_\-in\_\-ns}]the range of the trigger fifo in ns which should reflect inactivity. \item[{\em trigger\_\-bit\_\-mask}]a bit mask of all the trigger bits which indicate activity. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the position in the fifo where there is trigger activity. If there is no trigger activity in the given range then zero is returned. Note: it is not verified whether the main word is far enough away from the corresponding end of the fifo. 
+\end{DoxyReturn}
+
+
+Definition at line 76 of file TriggerHistory.hh.
+
+References getBitsAt(), getNumberOfElements(), and getTimeDifferenceAt().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+TriggerHistory.hh\end{DoxyCompactItemize}

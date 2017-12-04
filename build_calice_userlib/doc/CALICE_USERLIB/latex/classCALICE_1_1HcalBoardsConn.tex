@@ -1,0 +1,65 @@
+\section{CALICE::HcalBoardsConn Class Reference}
+\label{classCALICE_1_1HcalBoardsConn}\index{CALICE::HcalBoardsConn@{CALICE::HcalBoardsConn}}
+
+
+Mapping class based on the LCFixedObject template.  
+
+
+{\ttfamily \#include $<$HcalBoardsConn.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf HcalBoardsConn} (int connector\_\-pin, string hbab, string hab, int asic\_\-input, int analog\_\-output)\label{classCALICE_1_1HcalBoardsConn_a7382749f913df259e270ed363834ee57}
+
+\begin{DoxyCompactList}\small\item\em Convenient c'tor. \item\end{DoxyCompactList}\item 
+{\bf HcalBoardsConn} (LCObject $\ast$obj)\label{classCALICE_1_1HcalBoardsConn_a655bb16a946826a22f06e3da8ffc01f9}
+
+\begin{DoxyCompactList}\small\item\em 'Copy constructor' needed to interpret LCCollection read from file/database. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$HcalBoardsConn} ()\label{classCALICE_1_1HcalBoardsConn_a73194f9ac5e8d51a886fb58943e07c65}
+
+\begin{DoxyCompactList}\small\item\em Important for memory handling. \item\end{DoxyCompactList}\item 
+int {\bf getConnectorPin} ()\label{classCALICE_1_1HcalBoardsConn_a682d3a3c73075248076bad7eb4608e34}
+
+\begin{DoxyCompactList}\small\item\em the class interface: \item\end{DoxyCompactList}\item 
+string {\bfseries getHbabID} ()\label{classCALICE_1_1HcalBoardsConn_a3cb9ccfe9aa2ab2a316d1d3c3ea5522b}
+
+\item 
+int {\bfseries getHabID} ()\label{classCALICE_1_1HcalBoardsConn_aaf33d239016770e85e88ba21af844404}
+
+\item 
+int {\bfseries getAsicInput} ()\label{classCALICE_1_1HcalBoardsConn_aa98763cad817a0d7e2dadf6b6ce249fa}
+
+\item 
+int {\bfseries getAnalogOutput} ()\label{classCALICE_1_1HcalBoardsConn_a69ecad7ef5cfb47baa7f8abed28b4145}
+
+\item 
+void {\bfseries print} (std::ostream \&os, std::string)\label{classCALICE_1_1HcalBoardsConn_abdd5c67e189a1a8e15399db9f81404e9}
+
+\item 
+const std::string {\bfseries getTypeName} () const \label{classCALICE_1_1HcalBoardsConn_afdf2f9b84e4c9477fa177fbfa0d2200f}
+
+\item 
+const std::string {\bfseries getDataDescription} () const \label{classCALICE_1_1HcalBoardsConn_af9c2280977a28e03c5b35f981304a841}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+short {\bfseries \_\-index}\label{classCALICE_1_1HcalBoardsConn_a2bd849016299c22be7a4d9848c4234c6}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Mapping class based on the LCFixedObject template. for principle Hcal boards connections \begin{DoxyAuthor}{Author}
+R. Pöschl DESY 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+May 005 
+\end{DoxyDate}
+
+
+Definition at line 30 of file HcalBoardsConn.hh.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+HcalBoardsConn.hh\end{DoxyCompactItemize}

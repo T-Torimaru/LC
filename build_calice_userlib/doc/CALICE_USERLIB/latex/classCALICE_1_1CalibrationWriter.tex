@@ -1,0 +1,133 @@
+\section{CALICE::CalibrationWriter Class Reference}
+\label{classCALICE_1_1CalibrationWriter}\index{CALICE::CalibrationWriter@{CALICE::CalibrationWriter}}
+
+
+Class which handles the module wise storage of conditions data and the access to the lccd framework (i.e.  
+
+
+{\ttfamily \#include $<$CalibrationWriter.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CalibrationWriter} (std::string dbinit, std::string folder, std::string description)
+\begin{DoxyCompactList}\small\item\em Constructor has parameters:. \item\end{DoxyCompactList}\item 
+void {\bf putCalibration} (unsigned moduleID, unsigned cellKey, {\bf LCHcalCalibrationObject} $\ast$Calibration)
+\begin{DoxyCompactList}\small\item\em fills the \char`\"{}memory\char`\"{} with a calibration object for a certain moduleID and cellKey \item\end{DoxyCompactList}\item 
+void {\bf putCalibration} (unsigned moduleID, unsigned chip, unsigned channel, {\bf LCHcalCalibrationObject} $\ast$Calibration)
+\begin{DoxyCompactList}\small\item\em fills the \char`\"{}memory\char`\"{} with a calibration object for a certain moduleID and cellKey \item\end{DoxyCompactList}\item 
+void {\bf flushCalibration} (lccd::LCCDTimeStamp from, lccd::LCCDTimeStamp till, bool \_\-writeFile) const 
+\begin{DoxyCompactList}\small\item\em writes the \char`\"{}memory\char`\"{} to the given data base and the given folder, extraction time range is set equal to the validity time range \item\end{DoxyCompactList}\item 
+void {\bf flushCalibration} (lccd::LCCDTimeStamp from, lccd::LCCDTimeStamp till, lccd::LCCDTimeStamp extractionTime, bool \_\-writeFile) const 
+\begin{DoxyCompactList}\small\item\em writes the \char`\"{}memory\char`\"{} to the given data base and the given folder \item\end{DoxyCompactList}\item 
+void {\bf flushCalibration} (lccd::LCCDTimeStamp from, lccd::LCCDTimeStamp till, lccd::LCCDTimeStamp extractionFrom, lccd::LCCDTimeStamp extractionTill, bool \_\-writeFile) const 
+\begin{DoxyCompactList}\small\item\em writes the \char`\"{}memory\char`\"{} to the given data base and the given folder \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bf \_\-dbinit}\label{classCALICE_1_1CalibrationWriter_adbf1bd238e3c2be0a0d37415374ef407}
+
+\begin{DoxyCompactList}\small\item\em access string for the mysql database \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-folder}\label{classCALICE_1_1CalibrationWriter_afdcbcda9534dc8b34ef8f326c540cf2d}
+
+\begin{DoxyCompactList}\small\item\em folder path in the data base where the calibration collections should be stored \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-description}\label{classCALICE_1_1CalibrationWriter_a16bade2368e36f698a37bcf65e8b6be9}
+
+\begin{DoxyCompactList}\small\item\em description text describing the type of calibration provided by the stored constants \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+CalibrationWriteMap {\bfseries \_\-writeMap}\label{classCALICE_1_1CalibrationWriter_a49641e6331fa8be1b3c2f561879fa647}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class which handles the module wise storage of conditions data and the access to the lccd framework (i.e. to the data base) \begin{DoxyAuthor}{Author}
+S.Schmidt DESY 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Jun 16 2006 
+\end{DoxyDate}
+
+
+Definition at line 30 of file CalibrationWriter.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CALICE::CalibrationWriter@{CALICE::CalibrationWriter}!CalibrationWriter@{CalibrationWriter}}
+\index{CalibrationWriter@{CalibrationWriter}!CALICE::CalibrationWriter@{CALICE::CalibrationWriter}}
+\subsubsection[{CalibrationWriter}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::CalibrationWriter::CalibrationWriter (std::string {\em dbinit}, \/  std::string {\em folder}, \/  std::string {\em description})}\label{classCALICE_1_1CalibrationWriter_a4efaedff715a90c667dd9be3840c94fa}
+
+
+Constructor has parameters:. 
+\begin{DoxyParams}{Parameters}
+\item[{\em dbinit}]access string for the mysql database \item[{\em folder}]path in the data base where the calibration collections should be stored \item[{\em description}]text describing the type of calibration provided by the stored constants \end{DoxyParams}
+
+
+Definition at line 12 of file CalibrationWriter.cc.
+
+\subsection{Member Function Documentation}
+\index{CALICE::CalibrationWriter@{CALICE::CalibrationWriter}!flushCalibration@{flushCalibration}}
+\index{flushCalibration@{flushCalibration}!CALICE::CalibrationWriter@{CALICE::CalibrationWriter}}
+\subsubsection[{flushCalibration}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CalibrationWriter::flushCalibration (lccd::LCCDTimeStamp {\em from}, \/  lccd::LCCDTimeStamp {\em till}, \/  lccd::LCCDTimeStamp {\em extractionFrom}, \/  lccd::LCCDTimeStamp {\em extractionTill}, \/  bool {\em \_\-writeFile}) const}\label{classCALICE_1_1CalibrationWriter_ad30ea2d438f115bb37538525c0612d03}
+
+
+writes the \char`\"{}memory\char`\"{} to the given data base and the given folder 
+\begin{DoxyParams}{Parameters}
+\item[{\em from}]start timestamp of the validity range of the calibration \item[{\em till}]stop timestamp of the validity range of the calibration \item[{\em extractionFrom}]start timestamp of the sample used to gather the calibration \item[{\em extractionTill}]end timestamp of the sample used to gather the calibration \item[{\em \_\-writeFile}]write lcio file after filling the data base \end{DoxyParams}
+
+
+Definition at line 70 of file CalibrationWriter.cc.
+
+References \_\-dbinit, \_\-description, and \_\-folder.\index{CALICE::CalibrationWriter@{CALICE::CalibrationWriter}!flushCalibration@{flushCalibration}}
+\index{flushCalibration@{flushCalibration}!CALICE::CalibrationWriter@{CALICE::CalibrationWriter}}
+\subsubsection[{flushCalibration}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CalibrationWriter::flushCalibration (lccd::LCCDTimeStamp {\em from}, \/  lccd::LCCDTimeStamp {\em till}, \/  lccd::LCCDTimeStamp {\em extractionTime}, \/  bool {\em \_\-writeFile}) const}\label{classCALICE_1_1CalibrationWriter_a049e75751a91ecbd92f03d9b7c04ec07}
+
+
+writes the \char`\"{}memory\char`\"{} to the given data base and the given folder 
+\begin{DoxyParams}{Parameters}
+\item[{\em from}]start timestamp of the validity range of the calibration \item[{\em till}]end timestamp of the validity range of the calibration \item[{\em extractionTime}]timestamp describing the time range of the sample used to gather the calibration \item[{\em \_\-writeFile}]write lcio file after filling the data base \end{DoxyParams}
+
+
+Definition at line 64 of file CalibrationWriter.cc.
+
+References flushCalibration().\index{CALICE::CalibrationWriter@{CALICE::CalibrationWriter}!flushCalibration@{flushCalibration}}
+\index{flushCalibration@{flushCalibration}!CALICE::CalibrationWriter@{CALICE::CalibrationWriter}}
+\subsubsection[{flushCalibration}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CalibrationWriter::flushCalibration (lccd::LCCDTimeStamp {\em from}, \/  lccd::LCCDTimeStamp {\em till}, \/  bool {\em \_\-writeFile}) const}\label{classCALICE_1_1CalibrationWriter_aab7826e8fdea7f7219d9199ddebdd328}
+
+
+writes the \char`\"{}memory\char`\"{} to the given data base and the given folder, extraction time range is set equal to the validity time range 
+\begin{DoxyParams}{Parameters}
+\item[{\em from}]start timestamp of the validity range of the calibration \item[{\em till}]end timestamp of the validity range of the calibration \item[{\em \_\-writeFile}]write lcio file after filling the data base \end{DoxyParams}
+
+
+Definition at line 58 of file CalibrationWriter.cc.
+
+Referenced by flushCalibration().\index{CALICE::CalibrationWriter@{CALICE::CalibrationWriter}!putCalibration@{putCalibration}}
+\index{putCalibration@{putCalibration}!CALICE::CalibrationWriter@{CALICE::CalibrationWriter}}
+\subsubsection[{putCalibration}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CalibrationWriter::putCalibration (unsigned {\em moduleID}, \/  unsigned {\em chip}, \/  unsigned {\em channel}, \/  {\bf LCHcalCalibrationObject} $\ast$ {\em Calibration})}\label{classCALICE_1_1CalibrationWriter_ad95b3f390a1a8f6fb035e46d7ffc8411}
+
+
+fills the \char`\"{}memory\char`\"{} with a calibration object for a certain moduleID and cellKey 
+\begin{DoxyParams}{Parameters}
+\item[{\em moduleID}]ID of the module \char`\"{}printed\char`\"{} on it \item[{\em chip}]chip number of the cell \item[{\em channel}]channel number of the cell \item[{\em Calibration}]object used to store the calibration data in the data base \end{DoxyParams}
+
+
+Definition at line 32 of file CalibrationWriter.cc.
+
+References putCalibration().\index{CALICE::CalibrationWriter@{CALICE::CalibrationWriter}!putCalibration@{putCalibration}}
+\index{putCalibration@{putCalibration}!CALICE::CalibrationWriter@{CALICE::CalibrationWriter}}
+\subsubsection[{putCalibration}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CalibrationWriter::putCalibration (unsigned {\em moduleID}, \/  unsigned {\em cellKey}, \/  {\bf LCHcalCalibrationObject} $\ast$ {\em Calibration})}\label{classCALICE_1_1CalibrationWriter_a82e7ad14e258b9dd9635302999748b55}
+
+
+fills the \char`\"{}memory\char`\"{} with a calibration object for a certain moduleID and cellKey 
+\begin{DoxyParams}{Parameters}
+\item[{\em moduleID}]ID of the module \char`\"{}printed\char`\"{} on it \item[{\em cellKey}]number describing a certain cell of a module, calculated from the chip and the channel number \item[{\em Calibration}]object used to store the calibration data in the data base \end{DoxyParams}
+
+
+Definition at line 39 of file CalibrationWriter.cc.
+
+Referenced by putCalibration().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+CalibrationWriter.hh\item 
+CalibrationWriter.cc\end{DoxyCompactItemize}

@@ -1,0 +1,108 @@
+\section{CALICE::AhcSimpleTempProvider Class Reference}
+\label{classCALICE_1_1AhcSimpleTempProvider}\index{CALICE::AhcSimpleTempProvider@{CALICE::AhcSimpleTempProvider}}
+
+
+This is a very simple temperature provider for the ahcal.  
+
+
+{\ttfamily \#include $<$AhcSimpleTempProvider.hh$>$}Inheritance diagram for CALICE::AhcSimpleTempProvider::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCALICE_1_1AhcSimpleTempProvider}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual float {\bf getCellTemp} (int module, int chip, int chan)
+\begin{DoxyCompactList}\small\item\em Returns the temperature for the cell in the specified module connected to the given chip and channel. \item\end{DoxyCompactList}\item 
+virtual float {\bf getCellTempError} (int module, int chip, int chan)\label{classCALICE_1_1AhcSimpleTempProvider_a2d3cd7fd1a3f144f62991e39b44d016f}
+
+\begin{DoxyCompactList}\small\item\em Returns the error on the temperature for the cell in the specified module connected to the given chip and channel. \item\end{DoxyCompactList}\item 
+virtual float {\bf getAvgTemp} ()\label{classCALICE_1_1AhcSimpleTempProvider_ae2055a46cab875cb672f33bf6395b3b7}
+
+\begin{DoxyCompactList}\small\item\em Returns the average calorimeter temperature. \item\end{DoxyCompactList}\item 
+virtual float {\bf getAvgModuleTemp} (unsigned module)\label{classCALICE_1_1AhcSimpleTempProvider_abff6b07a15d952dc1f90a6e41500dabc}
+
+\begin{DoxyCompactList}\small\item\em Returns the average module temperature. \item\end{DoxyCompactList}\item 
+float {\bf getSensorTemp} (int module, int sensor)\label{classCALICE_1_1AhcSimpleTempProvider_ab61d13863930498a336476d9ac049b2e}
+
+\begin{DoxyCompactList}\small\item\em Return the temperature for the specified module and sensor. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf applyCorrection} ()
+\begin{DoxyCompactList}\small\item\em This function applies the correction to the internal 'cache' for the temperature values from the five sensors. \item\end{DoxyCompactList}\item 
+bool {\bf isBadValue} (float t)\label{classCALICE_1_1AhcSimpleTempProvider_ab3f94a954ed71d269997f0b2cde87941}
+
+\begin{DoxyCompactList}\small\item\em Returns true if argument value is outside the sanity range. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf getSensor} (int chip, int chan)\label{classCALICE_1_1AhcSimpleTempProvider_ad000dcb24a383043a9c72b93d2f05836}
+
+\begin{DoxyCompactList}\small\item\em Returns the closest sensor to cell connected to chip, chan according to DESY-\/THESIS-\/2008-\/050. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float {\bfseries \_\-caloMeanTemp}\label{classCALICE_1_1AhcSimpleTempProvider_a254fa40b19cdc8b1c09a04b201afff2f}
+
+\item 
+float {\bfseries \_\-caloMeanTempRMS}\label{classCALICE_1_1AhcSimpleTempProvider_abe15d788019a2a354f8060dbfb9ef6e3}
+
+\item 
+int {\bfseries \_\-caloMeanCount}\label{classCALICE_1_1AhcSimpleTempProvider_a25cd84b21c382d4b7a2fc377588244b9}
+
+\item 
+std::vector$<$ float $>$ {\bfseries \_\-moduleMeanTemp}\label{classCALICE_1_1AhcSimpleTempProvider_a4d9109bd33c31ae2b06497ff73aeeb6e}
+
+\item 
+std::vector$<$ float $>$ {\bfseries \_\-moduleMeanTempRMS}\label{classCALICE_1_1AhcSimpleTempProvider_a7573f43d01d8a5563367f15527ed711e}
+
+\item 
+std::vector$<$ int $>$ {\bfseries \_\-moduleMeanCount}\label{classCALICE_1_1AhcSimpleTempProvider_ad3c12b5824a629e59d8dcc4ff4869684}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is a very simple temperature provider for the ahcal. What it does:
+\begin{DoxyItemize}
+\item the calibration set is applied
+\item if a temperature sensor gives a value outside the defined sanity range the value is replaced by the average of the four sensors in that module
+\item for each cell the temperature value from the 'closest' sensor, according to the table 3.1, DESY-\/THESIS-\/2008-\/050 is returned
+\end{DoxyItemize}
+
+Also see the documentation for the several functions for more detailed information. 
+
+Definition at line 25 of file AhcSimpleTempProvider.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::AhcSimpleTempProvider@{CALICE::AhcSimpleTempProvider}!applyCorrection@{applyCorrection}}
+\index{applyCorrection@{applyCorrection}!CALICE::AhcSimpleTempProvider@{CALICE::AhcSimpleTempProvider}}
+\subsubsection[{applyCorrection}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::AhcSimpleTempProvider::applyCorrection ()\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classCALICE_1_1AhcSimpleTempProvider_a465f433cd5082a1c3224262e179604e1}
+
+
+This function applies the correction to the internal 'cache' for the temperature values from the five sensors. It should be called everytime a new collection of temperatures or calibrations have been at set or the sanity range has been changed, i.e. if one of newSroModCol, newCalibCol or newSanityRange is true. This is done in \doxyref{getCellTemp()}{p.}{classCALICE_1_1AhcSimpleTempProvider_aff9186dfdab4801e41540f1d63428e3f} and \doxyref{getCellTempError()}{p.}{classCALICE_1_1AhcSimpleTempProvider_a2d3cd7fd1a3f144f62991e39b44d016f}. 
+
+Definition at line 82 of file AhcSimpleTempProvider.cc.
+
+References CALICE::AhcTempProvider::\_\-sroModCol, isBadValue(), CALICE::AhcTempProvider::newCalibCol, CALICE::AhcTempProvider::newSanityRange, CALICE::AhcTempProvider::newSroModCol, CALICE::AhcTempProvider::sensorTemp, CALICE::AhcTempProvider::sensorTempError, and CALICE::AhcTempProvider::updateCache().
+
+Referenced by getAvgModuleTemp(), getAvgTemp(), getCellTemp(), getCellTempError(), and getSensorTemp().\index{CALICE::AhcSimpleTempProvider@{CALICE::AhcSimpleTempProvider}!getCellTemp@{getCellTemp}}
+\index{getCellTemp@{getCellTemp}!CALICE::AhcSimpleTempProvider@{CALICE::AhcSimpleTempProvider}}
+\subsubsection[{getCellTemp}]{\setlength{\rightskip}{0pt plus 5cm}float CALICE::AhcSimpleTempProvider::getCellTemp (int {\em module}, \/  int {\em chip}, \/  int {\em chan})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCALICE_1_1AhcSimpleTempProvider_aff9186dfdab4801e41540f1d63428e3f}
+
+
+Returns the temperature for the cell in the specified module connected to the given chip and channel. For each cell the temperature value from the 'closest' sensor, according to the table 3.1, DESY-\/THESIS-\/2008-\/050 is returned. 
+
+Implements {\bf CALICE::AhcTempProvider} \doxyref{}{p.}{classCALICE_1_1AhcTempProvider_aa12c75d45d7ade54316dd113a6bab2d1}.
+
+Definition at line 6 of file AhcSimpleTempProvider.cc.
+
+References applyCorrection(), getSensor(), CALICE::AhcTempProvider::newCalibCol, CALICE::AhcTempProvider::newSanityRange, CALICE::AhcTempProvider::newSroModCol, and CALICE::AhcTempProvider::sensorTemp.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+AhcSimpleTempProvider.hh\item 
+AhcSimpleTempProvider.cc\end{DoxyCompactItemize}

@@ -1,0 +1,53 @@
+\hypertarget{create_spri_tree_8cpp}{
+\section{createSpriTree.cpp File Reference}
+\label{create_spri_tree_8cpp}\index{createSpriTree.cpp@{createSpriTree.cpp}}
+}
+{\ttfamily \#include \char`\"{}SpectrumPropertiesRunInfo.h\char`\"{}}\par
+{\ttfamily \#include $<$cstdlib$>$}\par
+{\ttfamily \#include $<$iostream$>$}\par
+{\ttfamily \#include $<$fstream$>$}\par
+{\ttfamily \#include $<$sstream$>$}\par
+{\ttfamily \#include $<$vector$>$}\par
+{\ttfamily \#include $<$TGraph.h$>$}\par
+{\ttfamily \#include $<$TVector.h$>$}\par
+{\ttfamily \#include $<$TCanvas.h$>$}\par
+{\ttfamily \#include $<$TLegend.h$>$}\par
+{\ttfamily \#include $<$TStyle.h$>$}\par
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{create_spri_tree_8cpp_a6c144793f464f5d739a3f6409653db66}{printUsage} (void)
+\item 
+void \hyperlink{create_spri_tree_8cpp_a1f8e5e6ed3679bbb4b70c661327c4f94}{printChannelStatusMap} (std::map$<$ int, int $>$ const \&channelStatusMap, std::ostream \&s=std::cout)
+\item 
+int \hyperlink{create_spri_tree_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{create_spri_tree_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{
+\index{createSpriTree.cpp@{createSpriTree.cpp}!main@{main}}
+\index{main@{main}!createSpriTree.cpp@{createSpriTree.cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (int {\em argc}, \/  char $\ast$ {\em argv}\mbox{[}$\,$\mbox{]})}}
+\label{create_spri_tree_8cpp_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+Definition at line 64 of file createSpriTree.cpp.
+
+References SpectrumPropertiesRunInfo::getSpectrumPropertiesTree(), and printUsage().\hypertarget{create_spri_tree_8cpp_a1f8e5e6ed3679bbb4b70c661327c4f94}{
+\index{createSpriTree.cpp@{createSpriTree.cpp}!printChannelStatusMap@{printChannelStatusMap}}
+\index{printChannelStatusMap@{printChannelStatusMap}!createSpriTree.cpp@{createSpriTree.cpp}}
+\subsubsection[{printChannelStatusMap}]{\setlength{\rightskip}{0pt plus 5cm}void printChannelStatusMap (std::map$<$ int, int $>$ const \& {\em channelStatusMap}, \/  std::ostream \& {\em s} = {\ttfamily std::cout})}}
+\label{create_spri_tree_8cpp_a1f8e5e6ed3679bbb4b70c661327c4f94}
+
+
+Definition at line 45 of file createSpriTree.cpp.
+
+References SpectrumPropertiesRunInfo::ChannelID::\_\-channel, SpectrumPropertiesRunInfo::ChannelID::\_\-chip, SpectrumPropertiesRunInfo::ChannelID::\_\-module, and SpectrumPropertiesRunInfo::getChannelID().\hypertarget{create_spri_tree_8cpp_a6c144793f464f5d739a3f6409653db66}{
+\index{createSpriTree.cpp@{createSpriTree.cpp}!printUsage@{printUsage}}
+\index{printUsage@{printUsage}!createSpriTree.cpp@{createSpriTree.cpp}}
+\subsubsection[{printUsage}]{\setlength{\rightskip}{0pt plus 5cm}void printUsage (void)}}
+\label{create_spri_tree_8cpp_a6c144793f464f5d739a3f6409653db66}
+
+
+Definition at line 28 of file createSpriTree.cpp.

@@ -1,0 +1,224 @@
+\section{CALICE::AverageHistoryGraphs Class Reference}
+\label{classCALICE_1_1AverageHistoryGraphs}\index{CALICE::AverageHistoryGraphs@{CALICE::AverageHistoryGraphs}}
+Inheritance diagram for CALICE::AverageHistoryGraphs::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCALICE_1_1AverageHistoryGraphs}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Processor $\ast$ {\bfseries newProcessor} ()\label{classCALICE_1_1AverageHistoryGraphs_aadeafdb3a9c7e2f355af43bbe2600a36}
+
+\item 
+void {\bf init} ()
+\begin{DoxyCompactList}\small\item\em Called at the begin of the job before anything is read. \item\end{DoxyCompactList}\item 
+void {\bf processRunHeader} (LCRunHeader $\ast$run)
+\begin{DoxyCompactList}\small\item\em Called for every run, e.g. \item\end{DoxyCompactList}\item 
+void {\bf processEvent} (LCEvent $\ast$evtP)
+\begin{DoxyCompactList}\small\item\em Called for every event -\/ the working horse. \item\end{DoxyCompactList}\item 
+void {\bfseries end} ()\label{classCALICE_1_1AverageHistoryGraphs_a66fdedb6f7f91bc59a2c5acb73d9e500}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries EGraphType} \{ \par
+{\bfseries kGraphMean}, 
+{\bfseries kGraphRMS}, 
+{\bfseries kGraphMin}, 
+{\bfseries kGraphMax}, 
+\par
+{\bfseries kGraphWeight}, 
+{\bfseries kNGraphTypes}
+ \}
+\item 
+enum {\bfseries EHistoryType} \{ \par
+{\bfseries kADCHistory}, 
+{\bfseries kNoiseHistory}, 
+{\bfseries kPedestalHistory}, 
+{\bfseries kHitHistory}, 
+\par
+{\bfseries kNHistoryGraphs}
+ \}
+\item 
+enum {\bfseries EStampType} \{ \par
+{\bfseries kHistoryStamp}, 
+{\bfseries kHistoryConfStamp}, 
+{\bfseries kHistoryStateStamp}, 
+{\bfseries kHistoryStateValue}, 
+\par
+{\bfseries kNHistoryStamps}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries configurationChanged} (EVENT::LCCollection $\ast$)\label{classCALICE_1_1AverageHistoryGraphs_a176525151e7d59d850f171befa7d793b}
+
+\item 
+void {\bfseries moduleTypeChanged} (lcio::LCCollection $\ast$col)\label{classCALICE_1_1AverageHistoryGraphs_acdba66e246541547c5fb4ba032e4c781}
+
+\item 
+void {\bfseries moduleLocationChanged} (lcio::LCCollection $\ast$col)\label{classCALICE_1_1AverageHistoryGraphs_ab2da21acfb64312a3182becc51232998}
+
+\item 
+void {\bfseries moduleConnectionChanged} (lcio::LCCollection $\ast$col)\label{classCALICE_1_1AverageHistoryGraphs_a126a4d42d653c4c005a5135d0dfea159}
+
+\item 
+void {\bfseries resizeArrays} ()\label{classCALICE_1_1AverageHistoryGraphs_a1f1586ff5a3fe049d6613a296128bbcd}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Int\_\-t {\bfseries \_\-useTimeStamp}\label{classCALICE_1_1AverageHistoryGraphs_a924519564a5a56335cc071811de29594}
+
+\item 
+IntVec {\bfseries \_\-eventPar}\label{classCALICE_1_1AverageHistoryGraphs_a9cd19052bd65b4925f23feaa915086c3}
+
+\item 
+Int\_\-t {\bfseries \_\-avADCNMax}\label{classCALICE_1_1AverageHistoryGraphs_aaea631c4dde12b4da4274e9028b5bfa8}
+
+\item 
+Float\_\-t {\bfseries \_\-signalCut}\label{classCALICE_1_1AverageHistoryGraphs_abe695f79dbd74292894bc9e8b53a3324}
+
+\item 
+Int\_\-t {\bfseries \_\-skipCalibrationEventsAlways}\label{classCALICE_1_1AverageHistoryGraphs_a83a1b6b057c3e5c5b01aea6442864ed5}
+
+\item 
+std::string {\bfseries \_\-cellParameterCollectionName}\label{classCALICE_1_1AverageHistoryGraphs_a1eca22a5971a5a7d480ae8f9c14f74fb}
+
+\item 
+std::vector$<$ std::vector$<$ Average\_\-t $>$ $>$ {\bfseries \_\-avValues} [kNHistoryGraphs]\label{classCALICE_1_1AverageHistoryGraphs_ae0b1ef124d0704af661c3a6cff2c793a}
+
+\item 
+bool {\bfseries \_\-avADCIsValid}\label{classCALICE_1_1AverageHistoryGraphs_ac8f0ccd575282d74f9239f93e662faf7}
+
+\item 
+UInt\_\-t {\bfseries \_\-avADCn}\label{classCALICE_1_1AverageHistoryGraphs_adcdef8bfa777ecd9977e6e4c03b6177b}
+
+\item 
+std::vector$<$ std::vector$<$ Average\_\-t $>$ $>$ {\bfseries \_\-avADC}\label{classCALICE_1_1AverageHistoryGraphs_a09f9a1eb99e16951c1bb2219690d0332}
+
+\item 
+std::vector$<$ std::vector$<$ UInt\_\-t $>$ $>$ {\bfseries \_\-nHits}\label{classCALICE_1_1AverageHistoryGraphs_a9ac965b72b8eaf330366d65ca3e6bb40}
+
+\item 
+StringVec {\bfseries \_\-monitorConf}\label{classCALICE_1_1AverageHistoryGraphs_a98da6d927a6ed04dc03e91057181912c}
+
+\item 
+{\bf vector}$<$ ConditionsChangeDelegator$<$ {\bf AverageHistoryGraphs} $>$ $>$ {\bfseries \_\-confChanges}\label{classCALICE_1_1AverageHistoryGraphs_a03616ae3f8232db9aa14cbd67332cfe1}
+
+\item 
+bool {\bfseries \_\-confChanged}\label{classCALICE_1_1AverageHistoryGraphs_acd099e4c900efbc66f69f8cce8391f03}
+
+\item 
+UInt\_\-t {\bfseries \_\-nConfigurationChanges}\label{classCALICE_1_1AverageHistoryGraphs_aa18f88276066de50377761e7ce983cba}
+
+\item 
+Int\_\-t {\bfseries \_\-wasState}\label{classCALICE_1_1AverageHistoryGraphs_a8cc7262ec5a99b0562f812fd014a1c26}
+
+\item 
+UInt\_\-t {\bfseries \_\-nStateChanges}\label{classCALICE_1_1AverageHistoryGraphs_adbc2ad77c6f5945a98131e4af3cbd2ef}
+
+\item 
+{\bf histmgr::Key\_\-t} {\bfseries \_\-graphGroupKey}\label{classCALICE_1_1AverageHistoryGraphs_a5b92eb7bf713fc38bb4ab6a033477be6}
+
+\item 
+std::vector$<$ {\bf histmgr::Key\_\-t} $>$ {\bfseries \_\-avValueHistoryKey}\label{classCALICE_1_1AverageHistoryGraphs_a9b71e2d36930c41347fe49a0e8495b7d}
+
+\item 
+{\bf histmgr::Key\_\-t} {\bfseries \_\-stateChangeHistoryKey}\label{classCALICE_1_1AverageHistoryGraphs_a1f003a748d898ea24d416211dd8b9168}
+
+\item 
+{\bf histmgr::Key\_\-t} {\bfseries \_\-confChangeHistoryKey}\label{classCALICE_1_1AverageHistoryGraphs_af654242bdda2b428ba576813b6d46559}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ {\bfseries \_\-\_\-graphTypeNames} [kNGraphTypes]
+\item 
+static const char $\ast$ {\bfseries \_\-\_\-historyGraphNames} [kNHistoryGraphs]
+\item 
+static UInt\_\-t {\bfseries \_\-\_\-nSamplesPerChip} = 18\label{classCALICE_1_1AverageHistoryGraphs_a38373d247acaed96390b500046c523ac}
+
+\item 
+static UInt\_\-t {\bfseries \_\-\_\-nChips} = 12\label{classCALICE_1_1AverageHistoryGraphs_a376afe7cdb43b7a1ed6be6cdcfbc9bb5}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 17 of file AverageHistoryGraphs.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::AverageHistoryGraphs@{CALICE::AverageHistoryGraphs}!init@{init}}
+\index{init@{init}!CALICE::AverageHistoryGraphs@{CALICE::AverageHistoryGraphs}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::AverageHistoryGraphs::init ()}\label{classCALICE_1_1AverageHistoryGraphs_a3734a824ecbe14585605e459c40b7f67}
+
+
+Called at the begin of the job before anything is read. Use to initialize the processor, e.g. book histograms. 
+
+Reimplemented from {\bf CALICE::VRawADCValueProcessor} \doxyref{}{p.}{classCALICE_1_1VRawADCValueProcessor}.
+
+Definition at line 121 of file AverageHistoryGraphs.cc.
+
+References histmgr::HistMgr::createGraphCollection(), histmgr::HistMgr::createHistogramGroup(), and histmgr::HistMgr::lockGroup().\index{CALICE::AverageHistoryGraphs@{CALICE::AverageHistoryGraphs}!processEvent@{processEvent}}
+\index{processEvent@{processEvent}!CALICE::AverageHistoryGraphs@{CALICE::AverageHistoryGraphs}}
+\subsubsection[{processEvent}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::AverageHistoryGraphs::processEvent (LCEvent $\ast$ {\em evtP})}\label{classCALICE_1_1AverageHistoryGraphs_a1b70e2c0f46158aac6fe28edb2ca23cf}
+
+
+Called for every event -\/ the working horse. 
+
+Definition at line 251 of file AverageHistoryGraphs.cc.
+
+References CALICE::VRawADCValueProcessor::\_\-adcColName, histmgr::GraphCollection\_\-t::appendXValue(), histmgr::HistMgr::getGraphCollection(), CALICE::CellParameter::getNoise(), CALICE::CellParameter::getPedestal(), and histmgr::GraphCollection\_\-t::setYValue().\index{CALICE::AverageHistoryGraphs@{CALICE::AverageHistoryGraphs}!processRunHeader@{processRunHeader}}
+\index{processRunHeader@{processRunHeader}!CALICE::AverageHistoryGraphs@{CALICE::AverageHistoryGraphs}}
+\subsubsection[{processRunHeader}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::AverageHistoryGraphs::processRunHeader (LCRunHeader $\ast$ {\em run})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1AverageHistoryGraphs_a0b55ddfdfa8bac7bc5f17cd94c695da6}
+
+
+Called for every run, e.g. overwrite to initialize run dependent histograms. 
+
+Definition at line 34 of file AverageHistoryGraphs.hh.
+
+\subsection{Field Documentation}
+\index{CALICE::AverageHistoryGraphs@{CALICE::AverageHistoryGraphs}!\_\-\_\-graphTypeNames@{\_\-\_\-graphTypeNames}}
+\index{\_\-\_\-graphTypeNames@{\_\-\_\-graphTypeNames}!CALICE::AverageHistoryGraphs@{CALICE::AverageHistoryGraphs}}
+\subsubsection[{\_\-\_\-graphTypeNames}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ CALICE::AverageHistoryGraphs::\_\-\_\-graphTypeNames\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classCALICE_1_1AverageHistoryGraphs_adce732f8a36e6b716ab80ff035b2603a}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+{
+    "mean",
+    "rms",
+    "min",
+    "max",
+    "weight"
+  }
+\end{DoxyCode}
+
+
+Definition at line 61 of file AverageHistoryGraphs.hh.\index{CALICE::AverageHistoryGraphs@{CALICE::AverageHistoryGraphs}!\_\-\_\-historyGraphNames@{\_\-\_\-historyGraphNames}}
+\index{\_\-\_\-historyGraphNames@{\_\-\_\-historyGraphNames}!CALICE::AverageHistoryGraphs@{CALICE::AverageHistoryGraphs}}
+\subsubsection[{\_\-\_\-historyGraphNames}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ CALICE::AverageHistoryGraphs::\_\-\_\-historyGraphNames\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classCALICE_1_1AverageHistoryGraphs_a2349f46d366705d3d312fbc32febf896}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+{
+    "ADCHistory",
+    "NoiseHistory",
+    "PedestalHistory",
+    "HitHistory"
+  }
+\end{DoxyCode}
+
+
+Definition at line 62 of file AverageHistoryGraphs.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+AverageHistoryGraphs.hh\item 
+AverageHistoryGraphs.cc\end{DoxyCompactItemize}

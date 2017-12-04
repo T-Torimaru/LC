@@ -1,0 +1,649 @@
+\section{CALICE::TriggerHandlerCalice Class Reference}
+\label{classCALICE_1_1TriggerHandlerCalice}\index{CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}}
+
+
+Implementation of \doxyref{TriggerHandler}{p.}{classCALICE_1_1TriggerHandler} base class for calice purposes Trigger conditions are read from a conditions data source or from the event information.  
+
+
+{\ttfamily \#include $<$TriggerHandlerCalice.hh$>$}Inheritance diagram for CALICE::TriggerHandlerCalice::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCALICE_1_1TriggerHandlerCalice}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Crate\_\-t}
+\begin{DoxyCompactList}\small\item\em Samll helper class which contains a collection of slots and which remebers all the sub detector ids conencted to it. \item\end{DoxyCompactList}\item 
+class {\bf TriggerDef\_\-t}
+\begin{DoxyCompactList}\small\item\em Simple class which contains the data of logical trigger. \item\end{DoxyCompactList}\item 
+class {\bf TriggerValue\_\-t}
+\begin{DoxyCompactList}\small\item\em The mask and value pair which identifies a physical trigger. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::map$<$ {\bf TriggerValue\_\-t}, {\bf TriggerDef\_\-t} $>$ {\bfseries TriggerDefinitionMap\_\-t}\label{classCALICE_1_1TriggerHandlerCalice_ab253080630a94abb3b2228c502f9c47a}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$TriggerHandlerCalice} ()\label{classCALICE_1_1TriggerHandlerCalice_ae27d16038e952dd8a1939481e183ca36}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual void {\bf setTrigger} (lcio::LCEvent $\ast$)
+\begin{DoxyCompactList}\small\item\em returns pointer to only instance of the \doxyref{TriggerHandlerCalice}{p.}{classCALICE_1_1TriggerHandlerCalice} \item\end{DoxyCompactList}\item 
+unsigned int {\bf searchTriggerMainWord} ()
+\begin{DoxyCompactList}\small\item\em Search for the trigger main word. \item\end{DoxyCompactList}\item 
+void {\bf searchTriggerHistory} ()
+\begin{DoxyCompactList}\small\item\em Search the trigger history for triggers firing at and before the main word. \item\end{DoxyCompactList}\item 
+const std::map$<$ unsigned int, unsigned int $>$ \& {\bf getPreTriggerHistory} () const 
+\begin{DoxyCompactList}\small\item\em Get a list trigger and their positions wrt. \item\end{DoxyCompactList}\item 
+const std::map$<$ unsigned int, unsigned int $>$ \& {\bf getPostTriggerHistory} () const 
+\begin{DoxyCompactList}\small\item\em Get a list trigger and their positions wrt. \item\end{DoxyCompactList}\item 
+virtual bool {\bf isValidTrigger} (const lcio::LCEvent $\ast$)
+\begin{DoxyCompactList}\small\item\em Trigger Validation. \item\end{DoxyCompactList}\item 
+virtual void {\bf init} ()\label{classCALICE_1_1TriggerHandlerCalice_a71d0a649ae731af414e6fc0536de8c7f}
+
+\begin{DoxyCompactList}\small\item\em A initialization method. \item\end{DoxyCompactList}\item 
+void {\bf init} (const string \&col\_\-trigger\_\-assignment, const string \&col\_\-trigger\_\-check, const string \&colBeTrgConf, const string \&col\_\-name\_\-readout\_\-conf, const string \&col\_\-name\_\-trgro\_\-conf, const lcio::StringVec \&col\_\-name\_\-fe\_\-conf, const lcio::StringVec \&col\_\-name\_\-module\_\-connection)
+\begin{DoxyCompactList}\small\item\em Another initialization method. \item\end{DoxyCompactList}\item 
+void {\bf setColNameTriggerEvent} (const std::string \&col\_\-name)\label{classCALICE_1_1TriggerHandlerCalice_abf11c38b16215eb9a39ec7a5df6be2ff}
+
+\begin{DoxyCompactList}\small\item\em Set the name of the trigger event collection. \item\end{DoxyCompactList}\item 
+void {\bf setTriggerEventClass} ()\label{classCALICE_1_1TriggerHandlerCalice_a63eeabc891b1d44ec204b68524c6fe93}
+
+\begin{DoxyCompactList}\small\item\em Set the trigger event class BeTrgEvent/FeTrgEvent. \item\end{DoxyCompactList}\item 
+void {\bf printTriggerDefinitions} (const lcio::LCEvent $\ast$)\label{classCALICE_1_1TriggerHandlerCalice_ac9dfb3586e9cedaf9aca0437b5cf7e51}
+
+\begin{DoxyCompactList}\small\item\em A convenient print method to get trigger definitions and assignment. \item\end{DoxyCompactList}\item 
+int {\bf getTrgConfigurationMask} ()\label{classCALICE_1_1TriggerHandlerCalice_ab1a4426ec7924b7a6ae50f3b5a606891}
+
+\begin{DoxyCompactList}\small\item\em Return the configuration mask All trigger inputs which are active for a given configuration within a run $<$-\/$>$ subsample of the principle mask. \item\end{DoxyCompactList}\item 
+int {\bf getPrincipleTriggerMask} ()\label{classCALICE_1_1TriggerHandlerCalice_ac442022e7dbb1f1cdc98e33c811bcede}
+
+\begin{DoxyCompactList}\small\item\em Return the principle trigger mask basically the or of all trigger inputs which could be active for the given run. \item\end{DoxyCompactList}\item 
+{\bf TriggerBits} {\bf getTriggerConfiguration} () const 
+\begin{DoxyCompactList}\small\item\em Return the Trigger Definitions Map (for those who need it). \item\end{DoxyCompactList}\item 
+{\bf TriggerBits} {\bf getAndEnableBits} ()
+\begin{DoxyCompactList}\small\item\em Return the and enable word. \item\end{DoxyCompactList}\item 
+{\bf TriggerBits} {\bf getTriggerEvent} () const \label{classCALICE_1_1TriggerHandlerCalice_a8573f96ddc4becc1f585dae1841aedef}
+
+\begin{DoxyCompactList}\small\item\em Get the event trigger bits. \item\end{DoxyCompactList}\item 
+{\bf TriggerBits} {\bf getOutOfRangeTriggerBits} () const \label{classCALICE_1_1TriggerHandlerCalice_abf877a1876c45c657b18d25e786a43c6}
+
+\begin{DoxyCompactList}\small\item\em Get the trigger bits which fire simultaniously with the main word but which are not insided the fifo range. \item\end{DoxyCompactList}\item 
+const TriggerDefinitionMap\_\-t \& {\bfseries getTriggerDefinitionMap} () const \label{classCALICE_1_1TriggerHandlerCalice_ad67a50cc33c7e80df15e1c3431f32d02}
+
+\item 
+const IntVec \& {\bf getTriggerFifoContent} () const \label{classCALICE_1_1TriggerHandlerCalice_a1d3b6f6a2ef672449d9f8c786679d7ca}
+
+\begin{DoxyCompactList}\small\item\em Return the Fifo Content. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getUsedFifoDepth} () const 
+\begin{DoxyCompactList}\small\item\em Return the number of usable fifo words. \item\end{DoxyCompactList}\item 
+bool {\bf hasTriggerFifo} () const \label{classCALICE_1_1TriggerHandlerCalice_ae43defa8ade8a8ff2da6d69fd00471ae}
+
+\begin{DoxyCompactList}\small\item\em Return if the trigger fifo is not empty. \item\end{DoxyCompactList}\item 
+bool {\bf isTriggerFifoDepthGood} ()
+\begin{DoxyCompactList}\small\item\em Return true if the trigger fifo is deep enough. \item\end{DoxyCompactList}\item 
+const int {\bf getTriggerFifoContMainWord} ()\label{classCALICE_1_1TriggerHandlerCalice_afb5c9f6026f37c5a1d813c7115ed7bde}
+
+\begin{DoxyCompactList}\small\item\em Return the content of the main word in the Fifo. \item\end{DoxyCompactList}\item 
+int {\bf getTriggerFifoContaWord} (unsigned int theWord) const \label{classCALICE_1_1TriggerHandlerCalice_ac3e6dcf69178c2ac23d04a5951ac2028}
+
+\begin{DoxyCompactList}\small\item\em Return a given word in the the Fifo Content. \item\end{DoxyCompactList}\item 
+int {\bf getMainWord} () const 
+\begin{DoxyCompactList}\small\item\em Return the main word itself i.e. \item\end{DoxyCompactList}\item 
+const unsigned int {\bf getSmearedTriggerMainWord} ()\label{classCALICE_1_1TriggerHandlerCalice_a81ebbc3ab2e8d6d6ef38f48a29f7c03d}
+
+\begin{DoxyCompactList}\small\item\em Return the trigger main word smeared by +-\/1. \item\end{DoxyCompactList}\item 
+bool {\bf isGenSWTriggerOn} () const \label{classCALICE_1_1TriggerHandlerCalice_a007b1b136d17872e1d6ccce19d640c9e}
+
+\begin{DoxyCompactList}\small\item\em Return the status of the general s/w trigger. \item\end{DoxyCompactList}\item 
+bool {\bf isIndSWTriggerOn} () const \label{classCALICE_1_1TriggerHandlerCalice_a6ab02ed2061a3ce5ed263478068e9241}
+
+\begin{DoxyCompactList}\small\item\em Is at least on one baord a s/w trigger configured. \item\end{DoxyCompactList}\item 
+bool {\bf isSWTriggerOn} () const \label{classCALICE_1_1TriggerHandlerCalice_aaa724a98395b8cbfbc97c36f3a33ec23}
+
+\begin{DoxyCompactList}\small\item\em Is there somewhere a software trigger? \item\end{DoxyCompactList}\item 
+bool {\bf isCalibrationOn} () const 
+\begin{DoxyCompactList}\small\item\em Return the status of the calibration chip. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getNConfigurationChanges} () const \label{classCALICE_1_1TriggerHandlerCalice_aeadb851109277c5bfc2923b029e9fceb}
+
+\begin{DoxyCompactList}\small\item\em Return the number of (Trigger) Configuration Changes. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getNEventsWithoutTriggerEventData} () const 
+\begin{DoxyCompactList}\small\item\em Get the number of events with missing trigger event data. \item\end{DoxyCompactList}\item 
+{\bf TriggerHandlerCalice} ()\label{classCALICE_1_1TriggerHandlerCalice_a73ff92192855ff783c31a725d27b8ea2}
+
+\begin{DoxyCompactList}\small\item\em The private constructor. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries ETrgEventClass} \{ {\bfseries kFeTrgEvent}, 
+{\bfseries kBeTrgEvent}, 
+{\bfseries kUnknown}
+ \}
+\item 
+typedef std::vector$<$ unsigned int $>$ {\bf FrontEndList\_\-t}
+\begin{DoxyCompactList}\small\item\em Collection type which can hold sub detector ids per front end of a slot. \item\end{DoxyCompactList}\item 
+typedef std::vector$<$ {\bf FrontEndList\_\-t} $>$ {\bf SlotList\_\-t}
+\begin{DoxyCompactList}\small\item\em Collection type which can hold front-\/end collections per crate slot. \item\end{DoxyCompactList}\item 
+typedef std::map$<$ unsigned int, {\bf Crate\_\-t} $>$ {\bf CrateList\_\-t}
+\begin{DoxyCompactList}\small\item\em Collection of crates. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf TriggerConditionsListener} ()\label{classCALICE_1_1TriggerHandlerCalice_a3cb0a92075d86da5506b8d5ea00d0a99}
+
+\begin{DoxyCompactList}\small\item\em This method verifies the validity of the current trigger configuration mask Was used to manage trigger changes in older versions. \item\end{DoxyCompactList}\item 
+void {\bf CreateTriggerDefinitionMap} (EVENT::LCCollection $\ast$TrAssCol)\label{classCALICE_1_1TriggerHandlerCalice_ac29005c4b8498f17614ddf40a8590cd3}
+
+\begin{DoxyCompactList}\small\item\em This method creates the map of the trigger definition plus the so called principle trigger mask, the trigger bits which have well assigned signals. \item\end{DoxyCompactList}\item 
+void {\bf ExtractTriggerEnvironment} (EVENT::LCCollection $\ast$confCol)\label{classCALICE_1_1TriggerHandlerCalice_afac09bc86211a818652d60753f69b31b}
+
+\begin{DoxyCompactList}\small\item\em This method extracts the environmental setting of the trigger, the BeTrgConfigurationsData from a conditions data source. \item\end{DoxyCompactList}\item 
+void {\bf updateTriggerConfBits} ()
+\begin{DoxyCompactList}\small\item\em Update the configuration trigger bits which will be attached to the event header. \item\end{DoxyCompactList}\item 
+void {\bf ExtractTriggerCheckConditions} (EVENT::LCCollection $\ast$checkCol)
+\begin{DoxyCompactList}\small\item\em This method extracts the info on how to verify and get the trigger decision, i.e. \item\end{DoxyCompactList}\item 
+void {\bf feConfigurationChange} (EVENT::LCCollection $\ast$feConfCol, unsigned int set\_\-i)\label{classCALICE_1_1TriggerHandlerCalice_a282fa2d7b6902a73f46c14e17299038a}
+
+\begin{DoxyCompactList}\small\item\em Memorise new front-\/end configuration conditions dataa. \item\end{DoxyCompactList}\item 
+bool {\bf checkForCalibrationOn} ()
+\begin{DoxyCompactList}\small\item\em Analyse the front-\/end configuration data and set calibration on flags accrodingly. \item\end{DoxyCompactList}\item 
+void {\bf readoutConfChange} (EVENT::LCCollection $\ast$roConfCol)
+\begin{DoxyCompactList}\small\item\em Memorise readout configuration data. \item\end{DoxyCompactList}\item 
+void {\bf ExtractGenSoftTrigConfiguration} (EVENT::LCCollection $\ast$)
+\begin{DoxyCompactList}\small\item\em This method checks for individual software triggers i.e. \item\end{DoxyCompactList}\item 
+bool {\bf checkForSoftwareTriggerOn} ()
+\begin{DoxyCompactList}\small\item\em Analyse the readout configuration data and set the software trigger flags accordingly. \item\end{DoxyCompactList}\item 
+void {\bf PrepareTriggerEventData} (const LCEvent $\ast$evt)\label{classCALICE_1_1TriggerHandlerCalice_ad2a57a7f15254dc4776f5587a884da11}
+
+\begin{DoxyCompactList}\small\item\em This method extracts the eventwise trigger data. \item\end{DoxyCompactList}\item 
+void {\bf moduleConnectionChange} (EVENT::LCCollection $\ast$module\_\-connection\_\-col, unsigned int set\_\-i)\label{classCALICE_1_1TriggerHandlerCalice_a77c18b1109a73a19a19bf57a6011e3f0}
+
+\begin{DoxyCompactList}\small\item\em listen for module connection changes and build a connection tree to find out about connected front-\/ends. \item\end{DoxyCompactList}\item 
+void {\bf printConnections} ()
+\begin{DoxyCompactList}\small\item\em Print the module connections to the screen (debug). \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ConditionsChangeDelegator}$<$ {\bf TriggerHandlerCalice} $>$ {\bf \_\-triggerAssignment}\label{classCALICE_1_1TriggerHandlerCalice_aca255f2381bca00ca34522254397ceae}
+
+\begin{DoxyCompactList}\small\item\em The listener which will be called in case the trigger assignemnt changes. \item\end{DoxyCompactList}\item 
+{\bf ConditionsChangeDelegator}$<$ {\bf TriggerHandlerCalice} $>$ {\bf \_\-triggerConfChange}\label{classCALICE_1_1TriggerHandlerCalice_abab9a4755a869825092617b71070841c}
+
+\begin{DoxyCompactList}\small\item\em The listener which will be called in case the trigger configuration changes. \item\end{DoxyCompactList}\item 
+{\bf ConditionsChangeDelegator}$<$ {\bf TriggerHandlerCalice} $>$ {\bf \_\-triggerCheck}\label{classCALICE_1_1TriggerHandlerCalice_aef4c751e3360fe4447c1f1ffe3c2bc98}
+
+\begin{DoxyCompactList}\small\item\em The listener which will be called in case the trigger check conditions change. \item\end{DoxyCompactList}\item 
+std::vector$<$ LCCollection $\ast$ $>$ {\bfseries \_\-feConfCol}\label{classCALICE_1_1TriggerHandlerCalice_a9c87c5150501334e448beaf2d117ac97}
+
+\item 
+std::vector$<$ {\bf CALICE::MultipleConditionsChangeDelegator}$<$ {\bf TriggerHandlerCalice} $>$ $>$ {\bfseries \_\-feConfChange}\label{classCALICE_1_1TriggerHandlerCalice_ab1b87ca952c3b15973d22d6ed916f1b9}
+
+\item 
+std::vector$<$ bool $>$ {\bf \_\-calibrationOnVec}
+\begin{DoxyCompactList}\small\item\em Variables which contains the status of the calibration bit in the FeConfiguration Data. \item\end{DoxyCompactList}\item 
+bool {\bf \_\-calibrationOn}
+\begin{DoxyCompactList}\small\item\em Global calibration on set of calibration on is set for at least one sub detector. \item\end{DoxyCompactList}\item 
+{\bf ConditionsChangeDelegator}$<$ {\bf TriggerHandlerCalice} $>$ {\bf \_\-roConfChange}
+\begin{DoxyCompactList}\small\item\em The listener which will be called in case the ReadOut Configuration Changes. \item\end{DoxyCompactList}\item 
+lcio::LCCollection $\ast$ {\bf \_\-roConfCol}
+\begin{DoxyCompactList}\small\item\em points to the last readout configuration conditions data. \item\end{DoxyCompactList}\item 
+{\bf ConditionsChangeDelegator}$<$ {\bf TriggerHandlerCalice} $>$ {\bf \_\-trgroConfChange}
+\begin{DoxyCompactList}\small\item\em The listener which will be called in case the TrgReadoutConfiguration Changes. \item\end{DoxyCompactList}\item 
+bool {\bf \_\-swTriggerOnInd}\label{classCALICE_1_1TriggerHandlerCalice_a69a2ff01dcb568853dcf77e32711b2d7}
+
+\begin{DoxyCompactList}\small\item\em Variable which contains the information whether a s/w trigger is configured at least in one board or not. \item\end{DoxyCompactList}\item 
+std::vector$<$ unsigned int $>$ {\bf \_\-swTriggerOnVec}
+\begin{DoxyCompactList}\small\item\em Soft trigger flags per sub detector. \item\end{DoxyCompactList}\item 
+bool {\bf \_\-swTriggerOnGen}\label{classCALICE_1_1TriggerHandlerCalice_ae095f95cba4e184e31f7d5068c8c61ee}
+
+\begin{DoxyCompactList}\small\item\em Variable which contains the information whether a s/w trigger is configured in the central trigger board. \item\end{DoxyCompactList}\item 
+int {\bf \_\-main\_\-word}\label{classCALICE_1_1TriggerHandlerCalice_af520f87fa26349272b46e87d07012456}
+
+\begin{DoxyCompactList}\small\item\em The data members which contain the info about the words which are to be checked. \item\end{DoxyCompactList}\item 
+int {\bfseries \_\-tolerance}\label{classCALICE_1_1TriggerHandlerCalice_abd686a8fa65e9c224d9d74d3e0e7705c}
+
+\item 
+int {\bfseries \_\-word\_\-up}\label{classCALICE_1_1TriggerHandlerCalice_ae32f0df02d0831360a0519ba3d40e210}
+
+\item 
+int {\bfseries \_\-word\_\-down}\label{classCALICE_1_1TriggerHandlerCalice_abaf6ccbf5fc1123e4d4a55170a6b4ffe}
+
+\item 
+TriggerDefinitionMap\_\-t {\bf \_\-trdefMap}\label{classCALICE_1_1TriggerHandlerCalice_abbbf0c527ce607e695e21124fc5ed570}
+
+\begin{DoxyCompactList}\small\item\em The Trigger Definition map. \item\end{DoxyCompactList}\item 
+int {\bf \_\-principleTriggerMask}\label{classCALICE_1_1TriggerHandlerCalice_a611b71544ddd0680fe251aff11bb4688}
+
+\begin{DoxyCompactList}\small\item\em The trigger mask as defined by the Trigger Definition map. \item\end{DoxyCompactList}\item 
+int {\bf \_\-confTriggerMask}\label{classCALICE_1_1TriggerHandlerCalice_a2641945ca32de2599339c3852eca28a7}
+
+\begin{DoxyCompactList}\small\item\em The trigger configuration as defined in the configuration data, CrcBeTrgConfiguration Data. \item\end{DoxyCompactList}\item 
+int {\bf \_\-andEnable0}\label{classCALICE_1_1TriggerHandlerCalice_a25eb3d5eaf00c923236c341993e90fb3}
+
+\begin{DoxyCompactList}\small\item\em The And Enable word(0), only by this word we can recognize which Triggers are suppose to fire in case conincidences are setup. \item\end{DoxyCompactList}\item 
+int {\bf \_\-genericTriggerMask}
+\begin{DoxyCompactList}\small\item\em The generic mask. \item\end{DoxyCompactList}\item 
+std::map$<$ std::string, unsigned int $>$ {\bfseries \_\-knownTrigger}\label{classCALICE_1_1TriggerHandlerCalice_a4a7d8b05623d39ab3ff1463ac401d8ec}
+
+\item 
+IntVec {\bf \_\-theTriggerFifoCont}\label{classCALICE_1_1TriggerHandlerCalice_a0c03164397d986ff6934fcaab547aaca}
+
+\begin{DoxyCompactList}\small\item\em The famous fifo to verify the trigger quality. \item\end{DoxyCompactList}\item 
+lcio::LCTime {\bfseries \_\-theTime}\label{classCALICE_1_1TriggerHandlerCalice_a1ab95447d2ac5fc5b974bf9ea852d192}
+
+\item 
+bool {\bf \_\-isInitialized}\label{classCALICE_1_1TriggerHandlerCalice_ac88e6f1a02d096a9fb2c3fee2e7cab17}
+
+\begin{DoxyCompactList}\small\item\em Some check variables. \item\end{DoxyCompactList}\item 
+{\bf TriggerBits} {\bf \_\-event\_\-triggerBits}\label{classCALICE_1_1TriggerHandlerCalice_a055736d91c8d96c277510863e3de1dba}
+
+\begin{DoxyCompactList}\small\item\em Object which holds the event trigger(s). \item\end{DoxyCompactList}\item 
+{\bf TriggerBits} {\bf \_\-conf\_\-triggerBits}\label{classCALICE_1_1TriggerHandlerCalice_a6c12a5293fcc0349222eef1997776126}
+
+\begin{DoxyCompactList}\small\item\em Object which holds the configured trigger(s). \item\end{DoxyCompactList}\item 
+{\bf TriggerBits} {\bf \_\-andenable\_\-triggerBits}\label{classCALICE_1_1TriggerHandlerCalice_a5b412bb45dbe21714801d6a0e1c18e44}
+
+\begin{DoxyCompactList}\small\item\em Object which holds the trigger(s) enabled for coincidence. \item\end{DoxyCompactList}\item 
+{\bf TriggerBits} {\bf \_\-outOfRange\_\-triggerBits}
+\begin{DoxyCompactList}\small\item\em Object which holds the trigger(s) which would be expected outside of the fifo depth. \item\end{DoxyCompactList}\item 
+bool {\bf \_\-triggerPollTimeout}\label{classCALICE_1_1TriggerHandlerCalice_ad19f405613bc450ab034c9ad001a46d3}
+
+\begin{DoxyCompactList}\small\item\em variable which holds the result of the trigger polling \item\end{DoxyCompactList}\item 
+unsigned int {\bf \_\-nConfigurationChanges}\label{classCALICE_1_1TriggerHandlerCalice_a8cd425f3a56d4819066956d26b05d250}
+
+\begin{DoxyCompactList}\small\item\em A counter of TriggerConfiguration Changes (suggested by Goetz). \item\end{DoxyCompactList}\item 
+unsigned int {\bfseries \_\-lastConfigurationChange}\label{classCALICE_1_1TriggerHandlerCalice_af9801d7531c2f445590392b963a94f78}
+
+\item 
+{\bf CrateList\_\-t} {\bfseries \_\-connections}\label{classCALICE_1_1TriggerHandlerCalice_accedfff93ac876b417818022615ce73c}
+
+\item 
+std::vector$<$ unsigned int $>$ {\bf \_\-nFrontEnds}
+\begin{DoxyCompactList}\small\item\em Number of front-\/ends connected to one sub detector. \item\end{DoxyCompactList}\item 
+std::vector$<$ {\bf CALICE::MultipleConditionsChangeDelegator}$<$ {\bf TriggerHandlerCalice} $>$ $>$ {\bfseries \_\-moduleConnectionChange}\label{classCALICE_1_1TriggerHandlerCalice_a6d2ffe004855bb39343d0dfeed9023c6}
+
+\item 
+std::string {\bf \_\-colNameTriggerEvent}
+\begin{DoxyCompactList}\small\item\em Name of the trigger event collection. \item\end{DoxyCompactList}\item 
+unsigned int {\bfseries \_\-errorCounter}\label{classCALICE_1_1TriggerHandlerCalice_a018fa21cc1ea3d15d51e93377205da76}
+
+\item 
+unsigned int {\bfseries \_\-noTriggerEvents}\label{classCALICE_1_1TriggerHandlerCalice_a07f2adc4f90b702135049a370479c06e}
+
+\item 
+ETrgEventClass {\bfseries \_\-trgEventClass}\label{classCALICE_1_1TriggerHandlerCalice_a79bbec8fe97e6210d671b02457a3e33e}
+
+\item 
+bool {\bfseries \_\-verbose}\label{classCALICE_1_1TriggerHandlerCalice_a8f0df5fe5fca56bc0003a46e8b27b927}
+
+\item 
+int {\bf \_\-this\_\-trigger\_\-main\_\-word}
+\begin{DoxyCompactList}\small\item\em The trigger main word of this event. \item\end{DoxyCompactList}\item 
+unsigned int {\bf \_\-this\_\-trigger\_\-length}
+\begin{DoxyCompactList}\small\item\em The width of the trigger enable pulse. \item\end{DoxyCompactList}\item 
+std::map$<$ unsigned int, unsigned int $>$ {\bfseries \_\-distanceToPreTrigger}\label{classCALICE_1_1TriggerHandlerCalice_a903c163f8024fa0b27b6245e5037e5f2}
+
+\item 
+std::map$<$ unsigned int, unsigned int $>$ {\bfseries \_\-distanceToPostTrigger}\label{classCALICE_1_1TriggerHandlerCalice_a904825082d34952107883cefca8485c3}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation of \doxyref{TriggerHandler}{p.}{classCALICE_1_1TriggerHandler} base class for calice purposes Trigger conditions are read from a conditions data source or from the event information. Database accesses and necessary event analysis are completely hidden from the user. The results are made availabe by access functions which can be used to update event parameters The triggerhandler can act as a singleton class and can in principle be plugged in at any point in the processors. \begin{DoxyAuthor}{Author}
+R. Pöschl DESY, major update by G.Gaycken (LLR) Aug. 2006 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+May 20 2005 
+\end{DoxyDate}
+
+
+Definition at line 56 of file TriggerHandlerCalice.hh.
+
+\subsection{Member Typedef Documentation}
+\index{CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}!CrateList\_\-t@{CrateList\_\-t}}
+\index{CrateList\_\-t@{CrateList\_\-t}!CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}}
+\subsubsection[{CrateList\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef std::map$<$unsigned int, {\bf Crate\_\-t} $>$ {\bf CALICE::TriggerHandlerCalice::CrateList\_\-t}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1TriggerHandlerCalice_a2c1812a0d0f46e850a51a28b319b6a75}
+
+
+Collection of crates. 
+
+Definition at line 612 of file TriggerHandlerCalice.hh.\index{CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}!FrontEndList\_\-t@{FrontEndList\_\-t}}
+\index{FrontEndList\_\-t@{FrontEndList\_\-t}!CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}}
+\subsubsection[{FrontEndList\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef std::vector$<$unsigned int$>$ {\bf CALICE::TriggerHandlerCalice::FrontEndList\_\-t}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1TriggerHandlerCalice_a0821b3aa4f4aef84f865cc8b031839f8}
+
+
+Collection type which can hold sub detector ids per front end of a slot. 
+
+Definition at line 564 of file TriggerHandlerCalice.hh.\index{CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}!SlotList\_\-t@{SlotList\_\-t}}
+\index{SlotList\_\-t@{SlotList\_\-t}!CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}}
+\subsubsection[{SlotList\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef std::vector$<${\bf FrontEndList\_\-t}$>$ {\bf CALICE::TriggerHandlerCalice::SlotList\_\-t}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1TriggerHandlerCalice_a2876874d0155051aa620c2af2b62d9f5}
+
+
+Collection type which can hold front-\/end collections per crate slot. 
+
+Definition at line 565 of file TriggerHandlerCalice.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}!checkForCalibrationOn@{checkForCalibrationOn}}
+\index{checkForCalibrationOn@{checkForCalibrationOn}!CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}}
+\subsubsection[{checkForCalibrationOn}]{\setlength{\rightskip}{0pt plus 5cm}bool CALICE::TriggerHandlerCalice::checkForCalibrationOn ()\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1TriggerHandlerCalice_a28c924ed3dc31e4f2db351ed2265c7f9}
+
+
+Analyse the front-\/end configuration data and set calibration on flags accrodingly. Only connected front-\/ends are consdiered. The calibration flags are set per sub detector and a global flag is set if one of the calibration flag of one sub detector is set. 
+
+Definition at line 1414 of file TriggerHandlerCalice.cc.
+
+References \_\-calibrationOn, \_\-calibrationOnVec, and \_\-conf\_\-triggerBits.
+
+Referenced by feConfigurationChange(), and moduleConnectionChange().\index{CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}!checkForSoftwareTriggerOn@{checkForSoftwareTriggerOn}}
+\index{checkForSoftwareTriggerOn@{checkForSoftwareTriggerOn}!CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}}
+\subsubsection[{checkForSoftwareTriggerOn}]{\setlength{\rightskip}{0pt plus 5cm}bool CALICE::TriggerHandlerCalice::checkForSoftwareTriggerOn ()\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1TriggerHandlerCalice_ab516889d33dcbfb3c6b07790ec77e7d6}
+
+
+Analyse the readout configuration data and set the software trigger flags accordingly. If at least one front-\/end soft trigger or the back-\/end trigger is activated for one front-\/end which is connected to a sub-\/detector or one crate which contains front-\/ends which are conntected to a sub detector, then the soft trigger flag of the corresponding sub detector is set. If the soft trigger of one sub detector is set, then also the global soft trigger flag is set. 
+
+Definition at line 1515 of file TriggerHandlerCalice.cc.
+
+References \_\-nFrontEnds, \_\-roConfCol, \_\-swTriggerOnInd, \_\-swTriggerOnVec, and updateTriggerConfBits().
+
+Referenced by moduleConnectionChange(), and readoutConfChange().\index{CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}!ExtractGenSoftTrigConfiguration@{ExtractGenSoftTrigConfiguration}}
+\index{ExtractGenSoftTrigConfiguration@{ExtractGenSoftTrigConfiguration}!CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}}
+\subsubsection[{ExtractGenSoftTrigConfiguration}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::TriggerHandlerCalice::ExtractGenSoftTrigConfiguration (EVENT::LCCollection $\ast$ {\em trgroConfCol})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1TriggerHandlerCalice_a6c2c1c59918150da8f6ea4fcb2a0c83f}
+
+
+This method checks for individual software triggers i.e. on each board \begin{Desc}
+\item[{\bf Todo}]currently a software trigger is declared whenever a s/w trigger is enabled on one board this has to be individualized \end{Desc}
+
+
+Definition at line 1782 of file TriggerHandlerCalice.cc.
+
+References \_\-swTriggerOnGen.\index{CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}!ExtractTriggerCheckConditions@{ExtractTriggerCheckConditions}}
+\index{ExtractTriggerCheckConditions@{ExtractTriggerCheckConditions}!CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}}
+\subsubsection[{ExtractTriggerCheckConditions}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::TriggerHandlerCalice::ExtractTriggerCheckConditions (EVENT::LCCollection $\ast$ {\em checkCol})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1TriggerHandlerCalice_a2bf695ca5c32862b7ff6d4cba55ea5f4}
+
+
+This method extracts the info on how to verify and get the trigger decision, i.e. which words have to be checked in the fifo to get the trigger decision and which words have to be scanned in the fifo to validate the trigger decision 
+
+Definition at line 1910 of file TriggerHandlerCalice.cc.
+
+References \_\-main\_\-word.\index{CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}!getAndEnableBits@{getAndEnableBits}}
+\index{getAndEnableBits@{getAndEnableBits}!CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}}
+\subsubsection[{getAndEnableBits}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TriggerBits} CALICE::TriggerHandlerCalice::getAndEnableBits ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1TriggerHandlerCalice_a06c58816d6f4c12c6e586c05e4110dd2}
+
+
+Return the and enable word. \begin{Desc}
+\item[{\bf Todo}]in priniple there are four enable words and in prenicple we need the enable word to a trigger bit in the configuration mask \end{Desc}
+
+
+Definition at line 187 of file TriggerHandlerCalice.hh.
+
+References \_\-andenable\_\-triggerBits.\index{CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}!getMainWord@{getMainWord}}
+\index{getMainWord@{getMainWord}!CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}}
+\subsubsection[{getMainWord}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::TriggerHandlerCalice::getMainWord () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1TriggerHandlerCalice_afd97483105c2763c824ec212411ac9c1}
+
+
+Return the main word itself i.e. the word in fifo in which we look mainly for the event trigger 
+
+Definition at line 305 of file TriggerHandlerCalice.hh.
+
+References \_\-main\_\-word.\index{CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}!getNEventsWithoutTriggerEventData@{getNEventsWithoutTriggerEventData}}
+\index{getNEventsWithoutTriggerEventData@{getNEventsWithoutTriggerEventData}!CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}}
+\subsubsection[{getNEventsWithoutTriggerEventData}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::TriggerHandlerCalice::getNEventsWithoutTriggerEventData () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1TriggerHandlerCalice_abbd75e415f36cdf05d51ae0bd63d6b54}
+
+
+Get the number of events with missing trigger event data. 
+
+Definition at line 345 of file TriggerHandlerCalice.hh.\index{CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}!getPostTriggerHistory@{getPostTriggerHistory}}
+\index{getPostTriggerHistory@{getPostTriggerHistory}!CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}}
+\subsubsection[{getPostTriggerHistory}]{\setlength{\rightskip}{0pt plus 5cm}const std::map$<$unsigned int, unsigned int$>$\& CALICE::TriggerHandlerCalice::getPostTriggerHistory () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1TriggerHandlerCalice_abb6cbaa54be2cc371228fd591ce8d03d}
+
+
+Get a list trigger and their positions wrt. to the main word which fired after the main word (future). 
+
+Definition at line 101 of file TriggerHandlerCalice.hh.\index{CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}!getPreTriggerHistory@{getPreTriggerHistory}}
+\index{getPreTriggerHistory@{getPreTriggerHistory}!CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}}
+\subsubsection[{getPreTriggerHistory}]{\setlength{\rightskip}{0pt plus 5cm}const std::map$<$unsigned int, unsigned int$>$\& CALICE::TriggerHandlerCalice::getPreTriggerHistory () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1TriggerHandlerCalice_a90e4749bf8fa40fc39aeadb0e548cad9}
+
+
+Get a list trigger and their positions wrt. to the main word which fired before the main word (past). 
+
+Definition at line 95 of file TriggerHandlerCalice.hh.\index{CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}!getTriggerConfiguration@{getTriggerConfiguration}}
+\index{getTriggerConfiguration@{getTriggerConfiguration}!CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}}
+\subsubsection[{getTriggerConfiguration}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TriggerBits} CALICE::TriggerHandlerCalice::getTriggerConfiguration () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1TriggerHandlerCalice_aef2b16a573265fdb2a77c93d113106ae}
+
+
+Return the Trigger Definitions Map (for those who need it). Get the trigger configuration. 
+
+Definition at line 180 of file TriggerHandlerCalice.hh.
+
+References \_\-conf\_\-triggerBits.\index{CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}!getUsedFifoDepth@{getUsedFifoDepth}}
+\index{getUsedFifoDepth@{getUsedFifoDepth}!CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}}
+\subsubsection[{getUsedFifoDepth}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::TriggerHandlerCalice::getUsedFifoDepth () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1TriggerHandlerCalice_a1f9dae7ef442c8eed37a663bdfa9ae6c}
+
+
+Return the number of usable fifo words. The last two words of the fifo are used differently. So, they should not be used in history scans. 
+
+Definition at line 263 of file TriggerHandlerCalice.hh.
+
+References \_\-theTriggerFifoCont.
+
+Referenced by getSmearedTriggerMainWord(), searchTriggerHistory(), and searchTriggerMainWord().\index{CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}!init@{init}}
+\index{init@{init}!CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::TriggerHandlerCalice::init (const string \& {\em col\_\-trigger\_\-assignment}, \/  const string \& {\em col\_\-trigger\_\-check}, \/  const string \& {\em colBeTrgConf}, \/  const string \& {\em col\_\-name\_\-readout\_\-conf}, \/  const string \& {\em col\_\-name\_\-trgro\_\-conf}, \/  const lcio::StringVec \& {\em col\_\-name\_\-fe\_\-conf}, \/  const lcio::StringVec \& {\em col\_\-name\_\-module\_\-connection})}\label{classCALICE_1_1TriggerHandlerCalice_a51df7056d01b1e0f2ebf0ad039676d2e}
+
+
+Another initialization method. 
+\begin{DoxyParams}{Parameters}
+\item[{\em col\_\-trigger\_\-assignment}]name of the trigger assignment conditions data. \item[{\em col\_\-trigger\_\-check}]name of the trigger check conditions data. \item[{\em colBeTrgConf}]name of the conditions data of the back-\/end trigger configuration. \item[{\em col\_\-name\_\-readout\_\-conf}]name of the conditions data of the readout configuration. \item[{\em col\_\-name\_\-trgro\_\-conf}]name of the conditions data of the trigger readout configuration. \item[{\em col\_\-name\_\-fe\_\-conf}]vector of names of the conditions data of the front-\/end configuration. \item[{\em col\_\-name\_\-module\_\-connection}]vector of names of the conditions data which describes the connections. between detector modules and front-\/ends (needed to find out about calibration mode). \end{DoxyParams}
+
+
+Definition at line 138 of file TriggerHandlerCalice.cc.
+
+References \_\-calibrationOnVec, \_\-isInitialized, \_\-nFrontEnds, \_\-roConfChange, \_\-swTriggerOnVec, \_\-trgroConfChange, \_\-triggerAssignment, \_\-triggerCheck, \_\-triggerConfChange, feConfigurationChange(), and moduleConnectionChange().\index{CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}!isCalibrationOn@{isCalibrationOn}}
+\index{isCalibrationOn@{isCalibrationOn}!CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}}
+\subsubsection[{isCalibrationOn}]{\setlength{\rightskip}{0pt plus 5cm}bool CALICE::TriggerHandlerCalice::isCalibrationOn () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1TriggerHandlerCalice_a35191de020f116b40ec2740649d08507}
+
+
+Return the status of the calibration chip. 
+
+Definition at line 338 of file TriggerHandlerCalice.hh.
+
+References \_\-calibrationOn.
+
+Referenced by searchTriggerHistory().\index{CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}!isTriggerFifoDepthGood@{isTriggerFifoDepthGood}}
+\index{isTriggerFifoDepthGood@{isTriggerFifoDepthGood}!CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}}
+\subsubsection[{isTriggerFifoDepthGood}]{\setlength{\rightskip}{0pt plus 5cm}bool CALICE::TriggerHandlerCalice::isTriggerFifoDepthGood ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1TriggerHandlerCalice_aab1d29d8baf25ec40b2b192b13c694a9}
+
+
+Return true if the trigger fifo is deep enough. \begin{Desc}
+\item[{\bf Todo}]what is the required fifo depth ? \end{Desc}
+
+
+Definition at line 272 of file TriggerHandlerCalice.hh.
+
+References \_\-main\_\-word, and \_\-theTriggerFifoCont.\index{CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}!isValidTrigger@{isValidTrigger}}
+\index{isValidTrigger@{isValidTrigger}!CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}}
+\subsubsection[{isValidTrigger}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool CALICE::TriggerHandlerCalice::isValidTrigger (const lcio::LCEvent $\ast$)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCALICE_1_1TriggerHandlerCalice_a497252cf7f55e9bd9c9273e0327fdcf8}
+
+
+Trigger Validation. It checks whether the event was triggered properly. Note, that this is fairly independent of the trigger requested by the user in the method above. currently it does nothing \index{CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}!printConnections@{printConnections}}
+\index{printConnections@{printConnections}!CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}}
+\subsubsection[{printConnections}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::TriggerHandlerCalice::printConnections ()\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1TriggerHandlerCalice_abc638a9ce5a603c1d4e4015f9a258da6}
+
+
+Print the module connections to the screen (debug). This method is indented for debug purposes only. 
+
+Definition at line 1744 of file TriggerHandlerCalice.cc.
+
+Referenced by moduleConnectionChange().\index{CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}!readoutConfChange@{readoutConfChange}}
+\index{readoutConfChange@{readoutConfChange}!CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}}
+\subsubsection[{readoutConfChange}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::TriggerHandlerCalice::readoutConfChange (EVENT::LCCollection $\ast$ {\em roConfCol})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1TriggerHandlerCalice_a62be27fc77f9f05b04fd7ea8b3694b50}
+
+
+Memorise readout configuration data. The readout configuration data is needed to identify software triggers. 
+
+Definition at line 1496 of file TriggerHandlerCalice.cc.
+
+References \_\-roConfCol, and checkForSoftwareTriggerOn().\index{CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}!searchTriggerHistory@{searchTriggerHistory}}
+\index{searchTriggerHistory@{searchTriggerHistory}!CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}}
+\subsubsection[{searchTriggerHistory}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::TriggerHandlerCalice::searchTriggerHistory ()}\label{classCALICE_1_1TriggerHandlerCalice_adf601302bf271a49fb40fccdcdb38b3b}
+
+
+Search the trigger history for triggers firing at and before the main word. This will fill a map which contains for each position in the past history where a trigger was firing the trigger bits of all firing triggers. Also the event trigger bits will be set. 
+
+Definition at line 510 of file TriggerHandlerCalice.cc.
+
+References \_\-conf\_\-triggerBits, \_\-event\_\-triggerBits, \_\-genericTriggerMask, \_\-outOfRange\_\-triggerBits, \_\-principleTriggerMask, \_\-theTriggerFifoCont, \_\-this\_\-trigger\_\-main\_\-word, \_\-trdefMap, \_\-triggerPollTimeout, getPrincipleTriggerMask(), getSmearedTriggerMainWord(), getTrgConfigurationMask(), getUsedFifoDepth(), isCalibrationOn(), isGenSWTriggerOn(), and isSWTriggerOn().\index{CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}!searchTriggerMainWord@{searchTriggerMainWord}}
+\index{searchTriggerMainWord@{searchTriggerMainWord}!CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}}
+\subsubsection[{searchTriggerMainWord}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::TriggerHandlerCalice::searchTriggerMainWord ()}\label{classCALICE_1_1TriggerHandlerCalice_a3914a84e0dee95e666f66d998fad88b4}
+
+
+Search for the trigger main word. The search is conducted starting at the main words in both time directions. First in future direction then past. The trigger handler has to be prepared first. \begin{DoxySeeAlso}{See also}
+\doxyref{setTrigger}{p.}{classCALICE_1_1TriggerHandlerCalice_aa2825f2c5203e60d43ec0ed0131b0f71} 
+\end{DoxySeeAlso}
+
+
+Definition at line 327 of file TriggerHandlerCalice.cc.
+
+References \_\-confTriggerMask, \_\-genericTriggerMask, \_\-main\_\-word, \_\-theTriggerFifoCont, \_\-this\_\-trigger\_\-length, \_\-this\_\-trigger\_\-main\_\-word, getUsedFifoDepth(), and CALICE::to\_\-binary\_\-bitops().\index{CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}!setTrigger@{setTrigger}}
+\index{setTrigger@{setTrigger}!CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}}
+\subsubsection[{setTrigger}]{\setlength{\rightskip}{0pt plus 5cm}virtual void CALICE::TriggerHandlerCalice::setTrigger (lcio::LCEvent $\ast$)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCALICE_1_1TriggerHandlerCalice_aa2825f2c5203e60d43ec0ed0131b0f71}
+
+
+returns pointer to only instance of the \doxyref{TriggerHandlerCalice}{p.}{classCALICE_1_1TriggerHandlerCalice} This adds the trigger information to the event (well it did in older versions, now it only calls the method to get the fifo content ) \index{CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}!updateTriggerConfBits@{updateTriggerConfBits}}
+\index{updateTriggerConfBits@{updateTriggerConfBits}!CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}}
+\subsubsection[{updateTriggerConfBits}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::TriggerHandlerCalice::updateTriggerConfBits ()\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1TriggerHandlerCalice_ab6c6637184b70f96f98ba5e55241f444}
+
+
+Update the configuration trigger bits which will be attached to the event header. This method should be called after trigger configuration changes, trigger assignment changes, readout configuration changes (soft trigger), front-\/end configuration changes (calib). \begin{DoxySeeAlso}{See also}
+
+\end{DoxySeeAlso}
+
+
+Definition at line 1346 of file TriggerHandlerCalice.cc.
+
+References \_\-andEnable0, \_\-andenable\_\-triggerBits, \_\-calibrationOn, \_\-conf\_\-triggerBits, \_\-confTriggerMask, \_\-swTriggerOnInd, and \_\-trdefMap.
+
+Referenced by checkForSoftwareTriggerOn(), CreateTriggerDefinitionMap(), and ExtractTriggerEnvironment().
+
+\subsection{Field Documentation}
+\index{CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}!\_\-calibrationOn@{\_\-calibrationOn}}
+\index{\_\-calibrationOn@{\_\-calibrationOn}!CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}}
+\subsubsection[{\_\-calibrationOn}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf CALICE::TriggerHandlerCalice::\_\-calibrationOn}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1TriggerHandlerCalice_abbff99ad6159861381607a75ef161cd7}
+
+
+Global calibration on set of calibration on is set for at least one sub detector. 
+
+Definition at line 430 of file TriggerHandlerCalice.hh.
+
+Referenced by checkForCalibrationOn(), isCalibrationOn(), and updateTriggerConfBits().\index{CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}!\_\-calibrationOnVec@{\_\-calibrationOnVec}}
+\index{\_\-calibrationOnVec@{\_\-calibrationOnVec}!CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}}
+\subsubsection[{\_\-calibrationOnVec}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$bool$>$ {\bf CALICE::TriggerHandlerCalice::\_\-calibrationOnVec}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1TriggerHandlerCalice_ad4d80b0b8b4a24927e0a2c1599e67b29}
+
+
+Variables which contains the status of the calibration bit in the FeConfiguration Data. calibration on flags per sub detector. 
+
+Definition at line 429 of file TriggerHandlerCalice.hh.
+
+Referenced by checkForCalibrationOn(), and init().\index{CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}!\_\-colNameTriggerEvent@{\_\-colNameTriggerEvent}}
+\index{\_\-colNameTriggerEvent@{\_\-colNameTriggerEvent}!CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}}
+\subsubsection[{\_\-colNameTriggerEvent}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf CALICE::TriggerHandlerCalice::\_\-colNameTriggerEvent}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1TriggerHandlerCalice_a591a52c270f5f4003f920e6e2ac05d72}
+
+
+Name of the trigger event collection. 
+
+Definition at line 627 of file TriggerHandlerCalice.hh.
+
+Referenced by PrepareTriggerEventData(), setColNameTriggerEvent(), and setTriggerEventClass().\index{CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}!\_\-genericTriggerMask@{\_\-genericTriggerMask}}
+\index{\_\-genericTriggerMask@{\_\-genericTriggerMask}!CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}}
+\subsubsection[{\_\-genericTriggerMask}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf CALICE::TriggerHandlerCalice::\_\-genericTriggerMask}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1TriggerHandlerCalice_a6168c86df9fef51f91bf15d85badfffa}
+
+
+The generic mask. We need this since one bit comes always along with the trigger information in an event which is not present in the configuration data 
+
+Definition at line 518 of file TriggerHandlerCalice.hh.
+
+Referenced by CreateTriggerDefinitionMap(), searchTriggerHistory(), and searchTriggerMainWord().\index{CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}!\_\-nFrontEnds@{\_\-nFrontEnds}}
+\index{\_\-nFrontEnds@{\_\-nFrontEnds}!CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}}
+\subsubsection[{\_\-nFrontEnds}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$unsigned int$>$ {\bf CALICE::TriggerHandlerCalice::\_\-nFrontEnds}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1TriggerHandlerCalice_a492caf457dee1e73cfe780e3999e3949}
+
+
+Number of front-\/ends connected to one sub detector. 
+
+Definition at line 615 of file TriggerHandlerCalice.hh.
+
+Referenced by checkForSoftwareTriggerOn(), init(), and moduleConnectionChange().\index{CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}!\_\-outOfRange\_\-triggerBits@{\_\-outOfRange\_\-triggerBits}}
+\index{\_\-outOfRange\_\-triggerBits@{\_\-outOfRange\_\-triggerBits}!CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}}
+\subsubsection[{\_\-outOfRange\_\-triggerBits}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TriggerBits} {\bf CALICE::TriggerHandlerCalice::\_\-outOfRange\_\-triggerBits}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1TriggerHandlerCalice_a246bf34b7bb2cc64e2c0fb513882b0e4}
+
+
+Object which holds the trigger(s) which would be expected outside of the fifo depth. 
+
+Definition at line 554 of file TriggerHandlerCalice.hh.
+
+Referenced by getOutOfRangeTriggerBits(), and searchTriggerHistory().\index{CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}!\_\-roConfChange@{\_\-roConfChange}}
+\index{\_\-roConfChange@{\_\-roConfChange}!CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}}
+\subsubsection[{\_\-roConfChange}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConditionsChangeDelegator}$<${\bf TriggerHandlerCalice}$>$ {\bf CALICE::TriggerHandlerCalice::\_\-roConfChange}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1TriggerHandlerCalice_a220ac4908d7f7f2fdd7ca9cdba4166fb}
+
+
+The listener which will be called in case the ReadOut Configuration Changes. Like that we can indentify software triggers. 
+
+Definition at line 442 of file TriggerHandlerCalice.hh.
+
+Referenced by init().\index{CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}!\_\-roConfCol@{\_\-roConfCol}}
+\index{\_\-roConfCol@{\_\-roConfCol}!CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}}
+\subsubsection[{\_\-roConfCol}]{\setlength{\rightskip}{0pt plus 5cm}lcio::LCCollection$\ast$ {\bf CALICE::TriggerHandlerCalice::\_\-roConfCol}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1TriggerHandlerCalice_ab7fc81a246adb89a531cc50919ebfe7e}
+
+
+points to the last readout configuration conditions data. 
+
+Definition at line 444 of file TriggerHandlerCalice.hh.
+
+Referenced by checkForSoftwareTriggerOn(), and readoutConfChange().\index{CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}!\_\-swTriggerOnVec@{\_\-swTriggerOnVec}}
+\index{\_\-swTriggerOnVec@{\_\-swTriggerOnVec}!CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}}
+\subsubsection[{\_\-swTriggerOnVec}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$ unsigned int $>$ {\bf CALICE::TriggerHandlerCalice::\_\-swTriggerOnVec}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1TriggerHandlerCalice_a48d6b69744a6a7916f9b4916510f918a}
+
+
+Soft trigger flags per sub detector. 
+
+Definition at line 477 of file TriggerHandlerCalice.hh.
+
+Referenced by checkForSoftwareTriggerOn(), and init().\index{CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}!\_\-this\_\-trigger\_\-length@{\_\-this\_\-trigger\_\-length}}
+\index{\_\-this\_\-trigger\_\-length@{\_\-this\_\-trigger\_\-length}!CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}}
+\subsubsection[{\_\-this\_\-trigger\_\-length}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf CALICE::TriggerHandlerCalice::\_\-this\_\-trigger\_\-length}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1TriggerHandlerCalice_a42a670ee9470acaae16ad5bf2a22e6a9}
+
+
+The width of the trigger enable pulse. 
+
+Definition at line 637 of file TriggerHandlerCalice.hh.
+
+Referenced by searchTriggerMainWord().\index{CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}!\_\-this\_\-trigger\_\-main\_\-word@{\_\-this\_\-trigger\_\-main\_\-word}}
+\index{\_\-this\_\-trigger\_\-main\_\-word@{\_\-this\_\-trigger\_\-main\_\-word}!CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}}
+\subsubsection[{\_\-this\_\-trigger\_\-main\_\-word}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf CALICE::TriggerHandlerCalice::\_\-this\_\-trigger\_\-main\_\-word}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1TriggerHandlerCalice_a85a01a19077432129595f0d7accaa72b}
+
+
+The trigger main word of this event. 
+
+Definition at line 636 of file TriggerHandlerCalice.hh.
+
+Referenced by getSmearedTriggerMainWord(), getTriggerFifoContMainWord(), searchTriggerHistory(), and searchTriggerMainWord().\index{CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}!\_\-trgroConfChange@{\_\-trgroConfChange}}
+\index{\_\-trgroConfChange@{\_\-trgroConfChange}!CALICE::TriggerHandlerCalice@{CALICE::TriggerHandlerCalice}}
+\subsubsection[{\_\-trgroConfChange}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConditionsChangeDelegator}$<${\bf TriggerHandlerCalice}$>$ {\bf CALICE::TriggerHandlerCalice::\_\-trgroConfChange}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1TriggerHandlerCalice_acded06ce8172da90edcf23ddbcf77952}
+
+
+The listener which will be called in case the TrgReadoutConfiguration Changes. Like that we can indentify software triggers. 
+
+Definition at line 460 of file TriggerHandlerCalice.hh.
+
+Referenced by init().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+TriggerHandlerCalice.hh\item 
+TriggerHandlerCalice.cc\end{DoxyCompactItemize}

@@ -1,0 +1,105 @@
+\section{marlin::MCParticleWriteEngine Class Reference}
+\label{classmarlin_1_1MCParticleWriteEngine}\index{marlin::MCParticleWriteEngine@{marlin::MCParticleWriteEngine}}
+Inheritance diagram for marlin::MCParticleWriteEngine:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=194pt]{classmarlin_1_1MCParticleWriteEngine__inherit__graph}
+\end{center}
+\end{figure}
+Collaboration diagram for marlin::MCParticleWriteEngine:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classmarlin_1_1MCParticleWriteEngine__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries MCParticleWriteEngine} ({\bf RootTreeWriter} $\ast$host, std::string engineName=\char`\"{}MCParticleWriteEngine\char`\"{})\label{classmarlin_1_1MCParticleWriteEngine_aca4f879288dde53d4dc7586b32a55e28}
+
+\item 
+virtual const std::string \& {\bf getEngineName} ()
+\item 
+virtual void {\bf registerParameters} ()
+\item 
+virtual void {\bf registerBranches} (TTree $\ast$hostTree)
+\item 
+virtual void {\bf fillVariables} (EVENT::LCEvent $\ast$)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double {\bfseries \_\-startPos} [3]\label{classmarlin_1_1MCParticleWriteEngine_a60b0dab6665dac8e8d079095dd2a5f19}
+
+\item 
+double {\bfseries \_\-endPos} [3]\label{classmarlin_1_1MCParticleWriteEngine_a60bc72d89560201bf7c4b10b6d78dbdf}
+
+\item 
+int {\bfseries \_\-PDG}\label{classmarlin_1_1MCParticleWriteEngine_aeee3abed13890160e497e3375bf96d04}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 25 of file MCParticleWriteEngine.hh.
+
+\subsection{Member Function Documentation}
+\index{marlin::MCParticleWriteEngine@{marlin::MCParticleWriteEngine}!fillVariables@{fillVariables}}
+\index{fillVariables@{fillVariables}!marlin::MCParticleWriteEngine@{marlin::MCParticleWriteEngine}}
+\subsubsection[{fillVariables}]{\setlength{\rightskip}{0pt plus 5cm}virtual void marlin::MCParticleWriteEngine::fillVariables (EVENT::LCEvent $\ast$ {\em evt})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classmarlin_1_1MCParticleWriteEngine_aed3f0a8d52f56cbd1f3f4b93bad9670e}
+Implement this to extract the variables which you want to fill into the {\itshape ROOT\/} tree from the event. Write the value of the variables you want to add to the tree to the member variables, which you registered to the {\itshape ROOT\/} tree. The \doxyref{RootTreeWriter}{p.}{classmarlin_1_1RootTreeWriter} will call TTree::Fill() for you. 
+\begin{DoxyParams}{Parameters}
+\item[{\em evt}]the current event \end{DoxyParams}
+
+
+Implements {\bf marlin::RootWriteEngine} \doxyref{}{p.}{classmarlin_1_1RootWriteEngine_ace823bd839cee7e8c8755e60c4cc7134}.\index{marlin::MCParticleWriteEngine@{marlin::MCParticleWriteEngine}!getEngineName@{getEngineName}}
+\index{getEngineName@{getEngineName}!marlin::MCParticleWriteEngine@{marlin::MCParticleWriteEngine}}
+\subsubsection[{getEngineName}]{\setlength{\rightskip}{0pt plus 5cm}virtual const std::string\& marlin::MCParticleWriteEngine::getEngineName ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classmarlin_1_1MCParticleWriteEngine_a5cec023911524d85fb491a9a5d702ea0}
+Returns the name of the engine to the \doxyref{RootTreeWriter}{p.}{classmarlin_1_1RootTreeWriter} processor. \begin{DoxyReturn}{Returns}
+Must return a string with the engine name. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[{\bf Todo}]fixme: should be const, but must be declared const in implementations too. Need to fix all existing engines?!? \end{Desc}
+
+
+Implements {\bf marlin::RootWriteEngine} \doxyref{}{p.}{classmarlin_1_1RootWriteEngine_a31e38120fe60efcb15666fd569ba5862}.
+
+Definition at line 32 of file MCParticleWriteEngine.hh.\index{marlin::MCParticleWriteEngine@{marlin::MCParticleWriteEngine}!registerBranches@{registerBranches}}
+\index{registerBranches@{registerBranches}!marlin::MCParticleWriteEngine@{marlin::MCParticleWriteEngine}}
+\subsubsection[{registerBranches}]{\setlength{\rightskip}{0pt plus 5cm}void marlin::MCParticleWriteEngine::registerBranches (TTree $\ast$)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classmarlin_1_1MCParticleWriteEngine_abc8a55ab829d32228993664ee2fd084e}
+Implement to register local variables to the output tree 
+\begin{DoxyParams}{Parameters}
+\item[{\em pointer}]to the {\itshape ROOT\/} tree, which the \doxyref{RootTreeWriter}{p.}{classmarlin_1_1RootTreeWriter} processor fills at the end of each event. Usually the implementation looks like \begin{DoxyVerb}
+    /// hostTree->Branch("variable",&_variable" ,"variable/F"  );
+    /// \end{DoxyVerb}
+. But you can add any type of branch you like. \end{DoxyParams}
+
+
+Implements {\bf marlin::RootWriteEngine} \doxyref{}{p.}{classmarlin_1_1RootWriteEngine_ad467dc6e73fdd9fd4311f7277fd02a89}.
+
+Definition at line 32 of file MCParticleWriteEngine.cc.\index{marlin::MCParticleWriteEngine@{marlin::MCParticleWriteEngine}!registerParameters@{registerParameters}}
+\index{registerParameters@{registerParameters}!marlin::MCParticleWriteEngine@{marlin::MCParticleWriteEngine}}
+\subsubsection[{registerParameters}]{\setlength{\rightskip}{0pt plus 5cm}void marlin::MCParticleWriteEngine::registerParameters ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classmarlin_1_1MCParticleWriteEngine_a18ac8b6f4d2818bf959ea494d1d17dae}
+Used to register steering parameters. Implement to register {\itshape \doxyref{marlin}{p.}{namespacemarlin}\/} steering file parameters. Use {\itshape \doxyref{marlin}{p.}{namespacemarlin}\/} syntax to register parameters for the calling \doxyref{RootTreeWriter}{p.}{classmarlin_1_1RootTreeWriter} processor.
+
+use \begin{DoxyVerb}
+    /// _hostProc.relayRegisterProcessorParameter(...)
+    /// _hostProc.relayRegister...()
+    /// \end{DoxyVerb}
+ instead of {\itshape \doxyref{marlin}{p.}{namespacemarlin}\/} processors \begin{DoxyVerb}register...() \end{DoxyVerb}
+ methods 
+
+Implements {\bf marlin::RootWriteEngine} \doxyref{}{p.}{classmarlin_1_1RootWriteEngine_ae12b70923768043fa5c1438f078c41d3}.
+
+Definition at line 16 of file MCParticleWriteEngine.cc.
+
+References marlin::RootTreeWriter::relayRegisterProcessorParameter().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+MCParticleWriteEngine.hh\item 
+MCParticleWriteEngine.cc\end{DoxyCompactItemize}

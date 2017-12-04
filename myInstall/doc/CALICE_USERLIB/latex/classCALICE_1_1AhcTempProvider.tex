@@ -1,0 +1,209 @@
+\section{CALICE::AhcTempProvider Class Reference}
+\label{classCALICE_1_1AhcTempProvider}\index{CALICE::AhcTempProvider@{CALICE::AhcTempProvider}}
+
+
+This is an abstract class defining an interface to access the temperatures in single AHCAL cells.  
+
+
+{\ttfamily \#include $<$AhcTempProvider.hh$>$}Inheritance diagram for CALICE::AhcTempProvider::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.53005cm]{classCALICE_1_1AhcTempProvider}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf AhcTempProvider} ()\label{classCALICE_1_1AhcTempProvider_ab4f94c3219c7389ce3871daea4396b4a}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$AhcTempProvider} ()\label{classCALICE_1_1AhcTempProvider_a53d2786bdade2bbcbee773091e774947}
+
+\begin{DoxyCompactList}\small\item\em Default destructor. \item\end{DoxyCompactList}\item 
+virtual float {\bf getCellTemp} (int module, int chip, int chan)=0
+\begin{DoxyCompactList}\small\item\em Returns the temperature for the cell in the specified module connected to the given chip and channel. \item\end{DoxyCompactList}\item 
+virtual float {\bf getCellTempError} (int module, int chip, int chan)=0
+\begin{DoxyCompactList}\small\item\em Returns the error on the temperature for the cell in the specified module connected to the given chip and channel. \item\end{DoxyCompactList}\item 
+virtual void {\bf setAhcSroModBlocks} (lcio::LCCollection $\ast$col)\label{classCALICE_1_1AhcTempProvider_a938c5064c310531a44b5ba6905dc1705}
+
+\begin{DoxyCompactList}\small\item\em Set the collection of \doxyref{AhcSlowReadoutModBlock}{p.}{classCALICE_1_1AhcSlowReadoutModBlock} objects to extract the temperature data from. \item\end{DoxyCompactList}\item 
+virtual float {\bf getAvgTemp} ()=0\label{classCALICE_1_1AhcTempProvider_a69b50b787f49a84132c7a264516bcf1f}
+
+\begin{DoxyCompactList}\small\item\em Returns the average calorimeter temperature. \item\end{DoxyCompactList}\item 
+virtual float {\bf getAvgModuleTemp} (unsigned module)=0\label{classCALICE_1_1AhcTempProvider_a1d4cf73aa7a2308ef910247cc1612760}
+
+\begin{DoxyCompactList}\small\item\em Returns the average module temperature. \item\end{DoxyCompactList}\item 
+virtual float {\bf getSensorTemp} (int module, int sensor)=0
+\begin{DoxyCompactList}\small\item\em Returns the temperature of the specified sensor in the given module. \item\end{DoxyCompactList}\item 
+virtual void {\bf setCalibrations} (lcio::LCCollection $\ast$col)\label{classCALICE_1_1AhcTempProvider_a9d3babda133b664e703113bb7b47dbdd}
+
+\begin{DoxyCompactList}\small\item\em Set the collection of \doxyref{SimpleValue}{p.}{classCALICE_1_1SimpleValue} objects to use for the offset calibrations of the temperature sensors. \item\end{DoxyCompactList}\item 
+virtual void {\bf setSanityRange} (float min, float max)
+\begin{DoxyCompactList}\small\item\em Define a sanity range of temperature values that make sense. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned {\bfseries N\_\-MODULES} = 38\label{classCALICE_1_1AhcTempProvider_a2fb5517d9cf3179ccb581d37cc91097a}
+
+\item 
+static const unsigned {\bfseries N\_\-SENSORS} = 5\label{classCALICE_1_1AhcTempProvider_adfe5f33f2eeae2901e32edca4515cd20}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf updateCache} ()
+\begin{DoxyCompactList}\small\item\em This function updates the internal 'cache' for the temperature values from the five sensors and applies the calibration offsets, if available. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf newSroModCol}
+\begin{DoxyCompactList}\small\item\em If true this indicates that setSroModBlocks() was called and a new collection of AhcSroModBlock objects was set. \item\end{DoxyCompactList}\item 
+bool {\bf newCalibCol}
+\begin{DoxyCompactList}\small\item\em If true this indicates that \doxyref{setCalibrations()}{p.}{classCALICE_1_1AhcTempProvider_a9d3babda133b664e703113bb7b47dbdd} was called and a new collection of calibrations was set. \item\end{DoxyCompactList}\item 
+bool {\bf newSanityRange}
+\begin{DoxyCompactList}\small\item\em If true this indicates that \doxyref{setSanityRange()}{p.}{classCALICE_1_1AhcTempProvider_add95eab55a99250ec9f0666fc34ba40d} was called and a new sanity range was set. \item\end{DoxyCompactList}\item 
+std::vector$<$ std::vector$<$ float $>$ $>$ {\bf sensorTemp}
+\begin{DoxyCompactList}\small\item\em This is a 'cache' for the values of the temperature sensors after calibration and and correction. \item\end{DoxyCompactList}\item 
+std::vector$<$ std::vector$<$ float $>$ $>$ {\bf sensorTempError}
+\begin{DoxyCompactList}\small\item\em This is a 'cache' for the errors on the values of the temperature sensors after calibration and and correction. \item\end{DoxyCompactList}\item 
+std::vector$<$ std::vector$<$ float $>$ $>$ {\bf sensorCalib}
+\begin{DoxyCompactList}\small\item\em This is a 'cache' for the calibration offsets for the temperature sensors. \item\end{DoxyCompactList}\item 
+std::vector$<$ std::vector$<$ float $>$ $>$ {\bf sensorCalibError}
+\begin{DoxyCompactList}\small\item\em This is a 'cache' for the errors on the calibration offsets for the temperature sensors. \item\end{DoxyCompactList}\item 
+std::vector$<$ std::vector$<$ int $>$ $>$ {\bf sensorCalibStatus}\label{classCALICE_1_1AhcTempProvider_af49e3cc723e4ce780660fe181fd2b40f}
+
+\begin{DoxyCompactList}\small\item\em Vector to save the status of the calibration offsets. \item\end{DoxyCompactList}\item 
+float {\bf \_\-sanityMin}\label{classCALICE_1_1AhcTempProvider_acdf8e26d39ac276e7eac53b2746348c2}
+
+\begin{DoxyCompactList}\small\item\em Lower limit of the sanity range. \item\end{DoxyCompactList}\item 
+float {\bf \_\-sanityMax}\label{classCALICE_1_1AhcTempProvider_a5c8919447ae0eece8b050ea21bc80e15}
+
+\begin{DoxyCompactList}\small\item\em Upper limit of the sanity range. \item\end{DoxyCompactList}\item 
+lcio::LCCollection $\ast$ {\bf \_\-sroModCol}\label{classCALICE_1_1AhcTempProvider_a6d03fdcfc0a4fedc590597f4383d36ae}
+
+\begin{DoxyCompactList}\small\item\em A pointer to the LCCollection containing the AhcSlowReadOut objects. \item\end{DoxyCompactList}\item 
+lcio::LCCollection $\ast$ {\bf \_\-calibCol}\label{classCALICE_1_1AhcTempProvider_aed886ffef7d22bdcfbfa4e00b6c27f9f}
+
+\begin{DoxyCompactList}\small\item\em A pointer to the LCCollection containing the calibration offsets objects. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is an abstract class defining an interface to access the temperatures in single AHCAL cells. 
+
+Definition at line 21 of file AhcTempProvider.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::AhcTempProvider@{CALICE::AhcTempProvider}!getCellTemp@{getCellTemp}}
+\index{getCellTemp@{getCellTemp}!CALICE::AhcTempProvider@{CALICE::AhcTempProvider}}
+\subsubsection[{getCellTemp}]{\setlength{\rightskip}{0pt plus 5cm}virtual float CALICE::AhcTempProvider::getCellTemp (int {\em module}, \/  int {\em chip}, \/  int {\em chan})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classCALICE_1_1AhcTempProvider_aa12c75d45d7ade54316dd113a6bab2d1}
+
+
+Returns the temperature for the cell in the specified module connected to the given chip and channel. This is only the definition of the interface, a concrete funtion has to be implemented in a derived class. Note: Modules are counted from 1! The valid range for module numbers thus is 1 to 38. 
+
+Implemented in {\bf CALICE::AhcCern2010TempProvider} \doxyref{}{p.}{classCALICE_1_1AhcCern2010TempProvider_a50c27d4ce36e8bda65a50c41f3f55835}, {\bf CALICE::AhcMedianFilterTempProvider} \doxyref{}{p.}{classCALICE_1_1AhcMedianFilterTempProvider_a2d5865711d94a975e593df2713608880}, and {\bf CALICE::AhcSimpleTempProvider} \doxyref{}{p.}{classCALICE_1_1AhcSimpleTempProvider_aff9186dfdab4801e41540f1d63428e3f}.\index{CALICE::AhcTempProvider@{CALICE::AhcTempProvider}!getCellTempError@{getCellTempError}}
+\index{getCellTempError@{getCellTempError}!CALICE::AhcTempProvider@{CALICE::AhcTempProvider}}
+\subsubsection[{getCellTempError}]{\setlength{\rightskip}{0pt plus 5cm}virtual float CALICE::AhcTempProvider::getCellTempError (int {\em module}, \/  int {\em chip}, \/  int {\em chan})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classCALICE_1_1AhcTempProvider_a72d155c16a772198a0587886e8d56102}
+
+
+Returns the error on the temperature for the cell in the specified module connected to the given chip and channel. This is only the definition of the interface, a concrete funtion has to be implemented in a derived class. Note: Modules are counted from 1! The valid range for module numbers thus is 1 to 38. 
+
+Implemented in {\bf CALICE::AhcCern2010TempProvider} \doxyref{}{p.}{classCALICE_1_1AhcCern2010TempProvider_a49df2cbe0a0e947fc69fc2f9e6d4af7e}, {\bf CALICE::AhcMedianFilterTempProvider} \doxyref{}{p.}{classCALICE_1_1AhcMedianFilterTempProvider_ace083f026078087a40383dd051d34843}, and {\bf CALICE::AhcSimpleTempProvider} \doxyref{}{p.}{classCALICE_1_1AhcSimpleTempProvider_a2d3cd7fd1a3f144f62991e39b44d016f}.\index{CALICE::AhcTempProvider@{CALICE::AhcTempProvider}!getSensorTemp@{getSensorTemp}}
+\index{getSensorTemp@{getSensorTemp}!CALICE::AhcTempProvider@{CALICE::AhcTempProvider}}
+\subsubsection[{getSensorTemp}]{\setlength{\rightskip}{0pt plus 5cm}virtual float CALICE::AhcTempProvider::getSensorTemp (int {\em module}, \/  int {\em sensor})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classCALICE_1_1AhcTempProvider_a9db9d635f879ed75ae983bbeca800ff8}
+
+
+Returns the temperature of the specified sensor in the given module. 
+
+Implemented in {\bf CALICE::AhcCern2010TempProvider} \doxyref{}{p.}{classCALICE_1_1AhcCern2010TempProvider_ab8220e0d64d2785cc896beae3db00e12}, {\bf CALICE::AhcMedianFilterTempProvider} \doxyref{}{p.}{classCALICE_1_1AhcMedianFilterTempProvider_ac9f730849a87bda3106773b7dc869f2e}, and {\bf CALICE::AhcSimpleTempProvider} \doxyref{}{p.}{classCALICE_1_1AhcSimpleTempProvider_ab61d13863930498a336476d9ac049b2e}.\index{CALICE::AhcTempProvider@{CALICE::AhcTempProvider}!setSanityRange@{setSanityRange}}
+\index{setSanityRange@{setSanityRange}!CALICE::AhcTempProvider@{CALICE::AhcTempProvider}}
+\subsubsection[{setSanityRange}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::AhcTempProvider::setSanityRange (float {\em min}, \/  float {\em max})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCALICE_1_1AhcTempProvider_add95eab55a99250ec9f0666fc34ba40d}
+
+
+Define a sanity range of temperature values that make sense. There are some dead sensors, e.g giving only the value 117 degree Celsius, which makes no sense. Also a temperature of zero degree Celsius is very unlikely. With this function you specify the range in which temperatures are accepted. A sensible range would be 10 to 50 degree Celsius for example. Note: This is an abstract class -\/ how data from temperature sensors giving values outside this range is handled is only depended from the implementation of in the derived class. It may completely ignore the range specified here. 
+
+Definition at line 52 of file AhcTempProvider.cc.
+
+References \_\-sanityMax, \_\-sanityMin, and newSanityRange.\index{CALICE::AhcTempProvider@{CALICE::AhcTempProvider}!updateCache@{updateCache}}
+\index{updateCache@{updateCache}!CALICE::AhcTempProvider@{CALICE::AhcTempProvider}}
+\subsubsection[{updateCache}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::AhcTempProvider::updateCache ()\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classCALICE_1_1AhcTempProvider_aaf2e7780e46882ba4fe8755c8bad2237}
+
+
+This function updates the internal 'cache' for the temperature values from the five sensors and applies the calibration offsets, if available. It should be called everytime a new collection of temperatures or calibrations have been at set or the sanity range has been changed, i.e. if one of newSroModCol, newCalibCol or newSanityRange is true. 
+
+Definition at line 59 of file AhcTempProvider.cc.
+
+References \_\-calibCol, \_\-sroModCol, newCalibCol, newSroModCol, and sensorTemp.
+
+Referenced by CALICE::AhcSimpleTempProvider::applyCorrection(), and CALICE::AhcMedianFilterTempProvider::applyCorrection().
+
+\subsection{Field Documentation}
+\index{CALICE::AhcTempProvider@{CALICE::AhcTempProvider}!newCalibCol@{newCalibCol}}
+\index{newCalibCol@{newCalibCol}!CALICE::AhcTempProvider@{CALICE::AhcTempProvider}}
+\subsubsection[{newCalibCol}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf CALICE::AhcTempProvider::newCalibCol}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1AhcTempProvider_a5d97a51401f30bf5afed91749503a2f5}
+
+
+If true this indicates that \doxyref{setCalibrations()}{p.}{classCALICE_1_1AhcTempProvider_a9d3babda133b664e703113bb7b47dbdd} was called and a new collection of calibrations was set. Can be useful for caching to achieve speedup in processing. 
+
+Definition at line 116 of file AhcTempProvider.hh.
+
+Referenced by CALICE::AhcSimpleTempProvider::applyCorrection(), CALICE::AhcMedianFilterTempProvider::applyCorrection(), CALICE::AhcSimpleTempProvider::getAvgModuleTemp(), CALICE::AhcMedianFilterTempProvider::getAvgModuleTemp(), CALICE::AhcCern2010TempProvider::getAvgModuleTemp(), CALICE::AhcSimpleTempProvider::getAvgTemp(), CALICE::AhcMedianFilterTempProvider::getAvgTemp(), CALICE::AhcCern2010TempProvider::getAvgTemp(), CALICE::AhcSimpleTempProvider::getCellTemp(), CALICE::AhcMedianFilterTempProvider::getCellTemp(), CALICE::AhcCern2010TempProvider::getCellTemp(), CALICE::AhcSimpleTempProvider::getCellTempError(), CALICE::AhcMedianFilterTempProvider::getCellTempError(), CALICE::AhcCern2010TempProvider::getCellTempError(), CALICE::AhcSimpleTempProvider::getSensorTemp(), CALICE::AhcMedianFilterTempProvider::getSensorTemp(), CALICE::AhcCern2010TempProvider::getSensorTemp(), and updateCache().\index{CALICE::AhcTempProvider@{CALICE::AhcTempProvider}!newSanityRange@{newSanityRange}}
+\index{newSanityRange@{newSanityRange}!CALICE::AhcTempProvider@{CALICE::AhcTempProvider}}
+\subsubsection[{newSanityRange}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf CALICE::AhcTempProvider::newSanityRange}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1AhcTempProvider_afc923ba1a81304d4165060e6cb8bfe87}
+
+
+If true this indicates that \doxyref{setSanityRange()}{p.}{classCALICE_1_1AhcTempProvider_add95eab55a99250ec9f0666fc34ba40d} was called and a new sanity range was set. Can be useful for caching to achieve speedup in processing. 
+
+Definition at line 123 of file AhcTempProvider.hh.
+
+Referenced by CALICE::AhcSimpleTempProvider::applyCorrection(), CALICE::AhcMedianFilterTempProvider::applyCorrection(), CALICE::AhcSimpleTempProvider::getAvgModuleTemp(), CALICE::AhcMedianFilterTempProvider::getAvgModuleTemp(), CALICE::AhcCern2010TempProvider::getAvgModuleTemp(), CALICE::AhcSimpleTempProvider::getAvgTemp(), CALICE::AhcMedianFilterTempProvider::getAvgTemp(), CALICE::AhcCern2010TempProvider::getAvgTemp(), CALICE::AhcSimpleTempProvider::getCellTemp(), CALICE::AhcMedianFilterTempProvider::getCellTemp(), CALICE::AhcCern2010TempProvider::getCellTemp(), CALICE::AhcSimpleTempProvider::getCellTempError(), CALICE::AhcMedianFilterTempProvider::getCellTempError(), CALICE::AhcCern2010TempProvider::getCellTempError(), CALICE::AhcSimpleTempProvider::getSensorTemp(), CALICE::AhcMedianFilterTempProvider::getSensorTemp(), CALICE::AhcCern2010TempProvider::getSensorTemp(), and setSanityRange().\index{CALICE::AhcTempProvider@{CALICE::AhcTempProvider}!newSroModCol@{newSroModCol}}
+\index{newSroModCol@{newSroModCol}!CALICE::AhcTempProvider@{CALICE::AhcTempProvider}}
+\subsubsection[{newSroModCol}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf CALICE::AhcTempProvider::newSroModCol}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1AhcTempProvider_a74d1c14bbe08ef50cacf1b52c2731904}
+
+
+If true this indicates that setSroModBlocks() was called and a new collection of AhcSroModBlock objects was set. Can be useful for caching to achieve speedup in processing. 
+
+Definition at line 109 of file AhcTempProvider.hh.
+
+Referenced by CALICE::AhcSimpleTempProvider::applyCorrection(), CALICE::AhcMedianFilterTempProvider::applyCorrection(), CALICE::AhcSimpleTempProvider::getAvgModuleTemp(), CALICE::AhcMedianFilterTempProvider::getAvgModuleTemp(), CALICE::AhcCern2010TempProvider::getAvgModuleTemp(), CALICE::AhcSimpleTempProvider::getAvgTemp(), CALICE::AhcMedianFilterTempProvider::getAvgTemp(), CALICE::AhcCern2010TempProvider::getAvgTemp(), CALICE::AhcSimpleTempProvider::getCellTemp(), CALICE::AhcMedianFilterTempProvider::getCellTemp(), CALICE::AhcCern2010TempProvider::getCellTemp(), CALICE::AhcSimpleTempProvider::getCellTempError(), CALICE::AhcMedianFilterTempProvider::getCellTempError(), CALICE::AhcCern2010TempProvider::getCellTempError(), CALICE::AhcSimpleTempProvider::getSensorTemp(), CALICE::AhcMedianFilterTempProvider::getSensorTemp(), CALICE::AhcCern2010TempProvider::getSensorTemp(), and updateCache().\index{CALICE::AhcTempProvider@{CALICE::AhcTempProvider}!sensorCalib@{sensorCalib}}
+\index{sensorCalib@{sensorCalib}!CALICE::AhcTempProvider@{CALICE::AhcTempProvider}}
+\subsubsection[{sensorCalib}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$ std::vector$<$ float $>$ $>$ {\bf CALICE::AhcTempProvider::sensorCalib}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1AhcTempProvider_ad4116a88a804429437ab8c940d555eba}
+
+
+This is a 'cache' for the calibration offsets for the temperature sensors. It is a vector of a vector, first key is module (0...37) and second key is sensor number (0...4). It is filled when \doxyref{setCalibrations()}{p.}{classCALICE_1_1AhcTempProvider_a9d3babda133b664e703113bb7b47dbdd} is called; 
+
+Definition at line 149 of file AhcTempProvider.hh.
+
+Referenced by AhcTempProvider().\index{CALICE::AhcTempProvider@{CALICE::AhcTempProvider}!sensorCalibError@{sensorCalibError}}
+\index{sensorCalibError@{sensorCalibError}!CALICE::AhcTempProvider@{CALICE::AhcTempProvider}}
+\subsubsection[{sensorCalibError}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$ std::vector$<$ float $>$ $>$ {\bf CALICE::AhcTempProvider::sensorCalibError}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1AhcTempProvider_a9a8b275ae8bf46f0ac30504ce2b437b0}
+
+
+This is a 'cache' for the errors on the calibration offsets for the temperature sensors. It is a vector of a vector, first key is module (0...37) and second key is sensor number (0...4). It is filled when \doxyref{setCalibrations()}{p.}{classCALICE_1_1AhcTempProvider_a9d3babda133b664e703113bb7b47dbdd} is called; 
+
+Definition at line 156 of file AhcTempProvider.hh.
+
+Referenced by AhcTempProvider().\index{CALICE::AhcTempProvider@{CALICE::AhcTempProvider}!sensorTemp@{sensorTemp}}
+\index{sensorTemp@{sensorTemp}!CALICE::AhcTempProvider@{CALICE::AhcTempProvider}}
+\subsubsection[{sensorTemp}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$ std::vector$<$ float $>$ $>$ {\bf CALICE::AhcTempProvider::sensorTemp}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1AhcTempProvider_a4e5a07c38f63a12bc38eebff556ac750}
+
+
+This is a 'cache' for the values of the temperature sensors after calibration and and correction. It is a vector of a vector, first key is module (0...37) and second key is sensor number (0...4). Note: this is only an abstract class, look at \doxyref{getCellTemp()}{p.}{classCALICE_1_1AhcTempProvider_aa12c75d45d7ade54316dd113a6bab2d1} and applyCalibCorr() in your implentation to understand how and when it is updated. 
+
+Definition at line 132 of file AhcTempProvider.hh.
+
+Referenced by AhcTempProvider(), CALICE::AhcSimpleTempProvider::applyCorrection(), CALICE::AhcMedianFilterTempProvider::applyCorrection(), CALICE::AhcSimpleTempProvider::getCellTemp(), CALICE::AhcMedianFilterTempProvider::getCellTemp(), CALICE::AhcCern2010TempProvider::getCellTemp(), CALICE::AhcSimpleTempProvider::getSensorTemp(), CALICE::AhcMedianFilterTempProvider::getSensorTemp(), CALICE::AhcCern2010TempProvider::getSensorTemp(), and updateCache().\index{CALICE::AhcTempProvider@{CALICE::AhcTempProvider}!sensorTempError@{sensorTempError}}
+\index{sensorTempError@{sensorTempError}!CALICE::AhcTempProvider@{CALICE::AhcTempProvider}}
+\subsubsection[{sensorTempError}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$ std::vector$<$ float $>$ $>$ {\bf CALICE::AhcTempProvider::sensorTempError}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1AhcTempProvider_acf152646f43cf38d95af642369fc7b71}
+
+
+This is a 'cache' for the errors on the values of the temperature sensors after calibration and and correction. It is a vector of a vector, first key is module (0...37) and second key is sensor number (0...4). Note: this is only an abstract class, look at \doxyref{getCellTempError()}{p.}{classCALICE_1_1AhcTempProvider_a72d155c16a772198a0587886e8d56102} and applyCalibCorr() in your implentation to understand how and when it is updated. 
+
+Definition at line 142 of file AhcTempProvider.hh.
+
+Referenced by AhcTempProvider(), CALICE::AhcSimpleTempProvider::applyCorrection(), CALICE::AhcMedianFilterTempProvider::applyCorrection(), CALICE::AhcSimpleTempProvider::getCellTempError(), CALICE::AhcMedianFilterTempProvider::getCellTempError(), and CALICE::AhcCern2010TempProvider::getCellTempError().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+AhcTempProvider.hh\item 
+AhcTempProvider.cc\end{DoxyCompactItemize}

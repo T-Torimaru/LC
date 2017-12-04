@@ -1,0 +1,131 @@
+\hypertarget{class_t_channel_spectrum_properties}{
+\section{TChannelSpectrumProperties Class Reference}
+\label{class_t_channel_spectrum_properties}\index{TChannelSpectrumProperties@{TChannelSpectrumProperties}}
+}
+
+
+The \hyperlink{class_t_channel_spectrum_properties}{TChannelSpectrumProperties} class is used to store the channel information (slot, frontEnd, module, chip) together with the spectrum properties (mean, rms) in a TTree.  
+
+
+{\ttfamily \#include $<$TChannelSpectrumProperties.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_t_channel_spectrum_properties_ac1d3286952893fa565cbfd8227e84ff3}{TChannelSpectrumProperties} (Int\_\-t module=-\/1, Int\_\-t chip=-\/1, Int\_\-t channel=-\/1, Double\_\-t mean=0, Double\_\-t rms=0)
+\begin{DoxyCompactList}\small\item\em The constructor. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_t_channel_spectrum_properties_a3ddfb6dfbbed5b502f1ddf5a40c387ba}{Set} (Int\_\-t module, Int\_\-t chip, Int\_\-t channel, Double\_\-t mean, Double\_\-t rms)
+\begin{DoxyCompactList}\small\item\em Convenience function to set all member variables at once. \item\end{DoxyCompactList}\item 
+\hyperlink{class_t_channel_spectrum_properties_a4b92e78edcf807e0353d5b059c55aa9c}{ClassDef} (\hyperlink{class_t_channel_spectrum_properties}{TChannelSpectrumProperties}, 1)
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+Int\_\-t \hyperlink{class_t_channel_spectrum_properties_ae3cf44950a58087f83b1660648750619}{\_\-module}
+\begin{DoxyCompactList}\small\item\em The readout module. \item\end{DoxyCompactList}\item 
+Int\_\-t \hyperlink{class_t_channel_spectrum_properties_afdfd4c52a9b23cd7cd76dda75b595e27}{\_\-chip}
+\begin{DoxyCompactList}\small\item\em The chip ID on this module. \item\end{DoxyCompactList}\item 
+Int\_\-t \hyperlink{class_t_channel_spectrum_properties_a6bfd5e0b63e55aed4d1816a722f5c2e7}{\_\-channel}
+\begin{DoxyCompactList}\small\item\em The channel ID within the chip. \item\end{DoxyCompactList}\item 
+Double\_\-t \hyperlink{class_t_channel_spectrum_properties_a480a137b650eda8d36fb633de95259d1}{\_\-mean}
+\begin{DoxyCompactList}\small\item\em The mean value of the spectrum. \item\end{DoxyCompactList}\item 
+Double\_\-t \hyperlink{class_t_channel_spectrum_properties_a1eb2a743128d8069e0e962dfaaff3367}{\_\-rms}
+\begin{DoxyCompactList}\small\item\em The rms of the spectrum. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_t_channel_spectrum_properties}{TChannelSpectrumProperties} class is used to store the channel information (slot, frontEnd, module, chip) together with the spectrum properties (mean, rms) in a TTree. 
+
+Definition at line 11 of file TChannelSpectrumProperties.h.
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_t_channel_spectrum_properties_ac1d3286952893fa565cbfd8227e84ff3}{
+\index{TChannelSpectrumProperties@{TChannelSpectrumProperties}!TChannelSpectrumProperties@{TChannelSpectrumProperties}}
+\index{TChannelSpectrumProperties@{TChannelSpectrumProperties}!TChannelSpectrumProperties@{TChannelSpectrumProperties}}
+\subsubsection[{TChannelSpectrumProperties}]{\setlength{\rightskip}{0pt plus 5cm}TChannelSpectrumProperties::TChannelSpectrumProperties (Int\_\-t {\em module} = {\ttfamily -\/1}, \/  Int\_\-t {\em chip} = {\ttfamily -\/1}, \/  Int\_\-t {\em channel} = {\ttfamily -\/1}, \/  Double\_\-t {\em mean} = {\ttfamily 0}, \/  Double\_\-t {\em rms} = {\ttfamily 0})}}
+\label{class_t_channel_spectrum_properties_ac1d3286952893fa565cbfd8227e84ff3}
+
+
+The constructor. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_t_channel_spectrum_properties_a4b92e78edcf807e0353d5b059c55aa9c}{
+\index{TChannelSpectrumProperties@{TChannelSpectrumProperties}!ClassDef@{ClassDef}}
+\index{ClassDef@{ClassDef}!TChannelSpectrumProperties@{TChannelSpectrumProperties}}
+\subsubsection[{ClassDef}]{\setlength{\rightskip}{0pt plus 5cm}TChannelSpectrumProperties::ClassDef ({\bf TChannelSpectrumProperties}, \/  1)}}
+\label{class_t_channel_spectrum_properties_a4b92e78edcf807e0353d5b059c55aa9c}
+\hypertarget{class_t_channel_spectrum_properties_a3ddfb6dfbbed5b502f1ddf5a40c387ba}{
+\index{TChannelSpectrumProperties@{TChannelSpectrumProperties}!Set@{Set}}
+\index{Set@{Set}!TChannelSpectrumProperties@{TChannelSpectrumProperties}}
+\subsubsection[{Set}]{\setlength{\rightskip}{0pt plus 5cm}void TChannelSpectrumProperties::Set (Int\_\-t {\em module}, \/  Int\_\-t {\em chip}, \/  Int\_\-t {\em channel}, \/  Double\_\-t {\em mean}, \/  Double\_\-t {\em rms})}}
+\label{class_t_channel_spectrum_properties_a3ddfb6dfbbed5b502f1ddf5a40c387ba}
+
+
+Convenience function to set all member variables at once. 
+
+Definition at line 11 of file TChannelSpectrumProperties.cxx.
+
+References \_\-channel, \_\-chip, \_\-mean, \_\-module, and \_\-rms.
+
+Referenced by SpectrumPropertiesRunInfo::SpectrumPropertiesRunInfo().
+
+\subsection{Field Documentation}
+\hypertarget{class_t_channel_spectrum_properties_a6bfd5e0b63e55aed4d1816a722f5c2e7}{
+\index{TChannelSpectrumProperties@{TChannelSpectrumProperties}!\_\-channel@{\_\-channel}}
+\index{\_\-channel@{\_\-channel}!TChannelSpectrumProperties@{TChannelSpectrumProperties}}
+\subsubsection[{\_\-channel}]{\setlength{\rightskip}{0pt plus 5cm}Int\_\-t {\bf TChannelSpectrumProperties::\_\-channel}}}
+\label{class_t_channel_spectrum_properties_a6bfd5e0b63e55aed4d1816a722f5c2e7}
+
+
+The channel ID within the chip. 
+
+Definition at line 17 of file TChannelSpectrumProperties.h.
+
+Referenced by RunComparator::calculateChannelAndPedestalCorrectedMean(), SpectrumPropertiesRunInfo::getChannelsWithMeanCut(), SpectrumPropertiesRunInfo::getChannelsWithRMSCut(), SpectrumPropertiesRunInfo::print(), Set(), and SpectrumPropertiesRunInfo::SpectrumPropertiesRunInfo().\hypertarget{class_t_channel_spectrum_properties_afdfd4c52a9b23cd7cd76dda75b595e27}{
+\index{TChannelSpectrumProperties@{TChannelSpectrumProperties}!\_\-chip@{\_\-chip}}
+\index{\_\-chip@{\_\-chip}!TChannelSpectrumProperties@{TChannelSpectrumProperties}}
+\subsubsection[{\_\-chip}]{\setlength{\rightskip}{0pt plus 5cm}Int\_\-t {\bf TChannelSpectrumProperties::\_\-chip}}}
+\label{class_t_channel_spectrum_properties_afdfd4c52a9b23cd7cd76dda75b595e27}
+
+
+The chip ID on this module. 
+
+Definition at line 16 of file TChannelSpectrumProperties.h.
+
+Referenced by RunComparator::calculateChannelAndPedestalCorrectedMean(), SpectrumPropertiesRunInfo::getChannelsWithMeanCut(), SpectrumPropertiesRunInfo::getChannelsWithRMSCut(), SpectrumPropertiesRunInfo::print(), Set(), and SpectrumPropertiesRunInfo::SpectrumPropertiesRunInfo().\hypertarget{class_t_channel_spectrum_properties_a480a137b650eda8d36fb633de95259d1}{
+\index{TChannelSpectrumProperties@{TChannelSpectrumProperties}!\_\-mean@{\_\-mean}}
+\index{\_\-mean@{\_\-mean}!TChannelSpectrumProperties@{TChannelSpectrumProperties}}
+\subsubsection[{\_\-mean}]{\setlength{\rightskip}{0pt plus 5cm}Double\_\-t {\bf TChannelSpectrumProperties::\_\-mean}}}
+\label{class_t_channel_spectrum_properties_a480a137b650eda8d36fb633de95259d1}
+
+
+The mean value of the spectrum. 
+
+Definition at line 18 of file TChannelSpectrumProperties.h.
+
+Referenced by RunComparator::calculateChannelAndPedestalCorrectedMean(), SpectrumPropertiesRunInfo::getChannelsWithMeanCut(), SpectrumPropertiesRunInfo::print(), and Set().\hypertarget{class_t_channel_spectrum_properties_ae3cf44950a58087f83b1660648750619}{
+\index{TChannelSpectrumProperties@{TChannelSpectrumProperties}!\_\-module@{\_\-module}}
+\index{\_\-module@{\_\-module}!TChannelSpectrumProperties@{TChannelSpectrumProperties}}
+\subsubsection[{\_\-module}]{\setlength{\rightskip}{0pt plus 5cm}Int\_\-t {\bf TChannelSpectrumProperties::\_\-module}}}
+\label{class_t_channel_spectrum_properties_ae3cf44950a58087f83b1660648750619}
+
+
+The readout module. 
+
+Definition at line 15 of file TChannelSpectrumProperties.h.
+
+Referenced by RunComparator::calculateChannelAndPedestalCorrectedMean(), SpectrumPropertiesRunInfo::getChannelsWithMeanCut(), SpectrumPropertiesRunInfo::getChannelsWithRMSCut(), SpectrumPropertiesRunInfo::print(), Set(), and SpectrumPropertiesRunInfo::SpectrumPropertiesRunInfo().\hypertarget{class_t_channel_spectrum_properties_a1eb2a743128d8069e0e962dfaaff3367}{
+\index{TChannelSpectrumProperties@{TChannelSpectrumProperties}!\_\-rms@{\_\-rms}}
+\index{\_\-rms@{\_\-rms}!TChannelSpectrumProperties@{TChannelSpectrumProperties}}
+\subsubsection[{\_\-rms}]{\setlength{\rightskip}{0pt plus 5cm}Double\_\-t {\bf TChannelSpectrumProperties::\_\-rms}}}
+\label{class_t_channel_spectrum_properties_a1eb2a743128d8069e0e962dfaaff3367}
+
+
+The rms of the spectrum. 
+
+Definition at line 19 of file TChannelSpectrumProperties.h.
+
+Referenced by SpectrumPropertiesRunInfo::drawGetDeadChannelsPlot(), SpectrumPropertiesRunInfo::getChannelsWithRMSCut(), SpectrumPropertiesRunInfo::print(), and Set().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_t_channel_spectrum_properties_8h}{TChannelSpectrumProperties.h}\item 
+\hyperlink{_t_channel_spectrum_properties_8cxx}{TChannelSpectrumProperties.cxx}\end{DoxyCompactItemize}

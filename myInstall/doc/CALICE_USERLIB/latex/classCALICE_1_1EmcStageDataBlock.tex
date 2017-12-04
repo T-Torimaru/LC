@@ -1,0 +1,87 @@
+\section{CALICE::EmcStageDataBlock Class Reference}
+\label{classCALICE_1_1EmcStageDataBlock}\index{CALICE::EmcStageDataBlock@{CALICE::EmcStageDataBlock}}
+
+
+Stores information about the Emc stage Here we need to duplicate a lot of code already written by Paul since we cannot top the 'intelligence' which is introduced already there.  
+
+
+{\ttfamily \#include $<$EmcStageDataBlock.hh$>$}Inheritance diagram for CALICE::EmcStageDataBlock::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCALICE_1_1EmcStageDataBlock}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf EmcStageDataBlock} ()\label{classCALICE_1_1EmcStageDataBlock_afaee0059f5d693fea74c762e17f789cf}
+
+\begin{DoxyCompactList}\small\item\em Default Constructor. \item\end{DoxyCompactList}\item 
+{\bf EmcStageDataBlock} (LCObject $\ast$obj)\label{classCALICE_1_1EmcStageDataBlock_aab94abf8e8f16cee02984b0f07123508}
+
+\begin{DoxyCompactList}\small\item\em 'Copy constructor' needed to interpret LCCollection read from file/database. \item\end{DoxyCompactList}\item 
+{\bf EmcStageDataBlock} \& {\bf setHeader} (int header)\label{classCALICE_1_1EmcStageDataBlock_a450b26e7aa41c180d81d248171713181}
+
+\begin{DoxyCompactList}\small\item\em Set the header data. \item\end{DoxyCompactList}\item 
+{\bf EmcStageDataBlock} \& {\bf setXYStatus} (int xStatus, int yStatus)\label{classCALICE_1_1EmcStageDataBlock_aced038a7dcb48dda69af993b430cda10}
+
+\begin{DoxyCompactList}\small\item\em Set the x and yStatus data. \item\end{DoxyCompactList}\item 
+{\bf EmcStageDataBlock} \& {\bf setXYValues} (int $\ast$xValue, int $\ast$yValue)\label{classCALICE_1_1EmcStageDataBlock_a11886d8d49678205ed77c4cb6066ce95}
+
+\begin{DoxyCompactList}\small\item\em Set the x and y Value data. \item\end{DoxyCompactList}\item 
+{\bf EmcStageDataBlock} \& {\bf setCheckSum} (int checksum)\label{classCALICE_1_1EmcStageDataBlock_a85187bcae7309db33c9a9e4db978b888}
+
+\begin{DoxyCompactList}\small\item\em Set the checksum. \item\end{DoxyCompactList}\item 
+int {\bf getHeader} ()\label{classCALICE_1_1EmcStageDataBlock_a618d05f308f47206f70251a4839afaed}
+
+\begin{DoxyCompactList}\small\item\em Return the header. \item\end{DoxyCompactList}\item 
+bool {\bf getXIndexerStatus} ()\label{classCALICE_1_1EmcStageDataBlock_a1aa86f87b01550f432e76a32ed67fbbb}
+
+\begin{DoxyCompactList}\small\item\em Return the XIndexerStatus. \item\end{DoxyCompactList}\item 
+bool {\bf getYIndexerStatus} ()\label{classCALICE_1_1EmcStageDataBlock_aaefa28fb2beb7b52bda42e7a4614d042}
+
+\begin{DoxyCompactList}\small\item\em Return the YIndexerStatus. \item\end{DoxyCompactList}\item 
+int {\bf getXStandPosition} ()\label{classCALICE_1_1EmcStageDataBlock_a4b386bbe2e428d64f5edddb3684db89c}
+
+\begin{DoxyCompactList}\small\item\em Return the xStand Position. \item\end{DoxyCompactList}\item 
+int {\bf getYStandPosition} ()\label{classCALICE_1_1EmcStageDataBlock_ab82f727e4d2cdf7c519c7ba4534a01e7}
+
+\begin{DoxyCompactList}\small\item\em Return the yStand Position. \item\end{DoxyCompactList}\item 
+int {\bf getXBeamPosition} ()\label{classCALICE_1_1EmcStageDataBlock_a6600b388e82b3e6659c6d9b9a68e32a7}
+
+\begin{DoxyCompactList}\small\item\em Return the xBeam Position. \item\end{DoxyCompactList}\item 
+int {\bf getYBeamPosition} ()\label{classCALICE_1_1EmcStageDataBlock_a9b1559b6277c4e67c8bec00fa3d1b935}
+
+\begin{DoxyCompactList}\small\item\em Return the yBeam Position. \item\end{DoxyCompactList}\item 
+int {\bf getCheckSum} ()\label{classCALICE_1_1EmcStageDataBlock_a476eec95c90336a3566c1a845d3c72d0}
+
+\begin{DoxyCompactList}\small\item\em Return the checksum. \item\end{DoxyCompactList}\item 
+void {\bf print} (std::ostream \&os)\label{classCALICE_1_1EmcStageDataBlock_adf909ff47ea9c2d6eeece246a5c78573}
+
+\begin{DoxyCompactList}\small\item\em Convenient print method. \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1EmcStageDataBlock_abcc5679cda6f9ec1394ca4e89bbba65a}
+
+\begin{DoxyCompactList}\small\item\em Return the type of the class. \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1EmcStageDataBlock_a31475ed6c87dece26d94116216e20c32}
+
+\begin{DoxyCompactList}\small\item\em Return a brief description of the data members. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Stores information about the Emc stage Here we need to duplicate a lot of code already written by Paul since we cannot top the 'intelligence' which is introduced already there. For the time being we return only the (to my taste) most important values. The others can be added easily if really needed. \begin{DoxySeeAlso}{See also}
+\doxyref{ConditionsChangeDelegator}{p.}{classCALICE_1_1ConditionsChangeDelegator} 
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Author}
+R. Poeschl LAL (based on the other interface classes)
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+June 2006 
+\end{DoxyDate}
+
+
+Definition at line 42 of file EmcStageDataBlock.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+EmcStageDataBlock.hh\item 
+EmcStageDataBlock.cc\end{DoxyCompactItemize}

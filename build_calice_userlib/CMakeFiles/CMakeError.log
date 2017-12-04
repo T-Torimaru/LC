@@ -1,0 +1,16 @@
+Performing C++ SOURCE FILE Test COMPILER_SUPPORTS_CXX11 failed with the following output:
+Change Dir: /afs/desy.de/user/t/torimart/work/CosmiTestLCIO/build_calice_userlib/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/gmake "cmTryCompileExec3957207527/fast"
+/usr/bin/gmake -f CMakeFiles/cmTryCompileExec3957207527.dir/build.make CMakeFiles/cmTryCompileExec3957207527.dir/build
+gmake[1]: Entering directory `/afs/desy.de/user/t/torimart/work/CosmiTestLCIO/build_calice_userlib/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /afs/desy.de/user/t/torimart/work/CosmiTestLCIO/build_calice_userlib/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec3957207527.dir/src.cxx.o
+/usr/bin/c++    -DCOMPILER_SUPPORTS_CXX11   -std=c++11 -o CMakeFiles/cmTryCompileExec3957207527.dir/src.cxx.o -c /afs/desy.de/user/t/torimart/work/CosmiTestLCIO/build_calice_userlib/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: unrecognized command line option "-std=c++11"
+gmake[1]: *** [CMakeFiles/cmTryCompileExec3957207527.dir/src.cxx.o] Error 1
+gmake[1]: Leaving directory `/afs/desy.de/user/t/torimart/work/CosmiTestLCIO/build_calice_userlib/CMakeFiles/CMakeTmp'
+gmake: *** [cmTryCompileExec3957207527/fast] Error 2
+
+Source file was:
+int main() { return 0;}

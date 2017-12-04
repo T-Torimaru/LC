@@ -1,0 +1,59 @@
+\section{CALICE::Stat\_\-t Class Reference}
+\label{classCALICE_1_1Stat__t}\index{CALICE::Stat\_\-t@{CALICE::Stat\_\-t}}
+
+
+Caclulate mean and RMS vaslue of a set of input values.  
+
+
+{\ttfamily \#include $<$Box.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries reset} ()\label{classCALICE_1_1Stat__t_acf6555a00a6567e5f3bd64b286147105}
+
+\item 
+void {\bfseries add} (Float\_\-t value, Float\_\-t weight=1.)\label{classCALICE_1_1Stat__t_a7b345a82593acd04ae8ec24093e60e3b}
+
+\item 
+void {\bfseries calculate} ()\label{classCALICE_1_1Stat__t_a3e81369ea9d0f2603dad3a3bb6d20209}
+
+\item 
+Double\_\-t {\bfseries mean} () const \label{classCALICE_1_1Stat__t_a324b40b1f06f41039dd0a9d72055f31e}
+
+\item 
+Double\_\-t {\bfseries sigma} () const \label{classCALICE_1_1Stat__t_a9a287b6c964273a4d2b246de7a99d7c5}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Double\_\-t {\bfseries \_\-weight}\label{classCALICE_1_1Stat__t_a770e755b2931194f594656e1e5cb7834}
+
+\item 
+Double\_\-t {\bfseries \_\-sum}\label{classCALICE_1_1Stat__t_af46eefdce2686e0d5d94fe9361a404df}
+
+\item 
+Double\_\-t {\bfseries \_\-mean}\label{classCALICE_1_1Stat__t_a4793d99948d5879898302766cfa1f122}
+
+\item 
+Double\_\-t {\bfseries \_\-sum2}\label{classCALICE_1_1Stat__t_a9940d9384886fc045c90457759225bbc}
+
+\item 
+Double\_\-t {\bfseries \_\-sigma}\label{classCALICE_1_1Stat__t_a2594c72a5f89186db65cf86195edec43}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std::ostream \& {\bfseries operator$<$$<$} (std::ostream \&os, {\bf Stat\_\-t} \&a)\label{classCALICE_1_1Stat__t_a33122c0e8d33292956fdbf1d86680205}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Caclulate mean and RMS vaslue of a set of input values. 
+
+Definition at line 12 of file Box.hh.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+Box.hh\end{DoxyCompactItemize}

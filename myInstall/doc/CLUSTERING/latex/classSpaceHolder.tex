@@ -1,0 +1,68 @@
+\section{SpaceHolder$<$ \_\-Tp $>$ Class Template Reference}
+\label{classSpaceHolder}\index{SpaceHolder@{SpaceHolder}}
+
+
+Full version.  
+
+
+{\ttfamily \#include $<$RecoUtil.hh$>$}Inheritance diagram for SpaceHolder$<$ \_\-Tp $>$::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classSpaceHolder}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf SpaceHolder} ({\bf SpacePool} \&pool, unsigned prealloc=256)\label{classSpaceHolder_a54fc136f865a5eaacf4d0a69383185dd}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$SpaceHolder} ()\label{classSpaceHolder_a93204642d73171e89653999e48e6c277}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+\_\-Tp $\ast$ {\bf array} (unsigned n)
+\begin{DoxyCompactList}\small\item\em Create array of type \_\-Tp. \item\end{DoxyCompactList}\item 
+\_\-Tp $\ast$ {\bf alloc} ()\label{classSpaceHolder_a49d2515207bf9decdf4174851f99e8dd}
+
+\begin{DoxyCompactList}\small\item\em Allocate space for \_\-Tp. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries SpaceHolder} ({\bf SpaceHolder}$<$ \_\-Tp $>$ \&x, bool)\label{classSpaceHolder_a81f7ae3364a9449ec8ff81067bf83a53}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\_\-Tp $\ast$ {\bfseries data}\label{classSpaceHolder_a8ccb66b0e83e4290c6714aa60fda6ace}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class \_\-Tp$>$ class SpaceHolder$<$ \_\-Tp $>$}
+
+Full version. Items must have ctor and dtor This version can be used with any class, but can be significantly slower then \doxyref{FastSpaceHolder}{p.}{classFastSpaceHolder} 
+
+Definition at line 70 of file RecoUtil.hh.
+
+\subsection{Member Function Documentation}
+\index{SpaceHolder@{SpaceHolder}!array@{array}}
+\index{array@{array}!SpaceHolder@{SpaceHolder}}
+\subsubsection[{array}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \_\-Tp$>$ \_\-Tp$\ast$ {\bf SpaceHolder}$<$ \_\-Tp $>$::array (unsigned {\em n})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classSpaceHolder_a0baa4414dd62ccef8d783bfa2fe5b479}
+
+
+Create array of type \_\-Tp. 
+\begin{DoxyParams}{Parameters}
+\item[{\em n}]number of elements in array ? \end{DoxyParams}
+
+
+Definition at line 92 of file RecoUtil.hh.
+
+References SpacePool::count.
+
+Referenced by SpaceHolder$<$ \_\-Tp $>$::alloc().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+RecoUtil.hh\end{DoxyCompactItemize}

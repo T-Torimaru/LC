@@ -1,0 +1,78 @@
+\section{CALICE::Ahc2HardwareConnection Class Reference}
+\label{classCALICE_1_1Ahc2HardwareConnection}\index{CALICE::Ahc2HardwareConnection@{CALICE::Ahc2HardwareConnection}}
+
+
+Class to store int values for HardwareConnection plus integer cell index in LCIO.  
+
+
+{\ttfamily \#include $<$Ahc2HardwareConnection.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Ahc2HardwareConnection} ()\label{classCALICE_1_1Ahc2HardwareConnection_a0becd0f9301781011ab848337c3c7eab}
+
+\begin{DoxyCompactList}\small\item\em Empty constructor. \item\end{DoxyCompactList}\item 
+{\bf Ahc2HardwareConnection} (const int id, const int Chip, const int ModuleNumber, const int ChipNr)\label{classCALICE_1_1Ahc2HardwareConnection_ab19d0086bc61acb957d03a547c0ab589}
+
+\begin{DoxyCompactList}\small\item\em Constructor with initial values. \item\end{DoxyCompactList}\item 
+{\bf Ahc2HardwareConnection} (EVENT::LCObject $\ast$obj)\label{classCALICE_1_1Ahc2HardwareConnection_a9c3e5db7893f4aacf68ec17cb9aeb421}
+
+\begin{DoxyCompactList}\small\item\em Constructor from LCObject. \item\end{DoxyCompactList}\item 
+{\bf $\sim$Ahc2HardwareConnection} ()\label{classCALICE_1_1Ahc2HardwareConnection_ab77e19f41adae47a8d88d10c3b171c16}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+int {\bf getID} () const \label{classCALICE_1_1Ahc2HardwareConnection_abe54d399d3d4e02c602deea3c224f8a5}
+
+\begin{DoxyCompactList}\small\item\em Return index identifier. \item\end{DoxyCompactList}\item 
+int {\bf getChip} () const \label{classCALICE_1_1Ahc2HardwareConnection_ab7f74ef16dfe7b6a25e2c56230d0c6fc}
+
+\begin{DoxyCompactList}\small\item\em Return the ChipID. \item\end{DoxyCompactList}\item 
+int {\bf getModuleNumber} () const \label{classCALICE_1_1Ahc2HardwareConnection_af217512dbc7bf71d2c128a9935532294}
+
+\begin{DoxyCompactList}\small\item\em Return the ModuleNumber. \item\end{DoxyCompactList}\item 
+int {\bf getChipNumber} () const \label{classCALICE_1_1Ahc2HardwareConnection_a64b7b4c23e8d862a1d0967186022785b}
+
+\begin{DoxyCompactList}\small\item\em Return the ChipNumber. \item\end{DoxyCompactList}\item 
+void {\bf setID} (const int ID)\label{classCALICE_1_1Ahc2HardwareConnection_a8cf88bd1e291534c8b73a37a707e9631}
+
+\begin{DoxyCompactList}\small\item\em set index identifier \item\end{DoxyCompactList}\item 
+void {\bf setChip} (const int Chip)\label{classCALICE_1_1Ahc2HardwareConnection_a2e3f3b9483c6564db3451cdcb0caaf88}
+
+\begin{DoxyCompactList}\small\item\em set the ChipID \item\end{DoxyCompactList}\item 
+void {\bf setModuleNumber} (const int ModuleNumber)\label{classCALICE_1_1Ahc2HardwareConnection_a65292ca8879275abf37f19fb16fd198a}
+
+\begin{DoxyCompactList}\small\item\em set the ModuleNumber \item\end{DoxyCompactList}\item 
+void {\bf setChipNumber} (const int ChipNumber)\label{classCALICE_1_1Ahc2HardwareConnection_aeee207bd52c55f7499f8fc5cceed2720}
+
+\begin{DoxyCompactList}\small\item\em set the ChipNumber \item\end{DoxyCompactList}\item 
+virtual const std::string {\bf getTypeName} () const \label{classCALICE_1_1Ahc2HardwareConnection_aca4aa2ddf56a2022029fbef9f28e17a2}
+
+\begin{DoxyCompactList}\small\item\em Implementation of LCGenericObject::getTypeName. \item\end{DoxyCompactList}\item 
+virtual const std::string {\bf getDataDescription} () const \label{classCALICE_1_1Ahc2HardwareConnection_a08a33f99895fb19ab59d07d6e3b46e3e}
+
+\begin{DoxyCompactList}\small\item\em Implementation of LCGenericObject::getDataDescription. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to store int values for HardwareConnection plus integer cell index in LCIO. This class provides an interface to store four numbers inside an LCIO object:
+\begin{DoxyItemize}
+\item an integer identifier, e.g. the index of a calorimeter cell
+\item a 1st int value, ChipID
+\item a 2nd int value, ModuleNumber
+\item a 3rd int value, ChipNumber
+\end{DoxyItemize}
+
+This class is used in Ahc2CalibrateProcessor to get ModuleNumber and ChipNumber from Hardware information
+
+\begin{DoxyAuthor}{Author}
+Eldwan Brianne 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+November 2015 
+\end{DoxyDate}
+
+
+Definition at line 27 of file Ahc2HardwareConnection.hh.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+Ahc2HardwareConnection.hh\end{DoxyCompactItemize}

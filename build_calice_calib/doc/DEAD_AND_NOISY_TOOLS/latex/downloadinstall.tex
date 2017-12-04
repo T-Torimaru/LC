@@ -1,0 +1,22 @@
+\hypertarget{downloadinstall_Download}{}\section{Download}\label{downloadinstall_Download}
+DeadAndNoisyTools is part of the calice\_\-calib package. To download the latest version from svn directly check it out of the repsoitory: 
+\begin{DoxyCode}
+$~> svn co https://svnsrv.desy.de/public/calice/calice_calib/trunk calice_calib
+\end{DoxyCode}
+\hypertarget{downloadinstall_Installation}{}\section{Installation}\label{downloadinstall_Installation}
+The calice software uses CMake to generate the Makefiles. It is recommended to do an out of souce build. To do so create a build directory and run CMake.\hypertarget{downloadinstall_Dependencies}{}\section{Dependencies}\label{downloadinstall_Dependencies}
+\begin{DoxyItemize}
+\item Root \item CMakeModules from ILCSoft \item calice\_\-cmake \item calice\_\-userlib \mbox{[}planned\mbox{]}\end{DoxyItemize}
+The DeadAndNoisyTools depend on Root. In order to find it the CMakeModules from ILCSoft are used. To generate the documetation a CMake makro from calice\_\-cmake is used.
+
+\begin{DoxyWarning}{Warning}
+Linking to the calice\_\-userlib ensures that the status produced by createBadChannelsList really is the status of the lccd {\ttfamily CellQuality} class which is in the data base. This is not implemented yet. The current status is the expert status, which currently is identical to the data base status, but this done manually is not guaranteed if either createBadChannelsList or {\ttfamily CellQuality} change. Check consistency before writing to the data base!
+\end{DoxyWarning}
+\hypertarget{downloadinstall_installExample}{}\section{Example}\label{downloadinstall_installExample}
+This example assumes that ILCSoft is installed in a directory pointed to by \$\{ILCPATH\} and that the calice\_\-cmake directory is known to the ILCSoft.cmake. Do not forget the two dots at the end of the cmake command. 
+\begin{DoxyCode}
+$~/calice_calib> mkdir build; cd build
+$~/calice_calib/build> cmake -C ${ILCPATH}/ILCSoft.cmake ..
+$~/calice_calib/build> make
+\end{DoxyCode}
+ 

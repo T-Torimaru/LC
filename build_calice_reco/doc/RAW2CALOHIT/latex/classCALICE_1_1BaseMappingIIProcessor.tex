@@ -1,0 +1,109 @@
+\section{CALICE::BaseMappingIIProcessor Class Reference}
+\label{classCALICE_1_1BaseMappingIIProcessor}\index{CALICE::BaseMappingIIProcessor@{CALICE::BaseMappingIIProcessor}}
+Inheritance diagram for CALICE::BaseMappingIIProcessor::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCALICE_1_1BaseMappingIIProcessor}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries BaseMappingIIProcessor} (const std::string \&typeName)\label{classCALICE_1_1BaseMappingIIProcessor_a8fe56d91380e26a12371e14a323d25d6}
+
+\item 
+virtual void {\bfseries init} ()\label{classCALICE_1_1BaseMappingIIProcessor_abb1ef572435bcc64898506d8f4c96cd9}
+
+\item 
+virtual void {\bfseries processRunHeader} (LCRunHeader $\ast$run)\label{classCALICE_1_1BaseMappingIIProcessor_a995afff29900be06e93ebe0453ed4aa6}
+
+\item 
+virtual void {\bfseries processEvent} (LCEvent $\ast$evt)=0\label{classCALICE_1_1BaseMappingIIProcessor_a5ac01e2e7f361f7ec4e1bd039ccbd33b}
+
+\item 
+virtual void {\bfseries check} (LCEvent $\ast$evt)\label{classCALICE_1_1BaseMappingIIProcessor_a4abb713a96256ee6599e9737e54bdfe1}
+
+\item 
+virtual void {\bfseries end} ()\label{classCALICE_1_1BaseMappingIIProcessor_a201450aeeedac3600901e6fd1d25ada6}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries updateInverseMap} ()\label{classCALICE_1_1BaseMappingIIProcessor_a60b39bae8ec80110e15b126c77138103}
+
+\item 
+virtual void {\bfseries moduleTypeChanged} (lcio::LCCollection $\ast$col)\label{classCALICE_1_1BaseMappingIIProcessor_a016f786152f13a2dbb7a0ca9c0727a08}
+
+\item 
+virtual void {\bfseries moduleLocationChanged} (lcio::LCCollection $\ast$col)\label{classCALICE_1_1BaseMappingIIProcessor_a9b65e70f55abef48ee724dab92c2b5db}
+
+\item 
+virtual void {\bfseries moduleConnectionChanged} (lcio::LCCollection $\ast$col)\label{classCALICE_1_1BaseMappingIIProcessor_a4ea22fa131cd52bdb59a9dc0d49bb033}
+
+\item 
+virtual void {\bfseries detectorTransformationChanged} (lcio::LCCollection $\ast$col)\label{classCALICE_1_1BaseMappingIIProcessor_ac82c048d8b7e3f28fe3b17b4855bb989}
+
+\item 
+virtual void {\bfseries referenceTransformationChanged} (lcio::LCCollection $\ast$col)\label{classCALICE_1_1BaseMappingIIProcessor_a5e17c0ecedbbb704f21f94091aeb61f0}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bfseries \_\-inputColName}\label{classCALICE_1_1BaseMappingIIProcessor_a89f87c70722b470ce3351a1a94a04c5d}
+
+\item 
+std::string {\bfseries \_\-outputColName}\label{classCALICE_1_1BaseMappingIIProcessor_a55c4612d6057c09ccabb5bce43cfd184}
+
+\item 
+std::string {\bfseries \_\-colNameModuleDescription}\label{classCALICE_1_1BaseMappingIIProcessor_a3cf654ae79db0b075343f05f66b86974}
+
+\item 
+std::string {\bfseries \_\-colNameModuleLocation}\label{classCALICE_1_1BaseMappingIIProcessor_a2ca5ef0fe54cf330a00b5a89fe7baacf}
+
+\item 
+std::string {\bfseries \_\-colNameModuleConnection}\label{classCALICE_1_1BaseMappingIIProcessor_a0a03a8f94ec07d56db8cb88174fe72cd}
+
+\item 
+std::string {\bfseries \_\-colNameDetectorTransformation}\label{classCALICE_1_1BaseMappingIIProcessor_aed612620eab1d8ebeb5a584826f70781}
+
+\item 
+std::string {\bfseries \_\-colNameReferenceTransformation}\label{classCALICE_1_1BaseMappingIIProcessor_a944b28e0d8de4b183e9dced0d24aa863}
+
+\item 
+ConditionsChangeDelegator$<$ {\bf BaseMappingIIProcessor} $>$ {\bfseries \_\-moduleTypeChange}\label{classCALICE_1_1BaseMappingIIProcessor_aec48652f1896782024ba9cf85eaeb0f9}
+
+\item 
+ConditionsChangeDelegator$<$ {\bf BaseMappingIIProcessor} $>$ {\bfseries \_\-moduleLocationChange}\label{classCALICE_1_1BaseMappingIIProcessor_abbc58227157b9c1c293845f46e41b37a}
+
+\item 
+ConditionsChangeDelegator$<$ {\bf BaseMappingIIProcessor} $>$ {\bfseries \_\-moduleConnectionChange}\label{classCALICE_1_1BaseMappingIIProcessor_a862d6f636084c8a5b97a3d325aaf9115}
+
+\item 
+ConditionsChangeDelegator$<$ {\bf BaseMappingIIProcessor} $>$ {\bfseries \_\-detectorTransformationChange}\label{classCALICE_1_1BaseMappingIIProcessor_abd2368662503bb079b2e60e10c5ff77f}
+
+\item 
+ConditionsChangeDelegator$<$ {\bf BaseMappingIIProcessor} $>$ {\bfseries \_\-referenceTransformationChange}\label{classCALICE_1_1BaseMappingIIProcessor_a265f357118f9770bf12edf8c4144338f}
+
+\item 
+MappingAndAlignment {\bfseries \_\-mapping}\label{classCALICE_1_1BaseMappingIIProcessor_a41bfff962f24cc68687dcf4b482db560}
+
+\item 
+bool {\bfseries \_\-viewConnectionTree}\label{classCALICE_1_1BaseMappingIIProcessor_ae06d06bfae0591fb5f89b749f476af13}
+
+\item 
+std::map$<$ unsigned, unsigned $>$ {\bfseries \_\-inverseModuleMap}\label{classCALICE_1_1BaseMappingIIProcessor_aa4baf288fa623c98ec56a5c97e2b6b08}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 31 of file BaseMappingIIProcessor.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+BaseMappingIIProcessor.hh\item 
+BaseMappingIIProcessor.cc\end{DoxyCompactItemize}

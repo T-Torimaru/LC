@@ -1,0 +1,176 @@
+\section{CALICE::TempGainConstants Class Reference}
+\label{classCALICE_1_1TempGainConstants}\index{CALICE::TempGainConstants@{CALICE::TempGainConstants}}
+
+
+= class \doxyref{GainConstants}{p.}{classCALICE_1_1GainConstants} but with temperature  
+
+
+{\ttfamily \#include $<$TempGainConstants.hh$>$}Inheritance diagram for CALICE::TempGainConstants::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCALICE_1_1TempGainConstants}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf TempGainConstants} ()\label{classCALICE_1_1TempGainConstants_a74fe87c175b15c8199bee8c16d594952}
+
+\begin{DoxyCompactList}\small\item\em constructor \item\end{DoxyCompactList}\item 
+{\bf TempGainConstants} (unsigned chip, unsigned channel, float value, float error, float gainTemp, float gainTempError, float Tslope, float TslopeError)
+\begin{DoxyCompactList}\small\item\em constructor, initialised by parameters \item\end{DoxyCompactList}\item 
+{\bfseries TempGainConstants} (LCObject $\ast$obj)\label{classCALICE_1_1TempGainConstants_a0643caadabddbac482018b5aa52c8fd9}
+
+\item 
+void {\bf setCellTemp} (float tempValue, float tempError)\label{classCALICE_1_1TempGainConstants_ad810079cc0554313d9f8555b23408bca}
+
+\begin{DoxyCompactList}\small\item\em set cell temperature \item\end{DoxyCompactList}\item 
+float {\bf getCorrGain} () const \label{classCALICE_1_1TempGainConstants_a6a5f95ba8a441fb387937940ad0a4b5d}
+
+\begin{DoxyCompactList}\small\item\em get temperature-\/corrected gain \item\end{DoxyCompactList}\item 
+float {\bf getCorrGainError} () const \label{classCALICE_1_1TempGainConstants_a6f792b6c34f035d04049a39d8e926716}
+
+\begin{DoxyCompactList}\small\item\em get uncertainty on temperature-\/corrected gain \item\end{DoxyCompactList}\item 
+float {\bf getCellTemp} () const \label{classCALICE_1_1TempGainConstants_ad2f768687da6511c98835fe4efc2e58e}
+
+\begin{DoxyCompactList}\small\item\em get cell temperature \item\end{DoxyCompactList}\item 
+float {\bf getCellTempError} () const \label{classCALICE_1_1TempGainConstants_aa4845e67a7f487f65b33e47d328cbafd}
+
+\begin{DoxyCompactList}\small\item\em get cell temperature uncertainty \item\end{DoxyCompactList}\item 
+void {\bf setGainTemp} (float value, float error)\label{classCALICE_1_1TempGainConstants_a9de23ad02c41de7888cdaa7c8432f71d}
+
+\begin{DoxyCompactList}\small\item\em set gain temperature \item\end{DoxyCompactList}\item 
+float {\bf getGainTemp} () const \label{classCALICE_1_1TempGainConstants_a465e3fa5de99a109240bb4dc73c3f67e}
+
+\begin{DoxyCompactList}\small\item\em get gain temperature \item\end{DoxyCompactList}\item 
+float {\bf getGainTempError} () const \label{classCALICE_1_1TempGainConstants_aea59f0ba9e763ae3fa7b5aa56468eef2}
+
+\begin{DoxyCompactList}\small\item\em get gain temperature uncertainty \item\end{DoxyCompactList}\item 
+void {\bf setTslope} (float value, float error)\label{classCALICE_1_1TempGainConstants_abcc9d2d24186b359f9ba3c96eb8fbd31}
+
+\begin{DoxyCompactList}\small\item\em set temperature slope \item\end{DoxyCompactList}\item 
+float {\bf getTslope} () const \label{classCALICE_1_1TempGainConstants_a237f7fcf62e47dacdbfa1febfeef73ec}
+
+\begin{DoxyCompactList}\small\item\em get temperature slope \item\end{DoxyCompactList}\item 
+float {\bf getTslopeError} () const \label{classCALICE_1_1TempGainConstants_afd69a2db2901ea553bbdfea9dd0ab664}
+
+\begin{DoxyCompactList}\small\item\em get temperature slope uncertainty \item\end{DoxyCompactList}\item 
+float {\bf applyCalibration} (float inputValue) const 
+\begin{DoxyCompactList}\small\item\em apply gain calibration to input value \item\end{DoxyCompactList}\item 
+float {\bf cancelCalibration} (float outputValue) const \label{classCALICE_1_1TempGainConstants_ad80ae095cbf4f70f59b61d5466d6684e}
+
+\begin{DoxyCompactList}\small\item\em cancel an applied calibration from energy value \item\end{DoxyCompactList}\item 
+float {\bf applyCalibrationError} (float inputValue, float inputError) const 
+\begin{DoxyCompactList}\small\item\em apply calibration error to current error \item\end{DoxyCompactList}\item 
+float {\bf cancelCalibrationError} (float outputValue, float outputError) const \label{classCALICE_1_1TempGainConstants_a5178b6651e60fb2d51212cc74da25ca1}
+
+\begin{DoxyCompactList}\small\item\em apply error due to canceling a calibration to current error \item\end{DoxyCompactList}\item 
+bool {\bf calibrationValid} () const 
+\begin{DoxyCompactList}\small\item\em check if a valid gain calibration is available \item\end{DoxyCompactList}\item 
+void {\bf print} (std::ostream \&os)\label{classCALICE_1_1TempGainConstants_a55826997a97bdc6f7247e8f499aab5d1}
+
+\begin{DoxyCompactList}\small\item\em convenient print method \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1TempGainConstants_aeb33765d41369c6ccecedf895827dada}
+
+\begin{DoxyCompactList}\small\item\em return type of the class \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1TempGainConstants_a372b40abe8545b111bbfa9fe47639f07}
+
+\begin{DoxyCompactList}\small\item\em return a brief description of the data member \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float {\bfseries cellTemp}\label{classCALICE_1_1TempGainConstants_a4af7c0e9e07efb157e318f73b98e3976}
+
+\item 
+float {\bfseries cellTempError}\label{classCALICE_1_1TempGainConstants_a0195e48d094f979f598ebcfcf98fb8e5}
+
+\item 
+float {\bfseries corrGain}\label{classCALICE_1_1TempGainConstants_a5c5d543173cc7aa2e363058a7f8cadc3}
+
+\item 
+float {\bfseries corrGainError}\label{classCALICE_1_1TempGainConstants_aef3843634908e93c0eb2487b7f36e71c}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+= class \doxyref{GainConstants}{p.}{classCALICE_1_1GainConstants} but with temperature \begin{DoxyAuthor}{Author}
+S. Schaetzel DESY 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Apr 26 2007 
+\end{DoxyDate}
+
+
+Definition at line 23 of file TempGainConstants.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CALICE::TempGainConstants@{CALICE::TempGainConstants}!TempGainConstants@{TempGainConstants}}
+\index{TempGainConstants@{TempGainConstants}!CALICE::TempGainConstants@{CALICE::TempGainConstants}}
+\subsubsection[{TempGainConstants}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::TempGainConstants::TempGainConstants (unsigned {\em chip}, \/  unsigned {\em channel}, \/  float {\em value}, \/  float {\em error}, \/  float {\em gainTemp}, \/  float {\em gainTempError}, \/  float {\em Tslope}, \/  float {\em TslopeError})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1TempGainConstants_af8995c4d00216be9a4f6d7977eb40695}
+
+
+constructor, initialised by parameters 
+\begin{DoxyParams}{Parameters}
+\item[{\em chip}]chip number of the channel calibrated \item[{\em channel}]channel number of the channel calibrated \item[{\em value}]gain value of the cannel calibrated \item[{\em error}]error on the gain value of the cannel calibrated \item[{\em gainTemp}]temperature for which the gain was determined \item[{\em gainTempError}]uncertainty of temperature for which the gain was determined \item[{\em Tslope}]temperature slope of gain (dG/dT) in ADC ch./K \item[{\em TslopeError}]uncertainty of temperature slope of gain (dG/dT) in ADC ch./K \end{DoxyParams}
+
+
+Definition at line 44 of file TempGainConstants.hh.
+
+References CALICE::LCHcalCalibrationObject::obj().
+
+\subsection{Member Function Documentation}
+\index{CALICE::TempGainConstants@{CALICE::TempGainConstants}!applyCalibration@{applyCalibration}}
+\index{applyCalibration@{applyCalibration}!CALICE::TempGainConstants@{CALICE::TempGainConstants}}
+\subsubsection[{applyCalibration}]{\setlength{\rightskip}{0pt plus 5cm}float CALICE::TempGainConstants::applyCalibration (float {\em inputValue}) const\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classCALICE_1_1TempGainConstants_ae2278e77d19368d5fb1ec5fb1eecef44}
+
+
+apply gain calibration to input value 
+\begin{DoxyParams}{Parameters}
+\item[{\em inputValue}]SiPM amplitude in ADC ch. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+SiPM amplitude in pixels 
+\end{DoxyReturn}
+
+
+Reimplemented from {\bf CALICE::GainConstants} \doxyref{}{p.}{classCALICE_1_1GainConstants_aeb089dc140f6e63d2f0a4746ecdd5cbb}.
+
+Definition at line 141 of file TempGainConstants.hh.
+
+Referenced by applyCalibrationError().\index{CALICE::TempGainConstants@{CALICE::TempGainConstants}!applyCalibrationError@{applyCalibrationError}}
+\index{applyCalibrationError@{applyCalibrationError}!CALICE::TempGainConstants@{CALICE::TempGainConstants}}
+\subsubsection[{applyCalibrationError}]{\setlength{\rightskip}{0pt plus 5cm}float CALICE::TempGainConstants::applyCalibrationError (float {\em inputValue}, \/  float {\em inputError}) const\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classCALICE_1_1TempGainConstants_a4319810d19fd6bb61de44faec1f56226}
+
+
+apply calibration error to current error 
+\begin{DoxyParams}{Parameters}
+\item[{\em inputValue}]SiPM amplitude in ADC ch. \item[{\em inputError}]SiPM amplitude error in ADC ch. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error of SiPM amplitude in pixels 
+\end{DoxyReturn}
+
+
+Reimplemented from {\bf CALICE::GainConstants} \doxyref{}{p.}{classCALICE_1_1GainConstants_a669886b01357faa0b2173384be3a60d3}.
+
+Definition at line 156 of file TempGainConstants.hh.
+
+References applyCalibration().\index{CALICE::TempGainConstants@{CALICE::TempGainConstants}!calibrationValid@{calibrationValid}}
+\index{calibrationValid@{calibrationValid}!CALICE::TempGainConstants@{CALICE::TempGainConstants}}
+\subsubsection[{calibrationValid}]{\setlength{\rightskip}{0pt plus 5cm}bool CALICE::TempGainConstants::calibrationValid () const\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classCALICE_1_1TempGainConstants_a132d04dd01b328d85857bda95baf000b}
+
+
+check if a valid gain calibration is available \begin{DoxyReturn}{Returns}
+true if the gain value is a valid number 
+\end{DoxyReturn}
+
+
+Reimplemented from {\bf CALICE::GainConstants} \doxyref{}{p.}{classCALICE_1_1GainConstants_a37c5d66f2537eee42e259147856e86a7}.
+
+Definition at line 168 of file TempGainConstants.hh.
+
+References CALICE::GainConstants::calibrationValid().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+TempGainConstants.hh\item 
+TempGainConstants.cc\end{DoxyCompactItemize}

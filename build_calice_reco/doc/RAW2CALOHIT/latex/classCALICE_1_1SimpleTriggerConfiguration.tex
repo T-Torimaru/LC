@@ -1,0 +1,73 @@
+\section{CALICE::SimpleTriggerConfiguration Class Reference}
+\label{classCALICE_1_1SimpleTriggerConfiguration}\index{CALICE::SimpleTriggerConfiguration@{CALICE::SimpleTriggerConfiguration}}
+
+
+Check for specific trigger configurations.  
+
+
+{\ttfamily \#include $<$SimpleTriggerConfiguration.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries init} (const std::string \&configuration\_\-col\_\-name, const std::string \&assignment\_\-col\_\-name, const std::string \&beam\_\-trigger\_\-bit\_\-name, const std::string \&cosmics\_\-trigger\_\-bit\_\-name, const std::string \&pedestal\_\-trigger\_\-bit\_\-name)\label{classCALICE_1_1SimpleTriggerConfiguration_af32ebbee6e51c79b3f14951597e08f13}
+
+\item 
+bool {\bfseries isBeamTrigger} () const \label{classCALICE_1_1SimpleTriggerConfiguration_ab6484d9f89f6462031a28df474a1a286}
+
+\item 
+bool {\bfseries isCosmicsTrigger} () const \label{classCALICE_1_1SimpleTriggerConfiguration_a8330e23aa2777662313198f2a380294d}
+
+\item 
+bool {\bfseries isPedestalTrigger} () const \label{classCALICE_1_1SimpleTriggerConfiguration_ac2abe0709c380808d3c16b7fb2c79c05}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries configurationChanged} ()\label{classCALICE_1_1SimpleTriggerConfiguration_ad673a5a76ff0470f8eafe32966fb458c}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+UInt\_\-t {\bfseries \_\-beamTriggerMask}\label{classCALICE_1_1SimpleTriggerConfiguration_a4f370d097b812175b35ffe93c24f28e5}
+
+\item 
+UInt\_\-t {\bfseries \_\-cosmicsTriggerMask}\label{classCALICE_1_1SimpleTriggerConfiguration_a2764c219750efcaa915eea0bb3caa202}
+
+\item 
+UInt\_\-t {\bfseries \_\-pedestalTriggerMask}\label{classCALICE_1_1SimpleTriggerConfiguration_a849801e47b4836ea21fff1d1641729fc}
+
+\item 
+UInt\_\-t {\bfseries \_\-beamTriggerValue}\label{classCALICE_1_1SimpleTriggerConfiguration_ab35e7ca6bb5fa8015ca95edbebccd7f4}
+
+\item 
+UInt\_\-t {\bfseries \_\-cosmicsTriggerValue}\label{classCALICE_1_1SimpleTriggerConfiguration_a000314437dd78ab5b30eaf4e000d1f9a}
+
+\item 
+UInt\_\-t {\bfseries \_\-pedestalTriggerValue}\label{classCALICE_1_1SimpleTriggerConfiguration_a8c1f4b927fba0900d7d1fb7b1f0b6f93}
+
+\item 
+UInt\_\-t {\bfseries \_\-beamTriggerID}\label{classCALICE_1_1SimpleTriggerConfiguration_ab9f06639c466d303176f753fcf558861}
+
+\item 
+UInt\_\-t {\bfseries \_\-cosmicsTriggerID}\label{classCALICE_1_1SimpleTriggerConfiguration_a388c635ca49d3de1a65e3ac9682bcd4c}
+
+\item 
+UInt\_\-t {\bfseries \_\-pedestalTriggerID}\label{classCALICE_1_1SimpleTriggerConfiguration_a9451a02ca550fb7588b7cfebc76fda2b}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Check for specific trigger configurations. The class checks whether the trigger is configured for: 
+\begin{DoxyItemize}
+\item beam trigger 
+\item cosmics trigger 
+\item pedestal i.e. random trigger 
+\end{DoxyItemize}The class depends on the trigger assignement and configuration conditions data. The configuration conditions data results from the raw-\/to-\/LCIO conversion. 
+
+Definition at line 18 of file SimpleTriggerConfiguration.hh.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+SimpleTriggerConfiguration.hh\end{DoxyCompactItemize}

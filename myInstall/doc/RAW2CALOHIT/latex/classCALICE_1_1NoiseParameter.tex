@@ -1,0 +1,193 @@
+\section{CALICE::NoiseParameter Class Reference}
+\label{classCALICE_1_1NoiseParameter}\index{CALICE::NoiseParameter@{CALICE::NoiseParameter}}
+
+
+Information about a pad: Pedestal, noise, etc.  
+
+
+{\ttfamily \#include $<$NoiseParameter.hh$>$}\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ {\bfseries numberOfInts} = 4
+ \}
+\item 
+enum \{ {\bfseries numberOfFloats} = 0
+ \}
+\item 
+enum \{ {\bfseries numberOfDoubles} = 7
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries NoiseParameter} (int cellID0, int module\_\-index, int cell\_\-index, double noise, double pedestal)\label{classCALICE_1_1NoiseParameter_a5ae8a2eda536c5234c898a1fed313103}
+
+\item 
+{\bfseries NoiseParameter} (int cellID0, int module\_\-index, int cell\_\-index)\label{classCALICE_1_1NoiseParameter_adf999180ff627b662343e5069db133d7}
+
+\item 
+{\bfseries NoiseParameter} (int module\_\-index, int cell\_\-index)\label{classCALICE_1_1NoiseParameter_ac3ad7f004d153853a1e2a800a4018e29}
+
+\item 
+void {\bf setPedestal} (double aPedestal)\label{classCALICE_1_1NoiseParameter_a1b356206a293f69bf1ed40d27ecb818b}
+
+\begin{DoxyCompactList}\small\item\em Set the pedestal. \item\end{DoxyCompactList}\item 
+double {\bf getPedestal} () const \label{classCALICE_1_1NoiseParameter_adb7a5b09ba13a4f638df6d60b59c9587}
+
+\begin{DoxyCompactList}\small\item\em Get the pedestal. \item\end{DoxyCompactList}\item 
+void {\bf setPedestalBeforeSIC} (double aOld\_\-pedestal)\label{classCALICE_1_1NoiseParameter_a3388d4aae5f8d532667b38ac4e9af8a6}
+
+\begin{DoxyCompactList}\small\item\em Set the pedestal before Signal Induced Corrections are applied. \item\end{DoxyCompactList}\item 
+void {\bf setPedestalBeforeGC} (double aOld\_\-pedestal)\label{classCALICE_1_1NoiseParameter_ab20b21bb8db009637332f8b15471fc7f}
+
+\begin{DoxyCompactList}\small\item\em Set the pedestal before Global Corrections are applied. \item\end{DoxyCompactList}\item 
+double {\bf getPedestalBeforeSIC} () const \label{classCALICE_1_1NoiseParameter_a8aa648b980a102191797e806bec1fe1b}
+
+\begin{DoxyCompactList}\small\item\em Get the pedestal before Signal Induced Corrections are applied. \item\end{DoxyCompactList}\item 
+double {\bf getPedestalBeforeGC} () const \label{classCALICE_1_1NoiseParameter_a2075113211efc4ce905ad6698775b9ed}
+
+\begin{DoxyCompactList}\small\item\em Get the pedestal before Global Corrections are applied. \item\end{DoxyCompactList}\item 
+void {\bf setNoise} (double aNoise)\label{classCALICE_1_1NoiseParameter_aa887925f83397f287cad1cf77f5beb5f}
+
+\begin{DoxyCompactList}\small\item\em Set the noise. \item\end{DoxyCompactList}\item 
+void {\bfseries setCoherentNoise} (double aCohNoise)\label{classCALICE_1_1NoiseParameter_a8cab49decf1acc0c958d8b2c4f4135ce}
+
+\item 
+void {\bfseries setNoiseBeforeSIC} (double aOld\_\-noise)\label{classCALICE_1_1NoiseParameter_ac4acc09827523e318148775dc1334fdb}
+
+\item 
+void {\bfseries setNoiseBeforeGC} (double aOld\_\-noise)\label{classCALICE_1_1NoiseParameter_a2db1c2d78cea0327da44aea672a846a4}
+
+\item 
+double {\bf getNoise} () const 
+\begin{DoxyCompactList}\small\item\em Get the noise. \item\end{DoxyCompactList}\item 
+double {\bfseries getCoherentNoise} () const \label{classCALICE_1_1NoiseParameter_a5a63ace1e424cac33ceccc67d15625b9}
+
+\item 
+double {\bfseries getNoiseBeforeSIC} () const \label{classCALICE_1_1NoiseParameter_a070e69c9ab4182aff016923bccd1e0f8}
+
+\item 
+double {\bfseries getNoiseBeforeGC} () const \label{classCALICE_1_1NoiseParameter_a92bc44cb2669afeffc46dbbc297c8891}
+
+\item 
+short {\bf isDead} () const \label{classCALICE_1_1NoiseParameter_aaad737204e2573e3fb934bb9ef373107}
+
+\begin{DoxyCompactList}\small\item\em Return kTRUE if the pad is considered to be dead. \item\end{DoxyCompactList}\item 
+void {\bf setDead} (short is\_\-dead=1)
+\begin{DoxyCompactList}\small\item\em Declare the pad to be dead (or revive pad (is\_\-dead=0). \item\end{DoxyCompactList}\item 
+void {\bfseries setModuleIndex} (unsigned int aModule\_\-index)\label{classCALICE_1_1NoiseParameter_a4ec1782980dd013e8f361c32f9280fad}
+
+\item 
+unsigned int {\bf getModuleIndex} () const 
+\begin{DoxyCompactList}\small\item\em Get the ModuleIndex. \item\end{DoxyCompactList}\item 
+void {\bf setCellIndex} (unsigned int aCell\_\-index)\label{classCALICE_1_1NoiseParameter_a6de76912e4150b4ce0b63688be1de595}
+
+\begin{DoxyCompactList}\small\item\em Set the CellIndex. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getCellIndex} () const 
+\begin{DoxyCompactList}\small\item\em Get the CellIndex. \item\end{DoxyCompactList}\item 
+void {\bf setGeomCellIndex} (int aCellID0)\label{classCALICE_1_1NoiseParameter_a7a85f45d0e5d9bfcd07574f0ffa4ce2d}
+
+\begin{DoxyCompactList}\small\item\em Get and set the Mokka-\/like geometrical index. \item\end{DoxyCompactList}\item 
+int {\bfseries getGeomCellIndex} () const \label{classCALICE_1_1NoiseParameter_a2e5ecdf5faaddbdf33001f4ca61c5b62}
+
+\item 
+const int $\ast$ {\bfseries intData} () const \label{classCALICE_1_1NoiseParameter_ab49c24a64e65f2233dcde0c1eec61781}
+
+\item 
+int $\ast$ {\bfseries intData} ()\label{classCALICE_1_1NoiseParameter_a70ec4f6c64502b5db07d3ea74c2e46dd}
+
+\item 
+const float $\ast$ {\bfseries floatData} () const \label{classCALICE_1_1NoiseParameter_a43e6abb3eb0f278e4ec8b6f0a7b91ca2}
+
+\item 
+float $\ast$ {\bfseries floatData} ()\label{classCALICE_1_1NoiseParameter_a5044799613596b5e3547e2c9e01e9098}
+
+\item 
+const double $\ast$ {\bfseries doubleData} () const \label{classCALICE_1_1NoiseParameter_a17f9f7964cbde3a5b67bfcac3412dd23}
+
+\item 
+double $\ast$ {\bfseries doubleData} ()\label{classCALICE_1_1NoiseParameter_ad770a3fe04039177f6913d9490d1443e}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries \_\-isDead}\label{classCALICE_1_1NoiseParameter_a03f4de43745541be50a09781b8e89839}
+
+\item 
+int {\bfseries \_\-moduleIndex}\label{classCALICE_1_1NoiseParameter_a6a940aaa8b66a7bc9eb0153733c42b86}
+
+\item 
+int {\bfseries \_\-cellIndex}\label{classCALICE_1_1NoiseParameter_a2c43ce031c49e48559f6aa01c6836012}
+
+\item 
+int {\bfseries \_\-cellID0}\label{classCALICE_1_1NoiseParameter_ad617a135ebfd7e49a17101d2911b06fc}
+
+\item 
+double {\bfseries \_\-pedestalBeforeGC}\label{classCALICE_1_1NoiseParameter_a84581448f67828307fda00d2cfd39c85}
+
+\item 
+double {\bfseries \_\-noiseBeforeGC}\label{classCALICE_1_1NoiseParameter_af097bce79566b82d2e920439cfd94cd1}
+
+\item 
+double {\bfseries \_\-pedestalBeforeSIC}\label{classCALICE_1_1NoiseParameter_af7aa0d50c9a7656f7e4965e9dabfa1bd}
+
+\item 
+double {\bfseries \_\-noiseBeforeSIC}\label{classCALICE_1_1NoiseParameter_ac554d0afad408a3aed8e3a521ee8c466}
+
+\item 
+double {\bfseries \_\-pedestal}\label{classCALICE_1_1NoiseParameter_a6b4a80837d89299a9319157aab127a28}
+
+\item 
+double {\bfseries \_\-noise}\label{classCALICE_1_1NoiseParameter_a48f6d0c4bc54f23e4e58df5da2bcc5f4}
+
+\item 
+double {\bfseries \_\-cohnoise}\label{classCALICE_1_1NoiseParameter_ae362643e5670037960a664be7d8c4635}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Information about a pad: Pedestal, noise, etc. This class hold the pedestal, the noise, and a flag which indicates whether the pad is considered to be dead, in function of the geometrical indices. It will be used by both data and MC 
+
+Definition at line 12 of file NoiseParameter.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::NoiseParameter@{CALICE::NoiseParameter}!getCellIndex@{getCellIndex}}
+\index{getCellIndex@{getCellIndex}!CALICE::NoiseParameter@{CALICE::NoiseParameter}}
+\subsubsection[{getCellIndex}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::NoiseParameter::getCellIndex () const}\label{classCALICE_1_1NoiseParameter_affdf12ec2ffea77fcb05ffd16e26d48a}
+
+
+Get the CellIndex. The result is undefined before the CellIndexs and the noise are calculated. 
+
+Definition at line 173 of file NoiseParameter.cc.\index{CALICE::NoiseParameter@{CALICE::NoiseParameter}!getModuleIndex@{getModuleIndex}}
+\index{getModuleIndex@{getModuleIndex}!CALICE::NoiseParameter@{CALICE::NoiseParameter}}
+\subsubsection[{getModuleIndex}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::NoiseParameter::getModuleIndex () const}\label{classCALICE_1_1NoiseParameter_af2c390e2f9d1c9973961045e444e6120}
+
+
+Get the ModuleIndex. The result is undefined before the ModuleIndexs and the noise are calculated. 
+
+Definition at line 165 of file NoiseParameter.cc.\index{CALICE::NoiseParameter@{CALICE::NoiseParameter}!getNoise@{getNoise}}
+\index{getNoise@{getNoise}!CALICE::NoiseParameter@{CALICE::NoiseParameter}}
+\subsubsection[{getNoise}]{\setlength{\rightskip}{0pt plus 5cm}double CALICE::NoiseParameter::getNoise () const}\label{classCALICE_1_1NoiseParameter_a25c5efb36b96a6d55f475d7721585d87}
+
+
+Get the noise. The result is undefined before the pedestals and the noise are calculated. 
+
+Definition at line 139 of file NoiseParameter.cc.
+
+Referenced by CALICE::CalibrateAndApplyThreshold::processEvent().\index{CALICE::NoiseParameter@{CALICE::NoiseParameter}!setDead@{setDead}}
+\index{setDead@{setDead}!CALICE::NoiseParameter@{CALICE::NoiseParameter}}
+\subsubsection[{setDead}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::NoiseParameter::setDead (short {\em is\_\-dead} = {\ttfamily 1})}\label{classCALICE_1_1NoiseParameter_acb1d520b046f2365c182a492540a6881}
+
+
+Declare the pad to be dead (or revive pad (is\_\-dead=0). 1=dead, 2=bad, 3=disconnected 
+
+Definition at line 156 of file NoiseParameter.cc.
+
+Referenced by CALICE::SimpleHitSearch::searchHits().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+NoiseParameter.hh\item 
+NoiseParameter.cc\end{DoxyCompactItemize}

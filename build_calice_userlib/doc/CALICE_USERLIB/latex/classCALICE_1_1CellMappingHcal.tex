@@ -1,0 +1,79 @@
+\section{CALICE::CellMappingHcal Class Reference}
+\label{classCALICE_1_1CellMappingHcal}\index{CALICE::CellMappingHcal@{CALICE::CellMappingHcal}}
+
+
+Example for a simple mapping class based on the LCFixedObject template.  
+
+
+{\ttfamily \#include $<$CellMappingHcal.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CellMappingHcal} (int icrate, int islot, int ife, int imul, int iadc, int icoord, int jcoord, int kcoord)\label{classCALICE_1_1CellMappingHcal_a180c0b169a7f2c69770ae551aa4c776d}
+
+\begin{DoxyCompactList}\small\item\em Convenient c'tor. \item\end{DoxyCompactList}\item 
+{\bf CellMappingHcal} (LCObject $\ast$obj)\label{classCALICE_1_1CellMappingHcal_a0da96ba25246cd5cca90973d362e6c87}
+
+\begin{DoxyCompactList}\small\item\em 'Copy constructor' needed to interpret LCCollection read from file/database. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$CellMappingHcal} ()\label{classCALICE_1_1CellMappingHcal_a83d82878315eb6feafff6da924cb0b3e}
+
+\begin{DoxyCompactList}\small\item\em Important for memory handling. \item\end{DoxyCompactList}\item 
+int {\bf getElecChannel} ()\label{classCALICE_1_1CellMappingHcal_ac7b97417224ddeba13c73d7659484ed0}
+
+\begin{DoxyCompactList}\small\item\em the class interface: \item\end{DoxyCompactList}\item 
+int {\bfseries getCellID} ()\label{classCALICE_1_1CellMappingHcal_a5e62c1a1fa22a5d93b59734f5c307fbf}
+
+\item 
+short {\bf getCellIndex} (std::string)\label{classCALICE_1_1CellMappingHcal_a4beaa39635a9c718ecbcb98ee336bf4e}
+
+\begin{DoxyCompactList}\small\item\em convenient getter functions \item\end{DoxyCompactList}\item 
+short {\bfseries getCrateID} ()\label{classCALICE_1_1CellMappingHcal_a5828458b37828b0bf81007b081bdefdc}
+
+\item 
+short {\bfseries getSlotID} ()\label{classCALICE_1_1CellMappingHcal_a83ae95e889acadd9e666421021fc94bd}
+
+\item 
+short {\bfseries getFeID} ()\label{classCALICE_1_1CellMappingHcal_a0a0f4e3978887fcb96c2990ad98c7ff8}
+
+\item 
+short {\bfseries getMulID} ()\label{classCALICE_1_1CellMappingHcal_ac15468dcd4948f44a67978680748aa54}
+
+\item 
+short {\bfseries getAdcID} ()\label{classCALICE_1_1CellMappingHcal_a877867886306a01fe319eab0b00f7256}
+
+\item 
+void {\bf print} (std::ostream \&os)\label{classCALICE_1_1CellMappingHcal_a2ffe99f7db6ac95b8e972b37d189f6da}
+
+\begin{DoxyCompactList}\small\item\em Convenient print method. \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1CellMappingHcal_a03e821c39e5e6452c89954ddcc5038c8}
+
+\begin{DoxyCompactList}\small\item\em Type definition. \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const 
+\begin{DoxyCompactList}\small\item\em Data description, needed e.g. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+short {\bf \_\-index}\label{classCALICE_1_1CellMappingHcal_ac042db1cac41c0a080364c6ed8e6e4f5}
+
+\begin{DoxyCompactList}\small\item\em i,j or k Index of the cell id \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Example for a simple mapping class based on the LCFixedObject template. LCFixedObject uses an instance of LCGenericObjectImpl that holds the data, thus there is no overhead when the data is read from a database or file for copying it to some local structure (Decorator pattern).\par
+ 
+
+Definition at line 40 of file CellMappingHcal.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::CellMappingHcal@{CALICE::CellMappingHcal}!getDataDescription@{getDataDescription}}
+\index{getDataDescription@{getDataDescription}!CALICE::CellMappingHcal@{CALICE::CellMappingHcal}}
+\subsubsection[{getDataDescription}]{\setlength{\rightskip}{0pt plus 5cm}const std::string CALICE::CellMappingHcal::getDataDescription () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CellMappingHcal_a703c49c4ee36f2faf9ff744afc9bf098}
+
+
+Data description, needed e.g. by graphical interface to LCCD 
+
+Definition at line 96 of file CellMappingHcal.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+CellMappingHcal.hh\item 
+CellMappingHcal.cc\end{DoxyCompactItemize}

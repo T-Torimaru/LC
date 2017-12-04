@@ -1,0 +1,260 @@
+\section{CALICE::TcmtEventBits Class Reference}
+\label{classCALICE_1_1TcmtEventBits}\index{CALICE::TcmtEventBits@{CALICE::TcmtEventBits}}
+
+
+Bit set to describe the type of event in the TCMT.  
+
+
+{\ttfamily \#include $<$TcmtEventBits.hh$>$}Inheritance diagram for CALICE::TcmtEventBits::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCALICE_1_1TcmtEventBits}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf TcmtEventBits} ()
+\begin{DoxyCompactList}\small\item\em standard constructor \item\end{DoxyCompactList}\item 
+{\bf TcmtEventBits} (const int value)
+\begin{DoxyCompactList}\small\item\em constructor with initialisaton of the the bits \item\end{DoxyCompactList}\item 
+bool {\bf hasMinNumberMuonLikeTowers} ()
+\begin{DoxyCompactList}\small\item\em check if event has at least minimum number of muon like towers \item\end{DoxyCompactList}\item 
+bool {\bf hasMaxNumberMuonLikeTowers} ()
+\begin{DoxyCompactList}\small\item\em check if event has more than maximun number of muon like towers \item\end{DoxyCompactList}\item 
+bool {\bf hasMinNumberMuonLikeLayers} ()
+\begin{DoxyCompactList}\small\item\em check if event has at least minimum number of muon like layers \item\end{DoxyCompactList}\item 
+bool {\bf hasMinNumberHitsMuon} ()
+\begin{DoxyCompactList}\small\item\em check if event has at least minimum number hits required by a muon like signal \item\end{DoxyCompactList}\item 
+bool {\bf hasMaxNumberHitsMuon} ()
+\begin{DoxyCompactList}\small\item\em check if event has not more than maximum number hits required by a muon like signal \item\end{DoxyCompactList}\item 
+bool {\bf hasMinSumEnergyMuon} ()
+\begin{DoxyCompactList}\small\item\em check if event has at least minimum energy sum required by a muon like signal \item\end{DoxyCompactList}\item 
+bool {\bf hasMaxSumEnergyMuon} ()
+\begin{DoxyCompactList}\small\item\em check if event has not more than maximum energy sum required by a muon like signal \item\end{DoxyCompactList}\item 
+bool {\bf isMuon} ()
+\item 
+bool {\bf isPedestal} ()
+\item 
+bool {\bf isLeakage} ()
+\item 
+void {\bfseries setMinNumberMuonLikeTowers} (bool state)\label{classCALICE_1_1TcmtEventBits_aa99a273f786324fc5b38ad019360db46}
+
+\item 
+void {\bfseries setMaxNumberMuonLikeTowers} (bool state)\label{classCALICE_1_1TcmtEventBits_a82bb956ada8b1c1313925d3b8adb5f19}
+
+\item 
+void {\bfseries setMinNumberMuonLikeLayers} (bool state)\label{classCALICE_1_1TcmtEventBits_a89f0b30cdc17624d871d1e3125ed474f}
+
+\item 
+void {\bfseries setMinNumberHitsMuon} (bool state)\label{classCALICE_1_1TcmtEventBits_a3f7289ee6f0e592481b2bb3a4d284921}
+
+\item 
+void {\bfseries setMaxNumberHitsMuon} (bool state)\label{classCALICE_1_1TcmtEventBits_ada9cd28aef0a616630cd3ec46addb140}
+
+\item 
+void {\bfseries setMinSumEnergyMuon} (bool state)\label{classCALICE_1_1TcmtEventBits_ae16fa8e3daf95cf77aab84e3e96e06c5}
+
+\item 
+void {\bfseries setMaxSumEnergyMuon} (bool state)\label{classCALICE_1_1TcmtEventBits_a94c2bafe6af4b867be02426bd78cb475}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf ETcmtEventBitNo} \{ \par
+{\bf kMinNumberMuonLikeTowers}, 
+{\bf kMaxNumberMuonLikeTowers}, 
+{\bf kMinNumberMuonLikeLayers}, 
+{\bf kMaxNumberTotalHitsMuon}, 
+\par
+{\bf kMinNumberTotalHitsMuon}, 
+{\bf kMaxSumEnergyMuon}, 
+{\bf kMinSumEnergyMuon}, 
+{\bfseries kNumberOfBits}
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Bit set to describe the type of event in the TCMT. \begin{DoxyAuthor}{Author}
+{\tt Benjamin.Lutz@desy.de} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+November 2009 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.0 
+\end{DoxyVersion}
+
+
+Definition at line 16 of file TcmtEventBits.hh.
+
+\subsection{Member Enumeration Documentation}
+\index{CALICE::TcmtEventBits@{CALICE::TcmtEventBits}!ETcmtEventBitNo@{ETcmtEventBitNo}}
+\index{ETcmtEventBitNo@{ETcmtEventBitNo}!CALICE::TcmtEventBits@{CALICE::TcmtEventBits}}
+\subsubsection[{ETcmtEventBitNo}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf CALICE::TcmtEventBits::ETcmtEventBitNo}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1TcmtEventBits_a53b0e50e92a2fe1f4853f154f9404f7a}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{kMinNumberMuonLikeTowers@{kMinNumberMuonLikeTowers}!CALICE::TcmtEventBits@{CALICE::TcmtEventBits}}\index{CALICE::TcmtEventBits@{CALICE::TcmtEventBits}!kMinNumberMuonLikeTowers@{kMinNumberMuonLikeTowers}}\item[{\em 
+kMinNumberMuonLikeTowers\label{classCALICE_1_1TcmtEventBits_a53b0e50e92a2fe1f4853f154f9404f7aad235620b2c7fe803385317e5da75bbc6}
+}]min number of muon like towers reached \index{kMaxNumberMuonLikeTowers@{kMaxNumberMuonLikeTowers}!CALICE::TcmtEventBits@{CALICE::TcmtEventBits}}\index{CALICE::TcmtEventBits@{CALICE::TcmtEventBits}!kMaxNumberMuonLikeTowers@{kMaxNumberMuonLikeTowers}}\item[{\em 
+kMaxNumberMuonLikeTowers\label{classCALICE_1_1TcmtEventBits_a53b0e50e92a2fe1f4853f154f9404f7aaae95b2cdd70629a31e8cabff90486f4a}
+}]within max number of muon like towers \index{kMinNumberMuonLikeLayers@{kMinNumberMuonLikeLayers}!CALICE::TcmtEventBits@{CALICE::TcmtEventBits}}\index{CALICE::TcmtEventBits@{CALICE::TcmtEventBits}!kMinNumberMuonLikeLayers@{kMinNumberMuonLikeLayers}}\item[{\em 
+kMinNumberMuonLikeLayers\label{classCALICE_1_1TcmtEventBits_a53b0e50e92a2fe1f4853f154f9404f7aa6787c6f4a776e5b48fd077a15fb658f2}
+}]min number of muon like layers reached \index{kMaxNumberTotalHitsMuon@{kMaxNumberTotalHitsMuon}!CALICE::TcmtEventBits@{CALICE::TcmtEventBits}}\index{CALICE::TcmtEventBits@{CALICE::TcmtEventBits}!kMaxNumberTotalHitsMuon@{kMaxNumberTotalHitsMuon}}\item[{\em 
+kMaxNumberTotalHitsMuon\label{classCALICE_1_1TcmtEventBits_a53b0e50e92a2fe1f4853f154f9404f7aa08e02c2b82c0b918b93508019698f53a}
+}]within max number of total hits \index{kMinNumberTotalHitsMuon@{kMinNumberTotalHitsMuon}!CALICE::TcmtEventBits@{CALICE::TcmtEventBits}}\index{CALICE::TcmtEventBits@{CALICE::TcmtEventBits}!kMinNumberTotalHitsMuon@{kMinNumberTotalHitsMuon}}\item[{\em 
+kMinNumberTotalHitsMuon\label{classCALICE_1_1TcmtEventBits_a53b0e50e92a2fe1f4853f154f9404f7aac0aeb0d1da3891ebe92e3ae6d6648df4}
+}]min number of total hits reached \index{kMaxSumEnergyMuon@{kMaxSumEnergyMuon}!CALICE::TcmtEventBits@{CALICE::TcmtEventBits}}\index{CALICE::TcmtEventBits@{CALICE::TcmtEventBits}!kMaxSumEnergyMuon@{kMaxSumEnergyMuon}}\item[{\em 
+kMaxSumEnergyMuon\label{classCALICE_1_1TcmtEventBits_a53b0e50e92a2fe1f4853f154f9404f7aa6240276bad2bf9a0b3ce6d3c6dde0b88}
+}]within max energy sum \index{kMinSumEnergyMuon@{kMinSumEnergyMuon}!CALICE::TcmtEventBits@{CALICE::TcmtEventBits}}\index{CALICE::TcmtEventBits@{CALICE::TcmtEventBits}!kMinSumEnergyMuon@{kMinSumEnergyMuon}}\item[{\em 
+kMinSumEnergyMuon\label{classCALICE_1_1TcmtEventBits_a53b0e50e92a2fe1f4853f154f9404f7aa91de7d36f9ea016ac5cec4968ad5f19f}
+}]min energy sum reached \end{description}
+\end{Desc}
+
+
+
+Definition at line 18 of file TcmtEventBits.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CALICE::TcmtEventBits@{CALICE::TcmtEventBits}!TcmtEventBits@{TcmtEventBits}}
+\index{TcmtEventBits@{TcmtEventBits}!CALICE::TcmtEventBits@{CALICE::TcmtEventBits}}
+\subsubsection[{TcmtEventBits}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::TcmtEventBits::TcmtEventBits ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1TcmtEventBits_afeb8508602985e2f36e0a1c6fe3e453d}
+
+
+standard constructor all bits are off 
+
+Definition at line 33 of file TcmtEventBits.hh.\index{CALICE::TcmtEventBits@{CALICE::TcmtEventBits}!TcmtEventBits@{TcmtEventBits}}
+\index{TcmtEventBits@{TcmtEventBits}!CALICE::TcmtEventBits@{CALICE::TcmtEventBits}}
+\subsubsection[{TcmtEventBits}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::TcmtEventBits::TcmtEventBits (const int {\em value})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1TcmtEventBits_a1b9819103df4f2f90c6c07a2dc6f3b8a}
+
+
+constructor with initialisaton of the the bits 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em value}]bits to be set \end{DoxyParams}
+
+
+Definition at line 40 of file TcmtEventBits.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::TcmtEventBits@{CALICE::TcmtEventBits}!hasMaxNumberHitsMuon@{hasMaxNumberHitsMuon}}
+\index{hasMaxNumberHitsMuon@{hasMaxNumberHitsMuon}!CALICE::TcmtEventBits@{CALICE::TcmtEventBits}}
+\subsubsection[{hasMaxNumberHitsMuon}]{\setlength{\rightskip}{0pt plus 5cm}bool CALICE::TcmtEventBits::hasMaxNumberHitsMuon ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1TcmtEventBits_a25ef8a819de49c306af2a127671e3a9a}
+
+
+check if event has not more than maximum number hits required by a muon like signal \begin{DoxyReturn}{Returns}
+state of \doxyref{kMaxNumberTotalHitsMuon}{p.}{classCALICE_1_1TcmtEventBits_a53b0e50e92a2fe1f4853f154f9404f7aa08e02c2b82c0b918b93508019698f53a} 
+\end{DoxyReturn}
+
+
+Definition at line 66 of file TcmtEventBits.hh.
+
+References CALICE::BitSet::getBit(), and kMaxNumberTotalHitsMuon.\index{CALICE::TcmtEventBits@{CALICE::TcmtEventBits}!hasMaxNumberMuonLikeTowers@{hasMaxNumberMuonLikeTowers}}
+\index{hasMaxNumberMuonLikeTowers@{hasMaxNumberMuonLikeTowers}!CALICE::TcmtEventBits@{CALICE::TcmtEventBits}}
+\subsubsection[{hasMaxNumberMuonLikeTowers}]{\setlength{\rightskip}{0pt plus 5cm}bool CALICE::TcmtEventBits::hasMaxNumberMuonLikeTowers ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1TcmtEventBits_aa60a6d704afb1c3d76bd6b4edddbfe55}
+
+
+check if event has more than maximun number of muon like towers \begin{DoxyReturn}{Returns}
+state of \doxyref{kMaxNumberMuonLikeTowers}{p.}{classCALICE_1_1TcmtEventBits_a53b0e50e92a2fe1f4853f154f9404f7aaae95b2cdd70629a31e8cabff90486f4a} 
+\end{DoxyReturn}
+
+
+Definition at line 51 of file TcmtEventBits.hh.
+
+References CALICE::BitSet::getBit(), and kMaxNumberMuonLikeTowers.\index{CALICE::TcmtEventBits@{CALICE::TcmtEventBits}!hasMaxSumEnergyMuon@{hasMaxSumEnergyMuon}}
+\index{hasMaxSumEnergyMuon@{hasMaxSumEnergyMuon}!CALICE::TcmtEventBits@{CALICE::TcmtEventBits}}
+\subsubsection[{hasMaxSumEnergyMuon}]{\setlength{\rightskip}{0pt plus 5cm}bool CALICE::TcmtEventBits::hasMaxSumEnergyMuon ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1TcmtEventBits_a30e400920fcf01f75f25f3d7a1c4d965}
+
+
+check if event has not more than maximum energy sum required by a muon like signal \begin{DoxyReturn}{Returns}
+state of \doxyref{kMaxSumEnergyMuon}{p.}{classCALICE_1_1TcmtEventBits_a53b0e50e92a2fe1f4853f154f9404f7aa6240276bad2bf9a0b3ce6d3c6dde0b88} 
+\end{DoxyReturn}
+
+
+Definition at line 76 of file TcmtEventBits.hh.
+
+References CALICE::BitSet::getBit(), and kMaxSumEnergyMuon.\index{CALICE::TcmtEventBits@{CALICE::TcmtEventBits}!hasMinNumberHitsMuon@{hasMinNumberHitsMuon}}
+\index{hasMinNumberHitsMuon@{hasMinNumberHitsMuon}!CALICE::TcmtEventBits@{CALICE::TcmtEventBits}}
+\subsubsection[{hasMinNumberHitsMuon}]{\setlength{\rightskip}{0pt plus 5cm}bool CALICE::TcmtEventBits::hasMinNumberHitsMuon ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1TcmtEventBits_ae099eff448ec4aebe9e4ed837f55015f}
+
+
+check if event has at least minimum number hits required by a muon like signal \begin{DoxyReturn}{Returns}
+state of \doxyref{kMinNumberTotalHitsMuon}{p.}{classCALICE_1_1TcmtEventBits_a53b0e50e92a2fe1f4853f154f9404f7aac0aeb0d1da3891ebe92e3ae6d6648df4} 
+\end{DoxyReturn}
+
+
+Definition at line 61 of file TcmtEventBits.hh.
+
+References CALICE::BitSet::getBit(), and kMinNumberTotalHitsMuon.\index{CALICE::TcmtEventBits@{CALICE::TcmtEventBits}!hasMinNumberMuonLikeLayers@{hasMinNumberMuonLikeLayers}}
+\index{hasMinNumberMuonLikeLayers@{hasMinNumberMuonLikeLayers}!CALICE::TcmtEventBits@{CALICE::TcmtEventBits}}
+\subsubsection[{hasMinNumberMuonLikeLayers}]{\setlength{\rightskip}{0pt plus 5cm}bool CALICE::TcmtEventBits::hasMinNumberMuonLikeLayers ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1TcmtEventBits_a111346a27e09512a064863e811c429e0}
+
+
+check if event has at least minimum number of muon like layers \begin{DoxyReturn}{Returns}
+state of \doxyref{kMinNumberMuonLikeLayers}{p.}{classCALICE_1_1TcmtEventBits_a53b0e50e92a2fe1f4853f154f9404f7aa6787c6f4a776e5b48fd077a15fb658f2} 
+\end{DoxyReturn}
+
+
+Definition at line 56 of file TcmtEventBits.hh.
+
+References CALICE::BitSet::getBit(), and kMinNumberMuonLikeLayers.\index{CALICE::TcmtEventBits@{CALICE::TcmtEventBits}!hasMinNumberMuonLikeTowers@{hasMinNumberMuonLikeTowers}}
+\index{hasMinNumberMuonLikeTowers@{hasMinNumberMuonLikeTowers}!CALICE::TcmtEventBits@{CALICE::TcmtEventBits}}
+\subsubsection[{hasMinNumberMuonLikeTowers}]{\setlength{\rightskip}{0pt plus 5cm}bool CALICE::TcmtEventBits::hasMinNumberMuonLikeTowers ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1TcmtEventBits_acc127d83d99c0c4e1d8831977df02952}
+
+
+check if event has at least minimum number of muon like towers \begin{DoxyReturn}{Returns}
+state of \doxyref{kMinNumberMuonLikeTowers}{p.}{classCALICE_1_1TcmtEventBits_a53b0e50e92a2fe1f4853f154f9404f7aad235620b2c7fe803385317e5da75bbc6} 
+\end{DoxyReturn}
+
+
+Definition at line 46 of file TcmtEventBits.hh.
+
+References CALICE::BitSet::getBit(), and kMinNumberMuonLikeTowers.\index{CALICE::TcmtEventBits@{CALICE::TcmtEventBits}!hasMinSumEnergyMuon@{hasMinSumEnergyMuon}}
+\index{hasMinSumEnergyMuon@{hasMinSumEnergyMuon}!CALICE::TcmtEventBits@{CALICE::TcmtEventBits}}
+\subsubsection[{hasMinSumEnergyMuon}]{\setlength{\rightskip}{0pt plus 5cm}bool CALICE::TcmtEventBits::hasMinSumEnergyMuon ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1TcmtEventBits_a28cfee1fdd586aa1fd0ce6b625dad951}
+
+
+check if event has at least minimum energy sum required by a muon like signal \begin{DoxyReturn}{Returns}
+state of \doxyref{kMinSumEnergyMuon}{p.}{classCALICE_1_1TcmtEventBits_a53b0e50e92a2fe1f4853f154f9404f7aa91de7d36f9ea016ac5cec4968ad5f19f} 
+\end{DoxyReturn}
+
+
+Definition at line 71 of file TcmtEventBits.hh.
+
+References CALICE::BitSet::getBit(), and kMinSumEnergyMuon.\index{CALICE::TcmtEventBits@{CALICE::TcmtEventBits}!isLeakage@{isLeakage}}
+\index{isLeakage@{isLeakage}!CALICE::TcmtEventBits@{CALICE::TcmtEventBits}}
+\subsubsection[{isLeakage}]{\setlength{\rightskip}{0pt plus 5cm}bool CALICE::TcmtEventBits::isLeakage ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1TcmtEventBits_a5140fca32165d161ffcc1ea7f48e03de}
+\begin{DoxyReturn}{Returns}
+true if signal is higher than pedestal (muon AND other signals) 
+\end{DoxyReturn}
+
+
+Definition at line 104 of file TcmtEventBits.hh.
+
+References CALICE::BitSet::getBit(), kMaxNumberMuonLikeTowers, kMaxNumberTotalHitsMuon, kMaxSumEnergyMuon, kMinNumberMuonLikeLayers, kMinNumberMuonLikeTowers, kMinNumberTotalHitsMuon, and kMinSumEnergyMuon.\index{CALICE::TcmtEventBits@{CALICE::TcmtEventBits}!isMuon@{isMuon}}
+\index{isMuon@{isMuon}!CALICE::TcmtEventBits@{CALICE::TcmtEventBits}}
+\subsubsection[{isMuon}]{\setlength{\rightskip}{0pt plus 5cm}bool CALICE::TcmtEventBits::isMuon ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1TcmtEventBits_a2431009bd4d64cab92ae30c451f62960}
+\begin{DoxyReturn}{Returns}
+true if signal fullfills all muon tests 
+\end{DoxyReturn}
+
+
+Definition at line 81 of file TcmtEventBits.hh.
+
+References CALICE::BitSet::getBit(), kMaxNumberMuonLikeTowers, kMaxNumberTotalHitsMuon, kMaxSumEnergyMuon, kMinNumberMuonLikeLayers, kMinNumberMuonLikeTowers, kMinNumberTotalHitsMuon, and kMinSumEnergyMuon.\index{CALICE::TcmtEventBits@{CALICE::TcmtEventBits}!isPedestal@{isPedestal}}
+\index{isPedestal@{isPedestal}!CALICE::TcmtEventBits@{CALICE::TcmtEventBits}}
+\subsubsection[{isPedestal}]{\setlength{\rightskip}{0pt plus 5cm}bool CALICE::TcmtEventBits::isPedestal ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1TcmtEventBits_a5564944aa340b0674ff585f3be427da6}
+\begin{DoxyReturn}{Returns}
+true if signal is lower in energy and hits than a muon 
+\end{DoxyReturn}
+
+
+Definition at line 94 of file TcmtEventBits.hh.
+
+References CALICE::BitSet::getBit(), kMaxNumberTotalHitsMuon, kMaxSumEnergyMuon, kMinNumberTotalHitsMuon, and kMinSumEnergyMuon.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+TcmtEventBits.hh\end{DoxyCompactItemize}

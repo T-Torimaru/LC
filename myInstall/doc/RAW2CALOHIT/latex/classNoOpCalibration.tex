@@ -1,0 +1,74 @@
+\section{NoOpCalibration Class Reference}
+\label{classNoOpCalibration}\index{NoOpCalibration@{NoOpCalibration}}
+
+
+Lazy calibration class.  
+
+
+{\ttfamily \#include $<$NoOpCalibration.hh$>$}Inheritance diagram for NoOpCalibration::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classNoOpCalibration}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Float\_\-t {\bf getCalibratedValue} (UInt\_\-t module\_\-index, UInt\_\-t module\_\-type, UInt\_\-t cell\_\-index, Float\_\-t adc\_\-value) const 
+\begin{DoxyCompactList}\small\item\em Determine from a pedestal subtracted ADC value a calibrated value which are identical for this very lazy calibrator. \item\end{DoxyCompactList}\item 
+Bool\_\-t {\bf checkForCalibrationConstantsOfModule} (UInt\_\-t module\_\-id, UInt\_\-t module\_\-type, UInt\_\-t n\_\-cells) const 
+\begin{DoxyCompactList}\small\item\em Verify that calibration constants exist for a certain module. \item\end{DoxyCompactList}\item 
+Int\_\-t {\bf getMiniumADCForMipThreshold} (Float\_\-t mip\_\-energy\_\-fraction) const 
+\begin{DoxyCompactList}\small\item\em Get the minimum adc value mips will have for the given energy fraction on all pads. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Lazy calibration class. Does nothing. 
+
+Definition at line 10 of file NoOpCalibration.hh.
+
+\subsection{Member Function Documentation}
+\index{NoOpCalibration@{NoOpCalibration}!checkForCalibrationConstantsOfModule@{checkForCalibrationConstantsOfModule}}
+\index{checkForCalibrationConstantsOfModule@{checkForCalibrationConstantsOfModule}!NoOpCalibration@{NoOpCalibration}}
+\subsubsection[{checkForCalibrationConstantsOfModule}]{\setlength{\rightskip}{0pt plus 5cm}Bool\_\-t NoOpCalibration::checkForCalibrationConstantsOfModule (UInt\_\-t {\em module\_\-id}, \/  UInt\_\-t {\em module\_\-type}, \/  UInt\_\-t {\em n\_\-cells}) const\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classNoOpCalibration_acdb31ec76cef7720c0cda5fb15ffa2fb}
+
+
+Verify that calibration constants exist for a certain module. 
+\begin{DoxyParams}{Parameters}
+\item[{\em module\_\-id}]id Or serial number of a module which uniquely identifies a detector module of a certain type. \item[{\em module\_\-type}]the type of the detector module \item[{\em n\_\-cells}]the number of cells on this module. Return true if calibration constants exist for the given module and the number of cells matches the number of calibration constants. \end{DoxyParams}
+
+
+Implements {\bf Calibration} \doxyref{}{p.}{classCalibration_a04c8f21c6e77cd3c91c858ca2c9373c4}.
+
+Definition at line 28 of file NoOpCalibration.hh.\index{NoOpCalibration@{NoOpCalibration}!getCalibratedValue@{getCalibratedValue}}
+\index{getCalibratedValue@{getCalibratedValue}!NoOpCalibration@{NoOpCalibration}}
+\subsubsection[{getCalibratedValue}]{\setlength{\rightskip}{0pt plus 5cm}Float\_\-t NoOpCalibration::getCalibratedValue (UInt\_\-t {\em module\_\-index}, \/  UInt\_\-t {\em module\_\-type}, \/  UInt\_\-t {\em cell\_\-index}, \/  Float\_\-t {\em adc\_\-value}) const\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classNoOpCalibration_a8dd43819c4e5bb09e097f4db360a57fe}
+
+
+Determine from a pedestal subtracted ADC value a calibrated value which are identical for this very lazy calibrator. 
+\begin{DoxyParams}{Parameters}
+\item[{\em module\_\-index}]index of the module a module is considered to be a unit which is always calibrated in one calibration run. \item[{\em module\_\-type}]the type of the detector module \item[{\em cell\_\-index}]\item[{\em adc\_\-value}]the ADC value which should be calibrated. \end{DoxyParams}
+
+
+Implements {\bf Calibration} \doxyref{}{p.}{classCalibration_aca88d93a445ba3021c05dd61b293568c}.
+
+Definition at line 20 of file NoOpCalibration.hh.\index{NoOpCalibration@{NoOpCalibration}!getMiniumADCForMipThreshold@{getMiniumADCForMipThreshold}}
+\index{getMiniumADCForMipThreshold@{getMiniumADCForMipThreshold}!NoOpCalibration@{NoOpCalibration}}
+\subsubsection[{getMiniumADCForMipThreshold}]{\setlength{\rightskip}{0pt plus 5cm}Int\_\-t NoOpCalibration::getMiniumADCForMipThreshold (Float\_\-t {\em mip\_\-energy\_\-fraction}) const\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classNoOpCalibration_a8b478c6680b5980c2b87cedc8a589989}
+
+
+Get the minimum adc value mips will have for the given energy fraction on all pads. 
+\begin{DoxyParams}{Parameters}
+\item[{\em mip\_\-energy\_\-fraction}]the energy in mips \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+minimum adc value which is below the given energy on all pads. This method can be used to get the lowest adc value a mip of the given energy fraction will have on all pads. This value is useful to select candidates before actually performing th calibration. This function is intended to be called at the beginning of each event. 
+\end{DoxyReturn}
+
+
+Implements {\bf Calibration} \doxyref{}{p.}{classCalibration_a4e45f1eca0d4fdf19ad76b8f581aee12}.
+
+Definition at line 38 of file NoOpCalibration.hh.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+NoOpCalibration.hh\end{DoxyCompactItemize}

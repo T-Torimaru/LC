@@ -1,0 +1,128 @@
+\section{CALICE::ProgressHandler Class Reference}
+\label{classCALICE_1_1ProgressHandler}\index{CALICE::ProgressHandler@{CALICE::ProgressHandler}}
+
+
+Show processing progess and catch SIGINT signals and abort processing safely.  
+
+
+{\ttfamily \#include $<$ProgressHandler.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Processor $\ast$ {\bfseries newProcessor} ()\label{classCALICE_1_1ProgressHandler_ab9a164476b9d7ae48a62bdbf31d3d219}
+
+\item 
+void {\bfseries init} ()\label{classCALICE_1_1ProgressHandler_a054b69defd0b5ae194a05a3bbef53d9c}
+
+\item 
+void {\bfseries processRunHeader} (LCRunHeader $\ast$run)\label{classCALICE_1_1ProgressHandler_a5692dc60a5b481b81dfdb88cafd5e84e}
+
+\item 
+void {\bfseries processEvent} (LCEvent $\ast$evtP)\label{classCALICE_1_1ProgressHandler_ad9abf9d99f305ba58d64f83dbd6dfa29}
+
+\item 
+void {\bfseries end} ()\label{classCALICE_1_1ProgressHandler_a60b8c8df282bbb3901dd5dfb6f02403d}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf setAborted} ()\label{classCALICE_1_1ProgressHandler_a5258ed9a3ad4f59da1045a0790e4cc74}
+
+\begin{DoxyCompactList}\small\item\em This will cause the analysis to abort when done with the current event. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool {\bf isAborted} ()
+\begin{DoxyCompactList}\small\item\em check if (control-\/C) was catched \item\end{DoxyCompactList}\item 
+static void {\bf installSignalHandler} ()\label{classCALICE_1_1ProgressHandler_add3606096993d34657d1a4cb4e5828f9}
+
+\begin{DoxyCompactList}\small\item\em install signal handler \item\end{DoxyCompactList}\item 
+static void {\bf removeSignalHandler} ()\label{classCALICE_1_1ProgressHandler_a6f371ea8b3b47432677bdf580737d971}
+
+\begin{DoxyCompactList}\small\item\em remove signal handler \item\end{DoxyCompactList}\item 
+static void {\bf termSignalHandler} (int sig)
+\begin{DoxyCompactList}\small\item\em the signal handler \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int {\bfseries \_\-nEvents}\label{classCALICE_1_1ProgressHandler_a9dfcf152bfc410de7061322a16e8e143}
+
+\item 
+unsigned int {\bfseries \_\-nRuns}\label{classCALICE_1_1ProgressHandler_abe779e4dea0141cfc502f334a378d30f}
+
+\item 
+unsigned int {\bfseries \_\-nEventsRun}\label{classCALICE_1_1ProgressHandler_a8b8a9805b0e8be5e71a33e1bb83dfbd7}
+
+\item 
+unsigned int {\bfseries \_\-nEventsAtLastReport}\label{classCALICE_1_1ProgressHandler_a0ebe108e87b9734df8121047510cc9f9}
+
+\item 
+int {\bfseries \_\-reportInterval}\label{classCALICE_1_1ProgressHandler_a1fb632e1526f217b10742b3349c38066}
+
+\item 
+time\_\-t {\bfseries \_\-startTime}\label{classCALICE_1_1ProgressHandler_a81d4a06c332d3507461c85c18c42feb5}
+
+\item 
+time\_\-t {\bfseries \_\-timeOfLastReport}\label{classCALICE_1_1ProgressHandler_a42583970d0c0489eba06efcd6e406067}
+
+\item 
+clock\_\-t {\bfseries \_\-clockOfLastEvent}\label{classCALICE_1_1ProgressHandler_a3e8bf463b9445ca57fa7f226f3261d40}
+
+\item 
+clock\_\-t {\bfseries \_\-clockOfLastReport}\label{classCALICE_1_1ProgressHandler_a8b5d5c8c4a3739444664d24af7c5f6c5}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int {\bfseries \_\-\_\-abortSignalRecieved} = 0\label{classCALICE_1_1ProgressHandler_a4b61133fa96225b039b594590db90c0c}
+
+\end{DoxyCompactItemize}
+\begin{Indent}{\bf }\par
+{\em \label{_amgrpd41d8cd98f00b204e9800998ecf8427e}
+ }\begin{DoxyCompactItemize}
+\item 
+static int {\bfseries \_\-\_\-signalHandlerInstalled} = 0\label{classCALICE_1_1ProgressHandler_a8a5e1b9339c607b2fbc3e6c5072111e1}
+
+\item 
+static struct sigaction {\bfseries \_\-\_\-oldSignalHandler}\label{classCALICE_1_1ProgressHandler_a372d47760bc435e8ed6318199ac4fd7c}
+
+\item 
+static struct sigaction {\bfseries \_\-\_\-newSignalHandler}\label{classCALICE_1_1ProgressHandler_a5eec5f8fb4c6d335b7c44f8959170bb8}
+
+\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Show processing progess and catch SIGINT signals and abort processing safely. Every several seconds the current run and event number is printed to the screen. If SIGINT is sent to the process (e.g. CTRL-\/C) the processEvent will throw a marlin::StopProcessingException. Thus, abort processing. After, that the Processor::end() methods of all active processors will be called. 
+
+Definition at line 17 of file ProgressHandler.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::ProgressHandler@{CALICE::ProgressHandler}!isAborted@{isAborted}}
+\index{isAborted@{isAborted}!CALICE::ProgressHandler@{CALICE::ProgressHandler}}
+\subsubsection[{isAborted}]{\setlength{\rightskip}{0pt plus 5cm}static bool CALICE::ProgressHandler::isAborted ()\hspace{0.3cm}{\ttfamily  [inline, static, protected]}}\label{classCALICE_1_1ProgressHandler_a8eaf9b91996f83d713fb738a6e088bcd}
+
+
+check if (control-\/C) was catched \begin{DoxyReturn}{Returns}
+true if control-\/C was catched 
+\end{DoxyReturn}
+
+
+Definition at line 60 of file ProgressHandler.hh.\index{CALICE::ProgressHandler@{CALICE::ProgressHandler}!termSignalHandler@{termSignalHandler}}
+\index{termSignalHandler@{termSignalHandler}!CALICE::ProgressHandler@{CALICE::ProgressHandler}}
+\subsubsection[{termSignalHandler}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::ProgressHandler::termSignalHandler (int {\em sig})\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classCALICE_1_1ProgressHandler_af312ee2a43b572f39c22b1668626a8d2}
+
+
+the signal handler installed by \doxyref{installSignalHandler}{p.}{classCALICE_1_1ProgressHandler_add3606096993d34657d1a4cb4e5828f9} 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em sig}]signal for which the handler got called \end{DoxyParams}
+
+
+Definition at line 130 of file ProgressHandler.cc.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+ProgressHandler.hh\item 
+ProgressHandler.cc\end{DoxyCompactItemize}

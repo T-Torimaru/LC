@@ -1,0 +1,302 @@
+\section{CALICE::CellNeighbours Class Reference}
+\label{classCALICE_1_1CellNeighbours}\index{CALICE::CellNeighbours@{CALICE::CellNeighbours}}
+
+
+class to hold information of neighbouring cells  
+
+
+{\ttfamily \#include $<$CellNeighbours.hh$>$}\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf ENeighbourType} \{ {\bf direct}, 
+{\bf corner}, 
+{\bfseries k\_\-NneighbourTypes}
+ \}
+\begin{DoxyCompactList}\small\item\em neighbour type \item\end{DoxyCompactList}\item 
+enum {\bf ENeighbourLocation} \{ {\bf module}, 
+{\bf forward}, 
+{\bf backward}, 
+{\bfseries k\_\-NneighbourLocations}
+ \}
+\begin{DoxyCompactList}\small\item\em neighbour location \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CellNeighbours} (const lcio::LCObject $\ast$obj)
+\begin{DoxyCompactList}\small\item\em copy constructor \item\end{DoxyCompactList}\item 
+{\bf CellNeighbours} (const lcio::LCGenericObject \&obj)
+\begin{DoxyCompactList}\small\item\em copy constructor \item\end{DoxyCompactList}\item 
+{\bf CellNeighbours} (const int cellID)
+\begin{DoxyCompactList}\small\item\em constructor \item\end{DoxyCompactList}\item 
+void {\bf addNeighbour} (const int cellID, const {\bf ENeighbourType} type, const {\bf ENeighbourLocation} location)
+\begin{DoxyCompactList}\small\item\em add a neighbour cell \item\end{DoxyCompactList}\item 
+int {\bf getCellID} () const 
+\begin{DoxyCompactList}\small\item\em get (Mokka) cell ID of master cell \item\end{DoxyCompactList}\item 
+const std::vector$<$ int $>$ \& {\bf getNeighbours} (const {\bf ENeighbourType} type, const {\bf ENeighbourLocation} location) const 
+\begin{DoxyCompactList}\small\item\em get vector of cell neighbours \item\end{DoxyCompactList}\item 
+const std::vector$<$ int $>$ {\bf getNeighbours} (const {\bf ENeighbourType} type) const 
+\begin{DoxyCompactList}\small\item\em get vector of cell neighbours \item\end{DoxyCompactList}\item 
+const std::vector$<$ int $>$ {\bf getNeighbours} (const {\bf ENeighbourLocation} location) const 
+\begin{DoxyCompactList}\small\item\em get vector of cell neighbours \item\end{DoxyCompactList}\item 
+const std::vector$<$ int $>$ {\bf getNeighbours} () const 
+\begin{DoxyCompactList}\small\item\em get vector of cell neighbours \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const 
+\item 
+const std::string {\bf getDataDescription} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries EInt} \{ {\bfseries k\_\-CellID}, 
+{\bfseries k\_\-NfixedNumbers}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries copyFromLCGenericObject} (const lcio::LCGenericObject \&obj)\label{classCALICE_1_1CellNeighbours_a399c77122e29b11f0579209c2879a27c}
+
+\item 
+void {\bfseries loadValues} ()\label{classCALICE_1_1CellNeighbours_a201d35e317d7483f2ae8807c5dd09ae6}
+
+\item 
+void {\bfseries saveValues} ()\label{classCALICE_1_1CellNeighbours_a65f20f02b3553a3a0abb5cf9483f3aee}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::ostringstream {\bfseries \_\-dataDescription}\label{classCALICE_1_1CellNeighbours_aaf784e8920b14763e7daedf2b88499dc}
+
+\item 
+std::vector$<$ int $>$ {\bfseries \_\-neighbourVectors} [k\_\-NneighbourTypes][k\_\-NneighbourLocations]\label{classCALICE_1_1CellNeighbours_a0f613c9c20d750a3399978eb21263328}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const std::string {\bfseries neighbourFixedNames} [k\_\-NfixedNumbers] = \{ \char`\"{}cellID\char`\"{} \}\label{classCALICE_1_1CellNeighbours_aee105726874440a5f4c3bfbae89de46b}
+
+\item 
+static const std::string {\bfseries neighbourTypeNames} [k\_\-NneighbourTypes]
+\item 
+static const std::string {\bfseries neighbourLocationNames} [k\_\-NneighbourLocations]
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+class to hold information of neighbouring cells \begin{DoxyAuthor}{Author}
+{\tt Benjamin.Lutz@desy.de} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+June 2009 
+\end{DoxyDate}
+
+
+Definition at line 21 of file CellNeighbours.hh.
+
+\subsection{Member Enumeration Documentation}
+\index{CALICE::CellNeighbours@{CALICE::CellNeighbours}!ENeighbourLocation@{ENeighbourLocation}}
+\index{ENeighbourLocation@{ENeighbourLocation}!CALICE::CellNeighbours@{CALICE::CellNeighbours}}
+\subsubsection[{ENeighbourLocation}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf CALICE::CellNeighbours::ENeighbourLocation}}\label{classCALICE_1_1CellNeighbours_affedb8e9d258cd5d11a65c921b92977f}
+
+
+neighbour location \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{module@{module}!CALICE::CellNeighbours@{CALICE::CellNeighbours}}\index{CALICE::CellNeighbours@{CALICE::CellNeighbours}!module@{module}}\item[{\em 
+module\label{classCALICE_1_1CellNeighbours_affedb8e9d258cd5d11a65c921b92977fabb1923c9ce736bd00b553168bce257b1}
+}]neighbours within the same module \index{forward@{forward}!CALICE::CellNeighbours@{CALICE::CellNeighbours}}\index{CALICE::CellNeighbours@{CALICE::CellNeighbours}!forward@{forward}}\item[{\em 
+forward\label{classCALICE_1_1CellNeighbours_affedb8e9d258cd5d11a65c921b92977fa4e5216e19431a86e213595e2c942a68d}
+}]neighbours in the next module (beam direction) \index{backward@{backward}!CALICE::CellNeighbours@{CALICE::CellNeighbours}}\index{CALICE::CellNeighbours@{CALICE::CellNeighbours}!backward@{backward}}\item[{\em 
+backward\label{classCALICE_1_1CellNeighbours_affedb8e9d258cd5d11a65c921b92977fa79354e5a35520f80687b76faf7aa62a4}
+}]neighbours in the previous module \end{description}
+\end{Desc}
+
+
+
+Definition at line 44 of file CellNeighbours.hh.\index{CALICE::CellNeighbours@{CALICE::CellNeighbours}!ENeighbourType@{ENeighbourType}}
+\index{ENeighbourType@{ENeighbourType}!CALICE::CellNeighbours@{CALICE::CellNeighbours}}
+\subsubsection[{ENeighbourType}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf CALICE::CellNeighbours::ENeighbourType}}\label{classCALICE_1_1CellNeighbours_a89a97dd297d98694875175c22f6c80b9}
+
+
+neighbour type \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{direct@{direct}!CALICE::CellNeighbours@{CALICE::CellNeighbours}}\index{CALICE::CellNeighbours@{CALICE::CellNeighbours}!direct@{direct}}\item[{\em 
+direct\label{classCALICE_1_1CellNeighbours_a89a97dd297d98694875175c22f6c80b9ae61ea93bbf272464e5403ddfbf0a60fc}
+}]describes the neighbours that have a common side/surface with the original cell \index{corner@{corner}!CALICE::CellNeighbours@{CALICE::CellNeighbours}}\index{CALICE::CellNeighbours@{CALICE::CellNeighbours}!corner@{corner}}\item[{\em 
+corner\label{classCALICE_1_1CellNeighbours_a89a97dd297d98694875175c22f6c80b9a2f63e34121a3a79e0232d0568e51c154}
+}]ENeighbourType::corner describes the neighbours that connect to the original cell via a corner \end{description}
+\end{Desc}
+
+
+
+Definition at line 34 of file CellNeighbours.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CALICE::CellNeighbours@{CALICE::CellNeighbours}!CellNeighbours@{CellNeighbours}}
+\index{CellNeighbours@{CellNeighbours}!CALICE::CellNeighbours@{CALICE::CellNeighbours}}
+\subsubsection[{CellNeighbours}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::CellNeighbours::CellNeighbours (const lcio::LCObject $\ast$ {\em obj})}\label{classCALICE_1_1CellNeighbours_a190a549359a8902d0d8c5386b23861cd}
+
+
+copy constructor This constructor is meant to copy-\/convert a \doxyref{CellNeighbours}{p.}{classCALICE_1_1CellNeighbours} object from a LCCollection::getElementAt() call. In contrary to other LCGenericObject derivates, this doesn't reference to the old object, but makes a full copy.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em obj}]LCObject pointer to a \doxyref{CellNeighbours}{p.}{classCALICE_1_1CellNeighbours} object \end{DoxyParams}
+
+
+Definition at line 15 of file CellNeighbours.cc.\index{CALICE::CellNeighbours@{CALICE::CellNeighbours}!CellNeighbours@{CellNeighbours}}
+\index{CellNeighbours@{CellNeighbours}!CALICE::CellNeighbours@{CALICE::CellNeighbours}}
+\subsubsection[{CellNeighbours}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::CellNeighbours::CellNeighbours (const lcio::LCGenericObject \& {\em obj})}\label{classCALICE_1_1CellNeighbours_a34ce6eed0846685f8b32342f5249820f}
+
+
+copy constructor This constructor is meant to copy-\/convert a \doxyref{CellNeighbours}{p.}{classCALICE_1_1CellNeighbours} object from a LCGenericObject.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em obj}]LCGenericObject of type \doxyref{CellNeighbours}{p.}{classCALICE_1_1CellNeighbours} which should be copied \end{DoxyParams}
+
+
+Definition at line 25 of file CellNeighbours.cc.\index{CALICE::CellNeighbours@{CALICE::CellNeighbours}!CellNeighbours@{CellNeighbours}}
+\index{CellNeighbours@{CellNeighbours}!CALICE::CellNeighbours@{CALICE::CellNeighbours}}
+\subsubsection[{CellNeighbours}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::CellNeighbours::CellNeighbours (const int {\em cellID})}\label{classCALICE_1_1CellNeighbours_ad6d1861dd68ea60d4b3020fd8b623c49}
+
+
+constructor 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em cellID}](Mokka) cell ID of the master cell \end{DoxyParams}
+
+
+Definition at line 44 of file CellNeighbours.cc.
+
+\subsection{Member Function Documentation}
+\index{CALICE::CellNeighbours@{CALICE::CellNeighbours}!addNeighbour@{addNeighbour}}
+\index{addNeighbour@{addNeighbour}!CALICE::CellNeighbours@{CALICE::CellNeighbours}}
+\subsubsection[{addNeighbour}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CellNeighbours::addNeighbour (const int {\em cellID}, \/  const {\bf ENeighbourType} {\em type}, \/  const {\bf ENeighbourLocation} {\em location})}\label{classCALICE_1_1CellNeighbours_ab67f7a002e853e749d4f376f423728e6}
+
+
+add a neighbour cell 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em cellID}](Mokka) cell ID of the neighbour cell \item[\mbox{$\leftarrow$} {\em type}]cell neighbour type \item[\mbox{$\leftarrow$} {\em location}]cell neighbour location\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxyref{ENeighbourType}{p.}{classCALICE_1_1CellNeighbours_a89a97dd297d98694875175c22f6c80b9} 
+
+\doxyref{ENeighbourLocation}{p.}{classCALICE_1_1CellNeighbours_affedb8e9d258cd5d11a65c921b92977f} 
+\end{DoxySeeAlso}
+
+
+Definition at line 48 of file CellNeighbours.cc.\index{CALICE::CellNeighbours@{CALICE::CellNeighbours}!getCellID@{getCellID}}
+\index{getCellID@{getCellID}!CALICE::CellNeighbours@{CALICE::CellNeighbours}}
+\subsubsection[{getCellID}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::CellNeighbours::getCellID () const}\label{classCALICE_1_1CellNeighbours_a33159faedeb9914b99aa34b9475ecc3e}
+
+
+get (Mokka) cell ID of master cell \begin{DoxyReturn}{Returns}
+(Mokka) cell ID of master cell 
+\end{DoxyReturn}
+
+
+Definition at line 53 of file CellNeighbours.cc.\index{CALICE::CellNeighbours@{CALICE::CellNeighbours}!getDataDescription@{getDataDescription}}
+\index{getDataDescription@{getDataDescription}!CALICE::CellNeighbours@{CALICE::CellNeighbours}}
+\subsubsection[{getDataDescription}]{\setlength{\rightskip}{0pt plus 5cm}const std::string CALICE::CellNeighbours::getDataDescription () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CellNeighbours_a60088866e16cca8e21a193a2f49b43c1}
+\begin{DoxyReturn}{Returns}
+LCGenericObject data description 
+\end{DoxyReturn}
+
+
+Definition at line 141 of file CellNeighbours.hh.\index{CALICE::CellNeighbours@{CALICE::CellNeighbours}!getNeighbours@{getNeighbours}}
+\index{getNeighbours@{getNeighbours}!CALICE::CellNeighbours@{CALICE::CellNeighbours}}
+\subsubsection[{getNeighbours}]{\setlength{\rightskip}{0pt plus 5cm}const std::vector$<$ int $>$ CALICE::CellNeighbours::getNeighbours () const}\label{classCALICE_1_1CellNeighbours_a4c73949c6faeccabc206522d86037180}
+
+
+get vector of cell neighbours \begin{DoxyReturn}{Returns}
+vector with (Mokka) cell IDs from all neighbours 
+\end{DoxyReturn}
+
+
+Definition at line 61 of file CellNeighbours.cc.\index{CALICE::CellNeighbours@{CALICE::CellNeighbours}!getNeighbours@{getNeighbours}}
+\index{getNeighbours@{getNeighbours}!CALICE::CellNeighbours@{CALICE::CellNeighbours}}
+\subsubsection[{getNeighbours}]{\setlength{\rightskip}{0pt plus 5cm}const std::vector$<$ int $>$ CALICE::CellNeighbours::getNeighbours (const {\bf ENeighbourLocation} {\em location}) const}\label{classCALICE_1_1CellNeighbours_a6a17a783fdfd9ad8e758dcd78a2ad262}
+
+
+get vector of cell neighbours 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em location}]location of the neighbours requested\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector with (Mokka) cell IDs from the neighbours of the requested location 
+\end{DoxyReturn}
+
+
+Definition at line 82 of file CellNeighbours.cc.\index{CALICE::CellNeighbours@{CALICE::CellNeighbours}!getNeighbours@{getNeighbours}}
+\index{getNeighbours@{getNeighbours}!CALICE::CellNeighbours@{CALICE::CellNeighbours}}
+\subsubsection[{getNeighbours}]{\setlength{\rightskip}{0pt plus 5cm}const std::vector$<$ int $>$ CALICE::CellNeighbours::getNeighbours (const {\bf ENeighbourType} {\em type}) const}\label{classCALICE_1_1CellNeighbours_a95ed1e7949c32398354fc8885d7f642c}
+
+
+get vector of cell neighbours 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em type}]type of the neighbours requested\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector with (Mokka) cell IDs from the neighbours of the requested type 
+\end{DoxyReturn}
+
+
+Definition at line 72 of file CellNeighbours.cc.\index{CALICE::CellNeighbours@{CALICE::CellNeighbours}!getNeighbours@{getNeighbours}}
+\index{getNeighbours@{getNeighbours}!CALICE::CellNeighbours@{CALICE::CellNeighbours}}
+\subsubsection[{getNeighbours}]{\setlength{\rightskip}{0pt plus 5cm}const std::vector$<$ int $>$ \& CALICE::CellNeighbours::getNeighbours (const {\bf ENeighbourType} {\em type}, \/  const {\bf ENeighbourLocation} {\em location}) const}\label{classCALICE_1_1CellNeighbours_ae25db0074d4bc41acf76cd01e9df08db}
+
+
+get vector of cell neighbours This function is more efficient as the other getNeighbours function, as a const reference to the internal data is returned and no copying of elements is necessary.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em type}]type of the neighbours requested \item[\mbox{$\leftarrow$} {\em location}]location of the neighbours requested\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector with (Mokka) cell IDs from the neighbours of the requested type and location 
+\end{DoxyReturn}
+
+
+Definition at line 57 of file CellNeighbours.cc.\index{CALICE::CellNeighbours@{CALICE::CellNeighbours}!getTypeName@{getTypeName}}
+\index{getTypeName@{getTypeName}!CALICE::CellNeighbours@{CALICE::CellNeighbours}}
+\subsubsection[{getTypeName}]{\setlength{\rightskip}{0pt plus 5cm}const std::string CALICE::CellNeighbours::getTypeName () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CellNeighbours_a9bf6a7e74b1e8f98153ca3dce59523b7}
+\begin{DoxyReturn}{Returns}
+LCGenericObject data type name 
+\end{DoxyReturn}
+
+
+Definition at line 137 of file CellNeighbours.hh.
+
+\subsection{Field Documentation}
+\index{CALICE::CellNeighbours@{CALICE::CellNeighbours}!neighbourLocationNames@{neighbourLocationNames}}
+\index{neighbourLocationNames@{neighbourLocationNames}!CALICE::CellNeighbours@{CALICE::CellNeighbours}}
+\subsubsection[{neighbourLocationNames}]{\setlength{\rightskip}{0pt plus 5cm}const std::string CALICE::CellNeighbours::neighbourLocationNames\hspace{0.3cm}{\ttfamily  [static, private]}}\label{classCALICE_1_1CellNeighbours_a064d2b1a737839e76c6ca0d33320be72}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ { "module",
+                                                                                 
+                           "forward",
+                                                                                 
+                           "backward"}
+\end{DoxyCode}
+
+
+Definition at line 50 of file CellNeighbours.hh.\index{CALICE::CellNeighbours@{CALICE::CellNeighbours}!neighbourTypeNames@{neighbourTypeNames}}
+\index{neighbourTypeNames@{neighbourTypeNames}!CALICE::CellNeighbours@{CALICE::CellNeighbours}}
+\subsubsection[{neighbourTypeNames}]{\setlength{\rightskip}{0pt plus 5cm}const std::string CALICE::CellNeighbours::neighbourTypeNames\hspace{0.3cm}{\ttfamily  [static, private]}}\label{classCALICE_1_1CellNeighbours_a2eedc7bbb8e228cae9884b776d6761f0}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ { "direct",
+                                                                                 
+                   "corner" }
+\end{DoxyCode}
+
+
+Definition at line 49 of file CellNeighbours.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+CellNeighbours.hh\item 
+CellNeighbours.cc\end{DoxyCompactItemize}

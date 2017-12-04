@@ -1,0 +1,66 @@
+\section{FastSpaceHolder$<$ \_\-Tp $>$ Class Template Reference}
+\label{classFastSpaceHolder}\index{FastSpaceHolder@{FastSpaceHolder}}
+
+
+Fast version, but: it is impossible put into this container something with implicit or explicit ctor/dtor (no virtual functions).  
+
+
+{\ttfamily \#include $<$RecoUtil.hh$>$}Inheritance diagram for FastSpaceHolder$<$ \_\-Tp $>$::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classFastSpaceHolder}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries FastSpaceHolder} ({\bf SpacePool} \&pool, unsigned prealloc=256)\label{classFastSpaceHolder_a167f87252ec3e7efe1733d7471f873af}
+
+\item 
+virtual {\bf $\sim$FastSpaceHolder} ()\label{classFastSpaceHolder_a9159af3587150c073efbdf9767675eae}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+\_\-Tp $\ast$ {\bf array} (unsigned n)
+\begin{DoxyCompactList}\small\item\em Create array of type \_\-Tp. \item\end{DoxyCompactList}\item 
+\_\-Tp $\ast$ {\bf alloc} ()\label{classFastSpaceHolder_a0ad44bb4cc8378a4f5596c523ea1c8a9}
+
+\begin{DoxyCompactList}\small\item\em Allocate space for \_\-Tp. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries FastSpaceHolder} ({\bf FastSpaceHolder}$<$ \_\-Tp $>$ \&x, bool)\label{classFastSpaceHolder_a8d48587881491d4aa72aad07e5899a2e}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\_\-Tp $\ast$ {\bfseries data}\label{classFastSpaceHolder_abb9b40a2bbb5b57766b28c406af250f9}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class \_\-Tp$>$ class FastSpaceHolder$<$ \_\-Tp $>$}
+
+Fast version, but: it is impossible put into this container something with implicit or explicit ctor/dtor (no virtual functions). 
+
+Definition at line 123 of file RecoUtil.hh.
+
+\subsection{Member Function Documentation}
+\index{FastSpaceHolder@{FastSpaceHolder}!array@{array}}
+\index{array@{array}!FastSpaceHolder@{FastSpaceHolder}}
+\subsubsection[{array}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class \_\-Tp$>$ \_\-Tp$\ast$ {\bf FastSpaceHolder}$<$ \_\-Tp $>$::array (unsigned {\em n})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classFastSpaceHolder_abbfd87752276f2833ed20a1410bfaa74}
+
+
+Create array of type \_\-Tp. 
+\begin{DoxyParams}{Parameters}
+\item[{\em n}]size of array \end{DoxyParams}
+
+
+Definition at line 142 of file RecoUtil.hh.
+
+Referenced by FastSpaceHolder$<$ RSLink $>$::alloc().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+RecoUtil.hh\end{DoxyCompactItemize}

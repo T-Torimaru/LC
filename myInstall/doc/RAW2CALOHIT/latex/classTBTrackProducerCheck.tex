@@ -1,0 +1,99 @@
+\section{TBTrackProducerCheck Class Reference}
+\label{classTBTrackProducerCheck}\index{TBTrackProducerCheck@{TBTrackProducerCheck}}
+Inheritance diagram for TBTrackProducerCheck::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classTBTrackProducerCheck}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Processor $\ast$ {\bfseries newProcessor} ()\label{classTBTrackProducerCheck_a52c88c93fa514c84d0fa64d7b9a91bb4}
+
+\item 
+virtual void {\bf Init} ()
+\begin{DoxyCompactList}\small\item\em Called at the begin of the job before anything is read. \item\end{DoxyCompactList}\item 
+virtual void {\bfseries initHists} (unsigned p, bool t)\label{classTBTrackProducerCheck_ab8db52f3eac5938feed32c631ec33e85}
+
+\item 
+virtual void {\bf ProcessRunHeader} (LCRunHeader $\ast$run)\label{classTBTrackProducerCheck_ad4e1b5a9d27c078a6d5b20c200b51823}
+
+\begin{DoxyCompactList}\small\item\em Called for every run. \item\end{DoxyCompactList}\item 
+virtual void {\bf ProcessEvent} (LCEvent $\ast$evt)\label{classTBTrackProducerCheck_ac83ba8232136941271cfef652836094d}
+
+\begin{DoxyCompactList}\small\item\em Called for every event -\/ the working horse. \item\end{DoxyCompactList}\item 
+virtual void {\bf End} ()\label{classTBTrackProducerCheck_a04fd5ebf531bdba12e07c9da6aeb5f46}
+
+\begin{DoxyCompactList}\small\item\em Called after data processing for clean up. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TH1F $\ast$ {\bf hNumb} [2][17]\label{classTBTrackProducerCheck_a312c63e82786bcf37cb73181499d901e}
+
+\begin{DoxyCompactList}\small\item\em Method to write the histograms in a ROOT file. \item\end{DoxyCompactList}\item 
+TH1F $\ast$ {\bfseries hPatt} [2][17]\label{classTBTrackProducerCheck_afb76754f76b38f3dc7462558a8932be3}
+
+\item 
+TH1F $\ast$ {\bfseries hPar0} [2][17]\label{classTBTrackProducerCheck_a43606e256daf8d35f04084ed6be3ed90}
+
+\item 
+TH1F $\ast$ {\bfseries hPar1} [2][17]\label{classTBTrackProducerCheck_a30564020aa68a8b3c6106c3b4a450370}
+
+\item 
+TH1F $\ast$ {\bfseries hErr0} [2][17]\label{classTBTrackProducerCheck_a05abcd6e8fa279cd0f2323776522ffc4}
+
+\item 
+TH1F $\ast$ {\bfseries hErr1} [2][17]\label{classTBTrackProducerCheck_aa3904bfd80ad62890136a8c703bc80ff}
+
+\item 
+TH1F $\ast$ {\bfseries hCorr} [2][17]\label{classTBTrackProducerCheck_a8d2a10d2c363416d792a52dac273e940}
+
+\item 
+TH1F $\ast$ {\bfseries hProb} [2][17]\label{classTBTrackProducerCheck_a7a20c547f7cea4fc2f96430c61596509}
+
+\item 
+TH1F $\ast$ {\bfseries hHits} [2][17][4]\label{classTBTrackProducerCheck_afad31cbb959ca8bf00c9dcd4f1f5608c}
+
+\item 
+TH2F $\ast$ {\bfseries hNmb2} [2][17]\label{classTBTrackProducerCheck_a537737addf64198ef899b544e5bcc56a}
+
+\item 
+TH2F $\ast$ {\bfseries hPrb2} [2][17]\label{classTBTrackProducerCheck_ad89eaff5c26155f0be4a2a90b1be18c2}
+
+\item 
+TH1F $\ast$ {\bfseries hMPr0} [2][17]\label{classTBTrackProducerCheck_a9e9c5ec4dc1ded9f7f5db19201c4cd80}
+
+\item 
+TH1F $\ast$ {\bfseries hMPr1} [2][17]\label{classTBTrackProducerCheck_a20fa167b71982b48ae9d40b4ee77257c}
+
+\item 
+TH1F $\ast$ {\bfseries hMDf0} [2][17]\label{classTBTrackProducerCheck_ac124b49e9093d72ed02cbaa83fe025ec}
+
+\item 
+TH1F $\ast$ {\bfseries hMDf1} [2][17]\label{classTBTrackProducerCheck_ab7a5a04286cfad781a1764ae54c4d2b1}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 17 of file TBTrackProducerCheck.hh.
+
+\subsection{Member Function Documentation}
+\index{TBTrackProducerCheck@{TBTrackProducerCheck}!Init@{Init}}
+\index{Init@{Init}!TBTrackProducerCheck@{TBTrackProducerCheck}}
+\subsubsection[{Init}]{\setlength{\rightskip}{0pt plus 5cm}void TBTrackProducerCheck::Init ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classTBTrackProducerCheck_a12c14a16f9145b8f04ca63f731e540f4}
+
+
+Called at the begin of the job before anything is read. Use to initialize the processor, e.g. book histograms. 
+
+Implements {\bf TBTrackBaseProcessor} \doxyref{}{p.}{classTBTrackBaseProcessor}.
+
+Definition at line 97 of file TBTrackProducerCheck.cc.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+TBTrackProducerCheck.hh\item 
+TBTrackProducerCheck.cc\end{DoxyCompactItemize}

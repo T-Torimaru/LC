@@ -1,0 +1,63 @@
+\section{CALICE::MultipleConditionsChangeDelegator$<$ T $>$ Class Template Reference}
+\label{classCALICE_1_1MultipleConditionsChangeDelegator}\index{CALICE::MultipleConditionsChangeDelegator@{CALICE::MultipleConditionsChangeDelegator}}
+
+
+Listens for conditions data changes and delegates the information to a class.  
+
+
+{\ttfamily \#include $<$MultipleConditionsChangeDelegator.hh$>$}\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef void(T::$\ast$ {\bfseries ConditionsChangeHandleFunc\_\-t} )(lcio::LCCollection $\ast$col, unsigned int index)\label{classCALICE_1_1MultipleConditionsChangeDelegator_af8e908739880440829d0055c2ec360fa}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries MultipleConditionsChangeDelegator} (T $\ast$responsible, ConditionsChangeHandleFunc\_\-t a\_\-func, unsigned int index)\label{classCALICE_1_1MultipleConditionsChangeDelegator_a90c159262e4f9ef11d0c3ede5d90516c}
+
+\item 
+void {\bf conditionsChanged} (lcio::LCCollection $\ast$col)
+\begin{DoxyCompactList}\small\item\em Be notified if conditions data changes and redirect changes to responsible class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ConditionsChangeHandleFunc\_\-t {\bf \_\-funcP}\label{classCALICE_1_1MultipleConditionsChangeDelegator_a4a645a8a5db35c8c8841a770c0a64188}
+
+\begin{DoxyCompactList}\small\item\em method to be called if the conditions data changed \item\end{DoxyCompactList}\item 
+T $\ast$ {\bf \_\-responsible}\label{classCALICE_1_1MultipleConditionsChangeDelegator_a64d4deb6c673f64dfe2c1be72543714a}
+
+\begin{DoxyCompactList}\small\item\em the object which will take care of the change \item\end{DoxyCompactList}\item 
+unsigned int {\bfseries \_\-index}\label{classCALICE_1_1MultipleConditionsChangeDelegator_a3a49a4d76e2e0f374b4c526339ac970b}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$ class CALICE::MultipleConditionsChangeDelegator$<$ T $>$}
+
+Listens for conditions data changes and delegates the information to a class. a class can redirect several conditions data changes to itself. \begin{DoxySeeAlso}{See also}
+testConditionsDataDelegator.cc 
+\end{DoxySeeAlso}
+
+
+Definition at line 14 of file MultipleConditionsChangeDelegator.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::MultipleConditionsChangeDelegator@{CALICE::MultipleConditionsChangeDelegator}!conditionsChanged@{conditionsChanged}}
+\index{conditionsChanged@{conditionsChanged}!CALICE::MultipleConditionsChangeDelegator@{CALICE::MultipleConditionsChangeDelegator}}
+\subsubsection[{conditionsChanged}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf CALICE::MultipleConditionsChangeDelegator}$<$ T $>$::conditionsChanged (lcio::LCCollection $\ast$ {\em col})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1MultipleConditionsChangeDelegator_a90d8bb55cc290174c0d5ae842af37225}
+
+
+Be notified if conditions data changes and redirect changes to responsible class. 
+\begin{DoxyParams}{Parameters}
+\item[{\em col}]the collection containing the new conditions data \end{DoxyParams}
+
+
+Definition at line 28 of file MultipleConditionsChangeDelegator.hh.
+
+References CALICE::MultipleConditionsChangeDelegator$<$ T $>$::\_\-funcP, and CALICE::MultipleConditionsChangeDelegator$<$ T $>$::\_\-responsible.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+MultipleConditionsChangeDelegator.hh\end{DoxyCompactItemize}

@@ -1,0 +1,71 @@
+\section{CALICE::LabviewBlock2 Class Reference}
+\label{classCALICE_1_1LabviewBlock2}\index{CALICE::LabviewBlock2@{CALICE::LabviewBlock2}}
+
+
+Class for the Labview Data as acquired by the AHCAL Labview.  
+
+
+{\ttfamily \#include $<$LabviewBlock2.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf LabviewBlock2} (int CycleNr, int BunchXID, int ChipID, int EvtNr, int Channel, int TDC, int ADC, int HitBit, int GainBit)\label{classCALICE_1_1LabviewBlock2_aa409f51a0803d4ca5e6fe15204262118}
+
+\begin{DoxyCompactList}\small\item\em Convenient c'tor. \item\end{DoxyCompactList}\item 
+{\bf LabviewBlock2} (LCObject $\ast$obj)\label{classCALICE_1_1LabviewBlock2_acb5c7d7d0a0d9aecff3434f8b712745d}
+
+\begin{DoxyCompactList}\small\item\em 'Copy constructor' needed to interpret LCCollection read from file/database. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$LabviewBlock2} ()\label{classCALICE_1_1LabviewBlock2_aabc7bc093f568a532a4cf7097a84fb99}
+
+\begin{DoxyCompactList}\small\item\em Important for memory handling. \item\end{DoxyCompactList}\item 
+int {\bf GetCycleNr} () const \label{classCALICE_1_1LabviewBlock2_aabd11e4b300c4a3644ff5fbbf513af36}
+
+\begin{DoxyCompactList}\small\item\em get the CycleNr. \item\end{DoxyCompactList}\item 
+int {\bf GetBunchXID} () const \label{classCALICE_1_1LabviewBlock2_ae25025f2f9bc95883c2d6b23d38ecc8e}
+
+\begin{DoxyCompactList}\small\item\em get the BunchXID. \item\end{DoxyCompactList}\item 
+int {\bf GetChipID} () const \label{classCALICE_1_1LabviewBlock2_a6e1e7613bbf370e6a0e11ef3896bb6f9}
+
+\begin{DoxyCompactList}\small\item\em get the ChipID. \item\end{DoxyCompactList}\item 
+int {\bf GetEvtNr} () const \label{classCALICE_1_1LabviewBlock2_a8d4a67989cad5bf504971abc612653cc}
+
+\begin{DoxyCompactList}\small\item\em get the EvtNr. \item\end{DoxyCompactList}\item 
+int {\bf GetChannel} () const \label{classCALICE_1_1LabviewBlock2_a9636e5feb9a0cba799067f7b2390d25b}
+
+\begin{DoxyCompactList}\small\item\em get the Channel. \item\end{DoxyCompactList}\item 
+int {\bf GetTDC} () const \label{classCALICE_1_1LabviewBlock2_a57d069ac572fbc56de3abfaaa007eb6e}
+
+\begin{DoxyCompactList}\small\item\em get the TDC. \item\end{DoxyCompactList}\item 
+int {\bf GetADC} () const \label{classCALICE_1_1LabviewBlock2_ab3d5c72af2f3fa8dd180afb091455dee}
+
+\begin{DoxyCompactList}\small\item\em get the ADC. \item\end{DoxyCompactList}\item 
+int {\bf GetHitBit} () const \label{classCALICE_1_1LabviewBlock2_a98de016fe2fa0639ca0cc82b1eecf97f}
+
+\begin{DoxyCompactList}\small\item\em get the HitBit. \item\end{DoxyCompactList}\item 
+int {\bf GetGainBit} () const \label{classCALICE_1_1LabviewBlock2_a08c27201d04e385c9be5709ce2fb9525}
+
+\begin{DoxyCompactList}\small\item\em get the GainBit. \item\end{DoxyCompactList}\item 
+void {\bf print} (std::ostream \&os, int)\label{classCALICE_1_1LabviewBlock2_a7cb31b570b9ba0054b44af4ef8402158}
+
+\begin{DoxyCompactList}\small\item\em Convenient print method. \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1LabviewBlock2_a76502d161af6719c26997c8636fc5fa3}
+
+\begin{DoxyCompactList}\small\item\em Return the type of the class. \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1LabviewBlock2_aca62c674b9814b65e27baa3b8d11b5dc}
+
+\begin{DoxyCompactList}\small\item\em Return a brief description of the data members. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for the Labview Data as acquired by the AHCAL Labview. The class reflects that the data are received in the Labview \begin{DoxyAuthor}{Author}
+S. Lu DESY Hamburg 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Mar 20 2014 Created for New Labview data format. 
+\end{DoxyDate}
+
+
+Definition at line 24 of file LabviewBlock2.hh.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+LabviewBlock2.hh\end{DoxyCompactItemize}

@@ -1,0 +1,109 @@
+\section{CALICE::AhcSlowReadoutModMapping Class Reference}
+\label{classCALICE_1_1AhcSlowReadoutModMapping}\index{CALICE::AhcSlowReadoutModMapping@{CALICE::AhcSlowReadoutModMapping}}
+
+
+Class to store the mapping corrections for the \doxyref{AhcSlowReadoutModBlock}{p.}{classCALICE_1_1AhcSlowReadoutModBlock}.  
+
+
+{\ttfamily \#include $<$AhcSlowReadoutModMapping.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf AhcSlowReadoutModMapping} (const int module, const int CMBrecordLabel, const int HVrecordLabel, const int LVrecordLabel)\label{classCALICE_1_1AhcSlowReadoutModMapping_a04259684c066116f68e2f6e6cf95279d}
+
+\begin{DoxyCompactList}\small\item\em Constructor with initial values. \item\end{DoxyCompactList}\item 
+{\bf AhcSlowReadoutModMapping} (EVENT::LCObject $\ast$object)\label{classCALICE_1_1AhcSlowReadoutModMapping_a6739023171558d8ef871959a68d8236b}
+
+\begin{DoxyCompactList}\small\item\em Constructor from LCObject. \item\end{DoxyCompactList}\item 
+{\bf $\sim$AhcSlowReadoutModMapping} ()\label{classCALICE_1_1AhcSlowReadoutModMapping_a89417dbb3a023ddbb4a931d33b6d4ee7}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+void {\bfseries setModule} (int module)\label{classCALICE_1_1AhcSlowReadoutModMapping_a1413edfe61deff586222939ba94bee02}
+
+\item 
+void {\bfseries setCMBlabel} (int label)\label{classCALICE_1_1AhcSlowReadoutModMapping_a27b72f9ef8901bde36ebc189e93ba0e1}
+
+\item 
+void {\bfseries setHVlabel} (int label)\label{classCALICE_1_1AhcSlowReadoutModMapping_af52b00986593fbc5be5cb989d1a1ab33}
+
+\item 
+void {\bfseries setLVlabel} (int label)\label{classCALICE_1_1AhcSlowReadoutModMapping_a50dde0c78870949667e71ce67532e6e5}
+
+\item 
+int {\bf getModule} () const \label{classCALICE_1_1AhcSlowReadoutModMapping_a835efcca7195eaedbf03c0b1801f2c9b}
+
+\begin{DoxyCompactList}\small\item\em get the module number for which this record is \item\end{DoxyCompactList}\item 
+int {\bf getCMBlabel} () const 
+\begin{DoxyCompactList}\small\item\em get the label of the \doxyref{AhcSlowReadoutModBlock}{p.}{classCALICE_1_1AhcSlowReadoutModBlock} holding the data with source CMB \item\end{DoxyCompactList}\item 
+int {\bf getHVlabel} () const 
+\begin{DoxyCompactList}\small\item\em get the label of the \doxyref{AhcSlowReadoutModBlock}{p.}{classCALICE_1_1AhcSlowReadoutModBlock} holding the data with source HV supply \item\end{DoxyCompactList}\item 
+int {\bf getLVlabel} () const 
+\begin{DoxyCompactList}\small\item\em get the label of the \doxyref{AhcSlowReadoutModBlock}{p.}{classCALICE_1_1AhcSlowReadoutModBlock} holding the data with source LV monitoring \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1AhcSlowReadoutModMapping_aeb86619ed81a290c41fcb00ce96489a9}
+
+\begin{DoxyCompactList}\small\item\em Implementation of LCGenericObject::getTypeName. \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1AhcSlowReadoutModMapping_a52b2537a461e778f0b4c5e7e2b38218f}
+
+\begin{DoxyCompactList}\small\item\em Implementation of LCGenericObject::getDataDescription. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to store the mapping corrections for the \doxyref{AhcSlowReadoutModBlock}{p.}{classCALICE_1_1AhcSlowReadoutModBlock}. The slow control assembled the data from different modules into the slow control data submitted to the DAQ during 2006 and 2007. This bug was only fixed in the beginning of 2008 data taking at FNAL. This class holds the relation between data from the module and under which label it was stored.
+
+As the data comes from three different hardware sources (CMB, HV supply and LV) the record holds three numbers for the sources. If the data for one source is lost due to mapping errors, the reading will be -\/1.
+
+\begin{DoxyAuthor}{Author}
+{\tt Benjamin.Lutz@desy.de} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+November 2008 
+\end{DoxyDate}
+
+
+Definition at line 29 of file AhcSlowReadoutModMapping.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::AhcSlowReadoutModMapping@{CALICE::AhcSlowReadoutModMapping}!getCMBlabel@{getCMBlabel}}
+\index{getCMBlabel@{getCMBlabel}!CALICE::AhcSlowReadoutModMapping@{CALICE::AhcSlowReadoutModMapping}}
+\subsubsection[{getCMBlabel}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::AhcSlowReadoutModMapping::getCMBlabel () const}\label{classCALICE_1_1AhcSlowReadoutModMapping_a39c6eca8f76b2b4fbfe7335f8fb79d9b}
+
+
+get the label of the \doxyref{AhcSlowReadoutModBlock}{p.}{classCALICE_1_1AhcSlowReadoutModBlock} holding the data with source CMB \begin{DoxyRemark}{Remarks}
+returns -\/1 when the data was lost due to mapping errors 
+\end{DoxyRemark}
+
+
+Definition at line 23 of file AhcSlowReadoutModMapping.cc.
+
+Referenced by CALICE::AhcSlowReadoutModMapper::updateMapping().\index{CALICE::AhcSlowReadoutModMapping@{CALICE::AhcSlowReadoutModMapping}!getHVlabel@{getHVlabel}}
+\index{getHVlabel@{getHVlabel}!CALICE::AhcSlowReadoutModMapping@{CALICE::AhcSlowReadoutModMapping}}
+\subsubsection[{getHVlabel}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::AhcSlowReadoutModMapping::getHVlabel () const}\label{classCALICE_1_1AhcSlowReadoutModMapping_aff49b5b29efaabfb24466c01f1486661}
+
+
+get the label of the \doxyref{AhcSlowReadoutModBlock}{p.}{classCALICE_1_1AhcSlowReadoutModBlock} holding the data with source HV supply \begin{DoxyRemark}{Remarks}
+returns -\/1 when the data was lost due to mapping errors 
+\end{DoxyRemark}
+
+
+Definition at line 26 of file AhcSlowReadoutModMapping.cc.
+
+Referenced by CALICE::AhcSlowReadoutModMapper::updateMapping().\index{CALICE::AhcSlowReadoutModMapping@{CALICE::AhcSlowReadoutModMapping}!getLVlabel@{getLVlabel}}
+\index{getLVlabel@{getLVlabel}!CALICE::AhcSlowReadoutModMapping@{CALICE::AhcSlowReadoutModMapping}}
+\subsubsection[{getLVlabel}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::AhcSlowReadoutModMapping::getLVlabel () const}\label{classCALICE_1_1AhcSlowReadoutModMapping_a68c0787c9d421cb85938ecc4e0ca1b27}
+
+
+get the label of the \doxyref{AhcSlowReadoutModBlock}{p.}{classCALICE_1_1AhcSlowReadoutModBlock} holding the data with source LV monitoring \begin{DoxyRemark}{Remarks}
+returns -\/1 when the data was lost due to mapping errors 
+\end{DoxyRemark}
+
+
+Definition at line 29 of file AhcSlowReadoutModMapping.cc.
+
+Referenced by CALICE::AhcSlowReadoutModMapper::updateMapping().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+AhcSlowReadoutModMapping.hh\item 
+AhcSlowReadoutModMapping.cc\end{DoxyCompactItemize}

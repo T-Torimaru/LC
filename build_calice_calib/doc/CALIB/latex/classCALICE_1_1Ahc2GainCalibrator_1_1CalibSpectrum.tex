@@ -1,0 +1,58 @@
+\section{CALICE::Ahc2GainCalibrator::CalibSpectrum Class Reference}
+\label{classCALICE_1_1Ahc2GainCalibrator_1_1CalibSpectrum}\index{CALICE::Ahc2GainCalibrator::CalibSpectrum@{CALICE::Ahc2GainCalibrator::CalibSpectrum}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CalibSpectrum} (int chipID, int chn, int vCalib=0)\label{classCALICE_1_1Ahc2GainCalibrator_1_1CalibSpectrum_a67bcd91dbc453e55bf4fc51483522eb6}
+
+\item 
+void {\bfseries Fill} (double val)\label{classCALICE_1_1Ahc2GainCalibrator_1_1CalibSpectrum_a536be2de9ee61d690c6c5485fd14fff6}
+
+\item 
+double {\bfseries FitGainMultiGauss} ()\label{classCALICE_1_1Ahc2GainCalibrator_1_1CalibSpectrum_a9f9f4f4130c2127e9680e825ed1a7feb}
+
+\item 
+std::pair$<$ double, double $>$ {\bfseries FitGain} ()\label{classCALICE_1_1Ahc2GainCalibrator_1_1CalibSpectrum_a53507513027b248d8166673d5d0bf74c}
+
+\item 
+double {\bfseries FFTGain} ()\label{classCALICE_1_1Ahc2GainCalibrator_1_1CalibSpectrum_a76e65e633998a415f97d64db18ecc39f}
+
+\item 
+float $\ast$ {\bfseries GainFromFFT} (TH1 $\ast$hist)\label{classCALICE_1_1Ahc2GainCalibrator_1_1CalibSpectrum_ac116ca191bf1c8e02c9c8d12875e863d}
+
+\item 
+void {\bfseries FindPeak} (TH1 $\ast$hist, Float\_\-t $\ast$res)\label{classCALICE_1_1Ahc2GainCalibrator_1_1CalibSpectrum_aa28872130c993591075712d06a08944a}
+
+\item 
+TF1 $\ast$ {\bfseries MultiPFit} (TH1 $\ast$peaks, int nOfpeaks, float res, float sigmapeak, float threshold)\label{classCALICE_1_1Ahc2GainCalibrator_1_1CalibSpectrum_aee99f1e523134b999bbca2992d19ff5f}
+
+\item 
+double {\bfseries GetMean} ()\label{classCALICE_1_1Ahc2GainCalibrator_1_1CalibSpectrum_aa30eff013ec90c1be01efa8ebc265fd6}
+
+\item 
+TH1D $\ast$ {\bfseries GetHisto} ()\label{classCALICE_1_1Ahc2GainCalibrator_1_1CalibSpectrum_af7e759c1725e0cf7e661c5c94145b602}
+
+\item 
+double {\bfseries GetChi2} ()\label{classCALICE_1_1Ahc2GainCalibrator_1_1CalibSpectrum_a93760f7593b9c2b61b76df12e331d2b9}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double {\bfseries ChiSquareNDF}\label{classCALICE_1_1Ahc2GainCalibrator_1_1CalibSpectrum_a2f60c8b4e5832f12939fd991483d62e2}
+
+\item 
+TH1D $\ast$ {\bfseries histoAll}\label{classCALICE_1_1Ahc2GainCalibrator_1_1CalibSpectrum_a14d0addbe78fe019551c9c3f944006bc}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 137 of file Ahc2GainCalibrator.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+Ahc2GainCalibrator.hh\item 
+Ahc2GainCalibrator.cc\end{DoxyCompactItemize}

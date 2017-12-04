@@ -1,0 +1,176 @@
+\section{CALICE::BeEvent Class Reference}
+\label{classCALICE_1_1BeEvent}\index{CALICE::BeEvent@{CALICE::BeEvent}}
+
+
+Stores the trigger history (i.e.  
+
+
+{\ttfamily \#include $<$BeEvent.hh$>$}Inheritance diagram for CALICE::BeEvent::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCALICE_1_1BeEvent}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf BeEvent} ()\label{classCALICE_1_1BeEvent_a2097c6cad17364e073130b88759d4395}
+
+\begin{DoxyCompactList}\small\item\em Simple Constructor. \item\end{DoxyCompactList}\item 
+{\bf BeEvent} (unsigned int board\_\-id)
+\begin{DoxyCompactList}\small\item\em UsefulConstructor. \item\end{DoxyCompactList}\item 
+{\bf BeEvent} (LCObject $\ast$obj)\label{classCALICE_1_1BeEvent_aa434832dc8f050ab7d92ea2a90e3a2fa}
+
+\begin{DoxyCompactList}\small\item\em 'Copy constructor' needed to interpret LCCollection read from file/database. \item\end{DoxyCompactList}\item 
+{\bf BeEvent} \& {\bf setBoardID} (int boardID)
+\begin{DoxyCompactList}\small\item\em Set the packed board id. \item\end{DoxyCompactList}\item 
+int {\bf getBoardID} () const \label{classCALICE_1_1BeEvent_a257d5c382c76e453d576c99b4785811d}
+
+\begin{DoxyCompactList}\small\item\em Get the board id. \item\end{DoxyCompactList}\item 
+{\bf BeEvent} \& {\bf setRecordLabel} (int label)\label{classCALICE_1_1BeEvent_ab860bbf02c55df7b26c2e9335056a21a}
+
+\begin{DoxyCompactList}\small\item\em Set the Record Label. \item\end{DoxyCompactList}\item 
+short {\bf getRecordLabel} () const \label{classCALICE_1_1BeEvent_a9cc54e7581f285b926a192836e904e86}
+
+\begin{DoxyCompactList}\small\item\em Return the Record Label. \item\end{DoxyCompactList}\item 
+{\bf BeEvent} \& {\bf setStatusWord} (int status)\label{classCALICE_1_1BeEvent_a052f9cb87c190b8137d6ad09e676af1f}
+
+\begin{DoxyCompactList}\small\item\em Set the status word. \item\end{DoxyCompactList}\item 
+int {\bf getStatusWord} () const \label{classCALICE_1_1BeEvent_afffb8609964ae7e46d4eb7c55d6cac08}
+
+\begin{DoxyCompactList}\small\item\em Get the status word. \item\end{DoxyCompactList}\item 
+{\bf BeEvent} \& {\bf setL1aCounter} (int l1acounter)\label{classCALICE_1_1BeEvent_ad4dec434b6ae2f78e9db131d26b6330f}
+
+\begin{DoxyCompactList}\small\item\em Set the l1acounter This number is used to check integrity of trigger counters. \item\end{DoxyCompactList}\item 
+int {\bf getL1aCounter} () const \label{classCALICE_1_1BeEvent_a3bb48d738f07c16324f75e5f3f6594d6}
+
+\begin{DoxyCompactList}\small\item\em Get the l1acounter. \item\end{DoxyCompactList}\item 
+{\bf BeEvent} \& {\bf setBxCounter} (int bxcount)\label{classCALICE_1_1BeEvent_a94fe845cc1ced1dc5743f784f6092bfa}
+
+\begin{DoxyCompactList}\small\item\em Set the bxcounter (bunch crossing !?). \item\end{DoxyCompactList}\item 
+int {\bf getBxCounter} () const \label{classCALICE_1_1BeEvent_a85aad5b07a8644221039c50f47c9cfe2}
+
+\begin{DoxyCompactList}\small\item\em Get the bxcounter. \item\end{DoxyCompactList}\item 
+{\bf BeEvent} \& {\bf setQdrFrameCounter} (int qdrframecount)
+\begin{DoxyCompactList}\small\item\em Set the QdrFrameCounter (Whatever this is . \item\end{DoxyCompactList}\item 
+int {\bf getQdrFrameCounter} () const \label{classCALICE_1_1BeEvent_aef1af66fdeecc7b3e78b6e164681341a}
+
+\begin{DoxyCompactList}\small\item\em Get the QdrFrameCounter. \item\end{DoxyCompactList}\item 
+{\bf BeEvent} \& {\bf setQdrDataCounter} (int qdrdatacount)
+\begin{DoxyCompactList}\small\item\em Set the QdrDataCounter (Whatever this is . \item\end{DoxyCompactList}\item 
+int {\bf getQdrDataCounter} () const \label{classCALICE_1_1BeEvent_ad917495373bd3b1f6261f0043aca87e0}
+
+\begin{DoxyCompactList}\small\item\em Get the QdrDataCounter. \item\end{DoxyCompactList}\item 
+{\bf BeEvent} \& {\bf setTotalFrameCounter} (int totalframecount)
+\begin{DoxyCompactList}\small\item\em Set the TotalFrameCounter (Whatever this is . \item\end{DoxyCompactList}\item 
+int {\bf getTotalFrameCounter} () const \label{classCALICE_1_1BeEvent_afbe2088acfa3d8d5a4301d66c9bec655}
+
+\begin{DoxyCompactList}\small\item\em Get the TotalFrameCounter. \item\end{DoxyCompactList}\item 
+void {\bf print} (std::ostream \&os)\label{classCALICE_1_1BeEvent_a9554fd6824f75d8bfbfa3183ba8469b1}
+
+\begin{DoxyCompactList}\small\item\em Convenient print method. \item\end{DoxyCompactList}\item 
+const std::string {\bfseries getTypeName} () const \label{classCALICE_1_1BeEvent_a1a9609c2a147fa44055bc3aae63d64c6}
+
+\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1BeEvent_a271ed21e4fc8b27bffd8ba9cf3c7d31b}
+
+\begin{DoxyCompactList}\small\item\em Return a brief description of the data members. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Stores the trigger history (i.e. fifo content).when it appears in the front end as realized for runs starting in May 2006 (Ask Paul for firmware version) in older versions of the DAQ these data came along wiith the BeTrgEventData which still contains information related to the data handled by the present interface class.
+
+To acces the configuration: 
+\begin{DoxyPre}
+   void processEvent(LCEvent *event)  \{
+       try \{
+        // string \_colName = "BeTrgEventData"
+        LCCollection *col=event->getCollection(\_colName);
+        for (unsigned int element\_i=0; element\_i<col->getNumberOfElements(); element\_i++) \{
+           \doxyref{BeEvent}{p.}{classCALICE_1_1BeEvent} event(col->getElementAt(element\_i));\end{DoxyPre}
+
+
+
+\begin{DoxyPre}        \}
+   \}
+ \end{DoxyPre}
+
+
+\begin{DoxyAuthor}{Author}
+R. Pöschl (LAL Orsay) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Jul 2006 
+\end{DoxyDate}
+
+
+Definition at line 58 of file BeEvent.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CALICE::BeEvent@{CALICE::BeEvent}!BeEvent@{BeEvent}}
+\index{BeEvent@{BeEvent}!CALICE::BeEvent@{CALICE::BeEvent}}
+\subsubsection[{BeEvent}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::BeEvent::BeEvent (unsigned int {\em board\_\-id})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1BeEvent_a52f929c3fccdded286f6bfb5f3989f09}
+
+
+UsefulConstructor. 
+\begin{DoxyParams}{Parameters}
+\item[{\em board\_\-id}]the packed board id (\doxyref{CALICE::BoardID}{p.}{classCALICE_1_1BoardID}). \end{DoxyParams}
+
+
+Definition at line 80 of file BeEvent.hh.
+
+References setBoardID(), setBxCounter(), setL1aCounter(), setQdrDataCounter(), setQdrFrameCounter(), setRecordLabel(), setStatusWord(), and setTotalFrameCounter().
+
+\subsection{Member Function Documentation}
+\index{CALICE::BeEvent@{CALICE::BeEvent}!setBoardID@{setBoardID}}
+\index{setBoardID@{setBoardID}!CALICE::BeEvent@{CALICE::BeEvent}}
+\subsubsection[{setBoardID}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BeEvent}\& CALICE::BeEvent::setBoardID (int {\em boardID})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1BeEvent_a63f17cd05b53cb5c3ec91432c54b8ccc}
+
+
+Set the packed board id. \begin{DoxySeeAlso}{See also}
+\doxyref{BoardID}{p.}{classCALICE_1_1BoardID} 
+\end{DoxySeeAlso}
+
+
+Definition at line 108 of file BeEvent.hh.
+
+References CALICE::LCGenericObjectImplExt::obj().
+
+Referenced by BeEvent().\index{CALICE::BeEvent@{CALICE::BeEvent}!setQdrDataCounter@{setQdrDataCounter}}
+\index{setQdrDataCounter@{setQdrDataCounter}!CALICE::BeEvent@{CALICE::BeEvent}}
+\subsubsection[{setQdrDataCounter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BeEvent}\& CALICE::BeEvent::setQdrDataCounter (int {\em qdrdatacount})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1BeEvent_ad085e6f2c86bfc12a9c450f55f6a65f6}
+
+
+Set the QdrDataCounter (Whatever this is . ..) 
+
+Definition at line 163 of file BeEvent.hh.
+
+References CALICE::LCGenericObjectImplExt::obj().
+
+Referenced by BeEvent().\index{CALICE::BeEvent@{CALICE::BeEvent}!setQdrFrameCounter@{setQdrFrameCounter}}
+\index{setQdrFrameCounter@{setQdrFrameCounter}!CALICE::BeEvent@{CALICE::BeEvent}}
+\subsubsection[{setQdrFrameCounter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BeEvent}\& CALICE::BeEvent::setQdrFrameCounter (int {\em qdrframecount})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1BeEvent_abd097e21aaa8d7ac65f473186ec0ec6a}
+
+
+Set the QdrFrameCounter (Whatever this is . ..) 
+
+Definition at line 155 of file BeEvent.hh.
+
+References CALICE::LCGenericObjectImplExt::obj().
+
+Referenced by BeEvent().\index{CALICE::BeEvent@{CALICE::BeEvent}!setTotalFrameCounter@{setTotalFrameCounter}}
+\index{setTotalFrameCounter@{setTotalFrameCounter}!CALICE::BeEvent@{CALICE::BeEvent}}
+\subsubsection[{setTotalFrameCounter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BeEvent}\& CALICE::BeEvent::setTotalFrameCounter (int {\em totalframecount})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1BeEvent_accec6ea69ebb86a919ea63115ef9ee90}
+
+
+Set the TotalFrameCounter (Whatever this is . ..) 
+
+Definition at line 171 of file BeEvent.hh.
+
+References CALICE::LCGenericObjectImplExt::obj().
+
+Referenced by BeEvent().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+BeEvent.hh\end{DoxyCompactItemize}

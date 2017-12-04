@@ -1,0 +1,101 @@
+\section{RunInformation Class Reference}
+\label{classRunInformation}\index{RunInformation@{RunInformation}}
+
+
+Class which decodes information about a run stored in the run header.  
+
+
+{\ttfamily \#include $<$RunInformation.hh$>$}\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries Location} \{ {\bfseries desy}, 
+{\bfseries cern}, 
+{\bfseries fnal}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries RunInformation} (const EVENT::LCRunHeader $\ast$run)\label{classRunInformation_a03368256e5d800b58b63d82300a70f74}
+
+\item 
+bool {\bfseries isMC} () const \label{classRunInformation_abcb9533465cb06b0b38a1f586da3b4c6}
+
+\item 
+void {\bfseries isMC} (bool m)\label{classRunInformation_a1a244eb9e74b9aa7238218fc13b5bfaa}
+
+\item 
+int {\bfseries beamEnergyMeV} () const \label{classRunInformation_a77e4bfff69ddd5fd39b9e2aa1f9864a4}
+
+\item 
+void {\bfseries beamEnergyMeV} (int b)\label{classRunInformation_a55ee38b3ff72be26ad066847c31eee94}
+
+\item 
+std::string {\bfseries location} () const \label{classRunInformation_ad16df67de202576fb965305a32a0127a}
+
+\item 
+void {\bfseries location} (std::string)\label{classRunInformation_a77e67b37e35ecdda241305347d1ca267}
+
+\item 
+std::string {\bfseries runMonth} () const \label{classRunInformation_a106a787de2ea90af01adc7d18ada359a}
+
+\item 
+void {\bfseries runMonth} (std::string month)\label{classRunInformation_ad7fb33e94ebc671255a2263e13e18564}
+
+\item 
+UTIL::LCTime {\bfseries runStart} () const \label{classRunInformation_a92794be1db82086ba339271c4e5d9ea0}
+
+\item 
+void {\bfseries runStart} (UTIL::LCTime t)\label{classRunInformation_ab5035e9e7619a0bf5efd4bf99760bd80}
+
+\item 
+UTIL::LCTime {\bfseries runEnd} () const \label{classRunInformation_a178fffe32671265948cb8982f661f3d6}
+
+\item 
+void {\bfseries runEnd} (UTIL::LCTime t)\label{classRunInformation_ad5338dceec438281d98866a6416e148d}
+
+\item 
+void {\bfseries get} (const EVENT::LCRunHeader $\ast$run)\label{classRunInformation_ac6c3b16064852dfb9cf53d87f30d4dcc}
+
+\item 
+void {\bfseries set} (EVENT::LCRunHeader $\ast$run) const \label{classRunInformation_ac6d0c69ff29c2839e1ab34c1dba46050}
+
+\item 
+std::ostream \& {\bfseries print} (std::ostream \&o=std::cout) const \label{classRunInformation_aa1da2b6f960929a0b520df50ff757754}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries \_\-isMC}\label{classRunInformation_ae3b42f3aa7e5aa620d616740d0ae0f08}
+
+\item 
+int {\bfseries \_\-beamEnergyMeV}\label{classRunInformation_af1a7c2459c3c98dba0313148d726ae77}
+
+\item 
+std::string {\bfseries \_\-location}\label{classRunInformation_a6d90d756c207a9782c39bb70bd0a7f62}
+
+\item 
+std::string {\bfseries \_\-runMonth}\label{classRunInformation_a7d58476f3f968fe0a0393ecfcf0d338c}
+
+\item 
+UTIL::LCTime {\bfseries \_\-runStart}\label{classRunInformation_a3b743376f135df602865a20c12080e92}
+
+\item 
+UTIL::LCTime {\bfseries \_\-runEnd}\label{classRunInformation_a9a04bb6a9b5113d87ef6fbf3fb7b3656}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class which decodes information about a run stored in the run header. \begin{DoxyAuthor}{Author}
+(probably) Roman Poeschl 
+\end{DoxyAuthor}
+
+
+Definition at line 14 of file RunInformation.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+RunInformation.hh\item 
+RunInformation.cc\end{DoxyCompactItemize}

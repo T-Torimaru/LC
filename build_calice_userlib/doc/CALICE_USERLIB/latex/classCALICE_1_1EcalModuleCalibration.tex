@@ -1,0 +1,151 @@
+\section{CALICE::EcalModuleCalibration Class Reference}
+\label{classCALICE_1_1EcalModuleCalibration}\index{CALICE::EcalModuleCalibration@{CALICE::EcalModuleCalibration}}
+
+
+Calibration constants for the Calice ECAL detector modules.  
+
+
+{\ttfamily \#include $<$EcalModuleCalibration.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf EcalModuleCalibration} ()\label{classCALICE_1_1EcalModuleCalibration_ae630cd2d19428408a0318136f4094831}
+
+\begin{DoxyCompactList}\small\item\em Default c'tor. \item\end{DoxyCompactList}\item 
+{\bf EcalModuleCalibration} (const std::string \&module\_\-type\_\-name, UInt\_\-t module\_\-id, UInt\_\-t n\_\-cells)\label{classCALICE_1_1EcalModuleCalibration_ac75e6361c5f11223a22cf1da6119b763}
+
+\begin{DoxyCompactList}\small\item\em UsefulConstructor. \item\end{DoxyCompactList}\item 
+std::string {\bf getModuleTypeName} () const 
+\begin{DoxyCompactList}\small\item\em Get the name assigned to the module type. \item\end{DoxyCompactList}\item 
+{\bf EcalModuleCalibration} \& {\bf setModuleID} (UInt\_\-t module\_\-id)
+\begin{DoxyCompactList}\small\item\em Set the unique module ID. \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bf getModuleID} () const 
+\begin{DoxyCompactList}\small\item\em Get the unique module ID. \item\end{DoxyCompactList}\item 
+{\bf EcalModuleCalibration} \& {\bf setCalibrationConstant} (UInt\_\-t cell\_\-index, float calibration\_\-constant)
+\begin{DoxyCompactList}\small\item\em Set the calibration constant of thye given cell. \item\end{DoxyCompactList}\item 
+Float\_\-t {\bfseries getCalibrationConstant} (UInt\_\-t cell\_\-index) const \label{classCALICE_1_1EcalModuleCalibration_a4bd0b7b4240be5983283941a0c00995d}
+
+\item 
+UInt\_\-t {\bfseries getNCells} () const \label{classCALICE_1_1EcalModuleCalibration_a5547cec59528f2baf4c10a0d918a9c00}
+
+\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1EcalModuleCalibration_a433c8e069f2c953af5616d0b0732cb64}
+
+\begin{DoxyCompactList}\small\item\em Return the type of the class. \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1EcalModuleCalibration_a661172c0b0e321926e1ff9efb11200ec}
+
+\begin{DoxyCompactList}\small\item\em Return a brief description of the data members. \item\end{DoxyCompactList}\item 
+{\bf EcalModuleCalibration} (LCObject $\ast$obj)
+\begin{DoxyCompactList}\small\item\em C'tor to be used for elements of LCGenericObjects read from an LCIO file or the database. \item\end{DoxyCompactList}\item 
+LCGenericObjectImpl $\ast$ {\bf obj} ()
+\begin{DoxyCompactList}\small\item\em The LCGenericObjectImpl . \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$EcalModuleCalibration} ()\label{classCALICE_1_1EcalModuleCalibration_acc08af0cde6a964ec53ced5f89d97481}
+
+\begin{DoxyCompactList}\small\item\em Clean up if we created a new LCGenericObjectImpl. \item\end{DoxyCompactList}\item 
+virtual int {\bf id} ()\label{classCALICE_1_1EcalModuleCalibration_a09b17f1686a33d636d25a83452d87775}
+
+\begin{DoxyCompactList}\small\item\em Return the id of the underlying LCGenericObjectImpl. \item\end{DoxyCompactList}\item 
+int {\bfseries getNInt} () const \label{classCALICE_1_1EcalModuleCalibration_a88f003114047f844685d82594b3047b1}
+
+\item 
+int {\bfseries getNFloat} () const \label{classCALICE_1_1EcalModuleCalibration_ad5cfd49be32643de01c52ef1a6866401}
+
+\item 
+int {\bfseries getNDouble} () const \label{classCALICE_1_1EcalModuleCalibration_aaca3fb44be479000b015e25456138414}
+
+\item 
+int {\bfseries getIntVal} (int index) const \label{classCALICE_1_1EcalModuleCalibration_a23c124642eb6c3fa13d7a6a1bad86b55}
+
+\item 
+float {\bfseries getFloatVal} (int index) const \label{classCALICE_1_1EcalModuleCalibration_ad184e2ba9450fec25ce4bc91dc7d16e3}
+
+\item 
+double {\bfseries getDoubleVal} (int index) const \label{classCALICE_1_1EcalModuleCalibration_a0bea8bda97e2024bcf32345cb69b21aa}
+
+\item 
+bool {\bfseries isFixedSize} () const \label{classCALICE_1_1EcalModuleCalibration_af56b25b11b910b8ceebd00758ef085b4}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+LCGenericObjectImpl $\ast$ {\bfseries \_\-obj}\label{classCALICE_1_1EcalModuleCalibration_a3632376ffd5eee52d71c53faac4ce087}
+
+\item 
+bool {\bfseries \_\-createdObject}\label{classCALICE_1_1EcalModuleCalibration_af6aee165852f21a5152c3d5645410bae}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Calibration constants for the Calice ECAL detector modules. Based on LCFixedObject. \begin{DoxyAuthor}{Author}
+Goetz Gayckem, LLR -\/ ecole polytechnique) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+\$Id \$ 
+\end{DoxyVersion}
+
+
+Definition at line 27 of file EcalModuleCalibration.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CALICE::EcalModuleCalibration@{CALICE::EcalModuleCalibration}!EcalModuleCalibration@{EcalModuleCalibration}}
+\index{EcalModuleCalibration@{EcalModuleCalibration}!CALICE::EcalModuleCalibration@{CALICE::EcalModuleCalibration}}
+\subsubsection[{EcalModuleCalibration}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::EcalModuleCalibration::EcalModuleCalibration (LCObject $\ast$ {\em obj})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1EcalModuleCalibration_a587b10968ad9f5222e48067f06eec062}
+
+
+C'tor to be used for elements of LCGenericObjects read from an LCIO file or the database. Subclasses should 'override' this, e.g.:\par
+ Myclass(LCObject$\ast$ obj) : EcalModuleCalibration(obj) \{\} \par
+ 
+
+Definition at line 130 of file EcalModuleCalibration.hh.
+
+References CALICE::getNeededInts(), and obj().
+
+\subsection{Member Function Documentation}
+\index{CALICE::EcalModuleCalibration@{CALICE::EcalModuleCalibration}!getModuleID@{getModuleID}}
+\index{getModuleID@{getModuleID}!CALICE::EcalModuleCalibration@{CALICE::EcalModuleCalibration}}
+\subsubsection[{getModuleID}]{\setlength{\rightskip}{0pt plus 5cm}UInt\_\-t CALICE::EcalModuleCalibration::getModuleID () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1EcalModuleCalibration_a0d5189360d04b154727560f7bd15315a}
+
+
+Get the unique module ID. A module is uniquely identified by the module ID (serial number) and the module type. 
+
+Definition at line 62 of file EcalModuleCalibration.hh.\index{CALICE::EcalModuleCalibration@{CALICE::EcalModuleCalibration}!getModuleTypeName@{getModuleTypeName}}
+\index{getModuleTypeName@{getModuleTypeName}!CALICE::EcalModuleCalibration@{CALICE::EcalModuleCalibration}}
+\subsubsection[{getModuleTypeName}]{\setlength{\rightskip}{0pt plus 5cm}std::string CALICE::EcalModuleCalibration::getModuleTypeName () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1EcalModuleCalibration_aa34940889407389439940f3925f2f710}
+
+
+Get the name assigned to the module type. The module type together with the module ID is considered to be unique. Due to the character encoding in an integer array, the function may perform slowly. 
+
+Definition at line 48 of file EcalModuleCalibration.hh.
+
+References CALICE::getStringFromInts().\index{CALICE::EcalModuleCalibration@{CALICE::EcalModuleCalibration}!obj@{obj}}
+\index{obj@{obj}!CALICE::EcalModuleCalibration@{CALICE::EcalModuleCalibration}}
+\subsubsection[{obj}]{\setlength{\rightskip}{0pt plus 5cm}LCGenericObjectImpl$\ast$ CALICE::EcalModuleCalibration::obj ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1EcalModuleCalibration_aac8e0175e3d8f3b0a8508cae26ddf4a0}
+
+
+The LCGenericObjectImpl . Sublcasses use this to access their data. 
+
+Definition at line 173 of file EcalModuleCalibration.hh.
+
+Referenced by EcalModuleCalibration().\index{CALICE::EcalModuleCalibration@{CALICE::EcalModuleCalibration}!setCalibrationConstant@{setCalibrationConstant}}
+\index{setCalibrationConstant@{setCalibrationConstant}!CALICE::EcalModuleCalibration@{CALICE::EcalModuleCalibration}}
+\subsubsection[{setCalibrationConstant}]{\setlength{\rightskip}{0pt plus 5cm}{\bf EcalModuleCalibration}\& CALICE::EcalModuleCalibration::setCalibrationConstant (UInt\_\-t {\em cell\_\-index}, \/  float {\em calibration\_\-constant})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1EcalModuleCalibration_a6353a89b184f4594309e9506e4d25b19}
+
+
+Set the calibration constant of thye given cell. 
+\begin{DoxyParams}{Parameters}
+\item[{\em cell\_\-index}]the cell index (electrical order: first the values of the first sample from all chips, then the second sample from all chips etc.) \item[{\em calibration\_\-constant}]the calibration constant which is multiplied to the ADC value. \end{DoxyParams}
+
+
+Definition at line 71 of file EcalModuleCalibration.hh.\index{CALICE::EcalModuleCalibration@{CALICE::EcalModuleCalibration}!setModuleID@{setModuleID}}
+\index{setModuleID@{setModuleID}!CALICE::EcalModuleCalibration@{CALICE::EcalModuleCalibration}}
+\subsubsection[{setModuleID}]{\setlength{\rightskip}{0pt plus 5cm}{\bf EcalModuleCalibration}\& CALICE::EcalModuleCalibration::setModuleID (UInt\_\-t {\em module\_\-id})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1EcalModuleCalibration_adbc106b41241d89518956fc30e9dba93}
+
+
+Set the unique module ID. A module is uniquely identified by the module ID (serial number) and the module type. 
+
+Definition at line 55 of file EcalModuleCalibration.hh.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+EcalModuleCalibration.hh\end{DoxyCompactItemize}

@@ -1,0 +1,60 @@
+\section{CALICE::SiPMMappingHcal Class Reference}
+\label{classCALICE_1_1SiPMMappingHcal}\index{CALICE::SiPMMappingHcal@{CALICE::SiPMMappingHcal}}
+
+
+Mapping class based on the LCFixedObject template.  
+
+
+{\ttfamily \#include $<$SiPMMappingHcal.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf SiPMMappingHcal} (int sipmID, int cassetteID, int icoord, int jcoord, int kcoord)\label{classCALICE_1_1SiPMMappingHcal_ae2765c68cb961dfc57d5d9ad5dbd2490}
+
+\begin{DoxyCompactList}\small\item\em Convenient c'tor. \item\end{DoxyCompactList}\item 
+{\bf SiPMMappingHcal} (LCObject $\ast$obj)\label{classCALICE_1_1SiPMMappingHcal_ab59441ec2da70fd03254187e96de4fc8}
+
+\begin{DoxyCompactList}\small\item\em 'Copy constructor' needed to interpret LCCollection read from file/database. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$SiPMMappingHcal} ()\label{classCALICE_1_1SiPMMappingHcal_a8164d7985b5b1d0feca49629168dfdd0}
+
+\begin{DoxyCompactList}\small\item\em Important for memory handling. \item\end{DoxyCompactList}\item 
+int {\bf getSiPMID} ()\label{classCALICE_1_1SiPMMappingHcal_ab0a627ff9ea7889c099a010f68a68048}
+
+\begin{DoxyCompactList}\small\item\em the class interface: \item\end{DoxyCompactList}\item 
+int {\bfseries getcassetteID} ()\label{classCALICE_1_1SiPMMappingHcal_a3a828d20006a04488b21cfb3bd23f1bb}
+
+\item 
+int {\bfseries getExCellID} ()\label{classCALICE_1_1SiPMMappingHcal_a51e789afa8b332823ee3466931b4c41e}
+
+\item 
+int {\bfseries getCellID} ()\label{classCALICE_1_1SiPMMappingHcal_a51767a9933267022ef380180d2ff8e31}
+
+\item 
+short {\bf getCellIndex} (std::string)\label{classCALICE_1_1SiPMMappingHcal_a6c9e24b4de7ca1d73f6e408a7545acaf}
+
+\begin{DoxyCompactList}\small\item\em convenient getter functions \item\end{DoxyCompactList}\item 
+void {\bfseries print} (std::ostream \&os, std::string)\label{classCALICE_1_1SiPMMappingHcal_a98286b2ec859508c802a321e8e534ab6}
+
+\item 
+const std::string {\bfseries getTypeName} () const \label{classCALICE_1_1SiPMMappingHcal_a346183364fe44c07c4f5de7d8cd552b1}
+
+\item 
+const std::string {\bfseries getDataDescription} () const \label{classCALICE_1_1SiPMMappingHcal_a6d35194870c3e2a16336e3582e80532f}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+short {\bfseries \_\-index}\label{classCALICE_1_1SiPMMappingHcal_a9ce9e5e9ffed61ae7ac85f230afaaf6c}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Mapping class based on the LCFixedObject template. that maps SiPMs to the the geom. hcal cells. 
+
+Definition at line 32 of file SiPMMappingHcal.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+SiPMMappingHcal.hh\item 
+SiPMMappingHcal.cc\end{DoxyCompactItemize}

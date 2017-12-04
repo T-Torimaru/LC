@@ -1,0 +1,335 @@
+\section{CALICE::MappedContainer$<$ T $>$ Class Template Reference}
+\label{classCALICE_1_1MappedContainer}\index{CALICE::MappedContainer@{CALICE::MappedContainer}}
+
+
+Container for fast access by index.  
+
+
+{\ttfamily \#include $<$MappedContainer.hh$>$}\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf DataWithAddress}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf MappedContainer} (const {\bf Mapper} $\ast$mapper, const bool deleteElements=true)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+{\bf DecoderSet} $\ast$ {\bf getDecoder} ()
+\begin{DoxyCompactList}\small\item\em return a pointer to the \doxyref{DecoderSet}{p.}{classCALICE_1_1DecoderSet} handling the decoding of IDs with encoding strings \item\end{DoxyCompactList}\item 
+void {\bf fillByCellID} (const int cellID, T $\ast$object, bool unique=true)
+\begin{DoxyCompactList}\small\item\em fill content for (Mokka) cellID \item\end{DoxyCompactList}\item 
+void {\bf fillByModuleID} (const int channelID, T $\ast$object, bool unique=true)
+\begin{DoxyCompactList}\small\item\em fill content for (Module) channel ID \item\end{DoxyCompactList}\item 
+void {\bf fillByDAQID} (const int DAQID, T $\ast$object, bool unique=true)
+\begin{DoxyCompactList}\small\item\em fill content for DAQ channel ID \item\end{DoxyCompactList}\item 
+T $\ast$ {\bf getByCellID} (const int cellID)
+\begin{DoxyCompactList}\small\item\em get content for (Mokka) cellID \item\end{DoxyCompactList}\item 
+T $\ast$ {\bf getByModuleID} (const int channelID)
+\begin{DoxyCompactList}\small\item\em get content for (Module) channel ID \item\end{DoxyCompactList}\item 
+T $\ast$ {\bf getByDAQID} (const int DAQID)
+\begin{DoxyCompactList}\small\item\em get content for DAQ channel ID \item\end{DoxyCompactList}\item 
+T $\ast$ {\bf removeByCellID} (const int cellID)
+\begin{DoxyCompactList}\small\item\em get content for (Mokka) cellID and remove it from the container \item\end{DoxyCompactList}\item 
+T $\ast$ {\bf removeByModuleID} (const int channelID)
+\begin{DoxyCompactList}\small\item\em get content for (Module) channel ID and remove it from the container \item\end{DoxyCompactList}\item 
+T $\ast$ {\bf removeByDAQID} (const int DAQID)
+\begin{DoxyCompactList}\small\item\em get content for DAQ channel ID and remove it from the container \item\end{DoxyCompactList}\item 
+void {\bf deleteByCellID} (const int cellID)
+\begin{DoxyCompactList}\small\item\em delete entry for (Mokka) cellID \item\end{DoxyCompactList}\item 
+void {\bf deleteByModuleID} (const int channelID)
+\begin{DoxyCompactList}\small\item\em delete entry for (Module) channel ID \item\end{DoxyCompactList}\item 
+void {\bf deleteByDAQID} (const int DAQID)
+\begin{DoxyCompactList}\small\item\em delete entry for DAQ channel ID \item\end{DoxyCompactList}\item 
+void {\bf clear} ()\label{classCALICE_1_1MappedContainer_a0b733d99e35de19e4422d730b5ddc994}
+
+\begin{DoxyCompactList}\small\item\em clear container \item\end{DoxyCompactList}\item 
+std::vector$<$ T $\ast$ $>$ {\bf getAllElements} () const \label{classCALICE_1_1MappedContainer_a28abd598e5ff3417a756b20b9e780404}
+
+\begin{DoxyCompactList}\small\item\em get a vector with all elements \item\end{DoxyCompactList}\item 
+unsigned int {\bf getVersion} () const \label{classCALICE_1_1MappedContainer_ac01affbfc9b3701b3a6543cdcf12632a}
+
+\begin{DoxyCompactList}\small\item\em get version number to check for updates \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+T $\ast$ {\bfseries getByIndex} (const unsigned int index) const \label{classCALICE_1_1MappedContainer_a2a7af6508c4c4a7416ef4197060f8af6}
+
+\item 
+void {\bfseries fillByIndex} (const unsigned int index, T $\ast$object, bool unique=true)\label{classCALICE_1_1MappedContainer_abeecc69c38d8aca5970f48b918b98f41}
+
+\item 
+T $\ast$ {\bfseries removeByIndex} (const unsigned int index)\label{classCALICE_1_1MappedContainer_a414d9c918e2d9def466504365af9415f}
+
+\item 
+void {\bfseries deleteByIndex} (const unsigned int index)\label{classCALICE_1_1MappedContainer_a2a86512d86365e598602574fdb00e442}
+
+\item 
+void {\bfseries initOrderedData} (const unsigned int size, const bool clearAddresses=true)\label{classCALICE_1_1MappedContainer_a0daea544e0a43913e0a977c1e02e9c3f}
+
+\item 
+void {\bfseries refillOrderedData} (const unsigned int size)\label{classCALICE_1_1MappedContainer_aaefd6f81d353dfeaabd003f7d08b5483}
+
+\item 
+void {\bfseries checkMapping} ()\label{classCALICE_1_1MappedContainer_a3fd79a2f5e56c64825b23d7ccebd6508}
+
+\item 
+void {\bfseries contentModified} ()\label{classCALICE_1_1MappedContainer_a2d74afb942b75eecdb1a959b2181efb9}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const {\bf Mapper} $\ast$ {\bfseries \_\-mapper}\label{classCALICE_1_1MappedContainer_a79fbea27bbacedbddbf28e9499591272}
+
+\item 
+bool {\bfseries \_\-deleteElements}\label{classCALICE_1_1MappedContainer_a3fa9ed521e66ff429cec598037967005}
+
+\item 
+std::vector$<$ {\bf DataWithAddress} $\ast$ $>$ {\bfseries \_\-orderedData}\label{classCALICE_1_1MappedContainer_a273e969bd8c698f3ec30533666004f37}
+
+\item 
+unsigned int {\bfseries \_\-mapperVersion}\label{classCALICE_1_1MappedContainer_a3a6ae12346ea8dbb73ac983caf8fd862}
+
+\item 
+unsigned int {\bfseries \_\-version}\label{classCALICE_1_1MappedContainer_a46c49b404ddb28f59e0c5c677b9c566c}
+
+\item 
+unsigned int {\bfseries \_\-maxIndex}\label{classCALICE_1_1MappedContainer_a673fecb40939aa2ab027f4a40bba578f}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$ class CALICE::MappedContainer$<$ T $>$}
+
+Container for fast access by index. This class stores arbitrary data types and offers transparent access by different coordinate systems.
+
+\begin{DoxyAuthor}{Author}
+{\tt Benjamin.Lutz@desy.de} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.3 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+November 2009 
+\end{DoxyDate}
+
+
+Definition at line 24 of file MappedContainer.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CALICE::MappedContainer@{CALICE::MappedContainer}!MappedContainer@{MappedContainer}}
+\index{MappedContainer@{MappedContainer}!CALICE::MappedContainer@{CALICE::MappedContainer}}
+\subsubsection[{MappedContainer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf CALICE::MappedContainer}$<$ T $>$::{\bf MappedContainer} (const {\bf Mapper} $\ast$ {\em mapper}, \/  const bool {\em deleteElements} = {\ttfamily true})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1MappedContainer_a2ad715f15ff8590f2c1e0c470c38c6af}
+
+
+Constructor. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em mapper}]\doxyref{Mapper}{p.}{classCALICE_1_1Mapper} object that is used to translate coordinate systems \item[\mbox{$\leftarrow$} {\em deleteElements}]Determines if the object behind the stored reference should be deleted, when it is removed from the container. \end{DoxyParams}
+
+
+Definition at line 35 of file MappedContainer.hh.
+
+References CALICE::Mapper::getMaxIndex(), and CALICE::Mapper::getVersion().
+
+\subsection{Member Function Documentation}
+\index{CALICE::MappedContainer@{CALICE::MappedContainer}!deleteByCellID@{deleteByCellID}}
+\index{deleteByCellID@{deleteByCellID}!CALICE::MappedContainer@{CALICE::MappedContainer}}
+\subsubsection[{deleteByCellID}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf CALICE::MappedContainer}$<$ T $>$::deleteByCellID (const int {\em cellID})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1MappedContainer_a5ae58ecf626acbd5aecd0f89ca939c8a}
+
+
+delete entry for (Mokka) cellID If deleteElements is set, the stored object will be deleted, too.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em cellID}]coordinate for content as (Module) channel ID see \doxyref{Mapper}{p.}{classCALICE_1_1Mapper} \end{DoxyParams}
+
+
+Definition at line 178 of file MappedContainer.hh.
+
+References CALICE::Mapper::getIndexByCellID().\index{CALICE::MappedContainer@{CALICE::MappedContainer}!deleteByDAQID@{deleteByDAQID}}
+\index{deleteByDAQID@{deleteByDAQID}!CALICE::MappedContainer@{CALICE::MappedContainer}}
+\subsubsection[{deleteByDAQID}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf CALICE::MappedContainer}$<$ T $>$::deleteByDAQID (const int {\em DAQID})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1MappedContainer_a586146424f67132696b172db51409fa4}
+
+
+delete entry for DAQ channel ID If deleteElements is set, the stored object will be deleted, too.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em DAQID}]coordinate for content as (Module) channel ID see \doxyref{Mapper}{p.}{classCALICE_1_1Mapper} \end{DoxyParams}
+
+
+Definition at line 202 of file MappedContainer.hh.
+
+References CALICE::Mapper::getIndexByDAQID().\index{CALICE::MappedContainer@{CALICE::MappedContainer}!deleteByModuleID@{deleteByModuleID}}
+\index{deleteByModuleID@{deleteByModuleID}!CALICE::MappedContainer@{CALICE::MappedContainer}}
+\subsubsection[{deleteByModuleID}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf CALICE::MappedContainer}$<$ T $>$::deleteByModuleID (const int {\em channelID})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1MappedContainer_a06e3052b440596d6758010eec4eca336}
+
+
+delete entry for (Module) channel ID If deleteElements is set, the stored object will be deleted, too.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em channelID}]coordinate for content as (Module) channel ID see \doxyref{Mapper}{p.}{classCALICE_1_1Mapper} \end{DoxyParams}
+
+
+Definition at line 190 of file MappedContainer.hh.
+
+References CALICE::Mapper::getIndexByModuleID().\index{CALICE::MappedContainer@{CALICE::MappedContainer}!fillByCellID@{fillByCellID}}
+\index{fillByCellID@{fillByCellID}!CALICE::MappedContainer@{CALICE::MappedContainer}}
+\subsubsection[{fillByCellID}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf CALICE::MappedContainer}$<$ T $>$::fillByCellID (const int {\em cellID}, \/  T $\ast$ {\em object}, \/  bool {\em unique} = {\ttfamily true})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1MappedContainer_aae13940ba51f3e2b134b2a8ebdfdb326}
+
+
+fill content for (Mokka) cellID If unique is set, an already set value cannot be overwritten and an exception is thrown. Otherwise, the old value gets overwritten.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em cellID}]coordinate for content as (Mokka) cellID see \doxyref{Mapper}{p.}{classCALICE_1_1Mapper} \item[\mbox{$\leftarrow$} {\em object}]data to be stored \item[\mbox{$\leftarrow$} {\em unique}]enables protection from overwriting\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]\end{DoxyExceptions}
+
+
+Definition at line 326 of file MappedContainer.hh.
+
+References CALICE::Mapper::getIndexByCellID().
+
+Referenced by CALICE::CellDescriptionGenerator::generate(), and CALICE::CellNeighbourCalculator::getNeighbours().\index{CALICE::MappedContainer@{CALICE::MappedContainer}!fillByDAQID@{fillByDAQID}}
+\index{fillByDAQID@{fillByDAQID}!CALICE::MappedContainer@{CALICE::MappedContainer}}
+\subsubsection[{fillByDAQID}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf CALICE::MappedContainer}$<$ T $>$::fillByDAQID (const int {\em DAQID}, \/  T $\ast$ {\em object}, \/  bool {\em unique} = {\ttfamily true})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1MappedContainer_a55d9b2c21f9a4cb68792f921649940f5}
+
+
+fill content for DAQ channel ID If unique is set, an already set value cannot be overwritten and an exception is thrown. Otherwise, the old value gets overwritten.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em DAQID}]coordinate for content as DAQ channel ID see \doxyref{Mapper}{p.}{classCALICE_1_1Mapper} \item[\mbox{$\leftarrow$} {\em object}]data to be stored \item[\mbox{$\leftarrow$} {\em unique}]enables protection from overwriting\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]\end{DoxyExceptions}
+
+
+Definition at line 340 of file MappedContainer.hh.
+
+References CALICE::Mapper::getIndexByDAQID().\index{CALICE::MappedContainer@{CALICE::MappedContainer}!fillByModuleID@{fillByModuleID}}
+\index{fillByModuleID@{fillByModuleID}!CALICE::MappedContainer@{CALICE::MappedContainer}}
+\subsubsection[{fillByModuleID}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T $>$ void {\bf CALICE::MappedContainer}$<$ T $>$::fillByModuleID (const int {\em channelID}, \/  T $\ast$ {\em object}, \/  bool {\em unique} = {\ttfamily true})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1MappedContainer_a504606138ece93187825e8fcb71e1220}
+
+
+fill content for (Module) channel ID If unique is set, an already set value cannot be overwritten and an exception is thrown. Otherwise, the old value gets overwritten.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em channelID}]coordinate for content as Module channel ID see \doxyref{Mapper}{p.}{classCALICE_1_1Mapper} \item[\mbox{$\leftarrow$} {\em object}]data to be stored \item[\mbox{$\leftarrow$} {\em unique}]enables protection from overwriting\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]\end{DoxyExceptions}
+
+
+Definition at line 333 of file MappedContainer.hh.
+
+References CALICE::Mapper::getIndexByModuleID().\index{CALICE::MappedContainer@{CALICE::MappedContainer}!getByCellID@{getByCellID}}
+\index{getByCellID@{getByCellID}!CALICE::MappedContainer@{CALICE::MappedContainer}}
+\subsubsection[{getByCellID}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T$\ast$ {\bf CALICE::MappedContainer}$<$ T $>$::getByCellID (const int {\em cellID})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1MappedContainer_aa665f0e07e0f8b884a56dd998c56b23e}
+
+
+get content for (Mokka) cellID 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em cellID}]coordinate for content as (Mokka) cellID see \doxyref{Mapper}{p.}{classCALICE_1_1Mapper} \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+data for cellID or 0 if no data is available (or channel does not exist) 
+\end{DoxyReturn}
+
+
+Definition at line 109 of file MappedContainer.hh.
+
+References CALICE::Mapper::getIndexByCellID().\index{CALICE::MappedContainer@{CALICE::MappedContainer}!getByDAQID@{getByDAQID}}
+\index{getByDAQID@{getByDAQID}!CALICE::MappedContainer@{CALICE::MappedContainer}}
+\subsubsection[{getByDAQID}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T$\ast$ {\bf CALICE::MappedContainer}$<$ T $>$::getByDAQID (const int {\em DAQID})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1MappedContainer_a516e25fc9a2f58dc64ff505a95fb5f53}
+
+
+get content for DAQ channel ID 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em DAQID}]coordinate for content as (Module) channel ID see \doxyref{Mapper}{p.}{classCALICE_1_1Mapper} \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+data for channel ID or 0 if no data is available (or channel does not exist) 
+\end{DoxyReturn}
+
+
+Definition at line 132 of file MappedContainer.hh.
+
+References CALICE::Mapper::getIndexByDAQID().\index{CALICE::MappedContainer@{CALICE::MappedContainer}!getByModuleID@{getByModuleID}}
+\index{getByModuleID@{getByModuleID}!CALICE::MappedContainer@{CALICE::MappedContainer}}
+\subsubsection[{getByModuleID}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T$\ast$ {\bf CALICE::MappedContainer}$<$ T $>$::getByModuleID (const int {\em channelID})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1MappedContainer_a48d9b0adfedfddf3ba266b4dfe97c3f3}
+
+
+get content for (Module) channel ID 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em channelID}]coordinate for content as (Module) channel ID see \doxyref{Mapper}{p.}{classCALICE_1_1Mapper} \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+data for channel ID or 0 if no data is available (or channel does not exist) 
+\end{DoxyReturn}
+
+
+Definition at line 120 of file MappedContainer.hh.
+
+References CALICE::Mapper::getIndexByModuleID().\index{CALICE::MappedContainer@{CALICE::MappedContainer}!getDecoder@{getDecoder}}
+\index{getDecoder@{getDecoder}!CALICE::MappedContainer@{CALICE::MappedContainer}}
+\subsubsection[{getDecoder}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf DecoderSet}$\ast$ {\bf CALICE::MappedContainer}$<$ T $>$::getDecoder ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1MappedContainer_aa3c52d207f51cbe38e34094c2cbfef96}
+
+
+return a pointer to the \doxyref{DecoderSet}{p.}{classCALICE_1_1DecoderSet} handling the decoding of IDs with encoding strings This function returns a pointer to the \doxyref{DecoderSet}{p.}{classCALICE_1_1DecoderSet} used by the \doxyref{Mapper}{p.}{classCALICE_1_1Mapper}. This allows to change the used encoding string. Be aware that the \doxyref{DecoderSet}{p.}{classCALICE_1_1DecoderSet} might be the same for many Objects using the same \doxyref{Mapper}{p.}{classCALICE_1_1Mapper}. Therefore, you should always enfore your encoding before using the \doxyref{MappedContainer}{p.}{classCALICE_1_1MappedContainer}. 
+
+Definition at line 59 of file MappedContainer.hh.
+
+References CALICE::Mapper::getDecoder().\index{CALICE::MappedContainer@{CALICE::MappedContainer}!removeByCellID@{removeByCellID}}
+\index{removeByCellID@{removeByCellID}!CALICE::MappedContainer@{CALICE::MappedContainer}}
+\subsubsection[{removeByCellID}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T$\ast$ {\bf CALICE::MappedContainer}$<$ T $>$::removeByCellID (const int {\em cellID})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1MappedContainer_a93fc00788a8fb2a6ddb93033392d19fb}
+
+
+get content for (Mokka) cellID and remove it from the container 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em cellID}]coordinate for content as (Module) channel ID see \doxyref{Mapper}{p.}{classCALICE_1_1Mapper} \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+data for cellID or 0 if no data is available (or channel does not exist) 
+\end{DoxyReturn}
+
+
+Definition at line 143 of file MappedContainer.hh.
+
+References CALICE::Mapper::getIndexByCellID().\index{CALICE::MappedContainer@{CALICE::MappedContainer}!removeByDAQID@{removeByDAQID}}
+\index{removeByDAQID@{removeByDAQID}!CALICE::MappedContainer@{CALICE::MappedContainer}}
+\subsubsection[{removeByDAQID}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T$\ast$ {\bf CALICE::MappedContainer}$<$ T $>$::removeByDAQID (const int {\em DAQID})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1MappedContainer_aaade8074abd607f8e7c61bef8415127c}
+
+
+get content for DAQ channel ID and remove it from the container 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em DAQID}]coordinate for content as (Module) channel ID see \doxyref{Mapper}{p.}{classCALICE_1_1Mapper} \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+data for channel ID or 0 if no data is available (or channel does not exist) 
+\end{DoxyReturn}
+
+
+Definition at line 165 of file MappedContainer.hh.
+
+References CALICE::Mapper::getIndexByDAQID().\index{CALICE::MappedContainer@{CALICE::MappedContainer}!removeByModuleID@{removeByModuleID}}
+\index{removeByModuleID@{removeByModuleID}!CALICE::MappedContainer@{CALICE::MappedContainer}}
+\subsubsection[{removeByModuleID}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T$\ast$ {\bf CALICE::MappedContainer}$<$ T $>$::removeByModuleID (const int {\em channelID})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1MappedContainer_abf12898e98be0e23a9e05eccce59fefa}
+
+
+get content for (Module) channel ID and remove it from the container 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em channelID}]coordinate for content as (Module) channel ID see \doxyref{Mapper}{p.}{classCALICE_1_1Mapper} \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+data for channel ID or 0 if no data is available (or channel does not exist) 
+\end{DoxyReturn}
+
+
+Definition at line 154 of file MappedContainer.hh.
+
+References CALICE::Mapper::getIndexByModuleID().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+MappedContainer.hh\end{DoxyCompactItemize}

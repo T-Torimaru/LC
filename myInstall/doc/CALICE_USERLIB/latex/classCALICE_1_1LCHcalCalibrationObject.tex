@@ -1,0 +1,201 @@
+\section{CALICE::LCHcalCalibrationObject Class Reference}
+\label{classCALICE_1_1LCHcalCalibrationObject}\index{CALICE::LCHcalCalibrationObject@{CALICE::LCHcalCalibrationObject}}
+
+
+Object to store information about arbitrary cell wise calibration of the HCAL in LC Objects.  
+
+
+{\ttfamily \#include $<$LCHcalCalibrationObject.hh$>$}Inheritance diagram for CALICE::LCHcalCalibrationObject::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.05727cm]{classCALICE_1_1LCHcalCalibrationObject}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf LCHcalCalibrationObject} ()\label{classCALICE_1_1LCHcalCalibrationObject_acb284f567fd1d0ad6ffe21b30f21cdaa}
+
+\begin{DoxyCompactList}\small\item\em Default c'tor. \item\end{DoxyCompactList}\item 
+{\bfseries LCHcalCalibrationObject} (LCObject $\ast$obj)\label{classCALICE_1_1LCHcalCalibrationObject_ac550a3a93ec37a835ebf980cd17f8d09}
+
+\item 
+LCGenericObjectImpl $\ast$ {\bf obj} ()
+\begin{DoxyCompactList}\small\item\em The LCGenericObjectImpl . \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$LCHcalCalibrationObject} ()\label{classCALICE_1_1LCHcalCalibrationObject_a2fdfef9c05ed0c8d69be6a6ac7e879d3}
+
+\begin{DoxyCompactList}\small\item\em Clean up if we created a new LCGenericObjectImpl. \item\end{DoxyCompactList}\item 
+virtual int {\bf id} ()\label{classCALICE_1_1LCHcalCalibrationObject_adfd871bb200ee6edc74e77ab99cd64cf}
+
+\begin{DoxyCompactList}\small\item\em Return the id of the underlying LCGenericObjectImpl. \item\end{DoxyCompactList}\item 
+int {\bfseries getNInt} () const \label{classCALICE_1_1LCHcalCalibrationObject_ab05f6cd6a589c3ce40d502b5789de97b}
+
+\item 
+int {\bfseries getNFloat} () const \label{classCALICE_1_1LCHcalCalibrationObject_ab0b0edbc06b75b1f79b7418f5a800bf5}
+
+\item 
+int {\bfseries getNDouble} () const \label{classCALICE_1_1LCHcalCalibrationObject_a8c3aebde0329827bed1847c06420ce36}
+
+\item 
+int {\bfseries getIntVal} (int index) const \label{classCALICE_1_1LCHcalCalibrationObject_a2dba956b310465eddc44d69ae8355277}
+
+\item 
+float {\bfseries getFloatVal} (int index) const \label{classCALICE_1_1LCHcalCalibrationObject_a37c7ae04e24cb2b923d765123d149b5b}
+
+\item 
+double {\bfseries getDoubleVal} (int index) const \label{classCALICE_1_1LCHcalCalibrationObject_a231f2119fb380bc4278227d6f1a7ca16}
+
+\item 
+bool {\bfseries isFixedSize} () const \label{classCALICE_1_1LCHcalCalibrationObject_a399a467018ef0e400cfaed6bc164f5e7}
+
+\item 
+float {\bfseries getConstant} ()\label{classCALICE_1_1LCHcalCalibrationObject_a9b41090c53867d347adecaad4dbb642c}
+
+\item 
+float {\bfseries getConstantError} ()\label{classCALICE_1_1LCHcalCalibrationObject_acc1cde393ee9e7bf8e7cf8c7de367366}
+
+\item 
+void {\bfseries setConstant} (float c)\label{classCALICE_1_1LCHcalCalibrationObject_a0b9f775ebdfe811203943fc88fa53747}
+
+\item 
+void {\bfseries setConstantError} (float ce)\label{classCALICE_1_1LCHcalCalibrationObject_aef6d9550f34c29a260ec80ecc3816550}
+
+\item 
+unsigned {\bf getCellKey} () const \label{classCALICE_1_1LCHcalCalibrationObject_ade3cd1a7657d6f0b759a814d884e74a7}
+
+\begin{DoxyCompactList}\small\item\em get cell key of cell \item\end{DoxyCompactList}\item 
+void {\bf setCellKey} (unsigned cellKey)\label{classCALICE_1_1LCHcalCalibrationObject_acefb80d278a76b9ee117de5f52274e4c}
+
+\begin{DoxyCompactList}\small\item\em set cell key of cell \item\end{DoxyCompactList}\item 
+unsigned {\bf getChip} () const \label{classCALICE_1_1LCHcalCalibrationObject_abf8d38197f79027123cc991c122472ec}
+
+\begin{DoxyCompactList}\small\item\em get chip number of cell \item\end{DoxyCompactList}\item 
+unsigned {\bf getChannel} () const \label{classCALICE_1_1LCHcalCalibrationObject_a6ec29045e1d20f2a0fb4169a4e017b12}
+
+\begin{DoxyCompactList}\small\item\em get channel number of cell \item\end{DoxyCompactList}\item 
+virtual float {\bf applyCalibration} (float inputValue) const 
+\begin{DoxyCompactList}\small\item\em let the object apply the calibration stored in the object \item\end{DoxyCompactList}\item 
+virtual float {\bf cancelCalibration} (float outputValue) const \label{classCALICE_1_1LCHcalCalibrationObject_a77e8c36b4989d3c378bce8c16ddbb2a9}
+
+\begin{DoxyCompactList}\small\item\em cancel an applied calibration from energy value \item\end{DoxyCompactList}\item 
+virtual float {\bf applyCalibrationError} (float inputValue, float inputError) const 
+\begin{DoxyCompactList}\small\item\em let the object calculate the error after applying the calibration stored in the object \item\end{DoxyCompactList}\item 
+virtual float {\bf cancelCalibrationError} (float outputValue, float outputError) const \label{classCALICE_1_1LCHcalCalibrationObject_abca1f2e349d568bc41f5576d7dc00f93}
+
+\begin{DoxyCompactList}\small\item\em apply error due to canceling a calibration to current error \item\end{DoxyCompactList}\item 
+virtual bool {\bf calibrationValid} () const 
+\begin{DoxyCompactList}\small\item\em is the calibration stored in the object valid? \item\end{DoxyCompactList}\item 
+virtual bool {\bf keepEvent} (float resultValue, float resultError) const 
+\begin{DoxyCompactList}\small\item\em should the cell been kept in the cell selection after the calibration has been performed? \item\end{DoxyCompactList}\item 
+virtual float {\bfseries getParam} (unsigned paramIndex) const \label{classCALICE_1_1LCHcalCalibrationObject_a9187cdf6f753d71c5f6753b90eb806c4}
+
+\item 
+virtual void {\bfseries setParam} (unsigned paramIndex)\label{classCALICE_1_1LCHcalCalibrationObject_a1fdd053f46ff8a7b21ff64232d4fcfcb}
+
+\item 
+virtual void {\bfseries setCellTemp} (float tempValue, float tempError)\label{classCALICE_1_1LCHcalCalibrationObject_a617cffebc3dd06251a671d77dc4df9b0}
+
+\item 
+virtual float {\bfseries getCellTemp} ()\label{classCALICE_1_1LCHcalCalibrationObject_a04d3b21769fcca6a86d2029c7f400f43}
+
+\item 
+virtual float {\bfseries getCellTempError} ()\label{classCALICE_1_1LCHcalCalibrationObject_a5178c01f738484bc55c49677a5476588}
+
+\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1LCHcalCalibrationObject_ace5c8bbdd0437badd08b6d09dfd75ae9}
+
+\begin{DoxyCompactList}\small\item\em return type of the class \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1LCHcalCalibrationObject_a56c472a25d3146e4b152ce52116e44b9}
+
+\begin{DoxyCompactList}\small\item\em return a brief description of the data member \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+LCGenericObjectImpl $\ast$ {\bfseries \_\-obj}\label{classCALICE_1_1LCHcalCalibrationObject_a89c0628c58561dc3a036c1cce0d0d6ba}
+
+\item 
+bool {\bfseries \_\-createdObject}\label{classCALICE_1_1LCHcalCalibrationObject_a315d971845a1d05206d4502a141b5aba}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Object to store information about arbitrary cell wise calibration of the HCAL in LC Objects. \begin{DoxyAuthor}{Author}
+S. Schmidt DESY 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Jul 2006 
+\end{DoxyDate}
+
+
+Definition at line 20 of file LCHcalCalibrationObject.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::LCHcalCalibrationObject@{CALICE::LCHcalCalibrationObject}!applyCalibration@{applyCalibration}}
+\index{applyCalibration@{applyCalibration}!CALICE::LCHcalCalibrationObject@{CALICE::LCHcalCalibrationObject}}
+\subsubsection[{applyCalibration}]{\setlength{\rightskip}{0pt plus 5cm}virtual float CALICE::LCHcalCalibrationObject::applyCalibration (float {\em inputValue}) const\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classCALICE_1_1LCHcalCalibrationObject_a763f1cf5b9c372fdde268d79b789adcc}
+
+
+let the object apply the calibration stored in the object 
+\begin{DoxyParams}{Parameters}
+\item[{\em inputValue}]\char`\"{}energy\char`\"{} value of the cell before the calibration \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\char`\"{}energy\char`\"{} value of the cell after the calibration 
+\end{DoxyReturn}
+
+
+Reimplemented in {\bf CALICE::DeadNoiseConstants} \doxyref{}{p.}{classCALICE_1_1DeadNoiseConstants_a117a93e472c84e57b805de35e12b6e29}, {\bf CALICE::GainConstants} \doxyref{}{p.}{classCALICE_1_1GainConstants_aeb089dc140f6e63d2f0a4746ecdd5cbb}, {\bf CALICE::InterConstants} \doxyref{}{p.}{classCALICE_1_1InterConstants_ac4e54f423b0048db8e79b745a53a5209}, {\bf CALICE::LCHcalCalibrationObject2D} \doxyref{}{p.}{classCALICE_1_1LCHcalCalibrationObject2D_ad805292313b3bb8fe8a3008a3f285b10}, {\bf CALICE::MIPConstants} \doxyref{}{p.}{classCALICE_1_1MIPConstants_a1ce8759ffdc72c9975ef2705c08fc4d7}, {\bf CALICE::PedestalConstants} \doxyref{}{p.}{classCALICE_1_1PedestalConstants_abbcc4190367b281e817a54467f7d7ed2}, {\bf CALICE::TcmtSaturationConstants} \doxyref{}{p.}{classCALICE_1_1TcmtSaturationConstants_a7a6e4f80607f938d3a739bf2527f3a56}, and {\bf CALICE::TempGainConstants} \doxyref{}{p.}{classCALICE_1_1TempGainConstants_ae2278e77d19368d5fb1ec5fb1eecef44}.
+
+Definition at line 131 of file LCHcalCalibrationObject.hh.\index{CALICE::LCHcalCalibrationObject@{CALICE::LCHcalCalibrationObject}!applyCalibrationError@{applyCalibrationError}}
+\index{applyCalibrationError@{applyCalibrationError}!CALICE::LCHcalCalibrationObject@{CALICE::LCHcalCalibrationObject}}
+\subsubsection[{applyCalibrationError}]{\setlength{\rightskip}{0pt plus 5cm}virtual float CALICE::LCHcalCalibrationObject::applyCalibrationError (float {\em inputValue}, \/  float {\em inputError}) const\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classCALICE_1_1LCHcalCalibrationObject_a16d9de9567f68d7784a2daa4d2821341}
+
+
+let the object calculate the error after applying the calibration stored in the object 
+\begin{DoxyParams}{Parameters}
+\item[{\em inputValue}]\char`\"{}energy\char`\"{} value of the cell stored before the calibration \item[{\em inputError}]error of the \char`\"{}energy\char`\"{} value of the cell before the calibration \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error of the \char`\"{}energy\char`\"{} value of the cell after the calibration taking into account the error of the \char`\"{}energy\char`\"{} value of the cell before the calibration and the error of the calibration itself 
+\end{DoxyReturn}
+
+
+Reimplemented in {\bf CALICE::DeadNoiseConstants} \doxyref{}{p.}{classCALICE_1_1DeadNoiseConstants_a1c5558e71e236dabf1e54f54a87162f0}, {\bf CALICE::GainConstants} \doxyref{}{p.}{classCALICE_1_1GainConstants_a669886b01357faa0b2173384be3a60d3}, {\bf CALICE::InterConstants} \doxyref{}{p.}{classCALICE_1_1InterConstants_ad102c242709f9229f3936d04bb356be7}, {\bf CALICE::LCHcalCalibrationObject2D} \doxyref{}{p.}{classCALICE_1_1LCHcalCalibrationObject2D_a5a73278000f9d13e19969bc229fe18f3}, {\bf CALICE::MIPConstants} \doxyref{}{p.}{classCALICE_1_1MIPConstants_a7beb08be64e40e822288cf285b5601e0}, {\bf CALICE::PedestalConstants} \doxyref{}{p.}{classCALICE_1_1PedestalConstants_ac2c94c3d42b510de4c973ffb4a463469}, {\bf CALICE::TcmtSaturationConstants} \doxyref{}{p.}{classCALICE_1_1TcmtSaturationConstants_a256def068f131f98cb3a62669cc4dcaa}, and {\bf CALICE::TempGainConstants} \doxyref{}{p.}{classCALICE_1_1TempGainConstants_a4319810d19fd6bb61de44faec1f56226}.
+
+Definition at line 148 of file LCHcalCalibrationObject.hh.\index{CALICE::LCHcalCalibrationObject@{CALICE::LCHcalCalibrationObject}!calibrationValid@{calibrationValid}}
+\index{calibrationValid@{calibrationValid}!CALICE::LCHcalCalibrationObject@{CALICE::LCHcalCalibrationObject}}
+\subsubsection[{calibrationValid}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool CALICE::LCHcalCalibrationObject::calibrationValid () const\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classCALICE_1_1LCHcalCalibrationObject_abbb1fce81f41a89147b721d593bbc734}
+
+
+is the calibration stored in the object valid? \begin{DoxyReturn}{Returns}
+true if the calibration is valid, false if no valid calibration is available 
+\end{DoxyReturn}
+
+
+Reimplemented in {\bf CALICE::DeadNoiseConstants} \doxyref{}{p.}{classCALICE_1_1DeadNoiseConstants_ad7e3bc3298b47d8fa31a43c160a8a45b}, {\bf CALICE::GainConstants} \doxyref{}{p.}{classCALICE_1_1GainConstants_a37c5d66f2537eee42e259147856e86a7}, {\bf CALICE::InterConstants} \doxyref{}{p.}{classCALICE_1_1InterConstants_ab184f4d15b941b5ac67474b02eaab138}, {\bf CALICE::MIPConstants} \doxyref{}{p.}{classCALICE_1_1MIPConstants_aba936e2505ba100025495dded661ccb0}, {\bf CALICE::PedestalConstants} \doxyref{}{p.}{classCALICE_1_1PedestalConstants_a6cfd6a82fa83433d2abe95b830ae164d}, {\bf CALICE::SaturationConstants} \doxyref{}{p.}{classCALICE_1_1SaturationConstants_a7fdebcaa3ebf3b099aa11524e347ace3}, {\bf CALICE::TcmtSaturationConstants} \doxyref{}{p.}{classCALICE_1_1TcmtSaturationConstants_aa2b6117fdcb356a8af69f54a2944a0af}, and {\bf CALICE::TempGainConstants} \doxyref{}{p.}{classCALICE_1_1TempGainConstants_a132d04dd01b328d85857bda95baf000b}.
+
+Definition at line 161 of file LCHcalCalibrationObject.hh.\index{CALICE::LCHcalCalibrationObject@{CALICE::LCHcalCalibrationObject}!keepEvent@{keepEvent}}
+\index{keepEvent@{keepEvent}!CALICE::LCHcalCalibrationObject@{CALICE::LCHcalCalibrationObject}}
+\subsubsection[{keepEvent}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool CALICE::LCHcalCalibrationObject::keepEvent (float {\em resultValue}, \/  float {\em resultError}) const\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classCALICE_1_1LCHcalCalibrationObject_a59f14a6b83e77717751ae4e7213e8d09}
+
+
+should the cell been kept in the cell selection after the calibration has been performed? 
+\begin{DoxyParams}{Parameters}
+\item[{\em resultValue}]\char`\"{}energy\char`\"{} value of the cell after the calibration \item[{\em resultError}]error on the \char`\"{}energy\char`\"{} value of the cell after the calibration \end{DoxyParams}
+
+
+Reimplemented in {\bf CALICE::DeadNoiseConstants} \doxyref{}{p.}{classCALICE_1_1DeadNoiseConstants_af4318e256ff1466682855553d5ba453e}, {\bf CALICE::GainConstants} \doxyref{}{p.}{classCALICE_1_1GainConstants_a18c349f2f60b6f2d5d387fe386c63ebc}, {\bf CALICE::InterConstants} \doxyref{}{p.}{classCALICE_1_1InterConstants_a919e037d3e03029486c2a3c9713e772a}, {\bf CALICE::MIPConstants} \doxyref{}{p.}{classCALICE_1_1MIPConstants_a11232a43c70405ef3f8c4cc88641de6a}, {\bf CALICE::PedestalConstants} \doxyref{}{p.}{classCALICE_1_1PedestalConstants_a5296ca6178fa8cebd290bcae2f39a86f}, {\bf CALICE::SaturationConstants} \doxyref{}{p.}{classCALICE_1_1SaturationConstants_a4df07d49bfccab7e7586bffddee8583c}, and {\bf CALICE::TcmtSaturationConstants} \doxyref{}{p.}{classCALICE_1_1TcmtSaturationConstants_adb8d6310076d321706941a73904e4f02}.
+
+Definition at line 169 of file LCHcalCalibrationObject.hh.\index{CALICE::LCHcalCalibrationObject@{CALICE::LCHcalCalibrationObject}!obj@{obj}}
+\index{obj@{obj}!CALICE::LCHcalCalibrationObject@{CALICE::LCHcalCalibrationObject}}
+\subsubsection[{obj}]{\setlength{\rightskip}{0pt plus 5cm}LCGenericObjectImpl$\ast$ CALICE::LCHcalCalibrationObject::obj ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1LCHcalCalibrationObject_a3d930fab870a493259f89039a2716bf9}
+
+
+The LCGenericObjectImpl . Sublcasses use this to access their data. 
+
+Definition at line 64 of file LCHcalCalibrationObject.hh.
+
+Referenced by CALICE::DeadNoiseConstants::DeadNoiseConstants(), CALICE::GainConstants::GainConstants(), CALICE::TempGainConstants::setGainTemp(), CALICE::TempGainConstants::setTslope(), and CALICE::TempGainConstants::TempGainConstants().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+LCHcalCalibrationObject.hh\end{DoxyCompactItemize}

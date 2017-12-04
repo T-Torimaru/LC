@@ -1,0 +1,131 @@
+\section{CALICE::PedestalProcessor Class Reference}
+\label{classCALICE_1_1PedestalProcessor}\index{CALICE::PedestalProcessor@{CALICE::PedestalProcessor}}
+
+
+Processor which calculates the pedestals from pedestal events and writes them as a collection of SimpleValue.  
+
+
+{\ttfamily \#include $<$PedestalProcessor.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf PedestalProcessor} ()\label{classCALICE_1_1PedestalProcessor_a6bc9bd585510a41c6ca0f563ef93e60d}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. \item\end{DoxyCompactList}\item 
+{\bf $\sim$PedestalProcessor} ()\label{classCALICE_1_1PedestalProcessor_a7afefac07d219138d0cbb0a172292584}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+{\bf PedestalProcessor} $\ast$ {\bf newProcessor} ()\label{classCALICE_1_1PedestalProcessor_aaf59f11eb0d6cb2fd57e4093b2174edd}
+
+\begin{DoxyCompactList}\small\item\em Return new instance of this processor. \item\end{DoxyCompactList}\item 
+virtual void {\bf init} ()\label{classCALICE_1_1PedestalProcessor_a936b946a56f3e0c6203f413161d0b534}
+
+\begin{DoxyCompactList}\small\item\em Initialise necessary variables. \item\end{DoxyCompactList}\item 
+void {\bf processEvent} (LCEvent $\ast$evt)
+\begin{DoxyCompactList}\small\item\em Process event (the working horse). \item\end{DoxyCompactList}\item 
+virtual void {\bf end} ()\label{classCALICE_1_1PedestalProcessor_ace047025eb794a92d3abbfd089eb6b2c}
+
+\begin{DoxyCompactList}\small\item\em Function called at the end of all events, for cleanup. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf updateMapper} ()\label{classCALICE_1_1PedestalProcessor_a3efefa4461047861ad09e26ff06c47ff}
+
+\begin{DoxyCompactList}\small\item\em Update the mapper. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bf \_\-inputColName}\label{classCALICE_1_1PedestalProcessor_ae7ff5ea5be5525611f209b13adcd7cee}
+
+\begin{DoxyCompactList}\small\item\em name of the input collection \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-outputColName}\label{classCALICE_1_1PedestalProcessor_aae6d1d5e7b01e107d18f2005d893e0ca}
+
+\begin{DoxyCompactList}\small\item\em name of the output collection \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-mappingProcessorName}\label{classCALICE_1_1PedestalProcessor_a2dcdb3d16775dc1b4238d07a6bc27f6f}
+
+\begin{DoxyCompactList}\small\item\em name of the processor providing the mapper \item\end{DoxyCompactList}\item 
+TriggerBits {\bfseries \_\-triggerConf}\label{classCALICE_1_1PedestalProcessor_a1cf8086fe463615886f57f0b5be05d82}
+
+\item 
+int {\bf \_\-minPedNumber}\label{classCALICE_1_1PedestalProcessor_af438d9894110cd623ef6d95425a5459c}
+
+\begin{DoxyCompactList}\small\item\em minimum number of events for which pedestal should be calculated \item\end{DoxyCompactList}\item 
+int {\bf \_\-updateFrequency}\label{classCALICE_1_1PedestalProcessor_a10205895bc6b3368876faf742beb5581}
+
+\begin{DoxyCompactList}\small\item\em frequency with which the pedestal should be calculated \item\end{DoxyCompactList}\item 
+int {\bf \_\-pedCounter}\label{classCALICE_1_1PedestalProcessor_a7ab871cec6528446d963c8d828abe0b9}
+
+\begin{DoxyCompactList}\small\item\em counter for the number of pedestal events \item\end{DoxyCompactList}\item 
+bool {\bf \_\-skipMinimumEvent}\label{classCALICE_1_1PedestalProcessor_af2eb3cdd7d27a5033bfd669661e61697}
+
+\begin{DoxyCompactList}\small\item\em flag to skip a minPedNumber of events \item\end{DoxyCompactList}\item 
+const AhcMapper $\ast$ {\bf \_\-mapper}\label{classCALICE_1_1PedestalProcessor_ae5162fd017ae4a1abb03921d3bb3bfba}
+
+\begin{DoxyCompactList}\small\item\em the mapper \item\end{DoxyCompactList}\item 
+unsigned int {\bf \_\-mapperVersion}\label{classCALICE_1_1PedestalProcessor_aef19163d8be045f83115d034221a3489}
+
+\begin{DoxyCompactList}\small\item\em the mapper version (which changes when the mapper changes) \item\end{DoxyCompactList}\item 
+LCCollection $\ast$ {\bf \_\-colPedestal}\label{classCALICE_1_1PedestalProcessor_ab0c600b05c496702970da836d970cd48}
+
+\begin{DoxyCompactList}\small\item\em collection with pedestal events \item\end{DoxyCompactList}\item 
+RunTimeConditionsHandler $\ast$ {\bf \_\-conditionsHandler}\label{classCALICE_1_1PedestalProcessor_a3a39a6ea9341d4a6595227bc3947b4ac}
+
+\begin{DoxyCompactList}\small\item\em pointer to the run time conditions handler \item\end{DoxyCompactList}\item 
+float $\ast$$\ast$ {\bf \_\-pedSum}\label{classCALICE_1_1PedestalProcessor_a7659ed593bf1fa8c4d6fea3332976765}
+
+\begin{DoxyCompactList}\small\item\em double array of [module][cell] for the pedestal sum \item\end{DoxyCompactList}\item 
+float $\ast$$\ast$ {\bf \_\-pedSumSquare}\label{classCALICE_1_1PedestalProcessor_a9e0ddd7ae0bba557fd530741f6d386e5}
+
+\begin{DoxyCompactList}\small\item\em double array of [module][cell] for the pedestal sum squared \item\end{DoxyCompactList}\item 
+unsigned int $\ast$$\ast$ {\bf \_\-pedNum}\label{classCALICE_1_1PedestalProcessor_a9460997dc6fe25a8e362a93b20bc3ef9}
+
+\begin{DoxyCompactList}\small\item\em double array of [module][cell] for the number of pedestal events \item\end{DoxyCompactList}\item 
+float $\ast$$\ast$ {\bf \_\-ped}\label{classCALICE_1_1PedestalProcessor_a90da1932accfd689ab713b4cc576ee6d}
+
+\begin{DoxyCompactList}\small\item\em double array of [module][cell] for the pedestal value \item\end{DoxyCompactList}\item 
+float $\ast$$\ast$ {\bf \_\-pedError}\label{classCALICE_1_1PedestalProcessor_a127197da1199d8cecd356718609616e8}
+
+\begin{DoxyCompactList}\small\item\em double array of [module][cell] for the pedestal error \item\end{DoxyCompactList}\item 
+unsigned int {\bf \_\-ahcMaxNumberOfModules}\label{classCALICE_1_1PedestalProcessor_a476f3cc6d6a29482ec95e2fd3d84081e}
+
+\begin{DoxyCompactList}\small\item\em AHCAL maximum number of modules (39). \item\end{DoxyCompactList}\item 
+unsigned int {\bf \_\-ahcMaxNumberOfChannels}\label{classCALICE_1_1PedestalProcessor_a48806ad75d6e2d07b74b94983f3b0c8b}
+
+\begin{DoxyCompactList}\small\item\em AHCAL maximum number of channels. \item\end{DoxyCompactList}\item 
+unsigned int {\bf \_\-ahcMaxNumberOfChips}\label{classCALICE_1_1PedestalProcessor_ab39bcf808bee762e209218547e4e8e3b}
+
+\begin{DoxyCompactList}\small\item\em AHCAL maximum number of chips. \item\end{DoxyCompactList}\item 
+unsigned int {\bf \_\-ahcMaxNumberOfCells}\label{classCALICE_1_1PedestalProcessor_ab6b7f92f8127ddf820ce1463f4870457}
+
+\begin{DoxyCompactList}\small\item\em AHCAL maximum number of cells. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Processor which calculates the pedestals from pedestal events and writes them as a collection of SimpleValue. Note that the pedestal is the average energy (in ADC counts) of all pedestal hits. \begin{DoxyAuthor}{Author}
+{\tt angela-\/isabela.lucaci-\/timoce@desy.de} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Dec 2009 
+\end{DoxyDate}
+
+
+Definition at line 21 of file PedestalProcessor.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::PedestalProcessor@{CALICE::PedestalProcessor}!processEvent@{processEvent}}
+\index{processEvent@{processEvent}!CALICE::PedestalProcessor@{CALICE::PedestalProcessor}}
+\subsubsection[{processEvent}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::PedestalProcessor::processEvent (LCEvent $\ast$ {\em evt})}\label{classCALICE_1_1PedestalProcessor_a38b604fcbf248fd117ad099d080e4b9f}
+
+
+Process event (the working horse). 
+\begin{DoxyParams}{Parameters}
+\item[{\em evt}]event to be processed \end{DoxyParams}
+
+
+Definition at line 160 of file PedestalProcessor.cc.
+
+References \_\-ahcMaxNumberOfCells, \_\-ahcMaxNumberOfChips, \_\-ahcMaxNumberOfModules, \_\-colPedestal, \_\-conditionsHandler, \_\-inputColName, \_\-mapper, \_\-mapperVersion, \_\-minPedNumber, \_\-ped, \_\-pedCounter, \_\-pedError, \_\-pedNum, \_\-pedSum, \_\-pedSumSquare, \_\-skipMinimumEvent, and updateMapper().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+PedestalProcessor.hh\item 
+PedestalProcessor.cc\end{DoxyCompactItemize}

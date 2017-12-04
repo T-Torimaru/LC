@@ -1,0 +1,87 @@
+\section{CALICE::SceSlowReadoutModBlock Class Reference}
+\label{classCALICE_1_1SceSlowReadoutModBlock}\index{CALICE::SceSlowReadoutModBlock@{CALICE::SceSlowReadoutModBlock}}
+
+
+Interface Class to access the SceSlowReadout Data Here we handle ahc voltages, temperatures et al.  
+
+
+{\ttfamily \#include $<$SceSlowReadoutModBlock.hh$>$}Inheritance diagram for CALICE::SceSlowReadoutModBlock::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCALICE_1_1SceSlowReadoutModBlock}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf SceSlowReadoutModBlock} ()\label{classCALICE_1_1SceSlowReadoutModBlock_ae76345702171581b6d0b14c908138316}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+{\bf SceSlowReadoutModBlock} (LCObject $\ast$obj)\label{classCALICE_1_1SceSlowReadoutModBlock_afce80d304f84ac8d5646cfd0b03ff254}
+
+\begin{DoxyCompactList}\small\item\em 'Copy constructor' needed to interpret LCCollection read from file/database. \item\end{DoxyCompactList}\item 
+std::vector$<$ double $>$ \& {\bf getHbabCurrents} ()\label{classCALICE_1_1SceSlowReadoutModBlock_a34df8f135cc36eecee4d60c7569f4d2b}
+
+\begin{DoxyCompactList}\small\item\em Retrieve the hbab Currents. \item\end{DoxyCompactList}\item 
+void {\bf print} (std::ostream \&)
+\begin{DoxyCompactList}\small\item\em convenient print method \item\end{DoxyCompactList}\item 
+virtual const std::string {\bf getTypeName} () const \label{classCALICE_1_1SceSlowReadoutModBlock_a0edd2064a07aae9d59f3aaa3b08d1712}
+
+\begin{DoxyCompactList}\small\item\em Return the type of the class. \item\end{DoxyCompactList}\item 
+virtual const std::string {\bf getDataDescription} () const \label{classCALICE_1_1SceSlowReadoutModBlock_a9cd39f98c8cee70448c0da904bf95f41}
+
+\begin{DoxyCompactList}\small\item\em Return a brief description of the data members. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf setTypes} ()\label{classCALICE_1_1SceSlowReadoutModBlock_a7b9d02e2f430d6084875286d2aa8eca7}
+
+\begin{DoxyCompactList}\small\item\em This method defines the (general) types of the measured values A type not present here will not be handled!!! \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::vector$<$ double $>$ {\bf \_\-hbabCurrents}
+\begin{DoxyCompactList}\small\item\em The output vectors. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interface Class to access the SceSlowReadout Data Here we handle ahc voltages, temperatures et al. when filling the class the string identifying the measured values has to be given first, a warning is issued if no identifier is given for a given datatype. On the other hand this concerns just the filler of the class, i.e. the conversion where it is done once for all. See the print method at the end of the class for the meaning of the fields (as of 31/7/06) Use the interface methods to retrieve the data fields \begin{DoxyAuthor}{Author}
+: Roman Pöschl LAL/Orsay 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Aug 2006 
+\end{DoxyDate}
+
+
+Definition at line 55 of file SceSlowReadoutModBlock.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::SceSlowReadoutModBlock@{CALICE::SceSlowReadoutModBlock}!print@{print}}
+\index{print@{print}!CALICE::SceSlowReadoutModBlock@{CALICE::SceSlowReadoutModBlock}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::SceSlowReadoutModBlock::print (std::ostream \& {\em os})}\label{classCALICE_1_1SceSlowReadoutModBlock_a5387c50b25d23fd4605a2ab2ffd2d8a9}
+
+
+convenient print method Convenient print method. 
+
+Reimplemented from {\bf CALICE::ScintCaloSlowReadoutModBlock} \doxyref{}{p.}{classCALICE_1_1ScintCaloSlowReadoutModBlock_af128d26796f6a009d9c0777947c7d050}.
+
+Definition at line 32 of file SceSlowReadoutModBlock.cc.
+
+References CALICE::ScintCaloSlowReadoutModBlock::getCmbHeight(), CALICE::ScintCaloSlowReadoutModBlock::getCmbTemperatures(), CALICE::ScintCaloSlowReadoutModBlock::getCmbVoltages(), CALICE::ScintCaloSlowReadoutModBlock::getCmbWidth(), getHbabCurrents(), CALICE::ScintCaloSlowReadoutModBlock::getHbabVoltages(), CALICE::ScintCaloSlowReadoutModBlock::getLedSetting(), CALICE::ScintCaloSlowReadoutModBlock::getModuleNumber(), CALICE::ScintCaloSlowReadoutModBlock::getTimeStamp(), CALICE::ScintCaloSlowReadoutModBlock::prepareOutputVecs(), and CALICE::to\_\-binary\_\-bitops().
+
+\subsection{Field Documentation}
+\index{CALICE::SceSlowReadoutModBlock@{CALICE::SceSlowReadoutModBlock}!\_\-hbabCurrents@{\_\-hbabCurrents}}
+\index{\_\-hbabCurrents@{\_\-hbabCurrents}!CALICE::SceSlowReadoutModBlock@{CALICE::SceSlowReadoutModBlock}}
+\subsubsection[{\_\-hbabCurrents}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$double$>$ {\bf CALICE::SceSlowReadoutModBlock::\_\-hbabCurrents}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1SceSlowReadoutModBlock_abb0604d20baa3b2944def056344fcfdf}
+
+
+The output vectors. hbab temperatures 
+
+Definition at line 114 of file SceSlowReadoutModBlock.hh.
+
+Referenced by getHbabCurrents(), SceSlowReadoutModBlock(), and setTypes().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+SceSlowReadoutModBlock.hh\item 
+SceSlowReadoutModBlock.cc\end{DoxyCompactItemize}

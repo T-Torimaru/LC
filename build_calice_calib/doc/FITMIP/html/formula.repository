@@ -1,0 +1,16 @@
+\form#0:$f(x)$
+\form#1:$\left<x-\mbox{precision}, x+\mbox{precision}\right>$
+\form#2:$ (l\otimes g)(x)=\int_{-\infty}^{\infty}\mbox{d}y\ l(x-y)\cdot g(y)$
+\form#3:$l(x)$
+\form#4:$ g(x)$
+\form#5:$(l\otimes g)$
+\form#6:$\left< minRange,maxRange\right>$
+\form#7:$\left<i-rng,i+rng\right>$
+\form#8:$(l\otimes g)(x)$
+\form#9:$A(x|\rho)$
+\form#10:$\rho$
+\form#11:$ \sigma^2_{peak}=\sum_{i,j} \frac{dA(x=peak|\rho)}{d\rho_i} \mbox{cor}(\rho_i,\rho_j)\cdot {\sigma_{\rho}}_i\cdot{\sigma_{\rho}}_j \frac{dA(x=peak|\rho)}{d\rho_j}$
+\form#12:$\mbox{cor}(\rho_i,\rho_j)$
+\form#13:$\left<\mbox{\_fitrange[0]},\mbox{\_fitrange[1]}\right>$
+\form#14:$ -\log(L)$
+\form#15:$\left<\mbox{left},\mbox{right}\cdot\mbox{peakInit}\right>$

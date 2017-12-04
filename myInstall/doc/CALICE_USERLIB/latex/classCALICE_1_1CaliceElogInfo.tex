@@ -1,0 +1,503 @@
+\section{CALICE::CaliceElogInfo Class Reference}
+\label{classCALICE_1_1CaliceElogInfo}\index{CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}}
+
+
+Implementation of the e-\/log information.  
+
+
+{\ttfamily \#include $<$CaliceElogInfo.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CaliceElogInfo} (EVENT::LCCollection $\ast$col)
+\begin{DoxyCompactList}\small\item\em constructor from LCCollection (this way, the user does not need to cast anymore) \item\end{DoxyCompactList}\item 
+{\bf CaliceElogInfo} (const unsigned int runNumber, const int pdgType, const float energy, const int qualityFlag, const int triggerType, const int triggerSetting, const float cherenkovPressure, const float cherenkov2Pressure, const float positionX, const float positionY, const float rotationAngle)
+\begin{DoxyCompactList}\small\item\em constructor from elements \item\end{DoxyCompactList}\item 
+void {\bf setRunNumber} (const unsigned int runNumber)
+\begin{DoxyCompactList}\small\item\em Set the run number. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getRunNumber} ()
+\begin{DoxyCompactList}\small\item\em Get the run number. \item\end{DoxyCompactList}\item 
+void {\bf setPdgType} (const int pdgType)
+\begin{DoxyCompactList}\small\item\em Set the PDG ID. \item\end{DoxyCompactList}\item 
+int {\bf getPdgType} ()
+\begin{DoxyCompactList}\small\item\em Get the PDG ID. \item\end{DoxyCompactList}\item 
+void {\bf setTriggerType} (const int triggerType)
+\begin{DoxyCompactList}\small\item\em Set the trigger type. \item\end{DoxyCompactList}\item 
+int {\bf getTriggerType} ()
+\begin{DoxyCompactList}\small\item\em Get the trigger type. \item\end{DoxyCompactList}\item 
+void {\bf setTriggerSetting} (const int triggerSetting)
+\begin{DoxyCompactList}\small\item\em Set the trigger setting. \item\end{DoxyCompactList}\item 
+int {\bf getTriggerSetting} ()
+\begin{DoxyCompactList}\small\item\em Get the trigger setting. \item\end{DoxyCompactList}\item 
+void {\bf setQualityFlag} (const int qualityFlag)
+\begin{DoxyCompactList}\small\item\em Set the quality flag (0=good, 1=bad). \item\end{DoxyCompactList}\item 
+int {\bf getQualityFlag} ()
+\begin{DoxyCompactList}\small\item\em Get the quality flag. \item\end{DoxyCompactList}\item 
+void {\bf setEnergy} (const float energy)
+\begin{DoxyCompactList}\small\item\em Set the energy of this run. \item\end{DoxyCompactList}\item 
+float {\bf getEnergy} ()
+\begin{DoxyCompactList}\small\item\em Get the energy of this run. \item\end{DoxyCompactList}\item 
+void {\bf setCherenkovPressure} (const float cherenkovPressure)
+\begin{DoxyCompactList}\small\item\em Set the pressure in Cherenkov counter A. \item\end{DoxyCompactList}\item 
+float {\bf getCherenkovPressure} ()
+\begin{DoxyCompactList}\small\item\em Get the pressure in Cherenkov counter A. \item\end{DoxyCompactList}\item 
+void {\bf setCherenkov2Pressure} (const float cherenkov2Pressure)
+\begin{DoxyCompactList}\small\item\em Set the pressure in Cherenkov counter B. \item\end{DoxyCompactList}\item 
+float {\bf getCherenkov2Pressure} ()
+\begin{DoxyCompactList}\small\item\em Get the pressure in Cherenkov counter B. \item\end{DoxyCompactList}\item 
+void {\bf setPositionX} (const float positionX)
+\begin{DoxyCompactList}\small\item\em Set the x-\/position of the stage. \item\end{DoxyCompactList}\item 
+float {\bf getPositionX} ()
+\begin{DoxyCompactList}\small\item\em Get the x-\/position of the stage. \item\end{DoxyCompactList}\item 
+void {\bf setPositionY} (const float positionY)
+\begin{DoxyCompactList}\small\item\em Set the y-\/position of the stage. \item\end{DoxyCompactList}\item 
+float {\bf getPositionY} ()
+\begin{DoxyCompactList}\small\item\em Get the y-\/position of the stage. \item\end{DoxyCompactList}\item 
+void {\bf setRotationAngle} (const float rotationAngle)
+\begin{DoxyCompactList}\small\item\em Set the rotation angle of the stage. \item\end{DoxyCompactList}\item 
+float {\bf getRotationAngle} ()
+\begin{DoxyCompactList}\small\item\em Get the rotation angle of the stage. \item\end{DoxyCompactList}\item 
+void {\bf setRunType} (const std::string runType)
+\begin{DoxyCompactList}\small\item\em Set the run type (beamData, calibration etc). \item\end{DoxyCompactList}\item 
+const std::string {\bf getRunType} ()\label{classCALICE_1_1CaliceElogInfo_a38072c9af25952630e41d98d0c001512}
+
+\begin{DoxyCompactList}\small\item\em Get the run type (beamData, calibration etc). \item\end{DoxyCompactList}\item 
+void {\bf setTargetString} (const std::string targetString)
+\begin{DoxyCompactList}\small\item\em Set the target string. \item\end{DoxyCompactList}\item 
+const std::string {\bf getTargetString} (const EVENT::LCParameters \&params)\label{classCALICE_1_1CaliceElogInfo_ab036592fded5b7cf6eef2b905bd8a602}
+
+\begin{DoxyCompactList}\small\item\em Get the target string. \item\end{DoxyCompactList}\item 
+void {\bf setAbsorberString} (const std::string absorberString)
+\begin{DoxyCompactList}\small\item\em Set the absorber string. \item\end{DoxyCompactList}\item 
+const std::string {\bf getAbsorberString} (const EVENT::LCParameters \&params)\label{classCALICE_1_1CaliceElogInfo_aeeb0758e7f2491bd15665de2e09d2408}
+
+\begin{DoxyCompactList}\small\item\em Get the absorber string. \item\end{DoxyCompactList}\item 
+void {\bf setComment} (const std::string comment)
+\begin{DoxyCompactList}\small\item\em Set the comment. \item\end{DoxyCompactList}\item 
+const std::string {\bf getComment} (const EVENT::LCParameters \&params)
+\begin{DoxyCompactList}\small\item\em Get the comment from the e-\/log. \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const 
+\begin{DoxyCompactList}\small\item\em Implementation of the virtual method from LCGenericObject. \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const 
+\begin{DoxyCompactList}\small\item\em Implementation of the virtual method from LCGenericObject. \item\end{DoxyCompactList}\item 
+EVENT::LCCollection $\ast$ {\bf getCollection} () const \label{classCALICE_1_1CaliceElogInfo_a48625b8367f9c424f9064a8231556ad2}
+
+\begin{DoxyCompactList}\small\item\em Get the LCCollection. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries Ints} \{ \par
+{\bfseries kRunNumber}, 
+{\bfseries kPdgType}, 
+{\bfseries kQualityFlag}, 
+{\bfseries kTriggerType}, 
+\par
+{\bfseries kTriggerSetting}, 
+{\bfseries kNInts}
+ \}
+\item 
+enum {\bfseries Floats} \{ \par
+{\bfseries kEnergy}, 
+{\bfseries kCherenkovPressure}, 
+{\bfseries kCherenkov2Pressure}, 
+{\bfseries kPositionX}, 
+\par
+{\bfseries kPositionY}, 
+{\bfseries kRotationAngle}, 
+{\bfseries kNFloats}
+ \}
+\item 
+enum {\bfseries Doubless} \{ {\bfseries kNDoubles}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bf \_\-runType}
+\begin{DoxyCompactList}\small\item\em run type, e.g. \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-targetString}
+\begin{DoxyCompactList}\small\item\em target string, e.g. \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-absorberString}
+\begin{DoxyCompactList}\small\item\em absorber string, e.g. \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-comment}
+\begin{DoxyCompactList}\small\item\em e-\/log comment, e.g. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation of the e-\/log information. \begin{DoxyAuthor}{Author}
+{\tt lucaci@mail.desy.de} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+June 2010 
+\end{DoxyDate}
+
+
+Definition at line 18 of file CaliceElogInfo.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}!CaliceElogInfo@{CaliceElogInfo}}
+\index{CaliceElogInfo@{CaliceElogInfo}!CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}}
+\subsubsection[{CaliceElogInfo}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::CaliceElogInfo::CaliceElogInfo (EVENT::LCCollection $\ast$ {\em col})}\label{classCALICE_1_1CaliceElogInfo_ac95c7a4917689baa38e2d8001f8555b5}
+
+
+constructor from LCCollection (this way, the user does not need to cast anymore) Constructor from LCObject: use LCObject, and do the cast from the LCGenericObject; this way, the users do not have to do the cast anymore. 
+
+Definition at line 13 of file CaliceElogInfo.cc.
+
+References \_\-runType, setCherenkov2Pressure(), setCherenkovPressure(), setEnergy(), setPdgType(), setPositionX(), setPositionY(), setQualityFlag(), setRotationAngle(), setRunNumber(), setTriggerSetting(), and setTriggerType().\index{CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}!CaliceElogInfo@{CaliceElogInfo}}
+\index{CaliceElogInfo@{CaliceElogInfo}!CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}}
+\subsubsection[{CaliceElogInfo}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::CaliceElogInfo::CaliceElogInfo (const unsigned int {\em runNumber}, \/  const int {\em pdgType}, \/  const float {\em energy}, \/  const int {\em qualityFlag}, \/  const int {\em triggerType}, \/  const int {\em triggerSetting}, \/  const float {\em cherenkovPressure}, \/  const float {\em cherenkov2Pressure}, \/  const float {\em positionX}, \/  const float {\em positionY}, \/  const float {\em rotationAngle})}\label{classCALICE_1_1CaliceElogInfo_af86284759774e0975c59eef4eb3164cf}
+
+
+constructor from elements 
+\begin{DoxyParams}{Parameters}
+\item[{\em runNumber}]run number \item[{\em pdgType}]PDG ID of the beam particle (e.g. -\/211 for pi-\/) \item[{\em energy}]energy of the run, in GeV (according to elog information) \item[{\em qualityFlag}]quality Flag: 0 = good, 1 = junk or garbage \item[{\em triggerType}]trigger type: 10 for the '10x10' trigger, 20 for the '20x20' trigger, 100 for the '100x100' trigger \item[{\em triggerSetting}]trigger setting (available only for FNAL data, see elog) \item[{\em cherenkovPressure}]pressure in cherenkov counter A, in psia \item[{\em cherenkov2Pressure}]pressure in cherenkov counter B, in psia \item[{\em positionX}]x position of the beam, in mm \item[{\em positionY}]y position of the beam, in mm \item[{\em rotationAngle}]rotation angle (in degrees) \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}!getCherenkov2Pressure@{getCherenkov2Pressure}}
+\index{getCherenkov2Pressure@{getCherenkov2Pressure}!CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}}
+\subsubsection[{getCherenkov2Pressure}]{\setlength{\rightskip}{0pt plus 5cm}float CALICE::CaliceElogInfo::getCherenkov2Pressure ()}\label{classCALICE_1_1CaliceElogInfo_a70529642b2e5e744993d851a2d4d5a35}
+
+
+Get the pressure in Cherenkov counter B. \begin{DoxyReturn}{Returns}
+the Cherenkov pressure 
+\end{DoxyReturn}
+
+
+Definition at line 162 of file CaliceElogInfo.cc.\index{CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}!getCherenkovPressure@{getCherenkovPressure}}
+\index{getCherenkovPressure@{getCherenkovPressure}!CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}}
+\subsubsection[{getCherenkovPressure}]{\setlength{\rightskip}{0pt plus 5cm}float CALICE::CaliceElogInfo::getCherenkovPressure ()}\label{classCALICE_1_1CaliceElogInfo_a64dba0c7ea6009be1c833d44661a0ebf}
+
+
+Get the pressure in Cherenkov counter A. \begin{DoxyReturn}{Returns}
+the Cherenkov pressure 
+\end{DoxyReturn}
+
+
+Definition at line 151 of file CaliceElogInfo.cc.\index{CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}!getComment@{getComment}}
+\index{getComment@{getComment}!CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}}
+\subsubsection[{getComment}]{\setlength{\rightskip}{0pt plus 5cm}const std::string CALICE::CaliceElogInfo::getComment (const EVENT::LCParameters \& {\em params})}\label{classCALICE_1_1CaliceElogInfo_a5d7a81f00bdb9ab9260d11416e2ee266}
+
+
+Get the comment from the e-\/log. 
+\begin{DoxyParams}{Parameters}
+\item[{\em params}]the LCParameters (since the comment is saved as a parameter of the collection of \doxyref{CaliceElogInfo}{p.}{classCALICE_1_1CaliceElogInfo} objects) \end{DoxyParams}
+
+
+Definition at line 239 of file CaliceElogInfo.cc.\index{CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}!getDataDescription@{getDataDescription}}
+\index{getDataDescription@{getDataDescription}!CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}}
+\subsubsection[{getDataDescription}]{\setlength{\rightskip}{0pt plus 5cm}const std::string CALICE::CaliceElogInfo::getDataDescription () const}\label{classCALICE_1_1CaliceElogInfo_ad2f4fb5b358f25ba0ff59bb4cacadef9}
+
+
+Implementation of the virtual method from LCGenericObject. \begin{DoxyReturn}{Returns}
+data description, i.e description of the LCObject elements: \char`\"{}i:runNumber,i:pdgType,i:energy,i:qualityFlag,i:triggerType,i:triggetSetting,\char`\"{} \char`\"{}f:cherenkovPressure,f:positionX,f:positionY,f:rotationAngle\char`\"{}; 
+\end{DoxyReturn}
+
+
+Definition at line 209 of file CaliceElogInfo.cc.\index{CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}!getEnergy@{getEnergy}}
+\index{getEnergy@{getEnergy}!CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}}
+\subsubsection[{getEnergy}]{\setlength{\rightskip}{0pt plus 5cm}float CALICE::CaliceElogInfo::getEnergy ()}\label{classCALICE_1_1CaliceElogInfo_a7af788f2a7cbda67f1fb37a63fc98271}
+
+
+Get the energy of this run. \begin{DoxyReturn}{Returns}
+the energy 
+\end{DoxyReturn}
+
+
+Definition at line 139 of file CaliceElogInfo.cc.\index{CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}!getPdgType@{getPdgType}}
+\index{getPdgType@{getPdgType}!CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}}
+\subsubsection[{getPdgType}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::CaliceElogInfo::getPdgType ()}\label{classCALICE_1_1CaliceElogInfo_a697ea7426f6177b224da091350b91450}
+
+
+Get the PDG ID. \begin{DoxyReturn}{Returns}
+the PDG ID 
+\end{DoxyReturn}
+
+
+Definition at line 90 of file CaliceElogInfo.cc.\index{CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}!getPositionX@{getPositionX}}
+\index{getPositionX@{getPositionX}!CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}}
+\subsubsection[{getPositionX}]{\setlength{\rightskip}{0pt plus 5cm}float CALICE::CaliceElogInfo::getPositionX ()}\label{classCALICE_1_1CaliceElogInfo_a10fbaa90ae11969de35f8cd7c9477c05}
+
+
+Get the x-\/position of the stage. \begin{DoxyReturn}{Returns}
+the x-\/position of the stage 
+\end{DoxyReturn}
+
+
+Definition at line 174 of file CaliceElogInfo.cc.\index{CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}!getPositionY@{getPositionY}}
+\index{getPositionY@{getPositionY}!CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}}
+\subsubsection[{getPositionY}]{\setlength{\rightskip}{0pt plus 5cm}float CALICE::CaliceElogInfo::getPositionY ()}\label{classCALICE_1_1CaliceElogInfo_a8567162b99806996bde8ca9d7ba41c05}
+
+
+Get the y-\/position of the stage. \begin{DoxyReturn}{Returns}
+the y-\/position of the stage 
+\end{DoxyReturn}
+
+
+Definition at line 185 of file CaliceElogInfo.cc.\index{CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}!getQualityFlag@{getQualityFlag}}
+\index{getQualityFlag@{getQualityFlag}!CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}}
+\subsubsection[{getQualityFlag}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::CaliceElogInfo::getQualityFlag ()}\label{classCALICE_1_1CaliceElogInfo_a1211b6753b4736c819b163949b645433}
+
+
+Get the quality flag. \begin{DoxyReturn}{Returns}
+get the quality flag 
+\end{DoxyReturn}
+
+
+Definition at line 102 of file CaliceElogInfo.cc.\index{CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}!getRotationAngle@{getRotationAngle}}
+\index{getRotationAngle@{getRotationAngle}!CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}}
+\subsubsection[{getRotationAngle}]{\setlength{\rightskip}{0pt plus 5cm}float CALICE::CaliceElogInfo::getRotationAngle ()}\label{classCALICE_1_1CaliceElogInfo_ab366d0ecb73d742195dcc293b88eed4f}
+
+
+Get the rotation angle of the stage. \begin{DoxyReturn}{Returns}
+the rotation angle 
+\end{DoxyReturn}
+
+
+Definition at line 197 of file CaliceElogInfo.cc.\index{CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}!getRunNumber@{getRunNumber}}
+\index{getRunNumber@{getRunNumber}!CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}}
+\subsubsection[{getRunNumber}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::CaliceElogInfo::getRunNumber ()}\label{classCALICE_1_1CaliceElogInfo_a1f913b1191a57417115181042d61bebb}
+
+
+Get the run number. \begin{DoxyReturn}{Returns}
+the run number 
+\end{DoxyReturn}
+
+
+Definition at line 78 of file CaliceElogInfo.cc.\index{CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}!getTriggerSetting@{getTriggerSetting}}
+\index{getTriggerSetting@{getTriggerSetting}!CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}}
+\subsubsection[{getTriggerSetting}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::CaliceElogInfo::getTriggerSetting ()}\label{classCALICE_1_1CaliceElogInfo_a43bddb9063ee8deb8a99f47ff40f60c5}
+
+
+Get the trigger setting. \begin{DoxyReturn}{Returns}
+the trigger setting 
+\end{DoxyReturn}
+
+
+Definition at line 125 of file CaliceElogInfo.cc.\index{CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}!getTriggerType@{getTriggerType}}
+\index{getTriggerType@{getTriggerType}!CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}}
+\subsubsection[{getTriggerType}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::CaliceElogInfo::getTriggerType ()}\label{classCALICE_1_1CaliceElogInfo_ae69657e00230909eacaa96df61246c36}
+
+
+Get the trigger type. \begin{DoxyReturn}{Returns}
+the trigger type (10 for the '10x10' trigger, 20 for the '20x20' trigger, 100 for the '100x100' trigger) 
+\end{DoxyReturn}
+
+
+Definition at line 114 of file CaliceElogInfo.cc.\index{CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}!getTypeName@{getTypeName}}
+\index{getTypeName@{getTypeName}!CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}}
+\subsubsection[{getTypeName}]{\setlength{\rightskip}{0pt plus 5cm}const std::string CALICE::CaliceElogInfo::getTypeName () const}\label{classCALICE_1_1CaliceElogInfo_ac7d8e9cfc726aed8b82184386df1d0f3}
+
+
+Implementation of the virtual method from LCGenericObject. \begin{DoxyReturn}{Returns}
+type name, i.e. name of the class 
+\end{DoxyReturn}
+
+
+Definition at line 204 of file CaliceElogInfo.cc.\index{CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}!setAbsorberString@{setAbsorberString}}
+\index{setAbsorberString@{setAbsorberString}!CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}}
+\subsubsection[{setAbsorberString}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CaliceElogInfo::setAbsorberString (const std::string {\em absorberString})}\label{classCALICE_1_1CaliceElogInfo_a859927fef587dd3d1ed1ba6fc9a6e59d}
+
+
+Set the absorber string. 
+\begin{DoxyParams}{Parameters}
+\item[{\em absorberString}]the target string to be set \end{DoxyParams}
+\index{CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}!setCherenkov2Pressure@{setCherenkov2Pressure}}
+\index{setCherenkov2Pressure@{setCherenkov2Pressure}!CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}}
+\subsubsection[{setCherenkov2Pressure}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CaliceElogInfo::setCherenkov2Pressure (const float {\em cherenkov2Pressure})}\label{classCALICE_1_1CaliceElogInfo_a20ab6bff51831653e7215c72f99e1d07}
+
+
+Set the pressure in Cherenkov counter B. 
+\begin{DoxyParams}{Parameters}
+\item[{\em cherenkov2Pressure}]the Cherenkov pressure to be set \end{DoxyParams}
+
+
+Definition at line 157 of file CaliceElogInfo.cc.
+
+Referenced by CaliceElogInfo().\index{CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}!setCherenkovPressure@{setCherenkovPressure}}
+\index{setCherenkovPressure@{setCherenkovPressure}!CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}}
+\subsubsection[{setCherenkovPressure}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CaliceElogInfo::setCherenkovPressure (const float {\em cherenkovPressure})}\label{classCALICE_1_1CaliceElogInfo_afefee1aa0ee343a7b813305826163270}
+
+
+Set the pressure in Cherenkov counter A. 
+\begin{DoxyParams}{Parameters}
+\item[{\em cherenkovPressure}]the Cherenkov pressure to be set \end{DoxyParams}
+
+
+Definition at line 146 of file CaliceElogInfo.cc.
+
+Referenced by CaliceElogInfo().\index{CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}!setComment@{setComment}}
+\index{setComment@{setComment}!CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}}
+\subsubsection[{setComment}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CaliceElogInfo::setComment (const std::string {\em comment})}\label{classCALICE_1_1CaliceElogInfo_aa0c8d3a4999b87c62e2a55e7848bd870}
+
+
+Set the comment. 
+\begin{DoxyParams}{Parameters}
+\item[{\em comment}]the comment to be set \end{DoxyParams}
+\index{CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}!setEnergy@{setEnergy}}
+\index{setEnergy@{setEnergy}!CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}}
+\subsubsection[{setEnergy}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CaliceElogInfo::setEnergy (const float {\em energy})}\label{classCALICE_1_1CaliceElogInfo_af19688a789197c84db6273d606ce0a3f}
+
+
+Set the energy of this run. 
+\begin{DoxyParams}{Parameters}
+\item[{\em energy}]the energy to be set \end{DoxyParams}
+
+
+Definition at line 134 of file CaliceElogInfo.cc.
+
+Referenced by CaliceElogInfo().\index{CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}!setPdgType@{setPdgType}}
+\index{setPdgType@{setPdgType}!CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}}
+\subsubsection[{setPdgType}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CaliceElogInfo::setPdgType (const int {\em pdgType})}\label{classCALICE_1_1CaliceElogInfo_a90bdb26738e9e5343af9c034816ef4f5}
+
+
+Set the PDG ID. 
+\begin{DoxyParams}{Parameters}
+\item[{\em pdgType}]PDG ID to be set \end{DoxyParams}
+
+
+Definition at line 85 of file CaliceElogInfo.cc.
+
+Referenced by CaliceElogInfo().\index{CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}!setPositionX@{setPositionX}}
+\index{setPositionX@{setPositionX}!CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}}
+\subsubsection[{setPositionX}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CaliceElogInfo::setPositionX (const float {\em positionX})}\label{classCALICE_1_1CaliceElogInfo_a3b2cde809cdf5754e5572db98faa1fbd}
+
+
+Set the x-\/position of the stage. 
+\begin{DoxyParams}{Parameters}
+\item[{\em positionX}]the x-\/position of the stage \end{DoxyParams}
+
+
+Definition at line 169 of file CaliceElogInfo.cc.
+
+Referenced by CaliceElogInfo().\index{CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}!setPositionY@{setPositionY}}
+\index{setPositionY@{setPositionY}!CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}}
+\subsubsection[{setPositionY}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CaliceElogInfo::setPositionY (const float {\em positionY})}\label{classCALICE_1_1CaliceElogInfo_ad3c17fc4e4374c18720b4a46ad5d2b66}
+
+
+Set the y-\/position of the stage. 
+\begin{DoxyParams}{Parameters}
+\item[{\em positionY}]the y-\/position of the stage \end{DoxyParams}
+
+
+Definition at line 180 of file CaliceElogInfo.cc.
+
+Referenced by CaliceElogInfo().\index{CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}!setQualityFlag@{setQualityFlag}}
+\index{setQualityFlag@{setQualityFlag}!CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}}
+\subsubsection[{setQualityFlag}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CaliceElogInfo::setQualityFlag (const int {\em qualityFlag})}\label{classCALICE_1_1CaliceElogInfo_a556bdeb94e436ec7be3c75687219b77b}
+
+
+Set the quality flag (0=good, 1=bad). Please note that this is a general quality flag, based on the comments done by the people on shift. If they mentioned that the run was 'bad', 'junk' or 'garbage', the quality flag for this run is set to 1 (i.e. bad). This is different from the data quality flag set by the DQ bits (for more information, please see here: {\tt http://www-\/flc.desy.de/flc/flcwiki/RunLogDataQuality} 
+\begin{DoxyParams}{Parameters}
+\item[{\em qualityFlag}]the quality flag to be set \end{DoxyParams}
+
+
+Definition at line 97 of file CaliceElogInfo.cc.
+
+Referenced by CaliceElogInfo().\index{CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}!setRotationAngle@{setRotationAngle}}
+\index{setRotationAngle@{setRotationAngle}!CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}}
+\subsubsection[{setRotationAngle}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CaliceElogInfo::setRotationAngle (const float {\em rotationAngle})}\label{classCALICE_1_1CaliceElogInfo_a4c54970b6c6e5eda6b4a5d81b760939b}
+
+
+Set the rotation angle of the stage. 
+\begin{DoxyParams}{Parameters}
+\item[{\em rotationAngle}]the rotation angle \end{DoxyParams}
+
+
+Definition at line 192 of file CaliceElogInfo.cc.
+
+Referenced by CaliceElogInfo().\index{CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}!setRunNumber@{setRunNumber}}
+\index{setRunNumber@{setRunNumber}!CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}}
+\subsubsection[{setRunNumber}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CaliceElogInfo::setRunNumber (const unsigned int {\em runNumber})}\label{classCALICE_1_1CaliceElogInfo_a6baaf70dc59575276292de977cac70e5}
+
+
+Set the run number. 
+\begin{DoxyParams}{Parameters}
+\item[{\em runNumber}]the run number to be set \end{DoxyParams}
+
+
+Definition at line 73 of file CaliceElogInfo.cc.
+
+Referenced by CaliceElogInfo().\index{CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}!setRunType@{setRunType}}
+\index{setRunType@{setRunType}!CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}}
+\subsubsection[{setRunType}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CaliceElogInfo::setRunType (const std::string {\em runType})}\label{classCALICE_1_1CaliceElogInfo_aaa477c9f9a50257d116a99cab4883ae2}
+
+
+Set the run type (beamData, calibration etc). 
+\begin{DoxyParams}{Parameters}
+\item[{\em runType}]\end{DoxyParams}
+
+
+Definition at line 220 of file CaliceElogInfo.cc.
+
+References \_\-runType.\index{CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}!setTargetString@{setTargetString}}
+\index{setTargetString@{setTargetString}!CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}}
+\subsubsection[{setTargetString}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CaliceElogInfo::setTargetString (const std::string {\em targetString})}\label{classCALICE_1_1CaliceElogInfo_a03b57d4587a38ff31829536580628525}
+
+
+Set the target string. 
+\begin{DoxyParams}{Parameters}
+\item[{\em targetString}]the target string to be set \end{DoxyParams}
+\index{CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}!setTriggerSetting@{setTriggerSetting}}
+\index{setTriggerSetting@{setTriggerSetting}!CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}}
+\subsubsection[{setTriggerSetting}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CaliceElogInfo::setTriggerSetting (const int {\em triggerSetting})}\label{classCALICE_1_1CaliceElogInfo_a48863237a83d1e4002693ffa07885690}
+
+
+Set the trigger setting. 
+\begin{DoxyParams}{Parameters}
+\item[{\em triggerSetting}]\end{DoxyParams}
+
+
+Definition at line 120 of file CaliceElogInfo.cc.
+
+Referenced by CaliceElogInfo().\index{CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}!setTriggerType@{setTriggerType}}
+\index{setTriggerType@{setTriggerType}!CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}}
+\subsubsection[{setTriggerType}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CaliceElogInfo::setTriggerType (const int {\em triggerType})}\label{classCALICE_1_1CaliceElogInfo_afeebb83b902105daab5925dcda2d1c14}
+
+
+Set the trigger type. 
+\begin{DoxyParams}{Parameters}
+\item[{\em triggerType}]the trigger type: 10 for the '10x10' trigger, 20 for the '20x20' trigger, 100 for the '100x100' trigger \end{DoxyParams}
+
+
+Definition at line 109 of file CaliceElogInfo.cc.
+
+Referenced by CaliceElogInfo().
+
+\subsection{Field Documentation}
+\index{CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}!\_\-absorberString@{\_\-absorberString}}
+\index{\_\-absorberString@{\_\-absorberString}!CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}}
+\subsubsection[{\_\-absorberString}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf CALICE::CaliceElogInfo::\_\-absorberString}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1CaliceElogInfo_a6619c62f472cb7385242a0c7d301a1d8}
+
+
+absorber string, e.g. \char`\"{}6 mm Pb\char`\"{} 
+
+Definition at line 215 of file CaliceElogInfo.hh.\index{CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}!\_\-comment@{\_\-comment}}
+\index{\_\-comment@{\_\-comment}!CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}}
+\subsubsection[{\_\-comment}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf CALICE::CaliceElogInfo::\_\-comment}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1CaliceElogInfo_a5191499169242dc9ad1c43459e6fce51}
+
+
+e-\/log comment, e.g. \char`\"{}10 deg, 100k\char`\"{} 
+
+Definition at line 216 of file CaliceElogInfo.hh.\index{CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}!\_\-runType@{\_\-runType}}
+\index{\_\-runType@{\_\-runType}!CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}}
+\subsubsection[{\_\-runType}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf CALICE::CaliceElogInfo::\_\-runType}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1CaliceElogInfo_a1a1821d59f676a7805131d53f6310eff}
+
+
+run type, e.g. \char`\"{}beamData\char`\"{}, noise, etc 
+
+Definition at line 213 of file CaliceElogInfo.hh.
+
+Referenced by CaliceElogInfo(), getCollection(), getRunType(), and setRunType().\index{CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}!\_\-targetString@{\_\-targetString}}
+\index{\_\-targetString@{\_\-targetString}!CALICE::CaliceElogInfo@{CALICE::CaliceElogInfo}}
+\subsubsection[{\_\-targetString}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf CALICE::CaliceElogInfo::\_\-targetString}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1CaliceElogInfo_a93c30846719e525039e370d49d420dd0}
+
+
+target string, e.g. \char`\"{}air\char`\"{} 
+
+Definition at line 214 of file CaliceElogInfo.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+CaliceElogInfo.hh\item 
+CaliceElogInfo.cc\end{DoxyCompactItemize}

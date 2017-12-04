@@ -1,0 +1,273 @@
+\section{histmgr::ProfileCollection\_\-t Class Reference}
+\label{classhistmgr_1_1ProfileCollection__t}\index{histmgr::ProfileCollection\_\-t@{histmgr::ProfileCollection\_\-t}}
+
+
+One or two dimensional collection of profile histograms.  
+
+
+{\ttfamily \#include $<$ProfileCollection\_\-t.hh$>$}Inheritance diagram for histmgr::ProfileCollection\_\-t::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classhistmgr_1_1ProfileCollection__t}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ProfileCollection\_\-t} (const std::string \&collection\_\-name, const EVENT::StringVec \&name\_\-list, UInt\_\-t n\_\-hist, const {\bf HistPar} \&par)  throw (std::bad\_\-alloc, std::runtime\_\-error)
+\begin{DoxyCompactList}\small\item\em Create a collection of profile histograms which will have the same binning of the x-\/axis. \item\end{DoxyCompactList}\item 
+{\bf ProfileCollection\_\-t} (const std::string \&collection\_\-name, const EVENT::StringVec \&name\_\-list, const lcio::IntVec \&n\_\-hist\_\-list, const {\bf HistPar} \&par)
+\begin{DoxyCompactList}\small\item\em Create a collection of profile histograms which will have the same binning of the x-\/axis. \item\end{DoxyCompactList}\item 
+{\bf ProfileCollection\_\-t} (lcio::LCCollection $\ast$profile\_\-histograms, lcio::IntVec $\ast$indices)
+\item 
+{\bf ProfileCollection\_\-t} (lcio::LCCollection $\ast$profile\_\-histograms)
+\begin{DoxyCompactList}\small\item\em Create a profile histogram collection from lcio collection. \item\end{DoxyCompactList}\item 
+{\bf ProfileCollection\_\-t} (const {\bf ProfileCollection\_\-t} \&a)\label{classhistmgr_1_1ProfileCollection__t_a78705d5dbdda7837e62dad10612a3e65}
+
+\begin{DoxyCompactList}\small\item\em copy constructor. \item\end{DoxyCompactList}\item 
+{\bf ProfileCollection\_\-t} ()\label{classhistmgr_1_1ProfileCollection__t_a274f9d96d7cc79c3cb88dd089c0adeb6}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. \item\end{DoxyCompactList}\item 
+void {\bf deleteCollection} ()\label{classhistmgr_1_1ProfileCollection__t_a1bcaaeb9402de2da41dfb3123a772484}
+
+\begin{DoxyCompactList}\small\item\em delete the histogram collection and the index array This method exists instead of a destrctor to prevent copying the arrays (FIXME) \item\end{DoxyCompactList}\item 
+void {\bfseries deleteSharedStorage} ()\label{classhistmgr_1_1ProfileCollection__t_a8cbe0a0888e6cdfb650eb4e8e4c8ed59}
+
+\item 
+lcio::LCCollection $\ast$ {\bf createProfiles} (const std::string \&collection\_\-name, const EVENT::StringVec \&name\_\-list, UInt\_\-t n\_\-hist, const {\bf HistPar} \&par)  throw (std::bad\_\-alloc,std::runtime\_\-error)
+\begin{DoxyCompactList}\small\item\em create several histograms which will have the same binning and the same name (except of a numeric extension). \item\end{DoxyCompactList}\item 
+lcio::LCCollection $\ast$ {\bf createProfiles} (const std::string \&collection\_\-name, const EVENT::StringVec \&name\_\-list, const lcio::IntVec \&n\_\-hist\_\-list, const {\bf HistPar} \&par)  throw (std::bad\_\-alloc,std::runtime\_\-error)
+\begin{DoxyCompactList}\small\item\em create several histograms which will have the same binning and the same name (except of a numeric extension). \item\end{DoxyCompactList}\item 
+lcio::LCCollection $\ast$ {\bf collection} ()
+\begin{DoxyCompactList}\small\item\em get the unique group id \item\end{DoxyCompactList}\item 
+const lcio::LCCollection $\ast$ {\bf collection} () const 
+\begin{DoxyCompactList}\small\item\em get the collection of histograms (read only). \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bf n} () const \label{classhistmgr_1_1ProfileCollection__t_ae9944d3bd52954322ad8a7eeb9d775da}
+
+\begin{DoxyCompactList}\small\item\em get the number of histograms in the one dimensional collection. \item\end{DoxyCompactList}\item 
+bool {\bf is2D} () const \label{classhistmgr_1_1ProfileCollection__t_a60150d80ce81ba3e0a72615f1ba0e13a}
+
+\begin{DoxyCompactList}\small\item\em Return true if the histogram collection is two instead of one diemensional. \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bf nMajor} () const \label{classhistmgr_1_1ProfileCollection__t_a7f7bfdba4d4196edbd68e1f543b9edc6}
+
+\begin{DoxyCompactList}\small\item\em get the number of histograms in the one dimensional collection. \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bf nMinor} (UInt\_\-t major\_\-index) const \label{classhistmgr_1_1ProfileCollection__t_af49567f40d7bb80029d1edb8b0cc422c}
+
+\begin{DoxyCompactList}\small\item\em get the number of histograms in the one dimensional collection. \item\end{DoxyCompactList}\item 
+const {\bf Profile1D} $\ast$ {\bf histogram} (UInt\_\-t index) const \label{classhistmgr_1_1ProfileCollection__t_a02e73b2e13af49570048079e09bdc855}
+
+\begin{DoxyCompactList}\small\item\em Get one histogram of the collection (read only). \item\end{DoxyCompactList}\item 
+{\bf Profile1D} $\ast$ {\bf histogram} (UInt\_\-t index)\label{classhistmgr_1_1ProfileCollection__t_ab51ee868a8236003fec385b8b2460638}
+
+\begin{DoxyCompactList}\small\item\em Get one histogram of the collection. \item\end{DoxyCompactList}\item 
+{\bf Profile1D} $\ast$ {\bf histogram} (UInt\_\-t major\_\-index, UInt\_\-t minor\_\-index)\label{classhistmgr_1_1ProfileCollection__t_af48025ca8cacecbcc2566c4a709a4608}
+
+\begin{DoxyCompactList}\small\item\em Get one histogram of the collection which is organised as a two dimensional array. \item\end{DoxyCompactList}\item 
+const {\bf Profile1D} $\ast$ {\bf histogram} (UInt\_\-t major\_\-index, UInt\_\-t minor\_\-index) const \label{classhistmgr_1_1ProfileCollection__t_ada8a50d8d67e5c932035bc86ab4683f1}
+
+\begin{DoxyCompactList}\small\item\em Get one histogram of the collection which is organised as a two dimensional array (read only). \item\end{DoxyCompactList}\item 
+const std::string \& {\bf getName} (UInt\_\-t major\_\-index) const 
+\begin{DoxyCompactList}\small\item\em Get the name of the specified element of the histogram collection. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+UInt\_\-t {\bfseries get\_\-index} (UInt\_\-t major\_\-index, UInt\_\-t minor\_\-index) const   throw (std::range\_\-error)\label{classhistmgr_1_1ProfileCollection__t_af99cfa98fd1b76998e6a7b8d9979090a}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const std::string {\bfseries \_\-\_\-histogramNameParameterName}\label{classhistmgr_1_1ProfileCollection__t_a7fc8b680ea20277a25bd90108bbd96f7}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf copyNames} () const 
+\begin{DoxyCompactList}\small\item\em Copy the names from the collection to an accessible vector. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+lcio::LCCollection $\ast$ {\bf \_\-histogramCol}\label{classhistmgr_1_1ProfileCollection__t_af0f9971e6bc0a8c1c6ea03ff80599e07}
+
+\begin{DoxyCompactList}\small\item\em the histogram collection \item\end{DoxyCompactList}\item 
+lcio::IntVec $\ast$ {\bf \_\-majorIndex}
+\begin{DoxyCompactList}\small\item\em optional list of offset to form a two dimensional array out of the list. \item\end{DoxyCompactList}\item 
+lcio::StringVec {\bf \_\-nameList}
+\begin{DoxyCompactList}\small\item\em A vector which contains one name for all histograms of the collection or a name for each element. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const std::string {\bfseries \_\-\_\-majorIndexParameterName}\label{classhistmgr_1_1ProfileCollection__t_a1c04bf058608dd3eda9a3d20ae0e3760}
+
+\item 
+static const std::string {\bfseries \_\-\_\-defaultProfileName}\label{classhistmgr_1_1ProfileCollection__t_aba49aeee2d76d037a3f02ad41e78f917}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries HistMgr}\label{classhistmgr_1_1ProfileCollection__t_a3cc85db784d7651390e41024125eb3a0}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+One or two dimensional collection of profile histograms. 
+
+Definition at line 19 of file ProfileCollection\_\-t.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{histmgr::ProfileCollection\_\-t@{histmgr::ProfileCollection\_\-t}!ProfileCollection\_\-t@{ProfileCollection\_\-t}}
+\index{ProfileCollection\_\-t@{ProfileCollection\_\-t}!histmgr::ProfileCollection_t@{histmgr::ProfileCollection\_\-t}}
+\subsubsection[{ProfileCollection\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}histmgr::ProfileCollection\_\-t::ProfileCollection\_\-t (const std::string \& {\em collection\_\-name}, \/  const EVENT::StringVec \& {\em name\_\-list}, \/  UInt\_\-t {\em n\_\-hist}, \/  const {\bf HistPar} \& {\em par})  throw (std::bad\_\-alloc, std::runtime\_\-error)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1ProfileCollection__t_a5fb18d77200f8a0074cf33ce0ce10c51}
+
+
+Create a collection of profile histograms which will have the same binning of the x-\/axis. 
+\begin{DoxyParams}{Parameters}
+\item[{\em collection\_\-name}]the of the histogram collection \item[{\em name\_\-list}]a vector which contains a name for each profile histogram of the collection. \item[{\em n\_\-hist}]the number of histograms to be created \item[{\em par}]the binning of the histograms\end{DoxyParams}
+If the name\_\-list is empty the name of the collection is used. The name will be extended by the index in the collection.
+
+The profile histograms are only written to a file if the histogram group, to which this histogram belongs, is assigned to a file (\doxyref{histmgr::HistMgr::assignFileName}{p.}{classhistmgr_1_1HistMgr_a20e3c96a8ba6175c8036918ca7acb1e2}). 
+
+Definition at line 36 of file ProfileCollection\_\-t.hh.
+
+References createProfiles().\index{histmgr::ProfileCollection\_\-t@{histmgr::ProfileCollection\_\-t}!ProfileCollection\_\-t@{ProfileCollection\_\-t}}
+\index{ProfileCollection\_\-t@{ProfileCollection\_\-t}!histmgr::ProfileCollection_t@{histmgr::ProfileCollection\_\-t}}
+\subsubsection[{ProfileCollection\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}histmgr::ProfileCollection\_\-t::ProfileCollection\_\-t (const std::string \& {\em collection\_\-name}, \/  const EVENT::StringVec \& {\em name\_\-list}, \/  const lcio::IntVec \& {\em n\_\-hist\_\-list}, \/  const {\bf HistPar} \& {\em par})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1ProfileCollection__t_a0a8e3d1c5f2952fb50184cb2183e36ec}
+
+
+Create a collection of profile histograms which will have the same binning of the x-\/axis. 
+\begin{DoxyParams}{Parameters}
+\item[{\em collection\_\-name}]the of the histogram collection \item[{\em name\_\-list}]a vector containing the names of the profile histograms whose length is either equals n\_\-hist or is zero. In the latter case the collection name is used for the all profile histograms. \item[{\em n\_\-hist\_\-list}]the number of profile histograms to be created \item[{\em par}]the binning of the histogram\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the histogram collection
+\end{DoxyReturn}
+The profile histograms are only written to a file if the histogram group, to which this histogram belongs, is assigned to a file (\doxyref{histmgr::HistMgr::assignFileName}{p.}{classhistmgr_1_1HistMgr_a20e3c96a8ba6175c8036918ca7acb1e2}). 
+
+Definition at line 60 of file ProfileCollection\_\-t.hh.
+
+References createProfiles().\index{histmgr::ProfileCollection\_\-t@{histmgr::ProfileCollection\_\-t}!ProfileCollection\_\-t@{ProfileCollection\_\-t}}
+\index{ProfileCollection\_\-t@{ProfileCollection\_\-t}!histmgr::ProfileCollection_t@{histmgr::ProfileCollection\_\-t}}
+\subsubsection[{ProfileCollection\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}histmgr::ProfileCollection\_\-t::ProfileCollection\_\-t (lcio::LCCollection $\ast$ {\em profile\_\-histograms}, \/  lcio::IntVec $\ast$ {\em indices})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1ProfileCollection__t_a1b67fba520831f66ac54a2aeb6bb76c6}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em profile\_\-histograms}]the linearised one or two dimensional collection of profile histograms \item[{\em indices}]optional list of indicies used to give two dimensional access to the profile histogram list. for each possible index of the first dimension is needed which contains the offset in the list. The second index is added to this offset. \end{DoxyParams}
+
+
+Definition at line 76 of file ProfileCollection\_\-t.hh.
+
+References \_\-majorIndex.\index{histmgr::ProfileCollection\_\-t@{histmgr::ProfileCollection\_\-t}!ProfileCollection\_\-t@{ProfileCollection\_\-t}}
+\index{ProfileCollection\_\-t@{ProfileCollection\_\-t}!histmgr::ProfileCollection_t@{histmgr::ProfileCollection\_\-t}}
+\subsubsection[{ProfileCollection\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}histmgr::ProfileCollection\_\-t::ProfileCollection\_\-t (lcio::LCCollection $\ast$ {\em profile\_\-histograms})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1ProfileCollection__t_a70bbff98a1dc486b0fc4e10c879e7a25}
+
+
+Create a profile histogram collection from lcio collection. 
+\begin{DoxyParams}{Parameters}
+\item[{\em profile\_\-histograms}]the linearised one or two dimensional collection of profile histograms (two dimensional collections have the collection parameter \char`\"{}major\char`\"{}). The method does not verify whether the lcio collection really is a histogram collection. However, if the collection has the parameter \char`\"{}major\char`\"{} it creates an index vector (costly operation) assuming that it is a 2d array instead of a 1d array(i.e. collection). The unique group id remains undedfined since it is not stored in the lcio collection. \end{DoxyParams}
+
+
+Definition at line 98 of file ProfileCollection\_\-t.hh.
+
+References \_\-majorIndex.
+
+\subsection{Member Function Documentation}
+\index{histmgr::ProfileCollection\_\-t@{histmgr::ProfileCollection\_\-t}!collection@{collection}}
+\index{collection@{collection}!histmgr::ProfileCollection_t@{histmgr::ProfileCollection\_\-t}}
+\subsubsection[{collection}]{\setlength{\rightskip}{0pt plus 5cm}const lcio::LCCollection$\ast$ histmgr::ProfileCollection\_\-t::collection () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1ProfileCollection__t_a9cdd96fd544692edff237a6c34053ba5}
+
+
+get the collection of histograms (read only). The index array needed for the two dimensional acces is added as a parameter named \char`\"{}major\char`\"{}. 
+
+Definition at line 195 of file ProfileCollection\_\-t.hh.
+
+References \_\-histogramCol.\index{histmgr::ProfileCollection\_\-t@{histmgr::ProfileCollection\_\-t}!collection@{collection}}
+\index{collection@{collection}!histmgr::ProfileCollection_t@{histmgr::ProfileCollection\_\-t}}
+\subsubsection[{collection}]{\setlength{\rightskip}{0pt plus 5cm}lcio::LCCollection$\ast$ histmgr::ProfileCollection\_\-t::collection ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1ProfileCollection__t_a729c27c094e3f6cae0c5792d4e5367c2}
+
+
+get the unique group id get the collection of histograms. The index array needed for the two dimensional acces is added as a parameter named \char`\"{}major\char`\"{}. 
+
+Definition at line 190 of file ProfileCollection\_\-t.hh.
+
+References \_\-histogramCol.\index{histmgr::ProfileCollection\_\-t@{histmgr::ProfileCollection\_\-t}!copyNames@{copyNames}}
+\index{copyNames@{copyNames}!histmgr::ProfileCollection_t@{histmgr::ProfileCollection\_\-t}}
+\subsubsection[{copyNames}]{\setlength{\rightskip}{0pt plus 5cm}void histmgr::ProfileCollection\_\-t::copyNames () const\hspace{0.3cm}{\ttfamily  [inline, private]}}\label{classhistmgr_1_1ProfileCollection__t_a8ed4cfba171f0974428de8c3d33dc48b}
+
+
+Copy the names from the collection to an accessible vector. The vector of histogram names is attached as a parameter to the LCCollection. 
+
+Definition at line 275 of file ProfileCollection\_\-t.hh.
+
+References \_\-histogramCol, and \_\-nameList.
+
+Referenced by getName().\index{histmgr::ProfileCollection\_\-t@{histmgr::ProfileCollection\_\-t}!createProfiles@{createProfiles}}
+\index{createProfiles@{createProfiles}!histmgr::ProfileCollection_t@{histmgr::ProfileCollection\_\-t}}
+\subsubsection[{createProfiles}]{\setlength{\rightskip}{0pt plus 5cm}lcio::LCCollection $\ast$ histmgr::ProfileCollection\_\-t::createProfiles (const std::string \& {\em collection\_\-name}, \/  const EVENT::StringVec \& {\em name\_\-list}, \/  const lcio::IntVec \& {\em n\_\-hist\_\-list}, \/  const {\bf HistPar} \& {\em par})  throw (std::bad\_\-alloc,std::runtime\_\-error)}\label{classhistmgr_1_1ProfileCollection__t_ac051f19a6fc0cd8ba52792bee2c33158}
+
+
+create several histograms which will have the same binning and the same name (except of a numeric extension). 
+\begin{DoxyParams}{Parameters}
+\item[{\em collection\_\-name}]the of the histogram collection \item[{\em name\_\-list}]a vector containing the names of the histograms whose length is either equals n\_\-hist or is zero. In the latter case the collection name is used for the all histograms. \item[{\em n\_\-hist\_\-list}]the number of histograms to be created \item[{\em par}]the binning of the histogram\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the histogram collection
+\end{DoxyReturn}
+The histograms are only written to a file if the histogram group, to which this histogram belongs, is assigned to a file (\doxyref{histmgr::HistMgr::assignFileName}{p.}{classhistmgr_1_1HistMgr_a20e3c96a8ba6175c8036918ca7acb1e2}). 
+
+Definition at line 66 of file ProfileCollection\_\-t.cc.\index{histmgr::ProfileCollection\_\-t@{histmgr::ProfileCollection\_\-t}!createProfiles@{createProfiles}}
+\index{createProfiles@{createProfiles}!histmgr::ProfileCollection_t@{histmgr::ProfileCollection\_\-t}}
+\subsubsection[{createProfiles}]{\setlength{\rightskip}{0pt plus 5cm}lcio::LCCollection $\ast$ histmgr::ProfileCollection\_\-t::createProfiles (const std::string \& {\em collection\_\-name}, \/  const EVENT::StringVec \& {\em name\_\-list}, \/  UInt\_\-t {\em n\_\-hist}, \/  const {\bf HistPar} \& {\em par})  throw (std::bad\_\-alloc,std::runtime\_\-error)}\label{classhistmgr_1_1ProfileCollection__t_ab596c78d6a64cf999f85bfa02a2e17fc}
+
+
+create several histograms which will have the same binning and the same name (except of a numeric extension). 
+\begin{DoxyParams}{Parameters}
+\item[{\em collection\_\-name}]the of the histogram collection \item[{\em name\_\-list}]a vector containing the names of the profile histograms whose length is either equals n\_\-hist or is zero. In the latter case the collection name is used for the all profile histograms. \item[{\em n\_\-hist}]the number of histograms to be created \item[{\em par}]the binning of the histograms\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the histogram collection.
+\end{DoxyReturn}
+The histograms are only written to a file if the histogram group, to which this histogram belongs, is assigned to a file (\doxyref{histmgr::HistMgr::assignFileName}{p.}{classhistmgr_1_1HistMgr_a20e3c96a8ba6175c8036918ca7acb1e2}). 
+
+Definition at line 16 of file ProfileCollection\_\-t.cc.
+
+Referenced by ProfileCollection\_\-t().\index{histmgr::ProfileCollection\_\-t@{histmgr::ProfileCollection\_\-t}!getName@{getName}}
+\index{getName@{getName}!histmgr::ProfileCollection_t@{histmgr::ProfileCollection\_\-t}}
+\subsubsection[{getName}]{\setlength{\rightskip}{0pt plus 5cm}const std::string\& histmgr::ProfileCollection\_\-t::getName (UInt\_\-t {\em major\_\-index}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1ProfileCollection__t_afcda495caee23828146923e3bc077947}
+
+
+Get the name of the specified element of the histogram collection. 
+\begin{DoxyParams}{Parameters}
+\item[{\em major\_\-index}]the index of the histogram element or in case of an 2D histogram array the major index. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to the name. 
+\end{DoxyReturn}
+
+
+Definition at line 259 of file ProfileCollection\_\-t.hh.
+
+References \_\-nameList, and copyNames().
+
+\subsection{Field Documentation}
+\index{histmgr::ProfileCollection\_\-t@{histmgr::ProfileCollection\_\-t}!\_\-majorIndex@{\_\-majorIndex}}
+\index{\_\-majorIndex@{\_\-majorIndex}!histmgr::ProfileCollection_t@{histmgr::ProfileCollection\_\-t}}
+\subsubsection[{\_\-majorIndex}]{\setlength{\rightskip}{0pt plus 5cm}lcio::IntVec$\ast$ {\bf histmgr::ProfileCollection\_\-t::\_\-majorIndex}\hspace{0.3cm}{\ttfamily  [private]}}\label{classhistmgr_1_1ProfileCollection__t_a8d326d21db86a5dfe18d5abc8f08246c}
+
+
+optional list of offset to form a two dimensional array out of the list. 
+
+Definition at line 285 of file ProfileCollection\_\-t.hh.
+
+Referenced by deleteCollection(), is2D(), nMajor(), nMinor(), and ProfileCollection\_\-t().\index{histmgr::ProfileCollection\_\-t@{histmgr::ProfileCollection\_\-t}!\_\-nameList@{\_\-nameList}}
+\index{\_\-nameList@{\_\-nameList}!histmgr::ProfileCollection_t@{histmgr::ProfileCollection\_\-t}}
+\subsubsection[{\_\-nameList}]{\setlength{\rightskip}{0pt plus 5cm}lcio::StringVec {\bf histmgr::ProfileCollection\_\-t::\_\-nameList}\hspace{0.3cm}{\ttfamily  [mutable, private]}}\label{classhistmgr_1_1ProfileCollection__t_abb30fd62e84b6a91452d455c67b62107}
+
+
+A vector which contains one name for all histograms of the collection or a name for each element. 
+
+Definition at line 287 of file ProfileCollection\_\-t.hh.
+
+Referenced by copyNames(), and getName().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+ProfileCollection\_\-t.hh\item 
+ProfileCollection\_\-t.cc\end{DoxyCompactItemize}

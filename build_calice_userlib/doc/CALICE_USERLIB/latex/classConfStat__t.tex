@@ -1,0 +1,149 @@
+\section{ConfStat\_\-t Class Reference}
+\label{classConfStat__t}\index{ConfStat\_\-t@{ConfStat\_\-t}}
+
+
+Statistics about configuration record errors.  
+
+
+{\ttfamily \#include $<$ConfStatList\_\-t.hh$>$}Inheritance diagram for ConfStat\_\-t::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classConfStat__t}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf finish} ()\label{classConfStat__t_a3856ab4b30f39391169a31c27ae15e08}
+
+\begin{DoxyCompactList}\small\item\em Add statistics of the last 10 records. \item\end{DoxyCompactList}\item 
+void {\bf printTableHeader} (std::ostream \&out) const \label{classConfStat__t_a26c1d1503dab552f275584065a39e64e}
+
+\begin{DoxyCompactList}\small\item\em Print the table header. \item\end{DoxyCompactList}\item 
+void {\bf print} (std::ostream \&out)
+\begin{DoxyCompactList}\small\item\em Print the statistics of one object (one table row). \item\end{DoxyCompactList}\item 
+bool {\bf hasInfo} () const 
+\begin{DoxyCompactList}\small\item\em Return true if at least one error was detected for the corresponding front-\/end. \item\end{DoxyCompactList}\item 
+void {\bf addGood} ()
+\begin{DoxyCompactList}\small\item\em The configuration data of the corresponding front-\/end is okay. \item\end{DoxyCompactList}\item 
+void {\bf addBad} ()
+\begin{DoxyCompactList}\small\item\em The configuration data of the corresponding front-\/end is broken. \item\end{DoxyCompactList}\item 
+void {\bf addConsecutiveWrites} ()
+\begin{DoxyCompactList}\small\item\em The configuration data of the corresponding front-\/end could bot be verified. \item\end{DoxyCompactList}\item 
+void {\bf checkPoint} ()\label{classConfStat__t_a46811b871604da482570570dbe654910}
+
+\begin{DoxyCompactList}\small\item\em Add the statistics gathered from the last 10 records to the total statistic and start a fresh sample. \item\end{DoxyCompactList}\item 
+void {\bf unCheckedCheckPoint} ()\label{classConfStat__t_af36942046f60ca599e65205e8b00dc6f}
+
+\begin{DoxyCompactList}\small\item\em Add the statistics of the last sample to the total statistic. \item\end{DoxyCompactList}\item 
+unsigned int {\bf n} () const \label{classConfStat__t_a8b3afffda1aa70289c51454c3122361d}
+
+\begin{DoxyCompactList}\small\item\em The size of the last sample. \item\end{DoxyCompactList}\item 
+unsigned int {\bf bad} () const \label{classConfStat__t_a229df4a06ce1fb0a91c7a9b35da825ee}
+
+\begin{DoxyCompactList}\small\item\em The number of bad configuration records for this front-\/end in the last sample. \item\end{DoxyCompactList}\item 
+unsigned int {\bf consecutiveWrites} () const \label{classConfStat__t_a3241e9dcaa3dedf0517f6ec457ceb359}
+
+\begin{DoxyCompactList}\small\item\em The number of unverified configuration records for this front-\/end in the last sample. \item\end{DoxyCompactList}\item 
+unsigned int {\bf error} () const \label{classConfStat__t_ae24a58055cd97f82fadaf7d7091c9078}
+
+\begin{DoxyCompactList}\small\item\em The number of configuration errors for this front-\/end in the last sample. \item\end{DoxyCompactList}\item 
+unsigned int {\bf nTotal} () const \label{classConfStat__t_a1c97a1c1c9935ad1fecff2eb11c99e74}
+
+\begin{DoxyCompactList}\small\item\em The total sample size. \item\end{DoxyCompactList}\item 
+unsigned int {\bf badTotal} () const \label{classConfStat__t_a5bfc54790861399510942d1127f37153}
+
+\begin{DoxyCompactList}\small\item\em The total number of bad configuration records for this front-\/end. \item\end{DoxyCompactList}\item 
+unsigned int {\bf consecutiveWritesTotal} () const \label{classConfStat__t_ab098d3d0e143c66ade8900e21d41cd93}
+
+\begin{DoxyCompactList}\small\item\em The total number of unverified configuration records for this front-\/end. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int {\bfseries \_\-n}\label{classConfStat__t_a936050c9f0aa7c50a36c26eb08efbe13}
+
+\item 
+unsigned int {\bfseries \_\-feBad}\label{classConfStat__t_a824537e0cc592bfc37d49dd65bafb304}
+
+\item 
+unsigned int {\bfseries \_\-consecutiveWrites}\label{classConfStat__t_a8cfcc7feceaf3423270a9fa751d64ed0}
+
+\item 
+unsigned int {\bfseries \_\-nTotal}\label{classConfStat__t_a9117a823678b9e6ab33f8573764aa405}
+
+\item 
+unsigned int {\bfseries \_\-feBadTotal}\label{classConfStat__t_aa9bcb2f1c6eef1f3bf88bf1e9a5ce756}
+
+\item 
+unsigned int {\bfseries \_\-consecutiveWritesTotal}\label{classConfStat__t_ae1a0a81a87e225040d8f642bd52a486f}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Statistics about configuration record errors. The object is meant to be used together with \doxyref{FeStatList\_\-t}{p.}{classFeStatList__t}. This object collects statistics about bad configuration data. The following errors are counted: the data which is read back does not agree with the data which was written; configuration data was written twice but never read back. \begin{DoxyAuthor}{Author}
+Goetz Gaycken, LLR -\/ Ecole polytechnique 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+feb, 2006 
+\end{DoxyDate}
+
+
+Definition at line 15 of file ConfStatList\_\-t.hh.
+
+\subsection{Member Function Documentation}
+\index{ConfStat\_\-t@{ConfStat\_\-t}!addBad@{addBad}}
+\index{addBad@{addBad}!ConfStat_t@{ConfStat\_\-t}}
+\subsubsection[{addBad}]{\setlength{\rightskip}{0pt plus 5cm}void ConfStat\_\-t::addBad ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classConfStat__t_a04c8678904ea2a04212d3617117f072b}
+
+
+The configuration data of the corresponding front-\/end is broken. 
+
+Definition at line 38 of file ConfStatList\_\-t.hh.
+
+References checkPoint().\index{ConfStat\_\-t@{ConfStat\_\-t}!addConsecutiveWrites@{addConsecutiveWrites}}
+\index{addConsecutiveWrites@{addConsecutiveWrites}!ConfStat_t@{ConfStat\_\-t}}
+\subsubsection[{addConsecutiveWrites}]{\setlength{\rightskip}{0pt plus 5cm}void ConfStat\_\-t::addConsecutiveWrites ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classConfStat__t_a011c9660b97bec0b7afbc06a7c2b1c65}
+
+
+The configuration data of the corresponding front-\/end could bot be verified. 
+
+Definition at line 41 of file ConfStatList\_\-t.hh.
+
+References checkPoint().\index{ConfStat\_\-t@{ConfStat\_\-t}!addGood@{addGood}}
+\index{addGood@{addGood}!ConfStat_t@{ConfStat\_\-t}}
+\subsubsection[{addGood}]{\setlength{\rightskip}{0pt plus 5cm}void ConfStat\_\-t::addGood ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classConfStat__t_a282d031bbd5b75fd30cef863e4d77060}
+
+
+The configuration data of the corresponding front-\/end is okay. 
+
+Definition at line 35 of file ConfStatList\_\-t.hh.
+
+References checkPoint().\index{ConfStat\_\-t@{ConfStat\_\-t}!hasInfo@{hasInfo}}
+\index{hasInfo@{hasInfo}!ConfStat_t@{ConfStat\_\-t}}
+\subsubsection[{hasInfo}]{\setlength{\rightskip}{0pt plus 5cm}bool ConfStat\_\-t::hasInfo () const\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classConfStat__t_a947d830f041d2d38b9f4306d755f470a}
+
+
+Return true if at least one error was detected for the corresponding front-\/end. 
+
+Implements {\bf StatObj\_\-t} \doxyref{}{p.}{classStatObj__t_a4eb553db0bda3666cab1c390092841a1}.
+
+Definition at line 32 of file ConfStatList\_\-t.hh.
+
+References error().\index{ConfStat\_\-t@{ConfStat\_\-t}!print@{print}}
+\index{print@{print}!ConfStat_t@{ConfStat\_\-t}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}void ConfStat\_\-t::print (std::ostream \& {\em out})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classConfStat__t_a75a769361503e4adb075bd30aef95f4d}
+
+
+Print the statistics of one object (one table row). 
+
+Implements {\bf StatObj\_\-t} \doxyref{}{p.}{classStatObj__t_a2763586ba61eb2c37f076e266b0a331e}.
+
+Definition at line 11 of file ConfStatList\_\-t.cc.
+
+References badTotal(), consecutiveWritesTotal(), and nTotal().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+ConfStatList\_\-t.hh\item 
+ConfStatList\_\-t.cc\end{DoxyCompactItemize}

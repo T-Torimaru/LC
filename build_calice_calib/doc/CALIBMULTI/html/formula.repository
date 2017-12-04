@@ -1,0 +1,8 @@
+\form#0:\[ f_{conv}(x) = \int_{min_{i}}^{max_{i}}{f_{1}(t) \cdot f_{2}(x-t) \textrm{d}t} \]
+\form#1:$ min_{i} $
+\form#2:$ max_{i} $
+\form#3:$ f_{i} $
+\form#4:$ f_{1} $
+\form#5:$ N_{f1} + N_{f2} + 1 $
+\form#6:$ N_{x} $
+\form#7:$ x $

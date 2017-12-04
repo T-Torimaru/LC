@@ -1,0 +1,65 @@
+\section{histmgr::Key\_\-t Class Reference}
+\label{classhistmgr_1_1Key__t}\index{histmgr::Key\_\-t@{histmgr::Key\_\-t}}
+
+
+A string key which will get a numeric identifier.  
+
+
+{\ttfamily \#include $<$Key\_\-t.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Key\_\-t} (const std::string \&key\_\-name)\label{classhistmgr_1_1Key__t_afce4e8a705f0f1a672177ba34000df14}
+
+\item 
+std::string \& {\bfseries nameStorage} ()\label{classhistmgr_1_1Key__t_ae94241f0863c94f48c8de3526b21a5ef}
+
+\item 
+const std::string \& {\bfseries name} () const \label{classhistmgr_1_1Key__t_afb953f811ee1274e7d8c96800760dcd1}
+
+\item 
+unsigned int {\bfseries id} () const \label{classhistmgr_1_1Key__t_a46ee73330ff61b8d100edad91614a6eb}
+
+\item 
+bool {\bfseries isSet} () const \label{classhistmgr_1_1Key__t_aa09f615fc00440b4a56902a3d3076d61}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned int {\bfseries invalidKey} ()\label{classhistmgr_1_1Key__t_a3f76a8ecb4e1226f9e598199d0c194a0}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries cache} (unsigned int id) const \label{classhistmgr_1_1Key__t_a27779ea465a99d049b4e7f388b4ab3e5}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bfseries \_\-name}\label{classhistmgr_1_1Key__t_a3ef2f7aa7639d24c9c94389a7e08cc52}
+
+\item 
+unsigned int {\bfseries \_\-id}\label{classhistmgr_1_1Key__t_a6bd85027f8ed355208f46dbbfbc314df}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries KeyMap\_\-t}\label{classhistmgr_1_1Key__t_a2801f1de643e34fefd4a7828ed4dcbe4}
+
+\item 
+class {\bfseries KeyMapBase\_\-t}\label{classhistmgr_1_1Key__t_a9575e83b8b317dbc46a599683d98e086}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A string key which will get a numeric identifier. The primary key is the name. To prevent numerours string lookups, a numeric identifier is assigned to each string key. The numeric identifier is declared mutable. It will be set nevertheless of the const-\/ness of the class. 
+
+Definition at line 16 of file Key\_\-t.hh.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+Key\_\-t.hh\end{DoxyCompactItemize}

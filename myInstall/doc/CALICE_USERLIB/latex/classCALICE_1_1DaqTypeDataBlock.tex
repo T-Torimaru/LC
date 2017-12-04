@@ -1,0 +1,232 @@
+\section{CALICE::DaqTypeDataBlock Class Reference}
+\label{classCALICE_1_1DaqTypeDataBlock}\index{CALICE::DaqTypeDataBlock@{CALICE::DaqTypeDataBlock}}
+
+
+Base Class to handle all daq types (for the time being apart from the actual crc data) This base class constains the functions to store the data The actual handling of the data is left to dedicated classes which have to derive from this class.  
+
+
+{\ttfamily \#include $<$DaqTypeDataBlock.hh$>$}Inheritance diagram for CALICE::DaqTypeDataBlock::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCALICE_1_1DaqTypeDataBlock}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf DaqTypeDataBlock} ()\label{classCALICE_1_1DaqTypeDataBlock_a85c6645ef5c7c0806f3c3df59570f8cc}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+{\bf DaqTypeDataBlock} (LCObject $\ast$obj, bool restoreMaps=true)\label{classCALICE_1_1DaqTypeDataBlock_a1e706ee3c127aec373cef65488a6cb9f}
+
+\begin{DoxyCompactList}\small\item\em 'Copy constructor' needed to interpret LCCollection read from file/database. \item\end{DoxyCompactList}\item 
+{\bf DaqTypeDataBlock} \& {\bf setTimeStamps} (std::map$<$ std::string, time\_\-t $>$ timeStampMapRaw)\label{classCALICE_1_1DaqTypeDataBlock_aa34e891e8a1fa5bf87f509d4b22cd385}
+
+\begin{DoxyCompactList}\small\item\em Set the time stamps or better initialize the timestamp map which will be stored Remember: We store UTC!!!! \item\end{DoxyCompactList}\item 
+{\bf TimeStampMap\_\-t} {\bfseries getTimeStamps} ()\label{classCALICE_1_1DaqTypeDataBlock_a7d275918bef9692d3d514233587a6bf2}
+
+\item 
+virtual void {\bf setDblArrays} (const {\bf DaqTypeDataDblMap\_\-t} \&daqTypeDataDblMap)\label{classCALICE_1_1DaqTypeDataBlock_a75a5676e055372817eb4ab644eac3d08}
+
+\begin{DoxyCompactList}\small\item\em These methods receive the vectors with the measured values Mainly to store large arrays of a given datatype but in principle this can be extended to every entry in the interface class. \item\end{DoxyCompactList}\item 
+virtual void {\bfseries setFloatArrays} (const DaqTypeDataFloatMap\_\-t \&daqTypeDataFloatMap)\label{classCALICE_1_1DaqTypeDataBlock_a012452bf9295a1cd73d0f7d8634b7253}
+
+\item 
+virtual void {\bfseries setIntArrays} (const DaqTypeDataUIntMap\_\-t \&)\label{classCALICE_1_1DaqTypeDataBlock_a98f2ff86e4ad4ba336a1e59ec0ceb34e}
+
+\item 
+virtual void {\bfseries setIntArrays} (const DaqTypeDataIntMap\_\-t \&)\label{classCALICE_1_1DaqTypeDataBlock_a134ce924a637904532cc22c1cc0f0ad1}
+
+\item 
+DaqTypeDataIntMap\_\-t {\bf getIntArrays} ()
+\begin{DoxyCompactList}\small\item\em The following methods allow to retrieve the maps. \item\end{DoxyCompactList}\item 
+{\bf DaqTypeDataDblMap\_\-t} {\bfseries getDblArrays} ()\label{classCALICE_1_1DaqTypeDataBlock_a971acc862569f0d3af2aa289b1cb4d5d}
+
+\item 
+DaqTypeDataFloatMap\_\-t {\bfseries getFloatArrays} ()\label{classCALICE_1_1DaqTypeDataBlock_a1c9066aad1370879f24f84464fd02da1}
+
+\item 
+{\bf DaqTypeDataBlock} $\ast$ {\bf finalize} ()
+\begin{DoxyCompactList}\small\item\em A method which finally fills the object which is stored. \item\end{DoxyCompactList}\item 
+virtual const double {\bf getBeamEnergy} ()\label{classCALICE_1_1DaqTypeDataBlock_a22c56049653a7e3c0637deadb891e9da}
+
+\begin{DoxyCompactList}\small\item\em A method to calculate the beam energy which has to be implemented by the derived classes. \item\end{DoxyCompactList}\item 
+virtual void {\bf print} (std::ostream \&)\label{classCALICE_1_1DaqTypeDataBlock_a0ab5d656a67220cfc75fd842c29e1ac7}
+
+\begin{DoxyCompactList}\small\item\em convenient print method \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1DaqTypeDataBlock_acb717f063a4de474a5e51924f8d24682}
+
+\begin{DoxyCompactList}\small\item\em Return the type of the class. \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1DaqTypeDataBlock_a4dbed57cc9bf006bbd3e670f07fbe2b1}
+
+\begin{DoxyCompactList}\small\item\em Return a brief description of the data members. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf setNumberOfIntTypes} (int numvals)\label{classCALICE_1_1DaqTypeDataBlock_a28c2c09bb9a1ff30f199188a12ec7bab}
+
+\begin{DoxyCompactList}\small\item\em Store the number of int data types. \item\end{DoxyCompactList}\item 
+int {\bf getNumberOfIntTypes} () const \label{classCALICE_1_1DaqTypeDataBlock_adf260ba6c4d5c2178acda6bd6bf329b2}
+
+\begin{DoxyCompactList}\small\item\em Retrieve the number of int data types. \item\end{DoxyCompactList}\item 
+void {\bf setNumberOfTimeStamps} (int numvals)\label{classCALICE_1_1DaqTypeDataBlock_a676aad32ad5a5634f384f236495f0ac9}
+
+\begin{DoxyCompactList}\small\item\em Store the number of timestamps. \item\end{DoxyCompactList}\item 
+int {\bf getNumberOfTimeStamps} () const \label{classCALICE_1_1DaqTypeDataBlock_a6823cb2b2543bcebb87750ac5423e20e}
+
+\begin{DoxyCompactList}\small\item\em Retrieve the number of int data types. \item\end{DoxyCompactList}\item 
+void {\bf setPointerToIndexOfIntTypeNames} (int nameind)\label{classCALICE_1_1DaqTypeDataBlock_ab5c75f5969f61b10ef90801babd1ab1f}
+
+\begin{DoxyCompactList}\small\item\em Store the index at which the pointer to the names of the int data data types do start. \item\end{DoxyCompactList}\item 
+int {\bf getPointerToIndexOfIntTypeNames} () const \label{classCALICE_1_1DaqTypeDataBlock_a12176936fc593c6cb09bccc58dff9e25}
+
+\begin{DoxyCompactList}\small\item\em Retrieve the index at which the pointer to the names of int data types do start. \item\end{DoxyCompactList}\item 
+void {\bf setPointerToIndexOfTimeStampNames} (int nameind)\label{classCALICE_1_1DaqTypeDataBlock_aac3f7e653792786bc85952f1ea97bba3}
+
+\begin{DoxyCompactList}\small\item\em Store the index at which the pointer to the names of the time stamps do start. \item\end{DoxyCompactList}\item 
+int {\bf getPointerToIndexOfTimeStampNames} () const \label{classCALICE_1_1DaqTypeDataBlock_a52e2c8a7356f9b4fe5b0a190df3db19a}
+
+\begin{DoxyCompactList}\small\item\em Retrieve the index at which the pointer to the names of the time stamps do start. \item\end{DoxyCompactList}\item 
+void {\bf setTypeIndex} (int pos, int value)\label{classCALICE_1_1DaqTypeDataBlock_a622f0e34c6584942fc1d36c6ab038581}
+
+\begin{DoxyCompactList}\small\item\em Set the index of a given data type name. \item\end{DoxyCompactList}\item 
+void {\bf setLengthIndexOfIntTypeNames} (int lengthindex)\label{classCALICE_1_1DaqTypeDataBlock_ab032d6110f9a55ef1f33db4d59197e84}
+
+\begin{DoxyCompactList}\small\item\em Store the index at which the lengths of the names of the int data types do start. \item\end{DoxyCompactList}\item 
+int {\bf getLengthIndexOfIntTypeNames} () const \label{classCALICE_1_1DaqTypeDataBlock_a418917055bd74565de117b6c8ff50523}
+
+\begin{DoxyCompactList}\small\item\em Retrieve the index at which the lengths of the names of the int data types do start. \item\end{DoxyCompactList}\item 
+void {\bf setLengthIndexOfTimeStampNames} (int lengthindex)\label{classCALICE_1_1DaqTypeDataBlock_afe7ffd23a9d39d2ce552f40227f0f8e6}
+
+\begin{DoxyCompactList}\small\item\em Store the index at which the lengths of the names of the time stamps do start. \item\end{DoxyCompactList}\item 
+int {\bf getLengthIndexOfTimeStampNames} () const \label{classCALICE_1_1DaqTypeDataBlock_ae7a837206e4e801f31c5bd22fa0d1017}
+
+\begin{DoxyCompactList}\small\item\em Retrieve the index at which the lengths of the names of the int data types do start. \item\end{DoxyCompactList}\item 
+void {\bf setSizeIndexOfIntType} (int size)\label{classCALICE_1_1DaqTypeDataBlock_a96726ed1f53f580959f9ae9f7eb579ca}
+
+\begin{DoxyCompactList}\small\item\em Store the Index where the sizes of the int data data types do start. \item\end{DoxyCompactList}\item 
+int {\bf getSizeIndexOfIntType} () const \label{classCALICE_1_1DaqTypeDataBlock_a1f6e0831d20b7f3810ac080517ad7a49}
+
+\begin{DoxyCompactList}\small\item\em Retrieve index where the sizes of int data types do start. \item\end{DoxyCompactList}\item 
+void {\bf setNumberOfDblTypes} (int numvals)\label{classCALICE_1_1DaqTypeDataBlock_af22734d9ce54087e2c6b36832668da98}
+
+\begin{DoxyCompactList}\small\item\em Store the number of double data types. \item\end{DoxyCompactList}\item 
+int {\bf getNumberOfDblTypes} () const \label{classCALICE_1_1DaqTypeDataBlock_a4f409146da56fcddfbd2495149ea50cd}
+
+\begin{DoxyCompactList}\small\item\em Retrieve the number of double data types. \item\end{DoxyCompactList}\item 
+void {\bf setPointerToIndexOfDblTypeNames} (int nameind)\label{classCALICE_1_1DaqTypeDataBlock_a8dbc1b40d1a11be5285a272ee01f597c}
+
+\begin{DoxyCompactList}\small\item\em Store the at which the names the double data data types do start. \item\end{DoxyCompactList}\item 
+int {\bf getPointerToIndexOfDblTypeNames} () const \label{classCALICE_1_1DaqTypeDataBlock_a675b5c1436aeba8953a5c569889f1e84}
+
+\begin{DoxyCompactList}\small\item\em Retrieve index at which the names of double data types do start. \item\end{DoxyCompactList}\item 
+void {\bf setLengthIndexOfDblTypeNames} (int length)\label{classCALICE_1_1DaqTypeDataBlock_ae8065e890645c324f6740947494fbe06}
+
+\begin{DoxyCompactList}\small\item\em Store the index at which lengths of the names of the double data types do start. \item\end{DoxyCompactList}\item 
+int {\bf getLengthIndexOfDblTypeNames} () const \label{classCALICE_1_1DaqTypeDataBlock_ae302a22d40e2e009497ac8ffaaba1a47}
+
+\begin{DoxyCompactList}\small\item\em Retrieve the index at which the lengths of the names of the double data types do start. \item\end{DoxyCompactList}\item 
+void {\bf setSizeIndexOfDblType} (int size)\label{classCALICE_1_1DaqTypeDataBlock_ad1c408aae59259c742b2aec8b3517b06}
+
+\begin{DoxyCompactList}\small\item\em Store the Index where the sizes of the double data data types do start. \item\end{DoxyCompactList}\item 
+int {\bf getSizeIndexOfDblType} () const \label{classCALICE_1_1DaqTypeDataBlock_a84c98b620f0051e8aeadd93a6f2357b0}
+
+\begin{DoxyCompactList}\small\item\em Retrieve index where the sizes of double data types do start. \item\end{DoxyCompactList}\item 
+void {\bf setNumberOfFloatTypes} (int numvals)\label{classCALICE_1_1DaqTypeDataBlock_a841cafcb827e3a396c0554c912240b15}
+
+\begin{DoxyCompactList}\small\item\em Store the number of float data types. \item\end{DoxyCompactList}\item 
+int {\bf getNumberOfFloatTypes} () const \label{classCALICE_1_1DaqTypeDataBlock_a0e6f4e46a345d28c63d202d30b744a2e}
+
+\begin{DoxyCompactList}\small\item\em Retrieve the number of float data types. \item\end{DoxyCompactList}\item 
+void {\bf setPointerToIndexOfFloatTypeNames} (int nameind)\label{classCALICE_1_1DaqTypeDataBlock_a891466479bac0cbc2b7989808aa90865}
+
+\begin{DoxyCompactList}\small\item\em Store the index at which the names of the float data types do start. \item\end{DoxyCompactList}\item 
+int {\bf getPointerToIndexOfFloatTypeNames} () const \label{classCALICE_1_1DaqTypeDataBlock_a153fc0942be078682a9e4a83f4acf3e8}
+
+\begin{DoxyCompactList}\small\item\em Retrieve index at which the names of the float data types do start. \item\end{DoxyCompactList}\item 
+void {\bf setLengthIndexOfFloatTypeNames} (int length)\label{classCALICE_1_1DaqTypeDataBlock_a888df6e647e1a5e64a5bd38488315db1}
+
+\begin{DoxyCompactList}\small\item\em Store the index at which the lengths of the names of the float data types do start. \item\end{DoxyCompactList}\item 
+int {\bf getLengthIndexOfFloatTypeNames} () const \label{classCALICE_1_1DaqTypeDataBlock_acfc2ef22213129c57bacf00d1e27fa82}
+
+\begin{DoxyCompactList}\small\item\em Retrieve the index at which the lengths of the names of the float data types do start. \item\end{DoxyCompactList}\item 
+void {\bf setSizeIndexOfFloatType} (int size)\label{classCALICE_1_1DaqTypeDataBlock_acac139f2e46d4db6af0b6eddd6ec4942}
+
+\begin{DoxyCompactList}\small\item\em Store the Index where the sizes of the float data data types do start. \item\end{DoxyCompactList}\item 
+int {\bf getSizeIndexOfFloatType} () const \label{classCALICE_1_1DaqTypeDataBlock_ada9d6720bbd32244e611788b488d8d2a}
+
+\begin{DoxyCompactList}\small\item\em Retrieve index where the sizes of double data types do start. \item\end{DoxyCompactList}\item 
+void {\bf calculateTimeStamp} (struct tm $\ast$)\label{classCALICE_1_1DaqTypeDataBlock_a92c758b4cf990905756df438015a061d}
+
+\begin{DoxyCompactList}\small\item\em Simple method to decompose the struct tm containing the timestamp into ints which can be stored in the LCGenericObject and therefore in the database. \item\end{DoxyCompactList}\item 
+LCTime {\bf composeTimeStamp} ()\label{classCALICE_1_1DaqTypeDataBlock_a40444b0427fe536b7ea4bf14447a3df8}
+
+\begin{DoxyCompactList}\small\item\em turn the two ints containing the timestamp info into a LCTime Object \item\end{DoxyCompactList}\item 
+void {\bf RestoreMaps} ()\label{classCALICE_1_1DaqTypeDataBlock_a57610189b303b049d13ef2b569e5156d}
+
+\begin{DoxyCompactList}\small\item\em A method which restores the map from the generic object. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::map$<$ std::string, time\_\-t $>$ {\bf \_\-timeStampMapRaw}\label{classCALICE_1_1DaqTypeDataBlock_a8867f81834148bdf8a194e71b3b742f8}
+
+\begin{DoxyCompactList}\small\item\em A map holds the nature and the value of the timestamps. \item\end{DoxyCompactList}\item 
+{\bf TimeStampMap\_\-t} {\bf \_\-timeStampMap}\label{classCALICE_1_1DaqTypeDataBlock_aa4a278ab29ccecfee83baa22bdc993c0}
+
+\begin{DoxyCompactList}\small\item\em Another map now with the time stamp using LCIO Utils. \item\end{DoxyCompactList}\item 
+int {\bf \_\-timestamptoint} [2]\label{classCALICE_1_1DaqTypeDataBlock_a9ca2d41715983eb36a5fc1573d580a9c}
+
+\begin{DoxyCompactList}\small\item\em A simple array which holds the timestamp decomposed into two ints containing a) ymd and b) hms. \item\end{DoxyCompactList}\item 
+{\bf DaqTypeDataDblMap\_\-t} {\bf \_\-bufferOfDbls}\label{classCALICE_1_1DaqTypeDataBlock_a95a47d717cbc1a9988d43c37dcb92b43}
+
+\begin{DoxyCompactList}\small\item\em Variables which buffer the maps passed by the converter Buffering is needed since we don't know a priori when the objects are passed to us and which data types they contain the 'finalize' method (see below) will finally create the object from the buffers Buffer for doubles. \item\end{DoxyCompactList}\item 
+DaqTypeDataFloatMap\_\-t {\bf \_\-bufferOfFloats}\label{classCALICE_1_1DaqTypeDataBlock_a6bf50fbf5fe6cd66eecffd9e55ce482a}
+
+\begin{DoxyCompactList}\small\item\em Buffer for Floats. \item\end{DoxyCompactList}\item 
+DaqTypeDataIntMap\_\-t {\bf \_\-bufferOfInts}\label{classCALICE_1_1DaqTypeDataBlock_ab783f44996aab2ced5c9b2c88a183203}
+
+\begin{DoxyCompactList}\small\item\em Buffer for Ints. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base Class to handle all daq types (for the time being apart from the actual crc data) This base class constains the functions to store the data The actual handling of the data is left to dedicated classes which have to derive from this class. The implementation and the interpretation of the stored values is left to the derived classes. The actual meaning of the entries is propagated from a daq class into the database. Note, that in principle really all data types (apart from crc data) can be handled by this class However, existing interface classes (written before Oct. 2008) will remain untouched or exchanged gradually. if considered to be useful. This class allows for a quick reply to changes in the daq. In particular on the appearance of new data types. \begin{DoxyAuthor}{Author}
+: Roman Pöschl LAL/Orsay 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Oct 2008 
+\end{DoxyDate}
+
+
+Definition at line 61 of file DaqTypeDataBlock.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::DaqTypeDataBlock@{CALICE::DaqTypeDataBlock}!finalize@{finalize}}
+\index{finalize@{finalize}!CALICE::DaqTypeDataBlock@{CALICE::DaqTypeDataBlock}}
+\subsubsection[{finalize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf DaqTypeDataBlock} $\ast$ CALICE::DaqTypeDataBlock::finalize ()}\label{classCALICE_1_1DaqTypeDataBlock_a5aac4e6f4aef380287394ad36b30a40d}
+
+
+A method which finally fills the object which is stored. \begin{Desc}
+\item[{\bf Todo}]can the algorithms in this method be templated? \end{Desc}
+
+
+Definition at line 37 of file DaqTypeDataBlock.cc.
+
+References \_\-bufferOfDbls, \_\-bufferOfFloats, \_\-bufferOfInts, \_\-timeStampMap, \_\-timeStampMapRaw, \_\-timestamptoint, calculateTimeStamp(), CALICE::convertStringToInts(), getLengthIndexOfFloatTypeNames(), getNumberOfDblTypes(), getNumberOfFloatTypes(), getNumberOfIntTypes(), getNumberOfTimeStamps(), getPointerToIndexOfDblTypeNames(), getPointerToIndexOfFloatTypeNames(), getPointerToIndexOfIntTypeNames(), getPointerToIndexOfTimeStampNames(), CALICE::getStringFromInts(), CALICE::LCGenericObjectImplExt::obj(), RestoreMaps(), setLengthIndexOfDblTypeNames(), setLengthIndexOfFloatTypeNames(), setLengthIndexOfIntTypeNames(), setLengthIndexOfTimeStampNames(), setNumberOfDblTypes(), setNumberOfFloatTypes(), setNumberOfIntTypes(), setNumberOfTimeStamps(), setPointerToIndexOfDblTypeNames(), setPointerToIndexOfFloatTypeNames(), setPointerToIndexOfIntTypeNames(), setPointerToIndexOfTimeStampNames(), setSizeIndexOfDblType(), setSizeIndexOfFloatType(), setSizeIndexOfIntType(), and setTypeIndex().\index{CALICE::DaqTypeDataBlock@{CALICE::DaqTypeDataBlock}!getIntArrays@{getIntArrays}}
+\index{getIntArrays@{getIntArrays}!CALICE::DaqTypeDataBlock@{CALICE::DaqTypeDataBlock}}
+\subsubsection[{getIntArrays}]{\setlength{\rightskip}{0pt plus 5cm}DaqTypeDataIntMap\_\-t CALICE::DaqTypeDataBlock::getIntArrays ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1DaqTypeDataBlock_aed8a8e75c1ca2befbf3f4c1bfe54e0a9}
+
+
+The following methods allow to retrieve the maps. \begin{Desc}
+\item[{\bf Todo}]: Should these methods really be public or only accessible by friend functions or ...? 
+
+: Do we have to check whether they has been filled or not before we hand it to the user? \end{Desc}
+
+
+Definition at line 120 of file DaqTypeDataBlock.hh.
+
+References \_\-bufferOfInts.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+DaqTypeDataBlock.hh\item 
+DaqTypeDataBlock.cc\end{DoxyCompactItemize}

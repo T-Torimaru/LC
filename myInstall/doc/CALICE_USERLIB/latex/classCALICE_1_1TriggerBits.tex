@@ -1,0 +1,431 @@
+\section{CALICE::TriggerBits Class Reference}
+\label{classCALICE_1_1TriggerBits}\index{CALICE::TriggerBits@{CALICE::TriggerBits}}
+
+
+A small class which allow for the easy analysis of core trigger information.  
+
+
+{\ttfamily \#include $<$TriggerBits.hh$>$}\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries ETriggerBitNr} \{ \par
+{\bfseries kUnknownBit} = 0, 
+{\bfseries kBeam\_\-ExtBit} = kUnknownBit, 
+{\bfseries kBeamBit} = 1, 
+{\bfseries kPedestalBit} = 2, 
+\par
+{\bfseries kCosmicsBit} = 3, 
+{\bfseries kCalibBit} = 4, 
+{\bfseries kVetoBit} = 5, 
+{\bfseries kCherenkovBit} = 6, 
+\par
+{\bfseries kSC1\_\-3x3Bit} = 7, 
+{\bfseries kSC2\_\-3x3Bit} = 8, 
+{\bfseries kSC1\_\-10x10Bit} = 9, 
+{\bfseries kSC2\_\-10x10Bit} = 10, 
+\par
+{\bfseries kSC1\_\-100x100Bit} = 11, 
+{\bfseries kSC2\_\-100x100Bit} = 12, 
+{\bfseries kSpillBit} = 13, 
+{\bfseries kCrcOscillatorBit} = 14, 
+\par
+{\bfseries kExternalPulserBit} = 15, 
+{\bfseries kExternalLEDBit} = 16, 
+{\bfseries kFingerHorizontBit} = 17, 
+{\bfseries kFingerVertBit} = 18, 
+\par
+{\bfseries kVetoULBit} = 19, 
+{\bfseries kVetoDRBit} = 20, 
+{\bfseries kVetoURBit} = 21, 
+{\bfseries kVetoDLBit} = 22, 
+\par
+{\bfseries kSC1\_\-20x20Bit} = 23, 
+{\bfseries kVeto\_\-20x20Bit} = 24, 
+{\bfseries kCherenkov2Bit} = 25, 
+{\bfseries kSC1\_\-50x50Bit} = 26, 
+\par
+{\bfseries kSC2\_\-50x50Bit} = 27, 
+{\bfseries kUTA1\_\-19x19Bit} = 28, 
+{\bfseries kUTA2\_\-19x19Bit} = 29, 
+{\bfseries kMuon\_\-ExtBit} = 30, 
+\par
+{\bfseries kGenericBit} = 31
+ \}
+\item 
+enum {\bfseries ETriggerBits} \{ \par
+{\bfseries kBeam\_\-Ext} = (1$<$$<$kBeam\_\-ExtBit), 
+{\bfseries kBeam} = (1$<$$<$kBeamBit), 
+{\bfseries kPedestal} = (1$<$$<$kPedestalBit), 
+{\bfseries kCosmics} = (1$<$$<$kCosmicsBit), 
+\par
+{\bfseries kCalib} = (1$<$$<$kCalibBit), 
+{\bfseries kVeto} = (1$<$$<$kVetoBit), 
+{\bfseries kCherenkov} = (1$<$$<$kCherenkovBit), 
+{\bfseries kSC1\_\-3x3} = (1$<$$<$kSC1\_\-3x3Bit), 
+\par
+{\bfseries kSC2\_\-3x3} = (1$<$$<$kSC2\_\-3x3Bit), 
+{\bfseries kSC1\_\-10x10} = (1$<$$<$kSC1\_\-10x10Bit), 
+{\bfseries kSC2\_\-10x10} = (1$<$$<$kSC2\_\-10x10Bit), 
+{\bfseries kSC1\_\-100x100} = (1$<$$<$kSC1\_\-100x100Bit), 
+\par
+{\bfseries kSC2\_\-100x100} = (1$<$$<$kSC2\_\-100x100Bit), 
+{\bfseries kSpill} = (1$<$$<$kSpillBit), 
+{\bfseries kCrcOscillator} = (1$<$$<$kCrcOscillatorBit), 
+{\bfseries kExternalPulser} = (1$<$$<$kExternalPulserBit), 
+\par
+{\bfseries kExternalLED} = (1$<$$<$kExternalLEDBit), 
+{\bfseries kFingerHorizont} = (1$<$$<$kFingerHorizontBit), 
+{\bfseries kFingerVert} = (1$<$$<$kFingerVertBit), 
+{\bfseries kVetoUL} = (1$<$$<$kVetoULBit), 
+\par
+{\bfseries kVetoDR} = (1$<$$<$kVetoDRBit), 
+{\bfseries kVetoUR} = (1$<$$<$kVetoURBit), 
+{\bfseries kVetoDL} = (1$<$$<$kVetoDLBit), 
+{\bfseries kSC1\_\-20x20} = (1$<$$<$kSC1\_\-20x20Bit), 
+\par
+{\bfseries kVeto\_\-20x20} = (1$<$$<$kVeto\_\-20x20Bit), 
+{\bfseries kCherenkov2} = (1$<$$<$kCherenkov2Bit), 
+{\bfseries kSC1\_\-50x50} = (1$<$$<$kSC1\_\-50x50Bit), 
+{\bfseries kSC2\_\-50x50} = (1$<$$<$kSC2\_\-50x50Bit), 
+\par
+{\bfseries kUTA1\_\-19x19} = (1$<$$<$kUTA1\_\-19x19Bit), 
+{\bfseries kUTA2\_\-19x19} = (1$<$$<$kUTA2\_\-19x19Bit), 
+{\bfseries kMuon\_\-Ext} = (1$<$$<$kMuon\_\-ExtBit), 
+{\bfseries kGeneric} = (1$<$$<$kGenericBit)
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf TriggerBits} ()
+\begin{DoxyCompactList}\small\item\em usage: \item\end{DoxyCompactList}\item 
+{\bfseries TriggerBits} (int trigger\_\-bits)\label{classCALICE_1_1TriggerBits_afc57cbe58be647ef8d43fd9629d0879a}
+
+\item 
+bool {\bfseries isBeamTrigger} () const \label{classCALICE_1_1TriggerBits_a021e08dc553b6e3aad441b5f6f5ea9ad}
+
+\item 
+bool {\bfseries isPureBeamTrigger} () const \label{classCALICE_1_1TriggerBits_aa3ae4279a65bdd35c66eb970f94aeebb}
+
+\item 
+void {\bfseries setBeamTrigger} ()\label{classCALICE_1_1TriggerBits_a696b76695387ab8c7faa6165141c04da}
+
+\item 
+bool {\bfseries isPedestalTrigger} () const \label{classCALICE_1_1TriggerBits_a2cc8bde38c793ae68793f746e5b76eb0}
+
+\item 
+bool {\bfseries isPurePedestalTrigger} () const \label{classCALICE_1_1TriggerBits_afc6d7bf08688381ab192ee0786ba3c8b}
+
+\item 
+void {\bfseries setPedestalTrigger} ()\label{classCALICE_1_1TriggerBits_a66458360f5034d88431739e0974aaa03}
+
+\item 
+bool {\bfseries isCosmicsTrigger} () const \label{classCALICE_1_1TriggerBits_a1e142c823b5d7ed14e6a14a6e72a5a39}
+
+\item 
+bool {\bfseries isPureCosmicsTrigger} () const \label{classCALICE_1_1TriggerBits_a6be8c757bfac25822c6cb591972d27a9}
+
+\item 
+void {\bfseries setCosmicsTrigger} ()\label{classCALICE_1_1TriggerBits_aa275f5f10f2c2061b1433af7aeaa8c41}
+
+\item 
+bool {\bfseries isCalibTrigger} () const \label{classCALICE_1_1TriggerBits_aca962f5c19e91470e8e9bb744faa865e}
+
+\item 
+bool {\bfseries isPureCalibTrigger} () const \label{classCALICE_1_1TriggerBits_a428e0fa59d3bb9587c13f9cf8c18b2a6}
+
+\item 
+void {\bfseries setCalibTrigger} ()\label{classCALICE_1_1TriggerBits_a1a04ce4c3d842357bdcdacbb3f2dcf49}
+
+\item 
+bool {\bfseries isVetoTrigger} () const \label{classCALICE_1_1TriggerBits_aa9a5e20bf84502676df2779953216287}
+
+\item 
+void {\bfseries setVetoTrigger} ()\label{classCALICE_1_1TriggerBits_a12235c79503f16bbeb847347a6922928}
+
+\item 
+bool {\bfseries isVetoUL} () const \label{classCALICE_1_1TriggerBits_afdc30f5946beba74d2527ea57df0cc6b}
+
+\item 
+void {\bfseries setVetoULTrigger} ()\label{classCALICE_1_1TriggerBits_aa31f874c0d121daeed45619637f23343}
+
+\item 
+bool {\bfseries isVetoDR} () const \label{classCALICE_1_1TriggerBits_aa425b0e00a719c4e6663bb3a076b5fa8}
+
+\item 
+void {\bfseries setVetoDRTrigger} ()\label{classCALICE_1_1TriggerBits_ab42881e1a631fd5d6fa267fed18e6b7d}
+
+\item 
+bool {\bfseries isVetoUR} () const \label{classCALICE_1_1TriggerBits_a09ad663b670454f0a4c9cf1280f8ae05}
+
+\item 
+void {\bfseries setVetoURTrigger} ()\label{classCALICE_1_1TriggerBits_aabde71323de304f4580074b7a3f77126}
+
+\item 
+bool {\bfseries isVetoDL} () const \label{classCALICE_1_1TriggerBits_addc778054befbdcc81fc5524287721cc}
+
+\item 
+void {\bfseries setVetoDLTrigger} ()\label{classCALICE_1_1TriggerBits_a8a4e47a78e83904cd8653f0283a0f155}
+
+\item 
+bool {\bfseries isSc1\_\-20x20} () const \label{classCALICE_1_1TriggerBits_a5de7b40b4a64873f498d61f798ccac0c}
+
+\item 
+void {\bfseries setSc1\_\-20x20} ()\label{classCALICE_1_1TriggerBits_a073b4e65079e0759c32b3347390ee1aa}
+
+\item 
+bool {\bfseries isUta1\_\-19x19} () const \label{classCALICE_1_1TriggerBits_a511f3cc346f2144271760dbf33fa67ae}
+
+\item 
+void {\bfseries setUta1\_\-19x19} ()\label{classCALICE_1_1TriggerBits_a5dab75da6a545c167f5eca4cfe4952e8}
+
+\item 
+bool {\bfseries isUta2\_\-19x19} () const \label{classCALICE_1_1TriggerBits_a9164ac2a67029ae61c88efeb31dce560}
+
+\item 
+void {\bfseries setUta2\_\-19x19} ()\label{classCALICE_1_1TriggerBits_a8693f267d6fd914fe855f0e1cad84291}
+
+\item 
+bool {\bfseries isMuon\_\-Ext} () const \label{classCALICE_1_1TriggerBits_a5b8dcdc68d17ba2196ea5d83cab8d789}
+
+\item 
+void {\bfseries setMuon\_\-Ext} ()\label{classCALICE_1_1TriggerBits_a82dc889b927acdba138449d456cdcb1b}
+
+\item 
+bool {\bfseries isBeam\_\-Ext} () const \label{classCALICE_1_1TriggerBits_ac9cd1732fa03cadd09e447fbe1096f65}
+
+\item 
+void {\bfseries setBeam\_\-Ext} ()\label{classCALICE_1_1TriggerBits_a2760e88bd8605000b71d7b9958e5aaf4}
+
+\item 
+bool {\bfseries isVeto\_\-20x20} () const \label{classCALICE_1_1TriggerBits_a6b8b87f0f31c9b5dc54a881d54d8be54}
+
+\item 
+void {\bfseries setVeto\_\-20x20} ()\label{classCALICE_1_1TriggerBits_a860827416bcc790e700712d1910f8e7a}
+
+\item 
+bool {\bfseries isCherenkovTrigger} () const \label{classCALICE_1_1TriggerBits_ade134772327f8d1e6dcbba93fa00cce0}
+
+\item 
+void {\bfseries setCherenkovTrigger} ()\label{classCALICE_1_1TriggerBits_aa606d0accc084cf89cb1ed6befe5d7cb}
+
+\item 
+bool {\bfseries isCherenkov2Trigger} () const \label{classCALICE_1_1TriggerBits_a708ff54ffdc4793a0e54f6a5d08ac6f4}
+
+\item 
+void {\bfseries setCherenkov2Trigger} ()\label{classCALICE_1_1TriggerBits_a4e1293d975a5184e804a85e461578527}
+
+\item 
+bool {\bfseries isSc1\_\-3x3} () const \label{classCALICE_1_1TriggerBits_a042179f6214f3de4495016673baddc63}
+
+\item 
+void {\bfseries setSc1\_\-3x3} ()\label{classCALICE_1_1TriggerBits_a603d25c9908417ef2a7c13ea0d25e875}
+
+\item 
+bool {\bfseries isSc2\_\-3x3} () const \label{classCALICE_1_1TriggerBits_a95ce30e61aea34f12313161fdb868fd0}
+
+\item 
+void {\bfseries setSc2\_\-3x3} ()\label{classCALICE_1_1TriggerBits_ac81a49f03d4f53ff02c843311fd63466}
+
+\item 
+bool {\bfseries isSc1\_\-10x10} () const \label{classCALICE_1_1TriggerBits_a96b5bae643408c35c31fc57fc799f4c0}
+
+\item 
+void {\bfseries setSc1\_\-10x10} ()\label{classCALICE_1_1TriggerBits_a0ecca12e054d98b1cc889c22dd47d9f7}
+
+\item 
+bool {\bfseries isSc2\_\-10x10} () const \label{classCALICE_1_1TriggerBits_a872ebcc11dbf988c199550af5c0ee553}
+
+\item 
+void {\bfseries setSc2\_\-10x10} ()\label{classCALICE_1_1TriggerBits_a768891b853284851edf63532fdb14df4}
+
+\item 
+bool {\bfseries isSc1\_\-50x50} () const \label{classCALICE_1_1TriggerBits_a43d0b5c686f8eb0bbd494e4ffb58f8df}
+
+\item 
+void {\bfseries setSc1\_\-50x50} ()\label{classCALICE_1_1TriggerBits_a1b9dd076339b622e01053d95c338f131}
+
+\item 
+bool {\bfseries isSc2\_\-50x50} () const \label{classCALICE_1_1TriggerBits_a5403d128ffea0b3a0de01a430d9ba495}
+
+\item 
+void {\bfseries setSc2\_\-50x50} ()\label{classCALICE_1_1TriggerBits_a3b2b91344607fad75a3ac0653a6a9f64}
+
+\item 
+bool {\bfseries isSc1\_\-100x100} () const \label{classCALICE_1_1TriggerBits_ae87dc54ae962b40633a2b79a66420b25}
+
+\item 
+void {\bfseries setSc1\_\-100x100} ()\label{classCALICE_1_1TriggerBits_a8bd65efb5cda429f1807c6dab63d6bdc}
+
+\item 
+bool {\bfseries isSc2\_\-100x100} () const \label{classCALICE_1_1TriggerBits_a2753bd6352028caa7b83ad0f134b1e7f}
+
+\item 
+void {\bfseries setSc2\_\-100x100} ()\label{classCALICE_1_1TriggerBits_a6ec5325d14f4385adf172fef1b9431e2}
+
+\item 
+bool {\bfseries isSpill} () const \label{classCALICE_1_1TriggerBits_a5159956eb9ce48ec4319119acfff1af8}
+
+\item 
+void {\bfseries setSpill} ()\label{classCALICE_1_1TriggerBits_a41330bb3444ba23e5e2baf36de2cdb2d}
+
+\item 
+bool {\bfseries isGeneric} () const \label{classCALICE_1_1TriggerBits_a79ac9e043f965616b24a0b74174872a5}
+
+\item 
+void {\bfseries setGeneric} ()\label{classCALICE_1_1TriggerBits_ad44d40029f80fea27292a965973d6415}
+
+\item 
+bool {\bfseries isCrcOscillator} () const \label{classCALICE_1_1TriggerBits_a2c5a290ae3d6849731cdc633aff359f9}
+
+\item 
+void {\bfseries setCrcOscillator} ()\label{classCALICE_1_1TriggerBits_a8fbda1a25508fe6140b7f1719f1be9a4}
+
+\item 
+bool {\bfseries isExternalPulser} () const \label{classCALICE_1_1TriggerBits_ac51d7cc7ddcf0df6926d08ee3e2139ac}
+
+\item 
+void {\bfseries setExternalPulser} ()\label{classCALICE_1_1TriggerBits_a65fedefa6be2e00d17ecd43fc9f4c604}
+
+\item 
+bool {\bfseries isExternalLED} () const \label{classCALICE_1_1TriggerBits_a652126c36dd5119786b6c726fdea4f57}
+
+\item 
+void {\bfseries setExternalLED} ()\label{classCALICE_1_1TriggerBits_a5e856e1ae07be27510290cb8d269c821}
+
+\item 
+bool {\bfseries isFingerHorizont} () const \label{classCALICE_1_1TriggerBits_a64523fb08d64ad5fda7c445df4fe95cb}
+
+\item 
+void {\bfseries setFingerHorizont} ()\label{classCALICE_1_1TriggerBits_a921ced0d7fdd7ea8c9512591cd55fa7c}
+
+\item 
+bool {\bfseries isFingerVert} () const \label{classCALICE_1_1TriggerBits_a4640b94408c6a23bf9cf8cb2b54253b4}
+
+\item 
+void {\bfseries setFingerVert} ()\label{classCALICE_1_1TriggerBits_a23063dac13d797df84a084cd6b585562}
+
+\item 
+int {\bfseries getTriggerBits} () const \label{classCALICE_1_1TriggerBits_ac25bd3728213d82f2c6eba5ce0f93c33}
+
+\item 
+void {\bfseries reset} ()\label{classCALICE_1_1TriggerBits_a769870d55b18321d34934f402b591fc5}
+
+\item 
+bool {\bf operator==} (const {\bf TriggerBits} \&inBits) const \label{classCALICE_1_1TriggerBits_a68d0ffe400ea741ff0640681083d3d26}
+
+\begin{DoxyCompactList}\small\item\em Overload the == operator for this class. \item\end{DoxyCompactList}\item 
+bool {\bf operator!=} (const {\bf TriggerBits} \&inBits) const \label{classCALICE_1_1TriggerBits_a869ba7204014c68d395b055c3b54b24c}
+
+\begin{DoxyCompactList}\small\item\em Overload the != operator for this class. \item\end{DoxyCompactList}\item 
+std::ostream \& {\bf print} (std::ostream \&out) const \label{classCALICE_1_1TriggerBits_a6964076c2665d42a3419a9ee01671964}
+
+\begin{DoxyCompactList}\small\item\em print the current errors. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned int {\bf getBit} (const char $\ast$name)
+\begin{DoxyCompactList}\small\item\em Get the bit number assigned to the given name. \item\end{DoxyCompactList}\item 
+static const char $\ast$ {\bf getName} (unsigned int bit\_\-i)
+\begin{DoxyCompactList}\small\item\em Get the name assinged to the given trigger bit. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries \_\-bits}\label{classCALICE_1_1TriggerBits_a40d4d7ea1b65f1fc7cf144b3a782125e}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static int {\bfseries \_\-\_\-mask}
+\item 
+static int {\bfseries \_\-\_\-nonPedestalTriggerMask}
+\item 
+static const char $\ast$ {\bfseries \_\-\_\-names} [32]\label{classCALICE_1_1TriggerBits_ada90a65476e3761ea2af99b22b24e745}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A small class which allow for the easy analysis of core trigger information. It allows the user to test which trigger was set in a given event. The information has to be shipped as an event parameter. \begin{DoxyAuthor}{Author}
+G. Gaycken LLR, (slight modifs by R. Pöschl DESY) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Dec 2 2005 
+\end{DoxyDate}
+
+
+Definition at line 16 of file TriggerBits.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CALICE::TriggerBits@{CALICE::TriggerBits}!TriggerBits@{TriggerBits}}
+\index{TriggerBits@{TriggerBits}!CALICE::TriggerBits@{CALICE::TriggerBits}}
+\subsubsection[{TriggerBits}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::TriggerBits::TriggerBits ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1TriggerBits_a91746c96bbca069c7beddc330d02e3e5}
+
+
+usage: \doxyref{TriggerBits}{p.}{classCALICE_1_1TriggerBits} trigger\_\-event(((LCEvent $\ast$) evt)-\/$>$getParameters().getIntVal(PAR\_\-TRIGGER\_\-EVENT)); if (trigger\_\-event.isBeamTrigger()) \{ \} 
+
+Definition at line 101 of file TriggerBits.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::TriggerBits@{CALICE::TriggerBits}!getBit@{getBit}}
+\index{getBit@{getBit}!CALICE::TriggerBits@{CALICE::TriggerBits}}
+\subsubsection[{getBit}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::TriggerBits::getBit (const char $\ast$ {\em name})\hspace{0.3cm}{\ttfamily  [static]}}\label{classCALICE_1_1TriggerBits_ad8f1831ddb66521441541efe63491bd9}
+
+
+Get the bit number assigned to the given name. 
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]the name of the trigger. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the bit number 0-\/31 assigned to the given trigger. 
+\end{DoxyReturn}
+
+
+Definition at line 110 of file TriggerBits.cc.\index{CALICE::TriggerBits@{CALICE::TriggerBits}!getName@{getName}}
+\index{getName@{getName}!CALICE::TriggerBits@{CALICE::TriggerBits}}
+\subsubsection[{getName}]{\setlength{\rightskip}{0pt plus 5cm}static const char$\ast$ CALICE::TriggerBits::getName (unsigned int {\em bit\_\-i})\hspace{0.3cm}{\ttfamily  [inline, static]}}\label{classCALICE_1_1TriggerBits_a9f954ca629a7bc421cba1bd7a8c23c0a}
+
+
+Get the name assinged to the given trigger bit. 
+\begin{DoxyParams}{Parameters}
+\item[{\em bit\_\-i}]the bit\_\-i number 0-\/31. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the name assinged to the bit The parameter bit\_\-i must be smaller than 32 otherwise the result is undefined and may result in a segmentation fault. 
+\end{DoxyReturn}
+
+
+Definition at line 426 of file TriggerBits.hh.
+
+Referenced by CALICE::TriggerHandlerCalice::CreateTriggerDefinitionMap(), and CALICE::TriggerHandlerCalice::TriggerHandlerCalice().
+
+\subsection{Field Documentation}
+\index{CALICE::TriggerBits@{CALICE::TriggerBits}!\_\-\_\-mask@{\_\-\_\-mask}}
+\index{\_\-\_\-mask@{\_\-\_\-mask}!CALICE::TriggerBits@{CALICE::TriggerBits}}
+\subsubsection[{\_\-\_\-mask}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::TriggerBits::\_\-\_\-mask\hspace{0.3cm}{\ttfamily  [static, private]}}\label{classCALICE_1_1TriggerBits_a108ec463f38fab35cefcc1ed8ddbe9a1}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ ~(  TriggerBits::kSpill 
+                             | TriggerBits::kGeneric)
+\end{DoxyCode}
+
+
+Definition at line 435 of file TriggerBits.hh.\index{CALICE::TriggerBits@{CALICE::TriggerBits}!\_\-\_\-nonPedestalTriggerMask@{\_\-\_\-nonPedestalTriggerMask}}
+\index{\_\-\_\-nonPedestalTriggerMask@{\_\-\_\-nonPedestalTriggerMask}!CALICE::TriggerBits@{CALICE::TriggerBits}}
+\subsubsection[{\_\-\_\-nonPedestalTriggerMask}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::TriggerBits::\_\-\_\-nonPedestalTriggerMask\hspace{0.3cm}{\ttfamily  [static, private]}}\label{classCALICE_1_1TriggerBits_af5df9260f7039be9f63d8b48eae0f350}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+ ~(  TriggerBits::kPedestal 
+                                               | TriggerBits::kCrcOscillator 
+                                               | TriggerBits::kExternalPulser 
+                                               | TriggerBits::kSpill 
+                                               | TriggerBits::kGeneric 
+                                               | TriggerBits::kExternalLED)
+\end{DoxyCode}
+
+
+Definition at line 436 of file TriggerBits.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+TriggerBits.hh\item 
+TriggerBits.cc\end{DoxyCompactItemize}

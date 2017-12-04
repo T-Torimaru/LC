@@ -1,0 +1,62 @@
+\section{CALICE::BIFBlock Class Reference}
+\label{classCALICE_1_1BIFBlock}\index{CALICE::BIFBlock@{CALICE::BIFBlock}}
+
+
+Class for the SLCIO EUDAQ BIF Data as acquired by the EUDAQ system.  
+
+
+{\ttfamily \#include $<$BIFBlock.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf BIFBlock} ()\label{classCALICE_1_1BIFBlock_a07e68d7015e5012ce8d2c6fcff0cb1ba}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+{\bf BIFBlock} (int TriggerSource, int BXID\_\-BIF, float Time\_\-BIF)\label{classCALICE_1_1BIFBlock_ac7d82de3658f1c613a08072450a85fb0}
+
+\begin{DoxyCompactList}\small\item\em Convenient constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$BIFBlock} ()\label{classCALICE_1_1BIFBlock_a66d7f8a31626549b3c7b1b117cf70ae1}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+void {\bf print} (std::ostream \&os, int)\label{classCALICE_1_1BIFBlock_a95fa0c06efa6a87da8cf1e8380072cde}
+
+\begin{DoxyCompactList}\small\item\em Convenient print method. \item\end{DoxyCompactList}\item 
+void {\bf setTriggerSource} (int TriggerSource)\label{classCALICE_1_1BIFBlock_a011c8771a288f584e02335821ecd2aa9}
+
+\begin{DoxyCompactList}\small\item\em Set Trigger type. \item\end{DoxyCompactList}\item 
+void {\bf setBXID} (int BXID\_\-BIF)\label{classCALICE_1_1BIFBlock_a089b2f4c9b362e0f95e8942f559bdfcd}
+
+\begin{DoxyCompactList}\small\item\em Set BXID of the BIF Trigger. \item\end{DoxyCompactList}\item 
+void {\bf setTime} (float Time\_\-BIF)\label{classCALICE_1_1BIFBlock_aa7286d6fe67c4c941537a0f156812247}
+
+\begin{DoxyCompactList}\small\item\em Set Time of the BIF Trigger. \item\end{DoxyCompactList}\item 
+const int {\bf getTriggerSource} () const \label{classCALICE_1_1BIFBlock_a27cde06f0406d3908efc8ec0b047332e}
+
+\begin{DoxyCompactList}\small\item\em Get Trigger type. \item\end{DoxyCompactList}\item 
+const int {\bf getBXID} () const \label{classCALICE_1_1BIFBlock_a7104742c4a7d0a3a17b0e195371ccf4c}
+
+\begin{DoxyCompactList}\small\item\em Get BXID of the BIF Trigger. \item\end{DoxyCompactList}\item 
+const float {\bf getTime} () const \label{classCALICE_1_1BIFBlock_a78df0b79c7631dd015db810eb5e653cd}
+
+\begin{DoxyCompactList}\small\item\em Get Time of the BIF Trigger. \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1BIFBlock_afedd9050ce2f4ae465c0c5c69ace43e9}
+
+\begin{DoxyCompactList}\small\item\em Return the type of the class. \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1BIFBlock_a103f8aa8e9bc3073acfd2adb865342f0}
+
+\begin{DoxyCompactList}\small\item\em Return a brief description of the data members. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for the SLCIO EUDAQ BIF Data as acquired by the EUDAQ system. \begin{DoxyAuthor}{Author}
+E.Brianne @ DESY Hamburg 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+May 2016 Created for 2016 testbeams EUDAQ data format. 
+\end{DoxyDate}
+
+
+Definition at line 37 of file BIFBlock.hh.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+BIFBlock.hh\end{DoxyCompactItemize}

@@ -1,0 +1,119 @@
+\section{histmgr::FloatHistogram1D Class Reference}
+\label{classhistmgr_1_1FloatHistogram1D}\index{histmgr::FloatHistogram1D@{histmgr::FloatHistogram1D}}
+
+
+A 1-\/dimensional histogram using float values for the bins.  
+
+
+{\ttfamily \#include $<$FloatHistogram1D.hh$>$}Inheritance diagram for histmgr::FloatHistogram1D::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classhistmgr_1_1FloatHistogram1D}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf FloatHistogram1D} (UInt\_\-t id, const {\bf HistPar} \&binning)
+\begin{DoxyCompactList}\small\item\em Create a histogram with a certain binning. \item\end{DoxyCompactList}\item 
+{\bfseries FloatHistogram1D} (lcio::LCObject $\ast$a\_\-obj)\label{classhistmgr_1_1FloatHistogram1D_a1032bc84dcbaa4a6210fb0ee6b5088d7}
+
+\item 
+{\bfseries FloatHistogram1D} (const {\bf FloatHistogram1D} \&a)\label{classhistmgr_1_1FloatHistogram1D_af31379e3a83520eac73d5c1609002303}
+
+\item 
+void {\bf fill} (Float\_\-t value, Float\_\-t weight=1.)\label{classhistmgr_1_1FloatHistogram1D_aef71989b1c5ad2fc370ee96fb4022213}
+
+\begin{DoxyCompactList}\small\item\em fill a value into the histogram \item\end{DoxyCompactList}\item 
+void {\bf reset} ()\label{classhistmgr_1_1FloatHistogram1D_ab6020a2d0902ddc0d6b6f21ae6c579d9}
+
+\begin{DoxyCompactList}\small\item\em reset the histograms and the number of entries \item\end{DoxyCompactList}\item 
+void {\bf addToBinContent} (UInt\_\-t bin\_\-index, Float\_\-t value)\label{classhistmgr_1_1FloatHistogram1D_ad0af3ba0d429ed031d43def85d3ca602}
+
+\begin{DoxyCompactList}\small\item\em manipulate a histogram bin \item\end{DoxyCompactList}\item 
+void {\bf setBinContent} (UInt\_\-t bin\_\-index, Float\_\-t value)\label{classhistmgr_1_1FloatHistogram1D_a7c3aa74ff2e33c25678d73a0e127ef9f}
+
+\begin{DoxyCompactList}\small\item\em manipulate a histogram bin \item\end{DoxyCompactList}\item 
+Float\_\-t {\bfseries binContent} (UInt\_\-t bin\_\-index) const \label{classhistmgr_1_1FloatHistogram1D_a4c772776ba9504a01b41bfdcbc3d4739}
+
+\item 
+Float\_\-t {\bfseries overflow} () const \label{classhistmgr_1_1FloatHistogram1D_ac043cc91548219a4ed8b499fa3f213cd}
+
+\item 
+Float\_\-t {\bfseries underflow} () const \label{classhistmgr_1_1FloatHistogram1D_a07f92873077aa35c2f8f615595909f8f}
+
+\item 
+Float\_\-t {\bfseries mean} () const \label{classhistmgr_1_1FloatHistogram1D_aa62d227b19581c5ad0cb0fa38706c870}
+
+\item 
+Float\_\-t {\bf rms} () const 
+\begin{DoxyCompactList}\small\item\em Root mean square as defined by ROOT. \item\end{DoxyCompactList}\item 
+Float\_\-t {\bf variance} () const 
+\begin{DoxyCompactList}\small\item\em Variance. \item\end{DoxyCompactList}\item 
+Double\_\-t {\bf integral} (UInt\_\-t first\_\-bin, UInt\_\-t last\_\-bin) const 
+\begin{DoxyCompactList}\small\item\em sum contentes of bins within the given range \item\end{DoxyCompactList}\item 
+lcio::LCObject $\ast$ {\bfseries clone} () const \label{classhistmgr_1_1FloatHistogram1D_a5edd2500f06f2b1bfd015d9ae4639175}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A 1-\/dimensional histogram using float values for the bins. 
+
+Definition at line 12 of file FloatHistogram1D.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{histmgr::FloatHistogram1D@{histmgr::FloatHistogram1D}!FloatHistogram1D@{FloatHistogram1D}}
+\index{FloatHistogram1D@{FloatHistogram1D}!histmgr::FloatHistogram1D@{histmgr::FloatHistogram1D}}
+\subsubsection[{FloatHistogram1D}]{\setlength{\rightskip}{0pt plus 5cm}histmgr::FloatHistogram1D::FloatHistogram1D (UInt\_\-t {\em id}, \/  const {\bf HistPar} \& {\em binning})}\label{classhistmgr_1_1FloatHistogram1D_a582ec9a1017297a5e56d159aeb18e2b9}
+
+
+Create a histogram with a certain binning. 
+\begin{DoxyParams}{Parameters}
+\item[{\em id}]a unique histogram ID, \item[{\em binning}]number of bins and range of the axis \end{DoxyParams}
+\begin{Desc}
+\item[{\bf Todo}]a name would be better than an ID but a string can not be easily stored in an LCGenericObject \end{Desc}
+
+
+Definition at line 8 of file FloatHistogram1D.cc.
+
+References HistPar::nBins(), reset(), and histmgr::Histogram1D::setBinning().
+
+\subsection{Member Function Documentation}
+\index{histmgr::FloatHistogram1D@{histmgr::FloatHistogram1D}!integral@{integral}}
+\index{integral@{integral}!histmgr::FloatHistogram1D@{histmgr::FloatHistogram1D}}
+\subsubsection[{integral}]{\setlength{\rightskip}{0pt plus 5cm}Double\_\-t histmgr::FloatHistogram1D::integral (UInt\_\-t {\em first\_\-bin}, \/  UInt\_\-t {\em last\_\-bin}) const}\label{classhistmgr_1_1FloatHistogram1D_ae4ac2bba1858e9d7750306df22c12903}
+
+
+sum contentes of bins within the given range 
+\begin{DoxyParams}{Parameters}
+\item[{\em first\_\-bin}]index of the first bin \item[{\em last\_\-bin}]index of the last bin (included in the sum) \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the sum of the bins 
+\end{DoxyReturn}
+
+
+Definition at line 109 of file FloatHistogram1D.cc.\index{histmgr::FloatHistogram1D@{histmgr::FloatHistogram1D}!rms@{rms}}
+\index{rms@{rms}!histmgr::FloatHistogram1D@{histmgr::FloatHistogram1D}}
+\subsubsection[{rms}]{\setlength{\rightskip}{0pt plus 5cm}Float\_\-t histmgr::FloatHistogram1D::rms () const}\label{classhistmgr_1_1FloatHistogram1D_a62605cd667af31082c3db712bc6ee337}
+
+
+Root mean square as defined by ROOT. divided by n 
+
+Definition at line 61 of file FloatHistogram1D.cc.
+
+References histmgr::Histogram1D::entries(), histmgr::Histogram1D::firstBinIndex(), histmgr::Histogram1D::lastBinIndex(), histmgr::Histogram1D::nBins(), histmgr::Histogram1D::xMax(), and histmgr::Histogram1D::xMin().\index{histmgr::FloatHistogram1D@{histmgr::FloatHistogram1D}!variance@{variance}}
+\index{variance@{variance}!histmgr::FloatHistogram1D@{histmgr::FloatHistogram1D}}
+\subsubsection[{variance}]{\setlength{\rightskip}{0pt plus 5cm}Float\_\-t histmgr::FloatHistogram1D::variance () const}\label{classhistmgr_1_1FloatHistogram1D_acb30c407ee9ad3bbdb85c208d6c8aee6}
+
+
+Variance. divided by n-\/1 
+
+Definition at line 85 of file FloatHistogram1D.cc.
+
+References histmgr::Histogram1D::entries(), histmgr::Histogram1D::firstBinIndex(), histmgr::Histogram1D::lastBinIndex(), histmgr::Histogram1D::nBins(), histmgr::Histogram1D::xMax(), and histmgr::Histogram1D::xMin().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+FloatHistogram1D.hh\item 
+FloatHistogram1D.cc\end{DoxyCompactItemize}

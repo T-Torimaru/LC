@@ -1,0 +1,1 @@
+\form#0:$E_{calibrated}=f_{saturation}((E_{raw}-pedestal) \cdot IC/gain) \cdot gain/IC/MIP$

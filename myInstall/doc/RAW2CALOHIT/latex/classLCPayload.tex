@@ -1,0 +1,119 @@
+\section{LCPayload$<$ Payload $>$ Class Template Reference}
+\label{classLCPayload}\index{LCPayload@{LCPayload}}
+
+
+Specific LCIO implementation of the interface to store generic user data.  
+
+
+{\ttfamily \#include $<$LCPayload.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf LCPayload} ()\label{classLCPayload_a8b8d145b1753cabef13f6da15d957c39}
+
+\begin{DoxyCompactList}\small\item\em Constructors. \item\end{DoxyCompactList}\item 
+{\bfseries LCPayload} (const EVENT::LCGenericObject $\ast$obj)\label{classLCPayload_abecb2b247eb9265510f784db83297806}
+
+\item 
+{\bfseries LCPayload} (const Payload \&c)\label{classLCPayload_a96860b56042d95ba0c4fa36aeef8c164}
+
+\item 
+{\bfseries LCPayload} (const Payload \&p, IMPL::LCGenericObjectImpl \&obj)\label{classLCPayload_aa29b1863b733b5e544696fa29788f9c2}
+
+\item 
+virtual {\bf $\sim$LCPayload} ()\label{classLCPayload_ac1e66fabe1f9f65972ec738f7574e84c}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual void {\bf update} (const EVENT::LCGenericObject $\ast$obj)\label{classLCPayload_a461543886a17454a20f92d685f8c8bdc}
+
+\begin{DoxyCompactList}\small\item\em Update values within the object from an LCGenericObject. \item\end{DoxyCompactList}\item 
+virtual EVENT::LCGenericObject $\ast$ {\bf output} () const \label{classLCPayload_a438b42bdc529adc71a5c0bc960b32883}
+
+\begin{DoxyCompactList}\small\item\em Create a new LCGenericObject and fill it. \item\end{DoxyCompactList}\item 
+virtual void {\bf update} (const std::string \&fileName)\label{classLCPayload_a5fce76c90beebf958604253586bfd649}
+
+\begin{DoxyCompactList}\small\item\em Update values within the object from a flat file. \item\end{DoxyCompactList}\item 
+virtual void {\bf output} (const std::string \&fileName) const \label{classLCPayload_a891246b9b47aa64690632308f9af7a15}
+
+\begin{DoxyCompactList}\small\item\em Create a new flat file and fill it. \item\end{DoxyCompactList}\item 
+virtual int {\bf getNInt} () const \label{classLCPayload_a60bf414fbb56e82a7a8a405023f263b7}
+
+\begin{DoxyCompactList}\small\item\em Number of integer values stored in this object. \item\end{DoxyCompactList}\item 
+virtual int {\bf getNFloat} () const \label{classLCPayload_adb8d459967c8cbd5e349cf0ceb233d1b}
+
+\begin{DoxyCompactList}\small\item\em Number of float values stored in this object. \item\end{DoxyCompactList}\item 
+virtual int {\bf getNDouble} () const \label{classLCPayload_ab465cc9ebd35f82089fa980470eca413}
+
+\begin{DoxyCompactList}\small\item\em Number of double values stored in this object. \item\end{DoxyCompactList}\item 
+virtual int {\bf getIntVal} (int index) const \label{classLCPayload_a470d04e59dca5e575292f46170bc01d1}
+
+\begin{DoxyCompactList}\small\item\em Returns the integer value for the given index. \item\end{DoxyCompactList}\item 
+virtual float {\bf getFloatVal} (int index) const \label{classLCPayload_a051df316ec7a181e623643adf9748c48}
+
+\begin{DoxyCompactList}\small\item\em Returns the float value for the given index. \item\end{DoxyCompactList}\item 
+virtual double {\bf getDoubleVal} (int index) const \label{classLCPayload_a6752bc94c3be02a767eae41599c2c663}
+
+\begin{DoxyCompactList}\small\item\em Returns the double value for the given index. \item\end{DoxyCompactList}\item 
+virtual void {\bf setIntVal} (unsigned index, int value)\label{classLCPayload_aa50e9b8b87d51d6482aa312348981448}
+
+\begin{DoxyCompactList}\small\item\em Sets the integer value at the given index. \item\end{DoxyCompactList}\item 
+virtual void {\bf setFloatVal} (unsigned index, float value)\label{classLCPayload_a12e1b5355c7a8a06bb2a6057a709c75a}
+
+\begin{DoxyCompactList}\small\item\em Sets the float value at the given index. \item\end{DoxyCompactList}\item 
+virtual void {\bf setDoubleVal} (unsigned index, double value)\label{classLCPayload_a4d93cf109f053a0fd493c4989082f663}
+
+\begin{DoxyCompactList}\small\item\em Sets the double value at the given index. \item\end{DoxyCompactList}\item 
+virtual bool {\bf isFixedSize} () const \label{classLCPayload_ac693f8e406129f62f897e30272ef1f9b}
+
+\begin{DoxyCompactList}\small\item\em True if objects of the implementation class have a fixed size, i.e getNInt, getNFloat and getNDouble will return values that are constant during the lifetime of the object. \item\end{DoxyCompactList}\item 
+virtual const std::string {\bf getTypeName} () const \label{classLCPayload_a7338d24c98c4aa99a5d720477e8301fa}
+
+\begin{DoxyCompactList}\small\item\em The type name of the user class (typically the class name). \item\end{DoxyCompactList}\item 
+virtual const std::string {\bf getDataDescription} () const 
+\begin{DoxyCompactList}\small\item\em The description string. \item\end{DoxyCompactList}\item 
+virtual const Payload \& {\bf constants} () const \label{classLCPayload_a9893dcd67b1d2483e48fcb437aa0b29c}
+
+\begin{DoxyCompactList}\small\item\em Access the actual data for read or write. \item\end{DoxyCompactList}\item 
+virtual void {\bfseries constants} (const Payload \&p)\label{classLCPayload_a6396d80f22ca663e914843d438338b35}
+
+\item 
+virtual const Payload \& {\bfseries payload} () const \label{classLCPayload_a153acaff49e7286ae3514867bb8032c6}
+
+\item 
+virtual void {\bfseries payload} (const Payload \&p)\label{classLCPayload_ac51c5e8c33b60d49403b9326f61ff475}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Payload {\bfseries \_\-payload}\label{classLCPayload_a281072ee5a8fe9247b7ed45915236907}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Payload$>$ class LCPayload$<$ Payload $>$}
+
+Specific LCIO implementation of the interface to store generic user data. \begin{DoxyAuthor}{Author}
+dauncey 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+
+\end{DoxyVersion}
+Id}
+\doxyref{LCPayload.hh}{p.}{LCPayload_8hh_source},v 1.3 2009-\/03-\/24 11:40:43 dauncey Exp 
+
+Definition at line 19 of file LCPayload.hh.
+
+\subsection{Member Function Documentation}
+\index{LCPayload@{LCPayload}!getDataDescription@{getDataDescription}}
+\index{getDataDescription@{getDataDescription}!LCPayload@{LCPayload}}
+\subsubsection[{getDataDescription}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Payload $>$ const std::string {\bf LCPayload}$<$ Payload $>$::getDataDescription () const\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classLCPayload_a118d95b1a2c431153cc3691d29b18692}
+
+
+The description string. A comma separated list of pairs of type identifier, one of 'i','f','d' followed by ':' and an attribute name, e.g. \char`\"{}i:cellId,f:offset,f:gain\char`\"{}. 
+
+Definition at line 342 of file LCPayload.hh.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+LCPayload.hh\end{DoxyCompactItemize}

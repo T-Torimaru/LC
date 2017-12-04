@@ -1,0 +1,517 @@
+\section{Functions for DAQ channel ID}
+\label{group__DAQgroup}\index{Functions for DAQ channel ID@{Functions for DAQ channel ID}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int {\bf CALICE::Ahc2Mapper::getModuleFromDAQID} (const int DAQchannel) const 
+\begin{DoxyCompactList}\small\item\em module number from DAQ channel ID \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::Ahc2Mapper::getModuleFromDAQID} (const int DAQchannel, bool \&valid) const 
+\begin{DoxyCompactList}\small\item\em get module (number) in which this (DAQ) channel is included \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::Ahc2Mapper::getIFromDAQID} (const int DAQchannel) const 
+\begin{DoxyCompactList}\small\item\em I of (Mokka) cellID. \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::Ahc2Mapper::getJFromDAQID} (const int DAQchannel) const 
+\begin{DoxyCompactList}\small\item\em J of (Mokka) cellID. \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::Ahc2Mapper::getKFromDAQID} (const int DAQchannel) const 
+\begin{DoxyCompactList}\small\item\em K of (Mokka) cellID. \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::Ahc2Mapper::getISizeFromDAQID} (const int DAQchannel) const 
+\begin{DoxyCompactList}\small\item\em get cell size in I direction of (Mokka) CellID coordinate \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::Ahc2Mapper::getJSizeFromDAQID} (const int DAQchannel) const 
+\begin{DoxyCompactList}\small\item\em get cell size in J direction of (Mokka) CellID coordinate \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::AhcMapper::getModuleFromDAQID} (const int DAQchannel) const 
+\begin{DoxyCompactList}\small\item\em module number from DAQ channel ID \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::AhcMapper::getModuleFromDAQID} (const int DAQchannel, bool \&valid) const 
+\begin{DoxyCompactList}\small\item\em get module (number) in which this (DAQ) channel is included \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::AhcMapper::getIFromDAQID} (const int DAQchannel) const 
+\begin{DoxyCompactList}\small\item\em I of (Mokka) cellID. \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::AhcMapper::getJFromDAQID} (const int DAQchannel) const 
+\begin{DoxyCompactList}\small\item\em J of (Mokka) cellID. \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::AhcMapper::getKFromDAQID} (const int DAQchannel) const 
+\begin{DoxyCompactList}\small\item\em K of (Mokka) cellID. \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::AhcMapper::getISizeFromDAQID} (const int DAQchannel) const 
+\begin{DoxyCompactList}\small\item\em get cell size in I direction of (Mokka) CellID coordinate \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::AhcMapper::getJSizeFromDAQID} (const int DAQchannel) const 
+\begin{DoxyCompactList}\small\item\em get cell size in J direction of (Mokka) CellID coordinate \item\end{DoxyCompactList}\item 
+void {\bf CALICE::DecoderSet::setDAQEncoding} (const std::string \&encoding)
+\begin{DoxyCompactList}\small\item\em set a new DAQ channel ID encoding string if an empty string is given the function will use the default encoding string \item\end{DoxyCompactList}\item 
+const std::string \& {\bf CALICE::DecoderSet::getDAQEncoding} () const 
+\begin{DoxyCompactList}\small\item\em get the current DAQ channel ID encoding string \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::DecoderSet::getChannelFromDAQID} (const int DAQconnection) const 
+\begin{DoxyCompactList}\small\item\em get channel from DAQ channel ID The right encoding string has to be set before. \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::DecoderSet::getChipFromDAQID} (const int DAQconnection) const 
+\begin{DoxyCompactList}\small\item\em get chip from DAQ channel ID The right encoding string has to be set before. \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::DecoderSet::getFeFromDAQID} (const int DAQconnection) const 
+\begin{DoxyCompactList}\small\item\em get fe from DAQ channel ID The right encoding string has to be set before. \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::DecoderSet::getSlotFromDAQID} (const int DAQconnection) const 
+\begin{DoxyCompactList}\small\item\em get slot from DAQ channel ID The right encoding string has to be set before. \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::DecoderSet::getCrateFromDAQID} (const int DAQconnection) const 
+\begin{DoxyCompactList}\small\item\em get crate from DAQ channel ID The right encoding string has to be set before. \item\end{DoxyCompactList}\item 
+int {\bf CALICE::DecoderSet::getDAQID} (const unsigned int crate, const unsigned int slot, const unsigned int fe, const unsigned int chip, const unsigned int channel) const 
+\begin{DoxyCompactList}\small\item\em get DAQ channel ID from crate, slot, fe, chip, channel \item\end{DoxyCompactList}\item 
+virtual unsigned int {\bf CALICE::Mapper::getModuleFromDAQID} (const int DAQchannel) const =0
+\begin{DoxyCompactList}\small\item\em get module (number) in which this (DAQ) channel is included \item\end{DoxyCompactList}\item 
+virtual unsigned int {\bf CALICE::Mapper::getModuleFromDAQID} (const int DAQchannel, bool \&valid) const =0
+\begin{DoxyCompactList}\small\item\em get module (number) in which this (DAQ) channel is included \item\end{DoxyCompactList}\item 
+virtual unsigned int {\bf CALICE::Mapper::getIndexByDAQID} (const int ID) const =0
+\begin{DoxyCompactList}\small\item\em get a compact index for storing data in vectors \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{DAQgroup@{DAQgroup}!getChannelFromDAQID@{getChannelFromDAQID}}
+\index{getChannelFromDAQID@{getChannelFromDAQID}!DAQgroup@{DAQgroup}}
+\subsubsection[{getChannelFromDAQID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::DecoderSet::getChannelFromDAQID (const int {\em DAQconnection}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__DAQgroup_ga2d7b8b445a2dcfe82b091a5dc9ceaa33}
+
+
+get channel from DAQ channel ID The right encoding string has to be set before. \begin{DoxySeeAlso}{See also}
+\doxyref{setDAQEncoding}{p.}{group__DAQgroup_gaa376e69167322f7502bc8573d2e96b9a} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em \doxyref{DAQconnection}{p.}{classCALICE_1_1DAQconnection}}]DAQ connection ID to decode \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+channel 
+\end{DoxyReturn}
+
+
+Definition at line 169 of file DecoderSet.hh.
+
+References CALICE::FastDecoder::decodeU().
+
+Referenced by CALICE::AhcMapper::getIndexByDAQID(), and CALICE::Ahc2Mapper::getIndexByDAQID().\index{DAQgroup@{DAQgroup}!getChipFromDAQID@{getChipFromDAQID}}
+\index{getChipFromDAQID@{getChipFromDAQID}!DAQgroup@{DAQgroup}}
+\subsubsection[{getChipFromDAQID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::DecoderSet::getChipFromDAQID (const int {\em DAQconnection}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__DAQgroup_ga64c278c9712e9417cddbf50f549e3ee4}
+
+
+get chip from DAQ channel ID The right encoding string has to be set before. \begin{DoxySeeAlso}{See also}
+\doxyref{setDAQEncoding}{p.}{group__DAQgroup_gaa376e69167322f7502bc8573d2e96b9a} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em \doxyref{DAQconnection}{p.}{classCALICE_1_1DAQconnection}}]DAQ connection ID to decode \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+chip 
+\end{DoxyReturn}
+
+
+Definition at line 179 of file DecoderSet.hh.
+
+References CALICE::FastDecoder::decodeU().
+
+Referenced by CALICE::AhcMapper::getIndexByDAQID(), and CALICE::Ahc2Mapper::getIndexByDAQID().\index{DAQgroup@{DAQgroup}!getCrateFromDAQID@{getCrateFromDAQID}}
+\index{getCrateFromDAQID@{getCrateFromDAQID}!DAQgroup@{DAQgroup}}
+\subsubsection[{getCrateFromDAQID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::DecoderSet::getCrateFromDAQID (const int {\em DAQconnection}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__DAQgroup_ga25aea4dafa082da6847d988952710259}
+
+
+get crate from DAQ channel ID The right encoding string has to be set before. \begin{DoxySeeAlso}{See also}
+\doxyref{setDAQEncoding}{p.}{group__DAQgroup_gaa376e69167322f7502bc8573d2e96b9a} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em \doxyref{DAQconnection}{p.}{classCALICE_1_1DAQconnection}}]DAQ connection ID to decode \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+crate 
+\end{DoxyReturn}
+
+
+Definition at line 209 of file DecoderSet.hh.
+
+References CALICE::FastDecoder::decodeU().
+
+Referenced by CALICE::AhcMapper::getIndexByDAQID(), and CALICE::Ahc2Mapper::getIndexByDAQID().\index{DAQgroup@{DAQgroup}!getDAQEncoding@{getDAQEncoding}}
+\index{getDAQEncoding@{getDAQEncoding}!DAQgroup@{DAQgroup}}
+\subsubsection[{getDAQEncoding}]{\setlength{\rightskip}{0pt plus 5cm}const std::string\& CALICE::DecoderSet::getDAQEncoding () const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__DAQgroup_gac47e035c59d0c01c48d149b9127320a4}
+
+
+get the current DAQ channel ID encoding string \begin{DoxyReturn}{Returns}
+DAQ channel ID encoding string 
+\end{DoxyReturn}
+
+
+Definition at line 98 of file DecoderSet.hh.\index{DAQgroup@{DAQgroup}!getDAQID@{getDAQID}}
+\index{getDAQID@{getDAQID}!DAQgroup@{DAQgroup}}
+\subsubsection[{getDAQID}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::DecoderSet::getDAQID (const unsigned int {\em crate}, \/  const unsigned int {\em slot}, \/  const unsigned int {\em fe}, \/  const unsigned int {\em chip}, \/  const unsigned int {\em channel}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__DAQgroup_ga1958abb33537f6bac5a967dbb1f75c2a}
+
+
+get DAQ channel ID from crate, slot, fe, chip, channel The right encoding string has to be set before.
+
+\begin{DoxyWarning}{Warning}
+This DAQ channel ID will only contain information about crate, slot, fe, chip and channel. If the encoding string contains additional fields this will have value 0.
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\doxyref{setDAQEncoding}{p.}{group__DAQgroup_gaa376e69167322f7502bc8573d2e96b9a} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em crate}]crate of this channel \item[\mbox{$\leftarrow$} {\em slot}]slot of this channel \item[\mbox{$\leftarrow$} {\em fe}]frontend of this channel \item[\mbox{$\leftarrow$} {\em chip}]chip of this channel \item[\mbox{$\leftarrow$} {\em channel}]hardware channel of this channel \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+DAQ channel ID 
+\end{DoxyReturn}
+
+
+Definition at line 269 of file DecoderSet.hh.
+
+References CALICE::FastDecoder::encodeU().\index{DAQgroup@{DAQgroup}!getFeFromDAQID@{getFeFromDAQID}}
+\index{getFeFromDAQID@{getFeFromDAQID}!DAQgroup@{DAQgroup}}
+\subsubsection[{getFeFromDAQID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::DecoderSet::getFeFromDAQID (const int {\em DAQconnection}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__DAQgroup_ga175464940f15c89b46495bff3c4537fa}
+
+
+get fe from DAQ channel ID The right encoding string has to be set before. \begin{DoxySeeAlso}{See also}
+\doxyref{setDAQEncoding}{p.}{group__DAQgroup_gaa376e69167322f7502bc8573d2e96b9a} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em \doxyref{DAQconnection}{p.}{classCALICE_1_1DAQconnection}}]DAQ connection ID to decode \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+fe 
+\end{DoxyReturn}
+
+
+Definition at line 189 of file DecoderSet.hh.
+
+References CALICE::FastDecoder::decodeU().
+
+Referenced by CALICE::AhcMapper::getIndexByDAQID(), and CALICE::Ahc2Mapper::getIndexByDAQID().\index{DAQgroup@{DAQgroup}!getIFromDAQID@{getIFromDAQID}}
+\index{getIFromDAQID@{getIFromDAQID}!DAQgroup@{DAQgroup}}
+\subsubsection[{getIFromDAQID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getIFromDAQID (const int {\em DAQchannel}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__DAQgroup_gaf6567eaf2887f9ef4d1e6a12b40b71fb}
+
+
+I of (Mokka) cellID. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em DAQchannel}]DAQ channel ID\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 421 of file AhcMapper.hh.
+
+References CALICE::Mapper::getDecoder(), CALICE::AhcMapper::getI(), and CALICE::AhcMapper::getModuleFromDAQID().\index{DAQgroup@{DAQgroup}!getIFromDAQID@{getIFromDAQID}}
+\index{getIFromDAQID@{getIFromDAQID}!DAQgroup@{DAQgroup}}
+\subsubsection[{getIFromDAQID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::Ahc2Mapper::getIFromDAQID (const int {\em DAQchannel}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__DAQgroup_gafd7ca491e5a37cc2c180eb4c0d2a835e}
+
+
+I of (Mokka) cellID. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em DAQchannel}]DAQ channel ID\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 430 of file Ahc2Mapper.hh.
+
+References CALICE::Mapper::getDecoder(), CALICE::Ahc2Mapper::getI(), and CALICE::Ahc2Mapper::getModuleFromDAQID().\index{DAQgroup@{DAQgroup}!getIndexByDAQID@{getIndexByDAQID}}
+\index{getIndexByDAQID@{getIndexByDAQID}!DAQgroup@{DAQgroup}}
+\subsubsection[{getIndexByDAQID}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned int CALICE::Mapper::getIndexByDAQID (const int {\em ID}) const\hspace{0.3cm}{\ttfamily  [protected, pure virtual, inherited]}}\label{group__DAQgroup_ga4c00b2760cd3e935bed9db2f3fd28b06}
+
+
+get a compact index for storing data in vectors 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em ID}]DAQ channel ID \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+compact index 
+\end{DoxyReturn}
+
+
+Implemented in {\bf CALICE::Ahc2Mapper} \doxyref{}{p.}{classCALICE_1_1Ahc2Mapper_a8503c24f6eab43e134845efc48654908}, and {\bf CALICE::AhcMapper} \doxyref{}{p.}{classCALICE_1_1AhcMapper_a54a30bb2306d44a9ab0240593c7425a8}.
+
+Referenced by CALICE::MappedContainer$<$ T $>$::deleteByDAQID(), CALICE::MappedContainer$<$ T $>$::fillByDAQID(), CALICE::MappedContainer$<$ T $>$::getByDAQID(), and CALICE::MappedContainer$<$ T $>$::removeByDAQID().\index{DAQgroup@{DAQgroup}!getISizeFromDAQID@{getISizeFromDAQID}}
+\index{getISizeFromDAQID@{getISizeFromDAQID}!DAQgroup@{DAQgroup}}
+\subsubsection[{getISizeFromDAQID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getISizeFromDAQID (const int {\em DAQchannel}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__DAQgroup_ga9ad7b1101e956ae5110a6f2646addcfe}
+
+
+get cell size in I direction of (Mokka) CellID coordinate 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em DAQchannel}]DAQ channel ID\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+size in I
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 577 of file AhcMapper.hh.
+
+References CALICE::Mapper::getDecoder(), CALICE::AhcMapper::getISize(), and CALICE::AhcMapper::getModuleFromDAQID().\index{DAQgroup@{DAQgroup}!getISizeFromDAQID@{getISizeFromDAQID}}
+\index{getISizeFromDAQID@{getISizeFromDAQID}!DAQgroup@{DAQgroup}}
+\subsubsection[{getISizeFromDAQID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::Ahc2Mapper::getISizeFromDAQID (const int {\em DAQchannel}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__DAQgroup_gaf3628cbe2a8211ed24550ec01704d1d5}
+
+
+get cell size in I direction of (Mokka) CellID coordinate 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em DAQchannel}]DAQ channel ID\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+size in I
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 586 of file Ahc2Mapper.hh.
+
+References CALICE::Mapper::getDecoder(), CALICE::Ahc2Mapper::getISize(), and CALICE::Ahc2Mapper::getModuleFromDAQID().\index{DAQgroup@{DAQgroup}!getJFromDAQID@{getJFromDAQID}}
+\index{getJFromDAQID@{getJFromDAQID}!DAQgroup@{DAQgroup}}
+\subsubsection[{getJFromDAQID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getJFromDAQID (const int {\em DAQchannel}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__DAQgroup_gaa7ce70dc7852b7141c01fbeb5db57c07}
+
+
+J of (Mokka) cellID. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em DAQchannel}]DAQ channel ID\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+J
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 470 of file AhcMapper.hh.
+
+References CALICE::Mapper::getDecoder(), CALICE::AhcMapper::getJ(), and CALICE::AhcMapper::getModuleFromDAQID().\index{DAQgroup@{DAQgroup}!getJFromDAQID@{getJFromDAQID}}
+\index{getJFromDAQID@{getJFromDAQID}!DAQgroup@{DAQgroup}}
+\subsubsection[{getJFromDAQID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::Ahc2Mapper::getJFromDAQID (const int {\em DAQchannel}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__DAQgroup_ga191d48405470d3204fe6cd89dec6a9e9}
+
+
+J of (Mokka) cellID. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em DAQchannel}]DAQ channel ID\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+J
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 479 of file Ahc2Mapper.hh.
+
+References CALICE::Mapper::getDecoder(), CALICE::Ahc2Mapper::getJ(), and CALICE::Ahc2Mapper::getModuleFromDAQID().\index{DAQgroup@{DAQgroup}!getJSizeFromDAQID@{getJSizeFromDAQID}}
+\index{getJSizeFromDAQID@{getJSizeFromDAQID}!DAQgroup@{DAQgroup}}
+\subsubsection[{getJSizeFromDAQID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getJSizeFromDAQID (const int {\em DAQchannel}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__DAQgroup_gaf41ef2f4b72038f18378413b5b76c6cd}
+
+
+get cell size in J direction of (Mokka) CellID coordinate 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em DAQchannel}]DAQ channel ID\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+size in J
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 655 of file AhcMapper.hh.
+
+References CALICE::Mapper::getDecoder(), CALICE::AhcMapper::getJSize(), and CALICE::AhcMapper::getModuleFromDAQID().\index{DAQgroup@{DAQgroup}!getJSizeFromDAQID@{getJSizeFromDAQID}}
+\index{getJSizeFromDAQID@{getJSizeFromDAQID}!DAQgroup@{DAQgroup}}
+\subsubsection[{getJSizeFromDAQID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::Ahc2Mapper::getJSizeFromDAQID (const int {\em DAQchannel}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__DAQgroup_gac4441dbb533aeab4e86b0fc4fd1b9d41}
+
+
+get cell size in J direction of (Mokka) CellID coordinate 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em DAQchannel}]DAQ channel ID\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+size in J
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 664 of file Ahc2Mapper.hh.
+
+References CALICE::Mapper::getDecoder(), CALICE::Ahc2Mapper::getJSize(), and CALICE::Ahc2Mapper::getModuleFromDAQID().\index{DAQgroup@{DAQgroup}!getKFromDAQID@{getKFromDAQID}}
+\index{getKFromDAQID@{getKFromDAQID}!DAQgroup@{DAQgroup}}
+\subsubsection[{getKFromDAQID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getKFromDAQID (const int {\em DAQchannel}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__DAQgroup_gaf91e48220e82bf1d71f3c1dac8e22111}
+
+
+K of (Mokka) cellID. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em DAQchannel}]DAQ channel ID\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+K
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 519 of file AhcMapper.hh.
+
+References CALICE::AhcMapper::getK(), and CALICE::AhcMapper::getModuleFromDAQID().\index{DAQgroup@{DAQgroup}!getKFromDAQID@{getKFromDAQID}}
+\index{getKFromDAQID@{getKFromDAQID}!DAQgroup@{DAQgroup}}
+\subsubsection[{getKFromDAQID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::Ahc2Mapper::getKFromDAQID (const int {\em DAQchannel}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__DAQgroup_ga59ffe1cd3d129e428cf654ff12ce8a4b}
+
+
+K of (Mokka) cellID. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em DAQchannel}]DAQ channel ID\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+K
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 528 of file Ahc2Mapper.hh.
+
+References CALICE::Ahc2Mapper::getK(), and CALICE::Ahc2Mapper::getModuleFromDAQID().\index{DAQgroup@{DAQgroup}!getModuleFromDAQID@{getModuleFromDAQID}}
+\index{getModuleFromDAQID@{getModuleFromDAQID}!DAQgroup@{DAQgroup}}
+\subsubsection[{getModuleFromDAQID}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned int CALICE::Mapper::getModuleFromDAQID (const int {\em DAQchannel}, \/  bool \& {\em valid}) const\hspace{0.3cm}{\ttfamily  [pure virtual, inherited]}}\label{group__DAQgroup_ga16bb145f33d7e74f86a4ad508c1edac2}
+
+
+get module (number) in which this (DAQ) channel is included Checks if the channel exists. No exception is thrown.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em DAQchannel}]DAQ channel ID \item[\mbox{$\rightarrow$} {\em valid}]false if a non valid cell is queried\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+module 
+\end{DoxyReturn}
+
+
+Implemented in {\bf CALICE::Ahc2Mapper} \doxyref{}{p.}{group__DAQgroup_ga1665e9e58c886d9506773a7f6964f7eb}, and {\bf CALICE::AhcMapper} \doxyref{}{p.}{group__DAQgroup_gaa605e0ab6e665a41fa7aa30674592a99}.\index{DAQgroup@{DAQgroup}!getModuleFromDAQID@{getModuleFromDAQID}}
+\index{getModuleFromDAQID@{getModuleFromDAQID}!DAQgroup@{DAQgroup}}
+\subsubsection[{getModuleFromDAQID}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned int CALICE::Mapper::getModuleFromDAQID (const int {\em DAQchannel}) const\hspace{0.3cm}{\ttfamily  [pure virtual, inherited]}}\label{group__DAQgroup_ga0ebc7a42e53df3e79f32608403349f30}
+
+
+get module (number) in which this (DAQ) channel is included 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em DAQchannel}]DAQ channel ID\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+module
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if some error is detected, but no full verification is performed \end{DoxyExceptions}
+\begin{DoxySeeAlso}{See also}
+getModuleFromDAQID(const int DAQchannel, bool \&valid) 
+\end{DoxySeeAlso}
+
+
+Implemented in {\bf CALICE::Ahc2Mapper} \doxyref{}{p.}{group__DAQgroup_ga4f88e701c504dfe819b67142247ebd1d}, and {\bf CALICE::AhcMapper} \doxyref{}{p.}{group__DAQgroup_gafe0b15ff8622a671237999286b92c7dc}.\index{DAQgroup@{DAQgroup}!getModuleFromDAQID@{getModuleFromDAQID}}
+\index{getModuleFromDAQID@{getModuleFromDAQID}!DAQgroup@{DAQgroup}}
+\subsubsection[{getModuleFromDAQID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getModuleFromDAQID (const int {\em DAQchannel}, \/  bool \& {\em valid}) const\hspace{0.3cm}{\ttfamily  [inline, virtual, inherited]}}\label{group__DAQgroup_gaa605e0ab6e665a41fa7aa30674592a99}
+
+
+get module (number) in which this (DAQ) channel is included Checks if the channel exists. No exception is thrown.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em DAQchannel}]DAQ channel ID \item[\mbox{$\rightarrow$} {\em valid}]false if a non valid cell is queried\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+module 
+\end{DoxyReturn}
+
+
+Implements {\bf CALICE::Mapper} \doxyref{}{p.}{group__DAQgroup_ga16bb145f33d7e74f86a4ad508c1edac2}.
+
+Definition at line 173 of file AhcMapper.hh.
+
+References CALICE::AhcMapper::getIndexByDAQID().\index{DAQgroup@{DAQgroup}!getModuleFromDAQID@{getModuleFromDAQID}}
+\index{getModuleFromDAQID@{getModuleFromDAQID}!DAQgroup@{DAQgroup}}
+\subsubsection[{getModuleFromDAQID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getModuleFromDAQID (const int {\em DAQchannel}) const\hspace{0.3cm}{\ttfamily  [inline, virtual, inherited]}}\label{group__DAQgroup_gafe0b15ff8622a671237999286b92c7dc}
+
+
+module number from DAQ channel ID 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em DAQchannel}]DAQ channel ID\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+module number
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Implements {\bf CALICE::Mapper} \doxyref{}{p.}{group__DAQgroup_ga0ebc7a42e53df3e79f32608403349f30}.
+
+Definition at line 104 of file AhcMapper.hh.
+
+References CALICE::Mapper::getDecoder(), and CALICE::AhcMapper::getModule().
+
+Referenced by CALICE::AhcMapper::getIFromDAQID(), CALICE::AhcMapper::getISizeFromDAQID(), CALICE::AhcMapper::getJFromDAQID(), CALICE::AhcMapper::getJSizeFromDAQID(), and CALICE::AhcMapper::getKFromDAQID().\index{DAQgroup@{DAQgroup}!getModuleFromDAQID@{getModuleFromDAQID}}
+\index{getModuleFromDAQID@{getModuleFromDAQID}!DAQgroup@{DAQgroup}}
+\subsubsection[{getModuleFromDAQID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::Ahc2Mapper::getModuleFromDAQID (const int {\em DAQchannel}, \/  bool \& {\em valid}) const\hspace{0.3cm}{\ttfamily  [inline, virtual, inherited]}}\label{group__DAQgroup_ga1665e9e58c886d9506773a7f6964f7eb}
+
+
+get module (number) in which this (DAQ) channel is included Checks if the channel exists. No exception is thrown.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em DAQchannel}]DAQ channel ID \item[\mbox{$\rightarrow$} {\em valid}]false if a non valid cell is queried\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+module 
+\end{DoxyReturn}
+
+
+Implements {\bf CALICE::Mapper} \doxyref{}{p.}{group__DAQgroup_ga16bb145f33d7e74f86a4ad508c1edac2}.
+
+Definition at line 179 of file Ahc2Mapper.hh.
+
+References CALICE::Ahc2Mapper::getIndexByDAQID().\index{DAQgroup@{DAQgroup}!getModuleFromDAQID@{getModuleFromDAQID}}
+\index{getModuleFromDAQID@{getModuleFromDAQID}!DAQgroup@{DAQgroup}}
+\subsubsection[{getModuleFromDAQID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::Ahc2Mapper::getModuleFromDAQID (const int {\em DAQchannel}) const\hspace{0.3cm}{\ttfamily  [inline, virtual, inherited]}}\label{group__DAQgroup_ga4f88e701c504dfe819b67142247ebd1d}
+
+
+module number from DAQ channel ID 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em DAQchannel}]DAQ channel ID\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+module number
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Implements {\bf CALICE::Mapper} \doxyref{}{p.}{group__DAQgroup_ga0ebc7a42e53df3e79f32608403349f30}.
+
+Definition at line 110 of file Ahc2Mapper.hh.
+
+References CALICE::Mapper::getDecoder(), and CALICE::Ahc2Mapper::getModule().
+
+Referenced by CALICE::Ahc2Mapper::getIFromDAQID(), CALICE::Ahc2Mapper::getISizeFromDAQID(), CALICE::Ahc2Mapper::getJFromDAQID(), CALICE::Ahc2Mapper::getJSizeFromDAQID(), and CALICE::Ahc2Mapper::getKFromDAQID().\index{DAQgroup@{DAQgroup}!getSlotFromDAQID@{getSlotFromDAQID}}
+\index{getSlotFromDAQID@{getSlotFromDAQID}!DAQgroup@{DAQgroup}}
+\subsubsection[{getSlotFromDAQID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::DecoderSet::getSlotFromDAQID (const int {\em DAQconnection}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__DAQgroup_gae695d7a267bbde471feeac8b1899b873}
+
+
+get slot from DAQ channel ID The right encoding string has to be set before. \begin{DoxySeeAlso}{See also}
+\doxyref{setDAQEncoding}{p.}{group__DAQgroup_gaa376e69167322f7502bc8573d2e96b9a} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em \doxyref{DAQconnection}{p.}{classCALICE_1_1DAQconnection}}]DAQ connection ID to decode \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+slot 
+\end{DoxyReturn}
+
+
+Definition at line 199 of file DecoderSet.hh.
+
+References CALICE::FastDecoder::decodeU().
+
+Referenced by CALICE::AhcMapper::getIndexByDAQID(), and CALICE::Ahc2Mapper::getIndexByDAQID().\index{DAQgroup@{DAQgroup}!setDAQEncoding@{setDAQEncoding}}
+\index{setDAQEncoding@{setDAQEncoding}!DAQgroup@{DAQgroup}}
+\subsubsection[{setDAQEncoding}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::DecoderSet::setDAQEncoding (const std::string \& {\em encoding})\hspace{0.3cm}{\ttfamily  [inherited]}}\label{group__DAQgroup_gaa376e69167322f7502bc8573d2e96b9a}
+
+
+set a new DAQ channel ID encoding string if an empty string is given the function will use the default encoding string 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em encoding}]encoding string \end{DoxyParams}
+
+
+Definition at line 77 of file DecoderSet.cc.
+
+References CALICE::FastDecoder::generateDecoder().
+
+Referenced by CALICE::DecoderSet::DecoderSet().

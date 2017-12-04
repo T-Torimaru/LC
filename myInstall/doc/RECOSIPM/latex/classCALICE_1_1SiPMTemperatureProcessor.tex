@@ -1,0 +1,160 @@
+\section{CALICE::SiPMTemperatureProcessor Class Reference}
+\label{classCALICE_1_1SiPMTemperatureProcessor}\index{CALICE::SiPMTemperatureProcessor@{CALICE::SiPMTemperatureProcessor}}
+
+
+Processor that provides the SiPM temperature.  
+
+
+{\ttfamily \#include $<$SiPMTemperatureProcessor.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf SiPMTemperatureProcessor} ()\label{classCALICE_1_1SiPMTemperatureProcessor_a04ac0bf7f828c454fb8dada5710e5106}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. \item\end{DoxyCompactList}\item 
+{\bf $\sim$SiPMTemperatureProcessor} ()\label{classCALICE_1_1SiPMTemperatureProcessor_ac484602a86c82558880b3ebc1f62dc77}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual {\bf SiPMTemperatureProcessor} $\ast$ {\bf newProcessor} ()\label{classCALICE_1_1SiPMTemperatureProcessor_ad65bd44b3ce6be3260e57c1fcb75dcba}
+
+\begin{DoxyCompactList}\small\item\em Return a new instance of the processor. \item\end{DoxyCompactList}\item 
+virtual void {\bf init} ()\label{classCALICE_1_1SiPMTemperatureProcessor_a900fb4beaa66160686582a75c7fe2968}
+
+\begin{DoxyCompactList}\small\item\em Called at the begin of the job before anything is read. \item\end{DoxyCompactList}\item 
+virtual void {\bf processEvent} (LCEvent $\ast$evt)
+\begin{DoxyCompactList}\small\item\em Called for every event. \item\end{DoxyCompactList}\item 
+virtual void {\bf end} ()\label{classCALICE_1_1SiPMTemperatureProcessor_a2cbda0153aeecea1be18a5a1b9eadb65}
+
+\begin{DoxyCompactList}\small\item\em Called after data processing (after all events are processed) for clean up. \item\end{DoxyCompactList}\item 
+virtual void {\bf conditionsChanged} (LCCollection $\ast$col)
+\begin{DoxyCompactList}\small\item\em Callback function for the condition changes. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static AhcTempProvider $\ast$ {\bf getTemperatureProvider} (const std::string \&processorName)
+\begin{DoxyCompactList}\small\item\em Get the temperature provider. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bf \_\-ahcSroModDataColName}\label{classCALICE_1_1SiPMTemperatureProcessor_a20b373be23412e6f4c10fb83f341c365}
+
+\begin{DoxyCompactList}\small\item\em name of the collection containing the slow control data \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-temperatureSensorCalibrationColName}\label{classCALICE_1_1SiPMTemperatureProcessor_a7f729d260699eb7bac4949150379b621}
+
+\begin{DoxyCompactList}\small\item\em name of the collection containing the temperature sensor calibration \item\end{DoxyCompactList}\item 
+LCCollection $\ast$ {\bf \_\-ahcSroModDataCol}\label{classCALICE_1_1SiPMTemperatureProcessor_ab6f1a7bd77b6d74ad05d28ae00f92a96}
+
+\begin{DoxyCompactList}\small\item\em collection containing the slow control data \item\end{DoxyCompactList}\item 
+LCCollection $\ast$ {\bf \_\-temperatureSensorCalibrationCol}\label{classCALICE_1_1SiPMTemperatureProcessor_a83f01ec9192ad50fa91b8ef05bbfe0d1}
+
+\begin{DoxyCompactList}\small\item\em collection containing the temperature sensor calibration \item\end{DoxyCompactList}\item 
+bool {\bf \_\-ahcSroModDataColChanged}\label{classCALICE_1_1SiPMTemperatureProcessor_addb8e35a9df5dea954ea49672e467fe3}
+
+\begin{DoxyCompactList}\small\item\em flag to signalise if the slow control data collection has changed \item\end{DoxyCompactList}\item 
+bool {\bf \_\-temperatureSensorCalibrationColChanged}\label{classCALICE_1_1SiPMTemperatureProcessor_af6e3e77f027c314019afaa41617dc57f}
+
+\begin{DoxyCompactList}\small\item\em flag to signalise if the collection containing the temperature sensor calibration hass changed or not \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-mappingProcessorName}\label{classCALICE_1_1SiPMTemperatureProcessor_a1068bf0ac9a36c77aeefaf03514bd5e8}
+
+\begin{DoxyCompactList}\small\item\em name of the processor name which provides the mapping \item\end{DoxyCompactList}\item 
+AhcTempProvider $\ast$ {\bf \_\-tempProvider}\label{classCALICE_1_1SiPMTemperatureProcessor_ab874014a3ab396472b48b7533c9316b5}
+
+\begin{DoxyCompactList}\small\item\em pointer to the AHC temperature provider \item\end{DoxyCompactList}\item 
+const AhcMapper $\ast$ {\bf \_\-mapper}\label{classCALICE_1_1SiPMTemperatureProcessor_addf40c4cb0947b2bb138012bfcf31de6}
+
+\begin{DoxyCompactList}\small\item\em the mapper \item\end{DoxyCompactList}\item 
+lcio::FloatVec {\bf \_\-tempProviderSanityRangeVec}\label{classCALICE_1_1SiPMTemperatureProcessor_a0bb6fba3c3e3cab14180259a473fe526}
+
+\begin{DoxyCompactList}\small\item\em vector of floats to save the sanity range of the temperature provider \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-tempProviderModelName}
+\begin{DoxyCompactList}\small\item\em name of the model used for the temperature provider. \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-outputColName}\label{classCALICE_1_1SiPMTemperatureProcessor_a583ed1ec93ef7e553c95ea291b51cb55}
+
+\begin{DoxyCompactList}\small\item\em name of the output collection \item\end{DoxyCompactList}\item 
+LCCollection $\ast$ {\bf \_\-colTemperature}\label{classCALICE_1_1SiPMTemperatureProcessor_adbf2244effa4e4902692663a4c0f71a8}
+
+\begin{DoxyCompactList}\small\item\em collection of temperatures \item\end{DoxyCompactList}\item 
+RunTimeConditionsHandler $\ast$ {\bf \_\-conditionsHandler}\label{classCALICE_1_1SiPMTemperatureProcessor_a40bb02477d3ab8f01a0d5ca7ee1040a8}
+
+\begin{DoxyCompactList}\small\item\em pointer to the run time conditions handler \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std::map$<$ std::string, AhcTempProvider $\ast$ $>$ {\bf \_\-tempProviderMap}\label{classCALICE_1_1SiPMTemperatureProcessor_ae29d242598f44f0dc52051a3119fbdbe}
+
+\begin{DoxyCompactList}\small\item\em map of AhcTempProvider \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Processor that provides the SiPM temperature. The processor generates and updates a CALICE MappedContainer object from the conditions data. To obtain the object in other processors use: SiPMTemperatureProcessor::getTemperatureContainer(\char`\"{}temperature processor name\char`\"{});
+
+\begin{DoxyAuthor}{Author}
+{\tt angela-\/isabela.lucaci-\/timoce@desy.de} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.2 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+May 2010 
+\end{DoxyDate}
+
+
+Definition at line 36 of file SiPMTemperatureProcessor.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::SiPMTemperatureProcessor@{CALICE::SiPMTemperatureProcessor}!conditionsChanged@{conditionsChanged}}
+\index{conditionsChanged@{conditionsChanged}!CALICE::SiPMTemperatureProcessor@{CALICE::SiPMTemperatureProcessor}}
+\subsubsection[{conditionsChanged}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::SiPMTemperatureProcessor::conditionsChanged (LCCollection $\ast$ {\em col})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCALICE_1_1SiPMTemperatureProcessor_a05aa832ece6bc5253418e56db9e79cf7}
+
+
+Callback function for the condition changes. 
+\begin{DoxyParams}{Parameters}
+\item[{\em col}]collection to be checked if it has changed or not \end{DoxyParams}
+
+
+Definition at line 168 of file SiPMTemperatureProcessor.cc.
+
+References \_\-ahcSroModDataCol, \_\-ahcSroModDataColChanged, \_\-ahcSroModDataColName, \_\-temperatureSensorCalibrationCol, \_\-temperatureSensorCalibrationColChanged, and \_\-temperatureSensorCalibrationColName.\index{CALICE::SiPMTemperatureProcessor@{CALICE::SiPMTemperatureProcessor}!getTemperatureProvider@{getTemperatureProvider}}
+\index{getTemperatureProvider@{getTemperatureProvider}!CALICE::SiPMTemperatureProcessor@{CALICE::SiPMTemperatureProcessor}}
+\subsubsection[{getTemperatureProvider}]{\setlength{\rightskip}{0pt plus 5cm}AhcTempProvider $\ast$ CALICE::SiPMTemperatureProcessor::getTemperatureProvider (const std::string \& {\em processorName})\hspace{0.3cm}{\ttfamily  [static]}}\label{classCALICE_1_1SiPMTemperatureProcessor_ae53699ce851320ce9b964a49f54da2c9}
+
+
+Get the temperature provider. 
+\begin{DoxyParams}{Parameters}
+\item[{\em processorName}]name of the processor returning the temperature provider \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+AhcTempProvider 
+\end{DoxyReturn}
+
+
+Definition at line 34 of file SiPMTemperatureProcessor.cc.
+
+References \_\-tempProviderMap.\index{CALICE::SiPMTemperatureProcessor@{CALICE::SiPMTemperatureProcessor}!processEvent@{processEvent}}
+\index{processEvent@{processEvent}!CALICE::SiPMTemperatureProcessor@{CALICE::SiPMTemperatureProcessor}}
+\subsubsection[{processEvent}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::SiPMTemperatureProcessor::processEvent (LCEvent $\ast$ {\em evt})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCALICE_1_1SiPMTemperatureProcessor_a9724f37f98d88c56707192b3ccd8f778}
+
+
+Called for every event. 
+\begin{DoxyParams}{Parameters}
+\item[{\em evt}]event to be processed \end{DoxyParams}
+
+
+Definition at line 196 of file SiPMTemperatureProcessor.cc.
+
+References \_\-ahcSroModDataCol, \_\-ahcSroModDataColChanged, \_\-ahcSroModDataColName, \_\-colTemperature, \_\-conditionsHandler, \_\-mapper, \_\-temperatureSensorCalibrationCol, \_\-temperatureSensorCalibrationColChanged, \_\-temperatureSensorCalibrationColName, and \_\-tempProvider.
+
+\subsection{Field Documentation}
+\index{CALICE::SiPMTemperatureProcessor@{CALICE::SiPMTemperatureProcessor}!\_\-tempProviderModelName@{\_\-tempProviderModelName}}
+\index{\_\-tempProviderModelName@{\_\-tempProviderModelName}!CALICE::SiPMTemperatureProcessor@{CALICE::SiPMTemperatureProcessor}}
+\subsubsection[{\_\-tempProviderModelName}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf CALICE::SiPMTemperatureProcessor::\_\-tempProviderModelName}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1SiPMTemperatureProcessor_afdc26a29605485025b7f81dbc3c24aee}
+
+
+name of the model used for the temperature provider. If the model is \char`\"{}simple\char`\"{}, use AhcSimpleTempProvider 
+
+Definition at line 101 of file SiPMTemperatureProcessor.hh.
+
+Referenced by init(), and SiPMTemperatureProcessor().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+SiPMTemperatureProcessor.hh\item 
+SiPMTemperatureProcessor.cc\end{DoxyCompactItemize}

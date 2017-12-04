@@ -1,0 +1,323 @@
+\section{CALICE::MipTrackFinder Class Reference}
+\label{classCALICE_1_1MipTrackFinder}\index{CALICE::MipTrackFinder@{CALICE::MipTrackFinder}}
+
+
+Processor to extract MIP calibrations from muon beam runs.  
+
+
+{\ttfamily \#include $<$MipTrackFinder.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Processor $\ast$ {\bf newProcessor} ()\label{classCALICE_1_1MipTrackFinder_a55a7f624a6bb8628c8e8516976593d71}
+
+\begin{DoxyCompactList}\small\item\em Return new instance of this processor. \item\end{DoxyCompactList}\item 
+{\bf MipTrackFinder} ()\label{classCALICE_1_1MipTrackFinder_a3806b8a42dbf92ec4ed61c1c8a8fbb94}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. \item\end{DoxyCompactList}\item 
+{\bf $\sim$MipTrackFinder} ()\label{classCALICE_1_1MipTrackFinder_ae52b812fd15b89fd36954dcea97b4cf2}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual void {\bf init} ()\label{classCALICE_1_1MipTrackFinder_a99b9bed4ba17213c6b267bfbdc0ad9ce}
+
+\begin{DoxyCompactList}\small\item\em Initialise useful variables. \item\end{DoxyCompactList}\item 
+virtual void {\bf processEvent} (LCEvent $\ast$evt)
+\begin{DoxyCompactList}\small\item\em Process event (the working horse). \item\end{DoxyCompactList}\item 
+virtual void {\bf end} ()\label{classCALICE_1_1MipTrackFinder_ab580d34d2e630152123a1af2e24db24a}
+
+\begin{DoxyCompactList}\small\item\em Function to be called at the end of the job, after all events have been processed, for clean up. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf openInputCollections} (LCEvent $\ast$evt)
+\begin{DoxyCompactList}\small\item\em Open the input collections. \item\end{DoxyCompactList}\item 
+void {\bf findTrack} (LCEvent $\ast$evt)
+\begin{DoxyCompactList}\small\item\em Find the track. \item\end{DoxyCompactList}\item 
+bool {\bf doFurtherAnalysis} ()
+\begin{DoxyCompactList}\small\item\em Check if cuts are fullfilled, and if analysis is to be continued. \item\end{DoxyCompactList}\item 
+LCTypedVector$<$ CalorimeterHit $>$ {\bf extractAHCALInformation} ()\label{classCALICE_1_1MipTrackFinder_a7f4716ef4bc5a11b189878d76b967d8f}
+
+\begin{DoxyCompactList}\small\item\em Extract AHCAL information. \item\end{DoxyCompactList}\item 
+std::pair$<$ int, float $>$ {\bf extractNumberOfHitsAndEnergySum} (LCCollection $\ast$inputCol)
+\begin{DoxyCompactList}\small\item\em Extract number of hits and the energy sum from the input collection. \item\end{DoxyCompactList}\item 
+EVENT::ClusterVec {\bf findTrackClusters} (LCTypedVector$<$ CalorimeterHit $>$ hcalVec)
+\begin{DoxyCompactList}\small\item\em Find clusters of MIP tracks. \item\end{DoxyCompactList}\item 
+EVENT::ClusterVec {\bf selectTrackClusters} (EVENT::ClusterVec clusterVec, const std::string trackSelectionMode)
+\begin{DoxyCompactList}\small\item\em Select good tracks. \item\end{DoxyCompactList}\item 
+ClusterImpl $\ast$ {\bf getWholeTrack} (Cluster $\ast$trackCluster)
+\begin{DoxyCompactList}\small\item\em Get the whole track (i.e. \item\end{DoxyCompactList}\item 
+EVENT::ClusterVec {\bf getRemainingHits} (EVENT::ClusterVec selectedTrackClusters)
+\begin{DoxyCompactList}\small\item\em Get the vector of track clusters containing all the remaining hits. \item\end{DoxyCompactList}\item 
+void {\bf appendParameters} (LCEvent $\ast$evt, EVENT::ClusterVec finalVec)
+\begin{DoxyCompactList}\small\item\em Append event parameters with basic track information. \item\end{DoxyCompactList}\item 
+void {\bf createOutputCollection} (LCEvent $\ast$evt, EVENT::ClusterVec finalVec)
+\begin{DoxyCompactList}\small\item\em Create output collection of track clusters. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const Mapper $\ast$ {\bf \_\-mapper}\label{classCALICE_1_1MipTrackFinder_af8ea6a3ae97f2df24592e914ff613203}
+
+\begin{DoxyCompactList}\small\item\em the mapper \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-mappingProcessorName}\label{classCALICE_1_1MipTrackFinder_a19a0560f8d46d6669b10f253f21f6e7a}
+
+\begin{DoxyCompactList}\small\item\em name of the processor which provides the mapping \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-cellDescriptionProcessorName}\label{classCALICE_1_1MipTrackFinder_a6df4ecb6db21429aefd2900cdc1e4fb7}
+
+\begin{DoxyCompactList}\small\item\em name of the processor which provides the cells description \item\end{DoxyCompactList}\item 
+MappedContainer$<$ CALICE::CellDescription $>$ $\ast$ {\bf \_\-cellDescriptions}\label{classCALICE_1_1MipTrackFinder_aefbda6dfe51dc6bcfc5c1e33da66f9cc}
+
+\begin{DoxyCompactList}\small\item\em mapped container of cells description \item\end{DoxyCompactList}\item 
+LCCollection $\ast$ {\bf \_\-ecalInputCol}\label{classCALICE_1_1MipTrackFinder_aad63fbdc5a30192ec5cf167513b9ad42}
+
+\begin{DoxyCompactList}\small\item\em ECAL input collection. \item\end{DoxyCompactList}\item 
+LCCollection $\ast$ {\bf \_\-ahcalInputCol}\label{classCALICE_1_1MipTrackFinder_a0d088912057e75d9f714e10618e45a64}
+
+\begin{DoxyCompactList}\small\item\em AHCAL input collection. \item\end{DoxyCompactList}\item 
+LCCollection $\ast$ {\bf \_\-ahcalAmpInputCol}\label{classCALICE_1_1MipTrackFinder_a60d1306464699c01c609abc7f8edddaa}
+
+\begin{DoxyCompactList}\small\item\em AHCAL Amplitude input collection. \item\end{DoxyCompactList}\item 
+LCCollection $\ast$ {\bf \_\-tcmtInputCol}\label{classCALICE_1_1MipTrackFinder_a3e4410c59519f6a9ba69aa07983ebeb0}
+
+\begin{DoxyCompactList}\small\item\em TCMT input collection. \item\end{DoxyCompactList}\item 
+std::string {\bfseries \_\-ecalInputColName}\label{classCALICE_1_1MipTrackFinder_aede8ca5f1ff5926b465b427f1e4f9a97}
+
+\item 
+std::string {\bfseries \_\-ahcalInputColName}\label{classCALICE_1_1MipTrackFinder_ae71300eb7bcb4d10522c49cba491b995}
+
+\item 
+std::string {\bfseries \_\-ahcalAmpInputColName}\label{classCALICE_1_1MipTrackFinder_a2e88acac7e2cfa5be020b3fbe9448442}
+
+\item 
+std::string {\bfseries \_\-ahcalOutputTrackColName}\label{classCALICE_1_1MipTrackFinder_a514a9e8135b991d26fda0df6cb4e5740}
+
+\item 
+std::string {\bfseries \_\-tcmtInputColName}\label{classCALICE_1_1MipTrackFinder_a4f087086c49cb3721e512d68c1eac320}
+
+\item 
+std::string {\bf \_\-trackSelectionMode}\label{classCALICE_1_1MipTrackFinder_a6e6e7284cd571e5c093b69ee1a253ae7}
+
+\begin{DoxyCompactList}\small\item\em track selection mode: NHITs = based on the number of hits; PERPENDICULAR = select only perpendicular tracks \item\end{DoxyCompactList}\item 
+bool {\bf \_\-useECALandTCMT}\label{classCALICE_1_1MipTrackFinder_ab0c70fcc6c54979eb0a24466fc667912}
+
+\begin{DoxyCompactList}\small\item\em decide whether to use ECAL and TCMT input information (default: false) \item\end{DoxyCompactList}\item 
+bool {\bf \_\-isNonMuonRun}\label{classCALICE_1_1MipTrackFinder_a9e36ce713512208024f7e677f24d70fb}
+
+\begin{DoxyCompactList}\small\item\em flag for non-\/muon run \item\end{DoxyCompactList}\item 
+int {\bf \_\-ahcalMaxNoHits}\label{classCALICE_1_1MipTrackFinder_a91d061c42a10457d8e24b90cd298e634}
+
+\begin{DoxyCompactList}\small\item\em maximum number of hits in the AHCAL \item\end{DoxyCompactList}\item 
+int {\bf \_\-ecalMinNoHits}\label{classCALICE_1_1MipTrackFinder_aa7b08125cf046d630365de5f55cfbb6b}
+
+\begin{DoxyCompactList}\small\item\em minimum number of hits in the ECAL \item\end{DoxyCompactList}\item 
+int {\bf \_\-ecalMaxNoHits}\label{classCALICE_1_1MipTrackFinder_ad02eebf5cf6fef77436863f907374423}
+
+\begin{DoxyCompactList}\small\item\em maximum number of hits in the ECAL \item\end{DoxyCompactList}\item 
+float {\bf \_\-tcmtMinEnergySum}\label{classCALICE_1_1MipTrackFinder_af0a0a7decf81c16e7cfc8eab31e67a77}
+
+\begin{DoxyCompactList}\small\item\em minimum energy sum in the TCMT \item\end{DoxyCompactList}\item 
+float {\bf \_\-mipCutValue}\label{classCALICE_1_1MipTrackFinder_a64adc19b661b41b9867c5c56f247778d}
+
+\begin{DoxyCompactList}\small\item\em MIP cut value (0.5 MIPs). \item\end{DoxyCompactList}\item 
+int {\bfseries \_\-mipCutVariable}\label{classCALICE_1_1MipTrackFinder_a19e45f827fa9c2b8f52ab7dc42fffd96}
+
+\item 
+int {\bf \_\-trackNoHitsThreshold}
+\begin{DoxyCompactList}\small\item\em choose amplitude to be used to perform the mip cut \item\end{DoxyCompactList}\item 
+IntVec {\bf \_\-badAhcalModulesVec}\label{classCALICE_1_1MipTrackFinder_acd8b079f861742d25cc2fcfc6ccfb763}
+
+\begin{DoxyCompactList}\small\item\em vector of bad AHCAL modules numbers \item\end{DoxyCompactList}\item 
+IntVec {\bf \_\-firstAhcalModulesVec}\label{classCALICE_1_1MipTrackFinder_adc6d58d6ee59a8530f1a6439bd02ae3d}
+
+\begin{DoxyCompactList}\small\item\em vector of numbers of the beginning AHCAL modules which are used for perpendicular track finding \item\end{DoxyCompactList}\item 
+IntVec {\bf \_\-lastAhcalModulesVec}\label{classCALICE_1_1MipTrackFinder_a08397bf4269e486cc906a645b26f5a7c}
+
+\begin{DoxyCompactList}\small\item\em vector of numbers of the ending AHCAL modules which are used for perpendicular track finding \item\end{DoxyCompactList}\item 
+EVENT::CalorimeterHitVec {\bf \_\-allAhcalHitsInEventVec}\label{classCALICE_1_1MipTrackFinder_a4c48ff185ec8093624934b9c023d2057}
+
+\begin{DoxyCompactList}\small\item\em vector containing all AHCAL hits from the event \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Processor to extract MIP calibrations from muon beam runs. \begin{DoxyAuthor}{Author}
+N.D'Ascenzo, DESY, S. Richter, DESY 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Jul 13 2006, 2008 
+\end{DoxyDate}
+
+
+Definition at line 27 of file MipTrackFinder.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::MipTrackFinder@{CALICE::MipTrackFinder}!appendParameters@{appendParameters}}
+\index{appendParameters@{appendParameters}!CALICE::MipTrackFinder@{CALICE::MipTrackFinder}}
+\subsubsection[{appendParameters}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::MipTrackFinder::appendParameters (LCEvent $\ast$ {\em evt}, \/  EVENT::ClusterVec {\em finalVec})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1MipTrackFinder_afed445ffc703d8aab42b72f8caea22f5}
+
+
+Append event parameters with basic track information. 
+\begin{DoxyParams}{Parameters}
+\item[{\em evt}]the processed event \item[{\em finalVec}]final vector of track clusters, after all selections \end{DoxyParams}
+
+
+Definition at line 671 of file MipTrackFinder.cc.
+
+Referenced by findTrack().\index{CALICE::MipTrackFinder@{CALICE::MipTrackFinder}!createOutputCollection@{createOutputCollection}}
+\index{createOutputCollection@{createOutputCollection}!CALICE::MipTrackFinder@{CALICE::MipTrackFinder}}
+\subsubsection[{createOutputCollection}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::MipTrackFinder::createOutputCollection (LCEvent $\ast$ {\em evt}, \/  EVENT::ClusterVec {\em finalVec})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1MipTrackFinder_a9c4c925f38c5746f61e0b0709f05c03a}
+
+
+Create output collection of track clusters. 
+\begin{DoxyParams}{Parameters}
+\item[{\em evt}]the processed event \item[{\em finalVec}]final vector of track clusters, after all selections \end{DoxyParams}
+
+
+Definition at line 699 of file MipTrackFinder.cc.
+
+Referenced by findTrack().\index{CALICE::MipTrackFinder@{CALICE::MipTrackFinder}!doFurtherAnalysis@{doFurtherAnalysis}}
+\index{doFurtherAnalysis@{doFurtherAnalysis}!CALICE::MipTrackFinder@{CALICE::MipTrackFinder}}
+\subsubsection[{doFurtherAnalysis}]{\setlength{\rightskip}{0pt plus 5cm}bool CALICE::MipTrackFinder::doFurtherAnalysis ()\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1MipTrackFinder_aab79ba892b9cacc87b2d2983bb859606}
+
+
+Check if cuts are fullfilled, and if analysis is to be continued. \begin{DoxyReturn}{Returns}
+analyse flag to show if the cuts are fullfilled or not 
+\end{DoxyReturn}
+
+
+Definition at line 273 of file MipTrackFinder.cc.
+
+References \_\-ahcalInputCol, \_\-ahcalMaxNoHits, \_\-ecalInputCol, \_\-ecalMaxNoHits, \_\-ecalMinNoHits, \_\-isNonMuonRun, \_\-tcmtInputCol, \_\-tcmtMinEnergySum, \_\-useECALandTCMT, and extractNumberOfHitsAndEnergySum().
+
+Referenced by findTrack().\index{CALICE::MipTrackFinder@{CALICE::MipTrackFinder}!extractNumberOfHitsAndEnergySum@{extractNumberOfHitsAndEnergySum}}
+\index{extractNumberOfHitsAndEnergySum@{extractNumberOfHitsAndEnergySum}!CALICE::MipTrackFinder@{CALICE::MipTrackFinder}}
+\subsubsection[{extractNumberOfHitsAndEnergySum}]{\setlength{\rightskip}{0pt plus 5cm}std::pair$<$ int, float $>$ CALICE::MipTrackFinder::extractNumberOfHitsAndEnergySum (LCCollection $\ast$ {\em inputCol})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1MipTrackFinder_a1aef1a8fd625a33ec44d91dab476b45c}
+
+
+Extract number of hits and the energy sum from the input collection. 
+\begin{DoxyParams}{Parameters}
+\item[{\em inputCol}]the input collection \end{DoxyParams}
+
+
+Definition at line 339 of file MipTrackFinder.cc.
+
+Referenced by doFurtherAnalysis().\index{CALICE::MipTrackFinder@{CALICE::MipTrackFinder}!findTrack@{findTrack}}
+\index{findTrack@{findTrack}!CALICE::MipTrackFinder@{CALICE::MipTrackFinder}}
+\subsubsection[{findTrack}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::MipTrackFinder::findTrack (LCEvent $\ast$ {\em evt})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1MipTrackFinder_ab02037fc2a5b5bc03cc9c0a009705cf0}
+
+
+Find the track. 
+\begin{DoxyParams}{Parameters}
+\item[{\em evt}]event to be processed \end{DoxyParams}
+
+
+Definition at line 230 of file MipTrackFinder.cc.
+
+References \_\-trackSelectionMode, appendParameters(), createOutputCollection(), doFurtherAnalysis(), extractAHCALInformation(), findTrackClusters(), getRemainingHits(), and selectTrackClusters().
+
+Referenced by processEvent().\index{CALICE::MipTrackFinder@{CALICE::MipTrackFinder}!findTrackClusters@{findTrackClusters}}
+\index{findTrackClusters@{findTrackClusters}!CALICE::MipTrackFinder@{CALICE::MipTrackFinder}}
+\subsubsection[{findTrackClusters}]{\setlength{\rightskip}{0pt plus 5cm}EVENT::ClusterVec CALICE::MipTrackFinder::findTrackClusters (LCTypedVector$<$ CalorimeterHit $>$ {\em hcalVec})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1MipTrackFinder_a1015271128036c0a2d801b78562ba97e}
+
+
+Find clusters of MIP tracks. 
+\begin{DoxyParams}{Parameters}
+\item[{\em hcalVec}]input vector of AHCAL hits \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector of clusters 
+\end{DoxyReturn}
+
+
+Definition at line 462 of file MipTrackFinder.cc.
+
+References \_\-cellDescriptions, and \_\-mapper.
+
+Referenced by findTrack().\index{CALICE::MipTrackFinder@{CALICE::MipTrackFinder}!getRemainingHits@{getRemainingHits}}
+\index{getRemainingHits@{getRemainingHits}!CALICE::MipTrackFinder@{CALICE::MipTrackFinder}}
+\subsubsection[{getRemainingHits}]{\setlength{\rightskip}{0pt plus 5cm}EVENT::ClusterVec CALICE::MipTrackFinder::getRemainingHits (EVENT::ClusterVec {\em selectedTrackClusters})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1MipTrackFinder_a7ef668cb721bb6efe876222827fb7052}
+
+
+Get the vector of track clusters containing all the remaining hits. 
+\begin{DoxyParams}{Parameters}
+\item[{\em selectedTrackClusters}]vector of selected track clusters \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector of track clusters containing all the remaining hits 
+\end{DoxyReturn}
+
+
+Definition at line 655 of file MipTrackFinder.cc.
+
+References getWholeTrack().
+
+Referenced by findTrack().\index{CALICE::MipTrackFinder@{CALICE::MipTrackFinder}!getWholeTrack@{getWholeTrack}}
+\index{getWholeTrack@{getWholeTrack}!CALICE::MipTrackFinder@{CALICE::MipTrackFinder}}
+\subsubsection[{getWholeTrack}]{\setlength{\rightskip}{0pt plus 5cm}ClusterImpl $\ast$ CALICE::MipTrackFinder::getWholeTrack (Cluster $\ast$ {\em trackCluster})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1MipTrackFinder_a47c6706fc34d1948fac2f2db0999aa28}
+
+
+Get the whole track (i.e. track with no missing hits) 
+\begin{DoxyParams}{Parameters}
+\item[{\em trackCluster}]input track cluster, from which the mean X and Y of the track are calculated \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+wholeTrack the track cluster which contains all the hits 
+\end{DoxyReturn}
+
+
+Definition at line 611 of file MipTrackFinder.cc.
+
+References \_\-allAhcalHitsInEventVec.
+
+Referenced by getRemainingHits().\index{CALICE::MipTrackFinder@{CALICE::MipTrackFinder}!openInputCollections@{openInputCollections}}
+\index{openInputCollections@{openInputCollections}!CALICE::MipTrackFinder@{CALICE::MipTrackFinder}}
+\subsubsection[{openInputCollections}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::MipTrackFinder::openInputCollections (LCEvent $\ast$ {\em evt})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1MipTrackFinder_aef01541bca92914602f72de4324e85e7}
+
+
+Open the input collections. 
+\begin{DoxyParams}{Parameters}
+\item[{\em evt}]event to be processed \end{DoxyParams}
+
+
+Definition at line 189 of file MipTrackFinder.cc.
+
+References \_\-ahcalAmpInputCol, \_\-ahcalInputCol, \_\-ecalInputCol, \_\-tcmtInputCol, and \_\-useECALandTCMT.
+
+Referenced by processEvent().\index{CALICE::MipTrackFinder@{CALICE::MipTrackFinder}!processEvent@{processEvent}}
+\index{processEvent@{processEvent}!CALICE::MipTrackFinder@{CALICE::MipTrackFinder}}
+\subsubsection[{processEvent}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::MipTrackFinder::processEvent (LCEvent $\ast$ {\em evt})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCALICE_1_1MipTrackFinder_ababe992d9a74a41efb4af9726302f1bf}
+
+
+Process event (the working horse). 
+\begin{DoxyParams}{Parameters}
+\item[{\em evt}]event to be processed \end{DoxyParams}
+
+
+Definition at line 168 of file MipTrackFinder.cc.
+
+References \_\-allAhcalHitsInEventVec, findTrack(), and openInputCollections().\index{CALICE::MipTrackFinder@{CALICE::MipTrackFinder}!selectTrackClusters@{selectTrackClusters}}
+\index{selectTrackClusters@{selectTrackClusters}!CALICE::MipTrackFinder@{CALICE::MipTrackFinder}}
+\subsubsection[{selectTrackClusters}]{\setlength{\rightskip}{0pt plus 5cm}EVENT::ClusterVec CALICE::MipTrackFinder::selectTrackClusters (EVENT::ClusterVec {\em clusterVec}, \/  const std::string {\em trackSelectionMode})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1MipTrackFinder_a609facfa593b977f6f33b11ebbfdb0a7}
+
+
+Select good tracks. 
+\begin{DoxyParams}{Parameters}
+\item[{\em clusterVec}]vector of track clusters, on which the selection is performed \item[{\em trackSelectionMode}]track selection mode, set by the steering parameter TrackSelectionMode \end{DoxyParams}
+
+
+Definition at line 530 of file MipTrackFinder.cc.
+
+References \_\-firstAhcalModulesVec, \_\-lastAhcalModulesVec, \_\-mapper, and \_\-trackNoHitsThreshold.
+
+Referenced by findTrack().
+
+\subsection{Field Documentation}
+\index{CALICE::MipTrackFinder@{CALICE::MipTrackFinder}!\_\-trackNoHitsThreshold@{\_\-trackNoHitsThreshold}}
+\index{\_\-trackNoHitsThreshold@{\_\-trackNoHitsThreshold}!CALICE::MipTrackFinder@{CALICE::MipTrackFinder}}
+\subsubsection[{\_\-trackNoHitsThreshold}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf CALICE::MipTrackFinder::\_\-trackNoHitsThreshold}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1MipTrackFinder_aacb0b30277254b471bd8d368fa340931}
+
+
+choose amplitude to be used to perform the mip cut minimum number of hits for which a track is considered to be a muon track (used only with TrackSelectionMode=NHITS) 
+
+Definition at line 141 of file MipTrackFinder.hh.
+
+Referenced by MipTrackFinder(), and selectTrackClusters().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+MipTrackFinder.hh\item 
+MipTrackFinder.cc\end{DoxyCompactItemize}

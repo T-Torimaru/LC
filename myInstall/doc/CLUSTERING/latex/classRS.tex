@@ -1,0 +1,62 @@
+\section{RS Class Reference}
+\label{classRS}\index{RS@{RS}}
+
+
+Something.  
+
+
+{\ttfamily \#include $<$RecoUtil.hh$>$}Inheritance diagram for RS::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classRS}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class \_\-Tp $>$ }\\\_\-Tp $\ast$ {\bfseries alloc} ()\label{classRS_ac77e877da97d17cadbaa0684b6f10c58}
+
+\item 
+void {\bfseries unlink} ({\bf RSObj} $\ast$cld, {\bf RSObj} $\ast$prt)\label{classRS_add62222b166ede30bc242cf115059409}
+
+\item 
+void {\bfseries unlink} ({\bf RSObj} $\ast$obj)\label{classRS_af0e279ecf61559bc9719285a2a8fef0b}
+
+\item 
+void {\bfseries prepend} ({\bf RSObj} $\ast$cld, {\bf RSObj} $\ast$prt)\label{classRS_a0135830c1eef7c9c8666fc5ee98e5b2b}
+
+\item 
+void {\bfseries append} ({\bf RSObj} $\ast$cld, {\bf RSObj} $\ast$prt)\label{classRS_a1d9b09c9ad252a5211efe8009c205ac8}
+
+\item 
+{\footnotesize template$<$class \_\-Tp $>$ }\\void {\bfseries SortChildren} ({\bf RSObj} $\ast$obj, int($\ast$compare)(const \_\-Tp $\ast$$\ast$, const \_\-Tp $\ast$$\ast$))\label{classRS_a4888c2bb20b2ee1b1fd91d8b912ee7be}
+
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ {\bfseries obj\_\-pool} [32]\label{classRS_aff4e259ae5012e7916f8e52f6755b413}
+
+\item 
+{\bf SpacePool} {\bfseries pool}\label{classRS_ac985cded70310952e9b69aa86e0d6525}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf FastSpaceHolder}$<$ {\bf RSLink} $>$ $\ast$ {\bfseries link\_\-pool}\label{classRS_a4fc74f14d80ae96f630d0be93ff418aa}
+
+\item 
+{\bf FastSpaceHolder}$<$ {\bf RSLinkGroup} $>$ $\ast$ {\bfseries link\_\-group\_\-pool}\label{classRS_a34c8f9118059702b3a88b53e4ddfe5d6}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Something. 
+
+Definition at line 311 of file RecoUtil.hh.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+RecoUtil.hh\end{DoxyCompactItemize}

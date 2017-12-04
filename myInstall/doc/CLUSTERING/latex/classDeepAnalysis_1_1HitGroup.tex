@@ -1,0 +1,85 @@
+\section{DeepAnalysis::HitGroup Class Reference}
+\label{classDeepAnalysis_1_1HitGroup}\index{DeepAnalysis::HitGroup@{DeepAnalysis::HitGroup}}
+
+
+This class is not a cluster, but this is as it said in name -\/-\/ \doxyref{Group}{p.}{classDeepAnalysis_1_1Group} of Hits, that has a boundaries in 3-\/D cartesian coordinate system and spherical coordinate system, center of gravity and whole energy.  
+
+
+{\ttfamily \#include $<$DeepAnalysis.hh$>$}Inheritance diagram for DeepAnalysis::HitGroup::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classDeepAnalysis_1_1HitGroup}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf HitGroup} ()\label{classDeepAnalysis_1_1HitGroup_ad5d6fbecb4b545154e96c6e7645753fa}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+void {\bf calc\_\-stat} ()\label{classDeepAnalysis_1_1HitGroup_aaf039464568eec388ec2aac8ec7de56a}
+
+\begin{DoxyCompactList}\small\item\em Calculate initial statistics of this \doxyref{Group}{p.}{classDeepAnalysis_1_1Group} of Hits. \item\end{DoxyCompactList}\item 
+void {\bf draw} (unsigned type, unsigned size, unsigned color)
+\begin{DoxyCompactList}\small\item\em Draw hits. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+Vector3D {\bf centerOfGravity}
+\begin{DoxyCompactList}\small\item\em center of gravity (X\_\-clust. \item\end{DoxyCompactList}\item 
+double {\bf energySum}\label{classDeepAnalysis_1_1HitGroup_a4e559ed6aea2b05f50209579ed04565f}
+
+\begin{DoxyCompactList}\small\item\em sum of energy \item\end{DoxyCompactList}\item 
+{\bf MinMaxRange}$<$ int $>$ {\bf layer\_\-g}\label{classDeepAnalysis_1_1HitGroup_a7889f649bed4ae5eeabbdb6611eef5e2}
+
+\begin{DoxyCompactList}\small\item\em layer \item\end{DoxyCompactList}\item 
+{\bf MinMaxRange}$<$ double $>$ {\bf radius\_\-g}\label{classDeepAnalysis_1_1HitGroup_a79beed76651f6412ede510c4d185a3ce}
+
+\begin{DoxyCompactList}\small\item\em radius \item\end{DoxyCompactList}\item 
+{\bf MinMaxRange}$<$ double $>$ {\bf theta\_\-g}\label{classDeepAnalysis_1_1HitGroup_a8d1e2c21b771032f2554a68f9e6491b9}
+
+\begin{DoxyCompactList}\small\item\em theta \item\end{DoxyCompactList}\item 
+{\bf MinMaxRange}$<$ double $>$ {\bf phi\_\-g}\label{classDeepAnalysis_1_1HitGroup_a82f638c2e9a04adfa458debbe6fcf4d1}
+
+\begin{DoxyCompactList}\small\item\em phi \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned {\bf RS\_\-TYPE} = 2\label{classDeepAnalysis_1_1HitGroup_a71e1f65d89bff32b0729454b1027b9ea}
+
+\begin{DoxyCompactList}\small\item\em type of \doxyref{RS}{p.}{classRS} object \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is not a cluster, but this is as it said in name -\/-\/ \doxyref{Group}{p.}{classDeepAnalysis_1_1Group} of Hits, that has a boundaries in 3-\/D cartesian coordinate system and spherical coordinate system, center of gravity and whole energy. 
+
+Definition at line 245 of file DeepAnalysis.hh.
+
+\subsection{Member Function Documentation}
+\index{DeepAnalysis::HitGroup@{DeepAnalysis::HitGroup}!draw@{draw}}
+\index{draw@{draw}!DeepAnalysis::HitGroup@{DeepAnalysis::HitGroup}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void DeepAnalysis::HitGroup::draw (unsigned {\em type}, \/  unsigned {\em size}, \/  unsigned {\em color})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classDeepAnalysis_1_1HitGroup_a66d1fe2165387c9b25990aa369a7bc51}
+
+
+Draw hits. 
+\begin{DoxyParams}{Parameters}
+\item[{\em type}]hit type \item[{\em size}]size of point/size of cross \item[{\em color}]color n RGB form (e.g. 0xff0000 is RED) \end{DoxyParams}
+
+
+Definition at line 287 of file DeepAnalysis.hh.
+
+\subsection{Field Documentation}
+\index{DeepAnalysis::HitGroup@{DeepAnalysis::HitGroup}!centerOfGravity@{centerOfGravity}}
+\index{centerOfGravity@{centerOfGravity}!DeepAnalysis::HitGroup@{DeepAnalysis::HitGroup}}
+\subsubsection[{centerOfGravity}]{\setlength{\rightskip}{0pt plus 5cm}Vector3D {\bf DeepAnalysis::HitGroup::centerOfGravity}}\label{classDeepAnalysis_1_1HitGroup_a66e5d49bbb2fd5737e2b43872461d59f}
+
+
+center of gravity (X\_\-clust. .., xs...) 
+
+Definition at line 251 of file DeepAnalysis.hh.
+
+Referenced by DeepAnalysis::Cluster::calc\_\-prop(), calc\_\-stat(), DeepAnalysis::Cluster::draw\_\-ellipse(), DeepAnalysis::Cluster::draw\_\-star(), DeepAnalysis::Cluster::inertia\_\-3d(), and DeepAnalysis::Cluster::rotate\_\-point().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+DeepAnalysis.hh\end{DoxyCompactItemize}

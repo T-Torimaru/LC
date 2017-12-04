@@ -1,0 +1,74 @@
+\section{histmgr::KeyMapBase\_\-t Class Reference}
+\label{classhistmgr_1_1KeyMapBase__t}\index{histmgr::KeyMapBase\_\-t@{histmgr::KeyMapBase\_\-t}}
+
+
+Base class of the element list which only manages the name mapping.  
+
+
+{\ttfamily \#include $<$KeyMap\_\-t.hh$>$}Inheritance diagram for histmgr::KeyMapBase\_\-t::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classhistmgr_1_1KeyMapBase__t}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::map$<$ std::string, unsigned int $>$ {\bfseries NameMap\_\-t}\label{classhistmgr_1_1KeyMapBase__t_ae49c6a47e8e2391af4a57a3dc1f40020}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+NameMap\_\-t::const\_\-iterator {\bfseries nameListBegin} () const \label{classhistmgr_1_1KeyMapBase__t_af1bc65af4564e7cd74c6ab25b35ca9e5}
+
+\item 
+NameMap\_\-t::const\_\-iterator {\bfseries nameListEnd} () const \label{classhistmgr_1_1KeyMapBase__t_aac7ea5403cabbabff2a01dc108072f1f}
+
+\item 
+bool {\bfseries empty} () const \label{classhistmgr_1_1KeyMapBase__t_a63938a3f927f441c92a91467eee12fa4}
+
+\item 
+unsigned int {\bfseries size} () const \label{classhistmgr_1_1KeyMapBase__t_abe4ee7508376462845afcfe84ce92672}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf Key\_\-t} {\bfseries createKey} (NameMap\_\-t::const\_\-iterator \&iter)\label{classhistmgr_1_1KeyMapBase__t_a0abfc2a6b98414d55e92a0c9c69b4b29}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf \_\-hasKey} (const {\bf Key\_\-t} \&a\_\-key) const \label{classhistmgr_1_1KeyMapBase__t_aed1d4e8444789c2f0089bec2b68a091b}
+
+\begin{DoxyCompactList}\small\item\em Check whether an element exist already for the given key. \item\end{DoxyCompactList}\item 
+bool {\bfseries \_\-insertNew} (const {\bf Key\_\-t} \&a\_\-key, unsigned int next\_\-element)\label{classhistmgr_1_1KeyMapBase__t_a8c886c4d400a0549978b170ddd846d1e}
+
+\item 
+bool {\bfseries \_\-setIndexCache} (const {\bf Key\_\-t} \&a\_\-key)\label{classhistmgr_1_1KeyMapBase__t_a51614c13e31ea6616cefd41580c92288}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+NameMap\_\-t {\bfseries \_\-idList}\label{classhistmgr_1_1KeyMapBase__t_a759b7cd45f2bff8c5c5c83954c3f1295}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries HistMgr}\label{classhistmgr_1_1KeyMapBase__t_a3cc85db784d7651390e41024125eb3a0}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class of the element list which only manages the name mapping. 
+
+Definition at line 22 of file KeyMap\_\-t.hh.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+KeyMap\_\-t.hh\end{DoxyCompactItemize}

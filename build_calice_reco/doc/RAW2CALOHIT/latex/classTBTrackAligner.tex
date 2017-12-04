@@ -1,0 +1,107 @@
+\section{TBTrackAligner Class Reference}
+\label{classTBTrackAligner}\index{TBTrackAligner@{TBTrackAligner}}
+Inheritance diagram for TBTrackAligner::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classTBTrackAligner}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf EventHits}
+\begin{DoxyCompactList}\small\item\em Method to write the histograms in a ROOT file. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Processor $\ast$ {\bfseries newProcessor} ()\label{classTBTrackAligner_ab27cfabdbaac3f2f51abc8be398b0c3e}
+
+\item 
+virtual void {\bf Init} ()
+\begin{DoxyCompactList}\small\item\em Called at the begin of the job before anything is read. \item\end{DoxyCompactList}\item 
+virtual void {\bfseries initHists} (unsigned p, bool t)\label{classTBTrackAligner_a57dd9a9703c4733f868294e6e93897cc}
+
+\item 
+virtual void {\bf ProcessRunHeader} (LCRunHeader $\ast$run)\label{classTBTrackAligner_a0ac4e729acb1e02c52f6ece3bc8b8b47}
+
+\begin{DoxyCompactList}\small\item\em Called for every run. \item\end{DoxyCompactList}\item 
+virtual void {\bf ProcessEvent} (LCEvent $\ast$evt)\label{classTBTrackAligner_a496379cef405a24bc80d8ec7a70686fb}
+
+\begin{DoxyCompactList}\small\item\em Called for every event -\/ the working horse. \item\end{DoxyCompactList}\item 
+virtual void {\bf End} ()\label{classTBTrackAligner_a6070161df8594c662cb572b8f4edd93a}
+
+\begin{DoxyCompactList}\small\item\em Called after data processing for clean up. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned {\bfseries \_\-highProb} [2][17]\label{classTBTrackAligner_a84b06cd379973894683c4ff5149184dd}
+
+\item 
+std::vector$<$ {\bf EventHits} $>$ {\bfseries \_\-vEventHits}\label{classTBTrackAligner_a5c6ddddba21085e33d42b11e2d422bfc}
+
+\item 
+TH1F $\ast$ {\bfseries hNumb} [2][17]\label{classTBTrackAligner_ad3bc07a2152a746a4c9b0421ca9726db}
+
+\item 
+TH1F $\ast$ {\bfseries hPatt} [2][17]\label{classTBTrackAligner_ac4e1e6d6e4713df266dad1dcb1d21ee0}
+
+\item 
+TH1F $\ast$ {\bfseries hPar0} [2][17]\label{classTBTrackAligner_a9f650a0b52fc7310e40f585528ae4493}
+
+\item 
+TH1F $\ast$ {\bfseries hPar1} [2][17]\label{classTBTrackAligner_a5e2a1d7b0ccf41fbc7688dd30f3c8a8e}
+
+\item 
+TH1F $\ast$ {\bfseries hErr0} [2][17]\label{classTBTrackAligner_a01fc9327217160b2156e70bdb92aff42}
+
+\item 
+TH1F $\ast$ {\bfseries hErr1} [2][17]\label{classTBTrackAligner_ac65bf51d7bd36288095648af52fa1f1d}
+
+\item 
+TH1F $\ast$ {\bfseries hCorr} [2][17]\label{classTBTrackAligner_a73a3c754d6cad7cbd808eb5eb774af3c}
+
+\item 
+TH1F $\ast$ {\bfseries hProb} [2][17]\label{classTBTrackAligner_a210d71981fd2c6458373af716c51be86}
+
+\item 
+TH2F $\ast$ {\bfseries hNmb2} [2][17]\label{classTBTrackAligner_aa9da39c486f6eca63b73f4493dde371a}
+
+\item 
+TH2F $\ast$ {\bfseries hPrb2} [2][17]\label{classTBTrackAligner_adb4cdb6ce68506ed205d38ad5e6fbf7f}
+
+\item 
+TH1F $\ast$ {\bfseries hMPr0} [2][17]\label{classTBTrackAligner_ad830dd1d1bb766c9c311096c8af640c8}
+
+\item 
+TH1F $\ast$ {\bfseries hMPr1} [2][17]\label{classTBTrackAligner_abe3da835695654538e6dfdf8d23beecb}
+
+\item 
+TH1F $\ast$ {\bfseries hMDf0} [2][17]\label{classTBTrackAligner_a7eb3cf9ed18f91e44e53bb325033177d}
+
+\item 
+TH1F $\ast$ {\bfseries hMDf1} [2][17]\label{classTBTrackAligner_a9721cba8515c2270ef25a52eef0b764d}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 17 of file TBTrackAligner.hh.
+
+\subsection{Member Function Documentation}
+\index{TBTrackAligner@{TBTrackAligner}!Init@{Init}}
+\index{Init@{Init}!TBTrackAligner@{TBTrackAligner}}
+\subsubsection[{Init}]{\setlength{\rightskip}{0pt plus 5cm}void TBTrackAligner::Init ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classTBTrackAligner_a0f999c70adb52bcb8ce25f517b5b0f70}
+
+
+Called at the begin of the job before anything is read. Use to initialize the processor, e.g. book histograms. 
+
+Implements {\bf TBTrackBaseProcessor} \doxyref{}{p.}{classTBTrackBaseProcessor}.
+
+Definition at line 94 of file TBTrackAligner.cc.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+TBTrackAligner.hh\item 
+TBTrackAligner.cc\end{DoxyCompactItemize}

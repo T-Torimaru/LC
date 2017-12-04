@@ -1,0 +1,177 @@
+\section{CALICE::BeamMomentum Class Reference}
+\label{classCALICE_1_1BeamMomentum}\index{CALICE::BeamMomentum@{CALICE::BeamMomentum}}
+
+
+Class to claculate the beam momentum and momentum spread from beamline slow readout data.  
+
+
+{\ttfamily \#include $<$BeamMomentum.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf BeamMomentum} (const {\bf CALICE::BmlSlowRunDataBlock} \&cernBeamData)
+\begin{DoxyCompactList}\small\item\em Construcor using CERN data as input. \item\end{DoxyCompactList}\item 
+double {\bf getMomentum} () const 
+\item 
+double {\bf getSecondaryMomentum} () const 
+\item 
+double {\bf getTertiaryMomentum} () const 
+\item 
+double {\bf getRelativeSpread} () const 
+\item 
+double {\bf getMomentumSpread} () const 
+\item 
+double {\bf getLimitedRelativeSpread} () const 
+\begin{DoxyCompactList}\small\item\em this returns a limited spread for secondary beams, please read the class description \item\end{DoxyCompactList}\item 
+double {\bf getLimitedMomentumSpread} () const 
+\begin{DoxyCompactList}\small\item\em this returns a limited spread for secondary beams, please read the class description \item\end{DoxyCompactList}\item 
+const std::string {\bf getWarnings} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double {\bfseries \_\-momentum}\label{classCALICE_1_1BeamMomentum_ab5a1406c4ee908d6191e579d5269ad82}
+
+\item 
+double {\bfseries \_\-secondaryMomentum}\label{classCALICE_1_1BeamMomentum_aedd80f5b4994fc065d015eecf3aca9d9}
+
+\item 
+double {\bfseries \_\-tertiaryMomentum}\label{classCALICE_1_1BeamMomentum_af1bae196b4deedf5338525233e040b46}
+
+\item 
+double {\bfseries \_\-relativeSpread}\label{classCALICE_1_1BeamMomentum_a2423b7ace1c4d2583a1d2b41987078b9}
+
+\item 
+double {\bfseries \_\-limitedRelativeSpread}\label{classCALICE_1_1BeamMomentum_a2769dd2776a49367360f8afebb4bef6d}
+
+\item 
+std::stringstream {\bfseries \_\-warningText}\label{classCALICE_1_1BeamMomentum_ae15697c4beb991a607364bef48a813fa}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to claculate the beam momentum and momentum spread from beamline slow readout data. The beam momentum is linearly approximated from the magnet currents. A Gaussian distribution of the beam momentum spread is assumed.
+
+\begin{DoxyParagraph}{CERN}
+The calculations are based on the informations found in the {\bfseries \char`\"{}Short Introduction to the use of the H6 beam\char`\"{}}, Version 3.0, 2 May 2000.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+There are no references found for the current to momentum translation for most of the magnets. The {\bfseries Introduction} tells only that B(end)5 should be at 566.4A for 120 GeV. Therefore, the slope was fitted on a few runs. For B5 the fit gives the same result as the {\bfseries Introduction}.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+The {\bfseries full} {\bfseries width} beam momentum spread is calculated by the formula \[ \frac{\Delta p}{p} = \frac{\sqrt{C_{3}^2+C_{8}^2}}{19.4} [\%] \] where $ C_{i} $ is the {\bfseries full} {\bfseries width} opening of collimator $i$. This is valid for tertiary beams.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+For secondary beams this might lead to an overestimation of the beam spread, as $C_{8}$ might be further open than the beam size. The {\bfseries Introduction} suggest to use $ C_{8} = $ 4mm as upper limit for high energy secondary beams. This class provides limited and unlimited results, as it is not clear to the author when a beam can be considered \char`\"{}high energy\char`\"{} and the destinction between secondary and tertiary beam by target position fails in 2007. The beam is considered secondary, if the beam momentum in the secondary and the tertiary section differ for less than 10 \%. In this case, a warning message is issued.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+The Gaussian width is derived by \[ \sigma = \frac{\Delta p}{2\sqrt{2\ln{2}}} \approx \frac{\Delta p}{2.35482} \]
+\end{DoxyParagraph}
+\begin{DoxyAttention}{Attention}
+The implementation supports only CERN so far
+\end{DoxyAttention}
+\begin{Desc}
+\item[{\bf Todo}]implement a constructor for FNAL slow readout data\end{Desc}
+\begin{DoxyAuthor}{Author}
+{\tt Benjamin.Lutz@desy.de} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+October 2008 
+\end{DoxyDate}
+
+
+Definition at line 48 of file BeamMomentum.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CALICE::BeamMomentum@{CALICE::BeamMomentum}!BeamMomentum@{BeamMomentum}}
+\index{BeamMomentum@{BeamMomentum}!CALICE::BeamMomentum@{CALICE::BeamMomentum}}
+\subsubsection[{BeamMomentum}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::BeamMomentum::BeamMomentum (const {\bf CALICE::BmlSlowRunDataBlock} \& {\em cernBeamData})}\label{classCALICE_1_1BeamMomentum_aa27dc27234e98e1ad8115049f1b4c202}
+
+
+Construcor using CERN data as input. 
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BeamMomentumException}{p.}{classCALICE_1_1BeamMomentumException}}]when number of magnet currents or collimators does not corresond to the CERN beamline \end{DoxyExceptions}
+
+
+Definition at line 10 of file BeamMomentum.cc.
+
+References CALICE::BmlSlowRunDataBlock::getBendCurrents(), and CALICE::BmlSlowRunDataBlock::getCollimatorPositions().
+
+\subsection{Member Function Documentation}
+\index{CALICE::BeamMomentum@{CALICE::BeamMomentum}!getLimitedMomentumSpread@{getLimitedMomentumSpread}}
+\index{getLimitedMomentumSpread@{getLimitedMomentumSpread}!CALICE::BeamMomentum@{CALICE::BeamMomentum}}
+\subsubsection[{getLimitedMomentumSpread}]{\setlength{\rightskip}{0pt plus 5cm}double CALICE::BeamMomentum::getLimitedMomentumSpread () const}\label{classCALICE_1_1BeamMomentum_a124b5dd4915b4d0b2d9f0c96985565ae}
+
+
+this returns a limited spread for secondary beams, please read the class description \begin{DoxyReturn}{Returns}
+beam momentum spread in GeV 
+\end{DoxyReturn}
+
+
+Definition at line 141 of file BeamMomentum.cc.\index{CALICE::BeamMomentum@{CALICE::BeamMomentum}!getLimitedRelativeSpread@{getLimitedRelativeSpread}}
+\index{getLimitedRelativeSpread@{getLimitedRelativeSpread}!CALICE::BeamMomentum@{CALICE::BeamMomentum}}
+\subsubsection[{getLimitedRelativeSpread}]{\setlength{\rightskip}{0pt plus 5cm}double CALICE::BeamMomentum::getLimitedRelativeSpread () const}\label{classCALICE_1_1BeamMomentum_ab7883995158ee69aa47b7ed808d0b51a}
+
+
+this returns a limited spread for secondary beams, please read the class description \begin{DoxyReturn}{Returns}
+relative beam momentum spread 
+\end{DoxyReturn}
+
+
+Definition at line 137 of file BeamMomentum.cc.\index{CALICE::BeamMomentum@{CALICE::BeamMomentum}!getMomentum@{getMomentum}}
+\index{getMomentum@{getMomentum}!CALICE::BeamMomentum@{CALICE::BeamMomentum}}
+\subsubsection[{getMomentum}]{\setlength{\rightskip}{0pt plus 5cm}double CALICE::BeamMomentum::getMomentum () const}\label{classCALICE_1_1BeamMomentum_a98b2a24c31c0afb62b280caaae5d69cc}
+\begin{DoxyReturn}{Returns}
+the beam momentum in GeV 
+\end{DoxyReturn}
+
+
+Definition at line 117 of file BeamMomentum.cc.\index{CALICE::BeamMomentum@{CALICE::BeamMomentum}!getMomentumSpread@{getMomentumSpread}}
+\index{getMomentumSpread@{getMomentumSpread}!CALICE::BeamMomentum@{CALICE::BeamMomentum}}
+\subsubsection[{getMomentumSpread}]{\setlength{\rightskip}{0pt plus 5cm}double CALICE::BeamMomentum::getMomentumSpread () const}\label{classCALICE_1_1BeamMomentum_a1136a4941aca0feab6ac7a748d456c26}
+\begin{DoxyReturn}{Returns}
+beam momentum spread in GeV 
+\end{DoxyReturn}
+
+
+Definition at line 133 of file BeamMomentum.cc.\index{CALICE::BeamMomentum@{CALICE::BeamMomentum}!getRelativeSpread@{getRelativeSpread}}
+\index{getRelativeSpread@{getRelativeSpread}!CALICE::BeamMomentum@{CALICE::BeamMomentum}}
+\subsubsection[{getRelativeSpread}]{\setlength{\rightskip}{0pt plus 5cm}double CALICE::BeamMomentum::getRelativeSpread () const}\label{classCALICE_1_1BeamMomentum_acea65b8dc19544ceb52b31d1b69ff6d7}
+\begin{DoxyReturn}{Returns}
+relative beam momentum spread 
+\end{DoxyReturn}
+
+
+Definition at line 129 of file BeamMomentum.cc.\index{CALICE::BeamMomentum@{CALICE::BeamMomentum}!getSecondaryMomentum@{getSecondaryMomentum}}
+\index{getSecondaryMomentum@{getSecondaryMomentum}!CALICE::BeamMomentum@{CALICE::BeamMomentum}}
+\subsubsection[{getSecondaryMomentum}]{\setlength{\rightskip}{0pt plus 5cm}double CALICE::BeamMomentum::getSecondaryMomentum () const}\label{classCALICE_1_1BeamMomentum_afad1bc1ae90b11d91d9f615584d7ac9d}
+\begin{DoxyReturn}{Returns}
+the beam momentum before the secondary target 
+\end{DoxyReturn}
+
+
+Definition at line 121 of file BeamMomentum.cc.\index{CALICE::BeamMomentum@{CALICE::BeamMomentum}!getTertiaryMomentum@{getTertiaryMomentum}}
+\index{getTertiaryMomentum@{getTertiaryMomentum}!CALICE::BeamMomentum@{CALICE::BeamMomentum}}
+\subsubsection[{getTertiaryMomentum}]{\setlength{\rightskip}{0pt plus 5cm}double CALICE::BeamMomentum::getTertiaryMomentum () const}\label{classCALICE_1_1BeamMomentum_a5f70de92c980e0abc7e42b076d6d013d}
+\begin{DoxyReturn}{Returns}
+the beam momentum after the secondary target 
+\end{DoxyReturn}
+
+
+Definition at line 125 of file BeamMomentum.cc.\index{CALICE::BeamMomentum@{CALICE::BeamMomentum}!getWarnings@{getWarnings}}
+\index{getWarnings@{getWarnings}!CALICE::BeamMomentum@{CALICE::BeamMomentum}}
+\subsubsection[{getWarnings}]{\setlength{\rightskip}{0pt plus 5cm}const std::string CALICE::BeamMomentum::getWarnings () const}\label{classCALICE_1_1BeamMomentum_a1b09ead51b46163bb14e5f8802bf7714}
+\begin{DoxyReturn}{Returns}
+warnings that occured during interpretation of beam settings 
+\end{DoxyReturn}
+
+
+Definition at line 145 of file BeamMomentum.cc.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+BeamMomentum.hh\item 
+BeamMomentum.cc\end{DoxyCompactItemize}

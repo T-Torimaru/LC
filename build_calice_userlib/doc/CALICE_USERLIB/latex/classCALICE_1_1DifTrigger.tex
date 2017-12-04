@@ -1,0 +1,66 @@
+\section{CALICE::DifTrigger Class Reference}
+\label{classCALICE_1_1DifTrigger}\index{CALICE::DifTrigger@{CALICE::DifTrigger}}
+
+
+Simple class which stores the trigger counter retrieved from the DIF cards.  
+
+
+{\ttfamily \#include $<$DifTrigger.hh$>$}Inheritance diagram for CALICE::DifTrigger::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCALICE_1_1DifTrigger}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf DifTrigger} ()\label{classCALICE_1_1DifTrigger_a6b7e84ec0cf67f3aea3f44e32ab976f1}
+
+\begin{DoxyCompactList}\small\item\em Simple Constructor. \item\end{DoxyCompactList}\item 
+{\bf DifTrigger} (LCObject $\ast$obj)
+\begin{DoxyCompactList}\small\item\em 'Copy constructor' needed to interpret LCCollection read from file/database. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$DifTrigger} ()\label{classCALICE_1_1DifTrigger_abb5e9c8b0f17ad4a0dc0885640ede48f}
+
+\begin{DoxyCompactList}\small\item\em The destructor. \item\end{DoxyCompactList}\item 
+{\bf DifTrigger} \& {\bf setTriggerCounter} (int triggercounter)\label{classCALICE_1_1DifTrigger_abed77f4943569ab3e5e1abf1280f7fe5}
+
+\begin{DoxyCompactList}\small\item\em Set the trigger counter. \item\end{DoxyCompactList}\item 
+int {\bf getTriggerCounter} () const \label{classCALICE_1_1DifTrigger_a1a369c606a8c7a935c10f154b8d8f967}
+
+\begin{DoxyCompactList}\small\item\em Get the trigger counter. \item\end{DoxyCompactList}\item 
+std::ostream \& {\bf print} (std::ostream \&ostrm)\label{classCALICE_1_1DifTrigger_aa029e99b0d09472495e640a1a10bcf27}
+
+\begin{DoxyCompactList}\small\item\em Convenient print method. \item\end{DoxyCompactList}\item 
+const std::string {\bfseries getTypeName} () const \label{classCALICE_1_1DifTrigger_abdf381d1c077acd671f35d18d69a7b1a}
+
+\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1DifTrigger_a24d4a28eb189d634f917db3152340d5a}
+
+\begin{DoxyCompactList}\small\item\em Return a brief description of the data members. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Simple class which stores the trigger counter retrieved from the DIF cards. \begin{DoxyAuthor}{Author}
+R. Pöschl (LAL Orsay) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Dec 2010 
+\end{DoxyDate}
+
+
+Definition at line 24 of file DifTrigger.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CALICE::DifTrigger@{CALICE::DifTrigger}!DifTrigger@{DifTrigger}}
+\index{DifTrigger@{DifTrigger}!CALICE::DifTrigger@{CALICE::DifTrigger}}
+\subsubsection[{DifTrigger}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::DifTrigger::DifTrigger (LCObject $\ast$ {\em obj})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1DifTrigger_a7edb32f4d6666697091f3c844f253da2}
+
+
+'Copy constructor' needed to interpret LCCollection read from file/database. 
+
+Definition at line 33 of file DifTrigger.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+DifTrigger.hh\item 
+DifTrigger.cc\end{DoxyCompactItemize}

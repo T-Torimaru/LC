@@ -1,0 +1,146 @@
+\section{CALICE::Ahc2Calibrations Class Reference}
+\label{classCALICE_1_1Ahc2Calibrations}\index{CALICE::Ahc2Calibrations@{CALICE::Ahc2Calibrations}}
+
+
+storing all informations necessary to calibrate a HBU SiPM read channel  
+
+
+{\ttfamily \#include $<$Ahc2Calibrations.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Ahc2Calibrations} ({\bf LinearFitCompound} $\ast$MIP, {\bf LinearFitCompound} $\ast$gain, {\bf SimpleValue} $\ast$pedestal, {\bf SimpleValue} $\ast$interCalibration, {\bf SimpleValue} $\ast$interCalibrationPhysicsCalib, {\bf SimpleValue} $\ast$temperature, {\bf SaturationParameters} $\ast$saturation, {\bf SimpleValueVector} $\ast$timeSlopesCalibration, {\bf SimpleValueVector} $\ast$timePedestalCalibration, const int status, const int cellID, const std::string \&cellIDEncoding)\label{classCALICE_1_1Ahc2Calibrations_ad60d53f4b2f81bfb0cc8258a57039038}
+
+\item 
+{\bf LinearFitCompound} $\ast$ {\bfseries getMIP} () const \label{classCALICE_1_1Ahc2Calibrations_a8fdd3c513f5bb8ff484ece6173dbf3fe}
+
+\item 
+{\bf LinearFitCompound} $\ast$ {\bfseries getGain} () const \label{classCALICE_1_1Ahc2Calibrations_ab4a252f2e7589fd8429a65774181ecb3}
+
+\item 
+{\bf SimpleValue} $\ast$ {\bfseries getPedestal} () const \label{classCALICE_1_1Ahc2Calibrations_ae1c09b266458a55af0f854cbd714231c}
+
+\item 
+{\bf SimpleValue} $\ast$ {\bfseries getInterCalibration} () const \label{classCALICE_1_1Ahc2Calibrations_a8edc2b5e2d253116996be42c6c7cd90c}
+
+\item 
+{\bf SimpleValue} $\ast$ {\bfseries getPhysicsCalibIC} () const \label{classCALICE_1_1Ahc2Calibrations_abc1a937aac4a27234ac474901a847624}
+
+\item 
+{\bf SimpleValue} $\ast$ {\bfseries getTemperature} () const \label{classCALICE_1_1Ahc2Calibrations_a0169760750c84e6341f5293e8347cf75}
+
+\item 
+{\bf SaturationParameters} $\ast$ {\bfseries getSaturation} () const \label{classCALICE_1_1Ahc2Calibrations_acfbbab2fcfc1353175bf2196512122a5}
+
+\item 
+{\bf SimpleValueVector} $\ast$ {\bfseries getTimeSlopes} () const \label{classCALICE_1_1Ahc2Calibrations_a2d565ca0cdc228535d932845c2e25bc5}
+
+\item 
+{\bf SimpleValueVector} $\ast$ {\bfseries getTimePedestal} () const \label{classCALICE_1_1Ahc2Calibrations_a3c95865d6b09e0047a2fa36d98327a73}
+
+\item 
+int {\bfseries getStatus} () const \label{classCALICE_1_1Ahc2Calibrations_abd138930b5b67cda32960a1e5805369f}
+
+\item 
+int {\bfseries getCellID} () const \label{classCALICE_1_1Ahc2Calibrations_a863df224a883b4075531d5718a309959}
+
+\item 
+const std::string \& {\bfseries getCellIDEncoding} () const \label{classCALICE_1_1Ahc2Calibrations_a912aefba37f34f874a3c05ae029d9f10}
+
+\item 
+void {\bfseries setMIP} ({\bf LinearFitCompound} $\ast$MIP)\label{classCALICE_1_1Ahc2Calibrations_a579397bf370b64b210647a449fece2cb}
+
+\item 
+void {\bfseries setGain} ({\bf LinearFitCompound} $\ast$gain)\label{classCALICE_1_1Ahc2Calibrations_ab6cad8fd192851c21edbbd6aa1814f68}
+
+\item 
+void {\bfseries setPedestal} ({\bf SimpleValue} $\ast$pedestal)\label{classCALICE_1_1Ahc2Calibrations_a8b2e58c97f7e5b5a25fd07d66333d95d}
+
+\item 
+void {\bfseries setInterCalibration} ({\bf SimpleValue} $\ast$interCalibration)\label{classCALICE_1_1Ahc2Calibrations_a7a5db8ef5f4c3f2aab84889b54c15852}
+
+\item 
+void {\bfseries setPhysicsCalibIC} ({\bf SimpleValue} $\ast$interCalibrationPhysicsCalib)\label{classCALICE_1_1Ahc2Calibrations_ac83d32c7dac04831bd8890c357e2e49c}
+
+\item 
+void {\bfseries setTemperature} ({\bf SimpleValue} $\ast$temperature)\label{classCALICE_1_1Ahc2Calibrations_ae1409d9eb74bc38bbce60f13231df61d}
+
+\item 
+void {\bfseries setSaturation} ({\bf SaturationParameters} $\ast$param)\label{classCALICE_1_1Ahc2Calibrations_acd5284f9adbcd950fe3caa9244495a34}
+
+\item 
+void {\bfseries setTimeSlopes} ({\bf SimpleValueVector} $\ast$timeSlopes)\label{classCALICE_1_1Ahc2Calibrations_a673f9d436e10789805e539773b5a4887}
+
+\item 
+void {\bfseries setTimePedestal} ({\bf SimpleValueVector} $\ast$timePedestal)\label{classCALICE_1_1Ahc2Calibrations_ac078790dda2218d2db7b7a7417167883}
+
+\item 
+void {\bfseries setStatus} (const int status)\label{classCALICE_1_1Ahc2Calibrations_ad5435a2ccdfa548e16c8c7a6dbdacb77}
+
+\item 
+void {\bfseries setCellID} (const int cellID)\label{classCALICE_1_1Ahc2Calibrations_a34bbc74589d8a3e41719c5ce3cff3a38}
+
+\item 
+void {\bfseries setCellIDEncoding} (const std::string \&encoding)\label{classCALICE_1_1Ahc2Calibrations_a09ce017f8db987840a98331781425d68}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf LinearFitCompound} $\ast$ {\bfseries \_\-gain}\label{classCALICE_1_1Ahc2Calibrations_a03eefbf76823ac538ac161116c721094}
+
+\item 
+{\bf LinearFitCompound} $\ast$ {\bfseries \_\-MIP}\label{classCALICE_1_1Ahc2Calibrations_a62f955858c113f4d74839b775431573f}
+
+\item 
+{\bf SimpleValue} $\ast$ {\bfseries \_\-pedestal}\label{classCALICE_1_1Ahc2Calibrations_a4efe9ef32165ddb8b060e1cea599662c}
+
+\item 
+{\bf SimpleValue} $\ast$ {\bfseries \_\-interCalibration}\label{classCALICE_1_1Ahc2Calibrations_ae4efcf3a0b9a4f68a0b0bec543f1127f}
+
+\item 
+{\bf SimpleValue} $\ast$ {\bfseries \_\-interCalibrationPhysicsCalib}\label{classCALICE_1_1Ahc2Calibrations_a857c20a5260ad72e67fd331b714e95e5}
+
+\item 
+{\bf SimpleValue} $\ast$ {\bfseries \_\-temperature}\label{classCALICE_1_1Ahc2Calibrations_aa3af368bb355aedaa207832852ebf38a}
+
+\item 
+{\bf SaturationParameters} $\ast$ {\bfseries \_\-saturation}\label{classCALICE_1_1Ahc2Calibrations_af91d92efebefb744991268c919b2f8c6}
+
+\item 
+{\bf SimpleValueVector} $\ast$ {\bfseries \_\-timeSlopesCalibration}\label{classCALICE_1_1Ahc2Calibrations_a07e277795a54bda83dd8b3d866b7bdf7}
+
+\item 
+{\bf SimpleValueVector} $\ast$ {\bfseries \_\-timePedestalCalibration}\label{classCALICE_1_1Ahc2Calibrations_af5d78742591d17ef4f92c5364b5764d0}
+
+\item 
+int {\bfseries \_\-status}\label{classCALICE_1_1Ahc2Calibrations_a92a7eab19aa5cc8bebdfdcd4989f17b3}
+
+\item 
+int {\bfseries \_\-cellID}\label{classCALICE_1_1Ahc2Calibrations_a444c186f7f53950fb4a17759adc2fc87}
+
+\item 
+std::string {\bfseries \_\-cellIDEncoding}\label{classCALICE_1_1Ahc2Calibrations_a37a85e6102734162295d0e187ea19ff5}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+storing all informations necessary to calibrate a HBU SiPM read channel This class is meant as central holder of all necessary informations to calibrate a HBU SiPM. Currently, following informations are stored: \begin{DoxyItemize}
+\item {\ttfamily MIP} calibration in form of a {\bfseries \doxyref{LinearFitResult}{p.}{classCALICE_1_1LinearFitResult}} \item {\ttfamily gain} calibration in form of a {\bfseries \doxyref{LinearFitResult}{p.}{classCALICE_1_1LinearFitResult}} \item {\ttfamily pedestal} calibration in form of a {\bfseries \doxyref{SimpleValue}{p.}{classCALICE_1_1SimpleValue}} \item {\ttfamily temperature} calibration in form of a {\bfseries \doxyref{SimpleValue}{p.}{classCALICE_1_1SimpleValue}} \item {\ttfamily inter} {\ttfamily calibration} in form of a {\bfseries \doxyref{SimpleValue}{p.}{classCALICE_1_1SimpleValue}} \item {\ttfamily inter} {\ttfamily calibration} Physics Calib in form of a {\bfseries \doxyref{SimpleValue}{p.}{classCALICE_1_1SimpleValue}} \item {\ttfamily saturation} {\ttfamily parameters} {\ttfamily in} form of a {\bfseries \doxyref{SaturationParameters}{p.}{classCALICE_1_1SaturationParameters}} \item {\ttfamily time} slopes {\ttfamily parameters} {\ttfamily in} form of a {\bfseries \doxyref{SimpleValueVector}{p.}{classCALICE_1_1SimpleValueVector}} \item {\ttfamily time} pedestal {\ttfamily parameters} {\ttfamily in} form of a {\bfseries \doxyref{SimpleValueVector}{p.}{classCALICE_1_1SimpleValueVector}} \item {\ttfamily status} in form of an {\bfseries integer} \end{DoxyItemize}
+\begin{DoxyAuthor}{Author}
+{\tt Shaojun.lu@desy.de} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+Feburary 2013 
+\end{DoxyDate}
+
+
+Definition at line 33 of file Ahc2Calibrations.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+Ahc2Calibrations.hh\item 
+Ahc2Calibrations.cc\end{DoxyCompactItemize}

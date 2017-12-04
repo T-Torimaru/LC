@@ -1,0 +1,435 @@
+\section{CALICE::CellParameter Class Reference}
+\label{classCALICE_1_1CellParameter}\index{CALICE::CellParameter@{CALICE::CellParameter}}
+
+
+Information about a pad: Pedestal, noise, etc.  
+
+
+{\ttfamily \#include $<$CellParameter.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CellParameter} (LCObject $\ast$obj)\label{classCALICE_1_1CellParameter_a3dbf58dc25acfd28b79bde1793d97cbe}
+
+\begin{DoxyCompactList}\small\item\em 'Copy constructor' needed to interpret LCCollection read from file/database. \item\end{DoxyCompactList}\item 
+void {\bf resetSums} ()
+\begin{DoxyCompactList}\small\item\em Reset the sums which are used to calculate the pedestals and the noise. \item\end{DoxyCompactList}\item 
+void {\bfseries resetSaturationCounter} ()\label{classCALICE_1_1CellParameter_a899306ee8d7c50c7b4f674826384088f}
+
+\item 
+void {\bfseries resetHitCounter} ()\label{classCALICE_1_1CellParameter_a96068c40f7efdc6f8065998405f00ca3}
+
+\item 
+void {\bfseries resetAll} ()\label{classCALICE_1_1CellParameter_ac296a0d601c33323999152ee709a1abf}
+
+\item 
+void {\bf setSum} (Float\_\-t a\_\-sum)
+\begin{DoxyCompactList}\small\item\em Set the sum of the adc values (used to calculate the pedestal). \item\end{DoxyCompactList}\item 
+Float\_\-t {\bf getSum} () const 
+\begin{DoxyCompactList}\small\item\em Get the sum of the adc values (used to calculate the pedestal). \item\end{DoxyCompactList}\item 
+void {\bf setSum2} (Float\_\-t a\_\-sum2)
+\begin{DoxyCompactList}\small\item\em Set the sum of the adc values squared (used to calculate the noise). \item\end{DoxyCompactList}\item 
+Float\_\-t {\bf getSum2} () const 
+\begin{DoxyCompactList}\small\item\em Get the sum of the adc values squared (used to calculate the noise). \item\end{DoxyCompactList}\item 
+void {\bf setNValues} (UInt\_\-t n\_\-values)\label{classCALICE_1_1CellParameter_acd7683bda27b9dc1a3b9bf9dd67fdc69}
+
+\begin{DoxyCompactList}\small\item\em Set the number of values added to the sums. \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bf getNValues} () const \label{classCALICE_1_1CellParameter_a9d83d4f709324d0bbdd464c54aa1a39c}
+
+\begin{DoxyCompactList}\small\item\em Get the number of values added to the sums. \item\end{DoxyCompactList}\item 
+void {\bf setPedestal} (Float\_\-t a\_\-pedestal)\label{classCALICE_1_1CellParameter_af3c9c24f740b0822c4b996a363507cf5}
+
+\begin{DoxyCompactList}\small\item\em Set the pedestal. \item\end{DoxyCompactList}\item 
+Float\_\-t {\bf getPedestal} () const 
+\begin{DoxyCompactList}\small\item\em Get the pedestal. \item\end{DoxyCompactList}\item 
+void {\bf setOldPedestal} (Float\_\-t an\_\-old\_\-pedestal)
+\begin{DoxyCompactList}\small\item\em Set the old pedestal. \item\end{DoxyCompactList}\item 
+Float\_\-t {\bf getOldPedestal} () const 
+\begin{DoxyCompactList}\small\item\em Get the old pedestal The result is undefined before the pedestals and the noise have been adjusted or calculated. \item\end{DoxyCompactList}\item 
+void {\bf setNoise} (Float\_\-t a\_\-noise)\label{classCALICE_1_1CellParameter_a4ecc22743f2049d0558d6d625038907d}
+
+\begin{DoxyCompactList}\small\item\em Set the noise. \item\end{DoxyCompactList}\item 
+Float\_\-t {\bf getNoise} () const 
+\begin{DoxyCompactList}\small\item\em Get the noise. \item\end{DoxyCompactList}\item 
+void {\bf setOldNoise} (Float\_\-t an\_\-old\_\-noise)
+\begin{DoxyCompactList}\small\item\em Set the old noise. \item\end{DoxyCompactList}\item 
+Float\_\-t {\bf getOldNoise} () const 
+\begin{DoxyCompactList}\small\item\em Get the old noise. \item\end{DoxyCompactList}\item 
+void {\bf setMaxValue} (Float\_\-t a\_\-max\_\-value)
+\begin{DoxyCompactList}\small\item\em set the maximum value for a cell ({\bfseries shares storage with pedestal}). \item\end{DoxyCompactList}\item 
+Float\_\-t {\bf getMaxValue} () const \label{classCALICE_1_1CellParameter_af1a12f740874cc83f5e35ba5d8d0eefd}
+
+\begin{DoxyCompactList}\small\item\em get the maximum value of a cell (shares storage with pedestal) This function only returns the expected result before pedestals/noise are calculated. \item\end{DoxyCompactList}\item 
+void {\bf add} (Float\_\-t adc)
+\begin{DoxyCompactList}\small\item\em Build sums used to calculate pedestals and noise. \item\end{DoxyCompactList}\item 
+void {\bf sub} (Float\_\-t adc)
+\begin{DoxyCompactList}\small\item\em Subtract a previously added adc value from the sums to return to the prior condition. \item\end{DoxyCompactList}\item 
+void {\bf calculate} ()\label{classCALICE_1_1CellParameter_a0548e12eab1fdba4da79dee09bc18aee}
+
+\begin{DoxyCompactList}\small\item\em Caluclate the pedestal and the noise from the sums. \item\end{DoxyCompactList}\item 
+void {\bf adjustPedestalNoise} (Float\_\-t adc, UInt\_\-t keep\_\-n\_\-minus\_\-one)
+\begin{DoxyCompactList}\small\item\em Adjust the pedestal and the noise using the new ADC value. \item\end{DoxyCompactList}\item 
+Bool\_\-t {\bf isDead} () const \label{classCALICE_1_1CellParameter_ab1ae07641b9b6d188cfc8aa7b6641e0a}
+
+\begin{DoxyCompactList}\small\item\em Return kTRUE if the pad is considered to be dead. \item\end{DoxyCompactList}\item 
+void {\bf setDead} (Bool\_\-t is\_\-dead=true)
+\begin{DoxyCompactList}\small\item\em Declare the pad to be dead (or revive pad (is\_\-dead=kFALSE). \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bf getSaturationCounter} () const 
+\begin{DoxyCompactList}\small\item\em Get the value of the saturation counter. \item\end{DoxyCompactList}\item 
+void {\bf incrementSaturationCounter} ()
+\begin{DoxyCompactList}\small\item\em Increment the saturation counter. \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bf getNHits} () const 
+\begin{DoxyCompactList}\small\item\em Get the number of hits. \item\end{DoxyCompactList}\item 
+void {\bf incrementNHits} ()
+\begin{DoxyCompactList}\small\item\em Increment the hit counter. \item\end{DoxyCompactList}\item 
+Float\_\-t {\bf getNHitsFloat} () const 
+\begin{DoxyCompactList}\small\item\em Function which returns the number of hits converted into a float. \item\end{DoxyCompactList}\item 
+void {\bf initADCMemory} ()
+\begin{DoxyCompactList}\small\item\em Initialse the array which memorises the last pedestal subtracted values. \item\end{DoxyCompactList}\item 
+void {\bf setADCMemoryValue} (UInt\_\-t memory\_\-cell\_\-i, Float\_\-t an\_\-adc\_\-value)\label{classCALICE_1_1CellParameter_a2150862e4495b17184abcad51b85d67d}
+
+\begin{DoxyCompactList}\small\item\em Memorise an ADC value in the given cell. \item\end{DoxyCompactList}\item 
+Float\_\-t {\bf getADCMemoryValue} (UInt\_\-t memory\_\-cell\_\-i) const \label{classCALICE_1_1CellParameter_a64123c38f4b0fb4e0c519d2c144d89db}
+
+\begin{DoxyCompactList}\small\item\em Get a memorised ADC value from the given cell. \item\end{DoxyCompactList}\item 
+void {\bf setADCMemoryWritePos} (UInt\_\-t memory\_\-cell\_\-i)\label{classCALICE_1_1CellParameter_a6d667e7086d288b9797ea58407ab6eba}
+
+\begin{DoxyCompactList}\small\item\em Set the current ADC memory cell. \item\end{DoxyCompactList}\item 
+void {\bfseries setNextADCMemory} ()\label{classCALICE_1_1CellParameter_acd3539f67f1b47ebdd719e0393788b94}
+
+\item 
+Float\_\-t {\bf getADCMemoryValue} () const \label{classCALICE_1_1CellParameter_a6d46c4d193e8d3bda70f0f6f8a350ef9}
+
+\begin{DoxyCompactList}\small\item\em Get a memorised ADC value. \item\end{DoxyCompactList}\item 
+void {\bf setADCMemoryValue} (Float\_\-t pedestal\_\-subtracted\_\-value)
+\begin{DoxyCompactList}\small\item\em Memorise an ADC value. \item\end{DoxyCompactList}\item 
+Float\_\-t {\bf getMeanADCValue} (Float\_\-t pedestal\_\-subtracted\_\-value)
+\begin{DoxyCompactList}\small\item\em Get the mean value of a group of pedestal subtracted ADC values (the maximum is removed). \item\end{DoxyCompactList}\item 
+void {\bf shiftPedestal} (Float\_\-t shift)
+\begin{DoxyCompactList}\small\item\em Shift the current and the old pedestal by this value. \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bf getNPedestalChanges} () const 
+\begin{DoxyCompactList}\small\item\em Get the value of the pedestal change counter. \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1CellParameter_add6643930ab5dcb3ff15c8a0aeeb65a4}
+
+\begin{DoxyCompactList}\small\item\em Return the type of the class. \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1CellParameter_a510675057c37ce93c7f992257c9cc8bb}
+
+\begin{DoxyCompactList}\small\item\em Return a brief description of the data members. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf setSaturationCounter} (UInt\_\-t saturation)
+\begin{DoxyCompactList}\small\item\em Set the value of the saturation counter. \item\end{DoxyCompactList}\item 
+void {\bf setNHits} (UInt\_\-t n\_\-hits)
+\begin{DoxyCompactList}\small\item\em Set the value of the hit counter. \item\end{DoxyCompactList}\item 
+void {\bf setNPedestalChanges} (UInt\_\-t n\_\-pedestal\_\-changes)
+\begin{DoxyCompactList}\small\item\em Set the value of the pedestal change counter. \item\end{DoxyCompactList}\item 
+void {\bf incrementNPedestalChanges} ()
+\begin{DoxyCompactList}\small\item\em Increment the pedestal change counter. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Information about a pad: Pedestal, noise, etc. This class hold the pedestal, the noise, the number of accumulated hits, a saturation counter and a flag which indicates whether the pad is considered to be dead. 
+
+Definition at line 70 of file CellParameter.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::CellParameter@{CALICE::CellParameter}!add@{add}}
+\index{add@{add}!CALICE::CellParameter@{CALICE::CellParameter}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CellParameter::add (Float\_\-t {\em adc})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CellParameter_a199f221d2988995dedbb75b9be43e9ab}
+
+
+Build sums used to calculate pedestals and noise. The storage for the old pedestals and noise is abused to store the sums \begin{DoxySeeAlso}{See also}
+\doxyref{CellParameter::sub}{p.}{classCALICE_1_1CellParameter_a09cb9e322c9b22d1591244eaa1ded505} 
+\end{DoxySeeAlso}
+
+
+Definition at line 190 of file CellParameter.hh.
+
+Referenced by CALICE::SimpleHitSearch::accumulateEventsForInitialPedestalNoiseCalculation(), CALICE::SimpleHitSearch::accumulateEventsForPedestalNoiseCalculationWithHitRejection(), and CALICE::SimpleHitSearch::accumulateEventsForPedestalNoiseCalculationWithHitRejectionAndPedestalShiftDetection().\index{CALICE::CellParameter@{CALICE::CellParameter}!adjustPedestalNoise@{adjustPedestalNoise}}
+\index{adjustPedestalNoise@{adjustPedestalNoise}!CALICE::CellParameter@{CALICE::CellParameter}}
+\subsubsection[{adjustPedestalNoise}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CellParameter::adjustPedestalNoise (Float\_\-t {\em adc}, \/  UInt\_\-t {\em keep\_\-n\_\-minus\_\-one})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CellParameter_a15bfbaa4918ac7d9aaf841c0483a8a19}
+
+
+Adjust the pedestal and the noise using the new ADC value. 
+\begin{DoxyParams}{Parameters}
+\item[{\em adc}]the new ADC value \item[{\em keep\_\-n\_\-minus\_\-one}]the current pedestal and noise are given a weight of this value + 1 and the new ADC value get the weight 1\end{DoxyParams}
+The current pedestal and the current noise are memorised (\doxyref{getPedestal}{p.}{classCALICE_1_1CellParameter_a3223608e5f680b674e7181b5c4495935} and \doxyref{getNoise}{p.}{classCALICE_1_1CellParameter_a58d1f99e4ef0452b94fef27d5de1cc1e}) and then they are updated. 
+
+Definition at line 230 of file CellParameter.hh.
+
+References getNoise(), getPedestal(), setNoise(), setOldNoise(), setOldPedestal(), and setPedestal().
+
+Referenced by CALICE::SimpleHitSearch::searchHitsAndAdjustPedestalsAndNoise().\index{CALICE::CellParameter@{CALICE::CellParameter}!getMeanADCValue@{getMeanADCValue}}
+\index{getMeanADCValue@{getMeanADCValue}!CALICE::CellParameter@{CALICE::CellParameter}}
+\subsubsection[{getMeanADCValue}]{\setlength{\rightskip}{0pt plus 5cm}Float\_\-t CALICE::CellParameter::getMeanADCValue (Float\_\-t {\em pedestal\_\-subtracted\_\-value})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CellParameter_a70a20f2d63910738f6d725fd5db83d4f}
+
+
+Get the mean value of a group of pedestal subtracted ADC values (the maximum is removed). The mean value is used to track jumps in the pedestal. If the jump is larger than a certain threshold the pedestal is considered to have changed. 
+
+Definition at line 387 of file CellParameter.hh.
+
+References getADCMemoryValue(), and setADCMemoryValue().
+
+Referenced by CALICE::SimpleHitSearch::accumulateEventsForPedestalNoiseCalculationWithHitRejectionAndPedestalShiftDetection().\index{CALICE::CellParameter@{CALICE::CellParameter}!getNHits@{getNHits}}
+\index{getNHits@{getNHits}!CALICE::CellParameter@{CALICE::CellParameter}}
+\subsubsection[{getNHits}]{\setlength{\rightskip}{0pt plus 5cm}UInt\_\-t CALICE::CellParameter::getNHits () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CellParameter_aaeb9e38b31539b337be9e7b0522005ef}
+
+
+Get the number of hits. The hit counter is increased when ever the pedestal subtracted ADC value is above a signal or signal-\/to-\/noise threshold. 
+
+Definition at line 291 of file CellParameter.hh.
+
+Referenced by getNHitsFloat(), and incrementNHits().\index{CALICE::CellParameter@{CALICE::CellParameter}!getNHitsFloat@{getNHitsFloat}}
+\index{getNHitsFloat@{getNHitsFloat}!CALICE::CellParameter@{CALICE::CellParameter}}
+\subsubsection[{getNHitsFloat}]{\setlength{\rightskip}{0pt plus 5cm}Float\_\-t CALICE::CellParameter::getNHitsFloat () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CellParameter_a32aaee7ca8e819dae916272e109171f5}
+
+
+Function which returns the number of hits converted into a float. This function can be used together with getNoise and getPedestal in a generic way (e.g. typedef Float\_\-t \doxyref{CellParameter}{p.}{classCALICE_1_1CellParameter}::$\ast$GetFloatFunc\_\-t();) 
+
+Definition at line 302 of file CellParameter.hh.
+
+References getNHits().\index{CALICE::CellParameter@{CALICE::CellParameter}!getNoise@{getNoise}}
+\index{getNoise@{getNoise}!CALICE::CellParameter@{CALICE::CellParameter}}
+\subsubsection[{getNoise}]{\setlength{\rightskip}{0pt plus 5cm}Float\_\-t CALICE::CellParameter::getNoise () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CellParameter_a58d1f99e4ef0452b94fef27d5de1cc1e}
+
+
+Get the noise. The result is undefined before the pedestals and the noise are calculated. 
+
+Definition at line 153 of file CellParameter.hh.
+
+Referenced by CALICE::SimpleHitSearch::accumulateEventsForPedestalNoiseCalculationWithHitRejection(), CALICE::SimpleHitSearch::accumulateEventsForPedestalNoiseCalculationWithHitRejectionAndPedestalShiftDetection(), adjustPedestalNoise(), CALICE::SimpleHitSearch::calculatePedestalNoiseAndDeclareCellsDead(), CALICE::PedestalNoiseHistograms::processEvent(), CALICE::AverageHistoryGraphs::processEvent(), CALICE::SimpleHitSearch::searchHits(), CALICE::SimpleHitSearch::searchHitsAndAdjustPedestalsAndNoise(), and CALICE::SimpleHitSearch::showNoiseStat().\index{CALICE::CellParameter@{CALICE::CellParameter}!getNPedestalChanges@{getNPedestalChanges}}
+\index{getNPedestalChanges@{getNPedestalChanges}!CALICE::CellParameter@{CALICE::CellParameter}}
+\subsubsection[{getNPedestalChanges}]{\setlength{\rightskip}{0pt plus 5cm}UInt\_\-t CALICE::CellParameter::getNPedestalChanges () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CellParameter_a8f6f313321e39c27dc7f09899aa6e948}
+
+
+Get the value of the pedestal change counter. The PedestalChange counter is increased when ever the ADC value is outside of a certain range 
+
+Definition at line 425 of file CellParameter.hh.
+
+Referenced by incrementNPedestalChanges().\index{CALICE::CellParameter@{CALICE::CellParameter}!getOldNoise@{getOldNoise}}
+\index{getOldNoise@{getOldNoise}!CALICE::CellParameter@{CALICE::CellParameter}}
+\subsubsection[{getOldNoise}]{\setlength{\rightskip}{0pt plus 5cm}Float\_\-t CALICE::CellParameter::getOldNoise () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CellParameter_a3bfb3c568c64aee79f779c649b941dc7}
+
+
+Get the old noise. The result is undefined before the pedestals and the noise have been adjusted or calculated. In the latter case the old and the \char`\"{}new\char`\"{} noise are the same. 
+
+Definition at line 164 of file CellParameter.hh.
+
+Referenced by CALICE::SimpleHitSearch::searchHitsAndAdjustPedestalsAndNoise(), and CALICE::SimpleHitSearch::showCurrentNoiseStat().\index{CALICE::CellParameter@{CALICE::CellParameter}!getOldPedestal@{getOldPedestal}}
+\index{getOldPedestal@{getOldPedestal}!CALICE::CellParameter@{CALICE::CellParameter}}
+\subsubsection[{getOldPedestal}]{\setlength{\rightskip}{0pt plus 5cm}Float\_\-t CALICE::CellParameter::getOldPedestal () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CellParameter_ac159d4054fd122bfb2fb6c6730110126}
+
+
+Get the old pedestal The result is undefined before the pedestals and the noise have been adjusted or calculated. In the latter case the old and the \char`\"{}new\char`\"{} pedestals are the same. 
+
+Definition at line 143 of file CellParameter.hh.
+
+Referenced by CALICE::SimpleHitSearch::searchHitsAndAdjustPedestalsAndNoise(), shiftPedestal(), and CALICE::SimpleHitSearch::showCurrentNoiseStat().\index{CALICE::CellParameter@{CALICE::CellParameter}!getPedestal@{getPedestal}}
+\index{getPedestal@{getPedestal}!CALICE::CellParameter@{CALICE::CellParameter}}
+\subsubsection[{getPedestal}]{\setlength{\rightskip}{0pt plus 5cm}Float\_\-t CALICE::CellParameter::getPedestal () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CellParameter_a3223608e5f680b674e7181b5c4495935}
+
+
+Get the pedestal. The result is undefined before the pedestals and the noise are calculated. 
+
+Definition at line 131 of file CellParameter.hh.
+
+Referenced by CALICE::SimpleHitSearch::accumulateEventsForPedestalNoiseCalculationWithHitRejection(), CALICE::SimpleHitSearch::accumulateEventsForPedestalNoiseCalculationWithHitRejectionAndPedestalShiftDetection(), adjustPedestalNoise(), CALICE::SimpleHitSearch::calculatePedestalNoiseAndDeclareCellsDead(), initADCMemory(), CALICE::PedestalNoiseHistograms::processEvent(), CALICE::AverageHistoryGraphs::processEvent(), CALICE::SimpleHitSearch::searchHits(), CALICE::SimpleHitSearch::searchHitsAndAdjustPedestalsAndNoise(), shiftPedestal(), and CALICE::SimpleHitSearch::showNoiseStat().\index{CALICE::CellParameter@{CALICE::CellParameter}!getSaturationCounter@{getSaturationCounter}}
+\index{getSaturationCounter@{getSaturationCounter}!CALICE::CellParameter@{CALICE::CellParameter}}
+\subsubsection[{getSaturationCounter}]{\setlength{\rightskip}{0pt plus 5cm}UInt\_\-t CALICE::CellParameter::getSaturationCounter () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CellParameter_ae4ef4a080c6400a667dd37dd7ce853fd}
+
+
+Get the value of the saturation counter. The saturation counter is increased when ever the ADC value is outside of a certain range. The saturation counter is used to mark cells as dead. Thus, it must not be incremented if a cell is dead. 
+
+Definition at line 274 of file CellParameter.hh.
+
+Referenced by CALICE::SimpleHitSearch::calculatePedestalNoiseAndDeclareCellsDead(), incrementSaturationCounter(), and isDead().\index{CALICE::CellParameter@{CALICE::CellParameter}!getSum@{getSum}}
+\index{getSum@{getSum}!CALICE::CellParameter@{CALICE::CellParameter}}
+\subsubsection[{getSum}]{\setlength{\rightskip}{0pt plus 5cm}Float\_\-t CALICE::CellParameter::getSum () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CellParameter_afa7c61c8a0fd6f4b93d5113c2ee30285}
+
+
+Get the sum of the adc values (used to calculate the pedestal). The result is undefined after the noise and the pedestals have been calculated. 
+
+Definition at line 101 of file CellParameter.hh.
+
+Referenced by calculate().\index{CALICE::CellParameter@{CALICE::CellParameter}!getSum2@{getSum2}}
+\index{getSum2@{getSum2}!CALICE::CellParameter@{CALICE::CellParameter}}
+\subsubsection[{getSum2}]{\setlength{\rightskip}{0pt plus 5cm}Float\_\-t CALICE::CellParameter::getSum2 () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CellParameter_ac509a47a088106a0fbd2fc2fc17dcca0}
+
+
+Get the sum of the adc values squared (used to calculate the noise). The result is undefined after the noise and the pedestals have been calculated. 
+
+Definition at line 112 of file CellParameter.hh.
+
+Referenced by calculate().\index{CALICE::CellParameter@{CALICE::CellParameter}!incrementNHits@{incrementNHits}}
+\index{incrementNHits@{incrementNHits}!CALICE::CellParameter@{CALICE::CellParameter}}
+\subsubsection[{incrementNHits}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CellParameter::incrementNHits ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CellParameter_ab44ebb0a1c9e33f0fd4dcf7796b6c3de}
+
+
+Increment the hit counter. The hit counter is increased when ever the ADC value is outside of a certain range 
+
+Definition at line 296 of file CellParameter.hh.
+
+References getNHits(), and setNHits().
+
+Referenced by CALICE::SimpleHitSearch::searchHits(), and CALICE::SimpleHitSearch::searchHitsAndAdjustPedestalsAndNoise().\index{CALICE::CellParameter@{CALICE::CellParameter}!incrementNPedestalChanges@{incrementNPedestalChanges}}
+\index{incrementNPedestalChanges@{incrementNPedestalChanges}!CALICE::CellParameter@{CALICE::CellParameter}}
+\subsubsection[{incrementNPedestalChanges}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CellParameter::incrementNPedestalChanges ()\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classCALICE_1_1CellParameter_a6c7c08f561c2581f43be8003f2a0312b}
+
+
+Increment the pedestal change counter. The PedestalChange counter is increased when ever the ADC value is outside of a certain range 
+
+Definition at line 431 of file CellParameter.hh.
+
+References getNPedestalChanges(), and setNPedestalChanges().
+
+Referenced by shiftPedestal().\index{CALICE::CellParameter@{CALICE::CellParameter}!incrementSaturationCounter@{incrementSaturationCounter}}
+\index{incrementSaturationCounter@{incrementSaturationCounter}!CALICE::CellParameter@{CALICE::CellParameter}}
+\subsubsection[{incrementSaturationCounter}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CellParameter::incrementSaturationCounter ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CellParameter_a79423a46a99deb6623624f7974f414b1}
+
+
+Increment the saturation counter. The saturation counter is increased when ever the ADC value is outside of a certain range 
+
+Definition at line 279 of file CellParameter.hh.
+
+References getSaturationCounter(), and setSaturationCounter().
+
+Referenced by CALICE::SimpleHitSearch::accumulateEventsForInitialPedestalNoiseCalculation(), CALICE::SimpleHitSearch::accumulateEventsForPedestalNoiseCalculationWithHitRejection(), CALICE::SimpleHitSearch::accumulateEventsForPedestalNoiseCalculationWithHitRejectionAndPedestalShiftDetection(), CALICE::SimpleHitSearch::searchHits(), and CALICE::SimpleHitSearch::searchHitsAndAdjustPedestalsAndNoise().\index{CALICE::CellParameter@{CALICE::CellParameter}!initADCMemory@{initADCMemory}}
+\index{initADCMemory@{initADCMemory}!CALICE::CellParameter@{CALICE::CellParameter}}
+\subsubsection[{initADCMemory}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CellParameter::initADCMemory ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CellParameter_ad5b4b06d0eb86e98c21d9119fc3a8d30}
+
+
+Initialse the array which memorises the last pedestal subtracted values. \begin{Desc}
+\item[{\bf Todo}]initialsie with pedestal or zero? \end{Desc}
+
+
+Definition at line 308 of file CellParameter.hh.
+
+References getPedestal(), and setADCMemoryValue().\index{CALICE::CellParameter@{CALICE::CellParameter}!resetSums@{resetSums}}
+\index{resetSums@{resetSums}!CALICE::CellParameter@{CALICE::CellParameter}}
+\subsubsection[{resetSums}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CellParameter::resetSums ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CellParameter_a6a81bd8e46ad7e4fb8df9847ca4397a5}
+
+
+Reset the sums which are used to calculate the pedestals and the noise. This function should be called before ADC values are accumulated and added with \doxyref{add}{p.}{classCALICE_1_1CellParameter_a199f221d2988995dedbb75b9be43e9ab} to the sums. 
+
+Definition at line 86 of file CellParameter.hh.
+
+References setNValues(), setSum(), and setSum2().\index{CALICE::CellParameter@{CALICE::CellParameter}!setADCMemoryValue@{setADCMemoryValue}}
+\index{setADCMemoryValue@{setADCMemoryValue}!CALICE::CellParameter@{CALICE::CellParameter}}
+\subsubsection[{setADCMemoryValue}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CellParameter::setADCMemoryValue (Float\_\-t {\em pedestal\_\-subtracted\_\-value})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CellParameter_aea4348d37ee17df1cec6c4a2e8c38217}
+
+
+Memorise an ADC value. The given pedestal subtracted ADC value is memorised at the current write postion and the position counter is advanced. 
+
+Definition at line 379 of file CellParameter.hh.\index{CALICE::CellParameter@{CALICE::CellParameter}!setDead@{setDead}}
+\index{setDead@{setDead}!CALICE::CellParameter@{CALICE::CellParameter}}
+\subsubsection[{setDead}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CellParameter::setDead (Bool\_\-t {\em is\_\-dead} = {\ttfamily true})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CellParameter_a0ad31de9b53fc6ebed4c7be6a53e7a57}
+
+
+Declare the pad to be dead (or revive pad (is\_\-dead=kFALSE). The status whether a pad is dead is stored in the saturation counter. Thus, a reviving a cell will reset the saturation counter to zero. 
+
+Definition at line 260 of file CellParameter.hh.
+
+References setSaturationCounter().
+
+Referenced by CALICE::SimpleHitSearch::calculatePedestalNoiseAndDeclareCellsDead().\index{CALICE::CellParameter@{CALICE::CellParameter}!setMaxValue@{setMaxValue}}
+\index{setMaxValue@{setMaxValue}!CALICE::CellParameter@{CALICE::CellParameter}}
+\subsubsection[{setMaxValue}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CellParameter::setMaxValue (Float\_\-t {\em a\_\-max\_\-value})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CellParameter_add7570a3502df326aa422603be276c8a}
+
+
+set the maximum value for a cell ({\bfseries shares storage with pedestal}). The maximum value is stored in the same place as the pedestal. Thus, the maximum value can only be used during the initial accumulation of pedestal/noise statistics.
+
+kCellParameterFloatMaxValue and kCellParameterFloatPedestal point to the same cell 
+
+Definition at line 174 of file CellParameter.hh.
+
+Referenced by CALICE::SimpleHitSearch::accumulateEventsForInitialPedestalNoiseCalculation().\index{CALICE::CellParameter@{CALICE::CellParameter}!setNHits@{setNHits}}
+\index{setNHits@{setNHits}!CALICE::CellParameter@{CALICE::CellParameter}}
+\subsubsection[{setNHits}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CellParameter::setNHits (UInt\_\-t {\em n\_\-hits})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classCALICE_1_1CellParameter_aefdf93e60fbead8bd62d09ef11f3d540}
+
+
+Set the value of the hit counter. The hit counter is increased when ever the pedestal subtracted ADC value is above a signal or signal-\/to-\/noise threshold. 
+
+Definition at line 285 of file CellParameter.hh.
+
+Referenced by incrementNHits().\index{CALICE::CellParameter@{CALICE::CellParameter}!setNPedestalChanges@{setNPedestalChanges}}
+\index{setNPedestalChanges@{setNPedestalChanges}!CALICE::CellParameter@{CALICE::CellParameter}}
+\subsubsection[{setNPedestalChanges}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CellParameter::setNPedestalChanges (UInt\_\-t {\em n\_\-pedestal\_\-changes})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classCALICE_1_1CellParameter_a1980533fe8a284bed40839d8a9fcf523}
+
+
+Set the value of the pedestal change counter. The PedestalChange counter is increased when ever the ADC value is outside of a certain range 
+
+Definition at line 419 of file CellParameter.hh.
+
+Referenced by incrementNPedestalChanges().\index{CALICE::CellParameter@{CALICE::CellParameter}!setOldNoise@{setOldNoise}}
+\index{setOldNoise@{setOldNoise}!CALICE::CellParameter@{CALICE::CellParameter}}
+\subsubsection[{setOldNoise}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CellParameter::setOldNoise (Float\_\-t {\em an\_\-old\_\-noise})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CellParameter_a2b4a500e8cd39fda7dc51ec89d2b0b81}
+
+
+Set the old noise. The old noise shares the storage with the sum2. Thus, after this call the sum2 is invalid. 
+
+Definition at line 158 of file CellParameter.hh.
+
+Referenced by adjustPedestalNoise(), and calculate().\index{CALICE::CellParameter@{CALICE::CellParameter}!setOldPedestal@{setOldPedestal}}
+\index{setOldPedestal@{setOldPedestal}!CALICE::CellParameter@{CALICE::CellParameter}}
+\subsubsection[{setOldPedestal}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CellParameter::setOldPedestal (Float\_\-t {\em an\_\-old\_\-pedestal})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CellParameter_a971b60a79e06210ddc52c25dbf765925}
+
+
+Set the old pedestal. The old pedestal shares the storage with the sum. Thus, after this call the sum is invalid. 
+
+Definition at line 137 of file CellParameter.hh.
+
+Referenced by adjustPedestalNoise(), calculate(), CALICE::SimpleHitSearch::searchHits(), and shiftPedestal().\index{CALICE::CellParameter@{CALICE::CellParameter}!setSaturationCounter@{setSaturationCounter}}
+\index{setSaturationCounter@{setSaturationCounter}!CALICE::CellParameter@{CALICE::CellParameter}}
+\subsubsection[{setSaturationCounter}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CellParameter::setSaturationCounter (UInt\_\-t {\em saturation})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classCALICE_1_1CellParameter_a0ca243bcfe86c85a767ac69082667a5f}
+
+
+Set the value of the saturation counter. The saturation counter is increased when ever the ADC value is outside of a certain range 
+
+Definition at line 266 of file CellParameter.hh.
+
+Referenced by incrementSaturationCounter(), and setDead().\index{CALICE::CellParameter@{CALICE::CellParameter}!setSum@{setSum}}
+\index{setSum@{setSum}!CALICE::CellParameter@{CALICE::CellParameter}}
+\subsubsection[{setSum}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CellParameter::setSum (Float\_\-t {\em a\_\-sum})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CellParameter_aed3095e5d463fbd47ad6175e130e25c0}
+
+
+Set the sum of the adc values (used to calculate the pedestal). After this call the pedestals and the noise are invalid. 
+
+Definition at line 96 of file CellParameter.hh.
+
+Referenced by resetSums().\index{CALICE::CellParameter@{CALICE::CellParameter}!setSum2@{setSum2}}
+\index{setSum2@{setSum2}!CALICE::CellParameter@{CALICE::CellParameter}}
+\subsubsection[{setSum2}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CellParameter::setSum2 (Float\_\-t {\em a\_\-sum2})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CellParameter_ae643aab6a440b41afc6d4190988112d0}
+
+
+Set the sum of the adc values squared (used to calculate the noise). After this call the pedestals and the noise are invalid. 
+
+Definition at line 107 of file CellParameter.hh.
+
+Referenced by resetSums().\index{CALICE::CellParameter@{CALICE::CellParameter}!shiftPedestal@{shiftPedestal}}
+\index{shiftPedestal@{shiftPedestal}!CALICE::CellParameter@{CALICE::CellParameter}}
+\subsubsection[{shiftPedestal}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CellParameter::shiftPedestal (Float\_\-t {\em shift})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CellParameter_ad52d1b70e2f0f27cf29020289da277e5}
+
+
+Shift the current and the old pedestal by this value. The pedestal is shifted when a pedestal jump is detected. 
+
+Definition at line 409 of file CellParameter.hh.
+
+References getOldPedestal(), getPedestal(), incrementNPedestalChanges(), setOldPedestal(), and setPedestal().
+
+Referenced by CALICE::SimpleHitSearch::accumulateEventsForPedestalNoiseCalculationWithHitRejectionAndPedestalShiftDetection().\index{CALICE::CellParameter@{CALICE::CellParameter}!sub@{sub}}
+\index{sub@{sub}!CALICE::CellParameter@{CALICE::CellParameter}}
+\subsubsection[{sub}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CellParameter::sub (Float\_\-t {\em adc})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CellParameter_a09cb9e322c9b22d1591244eaa1ded505}
+
+
+Subtract a previously added adc value from the sums to return to the prior condition. \begin{DoxySeeAlso}{See also}
+\doxyref{CellParameter::add}{p.}{classCALICE_1_1CellParameter_a199f221d2988995dedbb75b9be43e9ab} 
+\end{DoxySeeAlso}
+
+
+Definition at line 199 of file CellParameter.hh.
+
+Referenced by CALICE::SimpleHitSearch::accumulateEventsForInitialPedestalNoiseCalculation().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+CellParameter.hh\end{DoxyCompactItemize}

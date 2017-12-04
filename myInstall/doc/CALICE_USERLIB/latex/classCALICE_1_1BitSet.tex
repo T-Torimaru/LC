@@ -1,0 +1,143 @@
+\section{CALICE::BitSet Class Reference}
+\label{classCALICE_1_1BitSet}\index{CALICE::BitSet@{CALICE::BitSet}}
+
+
+Base class for easy definition of bit sets.  
+
+
+{\ttfamily \#include $<$BitSet.hh$>$}Inheritance diagram for CALICE::BitSet::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.72839cm]{classCALICE_1_1BitSet}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf getInt} () const 
+\begin{DoxyCompactList}\small\item\em get integer corresponding to the bits \item\end{DoxyCompactList}\item 
+void {\bf setBits} (const int value)
+\begin{DoxyCompactList}\small\item\em set all bits with an integer \item\end{DoxyCompactList}\item 
+std::vector$<$ int $>$ {\bf getIntVec} () const 
+\begin{DoxyCompactList}\small\item\em get vector of ints with elements corresponding to the single bits (1 for true and 0 for false) \item\end{DoxyCompactList}\item 
+void {\bf clear} ()\label{classCALICE_1_1BitSet_abd6be6d671e597c9c04afd73d25f7b6a}
+
+\begin{DoxyCompactList}\small\item\em clear all bits to 0 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf BitSet} (const unsigned int maxBits, const int value=0x0)
+\begin{DoxyCompactList}\small\item\em constructur \item\end{DoxyCompactList}\item 
+bool {\bf getBit} (unsigned int bitNo) const 
+\begin{DoxyCompactList}\small\item\em get function for bit number \item\end{DoxyCompactList}\item 
+void {\bf setBit} (unsigned int bitNo, bool state)
+\begin{DoxyCompactList}\small\item\em set function for bit number \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries \_\-bits}\label{classCALICE_1_1BitSet_acb489ad5309a1343dc9d368fbfabb4e7}
+
+\item 
+unsigned int {\bfseries \_\-maxBits}\label{classCALICE_1_1BitSet_a0105ecaa0c1f03c666f90f3d3b7207c6}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class for easy definition of bit sets. Derived classes have to define the meaning of the bits. No instantiation possible.
+
+\begin{DoxyAuthor}{Author}
+{\tt Benjamin.Lutz@desy.de} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+November 2009 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.0 
+\end{DoxyVersion}
+
+
+Definition at line 18 of file BitSet.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CALICE::BitSet@{CALICE::BitSet}!BitSet@{BitSet}}
+\index{BitSet@{BitSet}!CALICE::BitSet@{CALICE::BitSet}}
+\subsubsection[{BitSet}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::BitSet::BitSet (const unsigned int {\em maxBits}, \/  const int {\em value} = {\ttfamily 0x0})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classCALICE_1_1BitSet_a73f400c579b2731fc366faf7fa873aa9}
+
+
+constructur maximum number of bits defines the size of the returned vector
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em maxBits}]maximum number of bits \item[\mbox{$\leftarrow$} {\em value}]to initialise to different than 0 \end{DoxyParams}
+
+
+Definition at line 69 of file BitSet.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::BitSet@{CALICE::BitSet}!getBit@{getBit}}
+\index{getBit@{getBit}!CALICE::BitSet@{CALICE::BitSet}}
+\subsubsection[{getBit}]{\setlength{\rightskip}{0pt plus 5cm}bool CALICE::BitSet::getBit (unsigned int {\em bitNo}) const\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classCALICE_1_1BitSet_a0ffe3a5bdb4f4f5ec069c4330fef672b}
+
+
+get function for bit number 
+\begin{DoxyParams}{Parameters}
+\item[{\em bitNo}]number of the bit to return \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+state of bit 
+\end{DoxyReturn}
+
+
+Definition at line 80 of file BitSet.hh.
+
+Referenced by getIntVec(), CALICE::TcmtEventBits::hasMaxNumberHitsMuon(), CALICE::TcmtEventBits::hasMaxNumberMuonLikeTowers(), CALICE::TcmtEventBits::hasMaxSumEnergyMuon(), CALICE::TcmtEventBits::hasMinNumberHitsMuon(), CALICE::TcmtEventBits::hasMinNumberMuonLikeLayers(), CALICE::TcmtEventBits::hasMinNumberMuonLikeTowers(), CALICE::TcmtEventBits::hasMinSumEnergyMuon(), CALICE::TcmtEventBits::isLeakage(), CALICE::TcmtEventBits::isMuon(), and CALICE::TcmtEventBits::isPedestal().\index{CALICE::BitSet@{CALICE::BitSet}!getInt@{getInt}}
+\index{getInt@{getInt}!CALICE::BitSet@{CALICE::BitSet}}
+\subsubsection[{getInt}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::BitSet::getInt () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1BitSet_a148efced5e1ce099391216e2f4c9718a}
+
+
+get integer corresponding to the bits \begin{DoxyReturn}{Returns}
+integer with the bits set 
+\end{DoxyReturn}
+
+
+Definition at line 27 of file BitSet.hh.
+
+Referenced by CALICE::TcmtEventIdentifier::addResults().\index{CALICE::BitSet@{CALICE::BitSet}!getIntVec@{getIntVec}}
+\index{getIntVec@{getIntVec}!CALICE::BitSet@{CALICE::BitSet}}
+\subsubsection[{getIntVec}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$int$>$ CALICE::BitSet::getIntVec () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1BitSet_a807161095aee85a74b6f520f32690ace}
+
+
+get vector of ints with elements corresponding to the single bits (1 for true and 0 for false) \begin{DoxyReturn}{Returns}
+vector of integers of single bits 
+\end{DoxyReturn}
+
+
+Definition at line 44 of file BitSet.hh.
+
+References getBit().
+
+Referenced by CALICE::TcmtEventIdentifier::addResults().\index{CALICE::BitSet@{CALICE::BitSet}!setBit@{setBit}}
+\index{setBit@{setBit}!CALICE::BitSet@{CALICE::BitSet}}
+\subsubsection[{setBit}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::BitSet::setBit (unsigned int {\em bitNo}, \/  bool {\em state})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classCALICE_1_1BitSet_ae1b313a2e4a97fd9f197239f4abb9a49}
+
+
+set function for bit number 
+\begin{DoxyParams}{Parameters}
+\item[{\em bitNo}]number of the bit to set \item[{\em state}]state to witch the bit gets set \end{DoxyParams}
+
+
+Definition at line 87 of file BitSet.hh.\index{CALICE::BitSet@{CALICE::BitSet}!setBits@{setBits}}
+\index{setBits@{setBits}!CALICE::BitSet@{CALICE::BitSet}}
+\subsubsection[{setBits}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::BitSet::setBits (const int {\em value})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1BitSet_a17ed04fb84b1be0b476312d046333704}
+
+
+set all bits with an integer 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em value}]integer with the bits \end{DoxyParams}
+
+
+Definition at line 34 of file BitSet.hh.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+BitSet.hh\end{DoxyCompactItemize}

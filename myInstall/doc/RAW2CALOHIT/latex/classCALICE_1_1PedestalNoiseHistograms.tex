@@ -1,0 +1,114 @@
+\section{CALICE::PedestalNoiseHistograms Class Reference}
+\label{classCALICE_1_1PedestalNoiseHistograms}\index{CALICE::PedestalNoiseHistograms@{CALICE::PedestalNoiseHistograms}}
+Inheritance diagram for CALICE::PedestalNoiseHistograms::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCALICE_1_1PedestalNoiseHistograms}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Processor $\ast$ {\bfseries newProcessor} ()\label{classCALICE_1_1PedestalNoiseHistograms_ae5a513bca3d9c3fa642c3006723a3c40}
+
+\item 
+void {\bf init} ()
+\begin{DoxyCompactList}\small\item\em Called at the begin of the job before anything is read. \item\end{DoxyCompactList}\item 
+void {\bf processRunHeader} (LCRunHeader $\ast$run)
+\begin{DoxyCompactList}\small\item\em Called for every run, e.g. \item\end{DoxyCompactList}\item 
+void {\bf processEvent} (LCEvent $\ast$evtP)
+\begin{DoxyCompactList}\small\item\em Called for every event -\/ the working horse. \item\end{DoxyCompactList}\item 
+void {\bfseries end} ()\label{classCALICE_1_1PedestalNoiseHistograms_a0b92f798c4e9e32ffb7e938136db8e20}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries EH1Type} \{ {\bfseries kH1Noise}, 
+{\bfseries kH1Pedestal}, 
+{\bfseries kNH1}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries moduleTypeChanged} (lcio::LCCollection $\ast$col)\label{classCALICE_1_1PedestalNoiseHistograms_a2e3c07637bf5c56983d397633da2088c}
+
+\item 
+void {\bfseries moduleLocationChanged} (lcio::LCCollection $\ast$col)\label{classCALICE_1_1PedestalNoiseHistograms_a19422319fb37675b47ed8b75c751c518}
+
+\item 
+void {\bfseries moduleConnectionChanged} (lcio::LCCollection $\ast$col)\label{classCALICE_1_1PedestalNoiseHistograms_a45a6819f1ecd53413ea4c3384130f956}
+
+\item 
+void {\bfseries detectorChanged} ()\label{classCALICE_1_1PedestalNoiseHistograms_a9c381457a97f7d6a5719c106cfe22470}
+
+\item 
+void {\bfseries createHistograms} ()\label{classCALICE_1_1PedestalNoiseHistograms_a12ca8d443b6eaaaabdf30d6ab744cd77}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bfseries \_\-cellParameterCollectionName}\label{classCALICE_1_1PedestalNoiseHistograms_abaadb2fa0bbd710ae117f584641b8fdb}
+
+\item 
+IntVec {\bfseries \_\-eventPar}\label{classCALICE_1_1PedestalNoiseHistograms_ae861039b81067ae12a5dea74318f8435}
+
+\item 
+{\bf histmgr::Key\_\-t} {\bfseries \_\-histogramGroupKey}\label{classCALICE_1_1PedestalNoiseHistograms_af57634693e902aa26716096d357796fe}
+
+\item 
+lcio::FloatVec {\bfseries \_\-noiseHistPar}\label{classCALICE_1_1PedestalNoiseHistograms_a5e6e5886b0245d89be77ccc0f116fecb}
+
+\item 
+lcio::FloatVec {\bfseries \_\-adcHistPar}\label{classCALICE_1_1PedestalNoiseHistograms_a79d98a735280c78211ffcb464cd1173a}
+
+\item 
+{\bf histmgr::Key\_\-t} {\bfseries \_\-histKey} [kNH1]\label{classCALICE_1_1PedestalNoiseHistograms_a24c5e21337d538e38f8f53d1219bdd91}
+
+\item 
+UInt\_\-t {\bfseries \_\-missingCellParameters}\label{classCALICE_1_1PedestalNoiseHistograms_a6e32fc4df33029b95b827bbee5700046}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 14 of file PedestalNoiseHistograms.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::PedestalNoiseHistograms@{CALICE::PedestalNoiseHistograms}!init@{init}}
+\index{init@{init}!CALICE::PedestalNoiseHistograms@{CALICE::PedestalNoiseHistograms}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::PedestalNoiseHistograms::init ()}\label{classCALICE_1_1PedestalNoiseHistograms_a1558ef3262c57736081abced8094309e}
+
+
+Called at the begin of the job before anything is read. Use to initialize the processor, e.g. book histograms. 
+
+Reimplemented from {\bf CALICE::VRawADCValueProcessor} \doxyref{}{p.}{classCALICE_1_1VRawADCValueProcessor}.
+
+Definition at line 76 of file PedestalNoiseHistograms.cc.
+
+References histmgr::HistMgr::createHistogramGroup().\index{CALICE::PedestalNoiseHistograms@{CALICE::PedestalNoiseHistograms}!processEvent@{processEvent}}
+\index{processEvent@{processEvent}!CALICE::PedestalNoiseHistograms@{CALICE::PedestalNoiseHistograms}}
+\subsubsection[{processEvent}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::PedestalNoiseHistograms::processEvent (LCEvent $\ast$ {\em evtP})}\label{classCALICE_1_1PedestalNoiseHistograms_ac566102ce7a3f344a139d470e184dc17}
+
+
+Called for every event -\/ the working horse. 
+
+Definition at line 89 of file PedestalNoiseHistograms.cc.
+
+References CALICE::CellParameterAccess::getCellParameter(), histmgr::HistMgr::getHistogramCollection(), CALICE::CellParameter::getNoise(), CALICE::CellParameter::getPedestal(), and histmgr::HistogramCollection\_\-t::histogram().\index{CALICE::PedestalNoiseHistograms@{CALICE::PedestalNoiseHistograms}!processRunHeader@{processRunHeader}}
+\index{processRunHeader@{processRunHeader}!CALICE::PedestalNoiseHistograms@{CALICE::PedestalNoiseHistograms}}
+\subsubsection[{processRunHeader}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::PedestalNoiseHistograms::processRunHeader (LCRunHeader $\ast$ {\em run})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1PedestalNoiseHistograms_aabc18a7d7cd2fd0e96030c16aa4d10bd}
+
+
+Called for every run, e.g. overwrite to initialize run dependent histograms. 
+
+Definition at line 31 of file PedestalNoiseHistograms.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+PedestalNoiseHistograms.hh\item 
+PedestalNoiseHistograms.cc\end{DoxyCompactItemize}

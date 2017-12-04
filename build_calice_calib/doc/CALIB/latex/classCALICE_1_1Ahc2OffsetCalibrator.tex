@@ -1,0 +1,83 @@
+\section{CALICE::Ahc2OffsetCalibrator Class Reference}
+\label{classCALICE_1_1Ahc2OffsetCalibrator}\index{CALICE::Ahc2OffsetCalibrator@{CALICE::Ahc2OffsetCalibrator}}
+
+
+Processor to read SLCIO EUDAQ files and sort them according to the BXID Then do the AHCAL-\/BIF Offset calibration by counting the number of correlated events (either a separation between ECAL and AHCAL collections is done by EUDAQ).  
+
+
+{\ttfamily \#include $<$Ahc2OffsetCalibrator.hh$>$}\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf rawData2016}
+\begin{DoxyCompactList}\small\item\em The slcio data format. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Processor $\ast$ {\bf newProcessor} ()\label{classCALICE_1_1Ahc2OffsetCalibrator_a05df86500d0a3e88f392c8ffd4f47c5d}
+
+\begin{DoxyCompactList}\small\item\em Implementation of new Processor returns pointer to processor. \item\end{DoxyCompactList}\item 
+void {\bf processEvent} (LCEvent $\ast$evt)\label{classCALICE_1_1Ahc2OffsetCalibrator_a2da4ab41332e8d20d11a19e71ba720e3}
+
+\begin{DoxyCompactList}\small\item\em Creates events with LCGenrealObject collections from the EUDAQ input file and calls all active processors' \doxyref{processEvent()}{p.}{classCALICE_1_1Ahc2OffsetCalibrator_a2da4ab41332e8d20d11a19e71ba720e3} and processRunHeader Method. \item\end{DoxyCompactList}\item 
+virtual void {\bf init} ()\label{classCALICE_1_1Ahc2OffsetCalibrator_ab5f576d21163aedec905e30f1b5dc9ed}
+
+\begin{DoxyCompactList}\small\item\em init method \item\end{DoxyCompactList}\item 
+virtual void {\bf end} ()\label{classCALICE_1_1Ahc2OffsetCalibrator_ae914d839779fc5f1aedb4c38b498d725}
+
+\begin{DoxyCompactList}\small\item\em end method \item\end{DoxyCompactList}\item 
+void {\bf printParameters} ()\label{classCALICE_1_1Ahc2OffsetCalibrator_a62ec150e1ea85dfdf154e297091aaa6a}
+
+\begin{DoxyCompactList}\small\item\em print parameters \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bfseries \_\-inputColName}\label{classCALICE_1_1Ahc2OffsetCalibrator_ab631186d636a5a8cc89d7826430d6001}
+
+\item 
+std::string {\bfseries \_\-inputColNameBIF}\label{classCALICE_1_1Ahc2OffsetCalibrator_a727da1f72b82aa444631738742350443}
+
+\item 
+std::string {\bfseries \_\-outputfile}\label{classCALICE_1_1Ahc2OffsetCalibrator_abf2bdf8aaff1546fbf44e780489fcd0f}
+
+\item 
+StringVec {\bfseries \_\-BifVector}\label{classCALICE_1_1Ahc2OffsetCalibrator_af7a865753499d7bcd9f2cff80c9abc14}
+
+\item 
+int {\bf \_\-runNumber}\label{classCALICE_1_1Ahc2OffsetCalibrator_a953f31c54f24bd63fc5d90379a547bfe}
+
+\begin{DoxyCompactList}\small\item\em The run number. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries LcioEventNr}\label{classCALICE_1_1Ahc2OffsetCalibrator_a8f4ec9a5d5bddd42972d929d53d4d66a}
+
+\item 
+std::map$<$ int, int $>$ {\bfseries nCorrelatedEvt}\label{classCALICE_1_1Ahc2OffsetCalibrator_a86f7a686af1078291cb6ddbe0849489d}
+
+\item 
+int {\bfseries StartScan}\label{classCALICE_1_1Ahc2OffsetCalibrator_a4cb5c1b92c9d0ec5ef3ab2ebec6ee766}
+
+\item 
+int {\bfseries StopScan}\label{classCALICE_1_1Ahc2OffsetCalibrator_a6e49a6e97bfc13b34253a8eca9fb82da}
+
+\item 
+int {\bfseries StepScan}\label{classCALICE_1_1Ahc2OffsetCalibrator_a7d99f8a22fa5f6a9f1f8b3565f216a21}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Processor to read SLCIO EUDAQ files and sort them according to the BXID Then do the AHCAL-\/BIF Offset calibration by counting the number of correlated events (either a separation between ECAL and AHCAL collections is done by EUDAQ). \begin{DoxyAuthor}{Author}
+E. Brianne, DESY Hamburg 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+May 2016 Created for 2016 testbeams EUDAQ data format and AHCAL-\/BIF Offset calibration. 
+\end{DoxyDate}
+
+
+Definition at line 23 of file Ahc2OffsetCalibrator.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+Ahc2OffsetCalibrator.hh\item 
+Ahc2OffsetCalibrator.cc\end{DoxyCompactItemize}

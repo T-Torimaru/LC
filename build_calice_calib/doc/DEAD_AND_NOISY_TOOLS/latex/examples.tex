@@ -1,0 +1,31 @@
+These are some examples for the interactive use at ROOT's CINT prompt.
+
+All examples assume that you have the libDeadAndNoisyTools library loaded. 
+\begin{DoxyCode}
+~> export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:${PATH_TO_CALICE_CALIB}/lib
+~> root -l
+root [0] gSystem->Load("libDeadAndNoisyTools.so")
+\end{DoxyCode}
+
+
+Note: The {\ttfamily export} command is for bash, you might have to adapt it if you are using a different shell.
+
+If you need it regularly you might want to put the {\ttfamily gSystem-\/$>$Load()} command into your rootlogon.C\hypertarget{examples_usingSpectrumPropertiesRunInfo}{}\section{Having a closer look at one run using SpectrumPropertiesRunInfo}\label{examples_usingSpectrumPropertiesRunInfo}
+The input for the \hyperlink{class_spectrum_properties_run_info}{SpectrumPropertiesRunInfo} class is a root file with the spectra for each channel. Usually this is in a files called {\ttfamily runnumber.root}. Currently also a file with the AHC config is needed for the frontend/slot $<$-\/$>$ module mapping. This is subject to be removed once the mapping in ahcBinHst ist fully working.\hypertarget{examples_plotRun}{}\subsection{Plotting the rms of all channels in a run}\label{examples_plotRun}
+For this we use the TTree:.Draw() command from root. The \hyperlink{class_spectrum_properties_run_info}{SpectrumPropertiesRunInfo} class provides the tree for you. All you need is the input file {\ttfamily RUNNUMBER.root}. You simply create the \hyperlink{class_spectrum_properties_run_info}{SpectrumPropertiesRunInfo} object \mbox{[}1\mbox{]} and get the tree from it \mbox{[}2\mbox{]}. For drawing TGraphs (2D plots) it is convenient to change the marker style from a one pixel dot to something larger \mbox{[}3\mbox{]}. 
+\begin{DoxyCode}
+root [1] SpectrumPropertiesRunInfo spri(360759,"AHCforCERN2010.cfg");
+root [2] TTree *t = spri.getSpectrumPropertiesTree()
+root [3] t->SetMarkerStyle(2);
+\end{DoxyCode}
+
+
+Now you can draw any information in the Tree with just one line, incl. cuts. \begin{DoxyItemize}
+\item \mbox{[}4\mbox{]} Histogram the mean values for all channels \item \mbox{[}5\mbox{]} Draw a graph rmv vs. channel for all channels in module 9 
+\begin{DoxyCode}
+root [4] t->Draw("_mean","_slot==19")
+root [5] t->Draw("_rms:_channel+_chip*spri.getNChannelsPerChip()","_module==9") 
+\end{DoxyCode}
+ Note the usage of \hyperlink{class_spectrum_properties_run_info_a3d9d8e0ae2cef40794561409120e257c}{SpectrumPropertiesRunInfo::getNChannelsPerChip()}. There is also the SpectrumPropertiesRunInfo::getNChipsPerModue() function. You can use this to calculate the global channel number $( moduleID \cdot nChipsPerModule + chipID ) \cdot nChannelsPerChip + channelNumber $.\end{DoxyItemize}
+\hypertarget{examples_plotDead}{}\subsection{Plotting the rms of only the dead channels}\label{examples_plotDead}
+\hypertarget{examples_printDead}{}\subsection{Printing a list of dead channels in one run}\label{examples_printDead}

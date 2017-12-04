@@ -1,0 +1,46 @@
+\section{TBTrackProducer Class Reference}
+\label{classTBTrackProducer}\index{TBTrackProducer@{TBTrackProducer}}
+Inheritance diagram for TBTrackProducer::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classTBTrackProducer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual marlin::Processor $\ast$ {\bfseries newProcessor} ()\label{classTBTrackProducer_a5159c5af2b5661e0e0a7bfc7591217a9}
+
+\item 
+virtual void {\bf Init} ()\label{classTBTrackProducer_a261213eb92718b68b315253b056be414}
+
+\begin{DoxyCompactList}\small\item\em Called at the begin of the job before anything is read. \item\end{DoxyCompactList}\item 
+virtual void {\bf ProcessRunHeader} (LCRunHeader $\ast$run)\label{classTBTrackProducer_ac8c608a27e729c78ced0ec8b1969ca24}
+
+\begin{DoxyCompactList}\small\item\em Called for every run. \item\end{DoxyCompactList}\item 
+virtual void {\bf ProcessEvent} (LCEvent $\ast$evt)\label{classTBTrackProducer_a4aabdb65ff27029731aa3ce567ed528c}
+
+\begin{DoxyCompactList}\small\item\em Called for every event -\/ the working horse. \item\end{DoxyCompactList}\item 
+virtual void {\bf End} ()\label{classTBTrackProducer_a0294d07e812929d30d0797a15de7958b}
+
+\begin{DoxyCompactList}\small\item\em Called after data processing for clean up. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf TBTrack::TrackFinder} {\bfseries \_\-finder}\label{classTBTrackProducer_af6ef70618261f9e609a35018aba95110}
+
+\item 
+std::string {\bf \_\-TDCHitColName}\label{classTBTrackProducer_aaa9b990c825fb14a9b0a16254dc65cea}
+
+\begin{DoxyCompactList}\small\item\em name of the Track output collection \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 13 of file TBTrackProducer.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+TBTrackProducer.hh\item 
+TBTrackProducer.cc\end{DoxyCompactItemize}

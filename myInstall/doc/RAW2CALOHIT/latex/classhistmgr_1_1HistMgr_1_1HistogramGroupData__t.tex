@@ -1,0 +1,88 @@
+\section{histmgr::HistMgr::HistogramGroupData\_\-t Class Reference}
+\label{classhistmgr_1_1HistMgr_1_1HistogramGroupData__t}\index{histmgr::HistMgr::HistogramGroupData\_\-t@{histmgr::HistMgr::HistogramGroupData\_\-t}}
+
+
+id, destination file and folder of a histogram group  
+
+
+{\ttfamily \#include $<$HistMgr.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries HistogramGroupData\_\-t} (std::string file\_\-name, std::string folder\_\-name)\label{classhistmgr_1_1HistMgr_1_1HistogramGroupData__t_a07a5f211a1b240c9834f69c67b4f6203}
+
+\item 
+UInt\_\-t {\bfseries id} () const \label{classhistmgr_1_1HistMgr_1_1HistogramGroupData__t_a30189a30c3e48bf0f70779642a4e0b6d}
+
+\item 
+UInt\_\-t {\bfseries version} () const \label{classhistmgr_1_1HistMgr_1_1HistogramGroupData__t_a53a43a01a611eeb58986d06cf112baaf}
+
+\item 
+void {\bfseries incrementVersion} ()\label{classhistmgr_1_1HistMgr_1_1HistogramGroupData__t_a523ffb8dee6ceb8c802d7582d65d8a0f}
+
+\item 
+const std::string \& {\bfseries fileName} () const \label{classhistmgr_1_1HistMgr_1_1HistogramGroupData__t_acd20c1c6b5e1204649f0d7603b0f6ee2}
+
+\item 
+const std::string \& {\bfseries folderName} () const \label{classhistmgr_1_1HistMgr_1_1HistogramGroupData__t_a886cab942d93e6ba0485ed6eb82afd02}
+
+\item 
+{\bf HistogramGroupData\_\-t} \& {\bfseries setFileName} (const std::string \&file\_\-name)\label{classhistmgr_1_1HistMgr_1_1HistogramGroupData__t_a4d9c6b374964d3def4ac44f60596143d}
+
+\item 
+{\bf HistogramGroupData\_\-t} \& {\bfseries setFolderName} (const std::string \&folder\_\-name)\label{classhistmgr_1_1HistMgr_1_1HistogramGroupData__t_a74225cdfb078be31da16dfe9482d62bc}
+
+\item 
+void {\bfseries ref} ()\label{classhistmgr_1_1HistMgr_1_1HistogramGroupData__t_a4bc6ddd417970ce1c00d53781b093bb4}
+
+\item 
+void {\bfseries unref} ()\label{classhistmgr_1_1HistMgr_1_1HistogramGroupData__t_ab8019cd94a1bdebebb805ddb5d972500}
+
+\item 
+UInt\_\-t {\bfseries references} () const \label{classhistmgr_1_1HistMgr_1_1HistogramGroupData__t_ab3e91d6c35a226699da929e9141fd2a9}
+
+\item 
+bool {\bfseries isReferenced} () const \label{classhistmgr_1_1HistMgr_1_1HistogramGroupData__t_abedbf506b91a7609e9a9b78a2039a26b}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries setId} (unsigned int id)\label{classhistmgr_1_1HistMgr_1_1HistogramGroupData__t_a4b84f56cb6cff0f0d3fbcdd5213be5db}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+UInt\_\-t {\bf \_\-refCounter}\label{classhistmgr_1_1HistMgr_1_1HistogramGroupData__t_a9e13ffec297c7682e7846f3fc96a4904}
+
+\begin{DoxyCompactList}\small\item\em number of users of this group \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bf \_\-id}\label{classhistmgr_1_1HistMgr_1_1HistogramGroupData__t_a2aa126884bac9c85f0063466bcc44d47}
+
+\begin{DoxyCompactList}\small\item\em unique histogram group id \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-fileName}\label{classhistmgr_1_1HistMgr_1_1HistogramGroupData__t_a887041e492c5179f576e2ff0348286e0}
+
+\begin{DoxyCompactList}\small\item\em file to which all the histograms of this group will be written \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-folderName}\label{classhistmgr_1_1HistMgr_1_1HistogramGroupData__t_a1a2b8f1b779a7d2f62da302d4d77b620}
+
+\begin{DoxyCompactList}\small\item\em folder inside the file to which all the histograms of this group will be written \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bfseries \_\-version}\label{classhistmgr_1_1HistMgr_1_1HistogramGroupData__t_a14fe90666c845803d60b98ac8d15db85}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries HistMgr}\label{classhistmgr_1_1HistMgr_1_1HistogramGroupData__t_a3cc85db784d7651390e41024125eb3a0}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+id, destination file and folder of a histogram group \begin{Desc}
+\item[{\bf Todo}]remove \_\-id \end{Desc}
+
+
+Definition at line 50 of file HistMgr.hh.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+HistMgr.hh\end{DoxyCompactItemize}

@@ -1,0 +1,64 @@
+\section{marlin::MCRunTimeProcessor Class Reference}
+\label{classmarlin_1_1MCRunTimeProcessor}\index{marlin::MCRunTimeProcessor@{marlin::MCRunTimeProcessor}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Processor $\ast$ {\bfseries newProcessor} ()\label{classmarlin_1_1MCRunTimeProcessor_afaa7a8f8af2e6d40734992523adb0f18}
+
+\item 
+virtual const std::string \& {\bfseries name} () const \label{classmarlin_1_1MCRunTimeProcessor_a594976d07353672f85e23f50bc2c0183}
+
+\item 
+virtual void {\bfseries modifyEvent} (LCEvent $\ast$evt)\label{classmarlin_1_1MCRunTimeProcessor_a51c9d9bf4f8b66e2c3b82f31f0f26bba}
+
+\item 
+virtual void {\bfseries init} ()\label{classmarlin_1_1MCRunTimeProcessor_a645e036d00d0ac4f016a6fb8d33f40c1}
+
+\item 
+virtual void {\bfseries processRunHeader} (LCRunHeader $\ast$run)\label{classmarlin_1_1MCRunTimeProcessor_a94ffb5e4ec27a97de5a30bc5c43f0655}
+
+\item 
+virtual void {\bfseries check} (LCEvent $\ast$evt)\label{classmarlin_1_1MCRunTimeProcessor_afcac2282e9028e447afc453cb0f3cc5d}
+
+\item 
+virtual void {\bfseries end} ()\label{classmarlin_1_1MCRunTimeProcessor_a1b72a2ae28eb11cf4460b765a0ef0e01}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bfseries \_\-dbInit}\label{classmarlin_1_1MCRunTimeProcessor_a4e743478c041ee93d3256134520e3c49}
+
+\item 
+std::string {\bfseries \_\-folderRunTime}\label{classmarlin_1_1MCRunTimeProcessor_a30df635002d96b32291813aa3f91d585}
+
+\item 
+std::string {\bfseries \_\-folderLocation}\label{classmarlin_1_1MCRunTimeProcessor_a2be1163f77699025a223cd1ebb1040f4}
+
+\item 
+RunLocationWhizard $\ast$ {\bfseries \_\-runlocationwhizard}\label{classmarlin_1_1MCRunTimeProcessor_a29bd192e54ae09e3b3dd9240b2f7ac23}
+
+\item 
+RunTimeWhizard $\ast$ {\bfseries \_\-runtimewhizard}\label{classmarlin_1_1MCRunTimeProcessor_a136eebf08c52e00b691e7ad562ebae76}
+
+\item 
+int {\bfseries \_\-runNumber}\label{classmarlin_1_1MCRunTimeProcessor_a9e3dea800b1c0e2104a00a5007714ddd}
+
+\item 
+int {\bfseries \_\-savetyMargin}\label{classmarlin_1_1MCRunTimeProcessor_ae97bf35ad864f1bafba1864de9d03bc5}
+
+\item 
+UTIL::LCTime {\bfseries \_\-eventTime}\label{classmarlin_1_1MCRunTimeProcessor_a119971e6c2b38d2ff99240191f82ce09}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 18 of file MCRunTimeProcessor.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+MCRunTimeProcessor.hh\item 
+MCRunTimeProcessor.cc\end{DoxyCompactItemize}

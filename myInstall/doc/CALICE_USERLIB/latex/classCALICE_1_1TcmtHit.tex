@@ -1,0 +1,83 @@
+\section{CALICE::TcmtHit Class Reference}
+\label{classCALICE_1_1TcmtHit}\index{CALICE::TcmtHit@{CALICE::TcmtHit}}
+
+
+Using RawCalorimeterHits as TcmtHits.  
+
+
+{\ttfamily \#include $<$TcmtHit.hh$>$}\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+union {\bf flt\_\-or\_\-int}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries TcmtHit} (unsigned short moduleID, unsigned short chip, unsigned short channel, float valueEnergy, float errorEnergy, int timeStamp)\label{classCALICE_1_1TcmtHit_abb8a261f961ee10a2dc2d253ccb0cdb2}
+
+\item 
+{\bfseries TcmtHit} (int cellID, float valueEnergy, float errorEnergy, int timeStamp)\label{classCALICE_1_1TcmtHit_a265a19e5727e82a8c3d8c1d604e162fa}
+
+\item 
+{\bfseries TcmtHit} (RawCalorimeterHit $\ast$aRawCalorimeterHit)\label{classCALICE_1_1TcmtHit_acc0b872f3423b295638def9d971f9ba7}
+
+\item 
+void $\ast$ {\bfseries operator new} (size\_\-t size)\label{classCALICE_1_1TcmtHit_a0246257b5a12ea1f6b3c5041c0111cc4}
+
+\item 
+void {\bfseries operator delete} (void $\ast$mem)\label{classCALICE_1_1TcmtHit_a93e5f31de8d1849c6d2c9bccdd983688}
+
+\item 
+unsigned short {\bf getModuleID} () const \label{classCALICE_1_1TcmtHit_adca677a4368fde1737d4eb55883209ab}
+
+\begin{DoxyCompactList}\small\item\em get module number of hit \item\end{DoxyCompactList}\item 
+unsigned short {\bf getChip} () const \label{classCALICE_1_1TcmtHit_a71000d9e9e46f88edafccb719e2762ae}
+
+\begin{DoxyCompactList}\small\item\em get chip number of hit \item\end{DoxyCompactList}\item 
+unsigned short {\bf getChannel} () const \label{classCALICE_1_1TcmtHit_a72d0083329b27506c0838feac47b1435}
+
+\begin{DoxyCompactList}\small\item\em get channel number of hit \item\end{DoxyCompactList}\item 
+unsigned short {\bf getCellKey} () const \label{classCALICE_1_1TcmtHit_a8d393f1382e537632a585614a5f21000}
+
+\begin{DoxyCompactList}\small\item\em get cellKey \item\end{DoxyCompactList}\item 
+int {\bf getCellID} () const \label{classCALICE_1_1TcmtHit_a79ef589b9f3790e668d08166b247e120}
+
+\begin{DoxyCompactList}\small\item\em get cellID \item\end{DoxyCompactList}\item 
+float {\bf getEnergyValue} () const \label{classCALICE_1_1TcmtHit_a9b11690c240caed823bbdd2daea1652e}
+
+\begin{DoxyCompactList}\small\item\em get energy value of hit \item\end{DoxyCompactList}\item 
+float {\bf getEnergyError} () const \label{classCALICE_1_1TcmtHit_a04e6e33a6a5bedd924d6f4bee389d7c4}
+
+\begin{DoxyCompactList}\small\item\em get energy error of hit \item\end{DoxyCompactList}\item 
+int {\bf getTimeStamp} () const \label{classCALICE_1_1TcmtHit_a7e01c36b8b02e069b24c0592b0710d88}
+
+\begin{DoxyCompactList}\small\item\em get time stamp \item\end{DoxyCompactList}\item 
+void {\bf setEnergyValue} (float energyValue)\label{classCALICE_1_1TcmtHit_a9e1a69cc5e1c5387c20f584e75a708b8}
+
+\begin{DoxyCompactList}\small\item\em set energy value of hit \item\end{DoxyCompactList}\item 
+void {\bf setEnergyError} (float energyError)\label{classCALICE_1_1TcmtHit_a4e7dc7885f661827c0df8b50724c9be3}
+
+\begin{DoxyCompactList}\small\item\em set energy error of hit \item\end{DoxyCompactList}\item 
+void {\bf setTimeStamp} (unsigned timeStamp)\label{classCALICE_1_1TcmtHit_a530792c19fdd0f5aa5b788e1b5ae6043}
+
+\begin{DoxyCompactList}\small\item\em set time stamp \item\end{DoxyCompactList}\item 
+void {\bf print} (std::ostream \&os)\label{classCALICE_1_1TcmtHit_a98d3bd8b59170986e7c5126eed9f11a9}
+
+\begin{DoxyCompactList}\small\item\em convenient print method \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Using RawCalorimeterHits as TcmtHits. \begin{DoxyAuthor}{Author}
+S. Schmidt DESY 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+1 Oct 2006 
+\end{DoxyDate}
+
+
+Definition at line 31 of file TcmtHit.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+TcmtHit.hh\item 
+TcmtHit.cc\end{DoxyCompactItemize}

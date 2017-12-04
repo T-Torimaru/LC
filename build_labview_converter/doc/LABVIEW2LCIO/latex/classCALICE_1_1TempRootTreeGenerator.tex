@@ -1,0 +1,112 @@
+\section{CALICE::TempRootTreeGenerator Class Reference}
+\label{classCALICE_1_1TempRootTreeGenerator}\index{CALICE::TempRootTreeGenerator@{CALICE::TempRootTreeGenerator}}
+
+
+Class to process Labview raw.  
+
+
+{\ttfamily \#include $<$TempRootTreeGenerator.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Processor $\ast$ {\bfseries newProcessor} ()\label{classCALICE_1_1TempRootTreeGenerator_a4683c88fa11fdadc38b174cbd78191df}
+
+\item 
+void {\bfseries init} ()\label{classCALICE_1_1TempRootTreeGenerator_a0a85ca935c8d4227cf78ff85745c801f}
+
+\item 
+void {\bfseries processEvent} (LCEvent $\ast$evt)\label{classCALICE_1_1TempRootTreeGenerator_affbf92f531b40ab279bec5764dd798b2}
+
+\item 
+void {\bfseries end} ()\label{classCALICE_1_1TempRootTreeGenerator_aebdde734f7d29091114a7c5da186e06f}
+
+\item 
+void {\bfseries registerBranches} (TTree $\ast$hostTree)\label{classCALICE_1_1TempRootTreeGenerator_a8c8c4c7c423b1aa404028e59960ba771}
+
+\item 
+void {\bfseries FillVariable} (LCEvent $\ast$evt)\label{classCALICE_1_1TempRootTreeGenerator_a3544386c3f78d68615da0c01f437e35e}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bfseries \_\-inputColName}\label{classCALICE_1_1TempRootTreeGenerator_a08f763e65ab9a64986e987af8ce0117c}
+
+\item 
+std::string {\bfseries \_\-prefix}\label{classCALICE_1_1TempRootTreeGenerator_a324bde76149073163629a7e9e50c453e}
+
+\item 
+TFile $\ast$ {\bfseries \_\-rootFile}\label{classCALICE_1_1TempRootTreeGenerator_add462b67e83bd77baed72038875a81a6}
+
+\item 
+std::string {\bfseries \_\-rootFileName}\label{classCALICE_1_1TempRootTreeGenerator_a0c8aec17e8952dd62d3bfa678ce3eca3}
+
+\item 
+TTree $\ast$ {\bfseries \_\-treeTempSensorBlock}\label{classCALICE_1_1TempRootTreeGenerator_a40cc9d843dbba86306d56dbee9218c79}
+
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>int {\bfseries nLayers}\\
+\>float {\bfseries T1} [MAXPORTS]\\
+\>float {\bfseries T2} [MAXPORTS]\\
+\>float {\bfseries T3} [MAXPORTS]\\
+\>float {\bfseries T4} [MAXPORTS]\\
+\>float {\bfseries T5} [MAXPORTS]\\
+\>float {\bfseries T6} [MAXPORTS]\\
+\>float {\bfseries TDIF} [MAXPORTS]\\
+\>float {\bfseries TPWR} [MAXPORTS]\\
+\} {\bfseries \_hFill}\label{classCALICE_1_1TempRootTreeGenerator_ab47c17d8cd4b84b14b8912cf62281b5a}
+\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned int {\bfseries MAXPORTS} = 1000\label{classCALICE_1_1TempRootTreeGenerator_ab2162b267c9e1f26729de736c4b2bf8d}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries runNumber}\label{classCALICE_1_1TempRootTreeGenerator_ab6b2729ac1b292d2ee2fea66a9594703}
+
+\item 
+int {\bfseries eventNumber}\label{classCALICE_1_1TempRootTreeGenerator_a9d25e5c9fd0dbb2f75e1a3e149e45169}
+
+\item 
+long64 {\bfseries Timestamp}\label{classCALICE_1_1TempRootTreeGenerator_a987d676226994b2120f47c457551ba09}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std::map$<$ TTree $\ast$, {\bf TempRootTreeGenerator} $\ast$ $>$ {\bfseries \_\-treeFillerMap}\label{classCALICE_1_1TempRootTreeGenerator_a5aecfdab878099a4ea0a74e4b96652de}
+
+\item 
+static std::map$<$ TTree $\ast$, {\bf TempRootTreeGenerator} $\ast$ $>$ {\bfseries \_\-treeOwnerMap}\label{classCALICE_1_1TempRootTreeGenerator_a991022195e98911f7e5674c9ad674cce}
+
+\item 
+static std::map$<$ TFile $\ast$, {\bf TempRootTreeGenerator} $\ast$ $>$ {\bfseries \_\-fileOwnerMap}\label{classCALICE_1_1TempRootTreeGenerator_acf9f072ece6ac7300b4a6ef878bdb947}
+
+\item 
+static const double {\bfseries INVALID} = -\/FLT\_\-MAX\label{classCALICE_1_1TempRootTreeGenerator_ab51bc9fd4548675bdad7f48208a3c943}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to process Labview raw. \begin{DoxyAuthor}{Author}
+: Shaojun Lu DESY 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Nov 15 2012 
+\end{DoxyDate}
+
+
+Definition at line 20 of file TempRootTreeGenerator.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+TempRootTreeGenerator.hh\item 
+TempRootTreeGenerator.cc\end{DoxyCompactItemize}

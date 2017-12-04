@@ -1,0 +1,140 @@
+\section{LinearRegression Class Reference}
+\label{classLinearRegression}\index{LinearRegression@{LinearRegression}}
+
+
+Linear regression analysis of given value pairs.  
+
+
+{\ttfamily \#include $<$LinearRegression.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf reset} ()\label{classLinearRegression_af538779ee8e289d026d799c3c7a426d1}
+
+\begin{DoxyCompactList}\small\item\em initialise for a analysis of a new value set. \item\end{DoxyCompactList}\item 
+{\bf LinearRegression} \& {\bf add} (Double\_\-t x, Double\_\-t y, Double\_\-t y\_\-error)\label{classLinearRegression_a0a3ab51f5d3931f905037a3c1f5bb98c}
+
+\begin{DoxyCompactList}\small\item\em Add a value pair where the second values has the given uncertainty. \item\end{DoxyCompactList}\item 
+{\bf LinearRegression} \& {\bf add} (Double\_\-t x, Double\_\-t y)\label{classLinearRegression_a3e12eed9356ba00d6d030bc1b57e3836}
+
+\begin{DoxyCompactList}\small\item\em Add a value pair (if the uncertainty of the y-\/values is not known or are all the same). \item\end{DoxyCompactList}\item 
+{\bf LinearRegression} \& {\bf add} (const {\bf LinearRegression} \&a)\label{classLinearRegression_ad1ac36ccba440cd93ef159bc0262f369}
+
+\begin{DoxyCompactList}\small\item\em Add the values of another regression object to this object. \item\end{DoxyCompactList}\item 
+{\bf LinearRegression} \& {\bf subtract} (Double\_\-t x, Double\_\-t y, Double\_\-t y\_\-error)
+\begin{DoxyCompactList}\small\item\em Remove a value pair from the object. \item\end{DoxyCompactList}\item 
+{\bf LinearRegression} \& {\bf subtract} (Double\_\-t x, Double\_\-t y)\label{classLinearRegression_ab3e8334bd774f51c91c2fe95da552615}
+
+\begin{DoxyCompactList}\small\item\em Remove a value pair from the object (if the value pair has been added without specifying an uncertainty) May be called after an object has been added without specifying the uncertainty to remove it. \item\end{DoxyCompactList}\item 
+{\bf LinearRegression} \& {\bf Subtract} (const {\bf LinearRegression} \&a)\label{classLinearRegression_a1951a036633b7322a6aac6d7bbad62d3}
+
+\begin{DoxyCompactList}\small\item\em Remove all value pairs added to another regression object from this regression object. \item\end{DoxyCompactList}\item 
+{\bf LinearRegression} \& {\bf calc} ()\label{classLinearRegression_a8ca4e29af63ac292213acbb4c48acc66}
+
+\begin{DoxyCompactList}\small\item\em Calculate the ascent and the offset. \item\end{DoxyCompactList}\item 
+{\bf LinearRegression} \& {\bf calcWithErrors} ()\label{classLinearRegression_ad1ce1e257093d3f89ebe8dc2e304c35c}
+
+\begin{DoxyCompactList}\small\item\em Calculate the ascent and the offset and their errors. \item\end{DoxyCompactList}\item 
+Double\_\-t {\bf offset} ()
+\begin{DoxyCompactList}\small\item\em Return the calculated offset. \item\end{DoxyCompactList}\item 
+Double\_\-t {\bf ascent} ()
+\begin{DoxyCompactList}\small\item\em Return the calculated ascent. \item\end{DoxyCompactList}\item 
+Double\_\-t {\bf eval} (Double\_\-t x)
+\begin{DoxyCompactList}\small\item\em Calculate the best guess of y for the given value of x. \item\end{DoxyCompactList}\item 
+Double\_\-t {\bf evalError} (Double\_\-t x, Double\_\-t x\_\-ref)
+\begin{DoxyCompactList}\small\item\em Calculate the uncertainty of a certain y for the given value of x. \item\end{DoxyCompactList}\item 
+Double\_\-t {\bf evalError} (Double\_\-t x)
+\begin{DoxyCompactList}\small\item\em Calculate the uncertainty of a certain y for the given value of x. \item\end{DoxyCompactList}\item 
+Double\_\-t {\bf sumOfWeights} ()\label{classLinearRegression_a1b6ad46cb0ee53f2c565687ad37d7ef5}
+
+\begin{DoxyCompactList}\small\item\em Sum of the inverse uncertainties of the given y-\/values. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+Double\_\-t {\bfseries \_\-ascent}\label{classLinearRegression_a9fe4c687adadd779b0f7c406eca60fec}
+
+\item 
+Double\_\-t {\bfseries \_\-offset}\label{classLinearRegression_a9fe46d99a76240920d2ee973e80577a8}
+
+\item 
+Double\_\-t {\bfseries \_\-ascentError}\label{classLinearRegression_ad55f646d063c80c4cef00f4f17d6a7ca}
+
+\item 
+Double\_\-t {\bfseries \_\-offsetError}\label{classLinearRegression_ad75550f2ee31877c7675cc582fee5781}
+
+\item 
+Double\_\-t {\bfseries \_\-sumOfWeights}\label{classLinearRegression_ab21e8031c06270dec932d76fa391415e}
+
+\item 
+Double\_\-t {\bfseries \_\-sumX}\label{classLinearRegression_af0defb9c14f585b3efec8bb9e7974a9d}
+
+\item 
+Double\_\-t {\bfseries \_\-sumY}\label{classLinearRegression_a157369a9e88d3157cbe579ee074706ee}
+
+\item 
+Double\_\-t {\bfseries \_\-sumXX}\label{classLinearRegression_a44f6410b5baf2e0960a712a2102bde7b}
+
+\item 
+Double\_\-t {\bfseries \_\-sumXY}\label{classLinearRegression_aecf91d1e065dbfc79d0301a52707539c}
+
+\item 
+Double\_\-t {\bfseries \_\-sumYY}\label{classLinearRegression_a12c2c878e3e33551c6ce6bbc1c5ab0d7}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Linear regression analysis of given value pairs. 
+
+Definition at line 17 of file LinearRegression.hh.
+
+\subsection{Member Function Documentation}
+\index{LinearRegression@{LinearRegression}!ascent@{ascent}}
+\index{ascent@{ascent}!LinearRegression@{LinearRegression}}
+\subsubsection[{ascent}]{\setlength{\rightskip}{0pt plus 5cm}Double\_\-t LinearRegression::ascent ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classLinearRegression_a3cc2c3590db57409dbb6d49db7b2d093}
+
+
+Return the calculated ascent. The result is undefined before \doxyref{calc}{p.}{classLinearRegression_a8ca4e29af63ac292213acbb4c48acc66} or \doxyref{calcWithErrors}{p.}{classLinearRegression_ad1ce1e257093d3f89ebe8dc2e304c35c} was called. 
+
+Definition at line 142 of file LinearRegression.hh.\index{LinearRegression@{LinearRegression}!eval@{eval}}
+\index{eval@{eval}!LinearRegression@{LinearRegression}}
+\subsubsection[{eval}]{\setlength{\rightskip}{0pt plus 5cm}Double\_\-t LinearRegression::eval (Double\_\-t {\em x})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classLinearRegression_ad719ed942f31fe4aed9e5b8c92479c03}
+
+
+Calculate the best guess of y for the given value of x. Calcualte \doxyref{offset()}{p.}{classLinearRegression_ad6441285eb22865d9308cee33cbbda17}+ascent()$\ast$x; The result is undefined before \doxyref{calc}{p.}{classLinearRegression_a8ca4e29af63ac292213acbb4c48acc66} or \doxyref{calcWithErrors}{p.}{classLinearRegression_ad1ce1e257093d3f89ebe8dc2e304c35c} was called. 
+
+Definition at line 148 of file LinearRegression.hh.\index{LinearRegression@{LinearRegression}!evalError@{evalError}}
+\index{evalError@{evalError}!LinearRegression@{LinearRegression}}
+\subsubsection[{evalError}]{\setlength{\rightskip}{0pt plus 5cm}Double\_\-t LinearRegression::evalError (Double\_\-t {\em x})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classLinearRegression_a16d080824a28976f242f2a35cb5bcb09}
+
+
+Calculate the uncertainty of a certain y for the given value of x. The result is undefined before \doxyref{calc}{p.}{classLinearRegression_a8ca4e29af63ac292213acbb4c48acc66} or \doxyref{calcWithErrors}{p.}{classLinearRegression_ad1ce1e257093d3f89ebe8dc2e304c35c} was called. 
+
+Definition at line 165 of file LinearRegression.hh.\index{LinearRegression@{LinearRegression}!evalError@{evalError}}
+\index{evalError@{evalError}!LinearRegression@{LinearRegression}}
+\subsubsection[{evalError}]{\setlength{\rightskip}{0pt plus 5cm}Double\_\-t LinearRegression::evalError (Double\_\-t {\em x}, \/  Double\_\-t {\em x\_\-ref})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classLinearRegression_a6cca97556c3d8eae41f3961ee90ce951}
+
+
+Calculate the uncertainty of a certain y for the given value of x. 
+\begin{DoxyParams}{Parameters}
+\item[{\em x}]the x value for which the uncertainty on y should be calculated \item[{\em x\_\-ref}]the x value at which the uncertainty is only given by the uncertainty of the \doxyref{offset()}{p.}{classLinearRegression_ad6441285eb22865d9308cee33cbbda17} should be the average x value of the input set. The result is undefined before \doxyref{calc}{p.}{classLinearRegression_a8ca4e29af63ac292213acbb4c48acc66} or \doxyref{calcWithErrors}{p.}{classLinearRegression_ad1ce1e257093d3f89ebe8dc2e304c35c} was called. \end{DoxyParams}
+
+
+Definition at line 156 of file LinearRegression.hh.\index{LinearRegression@{LinearRegression}!offset@{offset}}
+\index{offset@{offset}!LinearRegression@{LinearRegression}}
+\subsubsection[{offset}]{\setlength{\rightskip}{0pt plus 5cm}Double\_\-t LinearRegression::offset ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classLinearRegression_ad6441285eb22865d9308cee33cbbda17}
+
+
+Return the calculated offset. The result is undefined before \doxyref{calc}{p.}{classLinearRegression_a8ca4e29af63ac292213acbb4c48acc66} or \doxyref{calcWithErrors}{p.}{classLinearRegression_ad1ce1e257093d3f89ebe8dc2e304c35c} was called. 
+
+Definition at line 137 of file LinearRegression.hh.\index{LinearRegression@{LinearRegression}!subtract@{subtract}}
+\index{subtract@{subtract}!LinearRegression@{LinearRegression}}
+\subsubsection[{subtract}]{\setlength{\rightskip}{0pt plus 5cm}{\bf LinearRegression}\& LinearRegression::subtract (Double\_\-t {\em x}, \/  Double\_\-t {\em y}, \/  Double\_\-t {\em y\_\-error})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classLinearRegression_acbe82e2c3d3dc224eb25ddbc5954d17c}
+
+
+Remove a value pair from the object. May be called after an object has been added to remove it. 
+
+Definition at line 68 of file LinearRegression.hh.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+LinearRegression.hh\end{DoxyCompactItemize}

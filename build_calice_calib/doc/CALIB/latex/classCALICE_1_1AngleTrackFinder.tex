@@ -1,0 +1,375 @@
+\section{CALICE::AngleTrackFinder Class Reference}
+\label{classCALICE_1_1AngleTrackFinder}\index{CALICE::AngleTrackFinder@{CALICE::AngleTrackFinder}}
+
+
+Processor to extract MIP calibrations from muon beam runs.  
+
+
+{\ttfamily \#include $<$AngleTrackFinder.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Processor $\ast$ {\bf newProcessor} ()\label{classCALICE_1_1AngleTrackFinder_af929a19d0689fbf8f946988797daff4a}
+
+\begin{DoxyCompactList}\small\item\em Return new instance of this processor. \item\end{DoxyCompactList}\item 
+{\bf AngleTrackFinder} ()\label{classCALICE_1_1AngleTrackFinder_a74cdcf69ca7ef1072ccdd5ea7d9ae551}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. \item\end{DoxyCompactList}\item 
+{\bf $\sim$AngleTrackFinder} ()\label{classCALICE_1_1AngleTrackFinder_acf657623bf1eff4c45b4af704f519ca3}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual void {\bf init} ()\label{classCALICE_1_1AngleTrackFinder_a994a129403fc067c93e4a37545c79499}
+
+\begin{DoxyCompactList}\small\item\em Initialise useful variables. \item\end{DoxyCompactList}\item 
+virtual void {\bf processEvent} (LCEvent $\ast$evt)
+\begin{DoxyCompactList}\small\item\em Process event (the working horse). \item\end{DoxyCompactList}\item 
+virtual void {\bf end} ()\label{classCALICE_1_1AngleTrackFinder_a4e7d844d0f42764d16f9f66a3f887f4c}
+
+\begin{DoxyCompactList}\small\item\em Function to be called at the end of the job, after all events have been processed, for clean up. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf openInputCollections} (LCEvent $\ast$evt)
+\begin{DoxyCompactList}\small\item\em Open the input collections. \item\end{DoxyCompactList}\item 
+void {\bf findTrack} (LCEvent $\ast$evt)
+\begin{DoxyCompactList}\small\item\em Find the track. \item\end{DoxyCompactList}\item 
+bool {\bf doFurtherAnalysis} ()
+\begin{DoxyCompactList}\small\item\em Check if cuts are fullfilled, and if analysis is to be continued. \item\end{DoxyCompactList}\item 
+std::vector$<$ CalorimeterHit $\ast$ $>$ {\bf extractAHCALInformation} ()\label{classCALICE_1_1AngleTrackFinder_a86fc7e637d10c7ee1ab9851b1fc54e1b}
+
+\begin{DoxyCompactList}\small\item\em Extract AHCAL information. \item\end{DoxyCompactList}\item 
+std::pair$<$ int, float $>$ {\bf extractNumberOfHitsAndEnergySum} (LCCollection $\ast$inputCol)
+\begin{DoxyCompactList}\small\item\em Extract number of hits and the energy sum from the input collection. \item\end{DoxyCompactList}\item 
+void {\bf findTrackClusters} (std::vector$<$ CalorimeterHit $\ast$ $>$ \&hcalVec, EVENT::ClusterVec \&outputVec)
+\begin{DoxyCompactList}\small\item\em Find clusters of MIP tracks. \item\end{DoxyCompactList}\item 
+void {\bfseries findTrackClustersCoarse} (std::vector$<$ CalorimeterHit $\ast$ $>$ \&hcalVec, EVENT::ClusterVec \&outputVec)\label{classCALICE_1_1AngleTrackFinder_a2a052d786ad1c5defe012d580f9da5d1}
+
+\item 
+EVENT::ClusterVec {\bfseries extendTracksToTcmt} (LCTypedVector$<$ CalorimeterHit $>$ tcmtVec, EVENT::ClusterVec trackClusters)\label{classCALICE_1_1AngleTrackFinder_a5722430685f5b24004bc1827dc1ccaae}
+
+\item 
+void {\bf selectTrackClusters} (EVENT::ClusterVec clusterVec, const std::string trackSelectionMode, EVENT::ClusterVec \&goodTrackClusters)
+\begin{DoxyCompactList}\small\item\em Select good tracks. \item\end{DoxyCompactList}\item 
+void {\bfseries mergeCoarseClusters} (EVENT::ClusterVec goodclusterVec, EVENT::ClusterVec clusterCoarseVec, EVENT::ClusterVec \&outputVec, const std::string trackSelectionMode)\label{classCALICE_1_1AngleTrackFinder_ad57cb7c54e211b1f6c79904a45611903}
+
+\item 
+ClusterImpl $\ast$ {\bf getWholeTrack} (Cluster $\ast$trackCluster)
+\begin{DoxyCompactList}\small\item\em Get the whole track (i.e. \item\end{DoxyCompactList}\item 
+ClusterImpl $\ast$ {\bfseries getWholeTrackSegment} (Cluster $\ast$trackCluster)\label{classCALICE_1_1AngleTrackFinder_a30c444b8e888a60ca81305ddadda9c83}
+
+\item 
+ClusterImpl $\ast$ {\bfseries copyACluster} (Cluster $\ast$trackCluster)\label{classCALICE_1_1AngleTrackFinder_a0769f3c37445bf0e8efce89f90049814}
+
+\item 
+EVENT::ClusterVec {\bf getRemainingHits} (EVENT::ClusterVec selectedTrackClusters)
+\begin{DoxyCompactList}\small\item\em Get the vector of track clusters containing all the remaining hits. \item\end{DoxyCompactList}\item 
+EVENT::ClusterVec {\bfseries getRemainingHitsOfTrackSegment} (EVENT::ClusterVec selectedTrackClusters)\label{classCALICE_1_1AngleTrackFinder_a13fdc56df9fcf40ed6bd8dad70ee200e}
+
+\item 
+EVENT::ClusterVec {\bfseries getFinalCluster} (EVENT::ClusterVec selectedTrackClusters)\label{classCALICE_1_1AngleTrackFinder_af37cc1b4e139645ca4578d224f019fd3}
+
+\item 
+void {\bf createOutputCollection} (LCEvent $\ast$evt, EVENT::ClusterVec finalVec)
+\begin{DoxyCompactList}\small\item\em Create output collection of track clusters. \item\end{DoxyCompactList}\item 
+EVENT::ClusterVec {\bfseries obtainSubClusters} (EVENT::Cluster $\ast$clusterA)\label{classCALICE_1_1AngleTrackFinder_add0057082ccc0bcea73c30d9926fe317}
+
+\item 
+EVENT::ClusterVec {\bfseries removeIsolatedHits} (EVENT::ClusterVec subCluster)\label{classCALICE_1_1AngleTrackFinder_a1af99dd0d0e7dc58b6a1348a5d3729fd}
+
+\item 
+bool {\bfseries checkXYAdjacentClusters} (Cluster $\ast$clusterA, Cluster $\ast$clusterB, int numOfAdjacentCells)\label{classCALICE_1_1AngleTrackFinder_a1786792116034051608781193e344134}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const Mapper $\ast$ {\bf \_\-mapper}\label{classCALICE_1_1AngleTrackFinder_a1e8ade0f953c3f0e73665cf8bb6fc58f}
+
+\begin{DoxyCompactList}\small\item\em the mapper \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-mappingProcessorName}\label{classCALICE_1_1AngleTrackFinder_a8ed332f4a4fac3a16df92f32cec1ca23}
+
+\begin{DoxyCompactList}\small\item\em name of the processor which provides the mapping \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-cellDescriptionProcessorName}\label{classCALICE_1_1AngleTrackFinder_a9094f5b2aa449c3bd3180fe4fc7094d2}
+
+\begin{DoxyCompactList}\small\item\em name of the processor which provides the cells description \item\end{DoxyCompactList}\item 
+MappedContainer$<$ CALICE::CellDescription $>$ $\ast$ {\bfseries \_\-cellDescriptions}\label{classCALICE_1_1AngleTrackFinder_a570dfea9f64f3eaf487ea8db682d03ec}
+
+\item 
+LCCollection $\ast$ {\bf \_\-ecalInputCol}\label{classCALICE_1_1AngleTrackFinder_a6c55f00b24dedf933046c374d57567a2}
+
+\begin{DoxyCompactList}\small\item\em ECAL input collection. \item\end{DoxyCompactList}\item 
+LCCollection $\ast$ {\bf \_\-ahcalInputCol}\label{classCALICE_1_1AngleTrackFinder_a6294fed90962d5ecaf2d63f4f119c808}
+
+\begin{DoxyCompactList}\small\item\em AHCAL input collection. \item\end{DoxyCompactList}\item 
+LCCollection $\ast$ {\bf \_\-ahcalAmpInputCol}\label{classCALICE_1_1AngleTrackFinder_a63d915b7e5159274be1cec89db2c0390}
+
+\begin{DoxyCompactList}\small\item\em AHCAL Amplitude input collection. \item\end{DoxyCompactList}\item 
+LCCollection $\ast$ {\bf \_\-tcmtInputCol}\label{classCALICE_1_1AngleTrackFinder_a961a3ce5cad59157ae7cc350da27017b}
+
+\begin{DoxyCompactList}\small\item\em TCMT input collection. \item\end{DoxyCompactList}\item 
+std::string {\bfseries \_\-ecalInputColName}\label{classCALICE_1_1AngleTrackFinder_aa226f88b009a6d2f77c4b8c863579ac1}
+
+\item 
+std::string {\bfseries \_\-ahcalInputColName}\label{classCALICE_1_1AngleTrackFinder_af139ab1be231e5e7daa0d72c3b05ce27}
+
+\item 
+std::string {\bfseries \_\-ahcalAmpInputColName}\label{classCALICE_1_1AngleTrackFinder_a00c257e37403fb1209fcded626033de5}
+
+\item 
+std::string {\bfseries \_\-ahcalOutputTrackColName}\label{classCALICE_1_1AngleTrackFinder_afcc15eae818bff82cb07f8a206b4eb6b}
+
+\item 
+std::string {\bfseries \_\-tcmtOutputTrackColName}\label{classCALICE_1_1AngleTrackFinder_afc39c68fdbd2e58a0ae729952f6c307e}
+
+\item 
+std::string {\bfseries \_\-tcmtInputColName}\label{classCALICE_1_1AngleTrackFinder_af55dd53460826abc6abe7eb4917f201b}
+
+\item 
+std::string {\bfseries \_\-encodingString}\label{classCALICE_1_1AngleTrackFinder_aec98c28c81cf10cb1fd7d83bbe560120}
+
+\item 
+std::string {\bf \_\-trackSelectionMode}\label{classCALICE_1_1AngleTrackFinder_a9e65faf8074db90de8771bc2dccf072c}
+
+\begin{DoxyCompactList}\small\item\em track selection mode: NHITs = based on the number of hits; PERPENDICULAR = select only perpendicular tracks \item\end{DoxyCompactList}\item 
+LCRelationNavigator $\ast$ {\bfseries \_\-navigator}\label{classCALICE_1_1AngleTrackFinder_adb33fe8149d97611b8eb62037138f972}
+
+\item 
+EVENT::ClusterVec {\bfseries \_\-goodTrackClusters}\label{classCALICE_1_1AngleTrackFinder_a7218355d693e3d50095b7a5370bec077}
+
+\item 
+bool {\bfseries \_\-useECAL}\label{classCALICE_1_1AngleTrackFinder_a1590732ddda798d70bb97bd886a0bc22}
+
+\item 
+bool {\bfseries \_\-useTCMT}\label{classCALICE_1_1AngleTrackFinder_aad59f9038d2f9935f0dd0bd5b9700ed3}
+
+\item 
+bool {\bfseries \_\-tcmtStartVertical}\label{classCALICE_1_1AngleTrackFinder_a7f12d1a7817b3ee3686eefcf70fa0049}
+
+\item 
+float {\bfseries \_\-tcmtStripWidth}\label{classCALICE_1_1AngleTrackFinder_a1f5753f67ba97ef9aeb4cb57f75ff309}
+
+\item 
+bool {\bf \_\-isNonMuonRun}\label{classCALICE_1_1AngleTrackFinder_a599998d50ef67e2bc2e9a07b0864dd3d}
+
+\begin{DoxyCompactList}\small\item\em flag for non-\/muon run \item\end{DoxyCompactList}\item 
+int {\bf \_\-ahcalMaxNoHits}\label{classCALICE_1_1AngleTrackFinder_a94a071cd5fbe48451c8aace1168f9697}
+
+\begin{DoxyCompactList}\small\item\em maximum number of hits in the AHCAL \item\end{DoxyCompactList}\item 
+int {\bf \_\-ecalMinNoHits}\label{classCALICE_1_1AngleTrackFinder_a5db8580f90e8193fad643ca4415260ab}
+
+\begin{DoxyCompactList}\small\item\em minimum number of hits in the ECAL \item\end{DoxyCompactList}\item 
+int {\bf \_\-ecalMaxNoHits}\label{classCALICE_1_1AngleTrackFinder_a305795d0103cb33c9cf579d83d050968}
+
+\begin{DoxyCompactList}\small\item\em maximum number of hits in the ECAL \item\end{DoxyCompactList}\item 
+float {\bf \_\-tcmtMinEnergySum}\label{classCALICE_1_1AngleTrackFinder_ab5ac7f274d7c9936f4d19ed1ac463715}
+
+\begin{DoxyCompactList}\small\item\em minimum energy sum in the TCMT \item\end{DoxyCompactList}\item 
+float {\bf \_\-mipCutValue}\label{classCALICE_1_1AngleTrackFinder_a09632c19bf97a231d9ab2c1e6e32cc78}
+
+\begin{DoxyCompactList}\small\item\em MIP cut value (0.5 MIPs). \item\end{DoxyCompactList}\item 
+int {\bfseries \_\-mipCutVariable}\label{classCALICE_1_1AngleTrackFinder_afeb7153710a99c4b36d0842d2df63335}
+
+\item 
+int {\bf \_\-trackNoHitsThreshold}
+\begin{DoxyCompactList}\small\item\em choose amplitude to be used to perform the mip cut \item\end{DoxyCompactList}\item 
+int {\bfseries \_\-useCoarseSection}\label{classCALICE_1_1AngleTrackFinder_acbeb9d16089487bbc26fa28c1a83ca78}
+
+\item 
+int {\bfseries \_\-minActiveTCMTParallelStrips}\label{classCALICE_1_1AngleTrackFinder_ac050b4b2a689ca4d482a6ad75a53991c}
+
+\item 
+IntVec {\bf \_\-badAhcalModulesVec}\label{classCALICE_1_1AngleTrackFinder_a6d4442136ce5b168d27f32f3f753164c}
+
+\begin{DoxyCompactList}\small\item\em vector of bad AHCAL modules numbers \item\end{DoxyCompactList}\item 
+IntVec {\bf \_\-firstAhcalModulesVec}\label{classCALICE_1_1AngleTrackFinder_a53176eb4d890fcf6f41291a7aa7f7ecd}
+
+\begin{DoxyCompactList}\small\item\em vector of numbers of the beginning AHCAL modules which are used for perpendicular track finding \item\end{DoxyCompactList}\item 
+IntVec {\bf \_\-lastAhcalModulesVec}\label{classCALICE_1_1AngleTrackFinder_afe5e51f2a91a84dabaed6f6ad9cd60e9}
+
+\begin{DoxyCompactList}\small\item\em vector of numbers of the ending AHCAL modules which are used for perpendicular track finding \item\end{DoxyCompactList}\item 
+EVENT::CalorimeterHitVec {\bf \_\-allAhcalHitsInEventVec}\label{classCALICE_1_1AngleTrackFinder_aef20f858c612a3181537606fdc4be0f1}
+
+\begin{DoxyCompactList}\small\item\em vector containing all AHCAL hits from the event \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned int {\bfseries MAXTCMTLAYERS} = 16\label{classCALICE_1_1AngleTrackFinder_a42ed04f962d4a3564dbcb4811cd4f21b}
+
+\item 
+static const unsigned int {\bfseries MAXTCMTSTRIPS} = 20\label{classCALICE_1_1AngleTrackFinder_ad99874d9a4bd40c23336a9740c34bb23}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Processor to extract MIP calibrations from muon beam runs. \begin{DoxyAuthor}{Author}
+A.Vargas DESY 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+November 2010 
+\end{DoxyDate}
+
+
+Definition at line 35 of file AngleTrackFinder.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::AngleTrackFinder@{CALICE::AngleTrackFinder}!createOutputCollection@{createOutputCollection}}
+\index{createOutputCollection@{createOutputCollection}!CALICE::AngleTrackFinder@{CALICE::AngleTrackFinder}}
+\subsubsection[{createOutputCollection}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::AngleTrackFinder::createOutputCollection (LCEvent $\ast$ {\em evt}, \/  EVENT::ClusterVec {\em finalVec})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1AngleTrackFinder_ae2aa960da701d5e62b15e21c1df40691}
+
+
+Create output collection of track clusters. 
+\begin{DoxyParams}{Parameters}
+\item[{\em evt}]the processed event \item[{\em finalVec}]final vector of track clusters, after all selections \end{DoxyParams}
+
+
+Definition at line 1203 of file AngleTrackFinder.cc.
+
+References \_\-tcmtInputCol.
+
+Referenced by findTrack().\index{CALICE::AngleTrackFinder@{CALICE::AngleTrackFinder}!doFurtherAnalysis@{doFurtherAnalysis}}
+\index{doFurtherAnalysis@{doFurtherAnalysis}!CALICE::AngleTrackFinder@{CALICE::AngleTrackFinder}}
+\subsubsection[{doFurtherAnalysis}]{\setlength{\rightskip}{0pt plus 5cm}bool CALICE::AngleTrackFinder::doFurtherAnalysis ()\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1AngleTrackFinder_a118f2d1e9c47337831da14c8c356e555}
+
+
+Check if cuts are fullfilled, and if analysis is to be continued. \begin{DoxyReturn}{Returns}
+analyse flag to show if the cuts are fullfilled or not 
+\end{DoxyReturn}
+
+
+Definition at line 376 of file AngleTrackFinder.cc.
+
+References \_\-ahcalInputCol, \_\-ahcalMaxNoHits, \_\-ecalInputCol, \_\-ecalMaxNoHits, \_\-ecalMinNoHits, \_\-isNonMuonRun, \_\-tcmtInputCol, \_\-tcmtMinEnergySum, and extractNumberOfHitsAndEnergySum().
+
+Referenced by findTrack().\index{CALICE::AngleTrackFinder@{CALICE::AngleTrackFinder}!extractNumberOfHitsAndEnergySum@{extractNumberOfHitsAndEnergySum}}
+\index{extractNumberOfHitsAndEnergySum@{extractNumberOfHitsAndEnergySum}!CALICE::AngleTrackFinder@{CALICE::AngleTrackFinder}}
+\subsubsection[{extractNumberOfHitsAndEnergySum}]{\setlength{\rightskip}{0pt plus 5cm}std::pair$<$ int, float $>$ CALICE::AngleTrackFinder::extractNumberOfHitsAndEnergySum (LCCollection $\ast$ {\em inputCol})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1AngleTrackFinder_a1799da6da5db2cbf5de0e458ccbe3566}
+
+
+Extract number of hits and the energy sum from the input collection. 
+\begin{DoxyParams}{Parameters}
+\item[{\em inputCol}]the input collection \end{DoxyParams}
+
+
+Definition at line 456 of file AngleTrackFinder.cc.
+
+Referenced by doFurtherAnalysis().\index{CALICE::AngleTrackFinder@{CALICE::AngleTrackFinder}!findTrack@{findTrack}}
+\index{findTrack@{findTrack}!CALICE::AngleTrackFinder@{CALICE::AngleTrackFinder}}
+\subsubsection[{findTrack}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::AngleTrackFinder::findTrack (LCEvent $\ast$ {\em evt})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1AngleTrackFinder_aac50b453e10cdfbb6612eeefcb5ca25c}
+
+
+Find the track. 
+\begin{DoxyParams}{Parameters}
+\item[{\em evt}]event to be processed \end{DoxyParams}
+
+
+Definition at line 271 of file AngleTrackFinder.cc.
+
+References \_\-ahcalMaxNoHits, \_\-tcmtInputCol, \_\-trackSelectionMode, createOutputCollection(), doFurtherAnalysis(), extractAHCALInformation(), findTrackClusters(), and selectTrackClusters().
+
+Referenced by processEvent().\index{CALICE::AngleTrackFinder@{CALICE::AngleTrackFinder}!findTrackClusters@{findTrackClusters}}
+\index{findTrackClusters@{findTrackClusters}!CALICE::AngleTrackFinder@{CALICE::AngleTrackFinder}}
+\subsubsection[{findTrackClusters}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::AngleTrackFinder::findTrackClusters (std::vector$<$ CalorimeterHit $\ast$ $>$ \& {\em hcalVec}, \/  EVENT::ClusterVec \& {\em outputVec})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1AngleTrackFinder_a24fd651c00cb89fa736943ee252ff5fc}
+
+
+Find clusters of MIP tracks. 
+\begin{DoxyParams}{Parameters}
+\item[{\em hcalVec}]input vector of AHCAL hits \item[{\em outputVec}]vector of clusters (to be filled) \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector of clusters 
+\end{DoxyReturn}
+
+
+Definition at line 563 of file AngleTrackFinder.cc.
+
+References \_\-mapper.
+
+Referenced by findTrack().\index{CALICE::AngleTrackFinder@{CALICE::AngleTrackFinder}!getRemainingHits@{getRemainingHits}}
+\index{getRemainingHits@{getRemainingHits}!CALICE::AngleTrackFinder@{CALICE::AngleTrackFinder}}
+\subsubsection[{getRemainingHits}]{\setlength{\rightskip}{0pt plus 5cm}EVENT::ClusterVec CALICE::AngleTrackFinder::getRemainingHits (EVENT::ClusterVec {\em selectedTrackClusters})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1AngleTrackFinder_ae0fd37e5b74a53bb65d845fec3e3528d}
+
+
+Get the vector of track clusters containing all the remaining hits. 
+\begin{DoxyParams}{Parameters}
+\item[{\em selectedTrackClusters}]vector of selected track clusters \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+vector of track clusters containing all the remaining hits 
+\end{DoxyReturn}
+
+
+Definition at line 1074 of file AngleTrackFinder.cc.
+
+References getWholeTrack().\index{CALICE::AngleTrackFinder@{CALICE::AngleTrackFinder}!getWholeTrack@{getWholeTrack}}
+\index{getWholeTrack@{getWholeTrack}!CALICE::AngleTrackFinder@{CALICE::AngleTrackFinder}}
+\subsubsection[{getWholeTrack}]{\setlength{\rightskip}{0pt plus 5cm}ClusterImpl $\ast$ CALICE::AngleTrackFinder::getWholeTrack (Cluster $\ast$ {\em trackCluster})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1AngleTrackFinder_aa5e29dedb8b2b70a44e965bbc7de8a48}
+
+
+Get the whole track (i.e. track with no missing hits) 
+\begin{DoxyParams}{Parameters}
+\item[{\em trackCluster}]input track cluster, from which the mean X and Y of the track are calculated \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+wholeTrack the track cluster which contains all the hits 
+\end{DoxyReturn}
+
+
+Definition at line 1011 of file AngleTrackFinder.cc.
+
+References \_\-allAhcalHitsInEventVec.
+
+Referenced by getRemainingHits().\index{CALICE::AngleTrackFinder@{CALICE::AngleTrackFinder}!openInputCollections@{openInputCollections}}
+\index{openInputCollections@{openInputCollections}!CALICE::AngleTrackFinder@{CALICE::AngleTrackFinder}}
+\subsubsection[{openInputCollections}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::AngleTrackFinder::openInputCollections (LCEvent $\ast$ {\em evt})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1AngleTrackFinder_a684d9afc2a36e32a3fa037f8befcc23f}
+
+
+Open the input collections. 
+\begin{DoxyParams}{Parameters}
+\item[{\em evt}]event to be processed \end{DoxyParams}
+
+
+Definition at line 217 of file AngleTrackFinder.cc.
+
+References \_\-ahcalAmpInputCol, \_\-ahcalInputCol, \_\-ecalInputCol, and \_\-tcmtInputCol.
+
+Referenced by processEvent().\index{CALICE::AngleTrackFinder@{CALICE::AngleTrackFinder}!processEvent@{processEvent}}
+\index{processEvent@{processEvent}!CALICE::AngleTrackFinder@{CALICE::AngleTrackFinder}}
+\subsubsection[{processEvent}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::AngleTrackFinder::processEvent (LCEvent $\ast$ {\em evt})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCALICE_1_1AngleTrackFinder_a212ba3e4cfe268d1941c294df5aba7b1}
+
+
+Process event (the working horse). 
+\begin{DoxyParams}{Parameters}
+\item[{\em evt}]event to be processed \end{DoxyParams}
+
+
+Definition at line 192 of file AngleTrackFinder.cc.
+
+References \_\-allAhcalHitsInEventVec, findTrack(), and openInputCollections().\index{CALICE::AngleTrackFinder@{CALICE::AngleTrackFinder}!selectTrackClusters@{selectTrackClusters}}
+\index{selectTrackClusters@{selectTrackClusters}!CALICE::AngleTrackFinder@{CALICE::AngleTrackFinder}}
+\subsubsection[{selectTrackClusters}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::AngleTrackFinder::selectTrackClusters (EVENT::ClusterVec {\em clusterVec}, \/  const std::string {\em trackSelectionMode}, \/  EVENT::ClusterVec \& {\em goodTrackClusters})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1AngleTrackFinder_a48012b9d15a3a0e4e8ea6231bbf93dac}
+
+
+Select good tracks. 
+\begin{DoxyParams}{Parameters}
+\item[{\em clusterVec}]vector of track clusters, on which the selection is performed \item[{\em trackSelectionMode}]track selection mode, set by the steering parameter TrackSelectionMode \item[{\em goodTrackClusters}]vectors of good track clusters (to be filled) \end{DoxyParams}
+
+
+Definition at line 838 of file AngleTrackFinder.cc.
+
+References \_\-trackNoHitsThreshold.
+
+Referenced by findTrack().
+
+\subsection{Field Documentation}
+\index{CALICE::AngleTrackFinder@{CALICE::AngleTrackFinder}!\_\-trackNoHitsThreshold@{\_\-trackNoHitsThreshold}}
+\index{\_\-trackNoHitsThreshold@{\_\-trackNoHitsThreshold}!CALICE::AngleTrackFinder@{CALICE::AngleTrackFinder}}
+\subsubsection[{\_\-trackNoHitsThreshold}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf CALICE::AngleTrackFinder::\_\-trackNoHitsThreshold}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1AngleTrackFinder_af196bbbed608a60877075df58d8d7916}
+
+
+choose amplitude to be used to perform the mip cut minimum number of hits for which a track is considered to be a muon track (used only with TrackSelectionMode=NHITS) 
+
+Definition at line 186 of file AngleTrackFinder.hh.
+
+Referenced by AngleTrackFinder(), and selectTrackClusters().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+AngleTrackFinder.hh\item 
+AngleTrackFinder.cc\end{DoxyCompactItemize}
