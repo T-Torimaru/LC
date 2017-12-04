@@ -1,0 +1,175 @@
+\section{TBTrackBaseProcessor Class Reference}
+\label{classTBTrackBaseProcessor}\index{TBTrackBaseProcessor@{TBTrackBaseProcessor}}
+Inheritance diagram for TBTrackBaseProcessor::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=10cm]{classTBTrackBaseProcessor}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries TBTrackBaseProcessor} (const std::string \&n=\char`\"{}TBTrackBaseProcessor\char`\"{})\label{classTBTrackBaseProcessor_a8e2072bc1fffd5cdf065b13e865733a0}
+
+\item 
+virtual void {\bf init} ()\label{classTBTrackBaseProcessor_a179b559dd67f1777b0622775918ae5f5}
+
+\begin{DoxyCompactList}\small\item\em Called at the begin of the job before anything is read. \item\end{DoxyCompactList}\item 
+virtual void {\bfseries Init} ()=0\label{classTBTrackBaseProcessor_a3efab6d4a570bdb0d0059105adef62fb}
+
+\item 
+virtual void {\bf processRunHeader} (EVENT::LCRunHeader $\ast$run)\label{classTBTrackBaseProcessor_a0fc18422f19b4c46ec4356df49b216c9}
+
+\begin{DoxyCompactList}\small\item\em Called for every run. \item\end{DoxyCompactList}\item 
+virtual void {\bfseries ProcessRunHeader} (EVENT::LCRunHeader $\ast$run)=0\label{classTBTrackBaseProcessor_a644859097b4910c8c6f8c8113bfee2c6}
+
+\item 
+virtual void {\bf processEvent} (EVENT::LCEvent $\ast$evt)\label{classTBTrackBaseProcessor_aba4e5b25679936687667e81f3a73df72}
+
+\begin{DoxyCompactList}\small\item\em Called for every event. \item\end{DoxyCompactList}\item 
+virtual void {\bfseries ProcessEvent} (EVENT::LCEvent $\ast$evt)=0\label{classTBTrackBaseProcessor_af0b02579767b903b46f9e220efcb83cc}
+
+\item 
+virtual void {\bf check} (EVENT::LCEvent $\ast$evt)\label{classTBTrackBaseProcessor_acdf5ee99137016fe8cc9681c0336fc85}
+
+\begin{DoxyCompactList}\small\item\em Called for every event for checking. \item\end{DoxyCompactList}\item 
+virtual void {\bf end} ()\label{classTBTrackBaseProcessor_aafbf0e1c1af756ea03748e482883d763}
+
+\begin{DoxyCompactList}\small\item\em Called after data processing for clean up. \item\end{DoxyCompactList}\item 
+virtual void {\bfseries End} ()=0\label{classTBTrackBaseProcessor_a5103e722aff198e1a86efb76ffb753ae}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool {\bf printLevel} (int p, bool b=true) const \label{classTBTrackBaseProcessor_ad49019aae6d63f24ddac47796645beb4}
+
+\begin{DoxyCompactList}\small\item\em Useful methods. \item\end{DoxyCompactList}\item 
+virtual void {\bfseries getEvtConstants} (const EVENT::LCEvent $\ast$evt)\label{classTBTrackBaseProcessor_ab7f028108220f667f0771c62b50284a7}
+
+\item 
+virtual const EVENT::LCCollection $\ast$ {\bfseries getCollection} (const EVENT::LCEvent $\ast$evt, const std::string \&name, const std::string \&type, bool allowPrint=true) const \label{classTBTrackBaseProcessor_a7d6672702b9966e1aa85b277ccb65c1e}
+
+\item 
+virtual bool {\bfseries addCollection} (EVENT::LCEvent $\ast$evt, EVENT::LCCollection $\ast$c, const std::string \&name, bool allowPrint=true) const \label{classTBTrackBaseProcessor_a8c506fe8b1a3854dc18729e8c3253f16}
+
+\item 
+void {\bfseries openHFile} (const EVENT::LCRunHeader $\ast$run)\label{classTBTrackBaseProcessor_ae88273f99fda5f6a3bcf94b16bcf96c9}
+
+\item 
+void {\bfseries closeHFile} ()\label{classTBTrackBaseProcessor_a258362bb0b7dd5126d069cc0bfcda956}
+
+\item 
+void {\bfseries getSimTrackerHits} (EVENT::LCEvent $\ast$evt)\label{classTBTrackBaseProcessor_aff9e06323f04642534a8522ea255497d}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf TBTrack::MapConstants} {\bf \_\-mapConstants}\label{classTBTrackBaseProcessor_aa3c3920945b6b96403927e68a4f2d597}
+
+\begin{DoxyCompactList}\small\item\em The database information objects. \item\end{DoxyCompactList}\item 
+bool {\bfseries \_\-mapConstantsUpdated}\label{classTBTrackBaseProcessor_ac2ee432d8acdab0d231ae0b58f5d6e4b}
+
+\item 
+bool {\bfseries \_\-mapConstantsValid}\label{classTBTrackBaseProcessor_ad88c3ed8dec6a87ff3a3eb028dbe2236}
+
+\item 
+{\bf TBTrack::SimConstants} {\bfseries \_\-simConstants}\label{classTBTrackBaseProcessor_aaeccc8a3856c961bfb3a2e4628b18bd5}
+
+\item 
+bool {\bfseries \_\-simConstantsUpdated}\label{classTBTrackBaseProcessor_afdb74aa9289c530800aa1d7c59501d76}
+
+\item 
+bool {\bfseries \_\-simConstantsValid}\label{classTBTrackBaseProcessor_a8fb586fb8ea61ce5ec517eedc58e2f20}
+
+\item 
+{\bf TBTrack::AlnConstants} {\bfseries \_\-alnConstants}\label{classTBTrackBaseProcessor_a294488d1364906fcd0c8f5ef18c014d0}
+
+\item 
+bool {\bfseries \_\-alnConstantsUpdated}\label{classTBTrackBaseProcessor_a42d1d55d0287df992de23ea462f85220}
+
+\item 
+bool {\bfseries \_\-alnConstantsValid}\label{classTBTrackBaseProcessor_a6e3b2ecf65ac15db4090a2c6c1b93f33}
+
+\item 
+{\bf TBTrack::FitConstants} {\bfseries \_\-fitConstants}\label{classTBTrackBaseProcessor_a36bd2bc7a54a8e8d2d19f03bb957a3d6}
+
+\item 
+bool {\bfseries \_\-fitConstantsUpdated}\label{classTBTrackBaseProcessor_a4b8278fd1ed9ff91f0a476cd84cdbce1}
+
+\item 
+bool {\bfseries \_\-fitConstantsValid}\label{classTBTrackBaseProcessor_a256d8f8408c677dc784b5ebc14a1113e}
+
+\item 
+RunInformation {\bfseries \_\-runInformation}\label{classTBTrackBaseProcessor_a0c503bf691e0d9de0ca661ea9f14b811}
+
+\item 
+bool {\bfseries \_\-runInformationUpdated}\label{classTBTrackBaseProcessor_a59f417ea32d96a1670591899ce531ce1}
+
+\item 
+bool {\bfseries \_\-runInformationValid}\label{classTBTrackBaseProcessor_afe17581672955b7dbb7ec20aa0e6a29f}
+
+\item 
+std::string {\bf \_\-tdcRawDataCollection}\label{classTBTrackBaseProcessor_aa8dd92d4d8ad5abb7a00c821bbd6f0fc}
+
+\begin{DoxyCompactList}\small\item\em Various other items. \item\end{DoxyCompactList}\item 
+std::string {\bfseries \_\-simTrackerHitCollection}\label{classTBTrackBaseProcessor_a3087addb2e8b059f1ec6851ebf4ad8b8}
+
+\item 
+std::string {\bfseries \_\-tdcHitCollection}\label{classTBTrackBaseProcessor_a1f1d2ecaa258f8e7b751a4b6596174af}
+
+\item 
+std::string {\bfseries \_\-trackProjectionCollection}\label{classTBTrackBaseProcessor_a9aa2c503f69cba5c793fadd9605e0f18}
+
+\item 
+float {\bfseries \_\-beamMomentum}\label{classTBTrackBaseProcessor_a8d2c3a429d01f14154ac44828f415c7f}
+
+\item 
+int {\bf \_\-obsoleteMokkaCollections}\label{classTBTrackBaseProcessor_a49e71ebd14a8334e2d322e65586cec4d}
+
+\begin{DoxyCompactList}\small\item\em Allow for processing of files produced with multiple DC Collection (obsolete Mokka priot to Mokka6.3). \item\end{DoxyCompactList}\item 
+int {\bfseries \_\-nRun}\label{classTBTrackBaseProcessor_ad7d0e08c632e802779a1d8b645d6c47c}
+
+\item 
+int {\bfseries \_\-nEvt}\label{classTBTrackBaseProcessor_ac9ffd20b554281d63c4db5f8c16e3426}
+
+\item 
+int {\bfseries \_\-iRun}\label{classTBTrackBaseProcessor_ab91b172b59af005bce84b0b850fa29e6}
+
+\item 
+int {\bfseries \_\-iEvt}\label{classTBTrackBaseProcessor_a1aa277e041851d79b291447597f56fb2}
+
+\item 
+std::string {\bfseries \_\-runString}\label{classTBTrackBaseProcessor_a4b5f2e25f41f467972772f2e8cbe90c6}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries \_\-iCall}\label{classTBTrackBaseProcessor_a6233e01b6d5f8b6ae13278e26fd2225a}
+
+\item 
+int {\bfseries \_\-printLevel}\label{classTBTrackBaseProcessor_a6992548df906f3e9fe087cda782279ac}
+
+\item 
+int {\bfseries \_\-printEventNumber}\label{classTBTrackBaseProcessor_a9a8f6e7a20da0a4bd9eebbf4989efe32}
+
+\item 
+int {\bfseries \_\-printEventLevel}\label{classTBTrackBaseProcessor_a6bedefbd3cbed3a851983319c9894ec6}
+
+\item 
+TFile $\ast$ {\bfseries \_\-hFile}\label{classTBTrackBaseProcessor_adcbd4089b530b5af6be4ea277f999e75}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 22 of file TBTrackBaseProcessor.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+TBTrackBaseProcessor.hh\item 
+TBTrackBaseProcessor.cc\end{DoxyCompactItemize}

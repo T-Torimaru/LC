@@ -1,0 +1,151 @@
+\section{histmgr::HistMgr::Group\_\-t Class Reference}
+\label{classhistmgr_1_1HistMgr_1_1Group__t}\index{histmgr::HistMgr::Group\_\-t@{histmgr::HistMgr::Group\_\-t}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf deleteSharedStorage} ()\label{classhistmgr_1_1HistMgr_1_1Group__t_a7ff0cdee4b9404b88b4afde6a0fbeaac}
+
+\begin{DoxyCompactList}\small\item\em Called by the destructor of \doxyref{KeyMap\_\-t}{p.}{classhistmgr_1_1KeyMap__t} . \item\end{DoxyCompactList}\item 
+{\bf HistogramGroupData\_\-t} \& {\bf header} ()
+\begin{DoxyCompactList}\small\item\em Get the histogram/graph group header. \item\end{DoxyCompactList}\item 
+const {\bf HistogramGroupData\_\-t} \& {\bf header} () const 
+\begin{DoxyCompactList}\small\item\em Get the histogram/graph group header. \item\end{DoxyCompactList}\item 
+bool {\bf hasHistogramCollections} () const \label{classhistmgr_1_1HistMgr_1_1Group__t_ab56a30ddb87cabb86524d2785caf8529}
+
+\begin{DoxyCompactList}\small\item\em Return true if the Histogram group contains collections of histograms. \item\end{DoxyCompactList}\item 
+void {\bf setHistogramCollection} (const {\bf Key\_\-t} \&a\_\-key, {\bf HistogramCollection\_\-t} $\ast$ref)\label{classhistmgr_1_1HistMgr_1_1Group__t_ac4446abfa8ba3589ef1939ce2c407bbe}
+
+\begin{DoxyCompactList}\small\item\em Install the histogram collection and assign the key. \item\end{DoxyCompactList}\item 
+bool {\bf histogramCollectionExists} (const {\bf Key\_\-t} \&a\_\-key) const \label{classhistmgr_1_1HistMgr_1_1Group__t_a6dcb61b2793e12470bfd28e4dfeaafef}
+
+\begin{DoxyCompactList}\small\item\em Verify whether a histogram collection exists. \item\end{DoxyCompactList}\item 
+{\bf HistogramCollection\_\-t} \& {\bf histogramCollection} (const {\bf Key\_\-t} \&a\_\-key)\label{classhistmgr_1_1HistMgr_1_1Group__t_aba01ed4567e276b2a71494f6755c520f}
+
+\begin{DoxyCompactList}\small\item\em Get the histogram collection addressed by the key. \item\end{DoxyCompactList}\item 
+const {\bf HistogramCollection\_\-t} \& {\bf histogramCollection} (const {\bf Key\_\-t} \&a\_\-key) const \label{classhistmgr_1_1HistMgr_1_1Group__t_a98ede72f59c6e9a0f924e9c24fa5a8b4}
+
+\begin{DoxyCompactList}\small\item\em Get the histogram collection addressed by the key (read only). \item\end{DoxyCompactList}\item 
+bool {\bf hasHistogram2DCollections} () const \label{classhistmgr_1_1HistMgr_1_1Group__t_a96e6ef55eff3c43cf339716866c82f21}
+
+\begin{DoxyCompactList}\small\item\em Return true if the Histogram group contains collections of 2D histograms. \item\end{DoxyCompactList}\item 
+void {\bf setHistogram2DCollection} (const {\bf Key\_\-t} \&a\_\-key, {\bf Histogram2DCollection\_\-t} $\ast$ref)\label{classhistmgr_1_1HistMgr_1_1Group__t_aad3906445d907bfcc905a398503c872a}
+
+\begin{DoxyCompactList}\small\item\em Install the histogram collection and assign the key. \item\end{DoxyCompactList}\item 
+bool {\bf histogram2DCollectionExists} (const {\bf Key\_\-t} \&a\_\-key) const \label{classhistmgr_1_1HistMgr_1_1Group__t_a91ecccec34c6ac8359f05262cde6c447}
+
+\begin{DoxyCompactList}\small\item\em Verify whether a histogram collection exists. \item\end{DoxyCompactList}\item 
+{\bf Histogram2DCollection\_\-t} \& {\bf histogram2DCollection} (const {\bf Key\_\-t} \&a\_\-key)\label{classhistmgr_1_1HistMgr_1_1Group__t_a39246cff5eaa7174be4bc6144560bc05}
+
+\begin{DoxyCompactList}\small\item\em Get the histogram collection addressed by the key. \item\end{DoxyCompactList}\item 
+const {\bf Histogram2DCollection\_\-t} \& {\bf histogram2DCollection} (const {\bf Key\_\-t} \&a\_\-key) const \label{classhistmgr_1_1HistMgr_1_1Group__t_ad9edda850b6752df30366e9cb79c289b}
+
+\begin{DoxyCompactList}\small\item\em Get the histogram collection addressed by the key (read only). \item\end{DoxyCompactList}\item 
+bool {\bf hasProfileCollections} () const \label{classhistmgr_1_1HistMgr_1_1Group__t_ab4643d2d3bf49026300bf158ce56f17c}
+
+\begin{DoxyCompactList}\small\item\em Return true if the Histogram group contains collections of profile histograms. \item\end{DoxyCompactList}\item 
+void {\bf setProfileCollection} (const {\bf Key\_\-t} \&a\_\-key, {\bf ProfileCollection\_\-t} $\ast$ref)\label{classhistmgr_1_1HistMgr_1_1Group__t_af67b10d61e48586d38e3418f53f82eff}
+
+\begin{DoxyCompactList}\small\item\em Install the histogram collection and assign the key. \item\end{DoxyCompactList}\item 
+bool {\bf profileCollectionExists} (const {\bf Key\_\-t} \&a\_\-key) const \label{classhistmgr_1_1HistMgr_1_1Group__t_a730b9b72d809c17387cba4b9724bcf31}
+
+\begin{DoxyCompactList}\small\item\em Verify whether a histogram collection exists. \item\end{DoxyCompactList}\item 
+{\bf ProfileCollection\_\-t} \& {\bf profileCollection} (const {\bf Key\_\-t} \&a\_\-key)\label{classhistmgr_1_1HistMgr_1_1Group__t_a4f2b2ee2b2900c5a53fda122d732c559}
+
+\begin{DoxyCompactList}\small\item\em Get the histogram collection addressed by the key. \item\end{DoxyCompactList}\item 
+const {\bf ProfileCollection\_\-t} \& {\bf profileCollection} (const {\bf Key\_\-t} \&a\_\-key) const \label{classhistmgr_1_1HistMgr_1_1Group__t_a216742959c54ed5340303264f37849ac}
+
+\begin{DoxyCompactList}\small\item\em Get the histogram collection addressed by the key (read only). \item\end{DoxyCompactList}\item 
+bool {\bf hasGraphCollections} () const \label{classhistmgr_1_1HistMgr_1_1Group__t_a0722970a9bc176cb7bdcbaf692c1f68c}
+
+\begin{DoxyCompactList}\small\item\em Return true if the Histogram group contains collections of graphs. \item\end{DoxyCompactList}\item 
+void {\bf setGraphCollection} (const {\bf Key\_\-t} \&a\_\-key, {\bf GraphCollection\_\-t} $\ast$ref)\label{classhistmgr_1_1HistMgr_1_1Group__t_a317269f9f9d065c097fd75f77fb6b960}
+
+\begin{DoxyCompactList}\small\item\em Install the histogram collection and assign the key. \item\end{DoxyCompactList}\item 
+bool {\bf graphCollectionExists} (const {\bf Key\_\-t} \&a\_\-key) const \label{classhistmgr_1_1HistMgr_1_1Group__t_ae37af4e984bb4080a5437992e623fbe4}
+
+\begin{DoxyCompactList}\small\item\em Verify whether a histogram collection exists. \item\end{DoxyCompactList}\item 
+{\bf GraphCollection\_\-t} \& {\bf graphCollection} (const {\bf Key\_\-t} \&a\_\-key)\label{classhistmgr_1_1HistMgr_1_1Group__t_a9cc31d60ad942995646831d197c1ce9b}
+
+\begin{DoxyCompactList}\small\item\em Get the graph collection addressed by the key. \item\end{DoxyCompactList}\item 
+const {\bf GraphCollection\_\-t} \& {\bf graphCollection} (const {\bf Key\_\-t} \&a\_\-key) const \label{classhistmgr_1_1HistMgr_1_1Group__t_aedee2016fbc6e3a5215954c16b5b0027}
+
+\begin{DoxyCompactList}\small\item\em Get the graph collection addressed by the key (read only). \item\end{DoxyCompactList}\item 
+bool {\bf hasCollection} (ECollectionType type) const \label{classhistmgr_1_1HistMgr_1_1Group__t_a284356fe7c0fd54caba17ccf30a2210c}
+
+\begin{DoxyCompactList}\small\item\em Return true if the collection contains still elements. \item\end{DoxyCompactList}\item 
+std::pair$<$ KeyMapBase\_\-t::NameMap\_\-t::const\_\-iterator, KeyMapBase\_\-t::NameMap\_\-t::const\_\-iterator $>$ {\bf nameListIterators} (ECollectionType type) const 
+\begin{DoxyCompactList}\small\item\em Get the begin and end iterators of the name list. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const {\bf KeyMapBase\_\-t} $\ast$ {\bfseries getNameListConst} (ECollectionType \&type) const \label{classhistmgr_1_1HistMgr_1_1Group__t_ada80d7acb301576ad94ab4b992c5ab1e}
+
+\item 
+const {\bf KeyMapBase\_\-t} $\ast$ {\bfseries getNameList} (ECollectionType \&type) const \label{classhistmgr_1_1HistMgr_1_1Group__t_a411ea496da41e57b537b8642041b2ee2}
+
+\item 
+{\bf KeyMapBase\_\-t} $\ast$ {\bfseries getNameList} (ECollectionType \&type)\label{classhistmgr_1_1HistMgr_1_1Group__t_a48f73dda9c43172b94a94bd7c29af8ea}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf HistogramGroupData\_\-t} {\bfseries \_\-header}\label{classhistmgr_1_1HistMgr_1_1Group__t_a29d12ddbcc94cfb35a89b6aaca9f65f5}
+
+\item 
+{\bf KeyMap\_\-t}$<$ {\bf accounting\_\-ptr}$<$ {\bf HistogramCollection\_\-t} $>$ $>$ {\bfseries \_\-histogramList}\label{classhistmgr_1_1HistMgr_1_1Group__t_a731e0e40c510e47e4dae48045cbde9ca}
+
+\item 
+{\bf KeyMap\_\-t}$<$ {\bf accounting\_\-ptr}$<$ {\bf Histogram2DCollection\_\-t} $>$ $>$ {\bfseries \_\-histogram2DList}\label{classhistmgr_1_1HistMgr_1_1Group__t_a7c230e9216beaaebcc95b71d578aa42e}
+
+\item 
+{\bf KeyMap\_\-t}$<$ {\bf accounting\_\-ptr}$<$ {\bf ProfileCollection\_\-t} $>$ $>$ {\bfseries \_\-profileList}\label{classhistmgr_1_1HistMgr_1_1Group__t_a0bef9cfde9749770d1b476497bc4cb7d}
+
+\item 
+{\bf KeyMap\_\-t}$<$ {\bf accounting\_\-ptr}$<$ {\bf GraphCollection\_\-t} $>$ $>$ {\bfseries \_\-graphList}\label{classhistmgr_1_1HistMgr_1_1Group__t_a68708db78b489d3d2a907d744dcda55b}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries HistMgr}\label{classhistmgr_1_1HistMgr_1_1Group__t_a3cc85db784d7651390e41024125eb3a0}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 99 of file HistMgr.hh.
+
+\subsection{Member Function Documentation}
+\index{histmgr::HistMgr::Group\_\-t@{histmgr::HistMgr::Group\_\-t}!header@{header}}
+\index{header@{header}!histmgr::HistMgr::Group_t@{histmgr::HistMgr::Group\_\-t}}
+\subsubsection[{header}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf HistogramGroupData\_\-t}\& histmgr::HistMgr::Group\_\-t::header () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1HistMgr_1_1Group__t_a175d5209a550475d54e4af0265419b5f}
+
+
+Get the histogram/graph group header. (read only). The header contains the assignment to files and folders. 
+
+Definition at line 115 of file HistMgr.hh.\index{histmgr::HistMgr::Group\_\-t@{histmgr::HistMgr::Group\_\-t}!header@{header}}
+\index{header@{header}!histmgr::HistMgr::Group_t@{histmgr::HistMgr::Group\_\-t}}
+\subsubsection[{header}]{\setlength{\rightskip}{0pt plus 5cm}{\bf HistogramGroupData\_\-t}\& histmgr::HistMgr::Group\_\-t::header ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1HistMgr_1_1Group__t_a278a8749d24f543422bee3f1cacee063}
+
+
+Get the histogram/graph group header. The header contains the assignment to files and folders. 
+
+Definition at line 110 of file HistMgr.hh.
+
+Referenced by histmgr::HistMgr::assignFileName(), and histmgr::HistMgr::writeHistograms().\index{histmgr::HistMgr::Group\_\-t@{histmgr::HistMgr::Group\_\-t}!nameListIterators@{nameListIterators}}
+\index{nameListIterators@{nameListIterators}!histmgr::HistMgr::Group_t@{histmgr::HistMgr::Group\_\-t}}
+\subsubsection[{nameListIterators}]{\setlength{\rightskip}{0pt plus 5cm}std::pair$<$KeyMapBase\_\-t::NameMap\_\-t::const\_\-iterator, KeyMapBase\_\-t::NameMap\_\-t::const\_\-iterator$>$ histmgr::HistMgr::Group\_\-t::nameListIterators (ECollectionType {\em type}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1HistMgr_1_1Group__t_a6c2929464cba66da95d89c7f9f8aae06}
+
+
+Get the begin and end iterators of the name list. This can be used to generate a name list of all the elements. 
+
+Definition at line 218 of file HistMgr.hh.
+
+Referenced by histmgr::HistMgr::fillHistogramCollectionList().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+HistMgr.hh\end{DoxyCompactItemize}

@@ -1,0 +1,45 @@
+\section{CALICE::SiPMVolCorr Class Reference}
+\label{classCALICE_1_1SiPMVolCorr}\index{CALICE::SiPMVolCorr@{CALICE::SiPMVolCorr}}
+
+
+voltage corrections for Hcal SiPMs  
+
+
+{\ttfamily \#include $<$SiPMVolCorr.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf SiPMVolCorr} (int SiPMID, float voltage)\label{classCALICE_1_1SiPMVolCorr_a3346e0a35860a44163b74ae3510fe957}
+
+\begin{DoxyCompactList}\small\item\em Convenient c'tor. \item\end{DoxyCompactList}\item 
+{\bf SiPMVolCorr} (LCObject $\ast$obj)\label{classCALICE_1_1SiPMVolCorr_a99e6434d82640a89d43c59c125014d5f}
+
+\begin{DoxyCompactList}\small\item\em 'Copy constructor' needed to interpret LCCollection read from file/database. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$SiPMVolCorr} ()\label{classCALICE_1_1SiPMVolCorr_ae0c3a7f5823b765335175f54b7886024}
+
+\begin{DoxyCompactList}\small\item\em Important for memory handling. \item\end{DoxyCompactList}\item 
+int {\bf getSiPMID} ()\label{classCALICE_1_1SiPMVolCorr_a2f24c8b0c72e8e4238e04ce92fc2dd2e}
+
+\begin{DoxyCompactList}\small\item\em the class interface: \item\end{DoxyCompactList}\item 
+float {\bfseries getVolCorr} ()\label{classCALICE_1_1SiPMVolCorr_ad9c4a3fd90f565c1919b3353b082a717}
+
+\item 
+void {\bf print} (std::ostream \&os)\label{classCALICE_1_1SiPMVolCorr_a5434b764d344b24ce8f21006b43eb52e}
+
+\begin{DoxyCompactList}\small\item\em convenient print function \item\end{DoxyCompactList}\item 
+const std::string {\bfseries getTypeName} () const \label{classCALICE_1_1SiPMVolCorr_a3299bdb8b4986f2eef6829320116dba7}
+
+\item 
+const std::string {\bfseries getDataDescription} () const \label{classCALICE_1_1SiPMVolCorr_a7f369893fee47d5131ba81367aa04b38}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+voltage corrections for Hcal SiPMs 
+
+Definition at line 28 of file SiPMVolCorr.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+SiPMVolCorr.hh\item 
+SiPMVolCorr.cc\end{DoxyCompactItemize}

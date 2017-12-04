@@ -1,0 +1,236 @@
+\section{CALICE::BeTrgEvent Class Reference}
+\label{classCALICE_1_1BeTrgEvent}\index{CALICE::BeTrgEvent@{CALICE::BeTrgEvent}}
+
+
+Stores the trigger event data.  
+
+
+{\ttfamily \#include $<$BeTrgEvent.hh$>$}Inheritance diagram for CALICE::BeTrgEvent::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCALICE_1_1BeTrgEvent}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf BeTrgEvent} (unsigned int board\_\-id)
+\begin{DoxyCompactList}\small\item\em UsefulConstructor. \item\end{DoxyCompactList}\item 
+{\bf BeTrgEvent} (LCObject $\ast$obj)\label{classCALICE_1_1BeTrgEvent_aad3ab901206f9cfe9867505455e014fe}
+
+\begin{DoxyCompactList}\small\item\em 'Copy constructor' needed to interpret LCCollection read from file/database. \item\end{DoxyCompactList}\item 
+{\bf BeTrgEvent} \& {\bf setBoardID} (int boardID)
+\begin{DoxyCompactList}\small\item\em set the packed board id. \item\end{DoxyCompactList}\item 
+int {\bf getBoardID} () const \label{classCALICE_1_1BeTrgEvent_a0a62c75cb07342d47e5298ebfb34f7d8}
+
+\begin{DoxyCompactList}\small\item\em Information on the FE chip the data was received. \item\end{DoxyCompactList}\item 
+{\bf BeTrgEvent} \& {\bf setInputStatus} (int input\_\-status)
+\begin{DoxyCompactList}\small\item\em Set the pre busy trigger counter (what ever that is ;-\/). \item\end{DoxyCompactList}\item 
+int {\bf getInputStatus} () const \label{classCALICE_1_1BeTrgEvent_acaea9fd53c2fd11f7b31db9ea9806658}
+
+\begin{DoxyCompactList}\small\item\em Get the input status. \item\end{DoxyCompactList}\item 
+{\bf BeTrgEvent} \& {\bf setInputCatch} (int input\_\-catch)\label{classCALICE_1_1BeTrgEvent_af1b27f8a852855d164e5f71b7406998c}
+
+\begin{DoxyCompactList}\small\item\em Set the input catch (what ever that is ;-\/). \item\end{DoxyCompactList}\item 
+int {\bf getInputCatch} () const \label{classCALICE_1_1BeTrgEvent_ae076fd16cf3ee806c64a1d2e82e29f50}
+
+\begin{DoxyCompactList}\small\item\em Get the input catch (what ever that is ;-\/). \item\end{DoxyCompactList}\item 
+{\bf BeTrgEvent} \& {\bf setPreBusyCatch} (int prebusy\_\-catch)
+\begin{DoxyCompactList}\small\item\em Set the trigger busy status. \item\end{DoxyCompactList}\item 
+int {\bf getPrebusyCatch} () const \label{classCALICE_1_1BeTrgEvent_a06df76683895a30404a54912b09d210a}
+
+\begin{DoxyCompactList}\small\item\em Get the prebusy Catch. \item\end{DoxyCompactList}\item 
+{\bf BeTrgEvent} \& {\bf setSignalCatch} (int signal\_\-catch)\label{classCALICE_1_1BeTrgEvent_a8cf5425520f7881a57cb36a959fc256f}
+
+\begin{DoxyCompactList}\small\item\em Set the signal Catch. \item\end{DoxyCompactList}\item 
+int {\bf getSignalCatch} () const \label{classCALICE_1_1BeTrgEvent_a0afe03ca2e64566c074045563fb62ef9}
+
+\begin{DoxyCompactList}\small\item\em Get the signal Catch. \item\end{DoxyCompactList}\item 
+{\bf BeTrgEvent} \& {\bf setControl} (int control)\label{classCALICE_1_1BeTrgEvent_a145c2a82f590cd2350a1f6c5d350c178}
+
+\begin{DoxyCompactList}\small\item\em Set the contrl value. \item\end{DoxyCompactList}\item 
+int {\bf getControl} () const \label{classCALICE_1_1BeTrgEvent_acf9e7facc723fe1c420b3cd2c1b4993f}
+
+\begin{DoxyCompactList}\small\item\em Get the control value. \item\end{DoxyCompactList}\item 
+{\bf BeTrgEvent} \& {\bf setInitialFifoStatus} (int initial\_\-fifo\_\-status)\label{classCALICE_1_1BeTrgEvent_ae2c3ed9c3ebfd484ea022bb308a6faca}
+
+\begin{DoxyCompactList}\small\item\em Set the inital fifo status. \item\end{DoxyCompactList}\item 
+int {\bf getInitialFifoStatus} () const \label{classCALICE_1_1BeTrgEvent_a4359fbafae59cc303c5160f3626c74e6}
+
+\begin{DoxyCompactList}\small\item\em Get the initial fifo status. \item\end{DoxyCompactList}\item 
+{\bf BeTrgEvent} \& {\bf setFinalFifoStatus} (int final\_\-fifo\_\-status)\label{classCALICE_1_1BeTrgEvent_aef331b17a4eca0f054c3379b517c1bbe}
+
+\begin{DoxyCompactList}\small\item\em Set the final fifo status. \item\end{DoxyCompactList}\item 
+int {\bf getFinalFifoStatus} () const \label{classCALICE_1_1BeTrgEvent_a7674994d84b63ae049e64fbbae486289}
+
+\begin{DoxyCompactList}\small\item\em Get the final fifo status. \item\end{DoxyCompactList}\item 
+{\bf BeTrgEvent} \& {\bf setFifoWord} (unsigned int word\_\-index, unsigned int word)
+\begin{DoxyCompactList}\small\item\em Set the fifo word. \item\end{DoxyCompactList}\item 
+{\bf BeTrgEvent} \& {\bf setAllFifoWords} (unsigned int n\_\-words, const unsigned int $\ast$const word\_\-list)
+\begin{DoxyCompactList}\small\item\em Set all the fifo words. \item\end{DoxyCompactList}\item 
+int {\bf getNFifoWords} () const \label{classCALICE_1_1BeTrgEvent_a8dad5638340b3046d0cad0012fe1c03a}
+
+\begin{DoxyCompactList}\small\item\em Get the number of words contained in the fifo. \item\end{DoxyCompactList}\item 
+int {\bf getFifoWord} (unsigned int word\_\-index) const 
+\begin{DoxyCompactList}\small\item\em Get a fifo word. \item\end{DoxyCompactList}\item 
+IntVec \& {\bf getFifoWords} (IntVec \&dest) const 
+\begin{DoxyCompactList}\small\item\em Get a fifo word. \item\end{DoxyCompactList}\item 
+{\bf BeTrgEvent} \& {\bf setTriggerCounter} (int trigger\_\-counter)\label{classCALICE_1_1BeTrgEvent_ab3751be9202d7dba09f8bbf08ac3aa37}
+
+\begin{DoxyCompactList}\small\item\em Set the trigger counter. \item\end{DoxyCompactList}\item 
+int {\bf getTriggerCounter} () const \label{classCALICE_1_1BeTrgEvent_a9fcd7bb63d0416bcf6099e7284682419}
+
+\begin{DoxyCompactList}\small\item\em Get the trigger counter. \item\end{DoxyCompactList}\item 
+{\bf BeTrgEvent} \& {\bf setPreBusyTriggerCounter} (int prebusy\_\-counter)\label{classCALICE_1_1BeTrgEvent_aaf444986a4b42c9b9b050a2567e0fe4b}
+
+\begin{DoxyCompactList}\small\item\em Set the prebusy Trigger counter. \item\end{DoxyCompactList}\item 
+int {\bf getPreBusyTriggerCounter} () const \label{classCALICE_1_1BeTrgEvent_a4325337c9d9c673d1418b626c273c3f7}
+
+\begin{DoxyCompactList}\small\item\em Get the prebusy trigger counter. \item\end{DoxyCompactList}\item 
+void {\bf print} (std::ostream \&os)\label{classCALICE_1_1BeTrgEvent_ab0a9546572d498159435527bf4d9c950}
+
+\begin{DoxyCompactList}\small\item\em Convenient print method. \item\end{DoxyCompactList}\item 
+const std::string {\bfseries getTypeName} () const \label{classCALICE_1_1BeTrgEvent_a7ec78f3a56262534b36eb467b3f56013}
+
+\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1BeTrgEvent_a55df9320a60e43187e712b3410317aa5}
+
+\begin{DoxyCompactList}\small\item\em Return a brief description of the data members. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Stores the trigger event data. To acces the configuration: 
+\begin{DoxyPre}
+   void processEvent(LCEvent *event)  \{
+       try \{
+        // string \_colName = "BeTrgEventData"
+        LCCollection *col=event->getCollection(\_colName);
+        for (unsigned int element\_i=0; element\_i<col->getNumberOfElements(); element\_i++) \{
+           \doxyref{BeTrgEvent}{p.}{classCALICE_1_1BeTrgEvent} event(col->getElementAt(element\_i));\end{DoxyPre}
+
+
+
+\begin{DoxyPre}        \}
+   \}
+ \end{DoxyPre}
+
+
+\begin{DoxySeeAlso}{See also}
+\doxyref{ConditionsChangeDelegator}{p.}{classCALICE_1_1ConditionsChangeDelegator}
+\end{DoxySeeAlso}
+\begin{DoxyAuthor}{Author}
+Götz Gaycken LLR (Ecole Polytechnique) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Sep 2005 
+\end{DoxyDate}
+
+
+Definition at line 74 of file BeTrgEvent.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CALICE::BeTrgEvent@{CALICE::BeTrgEvent}!BeTrgEvent@{BeTrgEvent}}
+\index{BeTrgEvent@{BeTrgEvent}!CALICE::BeTrgEvent@{CALICE::BeTrgEvent}}
+\subsubsection[{BeTrgEvent}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::BeTrgEvent::BeTrgEvent (unsigned int {\em board\_\-id})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1BeTrgEvent_ab66620b2f1ccf07f5334d37c54fcf77e}
+
+
+UsefulConstructor. 
+\begin{DoxyParams}{Parameters}
+\item[{\em board\_\-id}]the packed board id (\doxyref{CALICE::BoardID}{p.}{classCALICE_1_1BoardID}). \end{DoxyParams}
+
+
+Definition at line 82 of file BeTrgEvent.hh.
+
+References setBoardID().
+
+\subsection{Member Function Documentation}
+\index{CALICE::BeTrgEvent@{CALICE::BeTrgEvent}!getFifoWord@{getFifoWord}}
+\index{getFifoWord@{getFifoWord}!CALICE::BeTrgEvent@{CALICE::BeTrgEvent}}
+\subsubsection[{getFifoWord}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::BeTrgEvent::getFifoWord (unsigned int {\em word\_\-index}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1BeTrgEvent_a8c401cd2b6f76c27f2430ce3e4ebf609}
+
+
+Get a fifo word. 
+\begin{DoxyParams}{Parameters}
+\item[{\em word\_\-index}]of the word in the fifo \end{DoxyParams}
+
+
+Definition at line 225 of file BeTrgEvent.hh.
+
+References getNFifoWords().
+
+Referenced by getFifoWords(), and print().\index{CALICE::BeTrgEvent@{CALICE::BeTrgEvent}!getFifoWords@{getFifoWords}}
+\index{getFifoWords@{getFifoWords}!CALICE::BeTrgEvent@{CALICE::BeTrgEvent}}
+\subsubsection[{getFifoWords}]{\setlength{\rightskip}{0pt plus 5cm}IntVec\& CALICE::BeTrgEvent::getFifoWords (IntVec \& {\em dest}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1BeTrgEvent_acb8303a2a3d1c04c260e1ba7c29c5cbc}
+
+
+Get a fifo word. 
+\begin{DoxyParams}{Parameters}
+\item[{\em dest}]reference to a vector of integers which will be cleared in filled with the contents of the fifo \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+for convenience a reference to the filled vector (i.e. is the one given as argument).
+\end{DoxyReturn}
+NOTE: Unless a vector is needed to pass the data to some function, it is adviced to get the individual values with \doxyref{getFifoWord()}{p.}{classCALICE_1_1BeTrgEvent_a8c401cd2b6f76c27f2430ce3e4ebf609} since this avoids copying (On the other hand, each access has the penalty of a virtual function call, so in some cases it might be advantages to make a copy which will allow faster element acces in subsequent calls.) 
+
+Definition at line 246 of file BeTrgEvent.hh.
+
+References getFifoWord(), and getNFifoWords().\index{CALICE::BeTrgEvent@{CALICE::BeTrgEvent}!setAllFifoWords@{setAllFifoWords}}
+\index{setAllFifoWords@{setAllFifoWords}!CALICE::BeTrgEvent@{CALICE::BeTrgEvent}}
+\subsubsection[{setAllFifoWords}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BeTrgEvent}\& CALICE::BeTrgEvent::setAllFifoWords (unsigned int {\em n\_\-words}, \/  const unsigned int $\ast$const  {\em word\_\-list})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1BeTrgEvent_a9f7fbf8c21c3884468b277ef3323af6c}
+
+
+Set all the fifo words. 
+\begin{DoxyParams}{Parameters}
+\item[{\em n\_\-words}]the number of words in the fifo. \item[{\em word\_\-list}]a pointer to the fifo words. \end{DoxyParams}
+
+
+Definition at line 206 of file BeTrgEvent.hh.
+
+References CALICE::LCGenericObjectImplExt::obj().\index{CALICE::BeTrgEvent@{CALICE::BeTrgEvent}!setBoardID@{setBoardID}}
+\index{setBoardID@{setBoardID}!CALICE::BeTrgEvent@{CALICE::BeTrgEvent}}
+\subsubsection[{setBoardID}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BeTrgEvent}\& CALICE::BeTrgEvent::setBoardID (int {\em boardID})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1BeTrgEvent_a70ffd8782e93479e543253bd331c8a15}
+
+
+set the packed board id. \begin{DoxySeeAlso}{See also}
+\doxyref{BoardID}{p.}{classCALICE_1_1BoardID} 
+\end{DoxySeeAlso}
+
+
+Definition at line 98 of file BeTrgEvent.hh.
+
+References CALICE::LCGenericObjectImplExt::obj().
+
+Referenced by BeTrgEvent().\index{CALICE::BeTrgEvent@{CALICE::BeTrgEvent}!setFifoWord@{setFifoWord}}
+\index{setFifoWord@{setFifoWord}!CALICE::BeTrgEvent@{CALICE::BeTrgEvent}}
+\subsubsection[{setFifoWord}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BeTrgEvent}\& CALICE::BeTrgEvent::setFifoWord (unsigned int {\em word\_\-index}, \/  unsigned int {\em word})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1BeTrgEvent_a318de8225e762747bcb7bc2c168d6324}
+
+
+Set the fifo word. 
+\begin{DoxyParams}{Parameters}
+\item[{\em word\_\-index}]of the word in the fifo. \item[{\em word}]the value of the word. \end{DoxyParams}
+
+
+Definition at line 199 of file BeTrgEvent.hh.
+
+References CALICE::LCGenericObjectImplExt::obj().\index{CALICE::BeTrgEvent@{CALICE::BeTrgEvent}!setInputStatus@{setInputStatus}}
+\index{setInputStatus@{setInputStatus}!CALICE::BeTrgEvent@{CALICE::BeTrgEvent}}
+\subsubsection[{setInputStatus}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BeTrgEvent}\& CALICE::BeTrgEvent::setInputStatus (int {\em input\_\-status})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1BeTrgEvent_a0425fc76da285989b2baf35e561c31ba}
+
+
+Set the pre busy trigger counter (what ever that is ;-\/). Get the pre busy trigger counter (what ever that is ;-\/). Set the trigger counter. Get the trigger counter. Set the input status. 
+
+Definition at line 124 of file BeTrgEvent.hh.
+
+References CALICE::LCGenericObjectImplExt::obj().\index{CALICE::BeTrgEvent@{CALICE::BeTrgEvent}!setPreBusyCatch@{setPreBusyCatch}}
+\index{setPreBusyCatch@{setPreBusyCatch}!CALICE::BeTrgEvent@{CALICE::BeTrgEvent}}
+\subsubsection[{setPreBusyCatch}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BeTrgEvent}\& CALICE::BeTrgEvent::setPreBusyCatch (int {\em prebusy\_\-catch})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1BeTrgEvent_a4ba6c3c2e405960a6d7694f1773a4224}
+
+
+Set the trigger busy status. Get the trigger busy status. Set the prebusy Catch. 
+
+Definition at line 151 of file BeTrgEvent.hh.
+
+References CALICE::LCGenericObjectImplExt::obj().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+BeTrgEvent.hh\end{DoxyCompactItemize}

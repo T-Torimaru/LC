@@ -1,0 +1,138 @@
+\section{CALICE::LinearFitResult Class Reference}
+\label{classCALICE_1_1LinearFitResult}\index{CALICE::LinearFitResult@{CALICE::LinearFitResult}}
+
+
+Class to store the result of a linear fit within the lcio framework.  
+
+
+{\ttfamily \#include $<$LinearFitResultLCIO.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries LinearFitResult} (lcio::LCObject $\ast$obj)\label{classCALICE_1_1LinearFitResult_a787a52733606fc1285b8658bad6dcdb7}
+
+\item 
+{\bfseries LinearFitResult} (int ID, double offset, double slope, double chi2, double eMA, double eMB, double eMC, double eMD, int ndf)\label{classCALICE_1_1LinearFitResult_a2ab09e1e28ceec3d4d38954450d91d14}
+
+\item 
+double {\bf eval} (const double x) const 
+\begin{DoxyCompactList}\small\item\em Evaluates the fit. \item\end{DoxyCompactList}\item 
+int {\bf getID} () const \label{classCALICE_1_1LinearFitResult_a1d6731c9a204443691b3cd9d345e4e25}
+
+\begin{DoxyCompactList}\small\item\em Get the identifier. \item\end{DoxyCompactList}\item 
+int {\bf getNDF} () const \label{classCALICE_1_1LinearFitResult_ad0d3cd32c74891ff558a5685b7b6c52b}
+
+\begin{DoxyCompactList}\small\item\em Get the number of degress of freedom of the fit. \item\end{DoxyCompactList}\item 
+double {\bf getOffset} () const 
+\begin{DoxyCompactList}\small\item\em Get the offset/y-\/intercept of the fit. \item\end{DoxyCompactList}\item 
+double {\bf getSlope} () const \label{classCALICE_1_1LinearFitResult_a3337a69b522aebd8ee22712230461be9}
+
+\begin{DoxyCompactList}\small\item\em Get the slope of the fit. \item\end{DoxyCompactList}\item 
+double {\bf getChi2} () const \label{classCALICE_1_1LinearFitResult_ad8f1e8471fea87e81ea8804d2a6425b9}
+
+\begin{DoxyCompactList}\small\item\em Get the Chi2 of the fit. \item\end{DoxyCompactList}\item 
+void {\bf getErrorMatrix} (double errorMatrix[2][2]) const 
+\begin{DoxyCompactList}\small\item\em Get the error matrix of the fit. \item\end{DoxyCompactList}\item 
+double {\bf getOffsetError} () const \label{classCALICE_1_1LinearFitResult_a3672f98b7f1065e167e3be9fc33e9a5b}
+
+\begin{DoxyCompactList}\small\item\em Get the error of the offset. \item\end{DoxyCompactList}\item 
+double {\bf getSlopeError} () const \label{classCALICE_1_1LinearFitResult_a1f6bb8ac0767fd30c51f6f6737a16d0e}
+
+\begin{DoxyCompactList}\small\item\em Get the error of the slope. \item\end{DoxyCompactList}\item 
+void {\bf setID} (const int ID)\label{classCALICE_1_1LinearFitResult_a60030ae12b6d53fe2e8ee89431ac9e61}
+
+\begin{DoxyCompactList}\small\item\em Sets an identifier. \item\end{DoxyCompactList}\item 
+void {\bf setNDF} (const int NDF)\label{classCALICE_1_1LinearFitResult_a12be9eabc9b90be240a585a54047ed4a}
+
+\begin{DoxyCompactList}\small\item\em Sets the number of degress of freedom. \item\end{DoxyCompactList}\item 
+void {\bf setOffset} (const double offset)\label{classCALICE_1_1LinearFitResult_ac7d3cb3852250e6b792b1bf3de462afe}
+
+\begin{DoxyCompactList}\small\item\em Sets the offset. \item\end{DoxyCompactList}\item 
+void {\bf setSlope} (const double slope)\label{classCALICE_1_1LinearFitResult_ade777ec026d47bd9d5dd45119cbf2e7b}
+
+\begin{DoxyCompactList}\small\item\em Sets the slope. \item\end{DoxyCompactList}\item 
+void {\bf setChi2} (const double chi2)\label{classCALICE_1_1LinearFitResult_acd102f0b28cca3588b332e95029dec73}
+
+\begin{DoxyCompactList}\small\item\em Sets the chi2. \item\end{DoxyCompactList}\item 
+void {\bf setErrorMatrix} (const double array[2][2])\label{classCALICE_1_1LinearFitResult_a07626f2f4cb7e780421ccce480071410}
+
+\begin{DoxyCompactList}\small\item\em Sets the full error matrix. \item\end{DoxyCompactList}\item 
+void {\bf setOffsetError} (double offsetError)\label{classCALICE_1_1LinearFitResult_a2700899a5606c26906e6dea452fcb96c}
+
+\begin{DoxyCompactList}\small\item\em Sets the error of the offset. \item\end{DoxyCompactList}\item 
+void {\bf setSlopeError} (double slopeError)\label{classCALICE_1_1LinearFitResult_affe82cd5cd4c19a143545006f35e5859}
+
+\begin{DoxyCompactList}\small\item\em Sets the error of the slope. \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const 
+\begin{DoxyCompactList}\small\item\em Get the type name. \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const 
+\begin{DoxyCompactList}\small\item\em Get the data description. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to store the result of a linear fit within the lcio framework. This class can be used for example to store the result of a linear fit, e.g. TF1 root fit.
+
+Errors are stored in the error matrix.
+
+\begin{DoxyAuthor}{Author}
+Sebastian Richter ({\tt sebastian.richter@desy.de}) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+9 January 2009 
+\end{DoxyDate}
+
+
+Definition at line 42 of file LinearFitResultLCIO.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::LinearFitResult@{CALICE::LinearFitResult}!eval@{eval}}
+\index{eval@{eval}!CALICE::LinearFitResult@{CALICE::LinearFitResult}}
+\subsubsection[{eval}]{\setlength{\rightskip}{0pt plus 5cm}double CALICE::LinearFitResult::eval (const double {\em x}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1LinearFitResult_ad7c907bb78608e51f09223d6c9e2290f}
+
+
+Evaluates the fit. 
+\begin{DoxyParams}{Parameters}
+\item[{\em x}]-\/ point where the fit is evaluated: \doxyref{getOffset()}{p.}{classCALICE_1_1LinearFitResult_a7b982ced1ea8f7560298e70d86fcfa4e} + x $\ast$ \doxyref{getSlope()}{p.}{classCALICE_1_1LinearFitResult_a3337a69b522aebd8ee22712230461be9} \end{DoxyParams}
+
+
+Definition at line 76 of file LinearFitResultLCIO.hh.
+
+References getOffset(), and getSlope().\index{CALICE::LinearFitResult@{CALICE::LinearFitResult}!getDataDescription@{getDataDescription}}
+\index{getDataDescription@{getDataDescription}!CALICE::LinearFitResult@{CALICE::LinearFitResult}}
+\subsubsection[{getDataDescription}]{\setlength{\rightskip}{0pt plus 5cm}const std::string CALICE::LinearFitResult::getDataDescription () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1LinearFitResult_a50a70fb6361ffbb6a8ba34377c6a779c}
+
+
+Get the data description. The data description gives the meaning of the data fields. 
+
+Definition at line 244 of file LinearFitResultLCIO.hh.\index{CALICE::LinearFitResult@{CALICE::LinearFitResult}!getErrorMatrix@{getErrorMatrix}}
+\index{getErrorMatrix@{getErrorMatrix}!CALICE::LinearFitResult@{CALICE::LinearFitResult}}
+\subsubsection[{getErrorMatrix}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::LinearFitResult::getErrorMatrix (double {\em errorMatrix}[2][2]) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1LinearFitResult_a0a732a0fbe0bbda0b824166a172dac6b}
+
+
+Get the error matrix of the fit. The first parameter is the offset, the second one is the slope. 
+
+Definition at line 130 of file LinearFitResultLCIO.hh.
+
+Referenced by getOffsetError(), and getSlopeError().\index{CALICE::LinearFitResult@{CALICE::LinearFitResult}!getOffset@{getOffset}}
+\index{getOffset@{getOffset}!CALICE::LinearFitResult@{CALICE::LinearFitResult}}
+\subsubsection[{getOffset}]{\setlength{\rightskip}{0pt plus 5cm}double CALICE::LinearFitResult::getOffset () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1LinearFitResult_a7b982ced1ea8f7560298e70d86fcfa4e}
+
+
+Get the offset/y-\/intercept of the fit. The offset is equivalent to eval(0). 
+
+Definition at line 103 of file LinearFitResultLCIO.hh.
+
+Referenced by eval().\index{CALICE::LinearFitResult@{CALICE::LinearFitResult}!getTypeName@{getTypeName}}
+\index{getTypeName@{getTypeName}!CALICE::LinearFitResult@{CALICE::LinearFitResult}}
+\subsubsection[{getTypeName}]{\setlength{\rightskip}{0pt plus 5cm}const std::string CALICE::LinearFitResult::getTypeName () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1LinearFitResult_ab5d08f559ea52f1e9fe67053e6af787e}
+
+
+Get the type name. The type name is used to determine which class interprets the LCGenericObject which holds the pure data. 
+
+Definition at line 235 of file LinearFitResultLCIO.hh.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+LinearFitResultLCIO.hh\end{DoxyCompactItemize}

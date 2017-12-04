@@ -1,0 +1,148 @@
+\section{marlin::TBTrackWriteEngine Class Reference}
+\label{classmarlin_1_1TBTrackWriteEngine}\index{marlin::TBTrackWriteEngine@{marlin::TBTrackWriteEngine}}
+Inheritance diagram for marlin::TBTrackWriteEngine:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classmarlin_1_1TBTrackWriteEngine__inherit__graph}
+\end{center}
+\end{figure}
+Collaboration diagram for marlin::TBTrackWriteEngine:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classmarlin_1_1TBTrackWriteEngine__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries TBTrackWriteEngine} ({\bf RootTreeWriter} $\ast$host)\label{classmarlin_1_1TBTrackWriteEngine_a250832bba3cdeed6e929eb32d8065a4a}
+
+\item 
+virtual const std::string \& {\bf getEngineName} ()
+\item 
+virtual void {\bf registerParameters} ()
+\item 
+virtual void {\bf registerBranches} (TTree $\ast$hostTree)
+\item 
+virtual void {\bf fillVariables} (EVENT::LCEvent $\ast$)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>float {\bfseries XSlope}\\
+\>float {\bfseries XOffset}\\
+\>float {\bfseries XSlopeError}\\
+\>float {\bfseries XOffsetError}\\
+\>float {\bfseries XChi2}\\
+\>float {\bfseries XHcalImpact}\\
+\>int {\bf XNoDof}\\
+\>unsigned int {\bf XNoHits}\\
+\>int {\bfseries XNumElements}\\
+\>float {\bfseries XProbability}\\
+\>float {\bfseries YSlope}\\
+\>float {\bfseries YOffset}\\
+\>float {\bfseries YSlopeError}\\
+\>float {\bfseries YOffsetError}\\
+\>float {\bfseries YChi2}\\
+\>float {\bfseries YHcalImpact}\\
+\>int {\bf YNoDof}\\
+\>unsigned int {\bf YNoHits}\\
+\>int {\bfseries YNumElements}\\
+\>float {\bfseries YProbability}\\
+\} {\bfseries \_hitsFill}\label{classmarlin_1_1TBTrackWriteEngine_ab8b8ebcc8cbd78aa4cdbce623c971fd6}
+\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 11 of file TBTrackWriteEngine.hh.
+
+\subsection{Member Function Documentation}
+\index{marlin::TBTrackWriteEngine@{marlin::TBTrackWriteEngine}!fillVariables@{fillVariables}}
+\index{fillVariables@{fillVariables}!marlin::TBTrackWriteEngine@{marlin::TBTrackWriteEngine}}
+\subsubsection[{fillVariables}]{\setlength{\rightskip}{0pt plus 5cm}void marlin::TBTrackWriteEngine::fillVariables (EVENT::LCEvent $\ast$ {\em evt})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classmarlin_1_1TBTrackWriteEngine_a5250f4b00f85aabc3be6cff9593dae0f}
+Implement this to extract the variables which you want to fill into the {\itshape ROOT\/} tree from the event. Write the value of the variables you want to add to the tree to the member variables, which you registered to the {\itshape ROOT\/} tree. The \doxyref{RootTreeWriter}{p.}{classmarlin_1_1RootTreeWriter} will call TTree::Fill() for you. 
+\begin{DoxyParams}{Parameters}
+\item[{\em evt}]the current event \end{DoxyParams}
+
+
+Implements {\bf marlin::RootWriteEngine} \doxyref{}{p.}{classmarlin_1_1RootWriteEngine_ace823bd839cee7e8c8755e60c4cc7134}.
+
+Definition at line 95 of file TBTrackWriteEngine.cc.\index{marlin::TBTrackWriteEngine@{marlin::TBTrackWriteEngine}!getEngineName@{getEngineName}}
+\index{getEngineName@{getEngineName}!marlin::TBTrackWriteEngine@{marlin::TBTrackWriteEngine}}
+\subsubsection[{getEngineName}]{\setlength{\rightskip}{0pt plus 5cm}virtual const std::string\& marlin::TBTrackWriteEngine::getEngineName ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classmarlin_1_1TBTrackWriteEngine_ab7ff50302fa10ce40cd78cd87472d1fd}
+Returns the name of the engine to the \doxyref{RootTreeWriter}{p.}{classmarlin_1_1RootTreeWriter} processor. \begin{DoxyReturn}{Returns}
+Must return a string with the engine name. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[{\bf Todo}]fixme: should be const, but must be declared const in implementations too. Need to fix all existing engines?!? \end{Desc}
+
+
+Implements {\bf marlin::RootWriteEngine} \doxyref{}{p.}{classmarlin_1_1RootWriteEngine_a31e38120fe60efcb15666fd569ba5862}.
+
+Definition at line 20 of file TBTrackWriteEngine.hh.\index{marlin::TBTrackWriteEngine@{marlin::TBTrackWriteEngine}!registerBranches@{registerBranches}}
+\index{registerBranches@{registerBranches}!marlin::TBTrackWriteEngine@{marlin::TBTrackWriteEngine}}
+\subsubsection[{registerBranches}]{\setlength{\rightskip}{0pt plus 5cm}void marlin::TBTrackWriteEngine::registerBranches (TTree $\ast$)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classmarlin_1_1TBTrackWriteEngine_a7eeb8a39b0a40bfb13a0d1deb9c143cc}
+Implement to register local variables to the output tree 
+\begin{DoxyParams}{Parameters}
+\item[{\em pointer}]to the {\itshape ROOT\/} tree, which the \doxyref{RootTreeWriter}{p.}{classmarlin_1_1RootTreeWriter} processor fills at the end of each event. Usually the implementation looks like \begin{DoxyVerb}
+    /// hostTree->Branch("variable",&_variable" ,"variable/F"  );
+    /// \end{DoxyVerb}
+. But you can add any type of branch you like. \end{DoxyParams}
+
+
+Implements {\bf marlin::RootWriteEngine} \doxyref{}{p.}{classmarlin_1_1RootWriteEngine_ad467dc6e73fdd9fd4311f7277fd02a89}.
+
+Definition at line 64 of file TBTrackWriteEngine.cc.\index{marlin::TBTrackWriteEngine@{marlin::TBTrackWriteEngine}!registerParameters@{registerParameters}}
+\index{registerParameters@{registerParameters}!marlin::TBTrackWriteEngine@{marlin::TBTrackWriteEngine}}
+\subsubsection[{registerParameters}]{\setlength{\rightskip}{0pt plus 5cm}void marlin::TBTrackWriteEngine::registerParameters ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classmarlin_1_1TBTrackWriteEngine_a9ad2d4c87c6a35c554ed34ada4819678}
+Used to register steering parameters. Implement to register {\itshape \doxyref{marlin}{p.}{namespacemarlin}\/} steering file parameters. Use {\itshape \doxyref{marlin}{p.}{namespacemarlin}\/} syntax to register parameters for the calling \doxyref{RootTreeWriter}{p.}{classmarlin_1_1RootTreeWriter} processor.
+
+use \begin{DoxyVerb}
+    /// _hostProc.relayRegisterProcessorParameter(...)
+    /// _hostProc.relayRegister...()
+    /// \end{DoxyVerb}
+ instead of {\itshape \doxyref{marlin}{p.}{namespacemarlin}\/} processors \begin{DoxyVerb}register...() \end{DoxyVerb}
+ methods 
+
+Implements {\bf marlin::RootWriteEngine} \doxyref{}{p.}{classmarlin_1_1RootWriteEngine_ae12b70923768043fa5c1438f078c41d3}.
+
+Definition at line 37 of file TBTrackWriteEngine.cc.
+
+References marlin::RootTreeWriter::relayRegisterProcessorParameter().
+
+\subsection{Member Data Documentation}
+\index{marlin::TBTrackWriteEngine@{marlin::TBTrackWriteEngine}!XNoDof@{XNoDof}}
+\index{XNoDof@{XNoDof}!marlin::TBTrackWriteEngine@{marlin::TBTrackWriteEngine}}
+\subsubsection[{XNoDof}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf marlin::TBTrackWriteEngine::XNoDof}}\label{classmarlin_1_1TBTrackWriteEngine_a88b93c7937869683467b0f56c12e45dd}
+number of degrees of freedom 
+
+Definition at line 38 of file TBTrackWriteEngine.hh.\index{marlin::TBTrackWriteEngine@{marlin::TBTrackWriteEngine}!XNoHits@{XNoHits}}
+\index{XNoHits@{XNoHits}!marlin::TBTrackWriteEngine@{marlin::TBTrackWriteEngine}}
+\subsubsection[{XNoHits}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf marlin::TBTrackWriteEngine::XNoHits}}\label{classmarlin_1_1TBTrackWriteEngine_a73f3ddcea172fdea8451798bed27d708}
+number of hits used in fit 
+
+Definition at line 39 of file TBTrackWriteEngine.hh.\index{marlin::TBTrackWriteEngine@{marlin::TBTrackWriteEngine}!YNoDof@{YNoDof}}
+\index{YNoDof@{YNoDof}!marlin::TBTrackWriteEngine@{marlin::TBTrackWriteEngine}}
+\subsubsection[{YNoDof}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf marlin::TBTrackWriteEngine::YNoDof}}\label{classmarlin_1_1TBTrackWriteEngine_a97d6c41abe38e5441a01a2846d50e53f}
+number of degrees of freedom 
+
+Definition at line 49 of file TBTrackWriteEngine.hh.\index{marlin::TBTrackWriteEngine@{marlin::TBTrackWriteEngine}!YNoHits@{YNoHits}}
+\index{YNoHits@{YNoHits}!marlin::TBTrackWriteEngine@{marlin::TBTrackWriteEngine}}
+\subsubsection[{YNoHits}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf marlin::TBTrackWriteEngine::YNoHits}}\label{classmarlin_1_1TBTrackWriteEngine_a81937b7207b3ff7830d671bcd48e7913}
+number of hits used in fit 
+
+Definition at line 50 of file TBTrackWriteEngine.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+TBTrackWriteEngine.hh\item 
+TBTrackWriteEngine.cc\end{DoxyCompactItemize}

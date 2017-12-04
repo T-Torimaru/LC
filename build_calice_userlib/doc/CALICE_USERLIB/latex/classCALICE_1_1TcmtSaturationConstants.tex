@@ -1,0 +1,72 @@
+\section{CALICE::TcmtSaturationConstants Class Reference}
+\label{classCALICE_1_1TcmtSaturationConstants}\index{CALICE::TcmtSaturationConstants@{CALICE::TcmtSaturationConstants}}
+
+
+Class to store the estimates for the Cpix parameters for saturation corrections of TCMT hits.  
+
+
+{\ttfamily \#include $<$TcmtSaturationConstants.hh$>$}Inheritance diagram for CALICE::TcmtSaturationConstants::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCALICE_1_1TcmtSaturationConstants}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries TcmtSaturationConstants} (unsigned chip, unsigned channel, float value, float error)\label{classCALICE_1_1TcmtSaturationConstants_a0fda0990cb0fe3a38739584411e64a87}
+
+\item 
+{\bfseries TcmtSaturationConstants} (LCObject $\ast$obj)\label{classCALICE_1_1TcmtSaturationConstants_abaffbcb4fd0af3d9152c5dea75316bf5}
+
+\item 
+float {\bf getCpixValue} () const \label{classCALICE_1_1TcmtSaturationConstants_af9835522fd68a4f67efd90a02082cc76}
+
+\begin{DoxyCompactList}\small\item\em get conversion factor value \item\end{DoxyCompactList}\item 
+float {\bf getCpixError} () const \label{classCALICE_1_1TcmtSaturationConstants_add6f57e7924d554ec4954ba11f0469cf}
+
+\begin{DoxyCompactList}\small\item\em get conversion factor error \item\end{DoxyCompactList}\item 
+float {\bf applyCalibration} (float inputValue) const \label{classCALICE_1_1TcmtSaturationConstants_a7a6e4f80607f938d3a739bf2527f3a56}
+
+\begin{DoxyCompactList}\small\item\em apply calibration to energy value \item\end{DoxyCompactList}\item 
+float {\bf cancelCalibration} (float outputValue) const \label{classCALICE_1_1TcmtSaturationConstants_a4aeddf593c38c241ab1a299dcafe3e3e}
+
+\begin{DoxyCompactList}\small\item\em cancel an applied calibration from energy value \item\end{DoxyCompactList}\item 
+float {\bf applyCalibrationError} (float inputValue, float inputError) const \label{classCALICE_1_1TcmtSaturationConstants_a256def068f131f98cb3a62669cc4dcaa}
+
+\begin{DoxyCompactList}\small\item\em apply calibration error to current error \item\end{DoxyCompactList}\item 
+float {\bf cancelCalibrationError} (float outputValue, float outputError) const \label{classCALICE_1_1TcmtSaturationConstants_afad0ee5ac5383f4c6a408ecc053545e3}
+
+\begin{DoxyCompactList}\small\item\em apply error due to canceling a calibration to current error \item\end{DoxyCompactList}\item 
+bool {\bf calibrationValid} () const \label{classCALICE_1_1TcmtSaturationConstants_aa2b6117fdcb356a8af69f54a2944a0af}
+
+\begin{DoxyCompactList}\small\item\em check if a valid calibration is available \item\end{DoxyCompactList}\item 
+bool {\bf keepEvent} (float resultValue, float resultError) const \label{classCALICE_1_1TcmtSaturationConstants_adb8d6310076d321706941a73904e4f02}
+
+\begin{DoxyCompactList}\small\item\em no cut for the moment \item\end{DoxyCompactList}\item 
+void {\bf print} (std::ostream \&os)\label{classCALICE_1_1TcmtSaturationConstants_af97b8ce17fbc53bab69f4de239006219}
+
+\begin{DoxyCompactList}\small\item\em convenient print method \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1TcmtSaturationConstants_ab17f95c26bb5cbae16f113aead9deb2e}
+
+\begin{DoxyCompactList}\small\item\em return type of the class \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1TcmtSaturationConstants_a5fc2759ca9ffa7f1b9d0864980fe1a4c}
+
+\begin{DoxyCompactList}\small\item\em return a brief description of the data member \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to store the estimates for the Cpix parameters for saturation corrections of TCMT hits. The correction factor Cpix = f(pedSubADC) = 1/(1-\/pedSubADC$\ast$Cpix). For more details, see {\tt http://...} \begin{DoxyAuthor}{Author}
+G.Lima, K.Francis (NIU) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+March 15 2008 
+\end{DoxyDate}
+
+
+Definition at line 26 of file TcmtSaturationConstants.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+TcmtSaturationConstants.hh\item 
+TcmtSaturationConstants.cc\end{DoxyCompactItemize}

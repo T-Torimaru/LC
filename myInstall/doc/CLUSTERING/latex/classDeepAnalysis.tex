@@ -1,0 +1,239 @@
+\section{DeepAnalysis Class Reference}
+\label{classDeepAnalysis}\index{DeepAnalysis@{DeepAnalysis}}
+
+
+\doxyref{Cluster}{p.}{classDeepAnalysis_1_1Cluster} finding and analysis.  
+
+
+{\ttfamily \#include $<$DeepAnalysis.hh$>$}Inheritance diagram for DeepAnalysis::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classDeepAnalysis}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Cluster}
+\begin{DoxyCompactList}\small\item\em \doxyref{Cluster}{p.}{classDeepAnalysis_1_1Cluster} is the main object to work with and to keep the main results of the analisys \doxyref{Cluster}{p.}{classDeepAnalysis_1_1Cluster} consists of its properties: like parameters of the inertia tensor, average density, whole volume, a few topological Chisq and pointers to first and last hits in cluster. \item\end{DoxyCompactList}\item 
+class {\bf Detector}
+\begin{DoxyCompactList}\small\item\em Class for detector and algorithm parameters. \item\end{DoxyCompactList}\item 
+class {\bf Group}
+\begin{DoxyCompactList}\small\item\em Class for general multipurpose grouping. \item\end{DoxyCompactList}\item 
+class {\bf Hit}
+\begin{DoxyCompactList}\small\item\em Class for hit: consists of:. \item\end{DoxyCompactList}\item 
+class {\bf HitGroup}
+\begin{DoxyCompactList}\small\item\em This class is not a cluster, but this is as it said in name -\/-\/ \doxyref{Group}{p.}{classDeepAnalysis_1_1Group} of Hits, that has a boundaries in 3-\/D cartesian coordinate system and spherical coordinate system, center of gravity and whole energy. \item\end{DoxyCompactList}\item 
+class {\bf JoinGroup}
+\begin{DoxyCompactList}\small\item\em Class for joining groups (juts a working intermediate class) (for \doxyref{cluster\_\-join}{p.}{classDeepAnalysis_a11f0ad635e5acf4b82c36170b9db6293} method). \item\end{DoxyCompactList}\item 
+class {\bf KindGroup}
+\begin{DoxyCompactList}\small\item\em This class has a represents of RGB types of Groups. \item\end{DoxyCompactList}\item 
+class {\bf NeutGroup}
+\begin{DoxyCompactList}\small\item\em Neutrons group (specific for technical reasons). \item\end{DoxyCompactList}\item 
+class {\bf SpecialHist2D}
+\begin{DoxyCompactList}\small\item\em Special 2D histograms. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf KIND} \{ \par
+{\bf EM} = 0, 
+{\bf TRK}, 
+{\bf HAD}, 
+{\bf KIND\_\-COUNT}, 
+\par
+{\bf NEUTR}
+ \}
+\begin{DoxyCompactList}\small\item\em An enumeration -\/-\/ colors for RGB scheme for hit spectrum RED is most dense hit(calorimeter cell) BLUE is intermediate GREEN is MIP-\/like, or around the MIP density. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf DeepAnalysis} ()\label{classDeepAnalysis_a922be045364409dca5f7fdc517dceea7}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+void {\bf cluster\_\-from\_\-singles} ({\bf KindGroup} \&gr, bool mark\_\-neutrons)\label{classDeepAnalysis_a3272cc7e90359df6241e0ef5d3493d09}
+
+\begin{DoxyCompactList}\small\item\em Create clusters from single hits. \item\end{DoxyCompactList}\item 
+void {\bf cluster\_\-finder\_\-2d\_\-split} ({\bf Hit} \&hit, unsigned InClust\_\-count, {\bf Cluster} $\ast$$\ast$InClust)\label{classDeepAnalysis_a51aa039e800972d2eb4bb9dce5a99783}
+
+\begin{DoxyCompactList}\small\item\em Distribute hits at the spherical shell onto found 2D cluster seeds. \item\end{DoxyCompactList}\item 
+void {\bf cluster\_\-finder\_\-2d} ({\bf HitGroup} \&hitGroup, {\bf Group} \&ring)\label{classDeepAnalysis_abf4d67264d95678b7fd012d1e053c551}
+
+\begin{DoxyCompactList}\small\item\em 2D clustering procedure to find clusters by histogramming technique at the one spherical shell in Theta-\/Phi. \item\end{DoxyCompactList}\item 
+void {\bf cluster\_\-finder\_\-3d} ({\bf KindGroup} \&gr, bool mark\_\-neutrons)
+\begin{DoxyCompactList}\small\item\em Find 3D clusters. \item\end{DoxyCompactList}\item 
+void {\bf join\_\-group} ({\bf Cluster} $\ast$cl, {\bf JoinGroup} $\ast$jg)\label{classDeepAnalysis_ac71417b351b1863345d8dc5fe03e1107}
+
+\begin{DoxyCompactList}\small\item\em Technical function used in cluster\_\-join. \item\end{DoxyCompactList}\item 
+void {\bf make\_\-join\_\-group} ({\bf Cluster} $\ast$cl0, {\bf Cluster} $\ast$cl1, {\bf Cluster} $\ast$cl2=0)\label{classDeepAnalysis_a86fa610ab5bc688a31ac2637df3e17b8}
+
+\begin{DoxyCompactList}\small\item\em Technical function used in cluster\_\-join. \item\end{DoxyCompactList}\item 
+void {\bf cluster\_\-join} (bool for\_\-em)\label{classDeepAnalysis_a11f0ad635e5acf4b82c36170b9db6293}
+
+\begin{DoxyCompactList}\small\item\em Join clusters together. \item\end{DoxyCompactList}\item 
+void {\bf em\_\-shower\_\-find} ()\label{classDeepAnalysis_a430c22c153af3cc4213d8f4278000c3a}
+
+\begin{DoxyCompactList}\small\item\em Find electromagnetic shower: it collects additional (not RED) hits around the EM cluster core. \item\end{DoxyCompactList}\item 
+void {\bf reassignment\_\-small\_\-clusters} ({\bf KIND} k)\label{classDeepAnalysis_a6248d82766ae25095c0c02b8ba6d2814}
+
+\begin{DoxyCompactList}\small\item\em Reassign small clusters. \item\end{DoxyCompactList}\item 
+void {\bf low\_\-e\_\-clean} ()\label{classDeepAnalysis_a3c0d64094110d97819ea2910d9ae5c8e}
+
+\begin{DoxyCompactList}\small\item\em Clean low energy clusters. \item\end{DoxyCompactList}\item 
+{\bf Hit} $\ast$ {\bf add\_\-hit} (double \_\-x, double \_\-y, double \_\-z, double \_\-am, double \_\-ampl\_\-mip, double \_\-thr, unsigned \_\-lay, {\bf KIND} type, int \_\-addr)\label{classDeepAnalysis_ace5c5cc371d13a3a3e4c4bb7c1e6c7a4}
+
+\begin{DoxyCompactList}\small\item\em Create \doxyref{Hit}{p.}{classDeepAnalysis_1_1Hit} object. \item\end{DoxyCompactList}\item 
+void {\bf draw} ()\label{classDeepAnalysis_a3296261a9ec689302d1d0105f0b70a6b}
+
+\begin{DoxyCompactList}\small\item\em Draw ?? \item\end{DoxyCompactList}\item 
+void {\bf draw\_\-to\_\-layer} (unsigned layer)\label{classDeepAnalysis_af86fccd30742311ff86392d997e6ad36}
+
+\begin{DoxyCompactList}\small\item\em Draw ?? \item\end{DoxyCompactList}\item 
+void {\bf color\_\-clusters\_\-stat} ({\bf KIND} k, unsigned \&ncl, unsigned \&n\_\-sum, double \&e\_\-sum)
+\begin{DoxyCompactList}\small\item\em Calculate cluster statistics. \item\end{DoxyCompactList}\item 
+void {\bf color\_\-clusters\_\-print\_\-stat} ({\bf KIND} k)
+\begin{DoxyCompactList}\small\item\em Print clusters statistics. \item\end{DoxyCompactList}\item 
+void {\bf result\_\-check} ()\label{classDeepAnalysis_a580d9000ca7ac7a8144ade2abf20f721}
+
+\begin{DoxyCompactList}\small\item\em Check result. \item\end{DoxyCompactList}\item 
+void {\bf event\_\-move} ()\label{classDeepAnalysis_adf15194da18059e69c5bd736bc33b308}
+
+\begin{DoxyCompactList}\small\item\em Move event from a pole to equator of spherical coordinate system. \item\end{DoxyCompactList}\item 
+void {\bf event\_\-move\_\-back} ()\label{classDeepAnalysis_ac7963f23fe529d8e0074df287ce961f8}
+
+\begin{DoxyCompactList}\small\item\em Move back event to the pole of Sp\_\-CS. \item\end{DoxyCompactList}\item 
+void {\bf reconstruction} ()
+\begin{DoxyCompactList}\small\item\em Main routine to split event into four different types of clusters: EM -\/ electromagnetic piece of hadronic shower TRK -\/ tracks in hadronic shower HAD -\/ a few tracks in hadronic shower that cannot be splitted into individual tracks. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Detector} {\bfseries detector}\label{classDeepAnalysis_ae8df2c2ff1e0c18d7a10f54ba1ce2f2b}
+
+\item 
+{\bf HitGroup} $\ast$ {\bf all\_\-hits}
+\begin{DoxyCompactList}\small\item\em All main pointer to structures. \item\end{DoxyCompactList}\item 
+{\bf Group} $\ast$ {\bf clusters}\label{classDeepAnalysis_a2ebb35e99adf044cf85cc88fa8d3fa0d}
+
+\begin{DoxyCompactList}\small\item\em clusters \item\end{DoxyCompactList}\item 
+{\bf Group} $\ast$ {\bf joingroups}\label{classDeepAnalysis_a3d81237d4f1f894876149f096059217b}
+
+\begin{DoxyCompactList}\small\item\em joined groups \item\end{DoxyCompactList}\item 
+{\bf KindGroup} $\ast$ {\bf kind} [KIND\_\-COUNT]\label{classDeepAnalysis_a63269ac67462b5e1a5891a6fcc36e831}
+
+\begin{DoxyCompactList}\small\item\em hit type \item\end{DoxyCompactList}\item 
+{\bf NeutGroup} $\ast$ {\bf neutrons}\label{classDeepAnalysis_a0bccfdab6b95f7d359995a82da828ebd}
+
+\begin{DoxyCompactList}\small\item\em neutrons group \item\end{DoxyCompactList}\item 
+unsigned {\bf all\_\-hits\_\-count}\label{classDeepAnalysis_afa56405784e372bdf9c7f11fc59f1bf9}
+
+\begin{DoxyCompactList}\small\item\em counter for all hits \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Cluster}{p.}{classDeepAnalysis_1_1Cluster} finding and analysis. Hadronic shower analysis using hit density, shower topology and cluster shapes to find shower component of different physical origin, such as pure tracks, electromagnetic cascades inside hadronic shower; and hits that produced by neutrons.
+
+\begin{DoxyAuthor}{Author}
+V.L. Morgunov 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+18 September 2007 
+\end{DoxyDate}
+
+
+Definition at line 52 of file DeepAnalysis.hh.
+
+\subsection{Member Enumeration Documentation}
+\index{DeepAnalysis@{DeepAnalysis}!KIND@{KIND}}
+\index{KIND@{KIND}!DeepAnalysis@{DeepAnalysis}}
+\subsubsection[{KIND}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf DeepAnalysis::KIND}}\label{classDeepAnalysis_a8e37d65f57d59e268a839b039848815c}
+
+
+An enumeration -\/-\/ colors for RGB scheme for hit spectrum RED is most dense hit(calorimeter cell) BLUE is intermediate GREEN is MIP-\/like, or around the MIP density. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{EM@{EM}!DeepAnalysis@{DeepAnalysis}}\index{DeepAnalysis@{DeepAnalysis}!EM@{EM}}\item[{\em 
+EM\label{classDeepAnalysis_a8e37d65f57d59e268a839b039848815ca3993fe069642f9ef25af6471a711ba7a}
+}]former 2 color red \index{TRK@{TRK}!DeepAnalysis@{DeepAnalysis}}\index{DeepAnalysis@{DeepAnalysis}!TRK@{TRK}}\item[{\em 
+TRK\label{classDeepAnalysis_a8e37d65f57d59e268a839b039848815ca15b5219f26836651924a14051eeacee6}
+}]former 3 color green \index{HAD@{HAD}!DeepAnalysis@{DeepAnalysis}}\index{DeepAnalysis@{DeepAnalysis}!HAD@{HAD}}\item[{\em 
+HAD\label{classDeepAnalysis_a8e37d65f57d59e268a839b039848815ca9f39fc8015a438a8f8140a4519d46810}
+}]former 4 color blue \index{KIND\_\-COUNT@{KIND\_\-COUNT}!DeepAnalysis@{DeepAnalysis}}\index{DeepAnalysis@{DeepAnalysis}!KIND\_\-COUNT@{KIND\_\-COUNT}}\item[{\em 
+KIND\_\-COUNT\label{classDeepAnalysis_a8e37d65f57d59e268a839b039848815ca0edf8eebee148f30a1dac100dcb70d96}
+}]counter for kinds (types) \index{NEUTR@{NEUTR}!DeepAnalysis@{DeepAnalysis}}\index{DeepAnalysis@{DeepAnalysis}!NEUTR@{NEUTR}}\item[{\em 
+NEUTR\label{classDeepAnalysis_a8e37d65f57d59e268a839b039848815ca460d128073038dbfb0e1d21a1cca3e61}
+}]after count, since it is not \doxyref{KindGroup}{p.}{classDeepAnalysis_1_1KindGroup}. \end{description}
+\end{Desc}
+
+
+
+Definition at line 159 of file DeepAnalysis.hh.
+
+\subsection{Member Function Documentation}
+\index{DeepAnalysis@{DeepAnalysis}!cluster\_\-finder\_\-3d@{cluster\_\-finder\_\-3d}}
+\index{cluster\_\-finder\_\-3d@{cluster\_\-finder\_\-3d}!DeepAnalysis@{DeepAnalysis}}
+\subsubsection[{cluster\_\-finder\_\-3d}]{\setlength{\rightskip}{0pt plus 5cm}void DeepAnalysis::cluster\_\-finder\_\-3d ({\bf KindGroup} \& {\em gr}, \/  bool {\em mark\_\-neutrons})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classDeepAnalysis_a0f5264f0bbbab0caf1069c8faafc3d25}
+
+
+Find 3D clusters. Method is: to create spherilal shells in the event volume, make 2D clustering at each shell, then connect near by 2D clusters into 3D trees. 
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+
+Definition at line 1003 of file DeepAnalysis.hh.
+
+References DeepAnalysis::Cluster::calc\_\-prop(), DeepAnalysis::HitGroup::calc\_\-stat(), DeepAnalysis::Cluster::CHAIN, cluster\_\-finder\_\-2d(), cluster\_\-from\_\-singles(), clusters, DeepAnalysis::Cluster::EMPTY, DeepAnalysis::Detector::ext\_\-cell\_\-size, HAD, DeepAnalysis::Detector::join\_\-factor, kind, DeepAnalysis::HitGroup::layer\_\-g, Range$<$ \_\-T $>$::max, Range$<$ \_\-T $>$::min, DeepAnalysis::Cluster::ONEHIT, DeepAnalysis::HitGroup::radius\_\-g, DeepAnalysis::Detector::sampling, TRK, and DeepAnalysis::Cluster::type.
+
+Referenced by reconstruction().\index{DeepAnalysis@{DeepAnalysis}!color\_\-clusters\_\-print\_\-stat@{color\_\-clusters\_\-print\_\-stat}}
+\index{color\_\-clusters\_\-print\_\-stat@{color\_\-clusters\_\-print\_\-stat}!DeepAnalysis@{DeepAnalysis}}
+\subsubsection[{color\_\-clusters\_\-print\_\-stat}]{\setlength{\rightskip}{0pt plus 5cm}void DeepAnalysis::color\_\-clusters\_\-print\_\-stat ({\bf KIND} {\em k})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classDeepAnalysis_afdc891004ebb437b7058ed0cc9068164}
+
+
+Print clusters statistics. 
+\begin{DoxyParams}{Parameters}
+\item[{\em k}]kind of cluster \end{DoxyParams}
+
+
+Definition at line 1514 of file DeepAnalysis.hh.
+
+References color\_\-clusters\_\-stat().\index{DeepAnalysis@{DeepAnalysis}!color\_\-clusters\_\-stat@{color\_\-clusters\_\-stat}}
+\index{color\_\-clusters\_\-stat@{color\_\-clusters\_\-stat}!DeepAnalysis@{DeepAnalysis}}
+\subsubsection[{color\_\-clusters\_\-stat}]{\setlength{\rightskip}{0pt plus 5cm}void DeepAnalysis::color\_\-clusters\_\-stat ({\bf KIND} {\em k}, \/  unsigned \& {\em ncl}, \/  unsigned \& {\em n\_\-sum}, \/  double \& {\em e\_\-sum})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classDeepAnalysis_a6c35bfd21af8c49247ac819935b744a5}
+
+
+Calculate cluster statistics. 
+\begin{DoxyParams}{Parameters}
+\item[{\em k}]type of cluster \item[{\em ncl}]number of clusters \item[{\em n\_\-sum}]total number of hits \item[{\em e\_\-sum}]total energy sum \end{DoxyParams}
+
+
+Definition at line 1499 of file DeepAnalysis.hh.
+
+References clusters.
+
+Referenced by color\_\-clusters\_\-print\_\-stat(), and CALICE::DeepAnalysisProcessor::processEvent().\index{DeepAnalysis@{DeepAnalysis}!reconstruction@{reconstruction}}
+\index{reconstruction@{reconstruction}!DeepAnalysis@{DeepAnalysis}}
+\subsubsection[{reconstruction}]{\setlength{\rightskip}{0pt plus 5cm}void DeepAnalysis::reconstruction ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classDeepAnalysis_a44b9f2a02510918b2c5909045a8beb19}
+
+
+Main routine to split event into four different types of clusters: EM -\/ electromagnetic piece of hadronic shower TRK -\/ tracks in hadronic shower HAD -\/ a few tracks in hadronic shower that cannot be splitted into individual tracks. NEUT -\/ neutron component of hadronic shower 
+
+Definition at line 1599 of file DeepAnalysis.hh.
+
+References all\_\-hits, DeepAnalysis::HitGroup::calc\_\-stat(), cluster\_\-finder\_\-3d(), cluster\_\-join(), clusters, EM, em\_\-shower\_\-find(), event\_\-move(), event\_\-move\_\-back(), HAD, DeepAnalysis::Detector::init(), kind, Range$<$ \_\-T $>$::min, DeepAnalysis::HitGroup::radius\_\-g, reassignment\_\-small\_\-clusters(), and TRK.
+
+Referenced by CALICE::DeepAnalysisProcessor::processEvent().
+
+\subsection{Field Documentation}
+\index{DeepAnalysis@{DeepAnalysis}!all\_\-hits@{all\_\-hits}}
+\index{all\_\-hits@{all\_\-hits}!DeepAnalysis@{DeepAnalysis}}
+\subsubsection[{all\_\-hits}]{\setlength{\rightskip}{0pt plus 5cm}{\bf HitGroup}$\ast$ {\bf DeepAnalysis::all\_\-hits}}\label{classDeepAnalysis_a1cc6f5295b6a6ea5f74abc9d7b2f4236}
+
+
+All main pointer to structures. hit group 
+
+Definition at line 772 of file DeepAnalysis.hh.
+
+Referenced by add\_\-hit(), DeepAnalysis(), em\_\-shower\_\-find(), event\_\-move(), event\_\-move\_\-back(), reconstruction(), and result\_\-check().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+DeepAnalysis.hh\end{DoxyCompactItemize}

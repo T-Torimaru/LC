@@ -1,0 +1,118 @@
+\section{CALICE::ModuleLocation Class Reference}
+\label{classCALICE_1_1ModuleLocation}\index{CALICE::ModuleLocation@{CALICE::ModuleLocation}}
+
+
+Define possible positions of modules.  
+
+
+{\ttfamily \#include $<$ModuleLocation.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ModuleLocation} (LCObject $\ast$obj)
+\begin{DoxyCompactList}\small\item\em 'Copy constructor', create the \doxyref{ModuleLocation}{p.}{classCALICE_1_1ModuleLocation} interface for the generic objects read from file/database. \item\end{DoxyCompactList}\item 
+{\bf ModuleLocation} \& {\bfseries setX} (float value)\label{classCALICE_1_1ModuleLocation_a5926b358361d4dda0d2d7d6a6cf4b06a}
+
+\item 
+float {\bfseries getX} () const \label{classCALICE_1_1ModuleLocation_aca995d035ab39c9880c5d1a2203baf04}
+
+\item 
+{\bf ModuleLocation} \& {\bfseries setY} (float value)\label{classCALICE_1_1ModuleLocation_a7dc138e1b3bc75cd6df5ac76f8467072}
+
+\item 
+float {\bfseries getY} () const \label{classCALICE_1_1ModuleLocation_a5fd61cf70f3b254d750f76bc9d5bf40c}
+
+\item 
+{\bf ModuleLocation} \& {\bfseries setZ} (float value)\label{classCALICE_1_1ModuleLocation_a445a2a2304afad24aefc8062df5ae048}
+
+\item 
+float {\bfseries getZ} () const \label{classCALICE_1_1ModuleLocation_ab599bb6690393aa65c3b21aaf3fa16e3}
+
+\item 
+{\bf ModuleLocation} \& {\bf setCellIndexOffset} (int first\_\-cell\_\-index)
+\begin{DoxyCompactList}\small\item\em Set the offset to the cell index to form the full cell index of the layer. \item\end{DoxyCompactList}\item 
+int {\bf getCellIndexOffset} () const 
+\begin{DoxyCompactList}\small\item\em Get the offset to the cell index to form the full cell index of the layer. \item\end{DoxyCompactList}\item 
+{\bf ModuleLocation} \& {\bf setModuleType} (UChar\_\-t type)
+\begin{DoxyCompactList}\small\item\em Set the module type. \item\end{DoxyCompactList}\item 
+UChar\_\-t {\bf getModuleType} () const 
+\begin{DoxyCompactList}\small\item\em Get the type of a module. \item\end{DoxyCompactList}\item 
+void {\bfseries print} (std::ostream \&os)\label{classCALICE_1_1ModuleLocation_ac2bf4a5c327c295e5e4dbe54fa2c5733}
+
+\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1ModuleLocation_a1fcee24e78cafac9f1155e7a5669068b}
+
+\begin{DoxyCompactList}\small\item\em Return the type of the class. \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1ModuleLocation_a9b2bc6e7693958e7447d3fff02b29b16}
+
+\begin{DoxyCompactList}\small\item\em Return a brief description of the data members. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Define possible positions of modules. A module position is not necessarily connected. A connected to the DAQ is established via \doxyref{ModuleConnection}{p.}{classCALICE_1_1ModuleConnection}. A module position is uniquely defined by the index offset i.e. two modules may not have the same index offset. 
+
+Definition at line 30 of file ModuleLocation.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CALICE::ModuleLocation@{CALICE::ModuleLocation}!ModuleLocation@{ModuleLocation}}
+\index{ModuleLocation@{ModuleLocation}!CALICE::ModuleLocation@{CALICE::ModuleLocation}}
+\subsubsection[{ModuleLocation}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::ModuleLocation::ModuleLocation (LCObject $\ast$ {\em obj})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1ModuleLocation_a6f66474eb6a78753a4a46432d85c9345}
+
+
+'Copy constructor', create the \doxyref{ModuleLocation}{p.}{classCALICE_1_1ModuleLocation} interface for the generic objects read from file/database. The objects stored in the file or database are of type LCGenericObject. To generate the interface of the object \doxyref{ModuleLocation}{p.}{classCALICE_1_1ModuleLocation}: 
+\begin{DoxyCode}
+ ModuleLocation a_module_location(lc_collection->getElementAt(index));
+\end{DoxyCode}
+ \begin{Desc}
+\item[{\bf Todo}]Currenlty, there is no serious type checking. Only the number of integers, floats and doubles is used to verify whether the LCGenericObject is of the type \doxyref{ModuleLocation}{p.}{classCALICE_1_1ModuleLocation} \end{Desc}
+
+
+Definition at line 43 of file ModuleLocation.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::ModuleLocation@{CALICE::ModuleLocation}!getCellIndexOffset@{getCellIndexOffset}}
+\index{getCellIndexOffset@{getCellIndexOffset}!CALICE::ModuleLocation@{CALICE::ModuleLocation}}
+\subsubsection[{getCellIndexOffset}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::ModuleLocation::getCellIndexOffset () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1ModuleLocation_af00cefffd7213851120179f5c0352836}
+
+
+Get the offset to the cell index to form the full cell index of the layer. \begin{DoxySeeAlso}{See also}
+\doxyref{setCellIndexOffset}{p.}{classCALICE_1_1ModuleLocation_ae0862fb8ed86732b8ab22eace0e56bd7} 
+\end{DoxySeeAlso}
+
+
+Definition at line 91 of file ModuleLocation.hh.
+
+Referenced by CALICE::CellDescriptionGenerator::generate(), and CALICE::MappingAndAlignment::moduleLocationChanged().\index{CALICE::ModuleLocation@{CALICE::ModuleLocation}!getModuleType@{getModuleType}}
+\index{getModuleType@{getModuleType}!CALICE::ModuleLocation@{CALICE::ModuleLocation}}
+\subsubsection[{getModuleType}]{\setlength{\rightskip}{0pt plus 5cm}UChar\_\-t CALICE::ModuleLocation::getModuleType () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1ModuleLocation_aad9eabe7d69544b70af91c92296f2ad2}
+
+
+Get the type of a module. \begin{DoxySeeAlso}{See also}
+\doxyref{setModuleType}{p.}{classCALICE_1_1ModuleLocation_a5dcb844c8c42edc6ff1956b25b2d643e} 
+\end{DoxySeeAlso}
+
+
+Definition at line 109 of file ModuleLocation.hh.
+
+Referenced by CALICE::CellDescriptionGenerator::generate().\index{CALICE::ModuleLocation@{CALICE::ModuleLocation}!setCellIndexOffset@{setCellIndexOffset}}
+\index{setCellIndexOffset@{setCellIndexOffset}!CALICE::ModuleLocation@{CALICE::ModuleLocation}}
+\subsubsection[{setCellIndexOffset}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ModuleLocation}\& CALICE::ModuleLocation::setCellIndexOffset (int {\em first\_\-cell\_\-index})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1ModuleLocation_ae0862fb8ed86732b8ab22eace0e56bd7}
+
+
+Set the offset to the cell index to form the full cell index of the layer. The cell index is formed by a cell index calculated for a certain module type plus this offset. The result is a unique cell index to identify a cell unambiguously. \begin{DoxySeeAlso}{See also}
+\doxyref{CellIndex}{p.}{classCALICE_1_1CellIndex} 
+\end{DoxySeeAlso}
+
+
+Definition at line 82 of file ModuleLocation.hh.\index{CALICE::ModuleLocation@{CALICE::ModuleLocation}!setModuleType@{setModuleType}}
+\index{setModuleType@{setModuleType}!CALICE::ModuleLocation@{CALICE::ModuleLocation}}
+\subsubsection[{setModuleType}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ModuleLocation}\& CALICE::ModuleLocation::setModuleType (UChar\_\-t {\em type})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1ModuleLocation_a5dcb844c8c42edc6ff1956b25b2d643e}
+
+
+Set the module type. Currently, a module location is identified by the layer number and the module type i.e. each module type may be used at most once per layer. 
+
+Definition at line 100 of file ModuleLocation.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+ModuleLocation.hh\item 
+ModuleLocation.cc\end{DoxyCompactItemize}

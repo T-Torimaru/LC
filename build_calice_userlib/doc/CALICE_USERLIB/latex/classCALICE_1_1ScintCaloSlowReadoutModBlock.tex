@@ -1,0 +1,170 @@
+\section{CALICE::ScintCaloSlowReadoutModBlock Class Reference}
+\label{classCALICE_1_1ScintCaloSlowReadoutModBlock}\index{CALICE::ScintCaloSlowReadoutModBlock@{CALICE::ScintCaloSlowReadoutModBlock}}
+
+
+Interface Class to access the ScintCaloSlowReadout Data Here we handle ahc voltages, temperatures et al.  
+
+
+{\ttfamily \#include $<$ScintCaloSlowReadoutModBlock.hh$>$}Inheritance diagram for CALICE::ScintCaloSlowReadoutModBlock::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCALICE_1_1ScintCaloSlowReadoutModBlock}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ScintCaloSlowReadoutModBlock} ()\label{classCALICE_1_1ScintCaloSlowReadoutModBlock_ab834a2fccae23cd39719726717202430}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+{\bf ScintCaloSlowReadoutModBlock} (LCObject $\ast$obj)\label{classCALICE_1_1ScintCaloSlowReadoutModBlock_a29b112518865415379a7aece4041954a}
+
+\begin{DoxyCompactList}\small\item\em 'Copy constructor' needed to interpret LCCollection read from file/database. \item\end{DoxyCompactList}\item 
+{\bf ScintCaloSlowReadoutModBlock} \& {\bf setModuleNumber} (int modnumber)\label{classCALICE_1_1ScintCaloSlowReadoutModBlock_a36f9f3ef8cd7e14db5cfa7c31cd49bbb}
+
+\begin{DoxyCompactList}\small\item\em Store the module number. \item\end{DoxyCompactList}\item 
+int {\bf getModuleNumber} () const \label{classCALICE_1_1ScintCaloSlowReadoutModBlock_aae514d6565c060a46027fa1894b3f7a2}
+
+\begin{DoxyCompactList}\small\item\em Retrieve the module number. \item\end{DoxyCompactList}\item 
+{\bf ScintCaloSlowReadoutModBlock} \& {\bf setTimeStamp} (struct tm $\ast$timestamp)\label{classCALICE_1_1ScintCaloSlowReadoutModBlock_ad8af8337174df19ab06d26518c0c4d57}
+
+\begin{DoxyCompactList}\small\item\em Sets the time stamp We store Year, Month, Day and Hour, Minute, Second We store UTC!!!! \item\end{DoxyCompactList}\item 
+LCTime {\bf getTimeStamp} ()\label{classCALICE_1_1ScintCaloSlowReadoutModBlock_ac5afba15cabcb0e76cd05eb61acd8a16}
+
+\begin{DoxyCompactList}\small\item\em returns the start stamp \item\end{DoxyCompactList}\item 
+{\bf ScintCaloSlowReadoutModBlock} \& {\bf setLedSetting} (int ledsetting)\label{classCALICE_1_1ScintCaloSlowReadoutModBlock_a42eda9586c276839882ec1f5529cb3b1}
+
+\begin{DoxyCompactList}\small\item\em Store the LED setting. \item\end{DoxyCompactList}\item 
+int {\bf getLedSetting} () const \label{classCALICE_1_1ScintCaloSlowReadoutModBlock_a311abba4d4914dbe227edd64adcbdaa4}
+
+\begin{DoxyCompactList}\small\item\em Retrieve the LED setting. \item\end{DoxyCompactList}\item 
+{\bf ScintCaloSlowReadoutModBlock} \& {\bf setCmbWidth} (int cmbwidth)\label{classCALICE_1_1ScintCaloSlowReadoutModBlock_aca38297405bcbb78df316573653bab4b}
+
+\begin{DoxyCompactList}\small\item\em Store the CMB width. \item\end{DoxyCompactList}\item 
+int {\bf getCmbWidth} () const \label{classCALICE_1_1ScintCaloSlowReadoutModBlock_a0842d4abcf4aa03079768716cadb56ec}
+
+\begin{DoxyCompactList}\small\item\em Retrieve the CMB width. \item\end{DoxyCompactList}\item 
+{\bf ScintCaloSlowReadoutModBlock} \& {\bf setCmbHeight} (int cmbheight)\label{classCALICE_1_1ScintCaloSlowReadoutModBlock_a5b818c27aaaf267d158a4630217761b3}
+
+\begin{DoxyCompactList}\small\item\em Store the CMB height. \item\end{DoxyCompactList}\item 
+int {\bf getCmbHeight} () const \label{classCALICE_1_1ScintCaloSlowReadoutModBlock_ab7d558c828cc3a6009f698c8e2b87768}
+
+\begin{DoxyCompactList}\small\item\em Retrieve the CMB height. \item\end{DoxyCompactList}\item 
+std::vector$<$ double $>$ \& {\bf getCmbTemperatures} ()\label{classCALICE_1_1ScintCaloSlowReadoutModBlock_a4ff51ac1f15effbab45d293201dbe7dd}
+
+\begin{DoxyCompactList}\small\item\em Retrieve the cmb temperatures. \item\end{DoxyCompactList}\item 
+std::vector$<$ double $>$ \& {\bf getCmbVoltages} ()\label{classCALICE_1_1ScintCaloSlowReadoutModBlock_a607f2fdce6c9e458dca76b25bc09ecfd}
+
+\begin{DoxyCompactList}\small\item\em Retrieve the cmb voltages. \item\end{DoxyCompactList}\item 
+std::vector$<$ double $>$ \& {\bf getHbabVoltages} ()\label{classCALICE_1_1ScintCaloSlowReadoutModBlock_a8b3e2f65c115cefb73703b361ae308bb}
+
+\begin{DoxyCompactList}\small\item\em Retrieve the hbab voltages. \item\end{DoxyCompactList}\item 
+void {\bf setDblArrays} (const {\bf ScintCaloSlowMeasuresDblMap\_\-t} \&)\label{classCALICE_1_1ScintCaloSlowReadoutModBlock_a6b20e3d04245f9dcb191738e6fa84625}
+
+\begin{DoxyCompactList}\small\item\em These methods obtain the vectors with the measured values Mainly to store large arrays of a given datatype but in principle this can be extended to every entry in the interface class. \item\end{DoxyCompactList}\item 
+void {\bfseries setIntArrays} (const ScintCaloSlowMeasuresIntMap\_\-t \&)\label{classCALICE_1_1ScintCaloSlowReadoutModBlock_a97b5c5cdba9a5e4df9e7b51cac102a99}
+
+\item 
+void {\bfseries setFloatArrays} (const ScintCaloSlowMeasuresFloatMap\_\-t \&)\label{classCALICE_1_1ScintCaloSlowReadoutModBlock_a4a36ea0ab0c21412fc2397c8b5ab323e}
+
+\item 
+void {\bf print} (std::ostream \&)
+\begin{DoxyCompactList}\small\item\em convenient print method \item\end{DoxyCompactList}\item 
+virtual const std::string {\bf getTypeName} () const =0\label{classCALICE_1_1ScintCaloSlowReadoutModBlock_a87ebbc1304f9fb176fb7f47ddc9cf10d}
+
+\begin{DoxyCompactList}\small\item\em Return the type of the class. \item\end{DoxyCompactList}\item 
+virtual const std::string {\bfseries getDataDescription} () const =0\label{classCALICE_1_1ScintCaloSlowReadoutModBlock_ae2acb0957a52f39949174c013fedb673}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::map$<$ string, std::pair$<$ int, std::vector$<$ double $>$ $\ast$ $>$ $>$ {\bf ScintCaloSroTypesDblMap\_\-t}\label{classCALICE_1_1ScintCaloSlowReadoutModBlock_a618844fb074bc7894ee56ae9bff3838b}
+
+\begin{DoxyCompactList}\small\item\em Relation between the datatype its position among the tuple of double vals and the vector the data are readinto. \item\end{DoxyCompactList}\item 
+typedef std::map$<$ string, std::pair$<$ int, std::vector$<$ int $>$ $\ast$ $>$ $>$ {\bfseries ScintCaloSroTypesIntMap\_\-t}\label{classCALICE_1_1ScintCaloSlowReadoutModBlock_a74f4b211fc0ca05506c3d1756dff6409}
+
+\item 
+typedef std::map$<$ string, std::pair$<$ int, std::vector$<$ float $>$ $\ast$ $>$ $>$ {\bfseries ScintCaloSroTypesFloatMap\_\-t}\label{classCALICE_1_1ScintCaloSlowReadoutModBlock_a606b4e7c4dde61be99bbcae4fddfa151}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf setTypes} ()=0\label{classCALICE_1_1ScintCaloSlowReadoutModBlock_a2e96bd4a6dfb1b73e04b1ac39b910389}
+
+\begin{DoxyCompactList}\small\item\em This method defines the (general) types of the measured values and is specific to each data type. \item\end{DoxyCompactList}\item 
+void {\bf prepareOutputVecs} ()\label{classCALICE_1_1ScintCaloSlowReadoutModBlock_a32ae5a16700b2ac76fefd8f04266451a}
+
+\begin{DoxyCompactList}\small\item\em A method which prepares the output vectors. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ScintCaloSroTypesDblMap\_\-t} {\bf \_\-theDblTypes}\label{classCALICE_1_1ScintCaloSlowReadoutModBlock_ad686569c2554ac08105baba87a310036}
+
+\begin{DoxyCompactList}\small\item\em The vector which contains the types and to the position and values of the types doubles. \item\end{DoxyCompactList}\item 
+ScintCaloSroTypesIntMap\_\-t {\bfseries \_\-theIntTypes}\label{classCALICE_1_1ScintCaloSlowReadoutModBlock_acce34a42480042882d5dc2dd735d87aa}
+
+\item 
+ScintCaloSroTypesFloatMap\_\-t {\bfseries \_\-theFloatTypes}\label{classCALICE_1_1ScintCaloSlowReadoutModBlock_a5d0bff942720cac0dba7925a20ca93ce}
+
+\item 
+std::vector$<$ double $>$ {\bf \_\-cmbTemperatures}\label{classCALICE_1_1ScintCaloSlowReadoutModBlock_ac82c110e1e9a6b9e5777bab38b664381}
+
+\begin{DoxyCompactList}\small\item\em The output vectors which are common to all data types cmb Temperatures. \item\end{DoxyCompactList}\item 
+std::vector$<$ double $>$ {\bf \_\-cmbVoltages}\label{classCALICE_1_1ScintCaloSlowReadoutModBlock_afeb1bd98453813e87c093badf29ee0e3}
+
+\begin{DoxyCompactList}\small\item\em cmb Voltages \item\end{DoxyCompactList}\item 
+std::vector$<$ double $>$ {\bf \_\-hbabVoltages}\label{classCALICE_1_1ScintCaloSlowReadoutModBlock_acd246a5dcd8786a5105f055087fce3a9}
+
+\begin{DoxyCompactList}\small\item\em hbab voltages \item\end{DoxyCompactList}\item 
+unsigned {\bf \_\-startOfDoubles}\label{classCALICE_1_1ScintCaloSlowReadoutModBlock_af59b8fce28e5189331c3396c968ec294}
+
+\begin{DoxyCompactList}\small\item\em Variables to indicate the start of the actual data. \item\end{DoxyCompactList}\item 
+unsigned {\bfseries \_\-startOfFloats}\label{classCALICE_1_1ScintCaloSlowReadoutModBlock_a86c3684d3d2871b520ff0be75b21cc0d}
+
+\item 
+unsigned {\bfseries \_\-startOfInts}\label{classCALICE_1_1ScintCaloSlowReadoutModBlock_a84332887ecb977f661a186c637f2db67}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf setNumPos} (int posindex, int pos, int numvals)\label{classCALICE_1_1ScintCaloSlowReadoutModBlock_a0952a8404091ec428442f58621c9af6c}
+
+\begin{DoxyCompactList}\small\item\em Store the position and number of measured values for a given datatype. \item\end{DoxyCompactList}\item 
+int {\bf getPos} (int posindex)\label{classCALICE_1_1ScintCaloSlowReadoutModBlock_aefa0f2c3640aa971981dfc59809170d2}
+
+\begin{DoxyCompactList}\small\item\em get the position of the given datatype within the array of values \item\end{DoxyCompactList}\item 
+int {\bf getNum} (int posindex) const \label{classCALICE_1_1ScintCaloSlowReadoutModBlock_ae0b136a5273b805fad5704c60c2620c6}
+
+\begin{DoxyCompactList}\small\item\em Retrieve the number of measured values for a given datatype. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interface Class to access the ScintCaloSlowReadout Data Here we handle ahc voltages, temperatures et al. when filling the class the string identifying the measured values has to be given first, a warning is issued if no identifier is given for a given datatype. On the other hand this concerns just the filler of the class, i.e. the conversion where it is done once for all. See the print method at the end of the class for the meaning of the fields (as of 31/7/06) Use the interface methods to retrieve the data fields \begin{DoxyAuthor}{Author}
+: Roman Pöschl LAL/Orsay 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Aug 2006 
+\end{DoxyDate}
+
+
+Definition at line 71 of file ScintCaloSlowReadoutModBlock.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::ScintCaloSlowReadoutModBlock@{CALICE::ScintCaloSlowReadoutModBlock}!print@{print}}
+\index{print@{print}!CALICE::ScintCaloSlowReadoutModBlock@{CALICE::ScintCaloSlowReadoutModBlock}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::ScintCaloSlowReadoutModBlock::print (std::ostream \& {\em os})}\label{classCALICE_1_1ScintCaloSlowReadoutModBlock_af128d26796f6a009d9c0777947c7d050}
+
+
+convenient print method Convenient print method. 
+
+Reimplemented in {\bf CALICE::AhcSlowReadoutModBlock} \doxyref{}{p.}{classCALICE_1_1AhcSlowReadoutModBlock_a697eeaf3c34576c3c4541bdc3fcd35c2}, and {\bf CALICE::SceSlowReadoutModBlock} \doxyref{}{p.}{classCALICE_1_1SceSlowReadoutModBlock_a5387c50b25d23fd4605a2ab2ffd2d8a9}.
+
+Definition at line 166 of file ScintCaloSlowReadoutModBlock.cc.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+ScintCaloSlowReadoutModBlock.hh\item 
+ScintCaloSlowReadoutModBlock.cc\end{DoxyCompactItemize}

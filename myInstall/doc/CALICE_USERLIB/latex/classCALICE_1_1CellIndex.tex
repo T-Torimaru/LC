@@ -1,0 +1,130 @@
+\section{CALICE::CellIndex Class Reference}
+\label{classCALICE_1_1CellIndex}\index{CALICE::CellIndex@{CALICE::CellIndex}}
+
+
+The Mokka conform cell index.  
+
+
+{\ttfamily \#include $<$CellIndex.hh$>$}Inheritance diagram for CALICE::CellIndex::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCALICE_1_1CellIndex}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CellIndex} (UInt\_\-t geometrical\_\-cell\_\-index)\label{classCALICE_1_1CellIndex_a4cf7ff45b88a4e2b1062ae7caaa58806}
+
+\item 
+{\bfseries CellIndex} (UInt\_\-t geometrical\_\-cell\_\-index, UInt\_\-t second\_\-cell\_\-index)\label{classCALICE_1_1CellIndex_aba275ac1e16f6e6e08ff9b4e4dd61f17}
+
+\item 
+{\bfseries CellIndex} (UInt\_\-t wafer\_\-row, UInt\_\-t wafer\_\-column, UInt\_\-t pad\_\-row, UInt\_\-t pad\_\-column, UInt\_\-t layer)\label{classCALICE_1_1CellIndex_a5ab1c3185be6a529aaf2b4476945ac94}
+
+\item 
+{\bfseries CellIndex} (UInt\_\-t wafer\_\-row, UInt\_\-t wafer\_\-column, UInt\_\-t pad\_\-row, UInt\_\-t pad\_\-column, UInt\_\-t layer, UInt\_\-t module\_\-index, UInt\_\-t module\_\-type, UInt\_\-t module\_\-ID, UInt\_\-t cell\_\-id, UInt\_\-t isBad)\label{classCALICE_1_1CellIndex_a09201c4195f548a1ecbc740ab5178724}
+
+\item 
+{\bfseries CellIndex} (UInt\_\-t geometrical\_\-cell\_\-index, UInt\_\-t module\_\-index, UInt\_\-t module\_\-type, UInt\_\-t module\_\-ID, UInt\_\-t cell\_\-id, UInt\_\-t isBad)\label{classCALICE_1_1CellIndex_a5c849e4daa21098f71c02773466bc2f0}
+
+\item 
+UInt\_\-t {\bf getLayerIndex} () const \label{classCALICE_1_1CellIndex_a0467195bc639bda8edba4a9c96e7c0c3}
+
+\begin{DoxyCompactList}\small\item\em Get the layer index (index labeled K in Mokka). \item\end{DoxyCompactList}\item 
+{\bf CellIndex} \& {\bf setLayerIndex} (UInt\_\-t layer)\label{classCALICE_1_1CellIndex_a1138c5745d65ec60aa71938eb87bc842}
+
+\begin{DoxyCompactList}\small\item\em Set the layer index (index labeled K in Mokka). \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bf getWaferRow} () const \label{classCALICE_1_1CellIndex_a760bda3a8354e9d93d9332220aa7c97d}
+
+\begin{DoxyCompactList}\small\item\em Get the wafer row (index labeled M in Mokka). \item\end{DoxyCompactList}\item 
+{\bf CellIndex} \& {\bf setWaferRow} (UInt\_\-t wafer\_\-row)\label{classCALICE_1_1CellIndex_a4a3c7537dd7b4077e5463ae08c4c14f0}
+
+\begin{DoxyCompactList}\small\item\em Set the wafer row (index labeled M in Mokka). \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bf getWaferColumn} () const \label{classCALICE_1_1CellIndex_a5b0755196e562f4230eb58aa820b5018}
+
+\begin{DoxyCompactList}\small\item\em Get the wafer column (index labeled S in Mokka). \item\end{DoxyCompactList}\item 
+{\bf CellIndex} \& {\bf setWaferColumn} (UInt\_\-t wafer\_\-column)\label{classCALICE_1_1CellIndex_a9680833ddfa0e1137ddc4e4945ecca58}
+
+\begin{DoxyCompactList}\small\item\em Set the wafer column (index labeled S in Mokka). \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bf getPadRow} () const \label{classCALICE_1_1CellIndex_aeecbb345a8d7a8215d020ee2ad5a73c3}
+
+\begin{DoxyCompactList}\small\item\em Get the pad row (index labeled J in Mokka). \item\end{DoxyCompactList}\item 
+{\bf CellIndex} \& {\bf setPadRow} (UInt\_\-t pad\_\-row)\label{classCALICE_1_1CellIndex_a8e4528b241353e1ae52eb7febecdb371}
+
+\begin{DoxyCompactList}\small\item\em Set the pad row (index labeled J in Mokka). \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bf getPadColumn} () const \label{classCALICE_1_1CellIndex_a37471316b7ce32ad1b19f9dc08444193}
+
+\begin{DoxyCompactList}\small\item\em Get the pad column (index labeled I in Mokka). \item\end{DoxyCompactList}\item 
+{\bf CellIndex} \& {\bf setPadColumn} (UInt\_\-t pad\_\-column)\label{classCALICE_1_1CellIndex_aa5e1d6c7bf39e5bfbf5ab414405b36d2}
+
+\begin{DoxyCompactList}\small\item\em Set the pad column (index labeled I in Mokka). \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bfseries getModuleIndex} () const \label{classCALICE_1_1CellIndex_ad7c3aed04f51baa6a532e2dc18c0b985}
+
+\item 
+{\bf CellIndex} \& {\bfseries setModuleIndex} (UInt\_\-t module\_\-index)\label{classCALICE_1_1CellIndex_a87812ed0af0e2c688b21af5a7b3f53fd}
+
+\item 
+UInt\_\-t {\bfseries getModuleType} () const \label{classCALICE_1_1CellIndex_ada309da2021a56aa6bb61d0c503f2bd7}
+
+\item 
+{\bf CellIndex} \& {\bfseries setModuleType} (UInt\_\-t module\_\-type)\label{classCALICE_1_1CellIndex_aa7541e4208eb9cd7bb5401b324f539e1}
+
+\item 
+UInt\_\-t {\bfseries getModuleID} () const \label{classCALICE_1_1CellIndex_a77cabe65a4bd5887963f70eacef6a1b9}
+
+\item 
+{\bf CellIndex} \& {\bfseries setModuleID} (UInt\_\-t module\_\-ID)\label{classCALICE_1_1CellIndex_a5cfc410ec22f397a8c21c878e53ab311}
+
+\item 
+UInt\_\-t {\bfseries getCellID} () const \label{classCALICE_1_1CellIndex_a8754c16be2ec04e51661f388ff994ebf}
+
+\item 
+{\bf CellIndex} \& {\bfseries setCellID} (UInt\_\-t cell\_\-index)\label{classCALICE_1_1CellIndex_a3ecc39a5eb6b4c2d1319d113e1d8b6c3}
+
+\item 
+UInt\_\-t {\bfseries isBad} () const \label{classCALICE_1_1CellIndex_a33d6d5bfcc91c6653139a73b5c6ff207}
+
+\item 
+{\bf CellIndex} \& {\bfseries setBad} (UInt\_\-t is\_\-bad)\label{classCALICE_1_1CellIndex_aaedafad4a164da776eb9563f6cfecb02}
+
+\item 
+UInt\_\-t {\bf getCellIndex} () const \label{classCALICE_1_1CellIndex_a8989a0bfe43f87f5ba5d5f665cc8fd60}
+
+\begin{DoxyCompactList}\small\item\em Get the Mokka conform cell index. \item\end{DoxyCompactList}\item 
+{\bf CellIndex} \& {\bf setCellIndex} (UInt\_\-t mokka\_\-cell\_\-index)\label{classCALICE_1_1CellIndex_a06927c6c271b586b2d4f2349ad0a0058}
+
+\begin{DoxyCompactList}\small\item\em Set the Mokka conform cell index. \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bf getSecondIndex} () const \label{classCALICE_1_1CellIndex_a62457057612992847f0d1a6791e5eed0}
+
+\begin{DoxyCompactList}\small\item\em Get the 2nd cell index. \item\end{DoxyCompactList}\item 
+{\bf CellIndex} \& {\bf setSecondIndex} (UInt\_\-t cellID1)\label{classCALICE_1_1CellIndex_acee8e762e051e2e12e0bfab43be8c441}
+
+\begin{DoxyCompactList}\small\item\em Set the 2nd cell index. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+UInt\_\-t {\bfseries \_\-index}\label{classCALICE_1_1CellIndex_a0422c3652b611890e2c610eef01fc43e}
+
+\item 
+UInt\_\-t {\bfseries \_\-second}\label{classCALICE_1_1CellIndex_adcca7440632d6d8b81aa514a89035b6f}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The Mokka conform cell index. The cell index encodes the wafer column, and row, pad column and row, and the layer into one index. The wafer 0,0 is in the lower right corner (following a right handed coordinate frame ) looking in beam direction at the detector fron plate. Similar the pad 0,0 of each wafer is located in the lower right corner of the wafer. Encoding for the ECAL: \begin{TabularC}{2}
+\hline
+M:3,&wafer row \\\cline{1-2}
+S-\/1:3,&wafer column \\\cline{1-2}
+I:9,&pad coloumn \\\cline{1-2}
+J:9,&pad row \\\cline{1-2}
+K:6&layer \\\cline{1-2}
+\end{TabularC}
+
+
+Definition at line 102 of file CellIndex.hh.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+CellIndex.hh\end{DoxyCompactItemize}

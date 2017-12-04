@@ -1,0 +1,84 @@
+\section{CALICE::MIPConstants Class Reference}
+\label{classCALICE_1_1MIPConstants}\index{CALICE::MIPConstants@{CALICE::MIPConstants}}
+
+
+Class to store the results of a MIP calibration measurement, i.e.  
+
+
+{\ttfamily \#include $<$MIPConstants.hh$>$}Inheritance diagram for CALICE::MIPConstants::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCALICE_1_1MIPConstants}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries MIPConstants} (unsigned chip, unsigned channel, float value, float error)\label{classCALICE_1_1MIPConstants_a00df4532d023e4daad39bcc0ee5538f4}
+
+\item 
+{\bfseries MIPConstants} (LCObject $\ast$obj)\label{classCALICE_1_1MIPConstants_aec5ab4aecbf0d776c678ec1faee7eb6c}
+
+\item 
+float {\bf getMIPValue} () const \label{classCALICE_1_1MIPConstants_a81e18faa3e81f04034e750b2db519521}
+
+\begin{DoxyCompactList}\small\item\em get channels/MIP value \item\end{DoxyCompactList}\item 
+float {\bf getMIPError} () const \label{classCALICE_1_1MIPConstants_a518c72090d9dd86b3c14d94c62967d13}
+
+\begin{DoxyCompactList}\small\item\em get channels/MIP error \item\end{DoxyCompactList}\item 
+float {\bf applyCalibration} (float inputValue) const \label{classCALICE_1_1MIPConstants_a1ce8759ffdc72c9975ef2705c08fc4d7}
+
+\begin{DoxyCompactList}\small\item\em apply calibration to energy value \item\end{DoxyCompactList}\item 
+float {\bf cancelCalibration} (float outputValue) const \label{classCALICE_1_1MIPConstants_a601776b7a8e8558d4b54a00ecc981f0f}
+
+\begin{DoxyCompactList}\small\item\em cancel an applied calibration from energy value \item\end{DoxyCompactList}\item 
+float {\bf applyCalibrationError} (float inputValue, float inputError) const \label{classCALICE_1_1MIPConstants_a7beb08be64e40e822288cf285b5601e0}
+
+\begin{DoxyCompactList}\small\item\em apply calibration error to current error \item\end{DoxyCompactList}\item 
+float {\bf cancelCalibrationError} (float outputValue, float outputError) const \label{classCALICE_1_1MIPConstants_acf2c408c31f28ed72e2513361ec545c6}
+
+\begin{DoxyCompactList}\small\item\em apply error due to canceling a calibration to current error \item\end{DoxyCompactList}\item 
+bool {\bf calibrationValid} () const \label{classCALICE_1_1MIPConstants_aba936e2505ba100025495dded661ccb0}
+
+\begin{DoxyCompactList}\small\item\em check if a valid calibration is available \item\end{DoxyCompactList}\item 
+bool {\bf keepEvent} (float resultValue, float resultError) const \label{classCALICE_1_1MIPConstants_a11232a43c70405ef3f8c4cc88641de6a}
+
+\begin{DoxyCompactList}\small\item\em no cut for the moment \item\end{DoxyCompactList}\item 
+float {\bfseries getParam} (unsigned paramIndex)\label{classCALICE_1_1MIPConstants_a08aee0fbd46dc239bbdba46da0d7c8e5}
+
+\item 
+void {\bfseries setParam} (unsigned paramIndex, float paramValue)\label{classCALICE_1_1MIPConstants_a0a107c4475947a8870b1c3735a52531d}
+
+\item 
+void {\bf print} (std::ostream \&os)\label{classCALICE_1_1MIPConstants_a11a113f9b833cdc4d5e1055459b9e384}
+
+\begin{DoxyCompactList}\small\item\em convenient print method \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1MIPConstants_a353fcaec4088c1dcb1e6e76f746654cc}
+
+\begin{DoxyCompactList}\small\item\em return type of the class \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1MIPConstants_a9019cd10f06227d6ef9b3b35262741cd}
+
+\begin{DoxyCompactList}\small\item\em return a brief description of the data member \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float {\bfseries \_\-cutValue}\label{classCALICE_1_1MIPConstants_a80a22d8587d8511b6badaf9dd1107b0e}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to store the results of a MIP calibration measurement, i.e. channels/MIP plus the error of it for a certain chip/channel for a fixed moduleID \begin{DoxyAuthor}{Author}
+S. Schmidt DESY 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Aug 11 2006 
+\end{DoxyDate}
+
+
+Definition at line 25 of file MIPConstants.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+MIPConstants.hh\item 
+MIPConstants.cc\end{DoxyCompactItemize}

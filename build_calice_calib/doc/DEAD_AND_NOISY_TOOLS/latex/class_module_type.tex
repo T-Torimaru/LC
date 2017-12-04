@@ -1,0 +1,65 @@
+\hypertarget{class_module_type}{
+\section{ModuleType Class Reference}
+\label{class_module_type}\index{ModuleType@{ModuleType}}
+}
+
+
+A class to define the different module types.  
+
+
+{\ttfamily \#include $<$ModuleType.h$>$}\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned int \hyperlink{class_module_type_aab41c936717bfb248a8bf1f38138db0b}{AHC} = 0x1
+\item 
+static const unsigned int \hyperlink{class_module_type_a9cbd6a48fabe66ed9d47d23e53d8c9b9}{AHC8} = 0x2
+\item 
+static const unsigned int \hyperlink{class_module_type_a64c7a7092ce31ace2f6e1a44918cd7cc}{TCMT} = 0x4
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class to define the different module types. Currently there are the \begin{DoxyItemize}
+\item AHC Analogue HCal \item AHC8 Analogue HCal for coarse layers. Only 8 chips instead of 12. \item TCMT Tail catcher and muon tracker\end{DoxyItemize}
+The constants are defined to be a bit pattern, so they can be combined. 
+\begin{DoxyCode}
+  // only use AHC and AHC8
+  UInt_t useModulesMask = AHC | AHC8;
+\end{DoxyCode}
+ 
+
+Definition at line 17 of file ModuleType.h.
+
+\subsection{Field Documentation}
+\hypertarget{class_module_type_aab41c936717bfb248a8bf1f38138db0b}{
+\index{ModuleType@{ModuleType}!AHC@{AHC}}
+\index{AHC@{AHC}!ModuleType@{ModuleType}}
+\subsubsection[{AHC}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned int {\bf ModuleType::AHC} = 0x1\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_module_type_aab41c936717bfb248a8bf1f38138db0b}
+
+
+Definition at line 20 of file ModuleType.h.
+
+Referenced by SimpleMapper::print(), and SimpleMapper::SimpleMapper().\hypertarget{class_module_type_a9cbd6a48fabe66ed9d47d23e53d8c9b9}{
+\index{ModuleType@{ModuleType}!AHC8@{AHC8}}
+\index{AHC8@{AHC8}!ModuleType@{ModuleType}}
+\subsubsection[{AHC8}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned int {\bf ModuleType::AHC8} = 0x2\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_module_type_a9cbd6a48fabe66ed9d47d23e53d8c9b9}
+
+
+Definition at line 21 of file ModuleType.h.
+
+Referenced by SimpleMapper::isAHC8(), SimpleMapper::print(), and SimpleMapper::SimpleMapper().\hypertarget{class_module_type_a64c7a7092ce31ace2f6e1a44918cd7cc}{
+\index{ModuleType@{ModuleType}!TCMT@{TCMT}}
+\index{TCMT@{TCMT}!ModuleType@{ModuleType}}
+\subsubsection[{TCMT}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned int {\bf ModuleType::TCMT} = 0x4\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_module_type_a64c7a7092ce31ace2f6e1a44918cd7cc}
+
+
+Definition at line 22 of file ModuleType.h.
+
+Referenced by SimpleMapper::isTCMT(), SimpleMapper::print(), and SimpleMapper::SimpleMapper().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_module_type_8h}{ModuleType.h}\end{DoxyCompactItemize}

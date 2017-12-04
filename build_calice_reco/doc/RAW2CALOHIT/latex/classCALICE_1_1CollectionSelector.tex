@@ -1,0 +1,88 @@
+\section{CALICE::CollectionSelector Class Reference}
+\label{classCALICE_1_1CollectionSelector}\index{CALICE::CollectionSelector@{CALICE::CollectionSelector}}
+
+
+Mark matching collections as transient or remove transient mark.  
+
+
+{\ttfamily \#include $<$CollectionSelector.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Processor $\ast$ {\bfseries newProcessor} ()\label{classCALICE_1_1CollectionSelector_abc7ca774dc191ae2c2e437d6932513ca}
+
+\item 
+void {\bf init} ()
+\begin{DoxyCompactList}\small\item\em Called at the begin of the job before anything is read. \item\end{DoxyCompactList}\item 
+void {\bf processRunHeader} (LCRunHeader $\ast$run)
+\begin{DoxyCompactList}\small\item\em Called for every run, e.g. \item\end{DoxyCompactList}\item 
+void {\bf processEvent} (LCEvent $\ast$evtP)\label{classCALICE_1_1CollectionSelector_a7fae16a6069ad23c39f9ea1498229f96}
+
+\begin{DoxyCompactList}\small\item\em Called for every event -\/ the working horse. \item\end{DoxyCompactList}\item 
+void {\bfseries end} ()\label{classCALICE_1_1CollectionSelector_a22ff69b0e61dada140f07cba6b1da38d}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bf setTransient} (lcio::LCEvent $\ast$evtP, const std::string \&name, bool transient)
+\begin{DoxyCompactList}\small\item\em Set or remove the transient Mark of a collection. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+StringVec {\bfseries \_\-excludePattern}\label{classCALICE_1_1CollectionSelector_a86b479c6f8e185649ad9abd60f7368f6}
+
+\item 
+StringVec {\bfseries \_\-includePattern}\label{classCALICE_1_1CollectionSelector_affaaa3265a0d7999c529145d548b4acb}
+
+\item 
+StringVec {\bfseries \_\-selectionList}\label{classCALICE_1_1CollectionSelector_a256b9ed4988d50f352080713f747eb48}
+
+\item 
+StringVec {\bfseries \_\-selectionVariableName}\label{classCALICE_1_1CollectionSelector_a312bf14ff28957ec68c3155065a7aae4}
+
+\item 
+IntVec {\bfseries \_\-selectionValue}\label{classCALICE_1_1CollectionSelector_a924046461ef2a59eebafcc04184f6069}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Mark matching collections as transient or remove transient mark. The processor has two Parameters excludePattern, includePattern. The transient flags are changed of all collections matching the excludePattern or includePattern. The pattern is just a simple string. If it is contained in a collection name the collection is marked transient(excludePattern) or the transient status is removed(includePattern) \begin{Desc}
+\item[{\bf Todo}]the simple string should be replaced by regular expressions. \end{Desc}
+
+
+Definition at line 18 of file CollectionSelector.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::CollectionSelector@{CALICE::CollectionSelector}!init@{init}}
+\index{init@{init}!CALICE::CollectionSelector@{CALICE::CollectionSelector}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CollectionSelector::init ()}\label{classCALICE_1_1CollectionSelector_acea2e18ce2a94f1b3a94bbaa1e4cc734}
+
+
+Called at the begin of the job before anything is read. Use to initialize the processor, e.g. book histograms. 
+
+Definition at line 54 of file CollectionSelector.cc.\index{CALICE::CollectionSelector@{CALICE::CollectionSelector}!processRunHeader@{processRunHeader}}
+\index{processRunHeader@{processRunHeader}!CALICE::CollectionSelector@{CALICE::CollectionSelector}}
+\subsubsection[{processRunHeader}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CollectionSelector::processRunHeader (LCRunHeader $\ast$ {\em run})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CollectionSelector_a81a6bfe4a27cbd181767f6e2614e80f5}
+
+
+Called for every run, e.g. overwrite to initialize run dependent histograms. 
+
+Definition at line 36 of file CollectionSelector.hh.\index{CALICE::CollectionSelector@{CALICE::CollectionSelector}!setTransient@{setTransient}}
+\index{setTransient@{setTransient}!CALICE::CollectionSelector@{CALICE::CollectionSelector}}
+\subsubsection[{setTransient}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CollectionSelector::setTransient (lcio::LCEvent $\ast$ {\em evtP}, \/  const std::string \& {\em name}, \/  bool {\em transient})\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classCALICE_1_1CollectionSelector_a712a0fa500f4d84da8804000d31f2a6e}
+
+
+Set or remove the transient Mark of a collection. 
+\begin{DoxyParams}{Parameters}
+\item[{\em evtP}]pointer to the event in which the collection transient status is altered. \item[{\em name}]name of the collection to be altered \item[{\em transient}]if equals true the collection is marked transient otherwise the transient mark is removed \end{DoxyParams}
+
+
+Definition at line 151 of file CollectionSelector.cc.
+
+Referenced by processEvent().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+CollectionSelector.hh\item 
+CollectionSelector.cc\end{DoxyCompactItemize}

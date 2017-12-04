@@ -1,0 +1,92 @@
+\section{ExtractIntercalibrationProcessor Class Reference}
+\label{classExtractIntercalibrationProcessor}\index{ExtractIntercalibrationProcessor@{ExtractIntercalibrationProcessor}}
+
+
+Processor calculating the electronics intercalibration for each channel from a set of PmLedVcalibScan and CmLedVcalibScan run.  
+
+
+{\ttfamily \#include $<$ExtractIntercalibrationProcessor.hh$>$}\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf condpoint}
+\item 
+struct {\bf datapoint}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ExtractIntercalibrationProcessor} $\ast$ {\bfseries newProcessor} ()\label{classExtractIntercalibrationProcessor_af7b829330fe9a3a4700f2ff35d754c2f}
+
+\item 
+virtual void {\bfseries init} ()\label{classExtractIntercalibrationProcessor_a88dbc7b44c2dd7185efba4803f75fa6f}
+
+\item 
+void {\bfseries processEvent} (LCEvent $\ast$evt)\label{classExtractIntercalibrationProcessor_a8b9b3ce7a22525ea1fb8e56e780aa166}
+
+\item 
+virtual void {\bfseries end} ()\label{classExtractIntercalibrationProcessor_aa8cae07229f1d96ba57f17bd2aa9a9eb}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries updateMapper} ()\label{classExtractIntercalibrationProcessor_a032a69f48b6fc244f50a521036c0e70f}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::map$<$ unsigned, std::map$<$ unsigned, {\bf datapoint} $>$ $>$ {\bfseries \_\-data}\label{classExtractIntercalibrationProcessor_adf4e67f38b5b2e34e362fc2a03ed26f2}
+
+\item 
+std::map$<$ unsigned, {\bf condpoint} $>$ {\bfseries \_\-cond}\label{classExtractIntercalibrationProcessor_af577a1ce16643b016b6f8fda558f569b}
+
+\item 
+std::string {\bfseries \_\-inColName}\label{classExtractIntercalibrationProcessor_a19f78bf996da661aebc1b2c206e50d22}
+
+\item 
+std::string {\bfseries \_\-condColName}\label{classExtractIntercalibrationProcessor_a9e1ab65990412e158f8fccd23b63bc6a}
+
+\item 
+std::string {\bfseries \_\-outFileName}\label{classExtractIntercalibrationProcessor_a40723d9a2fbb028cea27a2bf99f35109}
+
+\item 
+std::string {\bfseries \_\-mappingProcessorName}\label{classExtractIntercalibrationProcessor_a61d61974a24f4cdd95599200e6c72d24}
+
+\item 
+unsigned int {\bf \_\-ahcMaxNumberOfChips}\label{classExtractIntercalibrationProcessor_ac5ad5bc2591002484d190cbe7c4934df}
+
+\begin{DoxyCompactList}\small\item\em AHCAL maximum number of chips. \item\end{DoxyCompactList}\item 
+unsigned int {\bf \_\-ahcMaxNumberOfModules}\label{classExtractIntercalibrationProcessor_af129cc6d6cd213cbab068f478e706b94}
+
+\begin{DoxyCompactList}\small\item\em AHCAL maximum number of modules (39). \item\end{DoxyCompactList}\item 
+unsigned int {\bf \_\-ahcMaxNumberOfCells}\label{classExtractIntercalibrationProcessor_a659e0f833a54e8389820d0fa6424b716}
+
+\begin{DoxyCompactList}\small\item\em AHCAL maximum number of cells. \item\end{DoxyCompactList}\item 
+unsigned int {\bf \_\-ahcMaxNumberOfChannels}\label{classExtractIntercalibrationProcessor_a693b0d0ebafc572ecffe39ce19b75c87}
+
+\begin{DoxyCompactList}\small\item\em AHCAL maximum number of channels. \item\end{DoxyCompactList}\item 
+const CALICE::AhcMapper $\ast$ {\bfseries \_\-ahcMapper}\label{classExtractIntercalibrationProcessor_ae81b815805190b458c244c540cc4f7c8}
+
+\item 
+unsigned int {\bfseries \_\-mapperVersion}\label{classExtractIntercalibrationProcessor_ac28474a6ef717635d3c79a4cb440821c}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Processor calculating the electronics intercalibration for each channel from a set of PmLedVcalibScan and CmLedVcalibScan run. At least one run of each type is needed as input files. The order is not important, the processor separates CM data from PM data.
+
+Intercalibration factor ic = signal (CM) / signal (PM)
+
+\begin{DoxyAuthor}{Author}
+N. Meyer 
+\end{DoxyAuthor}
+
+
+Definition at line 29 of file ExtractIntercalibrationProcessor.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+ExtractIntercalibrationProcessor.hh\item 
+ExtractIntercalibrationProcessor.cc\end{DoxyCompactItemize}

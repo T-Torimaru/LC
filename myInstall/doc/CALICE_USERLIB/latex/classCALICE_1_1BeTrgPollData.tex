@@ -1,0 +1,129 @@
+\section{CALICE::BeTrgPollData Class Reference}
+\label{classCALICE_1_1BeTrgPollData}\index{CALICE::BeTrgPollData@{CALICE::BeTrgPollData}}
+
+
+Class to store info on trigger polling, This is useful to detect a softtrigger among e.g.  
+
+
+{\ttfamily \#include $<$BeTrgPollData.hh$>$}Inheritance diagram for CALICE::BeTrgPollData::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCALICE_1_1BeTrgPollData}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf BeTrgPollData} ()\label{classCALICE_1_1BeTrgPollData_a057354fffb3480442ed0c56bd161d84a}
+
+\begin{DoxyCompactList}\small\item\em Default Constructor. \item\end{DoxyCompactList}\item 
+{\bf BeTrgPollData} (LCObject $\ast$obj)\label{classCALICE_1_1BeTrgPollData_a058b62681a118d4cc5ffce52916cbcc5}
+
+\begin{DoxyCompactList}\small\item\em A copy constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$BeTrgPollData} ()\label{classCALICE_1_1BeTrgPollData_a5c9f105b897e0636f88eeb449694c11d}
+
+\begin{DoxyCompactList}\small\item\em The destructor. \item\end{DoxyCompactList}\item 
+{\bf BeTrgPollData} \& {\bf setBoardID} (int boardID)
+\begin{DoxyCompactList}\small\item\em set the packed board id. \item\end{DoxyCompactList}\item 
+int {\bf getBoardID} () const \label{classCALICE_1_1BeTrgPollData_a5141403dac81c51d98f1f84633756c7d}
+
+\begin{DoxyCompactList}\small\item\em get the board id \item\end{DoxyCompactList}\item 
+{\bf BeTrgPollData} \& {\bf setRecordLabel} (int label)\label{classCALICE_1_1BeTrgPollData_a7ff5667fae7e50368b2d56fa395bcfcc}
+
+\begin{DoxyCompactList}\small\item\em Set the Record Label. \item\end{DoxyCompactList}\item 
+short {\bf getRecordLabel} () const \label{classCALICE_1_1BeTrgPollData_aa28da3731e1d2ee372d3bdab3595610f}
+
+\begin{DoxyCompactList}\small\item\em Return the Record Label. \item\end{DoxyCompactList}\item 
+{\bf BeTrgPollData} \& {\bf setStartTime} (struct tm $\ast$startTime, int startTimemus)\label{classCALICE_1_1BeTrgPollData_a9a72f0707c23960f0ff1bc815590e327}
+
+\begin{DoxyCompactList}\small\item\em set the start time We store Year, Month, Day and Hour, Minute, Second and microsceconds seperately We store UTC!!!! \item\end{DoxyCompactList}\item 
+LCTime {\bf getStartTime} ()\label{classCALICE_1_1BeTrgPollData_ab10dba32878399a29531258a4b9c861c}
+
+\begin{DoxyCompactList}\small\item\em returns the start time \item\end{DoxyCompactList}\item 
+{\bf BeTrgPollData} \& {\bf setEndTime} (struct tm $\ast$endTime, int endTimemus)\label{classCALICE_1_1BeTrgPollData_a20bde7a4d727cb651db1060c8950b262}
+
+\begin{DoxyCompactList}\small\item\em set the end time (see set of start time) \item\end{DoxyCompactList}\item 
+LCTime {\bf getEndTime} ()\label{classCALICE_1_1BeTrgPollData_a6b6279c993919741cbd248cc1e13b4d1}
+
+\begin{DoxyCompactList}\small\item\em returns the end time (see start time) \item\end{DoxyCompactList}\item 
+{\bf BeTrgPollData} \& {\bf setMaximumTime} (int maxTimesec, int maxTimemus)\label{classCALICE_1_1BeTrgPollData_ad5db0ea39364cb7ffc2c49402ea9e01e}
+
+\begin{DoxyCompactList}\small\item\em set the maximum time \item\end{DoxyCompactList}\item 
+int {\bf getMaximumTimeSec} ()
+\begin{DoxyCompactList}\small\item\em returns the maximum time sec. \item\end{DoxyCompactList}\item 
+int {\bf getMaximumTimeMus} ()
+\begin{DoxyCompactList}\small\item\em returns the maximum time musec. \item\end{DoxyCompactList}\item 
+{\bf BeTrgPollData} \& {\bf setNumberOfPolls} (int numPolls)\label{classCALICE_1_1BeTrgPollData_a8914ec67d71bd59f42001db6ace1bcf2}
+
+\begin{DoxyCompactList}\small\item\em set the number of polls \item\end{DoxyCompactList}\item 
+int {\bf getNumberOfPolls} ()\label{classCALICE_1_1BeTrgPollData_adb334ced5c76c3e78d3375997795f510}
+
+\begin{DoxyCompactList}\small\item\em returns the number of polls time \item\end{DoxyCompactList}\item 
+{\bf BeTrgPollData} \& {\bf setTimeout} (int timeout)\label{classCALICE_1_1BeTrgPollData_a74ff7471b2da9bb422f0ef380dc6d2b0}
+
+\begin{DoxyCompactList}\small\item\em set the info on timeout \item\end{DoxyCompactList}\item 
+bool {\bf isTimeout} ()\label{classCALICE_1_1BeTrgPollData_af4dc72493caeee97b9ae3353bb7e6617}
+
+\begin{DoxyCompactList}\small\item\em timeout set? \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1BeTrgPollData_a46de676202c64beca2a9ae254a6e3486}
+
+\begin{DoxyCompactList}\small\item\em returns the the type name \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1BeTrgPollData_a2d5728298c8256ec4daaa034b1bb2106}
+
+\begin{DoxyCompactList}\small\item\em returns a brief description of the data stored \item\end{DoxyCompactList}\item 
+std::ostream \& {\bf print} (std::ostream \&ostrm)\label{classCALICE_1_1BeTrgPollData_a528e115723725ae3366fe07ec73efeb6}
+
+\begin{DoxyCompactList}\small\item\em dumps data content \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to store info on trigger polling, This is useful to detect a softtrigger among e.g. beam trigger if e.g. the beam has disappeared \begin{DoxyAuthor}{Author}
+R. Pöschl (LAL Orsay) 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Jul 02 2006 
+\end{DoxyDate}
+
+
+Definition at line 39 of file BeTrgPollData.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::BeTrgPollData@{CALICE::BeTrgPollData}!getMaximumTimeMus@{getMaximumTimeMus}}
+\index{getMaximumTimeMus@{getMaximumTimeMus}!CALICE::BeTrgPollData@{CALICE::BeTrgPollData}}
+\subsubsection[{getMaximumTimeMus}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::BeTrgPollData::getMaximumTimeMus ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1BeTrgPollData_ace45885ebc9a2eaec02494b0bb0a5eda}
+
+
+returns the maximum time musec. part 
+
+Definition at line 226 of file BeTrgPollData.hh.
+
+References CALICE::LCGenericObjectImplExt::obj().
+
+Referenced by print().\index{CALICE::BeTrgPollData@{CALICE::BeTrgPollData}!getMaximumTimeSec@{getMaximumTimeSec}}
+\index{getMaximumTimeSec@{getMaximumTimeSec}!CALICE::BeTrgPollData@{CALICE::BeTrgPollData}}
+\subsubsection[{getMaximumTimeSec}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::BeTrgPollData::getMaximumTimeSec ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1BeTrgPollData_a6df7064ded7d9b57acece6987b770ec4}
+
+
+returns the maximum time sec. part 
+
+Definition at line 217 of file BeTrgPollData.hh.
+
+References CALICE::LCGenericObjectImplExt::obj().
+
+Referenced by print().\index{CALICE::BeTrgPollData@{CALICE::BeTrgPollData}!setBoardID@{setBoardID}}
+\index{setBoardID@{setBoardID}!CALICE::BeTrgPollData@{CALICE::BeTrgPollData}}
+\subsubsection[{setBoardID}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BeTrgPollData}\& CALICE::BeTrgPollData::setBoardID (int {\em boardID})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1BeTrgPollData_a621ba825e9be0fbaf2258870a4a206a7}
+
+
+set the packed board id. \begin{DoxySeeAlso}{See also}
+\doxyref{BoardID}{p.}{classCALICE_1_1BoardID} 
+\end{DoxySeeAlso}
+
+
+Definition at line 79 of file BeTrgPollData.hh.
+
+References CALICE::LCGenericObjectImplExt::obj().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+BeTrgPollData.hh\end{DoxyCompactItemize}

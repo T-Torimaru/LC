@@ -1,0 +1,978 @@
+\section{CALICE::SimpleHitSearch Class Reference}
+\label{classCALICE_1_1SimpleHitSearch}\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+
+
+Marlin Processor to search and reconstruct colorimeter hits.  
+
+
+{\ttfamily \#include $<$SimpleHitSearch.hh$>$}Inheritance diagram for CALICE::SimpleHitSearch::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCALICE_1_1SimpleHitSearch}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Processor $\ast$ {\bf newProcessor} ()\label{classCALICE_1_1SimpleHitSearch_a9c6691eab502152d7d480b9b9fdc8118}
+
+\begin{DoxyCompactList}\small\item\em construct a new Processor (required by Marlin. \item\end{DoxyCompactList}\item 
+{\bf SimpleHitSearch} ()
+\begin{DoxyCompactList}\small\item\em default constructor. \item\end{DoxyCompactList}\item 
+{\bf $\sim$SimpleHitSearch} ()\label{classCALICE_1_1SimpleHitSearch_a2f968c5e21b3e6dee9f2ad4d4021f840}
+
+\begin{DoxyCompactList}\small\item\em destructor. \item\end{DoxyCompactList}\item 
+void {\bf init} ()
+\begin{DoxyCompactList}\small\item\em Called at the begin of the job before anything is read. \item\end{DoxyCompactList}\item 
+void {\bf processRunHeader} (LCRunHeader $\ast$run)
+\begin{DoxyCompactList}\small\item\em Called for every run (does nothing. \item\end{DoxyCompactList}\item 
+void {\bf processEvent} (LCEvent $\ast$evtP)
+\begin{DoxyCompactList}\small\item\em Calculate Pedestals and Noise and search and reconstruct calorimeter hits. \item\end{DoxyCompactList}\item 
+void {\bfseries end} ()\label{classCALICE_1_1SimpleHitSearch_a80eecd952cd8813fdb95885a2066f899}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf NoiseParameterArray\_\-t} \& {\bfseries getCellParameters} ()\label{classCALICE_1_1SimpleHitSearch_afcf3db2cdd66d984735fed6dea5dccef}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf EState} \{ \par
+{\bf kStateUnknown}, 
+{\bf kStateSkipEvent}, 
+{\bf kStateCosmics}, 
+{\bf kStateBeam}, 
+\par
+{\bf kStatePedestals}, 
+{\bf kStateInitialPedestals}, 
+{\bf kStateRefinePedestals}, 
+{\bf kStateCalibration}, 
+\par
+{\bfseries kNStates}
+ \}
+\item 
+typedef void(SimpleHitSearch::$\ast$ {\bfseries ProcessFunc\_\-t} )(EVENT::LCEvent $\ast$evtP)\label{classCALICE_1_1SimpleHitSearch_a45197af7f9a68676066cebde627f4cfc}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf changeState} ({\bf EState} new\_\-state)\label{classCALICE_1_1SimpleHitSearch_a4446f9d98f8e27263dbc1407454e9a9a}
+
+\begin{DoxyCompactList}\small\item\em Change the state to the one specified. \item\end{DoxyCompactList}\item 
+bool {\bf stateTransition} ()
+\begin{DoxyCompactList}\small\item\em Change the state. \item\end{DoxyCompactList}\item 
+void {\bf callStateFunc} (LCEvent $\ast$evtP)
+\begin{DoxyCompactList}\small\item\em Call the event processing functions of the current state (state function). \item\end{DoxyCompactList}\item 
+void {\bf skipEvents} (LCEvent $\ast$evtP)
+\begin{DoxyCompactList}\small\item\em Skip events. \item\end{DoxyCompactList}\item 
+void {\bf processCosmics} (LCEvent $\ast$evtP)
+\begin{DoxyCompactList}\small\item\em Process cosmics events. \item\end{DoxyCompactList}\item 
+void {\bf processBeamEvents} (LCEvent $\ast$evtP)
+\begin{DoxyCompactList}\small\item\em Process beam events. \item\end{DoxyCompactList}\item 
+void {\bf processPedestalEvents} (LCEvent $\ast$evtP)
+\begin{DoxyCompactList}\small\item\em Process pedestal events. \item\end{DoxyCompactList}\item 
+void {\bf processFirstPedestalEvents} (LCEvent $\ast$evtP)
+\begin{DoxyCompactList}\small\item\em Process events to get the first idea of the pedestals. \item\end{DoxyCompactList}\item 
+void {\bf processPedestalEventsWithHitRejection} (LCEvent $\ast$evtP)
+\begin{DoxyCompactList}\small\item\em Refine the initial guess of the pedestals. \item\end{DoxyCompactList}\item 
+void {\bf skipCalibrationEvents} (LCEvent $\ast$evtP)
+\begin{DoxyCompactList}\small\item\em Skip events for which the calibration chip is on. \item\end{DoxyCompactList}\item 
+void {\bf fullReset} ()\label{classCALICE_1_1SimpleHitSearch_a52c65040ce64c64e5d85b1e9bb9deb58}
+
+\begin{DoxyCompactList}\small\item\em Reset the arrays which contain the pedestals and the noise, hit counter etc. \item\end{DoxyCompactList}\item 
+void {\bf resetForInitialPedestalNoiseCalculation} ()\label{classCALICE_1_1SimpleHitSearch_a5469f7b4a5daeb02dde42785a971fa27}
+
+\begin{DoxyCompactList}\small\item\em Initialise the pedestal/noise arrays for the initial pedestal/noise estimate. \item\end{DoxyCompactList}\item 
+void {\bf resetForPedestalNoiseReCalculation} ()\label{classCALICE_1_1SimpleHitSearch_a9f507aa7f979b24fcb339c20f09be0c7}
+
+\begin{DoxyCompactList}\small\item\em Initialise the pedestal/noise arrays for the pedestal/noise estimate (An initial pedestal/noise estimate is assumed). \item\end{DoxyCompactList}\item 
+void {\bfseries resetHitCounter} ()\label{classCALICE_1_1SimpleHitSearch_ac15a138546477596a59bec83320d0209}
+
+\item 
+void {\bfseries resetSaturationCounter} ()\label{classCALICE_1_1SimpleHitSearch_a88b5ade283b9c3ed356cd55800f05119}
+
+\item 
+void {\bf accumulateEventsForInitialPedestalNoiseCalculation} (LCEvent $\ast$evtP)
+\begin{DoxyCompactList}\small\item\em Accumulate data to calculate pedestals and the noise. \item\end{DoxyCompactList}\item 
+void {\bf accumulateEventsForPedestalNoiseCalculationWithHitRejection} (LCEvent $\ast$evtP)
+\begin{DoxyCompactList}\small\item\em Accumulate data to calculate pedestals and the noise with hit rejection. \item\end{DoxyCompactList}\item 
+void {\bf accumulateEventsForPedestalNoiseCalculationWithHitRejectionAndPedestalShiftDetection} (LCEvent $\ast$evtP)
+\begin{DoxyCompactList}\small\item\em Accumulate data to calculate pedestals and the noise. \item\end{DoxyCompactList}\item 
+void {\bf calculatePedestalNoiseAndDeclareCellsDead} ()
+\begin{DoxyCompactList}\small\item\em Calculate pedestals and noise using the gathered information of the accumalted events. \item\end{DoxyCompactList}\item 
+void {\bf searchHits} (LCEvent $\ast$evt)
+\begin{DoxyCompactList}\small\item\em Search hits without adjusting noise and pedestals (suitable for test beam data). \item\end{DoxyCompactList}\item 
+void {\bf searchHitsAndAdjustPedestalsAndNoise} (LCEvent $\ast$evtP)
+\begin{DoxyCompactList}\small\item\em Search hits and adjust the pedestal and noise of cells with a signal below the cut \_\-signalCut (suitable for cosmics data). \item\end{DoxyCompactList}\item 
+void {\bf buildCellParameters} ()
+\begin{DoxyCompactList}\small\item\em Create and initialise the array which will contain for all cells the pedestals and the noise and further status information. \item\end{DoxyCompactList}\item 
+void {\bf showNoiseStat} () const \label{classCALICE_1_1SimpleHitSearch_a244abb0f99096175c8b9264fcbee6d46}
+
+\begin{DoxyCompactList}\small\item\em Show per layer statistics about the noise and the pedestals. \item\end{DoxyCompactList}\item 
+void {\bf showCurrentNoiseStat} () const 
+\begin{DoxyCompactList}\small\item\em Show per layer statistics about the noise and the pedestals (during pedestal noise accumulation). \item\end{DoxyCompactList}\item 
+Float\_\-t {\bf calculatePedestalCorrection} (UInt\_\-t module\_\-i, Float\_\-t $\ast$adc\_\-values\_\-per\_\-module) const 
+\begin{DoxyCompactList}\small\item\em calculculate an average pedestal correction for one module. \item\end{DoxyCompactList}\item 
+{\bf vector}$<$ Float\_\-t $>$ {\bfseries calculateSignalInducedPedestalCorrection} (UInt\_\-t module\_\-i, const Float\_\-t $\ast$adc\_\-values\_\-per\_\-module) const \label{classCALICE_1_1SimpleHitSearch_a168ec110d0f6529ed97052137ea8c173}
+
+\item 
+Float\_\-t {\bfseries getCalibratedValue} (UInt\_\-t module\_\-index, UInt\_\-t cell\_\-index, Float\_\-t pedestal\_\-subtracted\_\-adc\_\-value) const \label{classCALICE_1_1SimpleHitSearch_a7c3abb75e490a3f20eb4f6b53e87d9b3}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ProcessFunc\_\-t {\bfseries \_\-stateFunc} [kNStates]\label{classCALICE_1_1SimpleHitSearch_a7665760485119e27ea4792fb43fff838}
+
+\item 
+ProcessFunc\_\-t {\bfseries \_\-theStateFunc}\label{classCALICE_1_1SimpleHitSearch_a395561a17ee6269f8317f072205579dc}
+
+\item 
+{\bf EState} {\bfseries \_\-isState}\label{classCALICE_1_1SimpleHitSearch_ab9f1f866bb2c2d15a887a6a2271602ea}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries moduleTypeChanged} (lcio::LCCollection $\ast$col)\label{classCALICE_1_1SimpleHitSearch_a9fd889599491aea14d850439b1c0f47a}
+
+\item 
+void {\bfseries moduleLocationChanged} (lcio::LCCollection $\ast$col)\label{classCALICE_1_1SimpleHitSearch_a7e6b8d77c3b761bfb2dd44066a5c77ba}
+
+\item 
+void {\bfseries detectorTransformationChanged} (lcio::LCCollection $\ast$col)\label{classCALICE_1_1SimpleHitSearch_a9c7c2d1e9591a2e9666f7b09debf8290}
+
+\item 
+void {\bfseries referenceTransformationChanged} (lcio::LCCollection $\ast$col)\label{classCALICE_1_1SimpleHitSearch_a9ac5d578b5d61d3bf3e6836ce81d50d8}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries \_\-pedestalNoiseIsKnown}\label{classCALICE_1_1SimpleHitSearch_a5a67c59ddfe5fecf37f6ffff62e367f3}
+
+\item 
+{\bf Calibration} $\ast$ {\bfseries \_\-calibration}\label{classCALICE_1_1SimpleHitSearch_a48ee55effb72a72a2ae2f0ba3cc98b86}
+
+\item 
+TriggerBits {\bf \_\-triggerConf}
+\begin{DoxyCompactList}\small\item\em Variable which contains the current trigger configuration. \item\end{DoxyCompactList}\item 
+TriggerBits {\bf \_\-lastTriggerConf}
+\begin{DoxyCompactList}\small\item\em Variable which contains the trigger configuration of the previous event. \item\end{DoxyCompactList}\item 
+TriggerBits {\bf \_\-triggerEvent}
+\begin{DoxyCompactList}\small\item\em Variable which contains the current trigger main word. \item\end{DoxyCompactList}\item 
+LCCollection $\ast$ {\bfseries \_\-cellParameterCollection}\label{classCALICE_1_1SimpleHitSearch_a21aaa5e445083d41e36c0c18330a7b1f}
+
+\item 
+std::string {\bfseries \_\-cellParameterCollectionName}\label{classCALICE_1_1SimpleHitSearch_a4f5bae03c05e7c7dca47eb296123fd6f}
+
+\item 
+{\bf CellParameterArray\_\-t} {\bfseries \_\-cellParameter}\label{classCALICE_1_1SimpleHitSearch_ae0d3dfb82159643faa7c372491846f35}
+
+\item 
+RunInformation {\bfseries \_\-runInfo}\label{classCALICE_1_1SimpleHitSearch_ada8feaedebde89fbd964230993f57856}
+
+\item 
+int {\bfseries \_\-runnum}\label{classCALICE_1_1SimpleHitSearch_a11f16d75717fd4d37b0bea1a4a5b4248}
+
+\item 
+TFile $\ast$ {\bfseries \_\-hfile}\label{classCALICE_1_1SimpleHitSearch_aa86e3dadf02048636966923b9c59de25}
+
+\item 
+TH1F $\ast$ {\bfseries p\_\-Ped} [30][9][36]\label{classCALICE_1_1SimpleHitSearch_aa093649773a7d6cae7a14f1f137f096e}
+
+\item 
+bool {\bfseries \_\-isDead} [30][9][36]\label{classCALICE_1_1SimpleHitSearch_a202bb40612bf67dd94e26403a3d98107}
+
+\item 
+IntVec {\bfseries \_\-adcRange}\label{classCALICE_1_1SimpleHitSearch_ac2d20692aaf6148938c7b5308a6b3f76}
+
+\item 
+FloatVec {\bfseries \_\-noiseRange}\label{classCALICE_1_1SimpleHitSearch_a44e34d5fe8fc48f6867ccf3e11668549}
+
+\item 
+FloatVec {\bfseries \_\-pedestalRange}\label{classCALICE_1_1SimpleHitSearch_a16637f5a59e2056537556f021fc9922b}
+
+\item 
+Float\_\-t {\bfseries \_\-pedestalChangeCut}\label{classCALICE_1_1SimpleHitSearch_a67bc48aa8bbbf0a9a22c94383338c4d9}
+
+\item 
+Float\_\-t {\bf \_\-maxPedestalChange}
+\begin{DoxyCompactList}\small\item\em Maximum allowed pedestal change. \item\end{DoxyCompactList}\item 
+Int\_\-t {\bfseries \_\-removeMaximumInNEvents}\label{classCALICE_1_1SimpleHitSearch_af010bd49f78718fb2ac7d53e467df172}
+
+\item 
+Float\_\-t {\bf \_\-maxHitOccupancy}
+\begin{DoxyCompactList}\small\item\em Maximum number of tolerated hits. \item\end{DoxyCompactList}\item 
+Int\_\-t {\bf \_\-minNEventsForPedestalNoiseUpdate}
+\begin{DoxyCompactList}\small\item\em Minimum number of events to be accumulated before the pedestals and noise are calculated (parameter). \item\end{DoxyCompactList}\item 
+Int\_\-t {\bf \_\-updatePedestalsEveryNEvents}
+\begin{DoxyCompactList}\small\item\em Update pedestals every n events, during pedestal triggers. \item\end{DoxyCompactList}\item 
+Int\_\-t {\bf \_\-weightOfOldPedestalNoise}
+\begin{DoxyCompactList}\small\item\em Weight given to old pedestals and noise when using a new value to adjust the pedestals and the noise (parameter). \item\end{DoxyCompactList}\item 
+Float\_\-t {\bf \_\-shiftPedestalFactor}
+\begin{DoxyCompactList}\small\item\em When processing pedestal events, shift pedestals by average values measured on one module times this factor. \item\end{DoxyCompactList}\item 
+Int\_\-t {\bf \_\-skipFirstNEvents}
+\begin{DoxyCompactList}\small\item\em Skip the first n events (parameter). \item\end{DoxyCompactList}\item 
+Int\_\-t {\bf \_\-skipNEventsAfterConfChanges}
+\begin{DoxyCompactList}\small\item\em Skip n events after configuration changes (parameter). \item\end{DoxyCompactList}\item 
+Int\_\-t {\bf \_\-skipNEvents}
+\begin{DoxyCompactList}\small\item\em Skip the next n events (not a parameter). \item\end{DoxyCompactList}\item 
+Int\_\-t {\bf \_\-skipCalibrationEventsAlways}
+\begin{DoxyCompactList}\small\item\em Skip events in which the calibration chip was turned on. \item\end{DoxyCompactList}\item 
+Int\_\-t {\bf \_\-skipNEventsAfterSlowConfRecords}
+\begin{DoxyCompactList}\small\item\em Events skipped after slow or configuration records. \item\end{DoxyCompactList}\item 
+Int\_\-t {\bf \_\-skipDirtyEventsInPedestalCalculation}
+\begin{DoxyCompactList}\small\item\em Events skipped during pedestal calculation because they are considered to be dirty. \item\end{DoxyCompactList}\item 
+Float\_\-t {\bfseries \_\-toleratedSaturationFraction}\label{classCALICE_1_1SimpleHitSearch_aee3c0be45f5ad8bacf4be69adc7243c9}
+
+\item 
+Float\_\-t {\bf \_\-signalThreshold}
+\begin{DoxyCompactList}\small\item\em Signals above the signal threshold and . \item\end{DoxyCompactList}\item 
+FloatVec {\bf \_\-noiseCutVec}
+\begin{DoxyCompactList}\small\item\em above the noise cut are considered to be hits. \item\end{DoxyCompactList}\item 
+Float\_\-t {\bf \_\-noiseCut}\label{classCALICE_1_1SimpleHitSearch_a43d55978859ed6e08879c8fbcec51fe4}
+
+\begin{DoxyCompactList}\small\item\em will be set by the first element of the \_\-noiseCutVec \item\end{DoxyCompactList}\item 
+Float\_\-t {\bf \_\-noiseCutForPedestalNoiseCalculation}
+\begin{DoxyCompactList}\small\item\em will be set by the second element of the \_\-noiseCutVec (if available). \item\end{DoxyCompactList}\item 
+int {\bf \_\-nNegativeSignalsPerModule}
+\begin{DoxyCompactList}\small\item\em maximum number of negative signals per module. \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-hitColName}
+\begin{DoxyCompactList}\small\item\em Name of the hit collection (OUTPUT). \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-rawhitColName}
+\begin{DoxyCompactList}\small\item\em Name of the raw hit collection (optional OUTPUT). \item\end{DoxyCompactList}\item 
+bool {\bf \_\-writeRawHits}
+\begin{DoxyCompactList}\small\item\em Save the output collection containing RawCalorimeterHits. \item\end{DoxyCompactList}\item 
+bool {\bf \_\-saveEcalNoise}
+\begin{DoxyCompactList}\small\item\em Save the Noise value in the database. \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-dbInit}\label{classCALICE_1_1SimpleHitSearch_a171f19ba1537593d58af925d3fd37af5}
+
+\begin{DoxyCompactList}\small\item\em DBInit string. \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-folderNoise}\label{classCALICE_1_1SimpleHitSearch_a2768a3edd7f2a10dd62bd27744153212}
+
+\begin{DoxyCompactList}\small\item\em Variable containing folder name for Ecal Noise. \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-colNameDetectorTransformation}
+\begin{DoxyCompactList}\small\item\em Name of the conditions data collection which describes the position and the rotation of the detector. \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-colNameReferenceTransformation}
+\begin{DoxyCompactList}\small\item\em Name of the conditions data collection which describes the reference position and rotation. \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-calibrationObjectName}\label{classCALICE_1_1SimpleHitSearch_a0a9b79f36130b7634a968757204106c4}
+
+\begin{DoxyCompactList}\small\item\em Name of the \doxyref{Calibration}{p.}{classCalibration} object to be used (will be created using the \doxyref{CalibrationFactory}{p.}{classCalibrationFactory}). \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-calibrationConstantColName}
+\begin{DoxyCompactList}\small\item\em Name of the conditions data collection containing the calibration constants. \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-parNameTriggerConf}
+\begin{DoxyCompactList}\small\item\em Name of the event parameter which contains the current trigger configuration. \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-parNameTriggerEvent}
+\begin{DoxyCompactList}\small\item\em Name of the event parameter which contains the current trigger main word. \item\end{DoxyCompactList}\item 
+std::string {\bfseries \_\-parNameTriggerPreHistory}\label{classCALICE_1_1SimpleHitSearch_aa830de5cd9ecf215fd4c8f7dabb89905}
+
+\item 
+std::string {\bfseries \_\-parNameTriggerPostHistory}\label{classCALICE_1_1SimpleHitSearch_a101a94c7e3cebda25d572372a299242a}
+
+\item 
+std::string {\bf \_\-parNameRecoState}
+\begin{DoxyCompactList}\small\item\em Name of the event parameter which will be filled with the current state of the reconstruction. \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-parNameEventEnergy}
+\begin{DoxyCompactList}\small\item\em Parameter name of the event energy. \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-parNamePedestalCorrection}
+\begin{DoxyCompactList}\small\item\em Parameter name of the event energy. \item\end{DoxyCompactList}\item 
+ConditionsChangeDelegator$<$ {\bf SimpleHitSearch} $>$ {\bf \_\-detectorTransformationChange}
+\begin{DoxyCompactList}\small\item\em helper class to listen for changes of the detector position or rotation. \item\end{DoxyCompactList}\item 
+ConditionsChangeDelegator$<$ {\bf SimpleHitSearch} $>$ {\bf \_\-referenceTransformationChange}
+\begin{DoxyCompactList}\small\item\em helper class to listen for changes of the reference position or rotation. \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bfseries \_\-nPedestalEvents}\label{classCALICE_1_1SimpleHitSearch_a52fab5d22925a91d926f48cc9738c91a}
+
+\item 
+UInt\_\-t {\bfseries \_\-nPedestalEventsTotal}\label{classCALICE_1_1SimpleHitSearch_a028bae6980be7a807f1653c62ca6cea9}
+
+\item 
+UInt\_\-t {\bfseries \_\-nPedestalEventSets}\label{classCALICE_1_1SimpleHitSearch_ab1d4f9b957aba4b42682785f29203570}
+
+\item 
+UInt\_\-t {\bfseries \_\-nEvents}\label{classCALICE_1_1SimpleHitSearch_a8380b2ba839ba192f158f0b2dd5b2595}
+
+\item 
+UInt\_\-t {\bfseries \_\-nEventsTotal}\label{classCALICE_1_1SimpleHitSearch_aa1a9621e79f38d26546a4484741aa2e9}
+
+\item 
+UInt\_\-t {\bfseries \_\-nEventsWithHits}\label{classCALICE_1_1SimpleHitSearch_a037a41dd3ccbde0ba5c4f7c5b192efde}
+
+\item 
+UInt\_\-t {\bfseries \_\-nEventsWithHitsTotal}\label{classCALICE_1_1SimpleHitSearch_a96c924a9b98d261504b89f741cb733a6}
+
+\item 
+UInt\_\-t {\bfseries \_\-nEventsSkipped}\label{classCALICE_1_1SimpleHitSearch_ac807f9dd96f4fcac703b4c9c0ba4ed4f}
+
+\item 
+UInt\_\-t {\bfseries \_\-eventCounterForMaximumRejection}\label{classCALICE_1_1SimpleHitSearch_a37ec85fa6893b07d56dc9781151a344c}
+
+\item 
+UInt\_\-t {\bfseries \_\-uncoveredTriggerCounter}\label{classCALICE_1_1SimpleHitSearch_ad2548d5d0c666f6cf4ba7314e93e825a}
+
+\item 
+UInt\_\-t {\bfseries \_\-nEventsWithoutADC}\label{classCALICE_1_1SimpleHitSearch_a4d545f53fc92d3fa9b9d79aaf6ae654a}
+
+\item 
+UInt\_\-t {\bfseries \_\-rejectedEvents}\label{classCALICE_1_1SimpleHitSearch_acc168ae78c41be89f0ec797fbcd5a9e7}
+
+\item 
+UInt\_\-t {\bfseries \_\-rejectBecauseOfError}\label{classCALICE_1_1SimpleHitSearch_aeed4d4e7089c0be06e943d7fe016a93e}
+
+\item 
+UInt\_\-t {\bfseries \_\-rejectBecauseTooManyHits}\label{classCALICE_1_1SimpleHitSearch_a57e713ebf5c905d6ed3ee081ac7c878a}
+
+\item 
+UInt\_\-t {\bfseries \_\-rejectBecauseOfMissingADCBlocks}\label{classCALICE_1_1SimpleHitSearch_a3544a9c8fa07c39cce41fc061152a32f}
+
+\item 
+UInt\_\-t {\bfseries \_\-nEventsWithMissingAdcBlocks}\label{classCALICE_1_1SimpleHitSearch_ac3691afbd7bb89347d19ce73df8cae9a}
+
+\item 
+Int\_\-t {\bfseries \_\-viewConnectionTree}\label{classCALICE_1_1SimpleHitSearch_a892f40de556066455a63575f0c0247d6}
+
+\item 
+{\bf vector}$<$ Float\_\-t $>$ {\bfseries \_\-moduleBuffer}\label{classCALICE_1_1SimpleHitSearch_ab854d696c8a7ddf18cd18eab248900ef}
+
+\item 
+{\bf vector}$<$ Float\_\-t $>$ {\bfseries \_\-avNoisePerModule}\label{classCALICE_1_1SimpleHitSearch_a621e4afdc02db8d42adf197986f889d0}
+
+\item 
+lcio::StringVec {\bf \_\-maskedErrorNames}
+\begin{DoxyCompactList}\small\item\em Names of alle masked errors (proc. \item\end{DoxyCompactList}\item 
+unsigned int {\bf \_\-errorMask}
+\begin{DoxyCompactList}\small\item\em bit mask of all errors to be ignored. \item\end{DoxyCompactList}\item 
+Bool\_\-t {\bfseries \_\-calibrationOn}\label{classCALICE_1_1SimpleHitSearch_a24d9bfec50160d0071bce65b0dbd0d7d}
+
+\item 
+UInt\_\-t {\bfseries \_\-lastEvent}\label{classCALICE_1_1SimpleHitSearch_a1cb4d8110b9d02187b62dcb0737092b3}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Marlin Processor to search and reconstruct colorimeter hits. The hits are selected using a signal-\/over-\/noise threshold or a signal threshold (can be chosen at compile time by defining the environment variable (FIXED\_\-THRESHOLD -\/$>$ signal threshold). The class takes care of the pedestal and noise calculation. The hit position is calculated using information stored in a LCCD conditions database. Moreover, the signal is calibrated if a proper calibration object exists. Currently, there is only the \doxyref{NoOpCalibration}{p.}{classNoOpCalibration} which does nothing. 
+
+Definition at line 46 of file SimpleHitSearch.hh.
+
+\subsection{Member Enumeration Documentation}
+\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!EState@{EState}}
+\index{EState@{EState}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{EState}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf CALICE::SimpleHitSearch::EState}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1SimpleHitSearch_a26a3d0d7abf5b4511990ed16d1964ad1}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{kStateUnknown@{kStateUnknown}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!kStateUnknown@{kStateUnknown}}\item[{\em 
+kStateUnknown\label{classCALICE_1_1SimpleHitSearch_a26a3d0d7abf5b4511990ed16d1964ad1a747f2b548416998e817796f90575aba7}
+}]0: unknown state. \index{kStateSkipEvent@{kStateSkipEvent}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!kStateSkipEvent@{kStateSkipEvent}}\item[{\em 
+kStateSkipEvent\label{classCALICE_1_1SimpleHitSearch_a26a3d0d7abf5b4511990ed16d1964ad1a325fe5f2f04499d334162bfcce8512d7}
+}]1: events are skipped unprocessed. \index{kStateCosmics@{kStateCosmics}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!kStateCosmics@{kStateCosmics}}\item[{\em 
+kStateCosmics\label{classCALICE_1_1SimpleHitSearch_a26a3d0d7abf5b4511990ed16d1964ad1a31a96472fae4e02ab6dab5a2ef100b29}
+}]2: events are treated as cosmics (low, signals at random locations). \index{kStateBeam@{kStateBeam}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!kStateBeam@{kStateBeam}}\item[{\em 
+kStateBeam\label{classCALICE_1_1SimpleHitSearch_a26a3d0d7abf5b4511990ed16d1964ad1aa623a732bc5ea94b5bb300aaf755684b}
+}]3: events are treated as beam events (high, localised signals). \index{kStatePedestals@{kStatePedestals}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!kStatePedestals@{kStatePedestals}}\item[{\em 
+kStatePedestals\label{classCALICE_1_1SimpleHitSearch_a26a3d0d7abf5b4511990ed16d1964ad1aff7721d469bfee8d8b991f577b805b95}
+}]4: events are treated as pedestal/noise events (no signals). \index{kStateInitialPedestals@{kStateInitialPedestals}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!kStateInitialPedestals@{kStateInitialPedestals}}\item[{\em 
+kStateInitialPedestals\label{classCALICE_1_1SimpleHitSearch_a26a3d0d7abf5b4511990ed16d1964ad1a04fe816441d604e962f0e3dbd254b701}
+}]5: pedestals and noise are estimated assuming little signal at random locations. \index{kStateRefinePedestals@{kStateRefinePedestals}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!kStateRefinePedestals@{kStateRefinePedestals}}\item[{\em 
+kStateRefinePedestals\label{classCALICE_1_1SimpleHitSearch_a26a3d0d7abf5b4511990ed16d1964ad1a937edad6225a7500e00a9c65e62baaee}
+}]6: pedestal and noise estimates are improved assuming little signal at random locations. \index{kStateCalibration@{kStateCalibration}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!kStateCalibration@{kStateCalibration}}\item[{\em 
+kStateCalibration\label{classCALICE_1_1SimpleHitSearch_a26a3d0d7abf5b4511990ed16d1964ad1aae90af32fec9607b3807b2959d7f0002}
+}]7: There are permanent (calibration) signals at specific locations . \end{description}
+\end{Desc}
+
+
+
+Definition at line 97 of file SimpleHitSearch.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!SimpleHitSearch@{SimpleHitSearch}}
+\index{SimpleHitSearch@{SimpleHitSearch}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{SimpleHitSearch}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::SimpleHitSearch::SimpleHitSearch ()}\label{classCALICE_1_1SimpleHitSearch_a878f8268e15a16efa94ebbfc79e74250}
+
+
+default constructor. defines and registers its parameters. 
+
+Definition at line 67 of file SimpleHitSearch.cc.
+
+References \_\-calibrationConstantColName, \_\-calibrationObjectName, \_\-colNameDetectorTransformation, \_\-colNameReferenceTransformation, \_\-dbInit, \_\-folderNoise, \_\-hitColName, \_\-maskedErrorNames, \_\-maxHitOccupancy, \_\-maxPedestalChange, \_\-minNEventsForPedestalNoiseUpdate, \_\-noiseCutVec, \_\-parNameEventEnergy, \_\-parNamePedestalCorrection, \_\-parNameRecoState, \_\-parNameTriggerConf, \_\-parNameTriggerEvent, \_\-rawhitColName, \_\-saveEcalNoise, \_\-shiftPedestalFactor, \_\-signalThreshold, \_\-skipCalibrationEventsAlways, \_\-skipFirstNEvents, \_\-skipNEventsAfterConfChanges, \_\-skipNEventsAfterSlowConfRecords, \_\-updatePedestalsEveryNEvents, \_\-weightOfOldPedestalNoise, \_\-writeRawHits, changeState(), kStateBeam, kStateCalibration, kStateCosmics, kStateInitialPedestals, kStatePedestals, kStateRefinePedestals, kStateSkipEvent, kStateUnknown, processBeamEvents(), processCosmics(), processFirstPedestalEvents(), processPedestalEvents(), processPedestalEventsWithHitRejection(), and skipEvents().
+
+\subsection{Member Function Documentation}
+\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!accumulateEventsForInitialPedestalNoiseCalculation@{accumulateEventsForInitialPedestalNoiseCalculation}}
+\index{accumulateEventsForInitialPedestalNoiseCalculation@{accumulateEventsForInitialPedestalNoiseCalculation}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{accumulateEventsForInitialPedestalNoiseCalculation}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::SimpleHitSearch::accumulateEventsForInitialPedestalNoiseCalculation (LCEvent $\ast$ {\em evtP})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1SimpleHitSearch_adce6351652d1d9fe70198c3da5c7e3b9}
+
+
+Accumulate data to calculate pedestals and the noise. It is assumed that the event sample does not contain any hits. Otherwise The noise and the pedestals will be biased to larger values. 
+
+Definition at line 1326 of file SimpleHitSearch.cc.
+
+References CALICE::VRawADCValueProcessor::\_\-adcColName, CALICE::CellParameter::add(), buildCellParameters(), CALICE::CellParameter::getMaxValue(), CALICE::CellParameter::incrementSaturationCounter(), CALICE::CellParameter::isDead(), CALICE::CellParameter::setMaxValue(), and CALICE::CellParameter::sub().
+
+Referenced by processFirstPedestalEvents().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!accumulateEventsForPedestalNoiseCalculationWithHitRejection@{accumulateEventsForPedestalNoiseCalculationWithHitRejection}}
+\index{accumulateEventsForPedestalNoiseCalculationWithHitRejection@{accumulateEventsForPedestalNoiseCalculationWithHitRejection}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{accumulateEventsForPedestalNoiseCalculationWithHitRejection}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::SimpleHitSearch::accumulateEventsForPedestalNoiseCalculationWithHitRejection (LCEvent $\ast$ {\em evtP})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1SimpleHitSearch_a066ec6c399d4e557457da357acdfb7db}
+
+
+Accumulate data to calculate pedestals and the noise with hit rejection. Values which are above the threshold \_\-signalCutForPedestalNoiseCalculation are not considered in the pedestal and noise calculation. If the threshold is too low the pedestals and the noise will be biased to lower values. If the threshold is too high and there are many hits the pedestals and the noise will be biased to higher values. This method is suitable for events with little amount of hits which are clearly separated from the pedestals. 
+
+Definition at line 1394 of file SimpleHitSearch.cc.
+
+References CALICE::VRawADCValueProcessor::\_\-adcColName, \_\-noiseCutForPedestalNoiseCalculation, \_\-shiftPedestalFactor, CALICE::CellParameter::add(), buildCellParameters(), CALICE::CellParameter::getNoise(), CALICE::CellParameter::getPedestal(), CALICE::CellParameter::incrementSaturationCounter(), and CALICE::CellParameter::isDead().
+
+Referenced by processBeamEvents(), processPedestalEvents(), and processPedestalEventsWithHitRejection().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!accumulateEventsForPedestalNoiseCalculationWithHitRejectionAndPedestalShiftDetection@{accumulateEventsForPedestalNoiseCalculationWithHitRejectionAndPedestalShiftDetection}}
+\index{accumulateEventsForPedestalNoiseCalculationWithHitRejectionAndPedestalShiftDetection@{accumulateEventsForPedestalNoiseCalculationWithHitRejectionAndPedestalShiftDetection}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{accumulateEventsForPedestalNoiseCalculationWithHitRejectionAndPedestalShiftDetection}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::SimpleHitSearch::accumulateEventsForPedestalNoiseCalculationWithHitRejectionAndPedestalShiftDetection (LCEvent $\ast$ {\em evtP})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1SimpleHitSearch_a8f264ece7366955c1d742954a28a4d0d}
+
+
+Accumulate data to calculate pedestals and the noise. If the pedestal shifts by more than the threshold \_\-pedestalChangeCut than the old pedestal is shifted. As a consequence the precision on the pedestal is lousy, the noise may be biased to lower values. This method is suitable for noise events which were taken over a long periode which suffers large and discrete shifts of the pedestals. \begin{Desc}
+\item[{\bf Todo}]useful? \end{Desc}
+\begin{DoxySeeAlso}{See also}
+\doxyref{calculatePedestalNoiseAndDeclareCellsDead}{p.}{classCALICE_1_1SimpleHitSearch_a9b72dcaf97a6ec7cb0bb7904df96e0ac} 
+\end{DoxySeeAlso}
+
+
+Definition at line 1474 of file SimpleHitSearch.cc.
+
+References CALICE::VRawADCValueProcessor::\_\-adcColName, \_\-noiseCutForPedestalNoiseCalculation, CALICE::CellParameter::add(), buildCellParameters(), CALICE::CellParameter::getMeanADCValue(), CALICE::CellParameter::getNoise(), CALICE::CellParameter::getPedestal(), CALICE::CellParameter::incrementSaturationCounter(), CALICE::CellParameter::isDead(), and CALICE::CellParameter::shiftPedestal().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!buildCellParameters@{buildCellParameters}}
+\index{buildCellParameters@{buildCellParameters}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{buildCellParameters}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::SimpleHitSearch::buildCellParameters ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1SimpleHitSearch_a6d16f225e1eb6f4b913200f56e9dfc57}
+
+
+Create and initialise the array which will contain for all cells the pedestals and the noise and further status information. \begin{DoxySeeAlso}{See also}
+\doxyref{CellParameter}{p.}{classCALICE_1_1CellParameter} 
+\end{DoxySeeAlso}
+
+
+Definition at line 2519 of file SimpleHitSearch.cc.
+
+References Calibration::checkForCalibrationConstantsOfModule(), and Calibration::isValid().
+
+Referenced by accumulateEventsForInitialPedestalNoiseCalculation(), accumulateEventsForPedestalNoiseCalculationWithHitRejection(), accumulateEventsForPedestalNoiseCalculationWithHitRejectionAndPedestalShiftDetection(), searchHits(), and searchHitsAndAdjustPedestalsAndNoise().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!calculatePedestalCorrection@{calculatePedestalCorrection}}
+\index{calculatePedestalCorrection@{calculatePedestalCorrection}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{calculatePedestalCorrection}]{\setlength{\rightskip}{0pt plus 5cm}Float\_\-t CALICE::SimpleHitSearch::calculatePedestalCorrection (UInt\_\-t {\em module\_\-i}, \/  Float\_\-t $\ast$ {\em adc\_\-values\_\-per\_\-module}) const\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1SimpleHitSearch_a5b4e48cd1fbaa73067f273222cbc7e2b}
+
+
+calculculate an average pedestal correction for one module. 
+\begin{DoxyParams}{Parameters}
+\item[{\em module\_\-i}]the module index \item[{\em adc\_\-values\_\-per\_\-module}]an array which has for each cell of the module one adc value or -\/FLT\_\-MAX for dead cells. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an additive correction which should be applied to all pedestals of the module. 
+\end{DoxyReturn}
+
+
+Definition at line 2828 of file SimpleHitSearch.cc.
+
+Referenced by searchHits().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!calculatePedestalNoiseAndDeclareCellsDead@{calculatePedestalNoiseAndDeclareCellsDead}}
+\index{calculatePedestalNoiseAndDeclareCellsDead@{calculatePedestalNoiseAndDeclareCellsDead}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{calculatePedestalNoiseAndDeclareCellsDead}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::SimpleHitSearch::calculatePedestalNoiseAndDeclareCellsDead ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1SimpleHitSearch_a9b72dcaf97a6ec7cb0bb7904df96e0ac}
+
+
+Calculate pedestals and noise using the gathered information of the accumalted events. \begin{DoxySeeAlso}{See also}
+\doxyref{accumulateEventsForInitialPedestalNoiseCalculation}{p.}{classCALICE_1_1SimpleHitSearch_adce6351652d1d9fe70198c3da5c7e3b9}, \doxyref{accumulateEventsForPedestalNoiseCalculationWithHitRejection}{p.}{classCALICE_1_1SimpleHitSearch_a066ec6c399d4e557457da357acdfb7db}, \doxyref{accumulateEventsForPedestalNoiseCalculationWithHitRejectionAndPedestalShiftDetection}{p.}{classCALICE_1_1SimpleHitSearch_a8f264ece7366955c1d742954a28a4d0d} 
+\end{DoxySeeAlso}
+
+
+Definition at line 1540 of file SimpleHitSearch.cc.
+
+References \_\-maxPedestalChange, CALICE::CellParameter::calculate(), histmgr::HistMgr::getHistogramCollection(), CALICE::CellParameter::getNoise(), CALICE::CellParameter::getPedestal(), CALICE::CellParameter::getSaturationCounter(), histmgr::HistogramCollection\_\-t::histogram(), CALICE::CellParameter::isDead(), and CALICE::CellParameter::setDead().
+
+Referenced by processPedestalEvents(), and stateTransition().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!callStateFunc@{callStateFunc}}
+\index{callStateFunc@{callStateFunc}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{callStateFunc}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::SimpleHitSearch::callStateFunc (LCEvent $\ast$ {\em evtP})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classCALICE_1_1SimpleHitSearch_a5872fdf70fc02008f755641dece7b3a9}
+
+
+Call the event processing functions of the current state (state function). \begin{DoxySeeAlso}{See also}
+\doxyref{skipEvents}{p.}{classCALICE_1_1SimpleHitSearch_a2e726ffcd5de61d365e75ddd4049bb44}, \doxyref{processCosmics}{p.}{classCALICE_1_1SimpleHitSearch_a9b4fd80a9bfc4fe67cc5b724764dfd16}, \doxyref{processBeamEvents}{p.}{classCALICE_1_1SimpleHitSearch_a5bf0ed4df472053477e6333726d25c14}, \doxyref{processPedestalEvents}{p.}{classCALICE_1_1SimpleHitSearch_a0cc31eedb3dca01bf3e232f0ae4a38cb}, \doxyref{processFirstPedestalEvents}{p.}{classCALICE_1_1SimpleHitSearch_a20cca077ae4ef0fac2eeb2cddb05cd1e} 
+
+\doxyref{processPedestalEventsWithHitRejection}{p.}{classCALICE_1_1SimpleHitSearch_aaea180512610968f84a512c81d3198ea}, \doxyref{skipCalibrationEvents}{p.}{classCALICE_1_1SimpleHitSearch_a0172933d2cbc9807fa5ddcef99b63a41}, 
+\end{DoxySeeAlso}
+
+
+Definition at line 130 of file SimpleHitSearch.hh.
+
+Referenced by processBeamEvents(), processCosmics(), processEvent(), processFirstPedestalEvents(), processPedestalEventsWithHitRejection(), skipCalibrationEvents(), and skipEvents().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!init@{init}}
+\index{init@{init}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::SimpleHitSearch::init ()}\label{classCALICE_1_1SimpleHitSearch_ad0e512445dcbad98d4fd8129ccf9236e}
+
+
+Called at the begin of the job before anything is read. Use to initialize the processor, e.g. book histograms. 
+
+Reimplemented from {\bf CALICE::VRawADCValueProcessor} \doxyref{}{p.}{classCALICE_1_1VRawADCValueProcessor}.
+
+Definition at line 484 of file SimpleHitSearch.cc.
+
+References \_\-calibrationConstantColName, \_\-calibrationObjectName, \_\-colNameDetectorTransformation, CALICE::VRawADCValueProcessor::\_\-colNameModuleDescription, \_\-colNameReferenceTransformation, \_\-detectorTransformationChange, \_\-errorMask, \_\-maskedErrorNames, \_\-minNEventsForPedestalNoiseUpdate, \_\-noiseCut, \_\-noiseCutForPedestalNoiseCalculation, \_\-noiseCutVec, \_\-parNameEventEnergy, \_\-referenceTransformationChange, \_\-skipCalibrationEventsAlways, \_\-skipDirtyEventsInPedestalCalculation, \_\-skipFirstNEvents, \_\-skipNEvents, \_\-updatePedestalsEveryNEvents, changeState(), CalibrationFactory::createCalibrationObject(), histmgr::HistMgr::createHistogramGroup(), fullReset(), CalibrationFactory::getInstance(), kStateCalibration, kStateSkipEvent, CalibrationFactory::listKits(), histmgr::HistMgr::lockGroup(), and skipCalibrationEvents().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!processBeamEvents@{processBeamEvents}}
+\index{processBeamEvents@{processBeamEvents}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{processBeamEvents}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::SimpleHitSearch::processBeamEvents (LCEvent $\ast$ {\em evtP})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1SimpleHitSearch_a5bf0ed4df472053477e6333726d25c14}
+
+
+Process beam events. State function called if \_\-isState = kStateBeam or if kStateCalibration (configurable). 
+
+Definition at line 961 of file SimpleHitSearch.cc.
+
+References \_\-triggerConf, \_\-triggerEvent, accumulateEventsForPedestalNoiseCalculationWithHitRejection(), callStateFunc(), searchHits(), and stateTransition().
+
+Referenced by SimpleHitSearch().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!processCosmics@{processCosmics}}
+\index{processCosmics@{processCosmics}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{processCosmics}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::SimpleHitSearch::processCosmics (LCEvent $\ast$ {\em evtP})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1SimpleHitSearch_a9b4fd80a9bfc4fe67cc5b724764dfd16}
+
+
+Process cosmics events. State function called if \_\-isState = kStateCosmics. 
+
+Definition at line 948 of file SimpleHitSearch.cc.
+
+References \_\-triggerConf, callStateFunc(), searchHitsAndAdjustPedestalsAndNoise(), and stateTransition().
+
+Referenced by SimpleHitSearch().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!processEvent@{processEvent}}
+\index{processEvent@{processEvent}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{processEvent}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::SimpleHitSearch::processEvent (LCEvent $\ast$ {\em evtP})}\label{classCALICE_1_1SimpleHitSearch_a2b66e493c061a1977fb6e1bb1da6bbb0}
+
+
+Calculate Pedestals and Noise and search and reconstruct calorimeter hits. The class needs as input the ADC value collection and produces a CalorimeterHit collection. 
+
+Depending on the trigger configuration, the pedestal and noise are either calculated from random triggers (test beam data) or it is assumed that the hit distribution is sparse and randomly distributed over the detector (cosmics data). In the latter case the pedestals and noise are calculated initially from the first events assuming the events do not contain any hits. Then, the initial guess is slowly adjusted. Otherwise the pedestals and the noise are calculted from pedestal events.
+
+The event processing method depends on the state (\doxyref{EState}{p.}{classCALICE_1_1SimpleHitSearch_a26a3d0d7abf5b4511990ed16d1964ad1}) of the analysis. The state transition is trigger by trigger configuration changes, changes of the calibration chip configuration, knowledge about the pedestals and noise. \begin{DoxySeeAlso}{See also}
+searchHit 
+
+ssearchHitsAndAdjustPedestalsAndNoise, \doxyref{stateTransition}{p.}{classCALICE_1_1SimpleHitSearch_a360d0e7f063d7a2706edc2a59113caa9} 
+\end{DoxySeeAlso}
+
+
+Definition at line 1186 of file SimpleHitSearch.cc.
+
+References \_\-parNameRecoState, \_\-parNameTriggerConf, \_\-parNameTriggerEvent, \_\-skipNEvents, \_\-skipNEventsAfterConfChanges, \_\-skipNEventsAfterSlowConfRecords, \_\-triggerConf, \_\-triggerEvent, callStateFunc(), changeState(), histmgr::HistMgr::getHistogramCollection(), histmgr::HistogramCollection\_\-t::histogram(), kStateSkipEvent, and stateTransition().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!processFirstPedestalEvents@{processFirstPedestalEvents}}
+\index{processFirstPedestalEvents@{processFirstPedestalEvents}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{processFirstPedestalEvents}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::SimpleHitSearch::processFirstPedestalEvents (LCEvent $\ast$ {\em evtP})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1SimpleHitSearch_a20cca077ae4ef0fac2eeb2cddb05cd1e}
+
+
+Process events to get the first idea of the pedestals. State function called if the pedestal and noise is not yet known and if the events are either pedestal or cosmics events. 
+
+Definition at line 1002 of file SimpleHitSearch.cc.
+
+References \_\-minNEventsForPedestalNoiseUpdate, \_\-skipDirtyEventsInPedestalCalculation, \_\-triggerEvent, accumulateEventsForInitialPedestalNoiseCalculation(), callStateFunc(), and stateTransition().
+
+Referenced by SimpleHitSearch().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!processPedestalEvents@{processPedestalEvents}}
+\index{processPedestalEvents@{processPedestalEvents}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{processPedestalEvents}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::SimpleHitSearch::processPedestalEvents (LCEvent $\ast$ {\em evtP})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1SimpleHitSearch_a0cc31eedb3dca01bf3e232f0ae4a38cb}
+
+
+Process pedestal events. State function called if \_\-isState = kStatePedestals 
+
+Definition at line 979 of file SimpleHitSearch.cc.
+
+References \_\-skipDirtyEventsInPedestalCalculation, \_\-triggerEvent, \_\-updatePedestalsEveryNEvents, accumulateEventsForPedestalNoiseCalculationWithHitRejection(), calculatePedestalNoiseAndDeclareCellsDead(), and resetForPedestalNoiseReCalculation().
+
+Referenced by SimpleHitSearch().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!processPedestalEventsWithHitRejection@{processPedestalEventsWithHitRejection}}
+\index{processPedestalEventsWithHitRejection@{processPedestalEventsWithHitRejection}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{processPedestalEventsWithHitRejection}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::SimpleHitSearch::processPedestalEventsWithHitRejection (LCEvent $\ast$ {\em evtP})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1SimpleHitSearch_aaea180512610968f84a512c81d3198ea}
+
+
+Refine the initial guess of the pedestals. State function called subsequent to \doxyref{processFirstPedestalEvents}{p.}{classCALICE_1_1SimpleHitSearch_a20cca077ae4ef0fac2eeb2cddb05cd1e} and if the events are either pedestal or cosmics events. 
+
+Definition at line 1027 of file SimpleHitSearch.cc.
+
+References \_\-minNEventsForPedestalNoiseUpdate, \_\-skipDirtyEventsInPedestalCalculation, \_\-triggerEvent, accumulateEventsForPedestalNoiseCalculationWithHitRejection(), callStateFunc(), and stateTransition().
+
+Referenced by SimpleHitSearch().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!processRunHeader@{processRunHeader}}
+\index{processRunHeader@{processRunHeader}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{processRunHeader}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::SimpleHitSearch::processRunHeader (LCRunHeader $\ast$ {\em run})}\label{classCALICE_1_1SimpleHitSearch_a67696ee27a7da8b2e3df2ece1024bd36}
+
+
+Called for every run (does nothing. ) 
+
+Definition at line 621 of file SimpleHitSearch.cc.\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!searchHits@{searchHits}}
+\index{searchHits@{searchHits}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{searchHits}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::SimpleHitSearch::searchHits (LCEvent $\ast$ {\em evt})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1SimpleHitSearch_ad905e8e0f57ae2263f5d733e0f5d8081}
+
+
+Search hits without adjusting noise and pedestals (suitable for test beam data). This method is only useful in cases in which cells rarely contain hits (like cosmics data). Test beam data usually has hits always at the same place. 
+\begin{DoxyParams}{Parameters}
+\item[{\em evt}]pointer to a event which contains the ADC value collection. \end{DoxyParams}
+
+
+Definition at line 1676 of file SimpleHitSearch.cc.
+
+References CALICE::VRawADCValueProcessor::\_\-adcColName, \_\-errorMask, \_\-maxHitOccupancy, \_\-maxPedestalChange, \_\-noiseCut, \_\-parNameEventEnergy, \_\-parNamePedestalCorrection, \_\-rawhitColName, \_\-signalThreshold, \_\-writeRawHits, buildCellParameters(), calculatePedestalCorrection(), histmgr::HistMgr::getHistogram2DCollection(), histmgr::HistMgr::getHistogramCollection(), Calibration::getMiniumADCForMipThreshold(), CALICE::CellParameter::getNoise(), CALICE::CellParameter::getPedestal(), histmgr::Histogram2DCollection\_\-t::histogram(), histmgr::HistogramCollection\_\-t::histogram(), CALICE::CellParameter::incrementNHits(), CALICE::CellParameter::incrementSaturationCounter(), CALICE::CellParameter::isDead(), histmgr::Histogram2DCollection\_\-t::n(), CALICE::NoiseParameter::setDead(), CALICE::NoiseParameter::setGeomCellIndex(), CALICE::NoiseParameter::setNoise(), CALICE::CellParameter::setOldPedestal(), CALICE::NoiseParameter::setPedestal(), CALICE::CellParameter::setPedestal(), CALICE::NoiseParameter::setPedestalBeforeGC(), and CALICE::NoiseParameter::setPedestalBeforeSIC().
+
+Referenced by processBeamEvents().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!searchHitsAndAdjustPedestalsAndNoise@{searchHitsAndAdjustPedestalsAndNoise}}
+\index{searchHitsAndAdjustPedestalsAndNoise@{searchHitsAndAdjustPedestalsAndNoise}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{searchHitsAndAdjustPedestalsAndNoise}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::SimpleHitSearch::searchHitsAndAdjustPedestalsAndNoise (LCEvent $\ast$ {\em evtP})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1SimpleHitSearch_abfaa7aa6a94bcca3541094148f9623a6}
+
+
+Search hits and adjust the pedestal and noise of cells with a signal below the cut \_\-signalCut (suitable for cosmics data). This method is only useful in cases in which cells rarely contain hits (like cosmics data). Test beam data usually has hits always at the same place. 
+\begin{DoxyParams}{Parameters}
+\item[{\em evtP}]pointer to a event which contains the ADC value collection. \end{DoxyParams}
+
+
+Definition at line 2278 of file SimpleHitSearch.cc.
+
+References CALICE::VRawADCValueProcessor::\_\-adcColName, \_\-errorMask, \_\-hitColName, \_\-maxHitOccupancy, \_\-noiseCut, \_\-signalThreshold, \_\-weightOfOldPedestalNoise, CALICE::CellParameter::adjustPedestalNoise(), buildCellParameters(), CALICE::NVector\_\-t$<$ T, dimension $>$::data(), histmgr::HistMgr::getHistogramCollection(), Calibration::getMiniumADCForMipThreshold(), CALICE::CellParameter::getNoise(), CALICE::CellParameter::getOldNoise(), CALICE::CellParameter::getOldPedestal(), CALICE::CellParameter::getPedestal(), histmgr::HistogramCollection\_\-t::histogram(), CALICE::CellParameter::incrementNHits(), CALICE::CellParameter::incrementSaturationCounter(), and CALICE::CellParameter::isDead().
+
+Referenced by processCosmics().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!showCurrentNoiseStat@{showCurrentNoiseStat}}
+\index{showCurrentNoiseStat@{showCurrentNoiseStat}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{showCurrentNoiseStat}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::SimpleHitSearch::showCurrentNoiseStat () const\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1SimpleHitSearch_ad59226d349f2168a7eec3e9ff04a8f10}
+
+
+Show per layer statistics about the noise and the pedestals (during pedestal noise accumulation). This method calculates the pedestals and the noise itself from the accumulated sums. Will show incorrect results after the pedestals and the noise have been calculated. 
+
+Definition at line 1651 of file SimpleHitSearch.cc.
+
+References CALICE::CellParameter::getNValues(), CALICE::CellParameter::getOldNoise(), CALICE::CellParameter::getOldPedestal(), and CALICE::CellParameter::isDead().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!skipCalibrationEvents@{skipCalibrationEvents}}
+\index{skipCalibrationEvents@{skipCalibrationEvents}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{skipCalibrationEvents}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::SimpleHitSearch::skipCalibrationEvents (LCEvent $\ast$ {\em evtP})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1SimpleHitSearch_a0172933d2cbc9807fa5ddcef99b63a41}
+
+
+Skip events for which the calibration chip is on. State function which skip events until the calibration chip is switched off (configurable). 
+
+Definition at line 937 of file SimpleHitSearch.cc.
+
+References \_\-triggerConf, callStateFunc(), and stateTransition().
+
+Referenced by init().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!skipEvents@{skipEvents}}
+\index{skipEvents@{skipEvents}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{skipEvents}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::SimpleHitSearch::skipEvents (LCEvent $\ast$ {\em evtP})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1SimpleHitSearch_a2e726ffcd5de61d365e75ddd4049bb44}
+
+
+Skip events. State function called for the first n events (configurable) and for n events after configuration changes. 
+
+Definition at line 923 of file SimpleHitSearch.cc.
+
+References \_\-skipNEvents, \_\-triggerConf, callStateFunc(), and stateTransition().
+
+Referenced by SimpleHitSearch().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!stateTransition@{stateTransition}}
+\index{stateTransition@{stateTransition}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{stateTransition}]{\setlength{\rightskip}{0pt plus 5cm}bool CALICE::SimpleHitSearch::stateTransition ()\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1SimpleHitSearch_a360d0e7f063d7a2706edc2a59113caa9}
+
+
+Change the state. return true if the state changed. 
+
+Definition at line 1052 of file SimpleHitSearch.cc.
+
+References \_\-minNEventsForPedestalNoiseUpdate, \_\-skipNEvents, \_\-triggerConf, calculatePedestalNoiseAndDeclareCellsDead(), changeState(), histmgr::HistMgr::getHistogramCollection(), histmgr::HistogramCollection\_\-t::histogram(), kStateBeam, kStateCalibration, kStateCosmics, kStateInitialPedestals, kStatePedestals, kStateRefinePedestals, kStateSkipEvent, resetForInitialPedestalNoiseCalculation(), resetForPedestalNoiseReCalculation(), and showNoiseStat().
+
+Referenced by processBeamEvents(), processCosmics(), processEvent(), processFirstPedestalEvents(), processPedestalEventsWithHitRejection(), skipCalibrationEvents(), and skipEvents().
+
+\subsection{Field Documentation}
+\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!\_\-calibrationConstantColName@{\_\-calibrationConstantColName}}
+\index{\_\-calibrationConstantColName@{\_\-calibrationConstantColName}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{\_\-calibrationConstantColName}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf CALICE::SimpleHitSearch::\_\-calibrationConstantColName}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1SimpleHitSearch_aef43b966b83d8ec305748ddabf257bc9}
+
+
+Name of the conditions data collection containing the calibration constants. 
+
+Definition at line 357 of file SimpleHitSearch.hh.
+
+Referenced by init(), and SimpleHitSearch().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!\_\-colNameDetectorTransformation@{\_\-colNameDetectorTransformation}}
+\index{\_\-colNameDetectorTransformation@{\_\-colNameDetectorTransformation}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{\_\-colNameDetectorTransformation}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf CALICE::SimpleHitSearch::\_\-colNameDetectorTransformation}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1SimpleHitSearch_aea8b3f66ad9dc9343e260eea7eb47076}
+
+
+Name of the conditions data collection which describes the position and the rotation of the detector. 
+
+Definition at line 351 of file SimpleHitSearch.hh.
+
+Referenced by init(), and SimpleHitSearch().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!\_\-colNameReferenceTransformation@{\_\-colNameReferenceTransformation}}
+\index{\_\-colNameReferenceTransformation@{\_\-colNameReferenceTransformation}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{\_\-colNameReferenceTransformation}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf CALICE::SimpleHitSearch::\_\-colNameReferenceTransformation}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1SimpleHitSearch_a8896eddafd13fd917f87f3d6aabe25e9}
+
+
+Name of the conditions data collection which describes the reference position and rotation. 
+
+Definition at line 353 of file SimpleHitSearch.hh.
+
+Referenced by init(), and SimpleHitSearch().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!\_\-detectorTransformationChange@{\_\-detectorTransformationChange}}
+\index{\_\-detectorTransformationChange@{\_\-detectorTransformationChange}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{\_\-detectorTransformationChange}]{\setlength{\rightskip}{0pt plus 5cm}ConditionsChangeDelegator$<${\bf SimpleHitSearch}$>$ {\bf CALICE::SimpleHitSearch::\_\-detectorTransformationChange}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1SimpleHitSearch_aa4299d9a2ade3995ff2bab83b8649f3e}
+
+
+helper class to listen for changes of the detector position or rotation. 
+
+Definition at line 373 of file SimpleHitSearch.hh.
+
+Referenced by init().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!\_\-errorMask@{\_\-errorMask}}
+\index{\_\-errorMask@{\_\-errorMask}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{\_\-errorMask}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf CALICE::SimpleHitSearch::\_\-errorMask}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1SimpleHitSearch_a87087b542fdabc0b4243ec4fe4b81202}
+
+
+bit mask of all errors to be ignored. 
+
+Definition at line 458 of file SimpleHitSearch.hh.
+
+Referenced by init(), searchHits(), and searchHitsAndAdjustPedestalsAndNoise().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!\_\-hitColName@{\_\-hitColName}}
+\index{\_\-hitColName@{\_\-hitColName}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{\_\-hitColName}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf CALICE::SimpleHitSearch::\_\-hitColName}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1SimpleHitSearch_a69bf745ec5aed1df895972b78aa7e15e}
+
+
+Name of the hit collection (OUTPUT). 
+
+Definition at line 342 of file SimpleHitSearch.hh.
+
+Referenced by searchHitsAndAdjustPedestalsAndNoise(), and SimpleHitSearch().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!\_\-lastTriggerConf@{\_\-lastTriggerConf}}
+\index{\_\-lastTriggerConf@{\_\-lastTriggerConf}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{\_\-lastTriggerConf}]{\setlength{\rightskip}{0pt plus 5cm}TriggerBits {\bf CALICE::SimpleHitSearch::\_\-lastTriggerConf}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1SimpleHitSearch_ae834049eda6ad568ea644ec3b0283783}
+
+
+Variable which contains the trigger configuration of the previous event. 
+
+Definition at line 282 of file SimpleHitSearch.hh.\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!\_\-maskedErrorNames@{\_\-maskedErrorNames}}
+\index{\_\-maskedErrorNames@{\_\-maskedErrorNames}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{\_\-maskedErrorNames}]{\setlength{\rightskip}{0pt plus 5cm}lcio::StringVec {\bf CALICE::SimpleHitSearch::\_\-maskedErrorNames}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1SimpleHitSearch_a81e19a0434630e7f88e447b459fc6759}
+
+
+Names of alle masked errors (proc. parameter) 
+
+Definition at line 457 of file SimpleHitSearch.hh.
+
+Referenced by init(), and SimpleHitSearch().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!\_\-maxHitOccupancy@{\_\-maxHitOccupancy}}
+\index{\_\-maxHitOccupancy@{\_\-maxHitOccupancy}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{\_\-maxHitOccupancy}]{\setlength{\rightskip}{0pt plus 5cm}Float\_\-t {\bf CALICE::SimpleHitSearch::\_\-maxHitOccupancy}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1SimpleHitSearch_acd7bf1c8fd19a5dc8ee5de76862fcab3}
+
+
+Maximum number of tolerated hits. Events with more hits are rejected (parameter). 
+
+Definition at line 309 of file SimpleHitSearch.hh.
+
+Referenced by searchHits(), searchHitsAndAdjustPedestalsAndNoise(), and SimpleHitSearch().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!\_\-maxPedestalChange@{\_\-maxPedestalChange}}
+\index{\_\-maxPedestalChange@{\_\-maxPedestalChange}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{\_\-maxPedestalChange}]{\setlength{\rightskip}{0pt plus 5cm}Float\_\-t {\bf CALICE::SimpleHitSearch::\_\-maxPedestalChange}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1SimpleHitSearch_a7560d7eda24ea39936723d858f54cdad}
+
+
+Maximum allowed pedestal change. 
+
+Definition at line 305 of file SimpleHitSearch.hh.
+
+Referenced by calculatePedestalNoiseAndDeclareCellsDead(), searchHits(), and SimpleHitSearch().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!\_\-minNEventsForPedestalNoiseUpdate@{\_\-minNEventsForPedestalNoiseUpdate}}
+\index{\_\-minNEventsForPedestalNoiseUpdate@{\_\-minNEventsForPedestalNoiseUpdate}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{\_\-minNEventsForPedestalNoiseUpdate}]{\setlength{\rightskip}{0pt plus 5cm}Int\_\-t {\bf CALICE::SimpleHitSearch::\_\-minNEventsForPedestalNoiseUpdate}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1SimpleHitSearch_a6b7f69836f9b26f0fa09819d2614d6a0}
+
+
+Minimum number of events to be accumulated before the pedestals and noise are calculated (parameter). 
+
+Definition at line 312 of file SimpleHitSearch.hh.
+
+Referenced by init(), processFirstPedestalEvents(), processPedestalEventsWithHitRejection(), SimpleHitSearch(), and stateTransition().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!\_\-nNegativeSignalsPerModule@{\_\-nNegativeSignalsPerModule}}
+\index{\_\-nNegativeSignalsPerModule@{\_\-nNegativeSignalsPerModule}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{\_\-nNegativeSignalsPerModule}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf CALICE::SimpleHitSearch::\_\-nNegativeSignalsPerModule}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1SimpleHitSearch_a62ced507029d3bef99d20e1c73444b8d}
+
+
+maximum number of negative signals per module. 
+
+Definition at line 340 of file SimpleHitSearch.hh.\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!\_\-noiseCutForPedestalNoiseCalculation@{\_\-noiseCutForPedestalNoiseCalculation}}
+\index{\_\-noiseCutForPedestalNoiseCalculation@{\_\-noiseCutForPedestalNoiseCalculation}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{\_\-noiseCutForPedestalNoiseCalculation}]{\setlength{\rightskip}{0pt plus 5cm}Float\_\-t {\bf CALICE::SimpleHitSearch::\_\-noiseCutForPedestalNoiseCalculation}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1SimpleHitSearch_a1804b8d1678d5df652be9ef5f9e82141}
+
+
+will be set by the second element of the \_\-noiseCutVec (if available). 
+
+Definition at line 338 of file SimpleHitSearch.hh.
+
+Referenced by accumulateEventsForPedestalNoiseCalculationWithHitRejection(), accumulateEventsForPedestalNoiseCalculationWithHitRejectionAndPedestalShiftDetection(), and init().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!\_\-noiseCutVec@{\_\-noiseCutVec}}
+\index{\_\-noiseCutVec@{\_\-noiseCutVec}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{\_\-noiseCutVec}]{\setlength{\rightskip}{0pt plus 5cm}FloatVec {\bf CALICE::SimpleHitSearch::\_\-noiseCutVec}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1SimpleHitSearch_a8247d67205fcdaf07592675b06809c81}
+
+
+above the noise cut are considered to be hits. This vector contains a cut for the hit search and for the hit rejection during noise calculation 
+
+Definition at line 334 of file SimpleHitSearch.hh.
+
+Referenced by init(), and SimpleHitSearch().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!\_\-parNameEventEnergy@{\_\-parNameEventEnergy}}
+\index{\_\-parNameEventEnergy@{\_\-parNameEventEnergy}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{\_\-parNameEventEnergy}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf CALICE::SimpleHitSearch::\_\-parNameEventEnergy}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1SimpleHitSearch_aa33b8c1df2b057a8b0f33ccc94a90fbc}
+
+
+Parameter name of the event energy. If left blank nothing will be added. 
+
+Definition at line 367 of file SimpleHitSearch.hh.
+
+Referenced by init(), searchHits(), and SimpleHitSearch().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!\_\-parNamePedestalCorrection@{\_\-parNamePedestalCorrection}}
+\index{\_\-parNamePedestalCorrection@{\_\-parNamePedestalCorrection}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{\_\-parNamePedestalCorrection}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf CALICE::SimpleHitSearch::\_\-parNamePedestalCorrection}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1SimpleHitSearch_aa3ca30379d46a55ac6c16a42e86abf93}
+
+
+Parameter name of the event energy. If left blank nothing will be added. 
+
+Definition at line 369 of file SimpleHitSearch.hh.
+
+Referenced by searchHits(), and SimpleHitSearch().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!\_\-parNameRecoState@{\_\-parNameRecoState}}
+\index{\_\-parNameRecoState@{\_\-parNameRecoState}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{\_\-parNameRecoState}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf CALICE::SimpleHitSearch::\_\-parNameRecoState}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1SimpleHitSearch_a5a8c2b03b3c58df9d1ad29bc33c351a7}
+
+
+Name of the event parameter which will be filled with the current state of the reconstruction. 
+
+Definition at line 365 of file SimpleHitSearch.hh.
+
+Referenced by processEvent(), and SimpleHitSearch().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!\_\-parNameTriggerConf@{\_\-parNameTriggerConf}}
+\index{\_\-parNameTriggerConf@{\_\-parNameTriggerConf}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{\_\-parNameTriggerConf}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf CALICE::SimpleHitSearch::\_\-parNameTriggerConf}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1SimpleHitSearch_ab232718833907bde19216de26bf1052d}
+
+
+Name of the event parameter which contains the current trigger configuration. 
+
+Definition at line 359 of file SimpleHitSearch.hh.
+
+Referenced by processEvent(), and SimpleHitSearch().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!\_\-parNameTriggerEvent@{\_\-parNameTriggerEvent}}
+\index{\_\-parNameTriggerEvent@{\_\-parNameTriggerEvent}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{\_\-parNameTriggerEvent}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf CALICE::SimpleHitSearch::\_\-parNameTriggerEvent}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1SimpleHitSearch_a3b05e6eec6a1a3e6f418456b11e222e0}
+
+
+Name of the event parameter which contains the current trigger main word. 
+
+Definition at line 360 of file SimpleHitSearch.hh.
+
+Referenced by processEvent(), and SimpleHitSearch().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!\_\-rawhitColName@{\_\-rawhitColName}}
+\index{\_\-rawhitColName@{\_\-rawhitColName}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{\_\-rawhitColName}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf CALICE::SimpleHitSearch::\_\-rawhitColName}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1SimpleHitSearch_afd9d15bc86011f12589ec6c8fd3bb3cc}
+
+
+Name of the raw hit collection (optional OUTPUT). 
+
+Definition at line 343 of file SimpleHitSearch.hh.
+
+Referenced by searchHits(), and SimpleHitSearch().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!\_\-referenceTransformationChange@{\_\-referenceTransformationChange}}
+\index{\_\-referenceTransformationChange@{\_\-referenceTransformationChange}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{\_\-referenceTransformationChange}]{\setlength{\rightskip}{0pt plus 5cm}ConditionsChangeDelegator$<${\bf SimpleHitSearch}$>$ {\bf CALICE::SimpleHitSearch::\_\-referenceTransformationChange}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1SimpleHitSearch_a0db1b64c6e4c37cedd597d58adcf68ee}
+
+
+helper class to listen for changes of the reference position or rotation. 
+
+Definition at line 376 of file SimpleHitSearch.hh.
+
+Referenced by init().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!\_\-saveEcalNoise@{\_\-saveEcalNoise}}
+\index{\_\-saveEcalNoise@{\_\-saveEcalNoise}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{\_\-saveEcalNoise}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf CALICE::SimpleHitSearch::\_\-saveEcalNoise}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1SimpleHitSearch_a9cef0868b0a1dc39b9db447df1c48a43}
+
+
+Save the Noise value in the database. 
+
+Definition at line 345 of file SimpleHitSearch.hh.
+
+Referenced by SimpleHitSearch().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!\_\-shiftPedestalFactor@{\_\-shiftPedestalFactor}}
+\index{\_\-shiftPedestalFactor@{\_\-shiftPedestalFactor}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{\_\-shiftPedestalFactor}]{\setlength{\rightskip}{0pt plus 5cm}Float\_\-t {\bf CALICE::SimpleHitSearch::\_\-shiftPedestalFactor}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1SimpleHitSearch_ad5d3b9737fa5387ff8f5823a5444e052}
+
+
+When processing pedestal events, shift pedestals by average values measured on one module times this factor. 
+
+Definition at line 320 of file SimpleHitSearch.hh.
+
+Referenced by accumulateEventsForPedestalNoiseCalculationWithHitRejection(), and SimpleHitSearch().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!\_\-signalThreshold@{\_\-signalThreshold}}
+\index{\_\-signalThreshold@{\_\-signalThreshold}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{\_\-signalThreshold}]{\setlength{\rightskip}{0pt plus 5cm}Float\_\-t {\bf CALICE::SimpleHitSearch::\_\-signalThreshold}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1SimpleHitSearch_a8160575528f509e54557da5e879eb6b0}
+
+
+Signals above the signal threshold and . .. 
+
+Definition at line 333 of file SimpleHitSearch.hh.
+
+Referenced by searchHits(), searchHitsAndAdjustPedestalsAndNoise(), and SimpleHitSearch().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!\_\-skipCalibrationEventsAlways@{\_\-skipCalibrationEventsAlways}}
+\index{\_\-skipCalibrationEventsAlways@{\_\-skipCalibrationEventsAlways}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{\_\-skipCalibrationEventsAlways}]{\setlength{\rightskip}{0pt plus 5cm}Int\_\-t {\bf CALICE::SimpleHitSearch::\_\-skipCalibrationEventsAlways}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1SimpleHitSearch_a39ace2d2c6881e772135a918cb66c52e}
+
+
+Skip events in which the calibration chip was turned on. 
+
+Definition at line 327 of file SimpleHitSearch.hh.
+
+Referenced by init(), and SimpleHitSearch().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!\_\-skipDirtyEventsInPedestalCalculation@{\_\-skipDirtyEventsInPedestalCalculation}}
+\index{\_\-skipDirtyEventsInPedestalCalculation@{\_\-skipDirtyEventsInPedestalCalculation}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{\_\-skipDirtyEventsInPedestalCalculation}]{\setlength{\rightskip}{0pt plus 5cm}Int\_\-t {\bf CALICE::SimpleHitSearch::\_\-skipDirtyEventsInPedestalCalculation}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1SimpleHitSearch_a11af8832dfb1e1176d3f982b99bf6979}
+
+
+Events skipped during pedestal calculation because they are considered to be dirty. 
+
+Definition at line 329 of file SimpleHitSearch.hh.
+
+Referenced by init(), processFirstPedestalEvents(), processPedestalEvents(), and processPedestalEventsWithHitRejection().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!\_\-skipFirstNEvents@{\_\-skipFirstNEvents}}
+\index{\_\-skipFirstNEvents@{\_\-skipFirstNEvents}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{\_\-skipFirstNEvents}]{\setlength{\rightskip}{0pt plus 5cm}Int\_\-t {\bf CALICE::SimpleHitSearch::\_\-skipFirstNEvents}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1SimpleHitSearch_a2cc82196549136288114446e0507befa}
+
+
+Skip the first n events (parameter). 
+
+Definition at line 323 of file SimpleHitSearch.hh.
+
+Referenced by init(), and SimpleHitSearch().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!\_\-skipNEvents@{\_\-skipNEvents}}
+\index{\_\-skipNEvents@{\_\-skipNEvents}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{\_\-skipNEvents}]{\setlength{\rightskip}{0pt plus 5cm}Int\_\-t {\bf CALICE::SimpleHitSearch::\_\-skipNEvents}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1SimpleHitSearch_ac6ccac82a60d14fb965460e822b39ab7}
+
+
+Skip the next n events (not a parameter). 
+
+Definition at line 325 of file SimpleHitSearch.hh.
+
+Referenced by init(), processEvent(), skipEvents(), and stateTransition().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!\_\-skipNEventsAfterConfChanges@{\_\-skipNEventsAfterConfChanges}}
+\index{\_\-skipNEventsAfterConfChanges@{\_\-skipNEventsAfterConfChanges}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{\_\-skipNEventsAfterConfChanges}]{\setlength{\rightskip}{0pt plus 5cm}Int\_\-t {\bf CALICE::SimpleHitSearch::\_\-skipNEventsAfterConfChanges}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1SimpleHitSearch_ab8015ae646172b5c8f64becae7ff7866}
+
+
+Skip n events after configuration changes (parameter). 
+
+Definition at line 324 of file SimpleHitSearch.hh.
+
+Referenced by processEvent(), and SimpleHitSearch().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!\_\-skipNEventsAfterSlowConfRecords@{\_\-skipNEventsAfterSlowConfRecords}}
+\index{\_\-skipNEventsAfterSlowConfRecords@{\_\-skipNEventsAfterSlowConfRecords}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{\_\-skipNEventsAfterSlowConfRecords}]{\setlength{\rightskip}{0pt plus 5cm}Int\_\-t {\bf CALICE::SimpleHitSearch::\_\-skipNEventsAfterSlowConfRecords}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1SimpleHitSearch_a241fbd3f423ed55a9c9678ac2004a125}
+
+
+Events skipped after slow or configuration records. 
+
+Definition at line 328 of file SimpleHitSearch.hh.
+
+Referenced by processEvent(), and SimpleHitSearch().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!\_\-triggerConf@{\_\-triggerConf}}
+\index{\_\-triggerConf@{\_\-triggerConf}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{\_\-triggerConf}]{\setlength{\rightskip}{0pt plus 5cm}TriggerBits {\bf CALICE::SimpleHitSearch::\_\-triggerConf}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1SimpleHitSearch_ab4c5763d6e12c0e156f1c5dc31095acd}
+
+
+Variable which contains the current trigger configuration. 
+
+Definition at line 281 of file SimpleHitSearch.hh.
+
+Referenced by processBeamEvents(), processCosmics(), processEvent(), skipCalibrationEvents(), skipEvents(), and stateTransition().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!\_\-triggerEvent@{\_\-triggerEvent}}
+\index{\_\-triggerEvent@{\_\-triggerEvent}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{\_\-triggerEvent}]{\setlength{\rightskip}{0pt plus 5cm}TriggerBits {\bf CALICE::SimpleHitSearch::\_\-triggerEvent}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1SimpleHitSearch_a2164e1d7a58f5b839c5bfe800ecab9e0}
+
+
+Variable which contains the current trigger main word. 
+
+Definition at line 284 of file SimpleHitSearch.hh.
+
+Referenced by processBeamEvents(), processEvent(), processFirstPedestalEvents(), processPedestalEvents(), and processPedestalEventsWithHitRejection().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!\_\-updatePedestalsEveryNEvents@{\_\-updatePedestalsEveryNEvents}}
+\index{\_\-updatePedestalsEveryNEvents@{\_\-updatePedestalsEveryNEvents}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{\_\-updatePedestalsEveryNEvents}]{\setlength{\rightskip}{0pt plus 5cm}Int\_\-t {\bf CALICE::SimpleHitSearch::\_\-updatePedestalsEveryNEvents}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1SimpleHitSearch_a00494311bcac4e537fea04049eba5a1f}
+
+
+Update pedestals every n events, during pedestal triggers. 
+
+Definition at line 315 of file SimpleHitSearch.hh.
+
+Referenced by init(), processPedestalEvents(), and SimpleHitSearch().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!\_\-weightOfOldPedestalNoise@{\_\-weightOfOldPedestalNoise}}
+\index{\_\-weightOfOldPedestalNoise@{\_\-weightOfOldPedestalNoise}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{\_\-weightOfOldPedestalNoise}]{\setlength{\rightskip}{0pt plus 5cm}Int\_\-t {\bf CALICE::SimpleHitSearch::\_\-weightOfOldPedestalNoise}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1SimpleHitSearch_ac72ac06cae3ff20d96d0d55951c3a531}
+
+
+Weight given to old pedestals and noise when using a new value to adjust the pedestals and the noise (parameter). 
+
+Definition at line 317 of file SimpleHitSearch.hh.
+
+Referenced by searchHitsAndAdjustPedestalsAndNoise(), and SimpleHitSearch().\index{CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}!\_\-writeRawHits@{\_\-writeRawHits}}
+\index{\_\-writeRawHits@{\_\-writeRawHits}!CALICE::SimpleHitSearch@{CALICE::SimpleHitSearch}}
+\subsubsection[{\_\-writeRawHits}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf CALICE::SimpleHitSearch::\_\-writeRawHits}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1SimpleHitSearch_a8eebb012764b9f35471a2016869ac63f}
+
+
+Save the output collection containing RawCalorimeterHits. 
+
+Definition at line 344 of file SimpleHitSearch.hh.
+
+Referenced by searchHits(), and SimpleHitSearch().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+SimpleHitSearch.hh\item 
+SimpleHitSearch.cc\end{DoxyCompactItemize}

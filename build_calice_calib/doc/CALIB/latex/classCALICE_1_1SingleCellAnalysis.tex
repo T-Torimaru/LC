@@ -1,0 +1,108 @@
+\section{CALICE::SingleCellAnalysis Class Reference}
+\label{classCALICE_1_1SingleCellAnalysis}\index{CALICE::SingleCellAnalysis@{CALICE::SingleCellAnalysis}}
+
+
+Processor for analysing cellwise properties like mean signal, RMS, hit frequency, .  
+
+
+{\ttfamily \#include $<$SingleCellAnalysis.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Processor $\ast$ {\bfseries newProcessor} ()\label{classCALICE_1_1SingleCellAnalysis_a3bbce1e034c8128d3ebbe5458500bbd6}
+
+\item 
+virtual void {\bfseries init} ()\label{classCALICE_1_1SingleCellAnalysis_a6c48b1978e7397423867c299610f7674}
+
+\item 
+virtual void {\bfseries processEvent} (LCEvent $\ast$evt)\label{classCALICE_1_1SingleCellAnalysis_a047a203f24f82572248c0acae8514257}
+
+\item 
+virtual void {\bfseries end} ()\label{classCALICE_1_1SingleCellAnalysis_a7a5e0996495546514a5974d9ea3c5ce9}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries updateMapping} ()\label{classCALICE_1_1SingleCellAnalysis_a432527a7d5023108adb6028e544786c4}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned {\bfseries \_\-nEvents}\label{classCALICE_1_1SingleCellAnalysis_a99f44821b039d92c25bf7b13bf4778bc}
+
+\item 
+MappedContainer$<$ {\bf SingleCellStatistics} $>$ $\ast$ {\bfseries \_\-cellStat}\label{classCALICE_1_1SingleCellAnalysis_a42a5e7563ad65e0eebf4a0108da517c8}
+
+\item 
+MappedContainer$<$ TH1F $>$ $\ast$ {\bfseries \_\-cellHist}\label{classCALICE_1_1SingleCellAnalysis_ae4c707658817e2de1b67ac8c348ebf7f}
+
+\item 
+std::string {\bfseries \_\-mappingProcessorName}\label{classCALICE_1_1SingleCellAnalysis_afc6fc973e6a22a2ca0003076f7c3345b}
+
+\item 
+std::string {\bfseries \_\-calibLevel}\label{classCALICE_1_1SingleCellAnalysis_a8b30b37473b52f887be5a30806fcd471}
+
+\item 
+std::string {\bfseries \_\-ahcalColName}\label{classCALICE_1_1SingleCellAnalysis_af2763329df8455f7475bdd0d46fdf22f}
+
+\item 
+std::string {\bfseries \_\-txtOutputName}\label{classCALICE_1_1SingleCellAnalysis_a23feaeb7047a6b87370dd9870385c24c}
+
+\item 
+std::string {\bfseries \_\-rootOutputName}\label{classCALICE_1_1SingleCellAnalysis_a399a21983ff24615e85f186dd59020a1}
+
+\item 
+int {\bfseries \_\-Hist\_\-ESum\_\-xbins}\label{classCALICE_1_1SingleCellAnalysis_ab136d1bac5cce09b328aadcab013468d}
+
+\item 
+float {\bfseries \_\-Hist\_\-ESum\_\-xmin}\label{classCALICE_1_1SingleCellAnalysis_a0d9fe5ae453a208f089f36b7b1ebdc22}
+
+\item 
+float {\bfseries \_\-Hist\_\-ESum\_\-xmax}\label{classCALICE_1_1SingleCellAnalysis_a51a9aa087d66f118aa914f062c9b9fee}
+
+\item 
+const AhcMapper $\ast$ {\bfseries \_\-mapper}\label{classCALICE_1_1SingleCellAnalysis_a385a9c5bbbb3d62c2d0741934d064a03}
+
+\item 
+unsigned int {\bfseries \_\-mapperVersion}\label{classCALICE_1_1SingleCellAnalysis_a5c6a21d4d86ac54e6039504f97ba741e}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Processor for analysing cellwise properties like mean signal, RMS, hit frequency, . ..
+
+The processor creates histograms for each cell summarizing the hit information. In addition, the frequency of hits with respect to the total number of events is determined for each cell.
+
+\begin{DoxyParagraph}{processor parameters}
+\begin{TabularC}{3}
+\hline
+steering file parameter name &description  \\\cline{1-2}
+{\bfseries {\itshape  MappingProcessorName \/}}&Name of the MappingProcessor instance that provides the geometry of the detector.  \\\cline{1-2}
+{\bfseries {\itshape  Hist\_\-ESum\_\-xbins \/}}&Energy sum histogram: number of bins in x-\/axis &\\\cline{1-3}
+{\bfseries {\itshape  Hist\_\-ESum\_\-xmin \/}}&Energy sum histogram: lower limit on x-\/axis &\\\cline{1-3}
+{\bfseries {\itshape  Hist\_\-ESum\_\-xmax \/}}&Energy sum histogram: upper limit on x-\/axis &\\\cline{1-3}
+{\bfseries {\itshape  AHCALcollection \/}}&Name of the AHCAL Hit collection  \\\cline{1-2}
+{\bfseries {\itshape  OutputFile\_\-txt \/}}&Name of the .txt output file  \\\cline{1-2}
+{\bfseries {\itshape  OutputFile\_\-root \/}}&Name of the .root output file containing one histogram per cell  \\\cline{1-2}
+{\bfseries {\itshape  \/}}&\\\cline{1-2}
+{\bfseries {\itshape  \/}}&\\\cline{1-2}
+{\bfseries {\itshape  \/}}&\\\cline{1-2}
+\end{TabularC}
+
+\end{DoxyParagraph}
+\begin{DoxyAuthor}{Author}
+{\tt Nils.Feege@desy.de} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+August 2010 
+\end{DoxyDate}
+
+
+Definition at line 54 of file SingleCellAnalysis.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+SingleCellAnalysis.hh\item 
+SingleCellAnalysis.cc\end{DoxyCompactItemize}

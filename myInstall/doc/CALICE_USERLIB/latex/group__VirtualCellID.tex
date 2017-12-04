@@ -1,0 +1,393 @@
+\section{Functions to work with virtual Cell IDs}
+\label{group__VirtualCellID}\index{Functions to work with virtual Cell IDs@{Functions to work with virtual Cell IDs}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf CALICE::Ahc2Mapper::getTrueCellID} (const int virtualCellIndex) const 
+\begin{DoxyCompactList}\small\item\em return identifying index of cell \item\end{DoxyCompactList}\item 
+int {\bf CALICE::Ahc2Mapper::getTrueCellID} (const unsigned int i, const unsigned int j, const unsigned int k) const 
+\begin{DoxyCompactList}\small\item\em return identifying index of cell \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::Ahc2Mapper::getTrueIFromCellID} (const int virtualCellID) const 
+\begin{DoxyCompactList}\small\item\em return I of identifying index of cell \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::Ahc2Mapper::getTrueIFromIJK} (const unsigned int i, const unsigned int j, const unsigned int k) const 
+\begin{DoxyCompactList}\small\item\em return I of identifying index of cell \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::Ahc2Mapper::getTrueI} (const unsigned int module, const unsigned int i, const unsigned int j) const 
+\begin{DoxyCompactList}\small\item\em return I of identifying index of cell \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::Ahc2Mapper::getTrueJFromCellID} (const int virtualCellID) const 
+\begin{DoxyCompactList}\small\item\em return J of identifying index of cell \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::Ahc2Mapper::getTrueJFromIJK} (const unsigned int i, const unsigned int j, const unsigned int k) const 
+\begin{DoxyCompactList}\small\item\em return J of identifying index of cell \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::Ahc2Mapper::getTrueJ} (const unsigned int module, const unsigned int i, const unsigned int j) const 
+\begin{DoxyCompactList}\small\item\em return J of identifying index of cell \item\end{DoxyCompactList}\item 
+int {\bf CALICE::AhcMapper::getTrueCellID} (const int virtualCellIndex) const 
+\begin{DoxyCompactList}\small\item\em return identifying index of cell \item\end{DoxyCompactList}\item 
+int {\bf CALICE::AhcMapper::getTrueCellID} (const unsigned int i, const unsigned int j, const unsigned int k) const 
+\begin{DoxyCompactList}\small\item\em return identifying index of cell \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::AhcMapper::getTrueIFromCellID} (const int virtualCellID) const 
+\begin{DoxyCompactList}\small\item\em return I of identifying index of cell \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::AhcMapper::getTrueIFromIJK} (const unsigned int i, const unsigned int j, const unsigned int k) const 
+\begin{DoxyCompactList}\small\item\em return I of identifying index of cell \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::AhcMapper::getTrueI} (const unsigned int module, const unsigned int i, const unsigned int j) const 
+\begin{DoxyCompactList}\small\item\em return I of identifying index of cell \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::AhcMapper::getTrueJFromCellID} (const int virtualCellID) const 
+\begin{DoxyCompactList}\small\item\em return J of identifying index of cell \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::AhcMapper::getTrueJFromIJK} (const unsigned int i, const unsigned int j, const unsigned int k) const 
+\begin{DoxyCompactList}\small\item\em return J of identifying index of cell \item\end{DoxyCompactList}\item 
+unsigned int {\bf CALICE::AhcMapper::getTrueJ} (const unsigned int module, const unsigned int i, const unsigned int j) const 
+\begin{DoxyCompactList}\small\item\em return J of identifying index of cell \item\end{DoxyCompactList}\item 
+virtual int {\bf CALICE::Mapper::getTrueCellID} (const int virtualCellIndex) const =0
+\begin{DoxyCompactList}\small\item\em return identifying index of cell \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{VirtualCellID@{VirtualCellID}!getTrueCellID@{getTrueCellID}}
+\index{getTrueCellID@{getTrueCellID}!VirtualCellID@{VirtualCellID}}
+\subsubsection[{getTrueCellID}]{\setlength{\rightskip}{0pt plus 5cm}virtual int CALICE::Mapper::getTrueCellID (const int {\em virtualCellIndex}) const\hspace{0.3cm}{\ttfamily  [pure virtual, inherited]}}\label{group__VirtualCellID_gab5c5a8b7df52a2a3da966352273d2928}
+
+
+return identifying index of cell Cells of different size span different areas in Mokka CellID space. This functions returns for all coordinates of the cell the Mokka CellID which is used to uniquely identify it.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em virtualCellIndex}](Mokka) cellID of (virtual) cell\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+index of full cell
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if cell does not exist \end{DoxyExceptions}
+
+
+Implemented in {\bf CALICE::Ahc2Mapper} \doxyref{}{p.}{group__VirtualCellID_ga0fc134cbde1c93ca7c5a5260ad41c5e5}, and {\bf CALICE::AhcMapper} \doxyref{}{p.}{group__VirtualCellID_ga388434a5bf067dd89017e28ba9ce2715}.\index{VirtualCellID@{VirtualCellID}!getTrueCellID@{getTrueCellID}}
+\index{getTrueCellID@{getTrueCellID}!VirtualCellID@{VirtualCellID}}
+\subsubsection[{getTrueCellID}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::AhcMapper::getTrueCellID (const unsigned int {\em i}, \/  const unsigned int {\em j}, \/  const unsigned int {\em k}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__VirtualCellID_gafedf30227385a89485dc65dba35f070d}
+
+
+return identifying index of cell Cells of different size span different areas in Mokka CellID space. This functions returns for all coordinates of the cell the Mokka CellID which is used to uniquely identify it.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em i}]I of virtual cell \item[\mbox{$\leftarrow$} {\em j}]J of virtual cell \item[\mbox{$\leftarrow$} {\em k}]K of virtual cell\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+index of full cell 
+\end{DoxyReturn}
+
+
+Definition at line 728 of file AhcMapper.hh.
+
+References CALICE::Mapper::getDecoder(), and CALICE::AhcMapper::getTrueCellID().\index{VirtualCellID@{VirtualCellID}!getTrueCellID@{getTrueCellID}}
+\index{getTrueCellID@{getTrueCellID}!VirtualCellID@{VirtualCellID}}
+\subsubsection[{getTrueCellID}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::AhcMapper::getTrueCellID (const int {\em virtualCellIndex}) const\hspace{0.3cm}{\ttfamily  [inline, virtual, inherited]}}\label{group__VirtualCellID_ga388434a5bf067dd89017e28ba9ce2715}
+
+
+return identifying index of cell Cells of different size span different areas in Mokka CellID space. This functions returns for all coordinates of the cell the Mokka CellID which is used to uniquely identify it.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em virtualCellIndex}](Mokka) cellID of (virtual) cell\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+index of full cell 
+\end{DoxyReturn}
+
+
+Implements {\bf CALICE::Mapper} \doxyref{}{p.}{group__VirtualCellID_gab5c5a8b7df52a2a3da966352273d2928}.
+
+Definition at line 709 of file AhcMapper.hh.
+
+References CALICE::DecoderSet::getCellID(), CALICE::Mapper::getDecoder(), CALICE::AhcMapper::getTrueIFromCellID(), and CALICE::AhcMapper::getTrueJFromCellID().
+
+Referenced by CALICE::AhcMapper::getTrueCellID().\index{VirtualCellID@{VirtualCellID}!getTrueCellID@{getTrueCellID}}
+\index{getTrueCellID@{getTrueCellID}!VirtualCellID@{VirtualCellID}}
+\subsubsection[{getTrueCellID}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::Ahc2Mapper::getTrueCellID (const unsigned int {\em i}, \/  const unsigned int {\em j}, \/  const unsigned int {\em k}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__VirtualCellID_gabd42a7d81b91fe0f3da3883b009a453c}
+
+
+return identifying index of cell Cells of different size span different areas in Mokka CellID space. This functions returns for all coordinates of the cell the Mokka CellID which is used to uniquely identify it.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em i}]I of virtual cell \item[\mbox{$\leftarrow$} {\em j}]J of virtual cell \item[\mbox{$\leftarrow$} {\em k}]K of virtual cell\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+index of full cell 
+\end{DoxyReturn}
+
+
+Definition at line 737 of file Ahc2Mapper.hh.
+
+References CALICE::Mapper::getDecoder(), and CALICE::Ahc2Mapper::getTrueCellID().\index{VirtualCellID@{VirtualCellID}!getTrueCellID@{getTrueCellID}}
+\index{getTrueCellID@{getTrueCellID}!VirtualCellID@{VirtualCellID}}
+\subsubsection[{getTrueCellID}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::Ahc2Mapper::getTrueCellID (const int {\em virtualCellIndex}) const\hspace{0.3cm}{\ttfamily  [inline, virtual, inherited]}}\label{group__VirtualCellID_ga0fc134cbde1c93ca7c5a5260ad41c5e5}
+
+
+return identifying index of cell Cells of different size span different areas in Mokka CellID space. This functions returns for all coordinates of the cell the Mokka CellID which is used to uniquely identify it.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em virtualCellIndex}](Mokka) cellID of (virtual) cell\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+index of full cell 
+\end{DoxyReturn}
+
+
+Implements {\bf CALICE::Mapper} \doxyref{}{p.}{group__VirtualCellID_gab5c5a8b7df52a2a3da966352273d2928}.
+
+Definition at line 718 of file Ahc2Mapper.hh.
+
+References CALICE::DecoderSet::getCellID(), CALICE::Mapper::getDecoder(), CALICE::Ahc2Mapper::getTrueIFromCellID(), and CALICE::Ahc2Mapper::getTrueJFromCellID().
+
+Referenced by CALICE::Ahc2Mapper::getTrueCellID().\index{VirtualCellID@{VirtualCellID}!getTrueI@{getTrueI}}
+\index{getTrueI@{getTrueI}!VirtualCellID@{VirtualCellID}}
+\subsubsection[{getTrueI}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getTrueI (const unsigned int {\em module}, \/  const unsigned int {\em i}, \/  const unsigned int {\em j}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__VirtualCellID_ga779e7ca4c5d5d39f7ab4f9135edb591e}
+
+
+return I of identifying index of cell Cells of different size span different areas in Mokka CellID space. This functions returns for all coordinates of the cell the I of the Mokka CellID which is used to uniquely identify it.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em module}]module number \item[\mbox{$\leftarrow$} {\em i}]I \item[\mbox{$\leftarrow$} {\em j}]J\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I of CellID of full cell
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 787 of file AhcMapper.hh.
+
+Referenced by CALICE::AhcMapper::getTrueIFromIJK().\index{VirtualCellID@{VirtualCellID}!getTrueI@{getTrueI}}
+\index{getTrueI@{getTrueI}!VirtualCellID@{VirtualCellID}}
+\subsubsection[{getTrueI}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::Ahc2Mapper::getTrueI (const unsigned int {\em module}, \/  const unsigned int {\em i}, \/  const unsigned int {\em j}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__VirtualCellID_ga3b0f264daebc7a164159919beff4566d}
+
+
+return I of identifying index of cell Cells of different size span different areas in Mokka CellID space. This functions returns for all coordinates of the cell the I of the Mokka CellID which is used to uniquely identify it.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em module}]module number \item[\mbox{$\leftarrow$} {\em i}]I \item[\mbox{$\leftarrow$} {\em j}]J\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I of CellID of full cell
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 796 of file Ahc2Mapper.hh.
+
+Referenced by CALICE::Ahc2Mapper::getTrueIFromIJK().\index{VirtualCellID@{VirtualCellID}!getTrueIFromCellID@{getTrueIFromCellID}}
+\index{getTrueIFromCellID@{getTrueIFromCellID}!VirtualCellID@{VirtualCellID}}
+\subsubsection[{getTrueIFromCellID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getTrueIFromCellID (const int {\em virtualCellID}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__VirtualCellID_ga776b8e4e75a5a69034951e4c2a670366}
+
+
+return I of identifying index of cell Cells of different size span different areas in Mokka CellID space. This functions returns for all coordinates of the cell the I of the Mokka CellID which is used to uniquely identify it.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em virtualCellID}](Mokka) cellID of (virtual) cell\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I of CellID of full cell
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 747 of file AhcMapper.hh.
+
+References CALICE::Mapper::getDecoder(), and CALICE::AhcMapper::getTrueIFromIJK().
+
+Referenced by CALICE::AhcMapper::getTrueCellID().\index{VirtualCellID@{VirtualCellID}!getTrueIFromCellID@{getTrueIFromCellID}}
+\index{getTrueIFromCellID@{getTrueIFromCellID}!VirtualCellID@{VirtualCellID}}
+\subsubsection[{getTrueIFromCellID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::Ahc2Mapper::getTrueIFromCellID (const int {\em virtualCellID}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__VirtualCellID_ga49714e5b6a17352138793e17cbc5a24b}
+
+
+return I of identifying index of cell Cells of different size span different areas in Mokka CellID space. This functions returns for all coordinates of the cell the I of the Mokka CellID which is used to uniquely identify it.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em virtualCellID}](Mokka) cellID of (virtual) cell\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I of CellID of full cell
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 756 of file Ahc2Mapper.hh.
+
+References CALICE::Mapper::getDecoder(), and CALICE::Ahc2Mapper::getTrueIFromIJK().
+
+Referenced by CALICE::Ahc2Mapper::getTrueCellID().\index{VirtualCellID@{VirtualCellID}!getTrueIFromIJK@{getTrueIFromIJK}}
+\index{getTrueIFromIJK@{getTrueIFromIJK}!VirtualCellID@{VirtualCellID}}
+\subsubsection[{getTrueIFromIJK}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getTrueIFromIJK (const unsigned int {\em i}, \/  const unsigned int {\em j}, \/  const unsigned int {\em k}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__VirtualCellID_ga38a9244588f0c4467e69f6a43102dcf4}
+
+
+return I of identifying index of cell Cells of different size span different areas in Mokka CellID space. This functions returns for all coordinates of the cell the I of the Mokka CellID which is used to uniquely identify it.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em i}]I \item[\mbox{$\leftarrow$} {\em j}]J \item[\mbox{$\leftarrow$} {\em k}]K\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I of CellID of full cell
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 767 of file AhcMapper.hh.
+
+References CALICE::AhcMapper::getModule(), and CALICE::AhcMapper::getTrueI().
+
+Referenced by CALICE::AhcMapper::getTrueIFromCellID().\index{VirtualCellID@{VirtualCellID}!getTrueIFromIJK@{getTrueIFromIJK}}
+\index{getTrueIFromIJK@{getTrueIFromIJK}!VirtualCellID@{VirtualCellID}}
+\subsubsection[{getTrueIFromIJK}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::Ahc2Mapper::getTrueIFromIJK (const unsigned int {\em i}, \/  const unsigned int {\em j}, \/  const unsigned int {\em k}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__VirtualCellID_ga449dfd031ca7a0c7914ec3e675beacb7}
+
+
+return I of identifying index of cell Cells of different size span different areas in Mokka CellID space. This functions returns for all coordinates of the cell the I of the Mokka CellID which is used to uniquely identify it.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em i}]I \item[\mbox{$\leftarrow$} {\em j}]J \item[\mbox{$\leftarrow$} {\em k}]K\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+I of CellID of full cell
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 776 of file Ahc2Mapper.hh.
+
+References CALICE::Ahc2Mapper::getModule(), and CALICE::Ahc2Mapper::getTrueI().
+
+Referenced by CALICE::Ahc2Mapper::getTrueIFromCellID().\index{VirtualCellID@{VirtualCellID}!getTrueJ@{getTrueJ}}
+\index{getTrueJ@{getTrueJ}!VirtualCellID@{VirtualCellID}}
+\subsubsection[{getTrueJ}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getTrueJ (const unsigned int {\em module}, \/  const unsigned int {\em i}, \/  const unsigned int {\em j}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__VirtualCellID_ga8ba9057ca7541fc72ddd2994873842e5}
+
+
+return J of identifying index of cell Cells of different size span different areas in Mokka CellID space. This functions returns for all coordinates of the cell the I of the Mokka CellID which is used to uniquely identify it.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em module}]module number \item[\mbox{$\leftarrow$} {\em i}]I \item[\mbox{$\leftarrow$} {\em j}]J\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+J of CellID of full cell
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 852 of file AhcMapper.hh.
+
+Referenced by CALICE::AhcMapper::getTrueJFromIJK().\index{VirtualCellID@{VirtualCellID}!getTrueJ@{getTrueJ}}
+\index{getTrueJ@{getTrueJ}!VirtualCellID@{VirtualCellID}}
+\subsubsection[{getTrueJ}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::Ahc2Mapper::getTrueJ (const unsigned int {\em module}, \/  const unsigned int {\em i}, \/  const unsigned int {\em j}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__VirtualCellID_ga2de81498f4976911c8ee656c2389dc9d}
+
+
+return J of identifying index of cell Cells of different size span different areas in Mokka CellID space. This functions returns for all coordinates of the cell the I of the Mokka CellID which is used to uniquely identify it.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em module}]module number \item[\mbox{$\leftarrow$} {\em i}]I \item[\mbox{$\leftarrow$} {\em j}]J\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+J of CellID of full cell
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 861 of file Ahc2Mapper.hh.
+
+Referenced by CALICE::Ahc2Mapper::getTrueJFromIJK().\index{VirtualCellID@{VirtualCellID}!getTrueJFromCellID@{getTrueJFromCellID}}
+\index{getTrueJFromCellID@{getTrueJFromCellID}!VirtualCellID@{VirtualCellID}}
+\subsubsection[{getTrueJFromCellID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getTrueJFromCellID (const int {\em virtualCellID}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__VirtualCellID_ga5372257a6161967edcc5bb9a62cb27db}
+
+
+return J of identifying index of cell Cells of different size span different areas in Mokka CellID space. This functions returns for all coordinates of the cell the I of the Mokka CellID which is used to uniquely identify it.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em virtualCellID}](Mokka) cellID of (virtual) cell\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+J of CellID of full cell
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 812 of file AhcMapper.hh.
+
+References CALICE::Mapper::getDecoder(), and CALICE::AhcMapper::getTrueJFromIJK().
+
+Referenced by CALICE::AhcMapper::getTrueCellID().\index{VirtualCellID@{VirtualCellID}!getTrueJFromCellID@{getTrueJFromCellID}}
+\index{getTrueJFromCellID@{getTrueJFromCellID}!VirtualCellID@{VirtualCellID}}
+\subsubsection[{getTrueJFromCellID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::Ahc2Mapper::getTrueJFromCellID (const int {\em virtualCellID}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__VirtualCellID_gaf19cdefede20837030d17562c35a5222}
+
+
+return J of identifying index of cell Cells of different size span different areas in Mokka CellID space. This functions returns for all coordinates of the cell the I of the Mokka CellID which is used to uniquely identify it.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em virtualCellID}](Mokka) cellID of (virtual) cell\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+J of CellID of full cell
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 821 of file Ahc2Mapper.hh.
+
+References CALICE::Mapper::getDecoder(), and CALICE::Ahc2Mapper::getTrueJFromIJK().
+
+Referenced by CALICE::Ahc2Mapper::getTrueCellID().\index{VirtualCellID@{VirtualCellID}!getTrueJFromIJK@{getTrueJFromIJK}}
+\index{getTrueJFromIJK@{getTrueJFromIJK}!VirtualCellID@{VirtualCellID}}
+\subsubsection[{getTrueJFromIJK}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getTrueJFromIJK (const unsigned int {\em i}, \/  const unsigned int {\em j}, \/  const unsigned int {\em k}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__VirtualCellID_ga37958a52241eefd4a3cdf310fdc6c5c7}
+
+
+return J of identifying index of cell Cells of different size span different areas in Mokka CellID space. This functions returns for all coordinates of the cell the I of the Mokka CellID which is used to uniquely identify it.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em i}]I \item[\mbox{$\leftarrow$} {\em j}]J \item[\mbox{$\leftarrow$} {\em k}]K\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+J of CellID of full cell
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 832 of file AhcMapper.hh.
+
+References CALICE::AhcMapper::getModule(), and CALICE::AhcMapper::getTrueJ().
+
+Referenced by CALICE::AhcMapper::getTrueJFromCellID().\index{VirtualCellID@{VirtualCellID}!getTrueJFromIJK@{getTrueJFromIJK}}
+\index{getTrueJFromIJK@{getTrueJFromIJK}!VirtualCellID@{VirtualCellID}}
+\subsubsection[{getTrueJFromIJK}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::Ahc2Mapper::getTrueJFromIJK (const unsigned int {\em i}, \/  const unsigned int {\em j}, \/  const unsigned int {\em k}) const\hspace{0.3cm}{\ttfamily  [inline, inherited]}}\label{group__VirtualCellID_gaa3350094fe5d1a517c8e390acdc0b84a}
+
+
+return J of identifying index of cell Cells of different size span different areas in Mokka CellID space. This functions returns for all coordinates of the cell the I of the Mokka CellID which is used to uniquely identify it.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em i}]I \item[\mbox{$\leftarrow$} {\em j}]J \item[\mbox{$\leftarrow$} {\em k}]K\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+J of CellID of full cell
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 841 of file Ahc2Mapper.hh.
+
+References CALICE::Ahc2Mapper::getModule(), and CALICE::Ahc2Mapper::getTrueJ().
+
+Referenced by CALICE::Ahc2Mapper::getTrueJFromCellID().

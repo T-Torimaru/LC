@@ -1,0 +1,63 @@
+\section{CALICE::RunTimeInfo Class Reference}
+\label{classCALICE_1_1RunTimeInfo}\index{CALICE::RunTimeInfo@{CALICE::RunTimeInfo}}
+
+
+Simple class which holds the start and stop times of runs.  
+
+
+{\ttfamily \#include $<$RunTimeInfo.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf RunTimeInfo} ()\label{classCALICE_1_1RunTimeInfo_a2b81018e8aed3e1b80aaf91a6ec377bd}
+
+\begin{DoxyCompactList}\small\item\em Convenient c'tor. \item\end{DoxyCompactList}\item 
+{\bf RunTimeInfo} (LCObject $\ast$obj)\label{classCALICE_1_1RunTimeInfo_a31def28997124997feec542a36870393}
+
+\begin{DoxyCompactList}\small\item\em 'Copy constructor' needed to interpret LCCollection read from file/database. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$RunTimeInfo} ()\label{classCALICE_1_1RunTimeInfo_aa6d561ff82a48642d50bfb52cf55a835}
+
+\begin{DoxyCompactList}\small\item\em Important for memory handling. \item\end{DoxyCompactList}\item 
+void {\bf setRunStartTime} (long64)\label{classCALICE_1_1RunTimeInfo_aa9aad7733108b2a598799706f13eeae5}
+
+\begin{DoxyCompactList}\small\item\em set the run start time \item\end{DoxyCompactList}\item 
+long64 {\bf getRunStartTime} ()\label{classCALICE_1_1RunTimeInfo_a3075c170467cef85909a37f7f58884ce}
+
+\begin{DoxyCompactList}\small\item\em get the run start time \item\end{DoxyCompactList}\item 
+void {\bf setRunStopTime} (long64)\label{classCALICE_1_1RunTimeInfo_a450d4e7834c3fb9d4fc2b3cf1d34b841}
+
+\begin{DoxyCompactList}\small\item\em set the run stop time \item\end{DoxyCompactList}\item 
+long64 {\bf getRunStopTime} ()\label{classCALICE_1_1RunTimeInfo_a87d9019280c72bbe4cce10086d83e87c}
+
+\begin{DoxyCompactList}\small\item\em get the run stop time \item\end{DoxyCompactList}\item 
+void {\bf print} (std::ostream \&os)\label{classCALICE_1_1RunTimeInfo_ab57b29318c40d918e6adedc920e588ee}
+
+\begin{DoxyCompactList}\small\item\em Convenient print method. \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1RunTimeInfo_a112199e4ff42f6b7f27e971075166378}
+
+\begin{DoxyCompactList}\small\item\em Return type name. \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1RunTimeInfo_a661550cc89cee17a9e1818d0bb895b49}
+
+\begin{DoxyCompactList}\small\item\em Return data description. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries convertlong6422int} (long64, int[$\,$])\label{classCALICE_1_1RunTimeInfo_ab641440397b89b35cc54c2c505a81f28}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Simple class which holds the start and stop times of runs. Access to this info should happen via the interface class \doxyref{RunTimeWhizard}{p.}{classCALICE_1_1RunTimeWhizard} \begin{DoxyAuthor}{Author}
+R. Poeschl LAL 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Jun. 2007 
+\end{DoxyDate}
+
+
+Definition at line 24 of file RunTimeInfo.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+RunTimeInfo.hh\item 
+RunTimeInfo.cc\end{DoxyCompactItemize}

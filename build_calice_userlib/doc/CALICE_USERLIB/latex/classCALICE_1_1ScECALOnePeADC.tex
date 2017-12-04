@@ -1,0 +1,72 @@
+\section{CALICE::ScECALOnePeADC Class Reference}
+\label{classCALICE_1_1ScECALOnePeADC}\index{CALICE::ScECALOnePeADC@{CALICE::ScECALOnePeADC}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ScECALOnePeADC} ()\label{classCALICE_1_1ScECALOnePeADC_ada5bb4f970cf3941319150b1654f0177}
+
+\begin{DoxyCompactList}\small\item\em Empty constructor. \item\end{DoxyCompactList}\item 
+{\bfseries ScECALOnePeADC} (lcio::LCObject $\ast$obj)\label{classCALICE_1_1ScECALOnePeADC_a6e329c1c96bbcfa394c39c8112ed37a0}
+
+\item 
+{\bfseries ScECALOnePeADC} (int ID0, int ID1, double calibconst, double calibconst\_\-err)\label{classCALICE_1_1ScECALOnePeADC_a94d545c07e0bbe9c8afa2fe7dcdd16ec}
+
+\item 
+{\bf $\sim$ScECALOnePeADC} ()\label{classCALICE_1_1ScECALOnePeADC_a98190ce37bb90d719a7c4018f17f219f}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+int {\bf getID0} () const \label{classCALICE_1_1ScECALOnePeADC_acf761b76b965891033defa4d5c101a7c}
+
+\begin{DoxyCompactList}\small\item\em Get the identifier. \item\end{DoxyCompactList}\item 
+int {\bfseries getID1} () const \label{classCALICE_1_1ScECALOnePeADC_a4b5ea62b5831486c7f12446cc29ee43e}
+
+\item 
+double {\bf getcalibconst} () const \label{classCALICE_1_1ScECALOnePeADC_a65c6a5fcd63673f0ed1cfad68b2a06dc}
+
+\begin{DoxyCompactList}\small\item\em Get the constant/y-\/intercept of the fit. \item\end{DoxyCompactList}\item 
+double {\bf getcalibconsterr} () const \label{classCALICE_1_1ScECALOnePeADC_ace16918dad8b849ba42b4679ff027b2e}
+
+\begin{DoxyCompactList}\small\item\em Get the reference point of the constant. \item\end{DoxyCompactList}\item 
+void {\bf setID0} (const int ID0)\label{classCALICE_1_1ScECALOnePeADC_a774570476ad12dc6b3d0a7badc14f549}
+
+\begin{DoxyCompactList}\small\item\em Sets an identifier. \item\end{DoxyCompactList}\item 
+void {\bfseries setID1} (const int ID1)\label{classCALICE_1_1ScECALOnePeADC_a9bfb79f13a293224f25d5978b26113d3}
+
+\item 
+void {\bf setcalibconst} (const double calibconst)\label{classCALICE_1_1ScECALOnePeADC_af725aac44a808a4b26554bcf3bd02d8d}
+
+\begin{DoxyCompactList}\small\item\em Sets the constant. \item\end{DoxyCompactList}\item 
+void {\bf setcalibconsterr} (const double calibconst\_\-err)\label{classCALICE_1_1ScECALOnePeADC_a2600303815a54840929c50845983d020}
+
+\begin{DoxyCompactList}\small\item\em Sets the reference point of the constant. \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const 
+\begin{DoxyCompactList}\small\item\em Get the type name. \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const 
+\begin{DoxyCompactList}\small\item\em Get the data description. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 15 of file ScECALOnePeADC.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::ScECALOnePeADC@{CALICE::ScECALOnePeADC}!getDataDescription@{getDataDescription}}
+\index{getDataDescription@{getDataDescription}!CALICE::ScECALOnePeADC@{CALICE::ScECALOnePeADC}}
+\subsubsection[{getDataDescription}]{\setlength{\rightskip}{0pt plus 5cm}const std::string CALICE::ScECALOnePeADC::getDataDescription () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1ScECALOnePeADC_a1b9d115ea651bf12de87a6279623a310}
+
+
+Get the data description. The data description gives the meaning of the data fields. 
+
+Definition at line 117 of file ScECALOnePeADC.hh.\index{CALICE::ScECALOnePeADC@{CALICE::ScECALOnePeADC}!getTypeName@{getTypeName}}
+\index{getTypeName@{getTypeName}!CALICE::ScECALOnePeADC@{CALICE::ScECALOnePeADC}}
+\subsubsection[{getTypeName}]{\setlength{\rightskip}{0pt plus 5cm}const std::string CALICE::ScECALOnePeADC::getTypeName () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1ScECALOnePeADC_a287640791f27b58dd41bbf10084c1b82}
+
+
+Get the type name. The type name is used to determine which class interprets the LCGenericObject which holds the pure data. 
+
+Definition at line 108 of file ScECALOnePeADC.hh.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+ScECALOnePeADC.hh\end{DoxyCompactItemize}

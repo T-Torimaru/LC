@@ -1,0 +1,136 @@
+\section{MD5 Class Reference}
+\label{classMD5}\index{MD5@{MD5}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries update} (const unsigned char $\ast$input, unsigned int input\_\-length)\label{classMD5_a15f269f3e39cd8b36a7fa6bf0459e619}
+
+\item 
+void {\bfseries update} (istream \&stream)\label{classMD5_ac1e228c5348da56a5fc47ea87b47f6c3}
+
+\item 
+void {\bfseries update} (FILE $\ast$file)\label{classMD5_a870b8675bca4d33b858d2b1abce9981a}
+
+\item 
+void {\bfseries update} (ifstream \&stream)\label{classMD5_a2b0e75c47f41e99830e2a00bbd2debf1}
+
+\item 
+void {\bfseries finalize} ()\label{classMD5_ade6a48e72d63710ab567cf473a3af0b0}
+
+\item 
+{\bfseries MD5} (const unsigned char $\ast$string)\label{classMD5_ab7e277b2ff74c25a9ef8af239e133701}
+
+\item 
+{\bfseries MD5} (istream \&stream)\label{classMD5_a78e603b5b35ab0d832a493a157ed89dc}
+
+\item 
+{\bfseries MD5} (FILE $\ast$file)\label{classMD5_a42be31aa712ef5450fad065ff7697f47}
+
+\item 
+{\bfseries MD5} (ifstream \&stream)\label{classMD5_a355a8e72bbb682375610be728b3b93a2}
+
+\item 
+unsigned char $\ast$ {\bfseries raw\_\-digest} ()\label{classMD5_aaf526d077ce13986854ee6223adaad5b}
+
+\item 
+char $\ast$ {\bfseries hex\_\-digest} ()\label{classMD5_a0d2767cc5ea3ce59c80e28ae64497d7e}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned int {\bfseries uint4}\label{classMD5_a2e5b84a3d7db292f49873061214a0444}
+
+\item 
+typedef unsigned short int {\bfseries uint2}\label{classMD5_a938d18555b32c101d427b3158c6c6870}
+
+\item 
+typedef unsigned char {\bfseries uint1}\label{classMD5_a3b1c4901139aef256ee49c4ab14d09f9}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries init} ()\label{classMD5_a65ddaecdd0bd0b09043a2f3b2601bc2e}
+
+\item 
+void {\bfseries transform} (const uint1 $\ast$buffer)\label{classMD5_a93b68e1da5b9b98abcbe386452810959}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void {\bfseries encode} (uint1 $\ast$dest, const uint4 $\ast$src, uint4 length)\label{classMD5_aeacf39bf24a425d4eaf035466e0ee009}
+
+\item 
+static void {\bfseries decode} (uint4 $\ast$dest, const uint1 $\ast$src, uint4 length)\label{classMD5_a0aeb8e4141d80e9b33e5fcab91f797e6}
+
+\item 
+static void {\bfseries memcpy} (uint1 $\ast$dest, const uint1 $\ast$src, uint4 length)\label{classMD5_a5db7422eee66dd26ef731b8e783951b7}
+
+\item 
+static void {\bfseries memset} (uint1 $\ast$start, uint1 val, uint4 length)\label{classMD5_ae2affb1e7d58a204d9ae367ea7b51c36}
+
+\item 
+static uint4 {\bfseries rotate\_\-left} (uint4 x, uint4 n)\label{classMD5_a64f84f0aef8679b0c77858e0c59822b9}
+
+\item 
+static uint4 {\bfseries F} (uint4 x, uint4 y, uint4 z)\label{classMD5_a2934208483fbd86327076a11ded14971}
+
+\item 
+static uint4 {\bfseries G} (uint4 x, uint4 y, uint4 z)\label{classMD5_a9abb73967eb7219c23faf69a4e80eb71}
+
+\item 
+static uint4 {\bfseries H} (uint4 x, uint4 y, uint4 z)\label{classMD5_af0a3d0593a4a4fc964a8d5beb2348bbc}
+
+\item 
+static uint4 {\bfseries I} (uint4 x, uint4 y, uint4 z)\label{classMD5_ab363834e0160109ba1c7aaf53409e7c1}
+
+\item 
+static void {\bfseries FF} (uint4 \&a, uint4 b, uint4 c, uint4 d, uint4 x, uint4 s, uint4 ac)\label{classMD5_a31479b157441ace2dbc2ae0edd0d2e38}
+
+\item 
+static void {\bfseries GG} (uint4 \&a, uint4 b, uint4 c, uint4 d, uint4 x, uint4 s, uint4 ac)\label{classMD5_a8ebdbe52608e522516d1759a31753212}
+
+\item 
+static void {\bfseries HH} (uint4 \&a, uint4 b, uint4 c, uint4 d, uint4 x, uint4 s, uint4 ac)\label{classMD5_aaad039caf0b33abf1bf3f3589166543c}
+
+\item 
+static void {\bfseries II} (uint4 \&a, uint4 b, uint4 c, uint4 d, uint4 x, uint4 s, uint4 ac)\label{classMD5_a7af0184654644964ecdb57b1203e5ec7}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint4 {\bfseries state} [4]\label{classMD5_aae3f861952f5b129463f550170836db0}
+
+\item 
+uint4 {\bfseries count} [2]\label{classMD5_a52a9ff26a3de9e831b17c1740aa5388a}
+
+\item 
+uint1 {\bfseries buffer} [64]\label{classMD5_a2da5cb0336064b6f96de5b69fd4d219d}
+
+\item 
+uint1 {\bfseries digest} [16]\label{classMD5_a31058e1dca10bbf29818bb5177ff02ac}
+
+\item 
+uint1 {\bfseries finalized}\label{classMD5_a35a2d039cfb8e13a959201667911211d}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& {\bfseries operator$<$$<$} (ostream \&, {\bf MD5} context)\label{classMD5_a37bb1f259ab8bdfe589f3fc5f07a62d0}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 49 of file md5.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+md5.hh\item 
+md5.cc\end{DoxyCompactItemize}

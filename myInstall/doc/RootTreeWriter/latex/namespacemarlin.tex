@@ -1,0 +1,65 @@
+\section{marlin Namespace Reference}
+\label{namespacemarlin}\index{marlin@{marlin}}
+
+
+Namespace for all Marlin processors.  
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf EventPropertiesWriteEngine}
+\item 
+class {\bf RootTreeWriter}
+\item 
+class {\bf RootWriteEngine}
+\item 
+class {\bf ASimCalorimeterHitWriteEngine}
+\item 
+class {\bf BifWriteEngine}
+\item 
+class {\bf CollectionParameterWriteEngine}
+\item 
+class {\bf DeepAnaWriteEngine}
+\item 
+class {\bf DriftChamberWriteEngine}
+\item 
+class {\bf EventParameterWriteEngine}
+\item 
+class {\bf HcalTrackLarsEngine}
+\item 
+class {\bf HitWriteEngine}
+\item 
+class {\bf HodoscopeWriteEngine}
+\item 
+class {\bf MCParticleWriteEngine}
+\item 
+class {\bf ShowerShapeEngine}
+\item 
+class {\bf TBTrackWriteEngine}
+\item 
+class {\bf TrackFinderWriteEngine}
+\item 
+class {\bf TriggerWriteEngine}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries RTW\_\-REGISTER\_\-ENGINE} ({\bf CollectionParameterWriteEngine})\label{namespacemarlin_a14315d6fe618896a72ced2114cd7bedd}
+
+\item 
+{\bfseries RTW\_\-REGISTER\_\-ENGINE} ({\bf EventParameterWriteEngine})\label{namespacemarlin_a7c82289cb953414fdfde7267cf6b07e7}
+
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+{\bf RootTreeWriter} {\bfseries aRootTreeWriter}\label{namespacemarlin_a9b6fb833e71456793d8aef01d758b027}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Namespace for all Marlin processors. This engine adds information about the MonteCarlo particle to the ROOT tree.
+
+The added branches are
+
+-\/$>$ startPos[3]/D : the production vertex of the particle in [mm] -\/$>$ endPos[3]/D : the endpoint of the particle in [mm] -\/$>$ PDG/I : the PDG code of the particle 

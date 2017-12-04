@@ -1,0 +1,225 @@
+\label{todo__todo000001}
+ 
+\begin{DoxyDescription}
+\item[Class \doxyref{CALICE::AcquisitionData}{p.}{classCALICE_1_1AcquisitionData} ]should we make a regular userlib class out of it? 
+\end{DoxyDescription}
+
+\label{todo__todo000002}
+ 
+\begin{DoxyDescription}
+\item[Class \doxyref{CALICE::BeamMomentum}{p.}{classCALICE_1_1BeamMomentum} ]implement a constructor for FNAL slow readout data
+
+
+\end{DoxyDescription}
+
+\label{todo__todo000003}
+ 
+\begin{DoxyDescription}
+\item[Class \doxyref{CALICE::BeamParameter}{p.}{classCALICE_1_1BeamParameter} ]\{Should this class be split into two? One for the beam and one for the detector parameters? Should the nominal and measured values be stored in separate folders?\} 
+\end{DoxyDescription}
+
+\label{todo__todo000005}
+ 
+\begin{DoxyDescription}
+\item[Global \doxyref{CALICE::DaqTypeDataBlock::finalize}{p.}{classCALICE_1_1DaqTypeDataBlock_a5aac4e6f4aef380287394ad36b30a40d}() ]can the algorithms in this method be templated? 
+\end{DoxyDescription}
+
+\label{todo__todo000004}
+ 
+\begin{DoxyDescription}
+\item[Global \doxyref{CALICE::DaqTypeDataBlock::getIntArrays}{p.}{classCALICE_1_1DaqTypeDataBlock_aed8a8e75c1ca2befbf3f4c1bfe54e0a9}() ]: Should these methods really be public or only accessible by friend functions or ...? 
+
+: Do we have to check whether they has been filled or not before we hand it to the user? 
+\end{DoxyDescription}
+
+\label{todo__todo000006}
+ 
+\begin{DoxyDescription}
+\item[Class \doxyref{CALICE::DetectorTransformation}{p.}{classCALICE_1_1DetectorTransformation} ]\{Should this class be split into two? One for the beam and one for the detector parameters? Should the nominal and measured values be stored in separate folders?\} 
+\end{DoxyDescription}
+
+\label{todo__todo000007}
+ 
+\begin{DoxyDescription}
+\item[Class \doxyref{CALICE::DhcReadoutConfBlock}{p.}{classCALICE_1_1DhcReadoutConfBlock} ]Attention we may introduce a platform dependency here!!!! The structure of the object assumes that LCGenericObjects are aligned on 32 bits Need maybe revision for assumptions on data alignment, could be added as collection parameters, 
+\end{DoxyDescription}
+
+\label{todo__todo000008}
+ 
+\begin{DoxyDescription}
+\item[Class \doxyref{CALICE::ExperimentalSetup}{p.}{classCALICE_1_1ExperimentalSetup} ]\{Should this class be split into two? One for the beam and one for the detector parameters? Should the nominal and measured values be stored in separate folders?\} 
+\end{DoxyDescription}
+
+\label{todo__todo000014}
+ 
+\begin{DoxyDescription}
+\item[Global \doxyref{CALICE::FeInfo::getBeStatus}{p.}{classCALICE_1_1FeInfo_a56f6bb4e32c6016da0cedbbc86050c1a}() const  ]needs better explanation. 
+\end{DoxyDescription}
+
+\label{todo__todo000012}
+ 
+\begin{DoxyDescription}
+\item[Global \doxyref{CALICE::FeInfo::getFeLength}{p.}{classCALICE_1_1FeInfo_a8670ba7cf2806521398a0ad5b3081889}() const  ]needs better explanation. 
+\end{DoxyDescription}
+
+\label{todo__todo000010}
+ 
+\begin{DoxyDescription}
+\item[Global \doxyref{CALICE::FeInfo::getLabel}{p.}{classCALICE_1_1FeInfo_a67dd0f689121876bcae54f69813c29dd}() const  ]needs better explanation. 
+\end{DoxyDescription}
+
+\label{todo__todo000013}
+ 
+\begin{DoxyDescription}
+\item[Global \doxyref{CALICE::FeInfo::setBeStatus}{p.}{classCALICE_1_1FeInfo_a04552f8e75412662946c7b3c65dad0c5}(int be\_\-status) ]needs better explanation. 
+\end{DoxyDescription}
+
+\label{todo__todo000011}
+ 
+\begin{DoxyDescription}
+\item[Global \doxyref{CALICE::FeInfo::setFeLength}{p.}{classCALICE_1_1FeInfo_a884328110730cf0cb15c96aed00d3930}(int fe\_\-length) ]needs better explanation. 
+\end{DoxyDescription}
+
+\label{todo__todo000009}
+ 
+\begin{DoxyDescription}
+\item[Global \doxyref{CALICE::FeInfo::setLabel}{p.}{classCALICE_1_1FeInfo_a30d1e319c5b493268ee8f8674a9f0f6c}(int label) ]needs better explanation. 
+\end{DoxyDescription}
+
+\label{todo__todo000015}
+ 
+\begin{DoxyDescription}
+\item[Global \doxyref{CALICE::MappingAndAlignment::getCellIndex}{p.}{classCALICE_1_1MappingAndAlignment_ab51a0f33e8d02234ddc96a399a02e9be}(UInt\_\-t module\_\-index, UInt\_\-t multiplex\_\-position, UInt\_\-t line\_\-i) const  ]need more robust method to determine the number of lines per modules 
+\end{DoxyDescription}
+
+\label{todo__todo000016}
+ 
+\begin{DoxyDescription}
+\item[Global \doxyref{CALICE::MappingAndAlignment::getModuleIndexFromCellIndex}{p.}{classCALICE_1_1MappingAndAlignment_a7c80e28c748f3238cf2edca2a8190dc3}(UInt\_\-t) ]Extend function to handle situation in which a layer k does not exist in data but is simulated 
+\end{DoxyDescription}
+
+\label{todo__todo000018}
+ 
+\begin{DoxyDescription}
+\item[Global \doxyref{CALICE::ModuleConnection::getModuleType}{p.}{classCALICE_1_1ModuleConnection_a0330ce4dd3f58a935030dc1ffd715730}() const  ]remove this redundant information? 
+\end{DoxyDescription}
+
+\label{todo__todo000017}
+ 
+\begin{DoxyDescription}
+\item[Global \doxyref{CALICE::ModuleConnection::setModuleType}{p.}{classCALICE_1_1ModuleConnection_a7c8661d2a87294ad724d63fc0c25d51d}(unsigned char type) ]remove this redundant information? 
+\end{DoxyDescription}
+
+\label{todo__todo000020}
+ 
+\begin{DoxyDescription}
+\item[Global \doxyref{CALICE::ModuleDescription::getGeometricalCellIndex}{p.}{classCALICE_1_1ModuleDescription_a51c9bc14fff2390f99a73e154c4c4e11}(UInt\_\-t cell\_\-index) const  ]I did not find a more clever way than putting this index into the database. 
+\end{DoxyDescription}
+
+\label{todo__todo000019}
+ 
+\begin{DoxyDescription}
+\item[Global \doxyref{CALICE::ModuleDescription::setGeometricalCellIndex}{p.}{classCALICE_1_1ModuleDescription_a3e14b75a948febdb14e7e5f394609c59}(UInt\_\-t cell\_\-index, UInt\_\-t geometrical\_\-cell\_\-index) ]I did not find a more clever way than putting this index into the database. 
+\end{DoxyDescription}
+
+\label{todo__todo000021}
+ 
+\begin{DoxyDescription}
+\item[Global \doxyref{CALICE::ModuleLocation::ModuleLocation}{p.}{classCALICE_1_1ModuleLocation_a6f66474eb6a78753a4a46432d85c9345}(LCObject $\ast$obj) ]Currenlty, there is no serious type checking. Only the number of integers, floats and doubles is used to verify whether the LCGenericObject is of the type ModuleLocation 
+\end{DoxyDescription}
+
+\label{todo__todo000029}
+ 
+\begin{DoxyDescription}
+\item[Global \doxyref{CALICE::NVector\_\-t::\_\-x}{p.}{classCALICE_1_1NVector__t_a8089ceb5c1305789d489631c1da4913c}\mbox{[}dimension\mbox{]} ]float ? not T ? 
+
+float ? not T ? 
+\end{DoxyDescription}
+
+\label{todo__todo000025}
+ 
+\begin{DoxyDescription}
+\item[Global \doxyref{CALICE::NVector\_\-t::clear}{p.}{classCALICE_1_1NVector__t_acdcc0e98ea504c04cfc4341269969e5c}() ]this only works for simple types like int, float, double. 
+\end{DoxyDescription}
+
+\label{todo__todo000028}
+ 
+\begin{DoxyDescription}
+\item[Global \doxyref{CALICE::NVector\_\-t::data}{p.}{classCALICE_1_1NVector__t_ad523fba7620726c1d58a5b32c8b2d517}() const  ]float ? not T ? 
+\end{DoxyDescription}
+
+\label{todo__todo000026}
+ 
+\begin{DoxyDescription}
+\item[Global \doxyref{CALICE::NVector\_\-t::operator$\ast$=}{p.}{classCALICE_1_1NVector__t_af177ac27d671789ac8c8d61f257ccd4b}(const float c) ]the argument should not be a float but T ? 
+\end{DoxyDescription}
+
+\label{todo__todo000027}
+ 
+\begin{DoxyDescription}
+\item[Global \doxyref{CALICE::NVector\_\-t::operator/=}{p.}{classCALICE_1_1NVector__t_ab9758bc6c1ae323e33d25457b1f60993}(const float c) ]the argument should not be a float but T ? 
+\end{DoxyDescription}
+
+\label{todo__todo000023}
+ 
+\begin{DoxyDescription}
+\item[Global \doxyref{CALICE::operator$\ast$}{p.}{namespaceCALICE_a89dd183f711f9a34cd701cc59ad7ef4c}(const NVector\_\-t$<$ \_\-T, \_\-dimension $>$ \&a, const float c) ]replace float by \_\-T? 
+
+replace float by \_\-T? 
+
+replace float by \_\-T? 
+\end{DoxyDescription}
+
+\label{todo__todo000024}
+ 
+\begin{DoxyDescription}
+\item[Global \doxyref{CALICE::operator/}{p.}{namespaceCALICE_a9da404d695b95ecf3788bbd8642403e3}(const NVector\_\-t$<$ \_\-T, \_\-dimension $>$ \&a, const float c) ]replace float by \_\-T? 
+\end{DoxyDescription}
+
+\label{todo__todo000031}
+ 
+\begin{DoxyDescription}
+\item[Global \doxyref{CALICE::RunLocation::RunLocation}{p.}{classCALICE_1_1RunLocation_ac03ebed6f60326790b21028670b18cd8}(LCObject $\ast$obj) ]Currenlty, there is no serious type checking. Only the number of integers, floats and doubles is used 
+
+to verify whether the LCGenericObject is of the type RunLocation 
+\end{DoxyDescription}
+
+\label{todo__todo000033}
+ 
+\begin{DoxyDescription}
+\item[Global \doxyref{CALICE::TcmtConnection::getModuleType}{p.}{classCALICE_1_1TcmtConnection_a1bb330c1879d214925ba603813d7413a}() const  ]remove this redundant information? 
+\end{DoxyDescription}
+
+\label{todo__todo000032}
+ 
+\begin{DoxyDescription}
+\item[Global \doxyref{CALICE::TcmtConnection::setModuleType}{p.}{classCALICE_1_1TcmtConnection_aa2366c8893b9abccc17518192f536fa6}(unsigned char type) ]remove this redundant information? 
+\end{DoxyDescription}
+
+\label{todo__todo000034}
+ 
+\begin{DoxyDescription}
+\item[Class \doxyref{CALICE::TcmtEventIdentifier}{p.}{classCALICE_1_1TcmtEventIdentifier} ]implement thresholds for TCMT back section 
+
+remove hardcoded thresholds
+
+
+\end{DoxyDescription}
+
+\label{todo__todo000037}
+ 
+\begin{DoxyDescription}
+\item[Global \doxyref{CALICE::TriggerHandlerCalice::ExtractGenSoftTrigConfiguration}{p.}{classCALICE_1_1TriggerHandlerCalice_a6c2c1c59918150da8f6ea4fcb2a0c83f}(EVENT::LCCollection $\ast$) ]currently a software trigger is declared whenever a s/w trigger is enabled on one board this has to be individualized 
+\end{DoxyDescription}
+
+\label{todo__todo000035}
+ 
+\begin{DoxyDescription}
+\item[Global \doxyref{CALICE::TriggerHandlerCalice::getAndEnableBits}{p.}{classCALICE_1_1TriggerHandlerCalice_a06c58816d6f4c12c6e586c05e4110dd2}() ]in priniple there are four enable words and in prenicple we need the enable word to a trigger bit in the configuration mask 
+\end{DoxyDescription}
+
+\label{todo__todo000036}
+ 
+\begin{DoxyDescription}
+\item[Global \doxyref{CALICE::TriggerHandlerCalice::isTriggerFifoDepthGood}{p.}{classCALICE_1_1TriggerHandlerCalice_aab1d29d8baf25ec40b2b192b13c694a9}() ]what is the required fifo depth ? 
+\end{DoxyDescription}

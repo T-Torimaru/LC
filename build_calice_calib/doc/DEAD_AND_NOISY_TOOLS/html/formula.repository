@@ -1,0 +1,2 @@
+\form#0:$( moduleID \cdot nChipsPerModule + chipID ) \cdot nChannelsPerChip + channelNumber $
+\form#1:$mean \pm 5\cdot rms$

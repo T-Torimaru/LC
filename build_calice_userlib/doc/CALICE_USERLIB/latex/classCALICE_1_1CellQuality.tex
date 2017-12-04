@@ -1,0 +1,97 @@
+\section{CALICE::CellQuality Class Reference}
+\label{classCALICE_1_1CellQuality}\index{CALICE::CellQuality@{CALICE::CellQuality}}
+
+
+LCIO contions data class to describe the cell quality.  
+
+
+{\ttfamily \#include $<$CellQuality.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CellQuality} (const int id, const int status=0)
+\begin{DoxyCompactList}\small\item\em Initialise the \doxyref{CellQuality}{p.}{classCALICE_1_1CellQuality} with the CellID. \item\end{DoxyCompactList}\item 
+{\bfseries CellQuality} (EVENT::LCObject $\ast$)\label{classCALICE_1_1CellQuality_a67a0a10871b506705a93d15c5c9f1398}
+
+\item 
+const int {\bf getCellID} () const \label{classCALICE_1_1CellQuality_a5c4b83d65a3e51683c7f1de9609c9cd8}
+
+\begin{DoxyCompactList}\small\item\em Get the cell ID. \item\end{DoxyCompactList}\item 
+const int {\bf getStatus} () const \label{classCALICE_1_1CellQuality_a1ec6dbf56828da5575e9d268632d534d}
+
+\begin{DoxyCompactList}\small\item\em Get the status. \item\end{DoxyCompactList}\item 
+bool {\bf isDead} () const \label{classCALICE_1_1CellQuality_ad886e21dfeb1e49da166a72f5394baa5}
+
+\begin{DoxyCompactList}\small\item\em Check if the cell has been marked as dead. \item\end{DoxyCompactList}\item 
+bool {\bf isNoisy} () const \label{classCALICE_1_1CellQuality_a7c90423f24c3c29bb8b1d7ab2d612f02}
+
+\begin{DoxyCompactList}\small\item\em Check if the cell has been marked as noisy. \item\end{DoxyCompactList}\item 
+void {\bf setDead} (bool dead=true)\label{classCALICE_1_1CellQuality_a009ab8aa42248bfad012b8583dad272a}
+
+\begin{DoxyCompactList}\small\item\em Set the dead flag. By using {\ttfamily setDead(false)} you can unset the dead status. \item\end{DoxyCompactList}\item 
+void {\bf setNoisy} (bool noisy=true)\label{classCALICE_1_1CellQuality_a116fcb57a8e8c0de606b30c62fb3a46c}
+
+\begin{DoxyCompactList}\small\item\em Set the noisy flag. By using {\ttfamily setNoisy(false)} you can unset the noisy status. \item\end{DoxyCompactList}\item 
+virtual const std::string {\bfseries getTypeName} () const \label{classCALICE_1_1CellQuality_a016d2d5250c6bdb0163f65e346e0aa38}
+
+\item 
+virtual const std::string {\bfseries getDataDescription} () const \label{classCALICE_1_1CellQuality_ade0507fb47735c097963655f99ec87eb}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int {\bf \_\-dead} = 0x1\label{classCALICE_1_1CellQuality_a678fd1b8a9b414839b46336c345d642c}
+
+\begin{DoxyCompactList}\small\item\em the dead bit: 0x1 \item\end{DoxyCompactList}\item 
+static const int {\bf \_\-noisy} = 0x2\label{classCALICE_1_1CellQuality_a46bbb8d66e2ac749976f7a4bffbe4df6}
+
+\begin{DoxyCompactList}\small\item\em the noisy bit: 0x2 \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf setStatus} (int status)
+\begin{DoxyCompactList}\small\item\em The setting of the status is private. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+LCIO contions data class to describe the cell quality. The cell can be dead or noisy (or both, for instance if a cell is noisy and then dies during a run period).
+
+Note: Internally the status is treated as a bit pattern, which allows setting several flags simulaneously and can easily be extended. Thanks to the user interface the user never has to fiddle around with the bits. The definition is protected inside the class and queried with \doxyref{isDead()}{p.}{classCALICE_1_1CellQuality_ad886e21dfeb1e49da166a72f5394baa5} or \doxyref{isNoisy()}{p.}{classCALICE_1_1CellQuality_a7c90423f24c3c29bb8b1d7ab2d612f02}.
+
+\begin{DoxyAuthor}{Author}
+Niels Meyer, Desy 
+
+Martin Killenberg, CERN 
+\end{DoxyAuthor}
+
+
+Definition at line 23 of file CellQuality.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CALICE::CellQuality@{CALICE::CellQuality}!CellQuality@{CellQuality}}
+\index{CellQuality@{CellQuality}!CALICE::CellQuality@{CALICE::CellQuality}}
+\subsubsection[{CellQuality}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::CellQuality::CellQuality (const int {\em id}, \/  const int {\em status} = {\ttfamily 0})}\label{classCALICE_1_1CellQuality_adcbec5052d671a6784ea785bb1521d79}
+
+
+Initialise the \doxyref{CellQuality}{p.}{classCALICE_1_1CellQuality} with the CellID. When the status is already know it can also be given to the constructor (optional). 
+
+Definition at line 11 of file CellQuality.cc.
+
+References setStatus().
+
+\subsection{Member Function Documentation}
+\index{CALICE::CellQuality@{CALICE::CellQuality}!setStatus@{setStatus}}
+\index{setStatus@{setStatus}!CALICE::CellQuality@{CALICE::CellQuality}}
+\subsubsection[{setStatus}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CellQuality::setStatus (int {\em status})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1CellQuality_a96b044851c3c6c3d7526291ad005a6bf}
+
+
+The setting of the status is private. It is only allowed using the conctructor or the set() functions. 
+
+Definition at line 19 of file CellQuality.cc.
+
+Referenced by CellQuality(), setDead(), and setNoisy().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+CellQuality.hh\item 
+CellQuality.cc\end{DoxyCompactItemize}

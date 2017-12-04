@@ -1,0 +1,80 @@
+\section{CALICE::SimpleValue Class Reference}
+\label{classCALICE_1_1SimpleValue}\index{CALICE::SimpleValue@{CALICE::SimpleValue}}
+
+
+Class to store float value, its error, and status flag plus integer index in LCIO.  
+
+
+{\ttfamily \#include $<$SimpleValue.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf SimpleValue} ()\label{classCALICE_1_1SimpleValue_ab63afbd0e34d1f5de34ba7f0301f6f84}
+
+\begin{DoxyCompactList}\small\item\em Empty constructor. \item\end{DoxyCompactList}\item 
+{\bf SimpleValue} (const int id, const float val, const float err, const int stat)\label{classCALICE_1_1SimpleValue_ae5c7759090b4235eddfed2ea6b977e40}
+
+\begin{DoxyCompactList}\small\item\em Constructor with initial values. \item\end{DoxyCompactList}\item 
+{\bf SimpleValue} (EVENT::LCObject $\ast$obj)\label{classCALICE_1_1SimpleValue_a3d8634f99881f9481572b16a5e2bffda}
+
+\begin{DoxyCompactList}\small\item\em Constructor from LCObject. \item\end{DoxyCompactList}\item 
+{\bf $\sim$SimpleValue} ()\label{classCALICE_1_1SimpleValue_a9027e479b382b6a6e9371a4dff09bdaa}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+int {\bf getCellID} () const \label{classCALICE_1_1SimpleValue_a9cb25f2d1419faa25ee60ee6969088f2}
+
+\begin{DoxyCompactList}\small\item\em Return index identifier. \item\end{DoxyCompactList}\item 
+float {\bf getValue} () const \label{classCALICE_1_1SimpleValue_a10ed251ac01eeb6b7c7c630eb419e86b}
+
+\begin{DoxyCompactList}\small\item\em Return the value. \item\end{DoxyCompactList}\item 
+float {\bf getError} () const \label{classCALICE_1_1SimpleValue_aac126ec03ca714db24176742edf86a5c}
+
+\begin{DoxyCompactList}\small\item\em Return the error on the value. \item\end{DoxyCompactList}\item 
+int {\bf getStatus} () const \label{classCALICE_1_1SimpleValue_a1690e6ce44ea335f86853bf3e9e2e252}
+
+\begin{DoxyCompactList}\small\item\em Return the status. \item\end{DoxyCompactList}\item 
+void {\bf setCellID} (const int ID)\label{classCALICE_1_1SimpleValue_a1d0bf64c141a1eab8230cff9bedad99a}
+
+\begin{DoxyCompactList}\small\item\em set index identifier \item\end{DoxyCompactList}\item 
+void {\bf setValue} (const float value)\label{classCALICE_1_1SimpleValue_a3cb312cbed5170e517a8cb6988720374}
+
+\begin{DoxyCompactList}\small\item\em set the value \item\end{DoxyCompactList}\item 
+void {\bf setError} (const float error)\label{classCALICE_1_1SimpleValue_a2ab0751649b263ce97ad6353c3a74b93}
+
+\begin{DoxyCompactList}\small\item\em set the error on the value \item\end{DoxyCompactList}\item 
+void {\bf setStatus} (const int status)\label{classCALICE_1_1SimpleValue_a82caceee3e9f3757bd69be212788e4ad}
+
+\begin{DoxyCompactList}\small\item\em set the status \item\end{DoxyCompactList}\item 
+virtual const std::string {\bf getTypeName} () const \label{classCALICE_1_1SimpleValue_abbddaf6f2960066e61712572b74fa27c}
+
+\begin{DoxyCompactList}\small\item\em Implementation of LCGenericObject::getTypeName. \item\end{DoxyCompactList}\item 
+virtual const std::string {\bf getDataDescription} () const \label{classCALICE_1_1SimpleValue_a8ee24ee2c956cbec74a8209e84594694}
+
+\begin{DoxyCompactList}\small\item\em Implementation of LCGenericObject::getDataDescription. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to store float value, its error, and status flag plus integer index in LCIO. This class provides an interface to store four numbers inside an LCIO object:
+\begin{DoxyItemize}
+\item an integer identifier, e.g. the index of a calorimeter cell
+\item a float value, e.g. a calibration constant
+\item a float error, e.g. the uncertainty on the calibration
+\item an integer status flag, e.g. to tell default from measured constants
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+{\tt Niels.Meyer@desy.de} 
+
+{\tt Benjamin.Lutz@desy.de} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+February 2008 (NM) 
+
+February 2010 added set functions, fixed some const errors (BL) 
+\end{DoxyDate}
+
+
+Definition at line 25 of file SimpleValue.hh.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+SimpleValue.hh\end{DoxyCompactItemize}

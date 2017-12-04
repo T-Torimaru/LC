@@ -1,0 +1,88 @@
+\section{CALICE::RunTimeConditionsHandler Class Reference}
+\label{classCALICE_1_1RunTimeConditionsHandler}\index{CALICE::RunTimeConditionsHandler@{CALICE::RunTimeConditionsHandler}}
+
+
+Implementation of ConditionsHandlerBase that can be used to propagate conditions data that were generated at runtime.  
+
+
+{\ttfamily \#include $<$RunTimeConditionsHandler.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf RunTimeConditionsHandler} (const std::string \&name)
+\begin{DoxyCompactList}\small\item\em Default constructor. \item\end{DoxyCompactList}\item 
+virtual void {\bfseries update} (LCCDTimeStamp timestamp)\label{classCALICE_1_1RunTimeConditionsHandler_a2512774ec5cc836083d0e33d5bdf2bc2}
+
+\item 
+virtual void {\bfseries update} (LCCollection $\ast$col)\label{classCALICE_1_1RunTimeConditionsHandler_a05f4714fa0493f98faeb3efa8b6fce1e}
+
+\item 
+virtual void {\bf registerDefaultCollection} (LCCollection $\ast$col)\label{classCALICE_1_1RunTimeConditionsHandler_a40b4326a9b931702afdd3bd6f6cdad31}
+
+\begin{DoxyCompactList}\small\item\em Register a pointer to a default collection which will be passed to the IConditionsChangeListener if no data can be found for a given time stamp. \item\end{DoxyCompactList}\item 
+virtual LCCollection $\ast$ {\bf defaultCollection} ()\label{classCALICE_1_1RunTimeConditionsHandler_a211c66b829f2f9942612667b04da119b}
+
+\begin{DoxyCompactList}\small\item\em The default collection registered with the handler. \item\end{DoxyCompactList}\item 
+virtual LCCollection $\ast$ {\bf lastValidCollection} ()\label{classCALICE_1_1RunTimeConditionsHandler_a0867758af207626a60529ab86ea9fd64}
+
+\begin{DoxyCompactList}\small\item\em The last valid collection held by the handler. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries updateEvent} (LCEvent $\ast$evt)\label{classCALICE_1_1RunTimeConditionsHandler_a9e896232b8fa2153fd51524efb11c3a9}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+LCEvent $\ast$ {\bfseries \_\-evt}\label{classCALICE_1_1RunTimeConditionsHandler_a0d779f9c8f24741a487848089cfbd9da}
+
+\item 
+bool {\bfseries \_\-missedAddEvent}\label{classCALICE_1_1RunTimeConditionsHandler_ac1245dfab8ccb6a2464d7e9105da3326}
+
+\item 
+LCCollection $\ast$ {\bf \_\-defaultCol}\label{classCALICE_1_1RunTimeConditionsHandler_a9dc518975a177949967cca8853c14f3b}
+
+\begin{DoxyCompactList}\small\item\em the default (empty) collection \item\end{DoxyCompactList}\item 
+LCCollection $\ast$ {\bf \_\-lastValidCollection}\label{classCALICE_1_1RunTimeConditionsHandler_a1b2f0d346ce096596e7f703306d2f091}
+
+\begin{DoxyCompactList}\small\item\em the last valid collection \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation of ConditionsHandlerBase that can be used to propagate conditions data that were generated at runtime. This is necessary if the output of a processor should trigger a ConditionsChangeListener The data will get an infinite validity time intervall assigned.\par
+
+
+\begin{DoxyAuthor}{Author}
+{\tt Benjamin.Lutz@desy.de} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Dec 2008 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.0 
+\end{DoxyVersion}
+
+
+Definition at line 22 of file RunTimeConditionsHandler.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CALICE::RunTimeConditionsHandler@{CALICE::RunTimeConditionsHandler}!RunTimeConditionsHandler@{RunTimeConditionsHandler}}
+\index{RunTimeConditionsHandler@{RunTimeConditionsHandler}!CALICE::RunTimeConditionsHandler@{CALICE::RunTimeConditionsHandler}}
+\subsubsection[{RunTimeConditionsHandler}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::RunTimeConditionsHandler::RunTimeConditionsHandler (const std::string \& {\em name})}\label{classCALICE_1_1RunTimeConditionsHandler_a00f0851171a0e2294317f8fed106033b}
+
+
+Default constructor. You have to specify the following parameters:
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name,:}]name of this conditions data set -\/ used, e.g. as collection name in update(LCEvent$\ast$ evt) \end{DoxyParams}
+
+
+Definition at line 21 of file RunTimeConditionsHandler.cc.
+
+References \_\-defaultCol, and \_\-lastValidCollection.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+RunTimeConditionsHandler.hh\item 
+RunTimeConditionsHandler.cc\end{DoxyCompactItemize}

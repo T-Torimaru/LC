@@ -1,0 +1,82 @@
+\section{CALICE::CalibrationSet$<$ T $>$ Class Template Reference}
+\label{classCALICE_1_1CalibrationSet}\index{CALICE::CalibrationSet@{CALICE::CalibrationSet}}
+
+
+Class which handles the storage of a set of LCHcalCalibrationObject.  
+
+
+{\ttfamily \#include $<$CalibrationSet.hh$>$}\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::map$<$ unsigned, T $\ast$ $>$ {\bfseries CalibModuleMap}\label{classCALICE_1_1CalibrationSet_ae0ef8d231d149d1e61a4000952d58d67}
+
+\item 
+typedef std::pair$<$ lcio::LCCollection $\ast$, CalibModuleMap $\ast$ $>$ {\bfseries CalibModuleData}\label{classCALICE_1_1CalibrationSet_a894d8c42a35b66022bb221db4585f5f5}
+
+\item 
+typedef std::map$<$ unsigned, CalibModuleData $>$ {\bfseries CalibReadMap}\label{classCALICE_1_1CalibrationSet_a6f4a5967aa3a3ad50d763a92809fcf60}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CalibrationSet} ({\bf TempModel} $\ast$tempModel)\label{classCALICE_1_1CalibrationSet_a5b3dc2a9fee4bb05ead1f6aecb63e508}
+
+\item 
+bool {\bfseries empty} ()\label{classCALICE_1_1CalibrationSet_acf72ce0c2908ad7c57c1a4fed2e0ae69}
+
+\item 
+void {\bfseries fill} (lcio::LCCollection $\ast$calCol)\label{classCALICE_1_1CalibrationSet_af6eada4b282e59cd26830121ffe431ad}
+
+\item 
+void {\bfseries fill} (lcio::LCCollection $\ast$calCol, lcio::LCCollection $\ast$sroCol)\label{classCALICE_1_1CalibrationSet_a5064acda09ac4e6f60dfd8c95575bb77}
+
+\item 
+T $\ast$ {\bfseries getCalib} (unsigned moduleID, unsigned cellKey)\label{classCALICE_1_1CalibrationSet_ab7ccb1fe35ac7634ea52412ae96da4e5}
+
+\item 
+T $\ast$ {\bfseries getCalib} (unsigned module, unsigned chip, unsigned channel)\label{classCALICE_1_1CalibrationSet_a0e439372aeaa7d78b6fbcf0886022f1e}
+
+\item 
+void {\bfseries setTemp} (lcio::LCCollection $\ast$sroCol)\label{classCALICE_1_1CalibrationSet_a5dcbfc885e768814df5ffb3309173322}
+
+\item 
+void {\bfseries applyScalingFactor} (float f)\label{classCALICE_1_1CalibrationSet_aba2e28745da6330c981810dd5e21f0ae}
+
+\item 
+void {\bfseries setScalingFactor} (float f)\label{classCALICE_1_1CalibrationSet_aefc2753764d779cd34362c8a5f8b6943}
+
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+CalibReadMap {\bfseries \_\-readMap}\label{classCALICE_1_1CalibrationSet_a57c533ff2868f73cf2029d32568b3e20}
+
+\item 
+{\bf TempModel} $\ast$ {\bfseries \_\-tempModel}\label{classCALICE_1_1CalibrationSet_a1076b184fc1d2ae4bb05f204fbe07f34}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float {\bfseries \_\-scalingFactor}\label{classCALICE_1_1CalibrationSet_a6e4301d0f06d4afd7747c55cc1d72755}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$ class CALICE::CalibrationSet$<$ T $>$}
+
+Class which handles the storage of a set of LCHcalCalibrationObject. \begin{DoxyAuthor}{Author}
+S.Schmidt, DESY 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Jun 15 2007 
+\end{DoxyDate}
+
+
+Definition at line 28 of file CalibrationSet.hh.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+CalibrationSet.hh\end{DoxyCompactItemize}

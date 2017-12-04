@@ -1,0 +1,68 @@
+\section{CALICE::CellIterator Class Reference}
+\label{classCALICE_1_1CellIterator}\index{CALICE::CellIterator@{CALICE::CellIterator}}
+
+
+iterator to run over all valid (Mokka) cell IDs  
+
+
+{\ttfamily \#include $<$CellIterator.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries CellIterator} (const {\bf Mapper} $\ast$mapper, const unsigned int index=0)\label{classCALICE_1_1CellIterator_a55f049561c6efd49d8ac05d8fd1892d9}
+
+\item 
+void {\bf operator++} ()\label{classCALICE_1_1CellIterator_aa8632dfb854dab0d3afa78eee2d3e4fe}
+
+\begin{DoxyCompactList}\small\item\em jump to the next valid (Mokka) cell ID \item\end{DoxyCompactList}\item 
+bool {\bf operator!=} (const {\bf CellIterator} \&other) const \label{classCALICE_1_1CellIterator_afad05336400eeb213d96a7bb837e47da}
+
+\begin{DoxyCompactList}\small\item\em compare if two iterators are not equal \item\end{DoxyCompactList}\item 
+bool {\bf operator==} (const {\bf CellIterator} \&other) const \label{classCALICE_1_1CellIterator_a16d97b72ac170520e4ddbcb54ae2b7ae}
+
+\begin{DoxyCompactList}\small\item\em compare if two iterators are equal \item\end{DoxyCompactList}\item 
+int {\bf operator$\ast$} () const 
+\begin{DoxyCompactList}\small\item\em access to the current (Mokka) cell ID \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const {\bf Mapper} $\ast$ {\bfseries \_\-mapper}\label{classCALICE_1_1CellIterator_ac61b53457ed96438d6a3c20658a8b470}
+
+\item 
+unsigned int {\bfseries \_\-index}\label{classCALICE_1_1CellIterator_a3ec4eb2ac9ee642f134773d08b382281}
+
+\item 
+int {\bfseries \_\-currentCellID}\label{classCALICE_1_1CellIterator_ae8e06dc84e48a482fd2f6ee28d5833eb}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+iterator to run over all valid (Mokka) cell IDs To access the CellID use the $\ast$() operator.
+
+\begin{DoxyAuthor}{Author}
+{\tt Benjamin.Lutz@desy.de} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+June 2009 
+\end{DoxyDate}
+
+
+Definition at line 18 of file CellIterator.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::CellIterator@{CALICE::CellIterator}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!CALICE::CellIterator@{CALICE::CellIterator}}
+\subsubsection[{operator$\ast$}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::CellIterator::operator$\ast$ () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CellIterator_ad5a74f9ea744a9ccac7f40a549ddd4cf}
+
+
+access to the current (Mokka) cell ID \begin{DoxyReturn}{Returns}
+the current cell ID 
+\end{DoxyReturn}
+
+
+Definition at line 43 of file CellIterator.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+CellIterator.hh\item 
+CellIterator.cc\end{DoxyCompactItemize}

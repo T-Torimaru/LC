@@ -1,0 +1,73 @@
+\section{CALICE::VetoThreshold Class Reference}
+\label{classCALICE_1_1VetoThreshold}\index{CALICE::VetoThreshold@{CALICE::VetoThreshold}}
+
+
+Container class to store the threshold necessary to achive a certain purity.  
+
+
+{\ttfamily \#include $<$VetoThreshold.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf VetoThreshold} (const float purity, const float effectivePurity, const float threshold, const float thresholdError)\label{classCALICE_1_1VetoThreshold_a226f6dbb174911449b725d22212ec27f}
+
+\begin{DoxyCompactList}\small\item\em Constructor with initial values. \item\end{DoxyCompactList}\item 
+{\bf VetoThreshold} (EVENT::LCObject $\ast$object)\label{classCALICE_1_1VetoThreshold_a4431022bd02ec81814b58a483aac7027}
+
+\begin{DoxyCompactList}\small\item\em Constructor from LCObject. \item\end{DoxyCompactList}\item 
+{\bf $\sim$VetoThreshold} ()\label{classCALICE_1_1VetoThreshold_a9f9b18a6fa485c21230ac896344f048d}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+void {\bfseries setPurity} (float purity)\label{classCALICE_1_1VetoThreshold_ac5e33b1fc8d827493b95814ee3ec761a}
+
+\item 
+void {\bfseries setEffectivePurity} (float effectivePurity)\label{classCALICE_1_1VetoThreshold_af0b58c4922e7c8b20a077bc0c814492a}
+
+\item 
+void {\bfseries setThreshold} (float threshold)\label{classCALICE_1_1VetoThreshold_a09678e0ab3ff1350865f63a337092600}
+
+\item 
+void {\bfseries setThresholdError} (float thresholdError)\label{classCALICE_1_1VetoThreshold_ae3fca9234b325c9f4a981402c4e3b07a}
+
+\item 
+float {\bf getPurity} () const \label{classCALICE_1_1VetoThreshold_a53c8bbcfa151ff8466aae71800437ee6}
+
+\begin{DoxyCompactList}\small\item\em purity in [\%] \item\end{DoxyCompactList}\item 
+float {\bf getEffectivePurity} () const \label{classCALICE_1_1VetoThreshold_a379e4dffb8315d795c4b32935565afb9}
+
+\begin{DoxyCompactList}\small\item\em effective purity in [\%] \item\end{DoxyCompactList}\item 
+float {\bf getThreshold} () const \label{classCALICE_1_1VetoThreshold_a2dc83dbcf8b8f9cf35773876e1d3f44d}
+
+\begin{DoxyCompactList}\small\item\em threshold in [adc] \item\end{DoxyCompactList}\item 
+float {\bf getThresholdError} () const \label{classCALICE_1_1VetoThreshold_aab2390cd17bd58fd9817f28f7c4c7546}
+
+\begin{DoxyCompactList}\small\item\em threshold error [adc] \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1VetoThreshold_a9b4556a5735ef0b698000511f19a79d5}
+
+\begin{DoxyCompactList}\small\item\em Implementation of LCGenericObject::getTypeName. \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1VetoThreshold_aae0d1f793fa674889e63fd43ba62e5df}
+
+\begin{DoxyCompactList}\small\item\em Implementation of LCGenericObject::getDataDescription. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Container class to store the threshold necessary to achive a certain purity. The class contains two values fot the purity. One is the value which was requested. The limited step width of the threshold calculation leads to a small difference in the aimed at and obtained purity. Therefore, the effective purity reached with this threshold is saved in addition.
+
+The threshold error is half the width of the binning in the determination process.
+
+\begin{DoxyAuthor}{Author}
+{\tt Benjamin.Lutz@desy.de} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+September 2008 
+\end{DoxyDate}
+
+
+Definition at line 29 of file VetoThreshold.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+VetoThreshold.hh\item 
+VetoThreshold.cc\end{DoxyCompactItemize}

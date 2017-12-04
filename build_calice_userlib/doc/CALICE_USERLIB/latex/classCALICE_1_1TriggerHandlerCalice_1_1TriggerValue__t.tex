@@ -1,0 +1,62 @@
+\section{CALICE::TriggerHandlerCalice::TriggerValue\_\-t Class Reference}
+\label{classCALICE_1_1TriggerHandlerCalice_1_1TriggerValue__t}\index{CALICE::TriggerHandlerCalice::TriggerValue\_\-t@{CALICE::TriggerHandlerCalice::TriggerValue\_\-t}}
+
+
+The mask and value pair which identifies a physical trigger.  
+
+
+{\ttfamily \#include $<$TriggerHandlerCalice.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries TriggerValue\_\-t} (unsigned int a\_\-mask, short delay, unsigned short jitter)\label{classCALICE_1_1TriggerHandlerCalice_1_1TriggerValue__t_a56e8ec0b3e80409549ad98ca8245a77e}
+
+\item 
+unsigned int {\bfseries mask} () const \label{classCALICE_1_1TriggerHandlerCalice_1_1TriggerValue__t_add0c1d0da89f01121405560a629c6c34}
+
+\item 
+int {\bfseries delay} () const \label{classCALICE_1_1TriggerHandlerCalice_1_1TriggerValue__t_a3e2d5ab7de99ccb63371a8ae7335c783}
+
+\item 
+int {\bfseries jitter} () const \label{classCALICE_1_1TriggerHandlerCalice_1_1TriggerValue__t_abbdbdf575eb828695e0390376308902f}
+
+\item 
+bool {\bf operator$<$} (const {\bf TriggerValue\_\-t} \&a) const 
+\begin{DoxyCompactList}\small\item\em Compare two trigger values. \item\end{DoxyCompactList}\item 
+void {\bfseries set} (unsigned int a\_\-mask)\label{classCALICE_1_1TriggerHandlerCalice_1_1TriggerValue__t_a4cd0bec668e05d498d02d2b0671c06bd}
+
+\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int {\bfseries \_\-mask}\label{classCALICE_1_1TriggerHandlerCalice_1_1TriggerValue__t_aee8abf70433df56c927d36bb75ee8b3a}
+
+\item 
+short {\bfseries \_\-delay}\label{classCALICE_1_1TriggerHandlerCalice_1_1TriggerValue__t_af91721d714031adab5dbd3b0576fbbe2}
+
+\item 
+unsigned short {\bfseries \_\-jitter}\label{classCALICE_1_1TriggerHandlerCalice_1_1TriggerValue__t_a497a631a32fc7cbb15f7085884a8a466}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The mask and value pair which identifies a physical trigger. Usually ther physical trigger is identified by one bit in the trigger word (or input enable mask for the configuration). The physical trigger bits will not be export but the logical trigger to which the physical trigger is assigned. \begin{DoxySeeAlso}{See also}
+\doxyref{TriggerDef\_\-t}{p.}{classCALICE_1_1TriggerHandlerCalice_1_1TriggerDef__t} 
+\end{DoxySeeAlso}
+
+
+Definition at line 205 of file TriggerHandlerCalice.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::TriggerHandlerCalice::TriggerValue\_\-t@{CALICE::TriggerHandlerCalice::TriggerValue\_\-t}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!CALICE::TriggerHandlerCalice::TriggerValue_t@{CALICE::TriggerHandlerCalice::TriggerValue\_\-t}}
+\subsubsection[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool CALICE::TriggerHandlerCalice::TriggerValue\_\-t::operator$<$ (const {\bf TriggerValue\_\-t} \& {\em a}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1TriggerHandlerCalice_1_1TriggerValue__t_a456a1fba0c4702467978f606124f137a}
+
+
+Compare two trigger values. Needed, since the \doxyref{TriggerValue\_\-t}{p.}{classCALICE_1_1TriggerHandlerCalice_1_1TriggerValue__t} is used as a key for the trigger definition map. 
+
+Definition at line 217 of file TriggerHandlerCalice.hh.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+TriggerHandlerCalice.hh\end{DoxyCompactItemize}

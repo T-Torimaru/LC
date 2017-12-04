@@ -1,0 +1,878 @@
+\section{CALICE::AhcMapper Class Reference}
+\label{classCALICE_1_1AhcMapper}\index{CALICE::AhcMapper@{CALICE::AhcMapper}}
+
+
+AHCAL implementation of \doxyref{Mapper}{p.}{classCALICE_1_1Mapper} class.  
+
+
+{\ttfamily \#include $<$AhcMapper.hh$>$}Inheritance diagram for CALICE::AhcMapper::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCALICE_1_1AhcMapper}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf getCellIDFromModChipChan} (const unsigned int module, const unsigned int chip, const unsigned int channel) const 
+\begin{DoxyCompactList}\small\item\em generate (Mokka) cellID from module, chip, channel \item\end{DoxyCompactList}\item 
+unsigned int {\bf getModuleFromCellID} (const int cellID) const 
+\begin{DoxyCompactList}\small\item\em module number from (Mokka) CellID \item\end{DoxyCompactList}\item 
+unsigned int {\bf getModuleFromDAQID} (const int DAQchannel) const 
+\begin{DoxyCompactList}\small\item\em module number from DAQ channel ID \item\end{DoxyCompactList}\item 
+unsigned int {\bf getModule} (const unsigned int crate, const unsigned int slot, const unsigned int fe) const 
+\begin{DoxyCompactList}\small\item\em module number from triple crate, slot, fe \item\end{DoxyCompactList}\item 
+unsigned int {\bf getModule} (const unsigned int k) const 
+\begin{DoxyCompactList}\small\item\em module number from K \item\end{DoxyCompactList}\item 
+unsigned int {\bf getModuleFromCellID} (const int cellID, bool \&valid) const 
+\begin{DoxyCompactList}\small\item\em get module (number) in which this cell is included from (Mokka) cellID \item\end{DoxyCompactList}\item 
+unsigned int {\bf getModuleFromDAQID} (const int DAQchannel, bool \&valid) const 
+\begin{DoxyCompactList}\small\item\em get module (number) in which this (DAQ) channel is included \item\end{DoxyCompactList}\item 
+unsigned int {\bf getModuleFromModuleID} (const int moduleID, bool \&valid) const 
+\begin{DoxyCompactList}\small\item\em get module (number) from this (module) channel ID \item\end{DoxyCompactList}\item 
+unsigned int {\bf getChipFromCellID} (const int cellID) const 
+\begin{DoxyCompactList}\small\item\em chip number from (Mokka) CellID \item\end{DoxyCompactList}\item 
+unsigned int {\bf getChip} (const unsigned int i, const unsigned int j, const unsigned int k) const 
+\begin{DoxyCompactList}\small\item\em chip number from triple I, J, K \item\end{DoxyCompactList}\item 
+unsigned int {\bf getChanFromCellID} (const int cellID) const 
+\begin{DoxyCompactList}\small\item\em channel number from (Mokka) CellID \item\end{DoxyCompactList}\item 
+unsigned int {\bf getChan} (const unsigned int i, const unsigned int j, const unsigned int k) const 
+\begin{DoxyCompactList}\small\item\em chip number from triple I, J, K \item\end{DoxyCompactList}\item 
+unsigned int {\bf getCrateFromCellID} (const int cellID) const 
+\begin{DoxyCompactList}\small\item\em crate number from (Mokka) CellID \item\end{DoxyCompactList}\item 
+unsigned int {\bf getCrateFromModuleID} (const int moduleID) const 
+\begin{DoxyCompactList}\small\item\em crate number from Module cell ID \item\end{DoxyCompactList}\item 
+unsigned int {\bf getCrate} (const unsigned int module) const 
+\begin{DoxyCompactList}\small\item\em crate number from module number \item\end{DoxyCompactList}\item 
+unsigned int {\bf getSlotFromCellID} (const int cellID) const 
+\begin{DoxyCompactList}\small\item\em slot number from (Mokka) CellID \item\end{DoxyCompactList}\item 
+unsigned int {\bf getSlotFromModuleID} (const int moduleID) const 
+\begin{DoxyCompactList}\small\item\em slot number from Module cell ID \item\end{DoxyCompactList}\item 
+unsigned int {\bf getSlot} (const unsigned int module) const 
+\begin{DoxyCompactList}\small\item\em slot number from module number \item\end{DoxyCompactList}\item 
+unsigned int {\bf getFeFromCellID} (const int cellID) const 
+\begin{DoxyCompactList}\small\item\em front end number from (Mokka) CellID \item\end{DoxyCompactList}\item 
+unsigned int {\bf getFeFromModuleID} (const int moduleID) const 
+\begin{DoxyCompactList}\small\item\em front end number from Module cell ID \item\end{DoxyCompactList}\item 
+unsigned int {\bf getFe} (const unsigned int module) const 
+\begin{DoxyCompactList}\small\item\em front end number from module number \item\end{DoxyCompactList}\item 
+unsigned int {\bf getIFromModuleID} (const int moduleID) const 
+\begin{DoxyCompactList}\small\item\em I of (Mokka) cellID. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getIFromDAQID} (const int DAQchannel) const 
+\begin{DoxyCompactList}\small\item\em I of (Mokka) cellID. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getI} (const unsigned int module, const unsigned int chip, const unsigned int chan) const 
+\begin{DoxyCompactList}\small\item\em I of (Mokka) cellID. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getJFromModuleID} (const int moduleID) const 
+\begin{DoxyCompactList}\small\item\em J of (Mokka) cellID. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getJFromDAQID} (const int DAQchannel) const 
+\begin{DoxyCompactList}\small\item\em J of (Mokka) cellID. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getJ} (const unsigned int module, const unsigned chip, const unsigned chan) const 
+\begin{DoxyCompactList}\small\item\em J of (Mokka) cellID. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getKFromModuleID} (const int moduleID) const 
+\begin{DoxyCompactList}\small\item\em K of (Mokka) cellID. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getKFromDAQID} (const int DAQchannel) const 
+\begin{DoxyCompactList}\small\item\em K of (Mokka) cellID. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getK} (const unsigned int module) const 
+\begin{DoxyCompactList}\small\item\em K of (Mokka) cellID. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getISizeFromCellID} (const int cellID) const 
+\begin{DoxyCompactList}\small\item\em get cell size in I direction of (Mokka) CellID coordinate \item\end{DoxyCompactList}\item 
+unsigned int {\bf getISizeFromModuleID} (const int moduleID) const 
+\begin{DoxyCompactList}\small\item\em get cell size in I direction of (Mokka) CellID coordinate \item\end{DoxyCompactList}\item 
+unsigned int {\bf getISizeFromDAQID} (const int DAQchannel) const 
+\begin{DoxyCompactList}\small\item\em get cell size in I direction of (Mokka) CellID coordinate \item\end{DoxyCompactList}\item 
+unsigned int {\bf getISizeFromIJK} (const unsigned int i, const unsigned int j, const unsigned int k) const 
+\begin{DoxyCompactList}\small\item\em get cell size in I direction of (Mokka) CellID coordinate \item\end{DoxyCompactList}\item 
+unsigned int {\bf getISize} (const unsigned int module, const unsigned int chip, const unsigned int chan) const 
+\begin{DoxyCompactList}\small\item\em get cell size in I direction of (Mokka) CellID coordinate \item\end{DoxyCompactList}\item 
+unsigned int {\bf getJSizeFromCellID} (const int cellID) const 
+\begin{DoxyCompactList}\small\item\em get cell size in J direction of (Mokka) CellID coordinate \item\end{DoxyCompactList}\item 
+unsigned int {\bf getJSizeFromModuleID} (const int moduleID) const 
+\begin{DoxyCompactList}\small\item\em get cell size in J direction of (Mokka) CellID coordinate \item\end{DoxyCompactList}\item 
+unsigned int {\bf getJSizeFromDAQID} (const int DAQchannel) const 
+\begin{DoxyCompactList}\small\item\em get cell size in J direction of (Mokka) CellID coordinate \item\end{DoxyCompactList}\item 
+unsigned int {\bf getJSizeFromIJK} (const unsigned int i, const unsigned int j, const unsigned int k) const 
+\begin{DoxyCompactList}\small\item\em get cell size in J direction of (Mokka) CellID coordinate \item\end{DoxyCompactList}\item 
+unsigned int {\bf getJSize} (const unsigned int module, const unsigned int chip, const unsigned int chan) const 
+\begin{DoxyCompactList}\small\item\em get cell size in J direction of (Mokka) CellID coordinate \item\end{DoxyCompactList}\item 
+int {\bf getTrueCellID} (const int virtualCellIndex) const 
+\begin{DoxyCompactList}\small\item\em return identifying index of cell \item\end{DoxyCompactList}\item 
+int {\bf getTrueCellID} (const unsigned int i, const unsigned int j, const unsigned int k) const 
+\begin{DoxyCompactList}\small\item\em return identifying index of cell \item\end{DoxyCompactList}\item 
+unsigned int {\bf getTrueIFromCellID} (const int virtualCellID) const 
+\begin{DoxyCompactList}\small\item\em return I of identifying index of cell \item\end{DoxyCompactList}\item 
+unsigned int {\bf getTrueIFromIJK} (const unsigned int i, const unsigned int j, const unsigned int k) const 
+\begin{DoxyCompactList}\small\item\em return I of identifying index of cell \item\end{DoxyCompactList}\item 
+unsigned int {\bf getTrueI} (const unsigned int module, const unsigned int i, const unsigned int j) const 
+\begin{DoxyCompactList}\small\item\em return I of identifying index of cell \item\end{DoxyCompactList}\item 
+unsigned int {\bf getTrueJFromCellID} (const int virtualCellID) const 
+\begin{DoxyCompactList}\small\item\em return J of identifying index of cell \item\end{DoxyCompactList}\item 
+unsigned int {\bf getTrueJFromIJK} (const unsigned int i, const unsigned int j, const unsigned int k) const 
+\begin{DoxyCompactList}\small\item\em return J of identifying index of cell \item\end{DoxyCompactList}\item 
+unsigned int {\bf getTrueJ} (const unsigned int module, const unsigned int i, const unsigned int j) const 
+\begin{DoxyCompactList}\small\item\em return J of identifying index of cell \item\end{DoxyCompactList}\item 
+unsigned int {\bf getMaxModule} () const 
+\begin{DoxyCompactList}\small\item\em return maximum module number \item\end{DoxyCompactList}\item 
+unsigned int {\bf getMaxChip} () const 
+\begin{DoxyCompactList}\small\item\em return maximum chip number \item\end{DoxyCompactList}\item 
+unsigned int {\bf getMaxChannel} () const 
+\begin{DoxyCompactList}\small\item\em return maximum channel number \item\end{DoxyCompactList}\item 
+unsigned int {\bf getMaxI} () const 
+\begin{DoxyCompactList}\small\item\em return maximum I index \item\end{DoxyCompactList}\item 
+unsigned int {\bf getMaxJ} () const 
+\begin{DoxyCompactList}\small\item\em return maximum J index \item\end{DoxyCompactList}\item 
+unsigned int {\bf getMaxK} () const 
+\begin{DoxyCompactList}\small\item\em return maximum K index \item\end{DoxyCompactList}\item 
+void {\bf fill} (const lcio::LCCollection $\ast$moduleDescriptionCol, const lcio::LCCollection $\ast$moduleConnectionCol)
+\begin{DoxyCompactList}\small\item\em fills all necessary mapping information \item\end{DoxyCompactList}\item 
+void {\bf updateConnections} (const lcio::LCCollection $\ast$moduleConnectionCol)
+\begin{DoxyCompactList}\small\item\em updates the mapping information in the class (possible after first fill only) \item\end{DoxyCompactList}\item 
+void {\bf print} (std::ostream \&ostream) const 
+\begin{DoxyCompactList}\small\item\em print current data contents \item\end{DoxyCompactList}\item 
+void {\bf printStats} (std::ostream \&ostream) const 
+\begin{DoxyCompactList}\small\item\em print summary of current data contents \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int {\bf getIndexByCellID} (const int cellID) const 
+\begin{DoxyCompactList}\small\item\em get a compact index for storing data in vectors \item\end{DoxyCompactList}\item 
+unsigned int {\bf getIndexByDAQID} (const int ID) const 
+\begin{DoxyCompactList}\small\item\em get a compact index for storing data in vectors \item\end{DoxyCompactList}\item 
+unsigned int {\bf getIndexByModuleID} (const int ID) const 
+\begin{DoxyCompactList}\small\item\em get a compact index for storing data in vectors \item\end{DoxyCompactList}\item 
+unsigned int {\bf getMaxIndex} () const 
+\begin{DoxyCompactList}\small\item\em get the maximum value of the compact index for storing data in vectors \item\end{DoxyCompactList}\item 
+int {\bf getCellIDOfIndex} (unsigned int index) const 
+\begin{DoxyCompactList}\small\item\em get the cell ID of a certain compact index \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::map$<$ unsigned int, unsigned int $>$ {\bfseries indexMap\_\-t}\label{classCALICE_1_1AhcMapper_aeeed74906b2af733e9892f881e1e10f4}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries valid} (const unsigned int index, const std::vector$<$ bool $>$ \&availableVec) const \label{classCALICE_1_1AhcMapper_a74df7b7905102cd68455c8fbb1b69d7e}
+
+\item 
+bool {\bfseries valid} (const unsigned int index, const indexMap\_\-t \&indexMap) const \label{classCALICE_1_1AhcMapper_aa9eeded28b325b54d4a532fc645e5af4}
+
+\item 
+unsigned int {\bfseries getModuleTypeIndex} (const unsigned int module) const \label{classCALICE_1_1AhcMapper_aab9e59fb5ea9b3796a01ad47d52bc1f6}
+
+\item 
+unsigned int {\bfseries getIndexModuleConnection} (const unsigned int crate, const unsigned int slot, const unsigned int fe) const \label{classCALICE_1_1AhcMapper_a8971d066c71198c8bf247bfee592349a}
+
+\item 
+unsigned int {\bfseries getCrateFromModuleConnectionIndex} (const unsigned int index) const \label{classCALICE_1_1AhcMapper_a3222ce7720aef1e7731426231e433452}
+
+\item 
+unsigned int {\bfseries getSlotFromModuleConnectionIndex} (const unsigned int index) const \label{classCALICE_1_1AhcMapper_a9b25bfccd367acde37bae9b90e1d622e}
+
+\item 
+unsigned int {\bfseries getFeFromModuleConnectionIndex} (const unsigned int index) const \label{classCALICE_1_1AhcMapper_ad7258974e1fe5e8127b32b42619e2d1f}
+
+\item 
+unsigned int {\bfseries getCompactIndex} (const unsigned int module, const unsigned int chip, const unsigned int chan) const \label{classCALICE_1_1AhcMapper_aab353949bad76aaf654e41da8deae82c}
+
+\item 
+unsigned int {\bfseries getCompactIndex} (const unsigned int module, const unsigned int chanIndex) const \label{classCALICE_1_1AhcMapper_ae37272cef13cfad682728dafb3d2324a}
+
+\item 
+unsigned int {\bfseries getModuleFromCompactIndex} (const unsigned int index) const \label{classCALICE_1_1AhcMapper_ae9f81a2a43b50256d8950a11a88fa275}
+
+\item 
+unsigned int {\bfseries getChipFromCompactIndex} (const unsigned int index) const \label{classCALICE_1_1AhcMapper_ad18f22334b7691c9b60855d2d63008a3}
+
+\item 
+unsigned int {\bfseries getChanFromCompactIndex} (const unsigned int index) const \label{classCALICE_1_1AhcMapper_ae7a2539be4244d7fd0cdcf4afac85ad0}
+
+\item 
+unsigned int {\bfseries getModuleFromIndex} (const unsigned int index, bool \&valid) const \label{classCALICE_1_1AhcMapper_a56c48aba41a7c726a457c7653eeb1a5c}
+
+\item 
+unsigned int {\bfseries getIndexChan} (const unsigned int chip, const unsigned int chan) const \label{classCALICE_1_1AhcMapper_a4a8f47ef57d76bd9fb2c23f27a7c6451}
+
+\item 
+unsigned int {\bfseries getChipFromChanIndex} (const unsigned int index) const \label{classCALICE_1_1AhcMapper_a2324012066d0903ba23d5f96d35b1c78}
+
+\item 
+unsigned int {\bfseries getChanFromChanIndex} (const unsigned int index) const \label{classCALICE_1_1AhcMapper_ac06830ea38f15374a584208d4a40f86a}
+
+\item 
+unsigned int {\bfseries getIndexIJ} (const unsigned int i, const unsigned int j) const \label{classCALICE_1_1AhcMapper_a204172bf4005d14c1bd7b70df98186d3}
+
+\item 
+unsigned int {\bfseries getIFromIJIndex} (const unsigned int index) const \label{classCALICE_1_1AhcMapper_a32cb7e27e0ae8867fb64b3217e8b4dac}
+
+\item 
+unsigned int {\bfseries getJFromIJIndex} (const unsigned int index) const \label{classCALICE_1_1AhcMapper_adcd54575e64211dc80da66e269834daa}
+
+\item 
+void {\bfseries clearCrate} ()\label{classCALICE_1_1AhcMapper_aefa941cea97ef01e1f400fd82cbd36f8}
+
+\item 
+void {\bfseries clearSlot} ()\label{classCALICE_1_1AhcMapper_a79794d916def06030787c9f288aa2bad}
+
+\item 
+void {\bfseries clearModuleType} ()\label{classCALICE_1_1AhcMapper_a024182c2a5e1ad79e0a9de21fc8a11d7}
+
+\item 
+{\footnotesize template$<$class T $>$ }\\void {\bfseries initToSize} (std::vector$<$ T $>$ \&vec, const unsigned int size, const T initValue)\label{classCALICE_1_1AhcMapper_a821c963fd61c1ce4a060d80a26662549}
+
+\item 
+void {\bfseries initToSize} (std::vector$<$ bool $>$ \&vec, const unsigned int size)\label{classCALICE_1_1AhcMapper_a383c4627b641162bb5d7b78c60c3989a}
+
+\item 
+void {\bfseries initToSize} (std::vector$<$ unsigned int $>$ \&dataVec, std::vector$<$ bool $>$ \&availableVec, const unsigned int size)\label{classCALICE_1_1AhcMapper_ad6b97628b5c5e4db1fc12cee65cc3f4d}
+
+\item 
+void {\bfseries initFe} (const unsigned int maxFe=0)\label{classCALICE_1_1AhcMapper_ad15c4051d56f20ffc66e0b5d52f81890}
+
+\item 
+void {\bfseries initModule} (const unsigned int maxMod=0)\label{classCALICE_1_1AhcMapper_af15a8d86b8f3d9210b0899a0ee1f218e}
+
+\item 
+void {\bfseries initK} (const unsigned int maxK=0)\label{classCALICE_1_1AhcMapper_a76e45ca5b0e1e2706c49f6c8250a0d38}
+
+\item 
+void {\bfseries initIJChipChannel} (const unsigned int maxI=0, const unsigned int maxJ=0, const unsigned int maxChip=0, const unsigned int maxChan=0)\label{classCALICE_1_1AhcMapper_a65d452691dedf5bb9fecddf3bfb444b4}
+
+\item 
+void {\bfseries clear} ()\label{classCALICE_1_1AhcMapper_ac1442af64ad70eb7d0a1b7fc4c7f53b6}
+
+\item 
+void {\bfseries registerCrate} (const unsigned int crate)\label{classCALICE_1_1AhcMapper_ac58c61c50764da525db379b0d1fc9294}
+
+\item 
+bool {\bfseries crateAvailable} (const unsigned int crate) const \label{classCALICE_1_1AhcMapper_ae477476123f13062074f2b9c650bb9b1}
+
+\item 
+void {\bfseries registerSlot} (const unsigned int slot)\label{classCALICE_1_1AhcMapper_a41134f8aced6392e03c901a73ea9ee2a}
+
+\item 
+bool {\bfseries slotAvailable} (const unsigned int slot) const \label{classCALICE_1_1AhcMapper_a881f7bb684650d934f3e3f4712b89ee7}
+
+\item 
+void {\bfseries registerModuleType} (const unsigned int moduleTypeName)\label{classCALICE_1_1AhcMapper_a45518c038310ae5493d7012d40664725}
+
+\item 
+bool {\bfseries moduleTypeAvailable} (const unsigned int moduleTypeName) const \label{classCALICE_1_1AhcMapper_a81729b3b42e81d44cd31b29c95707f9e}
+
+\item 
+unsigned int {\bfseries countAvailable} (const std::vector$<$ bool $>$ \&vec) const \label{classCALICE_1_1AhcMapper_aac91ec43c8273688216ae604ac05e895}
+
+\item 
+void {\bfseries setModuleCrateSlotFe} (const unsigned int module, const unsigned int crate, const unsigned int slot, const unsigned int fe)\label{classCALICE_1_1AhcMapper_a4d3085baa30407cb160fc33c9c78bcd2}
+
+\item 
+void {\bfseries setModuleType} (const unsigned int module, const unsigned int typeName)\label{classCALICE_1_1AhcMapper_a2b871dd10848faae136940c12ca27bd9}
+
+\item 
+void {\bfseries setModuleK} (const unsigned int module, const unsigned int K)\label{classCALICE_1_1AhcMapper_a08953a9ae064d95675d9cd0a749570a6}
+
+\item 
+void {\bfseries setModuleTypeIJChipChannel} (const unsigned int moduleTypeName, const unsigned int I, const unsigned int J, const unsigned int sizeI, const unsigned int sizeJ, const unsigned int chip, const unsigned int channel)\label{classCALICE_1_1AhcMapper_a73d414346acc2e03052b22fabc050d86}
+
+\item 
+void {\bf fillModuleConnection} (const lcio::LCCollection $\ast$col)
+\begin{DoxyCompactList}\small\item\em sets the mapping information in the class, call after fillModuleDescription \item\end{DoxyCompactList}\item 
+void {\bf fillModuleDescription} (const lcio::LCCollection $\ast$col)
+\begin{DoxyCompactList}\small\item\em sets the module layout information in the class, module connection information will be invalidated \item\end{DoxyCompactList}\item 
+void {\bfseries getChipChannelForModuleDescriptionID} (const unsigned int id, const unsigned int moduleType, int \&chip, int \&channel) const \label{classCALICE_1_1AhcMapper_a8a11bbe860cd7085fbc975bfcc791c37}
+
+\item 
+unsigned int {\bfseries getCombinedModuleType} (const unsigned int moduleType) const \label{classCALICE_1_1AhcMapper_a8749cdfa53ef252ff887bfec78d5830b}
+
+\item 
+int {\bfseries correctCellIndex} (const unsigned int moduleType, const int cellIndex) const \label{classCALICE_1_1AhcMapper_a6469d9f7071f5ebb451530e41b5660a5}
+
+\item 
+const std::string {\bfseries printIfAvailable} (bool available, unsigned int value) const \label{classCALICE_1_1AhcMapper_ad775b776bc11616feafa9402b4d0f489}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int {\bfseries \_\-nChan}\label{classCALICE_1_1AhcMapper_ad1223d57d472b9a1a47d0cdc58b2e4d7}
+
+\item 
+unsigned int {\bfseries \_\-nChip}\label{classCALICE_1_1AhcMapper_acca5e6401c3930c7bd0a629ee3f93178}
+
+\item 
+unsigned int {\bfseries \_\-nFe}\label{classCALICE_1_1AhcMapper_a0d39db3b164e7810a9ce1bec289a1410}
+
+\item 
+unsigned int {\bfseries \_\-nSlot}\label{classCALICE_1_1AhcMapper_a298cc6f721fe2a76514a49e83831f4e3}
+
+\item 
+unsigned int {\bfseries \_\-maxSlot}\label{classCALICE_1_1AhcMapper_a51ef6086881b08eb51ca5af2bdcfcf83}
+
+\item 
+unsigned int {\bfseries \_\-nCrate}\label{classCALICE_1_1AhcMapper_a012ef86ff01b044e8c33b9871ecbc4b3}
+
+\item 
+unsigned int {\bfseries \_\-nMod}\label{classCALICE_1_1AhcMapper_a1f91d835a24d504011715fc7cecd4a8e}
+
+\item 
+unsigned int {\bfseries \_\-nModType}\label{classCALICE_1_1AhcMapper_a30c33cb167b3062406eaa4a51ef5b64f}
+
+\item 
+unsigned int {\bfseries \_\-nI}\label{classCALICE_1_1AhcMapper_a1df3b36a1945b9e16283de7159f61a4e}
+
+\item 
+unsigned int {\bfseries \_\-nJ}\label{classCALICE_1_1AhcMapper_a2228494a778640c420afe67f81f4c030}
+
+\item 
+unsigned int {\bfseries \_\-nK}\label{classCALICE_1_1AhcMapper_aa20c4b918afca46a0315529efb2263a0}
+
+\item 
+indexMap\_\-t {\bfseries \_\-crateIndex}\label{classCALICE_1_1AhcMapper_a141fb6ec8b5c668ed3ad02edb89c8e0c}
+
+\item 
+std::vector$<$ unsigned int $>$ {\bfseries \_\-crateNumber}\label{classCALICE_1_1AhcMapper_a9bcc209bc9a2cd2208451d9e7e98168f}
+
+\item 
+std::vector$<$ unsigned int $>$ {\bfseries \_\-slotIndex}\label{classCALICE_1_1AhcMapper_a870803394fbfaf449dc5e3a9564abebf}
+
+\item 
+std::vector$<$ unsigned int $>$ {\bfseries \_\-slotNumber}\label{classCALICE_1_1AhcMapper_ad2acb33e40a070102170ba90c90ac5df}
+
+\item 
+std::vector$<$ bool $>$ {\bfseries \_\-slotAvailable}\label{classCALICE_1_1AhcMapper_ad45184245e1c6716113883282fee77ad}
+
+\item 
+std::vector$<$ bool $>$ {\bfseries \_\-connectionAvailable}\label{classCALICE_1_1AhcMapper_a0ef975b1772d9da449e18a94535a6ebc}
+
+\item 
+std::vector$<$ bool $>$ {\bfseries \_\-moduleAvailable}\label{classCALICE_1_1AhcMapper_a45ba28e98649b1f4956548e266537db3}
+
+\item 
+std::vector$<$ unsigned int $>$ {\bfseries \_\-typeVmodule}\label{classCALICE_1_1AhcMapper_a165279f2c79fc7bdaa6c5b33186d7174}
+
+\item 
+std::vector$<$ unsigned int $>$ {\bfseries \_\-connectionVmodule}\label{classCALICE_1_1AhcMapper_a210096c9fb1c3286b2a07e7fcfc3d1f8}
+
+\item 
+std::vector$<$ bool $>$ {\bfseries \_\-connectionVmoduleAvailable}\label{classCALICE_1_1AhcMapper_ad03313bc91520da24585f0e3c5f33342}
+
+\item 
+std::vector$<$ unsigned int $>$ {\bfseries \_\-moduleVconnection}\label{classCALICE_1_1AhcMapper_a9492ae109cabc3256c81d0ead4282422}
+
+\item 
+std::vector$<$ unsigned int $>$ {\bfseries \_\-kVmodule}\label{classCALICE_1_1AhcMapper_a6c6557dbf072ae4742a2ead776a24d33}
+
+\item 
+std::vector$<$ bool $>$ {\bfseries \_\-kVmoduleAvailable}\label{classCALICE_1_1AhcMapper_a16287dbcd49d1734cd458fd21e27b8fb}
+
+\item 
+std::vector$<$ unsigned int $>$ {\bfseries \_\-moduleVk}\label{classCALICE_1_1AhcMapper_a804a038a75c8576ba7e92546e7ef2354}
+
+\item 
+std::vector$<$ bool $>$ {\bfseries \_\-kAvailable}\label{classCALICE_1_1AhcMapper_a867fa2028b681d060300594a36ac71cd}
+
+\item 
+std::vector$<$ unsigned int $>$ {\bfseries \_\-moduleTypeName}\label{classCALICE_1_1AhcMapper_a1708a1be8814517d1f7a42367671228c}
+
+\item 
+std::vector$<$ unsigned int $>$ {\bfseries \_\-moduleTypeIndex}\label{classCALICE_1_1AhcMapper_abea6e5e1063923458a28fd310827d013}
+
+\item 
+std::vector$<$ bool $>$ {\bfseries \_\-moduleTypeAvailable}\label{classCALICE_1_1AhcMapper_ab94ebc350d70dc688045317888d9bd6d}
+
+\item 
+std::vector$<$ std::vector$<$ unsigned int $>$ $>$ {\bfseries \_\-ijVchan}\label{classCALICE_1_1AhcMapper_af9679ed2782209ef2ea4b487751d1707}
+
+\item 
+std::vector$<$ std::vector$<$ bool $>$ $>$ {\bfseries \_\-chipChanAvailable}\label{classCALICE_1_1AhcMapper_a4d7169258a2dfcf9539c3ace81a51585}
+
+\item 
+std::vector$<$ std::vector$<$ unsigned int $>$ $>$ {\bfseries \_\-chanVij}\label{classCALICE_1_1AhcMapper_a8437e5029df0527ee3f54daf75e3c42b}
+
+\item 
+std::vector$<$ std::vector$<$ bool $>$ $>$ {\bfseries \_\-ijAvailable}\label{classCALICE_1_1AhcMapper_aad90e93df3179242870ac3ee1487381f}
+
+\item 
+std::vector$<$ std::vector$<$ bool $>$ $>$ {\bfseries \_\-ijSecondaryAvailable}\label{classCALICE_1_1AhcMapper_afc9cff60e5249739c91ea2a157259a6d}
+
+\item 
+std::vector$<$ std::vector$<$ unsigned int $>$ $>$ {\bfseries \_\-sizeIVchan}\label{classCALICE_1_1AhcMapper_a111d0fbbace0b66fe60eb42f338d7aba}
+
+\item 
+std::vector$<$ std::vector$<$ unsigned int $>$ $>$ {\bfseries \_\-sizeJVchan}\label{classCALICE_1_1AhcMapper_a55efa1152aec0daed30ad88b32c726ec}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+AHCAL implementation of \doxyref{Mapper}{p.}{classCALICE_1_1Mapper} class. \begin{DoxyParagraph}{invalid cells and exception handling}
+Most functions throw a \doxyref{CALICE::BadDataException}{p.}{classCALICE_1_1BadDataException} if an invalid combination or ID is queried. Not all invalid combinations will be detected by all commands, depending on the necessary coordinate transformations in the command. E.g.: When querying the module from a Mokka cell ID, only K is extracted from the ID. If no module exists for this K an exception is thrown. But there will be no exception thrown if K is valid but I and J belong to a channel which does not exist in this module.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+The protected getIndexFunctions do {\bfseries not} throw exceptions to allow a fast lookup of the index. Invalid channels are signalled with return value maxIndex+1.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{}
+Some functions have a second version that does a full check if the ID is valid without throwing an exception.
+\end{DoxyParagraph}
+\begin{DoxyAuthor}{Author}
+{\tt Benjamin.Lutz@desy.de} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.3 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+January 2010 
+\end{DoxyDate}
+
+
+Definition at line 44 of file AhcMapper.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::AhcMapper@{CALICE::AhcMapper}!fill@{fill}}
+\index{fill@{fill}!CALICE::AhcMapper@{CALICE::AhcMapper}}
+\subsubsection[{fill}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::AhcMapper::fill (const lcio::LCCollection $\ast$ {\em moduleDescriptionCol}, \/  const lcio::LCCollection $\ast$ {\em moduleConnectionCol})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1AhcMapper_ae4ab5d3a50a6105fb3fadb021790e46a}
+
+
+fills all necessary mapping information Module layout types are set from moduleDescription (chip,channel to I,J,K \& size) Module connections are set from moduleConnection (crate, slot, fe to module)
+
+Old settings are cleared before new are set.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em moduleDescriptionCol}]LCGenericObject collection of \doxyref{ModuleDescription}{p.}{classCALICE_1_1ModuleDescription} type \item[\mbox{$\leftarrow$} {\em moduleConnectionCol}]LCGenericObject collection of \doxyref{ModuleConnection}{p.}{classCALICE_1_1ModuleConnection} type \end{DoxyParams}
+
+
+Definition at line 937 of file AhcMapper.hh.
+
+References fillModuleConnection(), and fillModuleDescription().\index{CALICE::AhcMapper@{CALICE::AhcMapper}!fillModuleConnection@{fillModuleConnection}}
+\index{fillModuleConnection@{fillModuleConnection}!CALICE::AhcMapper@{CALICE::AhcMapper}}
+\subsubsection[{fillModuleConnection}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::AhcMapper::fillModuleConnection (const lcio::LCCollection $\ast$ {\em col})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1AhcMapper_ac73575dd541b8d4a392dfd6c60aa0da7}
+
+
+sets the mapping information in the class, call after fillModuleDescription The internal mapping of modules to type and electronics connection is set.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em col}]LCGenericObject collection of \doxyref{ModuleConnection}{p.}{classCALICE_1_1ModuleConnection} type \end{DoxyParams}
+
+
+Definition at line 15 of file AhcMapper.cc.
+
+References CALICE::Mapper::mappingModified().
+
+Referenced by fill(), and updateConnections().\index{CALICE::AhcMapper@{CALICE::AhcMapper}!fillModuleDescription@{fillModuleDescription}}
+\index{fillModuleDescription@{fillModuleDescription}!CALICE::AhcMapper@{CALICE::AhcMapper}}
+\subsubsection[{fillModuleDescription}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::AhcMapper::fillModuleDescription (const lcio::LCCollection $\ast$ {\em col})\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1AhcMapper_a82a573535ff437f989ecc52d2e8a7f8e}
+
+
+sets the module layout information in the class, module connection information will be invalidated The internal layout of modules, like channel to I,J,K and cell sizes are set.
+
+\begin{DoxyWarning}{Warning}
+module connection information will be invalidated, fillModuleConnection has to be called aftwards
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em col}]LCGenericObject collection of \doxyref{ModuleDescription}{p.}{classCALICE_1_1ModuleDescription} type \end{DoxyParams}
+
+
+Definition at line 121 of file AhcMapper.cc.
+
+References CALICE::CellIndex::getPadColumn(), CALICE::CellIndex::getPadRow(), and CALICE::Mapper::mappingModified().
+
+Referenced by fill().\index{CALICE::AhcMapper@{CALICE::AhcMapper}!getCellIDOfIndex@{getCellIDOfIndex}}
+\index{getCellIDOfIndex@{getCellIDOfIndex}!CALICE::AhcMapper@{CALICE::AhcMapper}}
+\subsubsection[{getCellIDOfIndex}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::AhcMapper::getCellIDOfIndex (unsigned int {\em index}) const\hspace{0.3cm}{\ttfamily  [inline, protected, virtual]}}\label{classCALICE_1_1AhcMapper_af53a274b50f0f75e632454a4072113eb}
+
+
+get the cell ID of a certain compact index \begin{DoxyWarning}{Warning}
+This cell ID will only contain information about I, J and K. If the encoding string contains additional fields this will have value 0.
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+setCellIDencoding
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+(Mokka) cell ID 
+\end{DoxyReturn}
+
+
+Implements {\bf CALICE::Mapper} \doxyref{}{p.}{group__CellIDgroup_ga1157f15cfe97ad035e6f6fb2fd32ce2e}.
+
+Definition at line 1061 of file AhcMapper.hh.
+
+References CALICE::DecoderSet::getCellID(), CALICE::Mapper::getDecoder(), getI(), getJ(), and getK().\index{CALICE::AhcMapper@{CALICE::AhcMapper}!getChan@{getChan}}
+\index{getChan@{getChan}!CALICE::AhcMapper@{CALICE::AhcMapper}}
+\subsubsection[{getChan}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getChan (const unsigned int {\em i}, \/  const unsigned int {\em j}, \/  const unsigned int {\em k}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1AhcMapper_adbb5dfc3ce2df861b5ef96f6910bc287}
+
+
+chip number from triple I, J, K 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em i}]I \item[\mbox{$\leftarrow$} {\em j}]J \item[\mbox{$\leftarrow$} {\em k}]K\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if invalid channel\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+channel number 
+\end{DoxyReturn}
+
+
+Definition at line 255 of file AhcMapper.hh.
+
+References getModule().
+
+Referenced by getChanFromCellID(), getISizeFromIJK(), and getJSizeFromIJK().\index{CALICE::AhcMapper@{CALICE::AhcMapper}!getChip@{getChip}}
+\index{getChip@{getChip}!CALICE::AhcMapper@{CALICE::AhcMapper}}
+\subsubsection[{getChip}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getChip (const unsigned int {\em i}, \/  const unsigned int {\em j}, \/  const unsigned int {\em k}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1AhcMapper_a4ff7ad6e9ea5756c7599b204b6c17c76}
+
+
+chip number from triple I, J, K 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em i}]I \item[\mbox{$\leftarrow$} {\em j}]J \item[\mbox{$\leftarrow$} {\em k}]K\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+chip number 
+\end{DoxyReturn}
+
+
+Definition at line 219 of file AhcMapper.hh.
+
+References getModule().
+
+Referenced by getChipFromCellID(), getISizeFromIJK(), and getJSizeFromIJK().\index{CALICE::AhcMapper@{CALICE::AhcMapper}!getCrate@{getCrate}}
+\index{getCrate@{getCrate}!CALICE::AhcMapper@{CALICE::AhcMapper}}
+\subsubsection[{getCrate}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getCrate (const unsigned int {\em module}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1AhcMapper_a5b28fe8764726c1b30d64e44195bdb5c}
+
+
+crate number from module number 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em module}]module number\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+crate number 
+\end{DoxyReturn}
+
+
+Definition at line 303 of file AhcMapper.hh.
+
+Referenced by getCrateFromCellID(), getCrateFromModuleID(), and print().\index{CALICE::AhcMapper@{CALICE::AhcMapper}!getFe@{getFe}}
+\index{getFe@{getFe}!CALICE::AhcMapper@{CALICE::AhcMapper}}
+\subsubsection[{getFe}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getFe (const unsigned int {\em module}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1AhcMapper_ae612d629678ea13991d810f3a72b4c96}
+
+
+front end number from module number 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em module}]module number\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+front end number 
+\end{DoxyReturn}
+
+
+Definition at line 390 of file AhcMapper.hh.
+
+Referenced by getFeFromCellID(), getFeFromModuleID(), and print().\index{CALICE::AhcMapper@{CALICE::AhcMapper}!getI@{getI}}
+\index{getI@{getI}!CALICE::AhcMapper@{CALICE::AhcMapper}}
+\subsubsection[{getI}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getI (const unsigned int {\em module}, \/  const unsigned int {\em chip}, \/  const unsigned int {\em chan}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1AhcMapper_ac64aa07b08160c003c6f02c4fa76746a}
+
+
+I of (Mokka) cellID. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em module}]module number \item[\mbox{$\leftarrow$} {\em chip}]chip number \item[\mbox{$\leftarrow$} {\em chan}]channel number\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+I 
+\end{DoxyReturn}
+
+
+Definition at line 435 of file AhcMapper.hh.
+
+Referenced by getCellIDFromModChipChan(), getCellIDOfIndex(), getIFromDAQID(), and getIFromModuleID().\index{CALICE::AhcMapper@{CALICE::AhcMapper}!getIndexByCellID@{getIndexByCellID}}
+\index{getIndexByCellID@{getIndexByCellID}!CALICE::AhcMapper@{CALICE::AhcMapper}}
+\subsubsection[{getIndexByCellID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getIndexByCellID (const int {\em cellID}) const\hspace{0.3cm}{\ttfamily  [inline, protected, virtual]}}\label{classCALICE_1_1AhcMapper_a1e4072147112a446171c2892ebe8e3e2}
+
+
+get a compact index for storing data in vectors 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em cellID}](Mokka) cell ID \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+compact index 
+\end{DoxyReturn}
+
+
+Implements {\bf CALICE::Mapper} \doxyref{}{p.}{group__CellIDgroup_gaaa6d826a6990c070c769f9754d2fbb76}.
+
+Definition at line 975 of file AhcMapper.hh.
+
+References CALICE::Mapper::getDecoder(), CALICE::DecoderSet::getIFromCellID(), CALICE::DecoderSet::getJFromCellID(), CALICE::DecoderSet::getKFromCellID(), and getMaxIndex().
+
+Referenced by getModuleFromCellID().\index{CALICE::AhcMapper@{CALICE::AhcMapper}!getIndexByDAQID@{getIndexByDAQID}}
+\index{getIndexByDAQID@{getIndexByDAQID}!CALICE::AhcMapper@{CALICE::AhcMapper}}
+\subsubsection[{getIndexByDAQID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getIndexByDAQID (const int {\em ID}) const\hspace{0.3cm}{\ttfamily  [inline, protected, virtual]}}\label{classCALICE_1_1AhcMapper_a54a30bb2306d44a9ab0240593c7425a8}
+
+
+get a compact index for storing data in vectors 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em ID}]DAQ channel ID \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+compact index 
+\end{DoxyReturn}
+
+
+Implements {\bf CALICE::Mapper} \doxyref{}{p.}{group__DAQgroup_ga4c00b2760cd3e935bed9db2f3fd28b06}.
+
+Definition at line 998 of file AhcMapper.hh.
+
+References CALICE::DecoderSet::getChannelFromDAQID(), CALICE::DecoderSet::getChipFromDAQID(), CALICE::DecoderSet::getCrateFromDAQID(), CALICE::Mapper::getDecoder(), CALICE::DecoderSet::getFeFromDAQID(), getMaxIndex(), and CALICE::DecoderSet::getSlotFromDAQID().
+
+Referenced by getModuleFromDAQID().\index{CALICE::AhcMapper@{CALICE::AhcMapper}!getIndexByModuleID@{getIndexByModuleID}}
+\index{getIndexByModuleID@{getIndexByModuleID}!CALICE::AhcMapper@{CALICE::AhcMapper}}
+\subsubsection[{getIndexByModuleID}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getIndexByModuleID (const int {\em ID}) const\hspace{0.3cm}{\ttfamily  [inline, protected, virtual]}}\label{classCALICE_1_1AhcMapper_aaa1748613f85f7573be51b7344c69a4e}
+
+
+get a compact index for storing data in vectors 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em ID}]Module channel ID \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+compact index 
+\end{DoxyReturn}
+
+
+Implements {\bf CALICE::Mapper} \doxyref{}{p.}{group__ModuleIDgroup_gad546fcc374c9168872a957d90d62bda3}.
+
+Definition at line 1033 of file AhcMapper.hh.
+
+References CALICE::DecoderSet::getChannelFromModuleID(), CALICE::DecoderSet::getChipFromModuleID(), CALICE::Mapper::getDecoder(), getMaxIndex(), and CALICE::DecoderSet::getModuleFromModuleID().
+
+Referenced by getModuleFromModuleID().\index{CALICE::AhcMapper@{CALICE::AhcMapper}!getISize@{getISize}}
+\index{getISize@{getISize}!CALICE::AhcMapper@{CALICE::AhcMapper}}
+\subsubsection[{getISize}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getISize (const unsigned int {\em module}, \/  const unsigned int {\em chip}, \/  const unsigned int {\em chan}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1AhcMapper_aca7b7a137d5df143f6ceac76b5b16989}
+
+
+get cell size in I direction of (Mokka) CellID coordinate 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em module}]module number \item[\mbox{$\leftarrow$} {\em chip}]chip number \item[\mbox{$\leftarrow$} {\em chan}]channel number\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+size in I
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 605 of file AhcMapper.hh.
+
+Referenced by getISizeFromDAQID(), getISizeFromIJK(), and getISizeFromModuleID().\index{CALICE::AhcMapper@{CALICE::AhcMapper}!getISizeFromIJK@{getISizeFromIJK}}
+\index{getISizeFromIJK@{getISizeFromIJK}!CALICE::AhcMapper@{CALICE::AhcMapper}}
+\subsubsection[{getISizeFromIJK}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getISizeFromIJK (const unsigned int {\em i}, \/  const unsigned int {\em j}, \/  const unsigned int {\em k}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1AhcMapper_ad8568ed214d5cfc81b89b0718eeb07dc}
+
+
+get cell size in I direction of (Mokka) CellID coordinate 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em i}]I \item[\mbox{$\leftarrow$} {\em j}]J \item[\mbox{$\leftarrow$} {\em k}]K\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+size in I
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 591 of file AhcMapper.hh.
+
+References getChan(), getChip(), getISize(), and getModule().
+
+Referenced by getISizeFromCellID().\index{CALICE::AhcMapper@{CALICE::AhcMapper}!getJ@{getJ}}
+\index{getJ@{getJ}!CALICE::AhcMapper@{CALICE::AhcMapper}}
+\subsubsection[{getJ}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getJ (const unsigned int {\em module}, \/  const unsigned {\em chip}, \/  const unsigned {\em chan}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1AhcMapper_ab02fce56e98d645a365eb23ba30afd4a}
+
+
+J of (Mokka) cellID. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em module}]module number \item[\mbox{$\leftarrow$} {\em chip}]chip number \item[\mbox{$\leftarrow$} {\em chan}]channel number\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+J 
+\end{DoxyReturn}
+
+
+Definition at line 484 of file AhcMapper.hh.
+
+Referenced by getCellIDFromModChipChan(), getCellIDOfIndex(), getJFromDAQID(), and getJFromModuleID().\index{CALICE::AhcMapper@{CALICE::AhcMapper}!getJSize@{getJSize}}
+\index{getJSize@{getJSize}!CALICE::AhcMapper@{CALICE::AhcMapper}}
+\subsubsection[{getJSize}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getJSize (const unsigned int {\em module}, \/  const unsigned int {\em chip}, \/  const unsigned int {\em chan}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1AhcMapper_a9d0ec772a24eb62b4538afbdec89a285}
+
+
+get cell size in J direction of (Mokka) CellID coordinate 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em module}]module number \item[\mbox{$\leftarrow$} {\em chip}]chip number \item[\mbox{$\leftarrow$} {\em chan}]channel number\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+size in J
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 683 of file AhcMapper.hh.
+
+Referenced by getJSizeFromDAQID(), getJSizeFromIJK(), and getJSizeFromModuleID().\index{CALICE::AhcMapper@{CALICE::AhcMapper}!getJSizeFromIJK@{getJSizeFromIJK}}
+\index{getJSizeFromIJK@{getJSizeFromIJK}!CALICE::AhcMapper@{CALICE::AhcMapper}}
+\subsubsection[{getJSizeFromIJK}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getJSizeFromIJK (const unsigned int {\em i}, \/  const unsigned int {\em j}, \/  const unsigned int {\em k}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1AhcMapper_a887299333957bbde8da9fed21d68c380}
+
+
+get cell size in J direction of (Mokka) CellID coordinate 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em i}]I \item[\mbox{$\leftarrow$} {\em j}]J \item[\mbox{$\leftarrow$} {\em k}]K\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+size in J
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 669 of file AhcMapper.hh.
+
+References getChan(), getChip(), getJSize(), and getModule().
+
+Referenced by getJSizeFromCellID().\index{CALICE::AhcMapper@{CALICE::AhcMapper}!getK@{getK}}
+\index{getK@{getK}!CALICE::AhcMapper@{CALICE::AhcMapper}}
+\subsubsection[{getK}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getK (const unsigned int {\em module}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1AhcMapper_a086377eb0064aab3337e8f12fcf40fc3}
+
+
+K of (Mokka) cellID. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em module}]module number\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+K
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 531 of file AhcMapper.hh.
+
+Referenced by CALICE::AhcMedianFilterTempProvider::applyCorrection(), getCellIDFromModChipChan(), getCellIDOfIndex(), getKFromDAQID(), getKFromModuleID(), and print().\index{CALICE::AhcMapper@{CALICE::AhcMapper}!getMaxIndex@{getMaxIndex}}
+\index{getMaxIndex@{getMaxIndex}!CALICE::AhcMapper@{CALICE::AhcMapper}}
+\subsubsection[{getMaxIndex}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getMaxIndex () const\hspace{0.3cm}{\ttfamily  [inline, protected, virtual]}}\label{classCALICE_1_1AhcMapper_a9b0644605c525dd581d8d8098764120e}
+
+
+get the maximum value of the compact index for storing data in vectors \begin{DoxyReturn}{Returns}
+maximum compact index 
+\end{DoxyReturn}
+
+
+Implements {\bf CALICE::Mapper} \doxyref{}{p.}{classCALICE_1_1Mapper_a34292aca2d87f6fc7f10094b5f7cab0e}.
+
+Definition at line 1057 of file AhcMapper.hh.
+
+Referenced by getIndexByCellID(), getIndexByDAQID(), and getIndexByModuleID().\index{CALICE::AhcMapper@{CALICE::AhcMapper}!getModule@{getModule}}
+\index{getModule@{getModule}!CALICE::AhcMapper@{CALICE::AhcMapper}}
+\subsubsection[{getModule}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getModule (const unsigned int {\em k}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1AhcMapper_a602233d596480f6f4b4248ddf6370d36}
+
+
+module number from K 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em k}]K\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+module number 
+\end{DoxyReturn}
+
+
+Definition at line 135 of file AhcMapper.hh.
+
+References CALICE::DecoderSet::getCellIDEncoding(), and CALICE::Mapper::getDecoder().\index{CALICE::AhcMapper@{CALICE::AhcMapper}!getModule@{getModule}}
+\index{getModule@{getModule}!CALICE::AhcMapper@{CALICE::AhcMapper}}
+\subsubsection[{getModule}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getModule (const unsigned int {\em crate}, \/  const unsigned int {\em slot}, \/  const unsigned int {\em fe}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1AhcMapper_aab2c351390279b6ddb691922c1697b94}
+
+
+module number from triple crate, slot, fe 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em crate}]crate number (should be 0xac) \item[\mbox{$\leftarrow$} {\em slot}]slot number \item[\mbox{$\leftarrow$} {\em fe}]fe number\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+module number
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails \end{DoxyExceptions}
+
+
+Definition at line 118 of file AhcMapper.hh.
+
+Referenced by getChan(), getChip(), getISizeFromIJK(), getJSizeFromIJK(), getModuleFromCellID(), getModuleFromDAQID(), getTrueIFromIJK(), and getTrueJFromIJK().\index{CALICE::AhcMapper@{CALICE::AhcMapper}!getSlot@{getSlot}}
+\index{getSlot@{getSlot}!CALICE::AhcMapper@{CALICE::AhcMapper}}
+\subsubsection[{getSlot}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::AhcMapper::getSlot (const unsigned int {\em module}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1AhcMapper_a503f8cfd0f24380502c278adeb087015}
+
+
+slot number from module number 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em module}]module number\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{BadDataException}{p.}{classCALICE_1_1BadDataException}}]if lookup fails\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+slot number 
+\end{DoxyReturn}
+
+
+Definition at line 346 of file AhcMapper.hh.
+
+Referenced by getSlotFromCellID(), getSlotFromModuleID(), and print().\index{CALICE::AhcMapper@{CALICE::AhcMapper}!print@{print}}
+\index{print@{print}!CALICE::AhcMapper@{CALICE::AhcMapper}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::AhcMapper::print (std::ostream \& {\em ostream}) const}\label{classCALICE_1_1AhcMapper_acb6947df0b876fd32cb206e576260fb9}
+
+
+print current data contents A detailed printout of the current layout is sent to the given stream.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\rightarrow$} {\em ostream}]stream for the output \end{DoxyParams}
+
+
+Definition at line 286 of file AhcMapper.cc.
+
+References getCrate(), getFe(), getK(), and getSlot().\index{CALICE::AhcMapper@{CALICE::AhcMapper}!printStats@{printStats}}
+\index{printStats@{printStats}!CALICE::AhcMapper@{CALICE::AhcMapper}}
+\subsubsection[{printStats}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::AhcMapper::printStats (std::ostream \& {\em ostream}) const}\label{classCALICE_1_1AhcMapper_aebe2a8845c6b24584f111009ef7f89c4}
+
+
+print summary of current data contents A summary of the current number of module types, modules, etc... is printed.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\rightarrow$} {\em ostream}]stream for the output \end{DoxyParams}
+
+
+Definition at line 254 of file AhcMapper.cc.\index{CALICE::AhcMapper@{CALICE::AhcMapper}!updateConnections@{updateConnections}}
+\index{updateConnections@{updateConnections}!CALICE::AhcMapper@{CALICE::AhcMapper}}
+\subsubsection[{updateConnections}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::AhcMapper::updateConnections (const lcio::LCCollection $\ast$ {\em moduleConnectionCol})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1AhcMapper_a33e187b8e578c2dc6062e63fdae16e28}
+
+
+updates the mapping information in the class (possible after first fill only) The internal mapping of modules to type and electronics connection is updated.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em moduleConnectionCol}]LCGenericObject collection of \doxyref{ModuleConnection}{p.}{classCALICE_1_1ModuleConnection} type \end{DoxyParams}
+
+
+Definition at line 949 of file AhcMapper.hh.
+
+References fillModuleConnection().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+AhcMapper.hh\item 
+AhcMapper.cc\end{DoxyCompactItemize}

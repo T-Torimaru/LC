@@ -1,0 +1,134 @@
+\section{CALICE::AhcCern2010TempProvider Class Reference}
+\label{classCALICE_1_1AhcCern2010TempProvider}\index{CALICE::AhcCern2010TempProvider@{CALICE::AhcCern2010TempProvider}}
+
+
+This is a temperature provider for the AHCAL.based on the studies of the temperature profiles from CERN 2010 data.  
+
+
+{\ttfamily \#include $<$AhcCern2010TempProvider.hh$>$}Inheritance diagram for CALICE::AhcCern2010TempProvider::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCALICE_1_1AhcCern2010TempProvider}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries AhcCern2010TempProvider} ({\bf AhcMapper} const $\ast$mapper)\label{classCALICE_1_1AhcCern2010TempProvider_a5e0bea69970f631796885bfa5e36d1ba}
+
+\item 
+void {\bfseries applyCorrection} ()\label{classCALICE_1_1AhcCern2010TempProvider_a4df8bc703a896c74956b470211396907}
+
+\item 
+float {\bf getSensorTemp} (int module, int sensor)
+\begin{DoxyCompactList}\small\item\em Returns the temperature of the specified sensor in the given module. \item\end{DoxyCompactList}\item 
+float {\bf getCellTemp} (int module, int chip, int chan)
+\begin{DoxyCompactList}\small\item\em Returns the temperature for the cell in the specified module connected to the given chip and channel. \item\end{DoxyCompactList}\item 
+float {\bf getCellTempError} (int module, int chip, int chan)
+\begin{DoxyCompactList}\small\item\em Returns the error on the temperature for the cell in the specified module connected to the given chip and channel. \item\end{DoxyCompactList}\item 
+float {\bf getAvgTemp} ()\label{classCALICE_1_1AhcCern2010TempProvider_ae70a7581cfb3f9e46fa6cf262cf4e945}
+
+\begin{DoxyCompactList}\small\item\em Return the average calorimeter temperature. \item\end{DoxyCompactList}\item 
+float {\bf getAvgModuleTemp} (unsigned module)\label{classCALICE_1_1AhcCern2010TempProvider_a18085f89099caedb30b3f341487c5db8}
+
+\begin{DoxyCompactList}\small\item\em Return the average temperature for the specified module. \item\end{DoxyCompactList}\item 
+int {\bf getSensor} (int chip, int chan)
+\begin{DoxyCompactList}\small\item\em Returns the closest sensor to cell connected to chip, chan according to DESY-\/THESIS-\/2008-\/050. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries applyCorrectionForUnreasonableSensors} (int module, int sensor)\label{classCALICE_1_1AhcCern2010TempProvider_a2cffa40eb335c8c66de5d939328215ac}
+
+\item 
+bool {\bfseries applyCorrectionForUnreasonableModules} (int module, int sensor)\label{classCALICE_1_1AhcCern2010TempProvider_a36b34c7e212637d22e887a7bd8bf681c}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries isModuleOff} (int module)\label{classCALICE_1_1AhcCern2010TempProvider_a2c784e8262e279884622c9a31ef504c8}
+
+\item 
+double {\bfseries median} (float a[$\,$], int n)\label{classCALICE_1_1AhcCern2010TempProvider_aee3afaa7ee7c7ed1a16b577f92033c49}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf AhcMapper} const $\ast$ {\bfseries \_\-mapper}\label{classCALICE_1_1AhcCern2010TempProvider_ac4824fa70b8bc9ad7c8eb6d58de6724f}
+
+\item 
+float {\bf \_\-calorimeterAverageTemperature}\label{classCALICE_1_1AhcCern2010TempProvider_a03d9619a42ad38435a85b93daeac3631}
+
+\begin{DoxyCompactList}\small\item\em average temperature of the calorimeter \item\end{DoxyCompactList}\item 
+float {\bfseries \_\-calorimeterAverageTemperatureRMS}\label{classCALICE_1_1AhcCern2010TempProvider_abd57ff9baed27c7e0459a11294ef4421}
+
+\item 
+float {\bfseries \_\-calorimeterAverageTemperatureCount}\label{classCALICE_1_1AhcCern2010TempProvider_a918fbf8455a23692314f0e913ad7cffa}
+
+\item 
+std::vector$<$ float $>$ {\bfseries \_\-moduleAverageTemperature}\label{classCALICE_1_1AhcCern2010TempProvider_a50ebabda787f8d5055938bb65edd7737}
+
+\item 
+std::vector$<$ float $>$ {\bfseries \_\-moduleAverageTemperatureRMS}\label{classCALICE_1_1AhcCern2010TempProvider_adb6bc09c87dfd5bc1aadc70d1bf56adb}
+
+\item 
+std::vector$<$ int $>$ {\bfseries \_\-moduleAverageTemperatureCount}\label{classCALICE_1_1AhcCern2010TempProvider_a6a78dcea2a8f624b2d425727626e5bd7}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is a temperature provider for the AHCAL.based on the studies of the temperature profiles from CERN 2010 data. 
+
+Definition at line 15 of file AhcCern2010TempProvider.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::AhcCern2010TempProvider@{CALICE::AhcCern2010TempProvider}!getCellTemp@{getCellTemp}}
+\index{getCellTemp@{getCellTemp}!CALICE::AhcCern2010TempProvider@{CALICE::AhcCern2010TempProvider}}
+\subsubsection[{getCellTemp}]{\setlength{\rightskip}{0pt plus 5cm}float CALICE::AhcCern2010TempProvider::getCellTemp (int {\em module}, \/  int {\em chip}, \/  int {\em chan})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCALICE_1_1AhcCern2010TempProvider_a50c27d4ce36e8bda65a50c41f3f55835}
+
+
+Returns the temperature for the cell in the specified module connected to the given chip and channel. This is only the definition of the interface, a concrete funtion has to be implemented in a derived class. Note: Modules are counted from 1! The valid range for module numbers thus is 1 to 38. 
+
+Implements {\bf CALICE::AhcTempProvider} \doxyref{}{p.}{classCALICE_1_1AhcTempProvider_aa12c75d45d7ade54316dd113a6bab2d1}.
+
+Definition at line 29 of file AhcCern2010TempProvider.cc.
+
+References getSensor(), CALICE::AhcTempProvider::newCalibCol, CALICE::AhcTempProvider::newSanityRange, CALICE::AhcTempProvider::newSroModCol, and CALICE::AhcTempProvider::sensorTemp.\index{CALICE::AhcCern2010TempProvider@{CALICE::AhcCern2010TempProvider}!getCellTempError@{getCellTempError}}
+\index{getCellTempError@{getCellTempError}!CALICE::AhcCern2010TempProvider@{CALICE::AhcCern2010TempProvider}}
+\subsubsection[{getCellTempError}]{\setlength{\rightskip}{0pt plus 5cm}float CALICE::AhcCern2010TempProvider::getCellTempError (int {\em module}, \/  int {\em chip}, \/  int {\em chan})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCALICE_1_1AhcCern2010TempProvider_a49df2cbe0a0e947fc69fc2f9e6d4af7e}
+
+
+Returns the error on the temperature for the cell in the specified module connected to the given chip and channel. This is only the definition of the interface, a concrete funtion has to be implemented in a derived class. Note: Modules are counted from 1! The valid range for module numbers thus is 1 to 38. 
+
+Implements {\bf CALICE::AhcTempProvider} \doxyref{}{p.}{classCALICE_1_1AhcTempProvider_a72d155c16a772198a0587886e8d56102}.
+
+Definition at line 51 of file AhcCern2010TempProvider.cc.
+
+References getSensor(), CALICE::AhcTempProvider::newCalibCol, CALICE::AhcTempProvider::newSanityRange, CALICE::AhcTempProvider::newSroModCol, and CALICE::AhcTempProvider::sensorTempError.\index{CALICE::AhcCern2010TempProvider@{CALICE::AhcCern2010TempProvider}!getSensor@{getSensor}}
+\index{getSensor@{getSensor}!CALICE::AhcCern2010TempProvider@{CALICE::AhcCern2010TempProvider}}
+\subsubsection[{getSensor}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::AhcCern2010TempProvider::getSensor (int {\em chip}, \/  int {\em chan})}\label{classCALICE_1_1AhcCern2010TempProvider_a40cf8afb0b47f06a62959c3116b11dd8}
+
+
+Returns the closest sensor to cell connected to chip, chan according to DESY-\/THESIS-\/2008-\/050. For the connection between the tile, chip and temperature sensors numbers, see {\tt http://www.desy.de/$\sim$richters/IJ-\/to-\/chip-\/channel/} 
+
+Definition at line 74 of file AhcCern2010TempProvider.cc.
+
+Referenced by getCellTemp(), and getCellTempError().\index{CALICE::AhcCern2010TempProvider@{CALICE::AhcCern2010TempProvider}!getSensorTemp@{getSensorTemp}}
+\index{getSensorTemp@{getSensorTemp}!CALICE::AhcCern2010TempProvider@{CALICE::AhcCern2010TempProvider}}
+\subsubsection[{getSensorTemp}]{\setlength{\rightskip}{0pt plus 5cm}float CALICE::AhcCern2010TempProvider::getSensorTemp (int {\em module}, \/  int {\em sensor})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCALICE_1_1AhcCern2010TempProvider_ab8220e0d64d2785cc896beae3db00e12}
+
+
+Returns the temperature of the specified sensor in the given module. 
+
+Implements {\bf CALICE::AhcTempProvider} \doxyref{}{p.}{classCALICE_1_1AhcTempProvider_a9db9d635f879ed75ae983bbeca800ff8}.
+
+Definition at line 490 of file AhcCern2010TempProvider.cc.
+
+References CALICE::AhcTempProvider::newCalibCol, CALICE::AhcTempProvider::newSanityRange, CALICE::AhcTempProvider::newSroModCol, and CALICE::AhcTempProvider::sensorTemp.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+AhcCern2010TempProvider.hh\item 
+AhcCern2010TempProvider.cc\end{DoxyCompactItemize}

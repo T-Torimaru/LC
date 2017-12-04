@@ -1,0 +1,28 @@
+\section{SimpleArray\_\-t$<$ T $>$ Class Template Reference}
+\label{classSimpleArray__t}\index{SimpleArray\_\-t@{SimpleArray\_\-t}}
+
+
+Wrapper around \doxyref{std::vector}{p.}{classstd_1_1vector} which adds optional boundary check (at compile time).  
+
+
+{\ttfamily \#include $<$SimpleArray\_\-t.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+T \& {\bfseries operator[$\,$]} (UInt\_\-t index)\label{classSimpleArray__t_a72e9bd2e6f3d937d9033079996d86e6d}
+
+\item 
+const T \& {\bfseries operator[$\,$]} (UInt\_\-t index) const \label{classSimpleArray__t_a840667681d487279ea8dc81faa147c77}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$ class SimpleArray\_\-t$<$ T $>$}
+
+Wrapper around \doxyref{std::vector}{p.}{classstd_1_1vector} which adds optional boundary check (at compile time). To have boundary checks whenever elements are accessed with the operator [], define the preprocessor variable BOUNDARY\_\-CHECK: {\ttfamily  e.g: make CXXFLAGS=\char`\"{}-\/g -\/DBOUNDARY\_\-CHECK\char`\"{} } NOTE: the validity of iterators is {\bfseries never} verified. 
+
+Definition at line 19 of file SimpleArray\_\-t.hh.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+SimpleArray\_\-t.hh\end{DoxyCompactItemize}

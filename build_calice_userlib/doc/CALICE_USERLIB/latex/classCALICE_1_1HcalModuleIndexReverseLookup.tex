@@ -1,0 +1,51 @@
+\section{CALICE::HcalModuleIndexReverseLookup Class Reference}
+\label{classCALICE_1_1HcalModuleIndexReverseLookup}\index{CALICE::HcalModuleIndexReverseLookup@{CALICE::HcalModuleIndexReverseLookup}}
+
+
+Class to simplify the lookup geometrical index to hardware index.  
+
+
+{\ttfamily \#include $<$HcalModuleIndexReverseLookup.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries createIndexReverseLookup} (const {\bf MappingAndAlignment} \&mapping)\label{classCALICE_1_1HcalModuleIndexReverseLookup_a03bfcfc65304f8f75efd7108c39cd7ee}
+
+\item 
+pair$<$ UInt\_\-t, UInt\_\-t $>$ {\bfseries getModuleAndCellIndex} (const {\bf MappingAndAlignment} \&mapping, const {\bf HcalCellIndex} \&a\_\-cell\_\-index) const \label{classCALICE_1_1HcalModuleIndexReverseLookup_a1e5edb46e871ee9ac4b260385de6282d}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef {\bf SimpleArray\_\-t}$<$ {\bf SimpleArray\_\-t}$<$ unsigned short $>$ $>$ {\bfseries CellIndexArray\_\-t}\label{classCALICE_1_1HcalModuleIndexReverseLookup_acfe7ef8150b7fc889aee587be5a9ff95}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf SimpleArray\_\-t}$<$ {\bf CellIndexArray\_\-t} $>$ {\bf \_\-cellIndexArray}
+\begin{DoxyCompactList}\small\item\em Array which contains for each cell the cell indices for pad row and column. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to simplify the lookup geometrical index to hardware index. \begin{DoxyAuthor}{Author}
+(probably) Sebastian Schmidt 
+\end{DoxyAuthor}
+
+
+Definition at line 12 of file HcalModuleIndexReverseLookup.hh.
+
+\subsection{Field Documentation}
+\index{CALICE::HcalModuleIndexReverseLookup@{CALICE::HcalModuleIndexReverseLookup}!\_\-cellIndexArray@{\_\-cellIndexArray}}
+\index{\_\-cellIndexArray@{\_\-cellIndexArray}!CALICE::HcalModuleIndexReverseLookup@{CALICE::HcalModuleIndexReverseLookup}}
+\subsubsection[{\_\-cellIndexArray}]{\setlength{\rightskip}{0pt plus 5cm}{\bf SimpleArray\_\-t}$<$ {\bf CellIndexArray\_\-t} $>$ {\bf CALICE::HcalModuleIndexReverseLookup::\_\-cellIndexArray}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1HcalModuleIndexReverseLookup_a28b33f49d28d85e2fed000e524429e24}
+
+
+Array which contains for each cell the cell indices for pad row and column. 
+
+Definition at line 35 of file HcalModuleIndexReverseLookup.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+HcalModuleIndexReverseLookup.hh\item 
+HcalModuleIndexReverseLookup.cc\end{DoxyCompactItemize}

@@ -1,0 +1,71 @@
+\section{CALICE::EUDAQBlock Class Reference}
+\label{classCALICE_1_1EUDAQBlock}\index{CALICE::EUDAQBlock@{CALICE::EUDAQBlock}}
+
+
+Class for the SLCIO EUDAQ Data as acquired by the EUDAQ system.  
+
+
+{\ttfamily \#include $<$EUDAQBlock.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf EUDAQBlock} (int CycleNr, int BunchXID, int ChipID, int EvtNr, int Channel, int TDC, int ADC, int HitBit, int GainBit)\label{classCALICE_1_1EUDAQBlock_a2576c4ead40588d8ea075d9629926ce3}
+
+\begin{DoxyCompactList}\small\item\em Convenient c'tor. \item\end{DoxyCompactList}\item 
+{\bf EUDAQBlock} (LCObject $\ast$obj)\label{classCALICE_1_1EUDAQBlock_adf2c1a0b660a881f637ae260033b2068}
+
+\begin{DoxyCompactList}\small\item\em 'Copy constructor' needed to interpret LCCollection read from file/database. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$EUDAQBlock} ()\label{classCALICE_1_1EUDAQBlock_ac009640c79883d5b236ffa1f01a4da08}
+
+\begin{DoxyCompactList}\small\item\em Important for memory handling. \item\end{DoxyCompactList}\item 
+int {\bf GetCycleNr} () const \label{classCALICE_1_1EUDAQBlock_a7267f8e75e5ee64c2b558a1cb58b5370}
+
+\begin{DoxyCompactList}\small\item\em get the CycleNr. \item\end{DoxyCompactList}\item 
+int {\bf GetBunchXID} () const \label{classCALICE_1_1EUDAQBlock_a9e868629e66c71f4a5086ee4515d75a6}
+
+\begin{DoxyCompactList}\small\item\em get the BunchXID. \item\end{DoxyCompactList}\item 
+int {\bf GetChipID} () const \label{classCALICE_1_1EUDAQBlock_a29e7cb6cea36a5726c185af80f602a04}
+
+\begin{DoxyCompactList}\small\item\em get the ChipID. \item\end{DoxyCompactList}\item 
+int {\bf GetEvtNr} () const \label{classCALICE_1_1EUDAQBlock_a274bfd6d90f473f1875fd2045268e27f}
+
+\begin{DoxyCompactList}\small\item\em get the EvtNr. \item\end{DoxyCompactList}\item 
+int {\bf GetChannel} () const \label{classCALICE_1_1EUDAQBlock_a5665cd40d1deb96c634a7e131be981a8}
+
+\begin{DoxyCompactList}\small\item\em get the Channel. \item\end{DoxyCompactList}\item 
+int {\bf GetTDC} () const \label{classCALICE_1_1EUDAQBlock_a66a6c244efdc2357b15350e778f98e56}
+
+\begin{DoxyCompactList}\small\item\em get the TDC. \item\end{DoxyCompactList}\item 
+int {\bf GetADC} () const \label{classCALICE_1_1EUDAQBlock_ac6ad7fd2adcc72ed2aa861eac4d89a0d}
+
+\begin{DoxyCompactList}\small\item\em get the ADC. \item\end{DoxyCompactList}\item 
+int {\bf GetHitBit} () const \label{classCALICE_1_1EUDAQBlock_a42be25f91cc050d64bba79ff4718b5c4}
+
+\begin{DoxyCompactList}\small\item\em get the HitBit. \item\end{DoxyCompactList}\item 
+int {\bf GetGainBit} () const \label{classCALICE_1_1EUDAQBlock_ac2573362003677a183343529bc63d74c}
+
+\begin{DoxyCompactList}\small\item\em get the GainBit. \item\end{DoxyCompactList}\item 
+void {\bf print} (std::ostream \&os, int)\label{classCALICE_1_1EUDAQBlock_a4f65b14367aa1123dd7a8a74e5d24ee1}
+
+\begin{DoxyCompactList}\small\item\em Convenient print method. \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1EUDAQBlock_aea8613f7fc6cbb4bcbc0294a020d3eca}
+
+\begin{DoxyCompactList}\small\item\em Return the type of the class. \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1EUDAQBlock_a48d80a041501c9eaada74c500d78074c}
+
+\begin{DoxyCompactList}\small\item\em Return a brief description of the data members. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for the SLCIO EUDAQ Data as acquired by the EUDAQ system. \begin{DoxyAuthor}{Author}
+A. Irles, based on the \doxyref{LabviewBlock2}{p.}{classCALICE_1_1LabviewBlock2} writen by S. Lu DESY Hamburg 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+May 20 2015 Created for 2015 testbeams EUDAQ data format. 
+\end{DoxyDate}
+
+
+Definition at line 23 of file EUDAQBlock.hh.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+EUDAQBlock.hh\end{DoxyCompactItemize}

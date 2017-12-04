@@ -1,0 +1,123 @@
+\section{CALICE::fastMappingIIProcessor Class Reference}
+\label{classCALICE_1_1fastMappingIIProcessor}\index{CALICE::fastMappingIIProcessor@{CALICE::fastMappingIIProcessor}}
+
+
+A class which converts CaliceHits with all calibrations applied into CalorimeterHits.  
+
+
+{\ttfamily \#include $<$fastMappingIIProcessor.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Processor $\ast$ {\bfseries newProcessor} ()\label{classCALICE_1_1fastMappingIIProcessor_a84d864c37b51a69f3a5bb3336d11290b}
+
+\item 
+virtual void {\bfseries init} ()\label{classCALICE_1_1fastMappingIIProcessor_ad804302fd35900a04771a1647ee9584c}
+
+\item 
+virtual void {\bfseries processRunHeader} (LCRunHeader $\ast$run)\label{classCALICE_1_1fastMappingIIProcessor_a4dcdb93e7877928387c0da90288cd243}
+
+\item 
+virtual void {\bfseries processEvent} (LCEvent $\ast$evt)\label{classCALICE_1_1fastMappingIIProcessor_ae133d2ea34fae73e13cbbb23d567eef6}
+
+\item 
+virtual void {\bfseries check} (LCEvent $\ast$evt)\label{classCALICE_1_1fastMappingIIProcessor_ade7ed6e2dea19fb8b0dce38bececbab4}
+
+\item 
+virtual void {\bfseries end} ()\label{classCALICE_1_1fastMappingIIProcessor_a720b8590ee681bb8f78bca09370129b7}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bfseries updateInverseMap} ()\label{classCALICE_1_1fastMappingIIProcessor_ac8554c8b7fe9ed1e0ca25a08eeb8f527}
+
+\item 
+virtual void {\bfseries moduleTypeChanged} (lcio::LCCollection $\ast$col)\label{classCALICE_1_1fastMappingIIProcessor_a28c17f0864be618ad5168c9849f1ea01}
+
+\item 
+virtual void {\bfseries moduleLocationChanged} (lcio::LCCollection $\ast$col)\label{classCALICE_1_1fastMappingIIProcessor_aaa57f57f89b2b16635dba790b60c212c}
+
+\item 
+virtual void {\bfseries moduleConnectionChanged} (lcio::LCCollection $\ast$col)\label{classCALICE_1_1fastMappingIIProcessor_a06bf0a87fa87dd8ed6bd979b8fbeb86b}
+
+\item 
+virtual void {\bfseries detectorTransformationChanged} (lcio::LCCollection $\ast$col)\label{classCALICE_1_1fastMappingIIProcessor_a40c88849c1b343429941a7b64553aa63}
+
+\item 
+virtual void {\bfseries referenceTransformationChanged} (lcio::LCCollection $\ast$col)\label{classCALICE_1_1fastMappingIIProcessor_a13db4be9a8c31bb01a20915394007d12}
+
+\item 
+virtual void {\bfseries stagePositionChanged} (lcio::LCCollection $\ast$col)\label{classCALICE_1_1fastMappingIIProcessor_af962a3c913e7154e79d52ca661526e38}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bfseries \_\-inputColName}\label{classCALICE_1_1fastMappingIIProcessor_a406af5c65eb5b7fae75a9106701a41ce}
+
+\item 
+std::string {\bfseries \_\-outputColName}\label{classCALICE_1_1fastMappingIIProcessor_a0ed73861a50691a4514c0444354d1731}
+
+\item 
+std::string {\bfseries \_\-colNameModuleDescription}\label{classCALICE_1_1fastMappingIIProcessor_a915ba9b5892f04844a61ccc01614db62}
+
+\item 
+std::string {\bfseries \_\-colNameModuleLocation}\label{classCALICE_1_1fastMappingIIProcessor_ac65181dd90dbb0696ab38e0a8ff6c164}
+
+\item 
+std::string {\bfseries \_\-colNameModuleConnection}\label{classCALICE_1_1fastMappingIIProcessor_acfa571d0e14c1121db44ebc355a561f1}
+
+\item 
+std::string {\bfseries \_\-colNameDetectorTransformation}\label{classCALICE_1_1fastMappingIIProcessor_af7bcda3e2cda9ee7e41dcf780243c1fd}
+
+\item 
+std::string {\bfseries \_\-colNameReferenceTransformation}\label{classCALICE_1_1fastMappingIIProcessor_a7d554688321a42669be0482eac40daf3}
+
+\item 
+std::string {\bfseries \_\-colNameStageCollection}\label{classCALICE_1_1fastMappingIIProcessor_ac85b4eccc768ff4ca78280aaadab1402}
+
+\item 
+ConditionsChangeDelegator$<$ {\bf fastMappingIIProcessor} $>$ {\bfseries \_\-moduleTypeChange}\label{classCALICE_1_1fastMappingIIProcessor_a3bec21933dd1ca7dec20c925ec4a502a}
+
+\item 
+ConditionsChangeDelegator$<$ {\bf fastMappingIIProcessor} $>$ {\bfseries \_\-moduleLocationChange}\label{classCALICE_1_1fastMappingIIProcessor_ac210ebf21a676091fbc1c481c90705b0}
+
+\item 
+ConditionsChangeDelegator$<$ {\bf fastMappingIIProcessor} $>$ {\bfseries \_\-moduleConnectionChange}\label{classCALICE_1_1fastMappingIIProcessor_a1313dddb8ca17fb34b960428e1458635}
+
+\item 
+ConditionsChangeDelegator$<$ {\bf fastMappingIIProcessor} $>$ {\bfseries \_\-detectorTransformationChange}\label{classCALICE_1_1fastMappingIIProcessor_ad0ad5353b297ad496673e4cddb12b4b6}
+
+\item 
+ConditionsChangeDelegator$<$ {\bf fastMappingIIProcessor} $>$ {\bfseries \_\-referenceTransformationChange}\label{classCALICE_1_1fastMappingIIProcessor_a237eeddbe142d84c163d3449224ec161}
+
+\item 
+ConditionsChangeDelegator$<$ {\bf fastMappingIIProcessor} $>$ {\bfseries \_\-stagePositionChange}\label{classCALICE_1_1fastMappingIIProcessor_a5f259d239bffa8e68990f72199009810}
+
+\item 
+MappingAndAlignment {\bfseries \_\-mapping}\label{classCALICE_1_1fastMappingIIProcessor_ad9dbad825d7b12c0e384651966588f32}
+
+\item 
+int {\bfseries \_\-viewConnectionTree}\label{classCALICE_1_1fastMappingIIProcessor_a5512a3532b85add946d846b64112ff3c}
+
+\item 
+std::map$<$ unsigned, unsigned $>$ {\bfseries \_\-inverseModuleMap}\label{classCALICE_1_1fastMappingIIProcessor_a608616991c0a6a9aacc5230b676d059c}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A class which converts CaliceHits with all calibrations applied into CalorimeterHits. \begin{DoxyAuthor}{Author}
+S.Schmidt DESY 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+July 31 2006 
+\end{DoxyDate}
+
+
+Definition at line 30 of file fastMappingIIProcessor.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+fastMappingIIProcessor.hh\item 
+fastMappingIIProcessor.cc\end{DoxyCompactItemize}

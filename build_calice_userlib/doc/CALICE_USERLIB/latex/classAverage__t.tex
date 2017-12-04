@@ -1,0 +1,124 @@
+\section{Average\_\-t Class Reference}
+\label{classAverage__t}\index{Average\_\-t@{Average\_\-t}}
+
+
+Calculate mean and standard deviation and find minimum and maximum value.  
+
+
+{\ttfamily \#include $<$Average\_\-t.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Average\_\-t} ()\label{classAverage__t_aa221818a7a022083297e9cab811252e6}
+
+\begin{DoxyCompactList}\small\item\em Default constructor initialses all arrays to be ready to gather statastics of a variable. \item\end{DoxyCompactList}\item 
+void {\bf add} (Float\_\-t value, Float\_\-t weight=1.)
+\begin{DoxyCompactList}\small\item\em Build the sum and the sum of squares and find the minimum and maximum value. \item\end{DoxyCompactList}\item 
+void {\bf calculate} ()
+\begin{DoxyCompactList}\small\item\em Calculate the standard deviation and the mean. \item\end{DoxyCompactList}\item 
+Double\_\-t {\bf mean} () const 
+\begin{DoxyCompactList}\small\item\em Return the mean value. \item\end{DoxyCompactList}\item 
+Double\_\-t {\bf sigma} () const 
+\begin{DoxyCompactList}\small\item\em Return the standard deviation. \item\end{DoxyCompactList}\item 
+Float\_\-t {\bf min} () const \label{classAverage__t_a7ca3e52df15cd84cd40b8456f3d505e8}
+
+\begin{DoxyCompactList}\small\item\em Return the minimum value. \item\end{DoxyCompactList}\item 
+Float\_\-t {\bf max} () const \label{classAverage__t_a1cfde99d82e467a5f6adf92d51955225}
+
+\begin{DoxyCompactList}\small\item\em Return the maximum value. \item\end{DoxyCompactList}\item 
+Double\_\-t {\bf weight} () const \label{classAverage__t_a3c8ebca4ecd924335737f7aacef198f7}
+
+\begin{DoxyCompactList}\small\item\em Get the total accumulated weight. \item\end{DoxyCompactList}\item 
+Double\_\-t {\bf sum} () const \label{classAverage__t_aeb4e2a1c2ddac4ed9cc055689c911a49}
+
+\begin{DoxyCompactList}\small\item\em Get the total accumulated data. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Double\_\-t {\bfseries \_\-weight}\label{classAverage__t_ae8fffd362517a4498e222a7c4c4dc158}
+
+\item 
+Float\_\-t {\bfseries \_\-min}\label{classAverage__t_a6fa8a684525c545162a09e4c8da6849c}
+
+\item 
+Float\_\-t {\bfseries \_\-max}\label{classAverage__t_ae1698dbafedc10f4bec7425fe6f2a89d}
+
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>Double\_t {\bfseries \_sum}\\
+\>Double\_t {\bfseries \_mean}\\
+\}; \label{classAverage__t_ad694cc340eea19e0c4c7e3085a689214}
+\\
+
+\end{tabbing}\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+union \{\\
+\>Double\_t {\bfseries \_sum2}\\
+\>Double\_t {\bfseries \_sigma}\\
+\}; \label{classAverage__t_ae244c1ec670e1edbbcf64f0d79e4780e}
+\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std::ostream \& {\bfseries operator$<$$<$} (std::ostream \&os, const {\bf Average\_\-t} \&a)\label{classAverage__t_ae983d5da007094c692f583fd58af1bfb}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Calculate mean and standard deviation and find minimum and maximum value. The minimum and maximum is not searched/memorised if AVERAGE\_\-WITHOUT\_\-MIN\_\-MAX is defined. 
+
+Definition at line 21 of file Average\_\-t.hh.
+
+\subsection{Member Function Documentation}
+\index{Average\_\-t@{Average\_\-t}!add@{add}}
+\index{add@{add}!Average_t@{Average\_\-t}}
+\subsubsection[{add}]{\setlength{\rightskip}{0pt plus 5cm}void Average\_\-t::add (Float\_\-t {\em value}, \/  Float\_\-t {\em weight} = {\ttfamily 1.})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classAverage__t_a1dc4d4d78f339ff9025acf6ac756636e}
+
+
+Build the sum and the sum of squares and find the minimum and maximum value. The sums can be used later to calculate the mean and the standard deviation 
+\begin{DoxyParams}{Parameters}
+\item[{\em value}]the value to be added to the sum and the sum of squares \item[{\em weight}]the weight given to this value in the sums. (\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\doxyref{calculate}{p.}{classAverage__t_a4b49c45f3da3c5761ba355508a42b3ef}) 
+\end{DoxySeeAlso}
+
+
+Definition at line 39 of file Average\_\-t.hh.
+
+References weight().\index{Average\_\-t@{Average\_\-t}!calculate@{calculate}}
+\index{calculate@{calculate}!Average_t@{Average\_\-t}}
+\subsubsection[{calculate}]{\setlength{\rightskip}{0pt plus 5cm}void Average\_\-t::calculate ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classAverage__t_a4b49c45f3da3c5761ba355508a42b3ef}
+
+
+Calculate the standard deviation and the mean. The mean and the standard deviation are stored in the locations which are also used for the sums. Therefore if further values are added after \doxyref{calculate()}{p.}{classAverage__t_a4b49c45f3da3c5761ba355508a42b3ef} was called, the result is undefined. 
+
+Definition at line 51 of file Average\_\-t.hh.
+
+References mean(), and sigma().\index{Average\_\-t@{Average\_\-t}!mean@{mean}}
+\index{mean@{mean}!Average_t@{Average\_\-t}}
+\subsubsection[{mean}]{\setlength{\rightskip}{0pt plus 5cm}Double\_\-t Average\_\-t::mean () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classAverage__t_a7674fd214ab308cb48605190413762b4}
+
+
+Return the mean value. returns only a correct result after at least 1 value was added and calculate was called. 
+
+Definition at line 63 of file Average\_\-t.hh.
+
+Referenced by calculate().\index{Average\_\-t@{Average\_\-t}!sigma@{sigma}}
+\index{sigma@{sigma}!Average_t@{Average\_\-t}}
+\subsubsection[{sigma}]{\setlength{\rightskip}{0pt plus 5cm}Double\_\-t Average\_\-t::sigma () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classAverage__t_afdab526173bec21760599ef1183f5d05}
+
+
+Return the standard deviation. returns only a correct result after at least 1 value was added and calculate was called. 
+
+Definition at line 68 of file Average\_\-t.hh.
+
+Referenced by calculate().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+Average\_\-t.hh\end{DoxyCompactItemize}

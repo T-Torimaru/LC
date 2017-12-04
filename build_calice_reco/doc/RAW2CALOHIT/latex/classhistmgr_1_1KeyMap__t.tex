@@ -1,0 +1,105 @@
+\section{histmgr::KeyMap\_\-t$<$ \_\-MapElm\_\-t\_\- $>$ Class Template Reference}
+\label{classhistmgr_1_1KeyMap__t}\index{histmgr::KeyMap\_\-t@{histmgr::KeyMap\_\-t}}
+
+
+List of elements (KeyMap).  
+
+
+{\ttfamily \#include $<$KeyMap\_\-t.hh$>$}Inheritance diagram for histmgr::KeyMap\_\-t$<$ \_\-MapElm\_\-t\_\- $>$::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classhistmgr_1_1KeyMap__t}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef {\bf KeyMapIterator\_\-t}$<$ \_\-MapElm\_\-t\_\- $>$ {\bfseries iterator}\label{classhistmgr_1_1KeyMap__t_a8a2d57bf4a4aa46158fdd4507348423f}
+
+\item 
+typedef {\bf KeyMapConstIterator\_\-t}$<$ \_\-MapElm\_\-t\_\- $>$ {\bfseries const\_\-iterator}\label{classhistmgr_1_1KeyMap__t_ad7d7fae50c54bcd113540b47031e1d2f}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf hasKey} (const {\bf Key\_\-t} \&a\_\-key) const \label{classhistmgr_1_1KeyMap__t_aa9036fe4ff391f5b7136b9dfb4c89a1b}
+
+\begin{DoxyCompactList}\small\item\em Check whether an element exist already for the given key. \item\end{DoxyCompactList}\item 
+void {\bf assign} (const {\bf Key\_\-t} \&a\_\-key, const \_\-MapElm\_\-t\_\- \&elm)
+\begin{DoxyCompactList}\small\item\em Assign an element to the given key. \item\end{DoxyCompactList}\item 
+\_\-MapElm\_\-t\_\- \& {\bf operator[$\,$]} (const {\bf Key\_\-t} \&a\_\-key)
+\begin{DoxyCompactList}\small\item\em Get the element assigned to the given key. \item\end{DoxyCompactList}\item 
+const \_\-MapElm\_\-t\_\- \& {\bf operator[$\,$]} (const {\bf Key\_\-t} \&a\_\-key) const 
+\begin{DoxyCompactList}\small\item\em Get the element assigned to the given key (read only access). \item\end{DoxyCompactList}\item 
+{\bf iterator} {\bfseries begin} ()\label{classhistmgr_1_1KeyMap__t_a6ae54175e1f99ac32dc131a059c7a7ad}
+
+\item 
+{\bf iterator} {\bfseries end} ()\label{classhistmgr_1_1KeyMap__t_ac9b146e882cd7797c72b9726b0adbb70}
+
+\item 
+{\bf const\_\-iterator} {\bfseries begin} () const \label{classhistmgr_1_1KeyMap__t_a922213bbe19da6f1193bef396c145e53}
+
+\item 
+{\bf const\_\-iterator} {\bfseries end} () const \label{classhistmgr_1_1KeyMap__t_a7536d781834f271a6edb0ed965b2f286}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::vector$<$ \_\-MapElm\_\-t\_\- $>$ {\bfseries \_\-elmList}\label{classhistmgr_1_1KeyMap__t_a76efa9a3eceb29a7e669629d6f22538d}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries HistMgr}\label{classhistmgr_1_1KeyMap__t_a3cc85db784d7651390e41024125eb3a0}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename \_\-MapElm\_\-t\_\-$>$ class histmgr::KeyMap\_\-t$<$ \_\-MapElm\_\-t\_\- $>$}
+
+List of elements (KeyMap). The elements are identified by their names. A contrinuous serial number is assigned to each element. The serial number can be used to quickly access the histograms 
+
+Definition at line 196 of file KeyMap\_\-t.hh.
+
+\subsection{Member Function Documentation}
+\index{histmgr::KeyMap\_\-t@{histmgr::KeyMap\_\-t}!assign@{assign}}
+\index{assign@{assign}!histmgr::KeyMap_t@{histmgr::KeyMap\_\-t}}
+\subsubsection[{assign}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-MapElm\_\-t\_\-$>$ void {\bf histmgr::KeyMap\_\-t}$<$ \_\-MapElm\_\-t\_\- $>$::assign (const {\bf Key\_\-t} \& {\em a\_\-key}, \/  const \_\-MapElm\_\-t\_\- \& {\em elm})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1KeyMap__t_a3c2c47af4647caeb9b5712f90f4d7410}
+
+
+Assign an element to the given key. 
+\begin{DoxyParams}{Parameters}
+\item[{\em a\_\-key}]the key to which an element should be assigned. \item[{\em elm}]the element. If an element is already assigned to the key, then the old element is deleted. \end{DoxyParams}
+
+
+Definition at line 221 of file KeyMap\_\-t.hh.
+
+Referenced by histmgr::HistMgr::getOrCreatehistogramGroup(), histmgr::HistMgr::Group\_\-t::setGraphCollection(), histmgr::HistMgr::Group\_\-t::setHistogram2DCollection(), histmgr::HistMgr::Group\_\-t::setHistogramCollection(), and histmgr::HistMgr::Group\_\-t::setProfileCollection().\index{histmgr::KeyMap\_\-t@{histmgr::KeyMap\_\-t}!operator[]@{operator[]}}
+\index{operator[]@{operator[]}!histmgr::KeyMap_t@{histmgr::KeyMap\_\-t}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-MapElm\_\-t\_\-$>$ const \_\-MapElm\_\-t\_\-\& {\bf histmgr::KeyMap\_\-t}$<$ \_\-MapElm\_\-t\_\- $>$::operator[$\,$] (const {\bf Key\_\-t} \& {\em a\_\-key}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1KeyMap__t_a307a82ab48b2708d640cbc783b61a222}
+
+
+Get the element assigned to the given key (read only access). 
+\begin{DoxyParams}{Parameters}
+\item[{\em a\_\-key}]the key of the element. \end{DoxyParams}
+
+
+Definition at line 247 of file KeyMap\_\-t.hh.\index{histmgr::KeyMap\_\-t@{histmgr::KeyMap\_\-t}!operator[]@{operator[]}}
+\index{operator[]@{operator[]}!histmgr::KeyMap_t@{histmgr::KeyMap\_\-t}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename \_\-MapElm\_\-t\_\-$>$ \_\-MapElm\_\-t\_\-\& {\bf histmgr::KeyMap\_\-t}$<$ \_\-MapElm\_\-t\_\- $>$::operator[$\,$] (const {\bf Key\_\-t} \& {\em a\_\-key})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1KeyMap__t_a587283f7ab94b2eef10adfc1ba55dedc}
+
+
+Get the element assigned to the given key. 
+\begin{DoxyParams}{Parameters}
+\item[{\em a\_\-key}]the key of the element. \end{DoxyParams}
+
+
+Definition at line 236 of file KeyMap\_\-t.hh.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+KeyMap\_\-t.hh\end{DoxyCompactItemize}

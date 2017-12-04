@@ -1,0 +1,143 @@
+\section{histmgr::Histogram1D Class Reference}
+\label{classhistmgr_1_1Histogram1D}\index{histmgr::Histogram1D@{histmgr::Histogram1D}}
+
+
+Equidistant binned 1D histogram without data container.  
+
+
+{\ttfamily \#include $<$Histogram1D.hh$>$}Inheritance diagram for histmgr::Histogram1D::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classhistmgr_1_1Histogram1D}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual int {\bf id} () const \label{classhistmgr_1_1Histogram1D_a524540a72e8d5f19fa3fcaec65610b0c}
+
+\begin{DoxyCompactList}\small\item\em Return the id of the underlying LCGenericObjectImpl. \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bf firstBinIndex} () const \label{classhistmgr_1_1Histogram1D_acda829dea1a315f62e4618beecac3409}
+
+\begin{DoxyCompactList}\small\item\em Return the index of the first bin not below the minimum axis value. \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bf lastBinIndex} () const \label{classhistmgr_1_1Histogram1D_a21cfe7d0e489202dcd0138da20349f74}
+
+\begin{DoxyCompactList}\small\item\em Return the index of the last bin not above the maximum axis value. \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bf underflowBinIndex} () const \label{classhistmgr_1_1Histogram1D_a444200d12e95077d3ff93451ac9d51f5}
+
+\begin{DoxyCompactList}\small\item\em Return the index of the bin below the minimum axis value (underflow bin). \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bf overflowBinIndex} () const \label{classhistmgr_1_1Histogram1D_a2f68dc59449bb4242e113cd62365acc7}
+
+\begin{DoxyCompactList}\small\item\em Return the index of the bin above the maximum axis value (overflow bin). \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bf nBins} () const \label{classhistmgr_1_1Histogram1D_aabad63ec43eec6b9ec5250b409d50ef9}
+
+\begin{DoxyCompactList}\small\item\em Return the number of bins. \item\end{DoxyCompactList}\item 
+Float\_\-t {\bf xMin} () const \label{classhistmgr_1_1Histogram1D_a008b31ebefbd1149cc906975b7025996}
+
+\begin{DoxyCompactList}\small\item\em The minimum axis value (lower edge of the histogram range). \item\end{DoxyCompactList}\item 
+Float\_\-t {\bf xMax} () const \label{classhistmgr_1_1Histogram1D_aa1f98c2b6d73bcf1c0209f055d283c1b}
+
+\begin{DoxyCompactList}\small\item\em The maximum axis value (upper edge of the histogram range). \item\end{DoxyCompactList}\item 
+Float\_\-t {\bf binCenter} (UInt\_\-t bin\_\-index) const \label{classhistmgr_1_1Histogram1D_a74f37e72347aca0eb04085fe98b063da}
+
+\begin{DoxyCompactList}\small\item\em Return the axis value of the centre of the given bin. \item\end{DoxyCompactList}\item 
+Float\_\-t {\bfseries binLowEdge} (UInt\_\-t bin\_\-index) const \label{classhistmgr_1_1Histogram1D_a5cc5aa3eba6272c03a6147b860a8b8e3}
+
+\item 
+Float\_\-t {\bf binWidth} (UInt\_\-t) const \label{classhistmgr_1_1Histogram1D_a7c1fa00271d1776d054a8c337a56fd82}
+
+\begin{DoxyCompactList}\small\item\em Return the width of the given bin. \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bf calice\_\-id} ()\label{classhistmgr_1_1Histogram1D_acd92f881bf13e97509720ddbb0063b4b}
+
+\begin{DoxyCompactList}\small\item\em Return the id of the histogram. \item\end{DoxyCompactList}\item 
+Double\_\-t {\bf entries} () const \label{classhistmgr_1_1Histogram1D_a22623460729f7e584282802d7320839c}
+
+\begin{DoxyCompactList}\small\item\em Return the number of entries of the histogram. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries Histogram1D} (lcio::LCObject $\ast$a\_\-obj)\label{classhistmgr_1_1Histogram1D_af17dcdb05c069e893c014c25581946ad}
+
+\item 
+void {\bf addToEntries} (Double\_\-t weight)
+\begin{DoxyCompactList}\small\item\em Add weight to the number of entries. \item\end{DoxyCompactList}\item 
+int {\bfseries getNInt} () const \label{classhistmgr_1_1Histogram1D_a9f6771b7dfedce460ba615330db8f3ee}
+
+\item 
+int {\bfseries getNFloat} () const \label{classhistmgr_1_1Histogram1D_a7df3b9136394f70dfe46e7465195134d}
+
+\item 
+int {\bfseries getNDouble} () const \label{classhistmgr_1_1Histogram1D_a40876551abee3a5cb68f7406024cb6fd}
+
+\item 
+int {\bfseries getIntVal} (int index) const \label{classhistmgr_1_1Histogram1D_a460737d4258f5bb33b2cda3a435c4fb6}
+
+\item 
+float {\bfseries getFloatVal} (int index) const \label{classhistmgr_1_1Histogram1D_a1a71d70f6c054b7cbab67ca04364f271}
+
+\item 
+double {\bfseries getDoubleVal} (int index) const \label{classhistmgr_1_1Histogram1D_a6e76a153525e974912e904a37c00c217}
+
+\item 
+bool {\bfseries isFixedSize} () const \label{classhistmgr_1_1Histogram1D_ae009c17abdb58995d8777a0ff4af75cd}
+
+\item 
+const std::string {\bfseries getTypeName} () const \label{classhistmgr_1_1Histogram1D_a89c9f20156c75f61297a5e4901e49936}
+
+\item 
+const std::string {\bfseries getDataDescription} () const \label{classhistmgr_1_1Histogram1D_aebfe652d6212c54e784489b13490853b}
+
+\item 
+void {\bf setBinning} (const {\bf HistPar} \&bins)\label{classhistmgr_1_1Histogram1D_aa8334230aef792b7cbec7dd4ff8e039b}
+
+\begin{DoxyCompactList}\small\item\em Store the binning of the histogram. \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bf binIndex} (Float\_\-t value) const \label{classhistmgr_1_1Histogram1D_a42a8f19a46ae2582c1a913bc5c765831}
+
+\begin{DoxyCompactList}\small\item\em Calculate and return the bin index for the given axis value. \item\end{DoxyCompactList}\item 
+lcio::LCGenericObjectImpl $\ast$ {\bfseries obj} ()\label{classhistmgr_1_1Histogram1D_a87ce666baabddda16f4c1f22f57873d4}
+
+\item 
+const lcio::LCGenericObjectImpl $\ast$ {\bfseries obj} () const \label{classhistmgr_1_1Histogram1D_a2eea045a1d4a53f4ab193a93781bd3bf}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+lcio::LCGenericObjectImpl $\ast$ {\bfseries \_\-obj}\label{classhistmgr_1_1Histogram1D_ac54ece569a39b15d5f29d685a08d161c}
+
+\item 
+bool {\bfseries \_\-createdObject}\label{classhistmgr_1_1Histogram1D_a4a49b47ef95c3733cd57cdc675227791}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const std::string {\bfseries \_\-\_\-typeName} = \char`\"{}Histogram1D\char`\"{}\label{classhistmgr_1_1Histogram1D_a99612636650ea16a94249d8a068f3439}
+
+\item 
+static const std::string {\bfseries \_\-\_\-description} = \char`\"{}Histogram1D\char`\"{}\label{classhistmgr_1_1Histogram1D_aaa4194c1a6de8d9eb955a191edfd125c}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Equidistant binned 1D histogram without data container. The histogram is kept very simple and does not make use of virtual functions in order to be very fast. Note: the histogram does not have a data container. A usable histogram is the \doxyref{FloatHistogram1D}{p.}{classhistmgr_1_1FloatHistogram1D}. 
+
+Definition at line 27 of file Histogram1D.hh.
+
+\subsection{Member Function Documentation}
+\index{histmgr::Histogram1D@{histmgr::Histogram1D}!addToEntries@{addToEntries}}
+\index{addToEntries@{addToEntries}!histmgr::Histogram1D@{histmgr::Histogram1D}}
+\subsubsection[{addToEntries}]{\setlength{\rightskip}{0pt plus 5cm}void histmgr::Histogram1D::addToEntries (Double\_\-t {\em weight})\hspace{0.3cm}{\ttfamily  [inline, protected]}}\label{classhistmgr_1_1Histogram1D_aa49e6a8526463293e4ca43c279ce3e86}
+
+
+Add weight to the number of entries. Weight is usually 1, but may be a fractional value in the interval (0,oo). NOTE: No range check of the weight is performed. 
+
+Definition at line 120 of file Histogram1D.hh.
+
+References entries().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+Histogram1D.hh\item 
+Histogram1D.cc\end{DoxyCompactItemize}

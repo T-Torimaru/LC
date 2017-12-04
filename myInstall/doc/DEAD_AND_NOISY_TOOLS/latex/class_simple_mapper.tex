@@ -1,0 +1,165 @@
+\hypertarget{class_simple_mapper}{
+\section{SimpleMapper Class Reference}
+\label{class_simple_mapper}\index{SimpleMapper@{SimpleMapper}}
+}
+
+
+The \hyperlink{class_simple_mapper}{SimpleMapper} helper class reads in the AHC.cfg text file and provides the mapping (slot, frontend) -\/$>$ (module, chip).  
+
+
+{\ttfamily \#include $<$SimpleMapper.h$>$}\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_simple_mapper_1_1_module_description}{ModuleDescription}
+\begin{DoxyCompactList}\small\item\em Internal helper struct for the value: a module description consisting of. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::pair$<$ int, int $>$ \hyperlink{class_simple_mapper_a6fbef133414fb482f870ab56e7237682}{ModuleLayerID}
+\begin{DoxyCompactList}\small\item\em A pair of ints, the first one being the moduleID, the second one the layer number. \item\end{DoxyCompactList}\item 
+typedef std::pair$<$ int, int $>$ \hyperlink{class_simple_mapper_a2b973730223591df7c876a6dfbb922a0}{SlotFrontendID}
+\begin{DoxyCompactList}\small\item\em A pair of ints, the first one being the slot number, the second one the front end ID. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_simple_mapper_aac9a4d9921f0f079f2f0a4778a83c27d}{SimpleMapper} (std::string configFileName)
+\item 
+\hyperlink{class_simple_mapper_a6fbef133414fb482f870ab56e7237682}{ModuleLayerID} \hyperlink{class_simple_mapper_a33ffad5d6bdccd5347630b65764e4b99}{getModuleLayerID} (\hyperlink{class_simple_mapper_a2b973730223591df7c876a6dfbb922a0}{SlotFrontendID} sfID)
+\begin{DoxyCompactList}\small\item\em Get the ModuleLayerID from knowing the SlotFrontendID. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_simple_mapper_a02936c8c25f05737945901618a777515}{isAHC8} (\hyperlink{class_simple_mapper_a2b973730223591df7c876a6dfbb922a0}{SlotFrontendID} sfID)
+\begin{DoxyCompactList}\small\item\em Check if a module is AHC8 (larger 6x6 cells also in the middle of the module, thus only 8 chips are needed instead of 12 on a normal module). \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_simple_mapper_a09cf4f914abaad39fc4cc039f4e41ea2}{isTCMT} (\hyperlink{class_simple_mapper_a2b973730223591df7c876a6dfbb922a0}{SlotFrontendID} sfID)
+\begin{DoxyCompactList}\small\item\em Check if a module is from the tail catcher (normal module with 12 chips). \item\end{DoxyCompactList}\item 
+void \hyperlink{class_simple_mapper_a0cfad0a5093ba57a9540b99f850cd474}{print} ()
+\begin{DoxyCompactList}\small\item\em A debug function. Dumps the map to the console. \item\end{DoxyCompactList}\item 
+unsigned int \hyperlink{class_simple_mapper_a857de2500f82b01e1a6f116df8aed8a6}{getModuleType} (\hyperlink{class_simple_mapper_a2b973730223591df7c876a6dfbb922a0}{SlotFrontendID} sfID)
+\begin{DoxyCompactList}\small\item\em Get the module type from the SlotFrontEndID. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+std::map$<$ \hyperlink{class_simple_mapper_a2b973730223591df7c876a6dfbb922a0}{SlotFrontendID}, \hyperlink{struct_simple_mapper_1_1_module_description}{ModuleDescription} $>$ \hyperlink{class_simple_mapper_abc72184f9c3735233e2d21ef36161699}{\_\-sf2mlMap}
+\begin{DoxyCompactList}\small\item\em A map with the SlotFrontendID as key. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_simple_mapper}{SimpleMapper} helper class reads in the AHC.cfg text file and provides the mapping (slot, frontend) -\/$>$ (module, chip). 
+
+Definition at line 11 of file SimpleMapper.h.
+
+\subsection{Member Typedef Documentation}
+\hypertarget{class_simple_mapper_a6fbef133414fb482f870ab56e7237682}{
+\index{SimpleMapper@{SimpleMapper}!ModuleLayerID@{ModuleLayerID}}
+\index{ModuleLayerID@{ModuleLayerID}!SimpleMapper@{SimpleMapper}}
+\subsubsection[{ModuleLayerID}]{\setlength{\rightskip}{0pt plus 5cm}typedef std::pair$<$int, int$>$ {\bf SimpleMapper::ModuleLayerID}}}
+\label{class_simple_mapper_a6fbef133414fb482f870ab56e7237682}
+
+
+A pair of ints, the first one being the moduleID, the second one the layer number. 
+
+Definition at line 18 of file SimpleMapper.h.\hypertarget{class_simple_mapper_a2b973730223591df7c876a6dfbb922a0}{
+\index{SimpleMapper@{SimpleMapper}!SlotFrontendID@{SlotFrontendID}}
+\index{SlotFrontendID@{SlotFrontendID}!SimpleMapper@{SimpleMapper}}
+\subsubsection[{SlotFrontendID}]{\setlength{\rightskip}{0pt plus 5cm}typedef std::pair$<$int, int$>$ {\bf SimpleMapper::SlotFrontendID}}}
+\label{class_simple_mapper_a2b973730223591df7c876a6dfbb922a0}
+
+
+A pair of ints, the first one being the slot number, the second one the front end ID. 
+
+Definition at line 22 of file SimpleMapper.h.
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_simple_mapper_aac9a4d9921f0f079f2f0a4778a83c27d}{
+\index{SimpleMapper@{SimpleMapper}!SimpleMapper@{SimpleMapper}}
+\index{SimpleMapper@{SimpleMapper}!SimpleMapper@{SimpleMapper}}
+\subsubsection[{SimpleMapper}]{\setlength{\rightskip}{0pt plus 5cm}SimpleMapper::SimpleMapper (std::string {\em configFileName})}}
+\label{class_simple_mapper_aac9a4d9921f0f079f2f0a4778a83c27d}
+
+
+Definition at line 10 of file SimpleMapper.cxx.
+
+References \_\-sf2mlMap, ModuleType::AHC, ModuleType::AHC8, AHCAL\_\-MAX\_\-LAYERS, and ModuleType::TCMT.
+
+\subsection{Member Function Documentation}
+\hypertarget{class_simple_mapper_a33ffad5d6bdccd5347630b65764e4b99}{
+\index{SimpleMapper@{SimpleMapper}!getModuleLayerID@{getModuleLayerID}}
+\index{getModuleLayerID@{getModuleLayerID}!SimpleMapper@{SimpleMapper}}
+\subsubsection[{getModuleLayerID}]{\setlength{\rightskip}{0pt plus 5cm}{\bf SimpleMapper::ModuleLayerID} SimpleMapper::getModuleLayerID ({\bf SimpleMapper::SlotFrontendID} {\em sfID})}}
+\label{class_simple_mapper_a33ffad5d6bdccd5347630b65764e4b99}
+
+
+Get the ModuleLayerID from knowing the SlotFrontendID. 
+
+Definition at line 135 of file SimpleMapper.cxx.
+
+References \_\-sf2mlMap.
+
+Referenced by SpectrumPropertiesRunInfo::SpectrumPropertiesRunInfo().\hypertarget{class_simple_mapper_a857de2500f82b01e1a6f116df8aed8a6}{
+\index{SimpleMapper@{SimpleMapper}!getModuleType@{getModuleType}}
+\index{getModuleType@{getModuleType}!SimpleMapper@{SimpleMapper}}
+\subsubsection[{getModuleType}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int SimpleMapper::getModuleType ({\bf SimpleMapper::SlotFrontendID} {\em sfID})}}
+\label{class_simple_mapper_a857de2500f82b01e1a6f116df8aed8a6}
+
+
+Get the module type from the SlotFrontEndID. 
+
+Definition at line 156 of file SimpleMapper.cxx.
+
+References \_\-sf2mlMap.
+
+Referenced by SpectrumPropertiesRunInfo::SpectrumPropertiesRunInfo().\hypertarget{class_simple_mapper_a02936c8c25f05737945901618a777515}{
+\index{SimpleMapper@{SimpleMapper}!isAHC8@{isAHC8}}
+\index{isAHC8@{isAHC8}!SimpleMapper@{SimpleMapper}}
+\subsubsection[{isAHC8}]{\setlength{\rightskip}{0pt plus 5cm}bool SimpleMapper::isAHC8 ({\bf SimpleMapper::SlotFrontendID} {\em sfID})}}
+\label{class_simple_mapper_a02936c8c25f05737945901618a777515}
+
+
+Check if a module is AHC8 (larger 6x6 cells also in the middle of the module, thus only 8 chips are needed instead of 12 on a normal module). 
+
+Definition at line 141 of file SimpleMapper.cxx.
+
+References \_\-sf2mlMap, and ModuleType::AHC8.
+
+Referenced by SpectrumPropertiesRunInfo::SpectrumPropertiesRunInfo().\hypertarget{class_simple_mapper_a09cf4f914abaad39fc4cc039f4e41ea2}{
+\index{SimpleMapper@{SimpleMapper}!isTCMT@{isTCMT}}
+\index{isTCMT@{isTCMT}!SimpleMapper@{SimpleMapper}}
+\subsubsection[{isTCMT}]{\setlength{\rightskip}{0pt plus 5cm}bool SimpleMapper::isTCMT ({\bf SimpleMapper::SlotFrontendID} {\em sfID})}}
+\label{class_simple_mapper_a09cf4f914abaad39fc4cc039f4e41ea2}
+
+
+Check if a module is from the tail catcher (normal module with 12 chips). 
+
+Definition at line 146 of file SimpleMapper.cxx.
+
+References \_\-sf2mlMap, and ModuleType::TCMT.\hypertarget{class_simple_mapper_a0cfad0a5093ba57a9540b99f850cd474}{
+\index{SimpleMapper@{SimpleMapper}!print@{print}}
+\index{print@{print}!SimpleMapper@{SimpleMapper}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}void SimpleMapper::print ()}}
+\label{class_simple_mapper_a0cfad0a5093ba57a9540b99f850cd474}
+
+
+A debug function. Dumps the map to the console. 
+
+Definition at line 111 of file SimpleMapper.cxx.
+
+References SimpleMapper::ModuleDescription::\_\-layer, SimpleMapper::ModuleDescription::\_\-module, SimpleMapper::ModuleDescription::\_\-moduleType, \_\-sf2mlMap, ModuleType::AHC, ModuleType::AHC8, and ModuleType::TCMT.
+
+Referenced by main().
+
+\subsection{Field Documentation}
+\hypertarget{class_simple_mapper_abc72184f9c3735233e2d21ef36161699}{
+\index{SimpleMapper@{SimpleMapper}!\_\-sf2mlMap@{\_\-sf2mlMap}}
+\index{\_\-sf2mlMap@{\_\-sf2mlMap}!SimpleMapper@{SimpleMapper}}
+\subsubsection[{\_\-sf2mlMap}]{\setlength{\rightskip}{0pt plus 5cm}std::map$<$ {\bf SlotFrontendID}, {\bf ModuleDescription} $>$ {\bf SimpleMapper::\_\-sf2mlMap}}}
+\label{class_simple_mapper_abc72184f9c3735233e2d21ef36161699}
+
+
+A map with the SlotFrontendID as key. The value consists of the ModuleLayerID and a flag word with the module type 
+
+Definition at line 56 of file SimpleMapper.h.
+
+Referenced by getModuleLayerID(), getModuleType(), isAHC8(), isTCMT(), print(), and SimpleMapper().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_simple_mapper_8h}{SimpleMapper.h}\item 
+\hyperlink{_simple_mapper_8cxx}{SimpleMapper.cxx}\end{DoxyCompactItemize}

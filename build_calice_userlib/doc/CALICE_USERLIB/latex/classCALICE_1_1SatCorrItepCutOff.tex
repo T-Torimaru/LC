@@ -1,0 +1,143 @@
+\section{CALICE::SatCorrItepCutOff Class Reference}
+\label{classCALICE_1_1SatCorrItepCutOff}\index{CALICE::SatCorrItepCutOff@{CALICE::SatCorrItepCutOff}}
+Inheritance diagram for CALICE::SatCorrItepCutOff::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCALICE_1_1SatCorrItepCutOff}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries SatCorrItepCutOff} (EVENT::LCObject $\ast$obj)\label{classCALICE_1_1SatCorrItepCutOff_a9b06f5e9cc059a0d27dc0ef8dac1e5ce}
+
+\item 
+{\bfseries SatCorrItepCutOff} (const {\bf HcalTileIndex} \&hti, const unsigned int nPoints, const float $\ast$pixs, const float $\ast$pmts)\label{classCALICE_1_1SatCorrItepCutOff_a1b579fa4b9e1e0899623520c4b0af8dc}
+
+\item 
+int {\bfseries getIndex} () const \label{classCALICE_1_1SatCorrItepCutOff_aed03ac2b49fcd9459a364b8d1015d0fe}
+
+\item 
+float {\bf getScaling} () const \label{classCALICE_1_1SatCorrItepCutOff_a48a29f7e2ebec003cb67f2d435be76c9}
+
+\begin{DoxyCompactList}\small\item\em get the applied scaling \item\end{DoxyCompactList}\item 
+float {\bf deSaturate} (const float saturatedSignal) const 
+\begin{DoxyCompactList}\small\item\em apply saturation correction to a signal amplitude \item\end{DoxyCompactList}\item 
+float {\bf deSaturatedError} (const float saturatedSignal, const float saturatedSignalError) const 
+\begin{DoxyCompactList}\small\item\em error after application of saturation correction to a signal \item\end{DoxyCompactList}\item 
+float {\bf saturate} (const float unsaturatedSignal) const 
+\begin{DoxyCompactList}\small\item\em apply saturation to a signal amplitude \item\end{DoxyCompactList}\item 
+float {\bf saturatedError} (const float unsaturatedSignal, const float unsaturatedSignalError) const 
+\begin{DoxyCompactList}\small\item\em error after application of saturation to a signal \item\end{DoxyCompactList}\item 
+const std::string {\bfseries getTypeName} () const \label{classCALICE_1_1SatCorrItepCutOff_aac6266d16a672ac6955225db45781a10}
+
+\item 
+const std::string {\bfseries getDataDescription} () const \label{classCALICE_1_1SatCorrItepCutOff_a26205021b967603e17826db32fb66a0e}
+
+\item 
+void {\bfseries setIndex} (const {\bf HcalTileIndex} \&hti)\label{classCALICE_1_1SatCorrItepCutOff_a9759d0d3989609d9be1579edf15b491a}
+
+\item 
+void {\bfseries setScaling} (const float scaling)\label{classCALICE_1_1SatCorrItepCutOff_a4cf01d7f09313892006612b7a1caee72}
+
+\item 
+float {\bfseries getPix} (const unsigned int i) const \label{classCALICE_1_1SatCorrItepCutOff_a000728b45c9dab931480cb2cba03c499}
+
+\item 
+float {\bfseries getPmt} (const unsigned int i) const \label{classCALICE_1_1SatCorrItepCutOff_acd8227fc77aefb2e7da1236860437b62}
+
+\item 
+void {\bfseries setPix} (const unsigned int i, const float pix)\label{classCALICE_1_1SatCorrItepCutOff_a854909d340cf718da2927e364c18d0a5}
+
+\item 
+void {\bfseries setPmt} (const unsigned int i, const float pmt)\label{classCALICE_1_1SatCorrItepCutOff_aa0411ab89e0687cb1f2aabbbbe799b72}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float {\bfseries \_\-scaling}\label{classCALICE_1_1SatCorrItepCutOff_aa2135949b7efc01aece6d74fe9579930}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 12 of file SatCorrItepCutOff.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::SatCorrItepCutOff@{CALICE::SatCorrItepCutOff}!deSaturate@{deSaturate}}
+\index{deSaturate@{deSaturate}!CALICE::SatCorrItepCutOff@{CALICE::SatCorrItepCutOff}}
+\subsubsection[{deSaturate}]{\setlength{\rightskip}{0pt plus 5cm}float CALICE::SatCorrItepCutOff::deSaturate (const float {\em saturatedSignal}) const\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCALICE_1_1SatCorrItepCutOff_a20afcca900ade6d0e34f61837db11067}
+
+
+apply saturation correction to a signal amplitude 
+\begin{DoxyParams}{Parameters}
+\item[{\em saturatedSignal}]saturated signal \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unsaturated signal 
+\end{DoxyReturn}
+
+
+Implements {\bf CALICE::SatCorrFunction} \doxyref{}{p.}{classCALICE_1_1SatCorrFunction_ae71bc6eba8efc85127996112dea69aa8}.
+
+Definition at line 55 of file SatCorrItepCutOff.cc.
+
+Referenced by deSaturatedError().\index{CALICE::SatCorrItepCutOff@{CALICE::SatCorrItepCutOff}!deSaturatedError@{deSaturatedError}}
+\index{deSaturatedError@{deSaturatedError}!CALICE::SatCorrItepCutOff@{CALICE::SatCorrItepCutOff}}
+\subsubsection[{deSaturatedError}]{\setlength{\rightskip}{0pt plus 5cm}float CALICE::SatCorrItepCutOff::deSaturatedError (const float {\em saturatedSignal}, \/  const float {\em saturatedSignalError}) const\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCALICE_1_1SatCorrItepCutOff_abb37d82ea0cc08ae45b54f066e321b6b}
+
+
+error after application of saturation correction to a signal 
+\begin{DoxyParams}{Parameters}
+\item[{\em saturatedSignal}]saturated signal \item[{\em saturatedSignalError}]error of the saturated signal \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error of the unsaturated signal 
+\end{DoxyReturn}
+
+
+Implements {\bf CALICE::SatCorrFunction} \doxyref{}{p.}{classCALICE_1_1SatCorrFunction_af31b1717f04b58362c90e091ed9ffcac}.
+
+Definition at line 95 of file SatCorrItepCutOff.cc.
+
+References deSaturate().\index{CALICE::SatCorrItepCutOff@{CALICE::SatCorrItepCutOff}!saturate@{saturate}}
+\index{saturate@{saturate}!CALICE::SatCorrItepCutOff@{CALICE::SatCorrItepCutOff}}
+\subsubsection[{saturate}]{\setlength{\rightskip}{0pt plus 5cm}float CALICE::SatCorrItepCutOff::saturate (const float {\em unsaturatedSignal}) const\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCALICE_1_1SatCorrItepCutOff_addf093108885bc86a551f7e0aed71d7d}
+
+
+apply saturation to a signal amplitude 
+\begin{DoxyParams}{Parameters}
+\item[{\em unsaturatedSignal}]unsaturated signal \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+saturated signal 
+\end{DoxyReturn}
+
+
+Implements {\bf CALICE::SatCorrFunction} \doxyref{}{p.}{classCALICE_1_1SatCorrFunction_a2245a5a516d3ae361af416f8dacf25f2}.
+
+Definition at line 107 of file SatCorrItepCutOff.cc.
+
+Referenced by saturatedError().\index{CALICE::SatCorrItepCutOff@{CALICE::SatCorrItepCutOff}!saturatedError@{saturatedError}}
+\index{saturatedError@{saturatedError}!CALICE::SatCorrItepCutOff@{CALICE::SatCorrItepCutOff}}
+\subsubsection[{saturatedError}]{\setlength{\rightskip}{0pt plus 5cm}float CALICE::SatCorrItepCutOff::saturatedError (const float {\em unsaturatedSignal}, \/  const float {\em unsaturatedSignalError}) const\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCALICE_1_1SatCorrItepCutOff_aa78edfc50df486ecebe34b88f8909fda}
+
+
+error after application of saturation to a signal 
+\begin{DoxyParams}{Parameters}
+\item[{\em unsaturatedSignal}]unsaturated signal \item[{\em unsaturatedSignalError}]error of the unsaturated signal \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error of saturated signal 
+\end{DoxyReturn}
+
+
+Implements {\bf CALICE::SatCorrFunction} \doxyref{}{p.}{classCALICE_1_1SatCorrFunction_a735f5369890f1ca8fa4de8153207a442}.
+
+Definition at line 143 of file SatCorrItepCutOff.cc.
+
+References saturate().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+SatCorrItepCutOff.hh\item 
+SatCorrItepCutOff.cc\end{DoxyCompactItemize}

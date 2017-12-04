@@ -1,0 +1,150 @@
+\section{CALICE::ModuleConnection Class Reference}
+\label{classCALICE_1_1ModuleConnection}\index{CALICE::ModuleConnection@{CALICE::ModuleConnection}}
+
+
+Defines the electric connection of a module.  
+
+
+{\ttfamily \#include $<$ModuleConnection.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ModuleConnection} (LCObject $\ast$obj)\label{classCALICE_1_1ModuleConnection_af62def15382f8c4596d8256e7075e7a9}
+
+\begin{DoxyCompactList}\small\item\em 'Copy constructor' needed to interpret LCCollection read from file/database. \item\end{DoxyCompactList}\item 
+{\bf ModuleConnection} \& {\bfseries setCrate} (int crate\_\-number)\label{classCALICE_1_1ModuleConnection_aabcfd9307d8e21f8d9f874ca56e346ad}
+
+\item 
+int {\bfseries getCrate} () const \label{classCALICE_1_1ModuleConnection_aa195f58b948c711242b482e2a0d8b578}
+
+\item 
+{\bf ModuleConnection} \& {\bfseries setSlot} (int slot\_\-number)\label{classCALICE_1_1ModuleConnection_a3f1cd034b22e9e659b751ed17e8ec52d}
+
+\item 
+int {\bfseries getSlot} () const \label{classCALICE_1_1ModuleConnection_a36e9b618f7857c205597d5dc869890b7}
+
+\item 
+{\bf ModuleConnection} \& {\bfseries setFrontEnd} (int front\_\-end\_\-number)\label{classCALICE_1_1ModuleConnection_a62dae5cab04d4dd0b2ce62069e19c8ae}
+
+\item 
+int {\bfseries getFrontEnd} () const \label{classCALICE_1_1ModuleConnection_a9de2a6b4e974ce99ab81962ba0efbdaa}
+
+\item 
+{\bf ModuleConnection} \& {\bf setConnectorType} (EModuleConnectorType connector)\label{classCALICE_1_1ModuleConnection_a0973370f327cd711a9b26d9f692aa278}
+
+\begin{DoxyCompactList}\small\item\em Set the type of the connector (full, left, right). \item\end{DoxyCompactList}\item 
+int {\bf getConnectorType} () const \label{classCALICE_1_1ModuleConnection_a09b915040505cc817611fcd4d2340c0a}
+
+\begin{DoxyCompactList}\small\item\em Get the connector type full, left, right. \item\end{DoxyCompactList}\item 
+{\bf ModuleConnection} \& {\bf setIndexOfLowerLeftCell} (unsigned int index\_\-offset)
+\begin{DoxyCompactList}\small\item\em Set the cell index (Mokka specification) of the cell in the lower left corner. \item\end{DoxyCompactList}\item 
+int {\bf getIndexOfLowerLeftCell} () const 
+\begin{DoxyCompactList}\small\item\em Get the cell index (Mokka specification) of the cell in the lower left corner. \item\end{DoxyCompactList}\item 
+{\bf ModuleConnection} \& {\bf setModuleType} (unsigned char type)
+\begin{DoxyCompactList}\small\item\em Set the module type. \item\end{DoxyCompactList}\item 
+unsigned char {\bf getModuleType} () const 
+\begin{DoxyCompactList}\small\item\em Get the module type. \item\end{DoxyCompactList}\item 
+{\bf ModuleConnection} \& {\bf setModuleID} (int module\_\-id)
+\begin{DoxyCompactList}\small\item\em Set the serial number of a module. \item\end{DoxyCompactList}\item 
+int {\bf getModuleID} () const 
+\begin{DoxyCompactList}\small\item\em Set the serial number of a module. \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1ModuleConnection_a0f32643d967483ae6cf48e2c9cbf9021}
+
+\begin{DoxyCompactList}\small\item\em Return the type of the class. \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1ModuleConnection_adc559b59895eb669bf735cc9c650abcd}
+
+\begin{DoxyCompactList}\small\item\em Return a brief description of the data members. \item\end{DoxyCompactList}\item 
+const char $\ast$ {\bf getConnectorTypeName} () const \label{classCALICE_1_1ModuleConnection_a7c1f8acd73a5c2c8e0f56e7cf22a87e3}
+
+\begin{DoxyCompactList}\small\item\em Return the name of the connector. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ {\bfseries \_\-connectorNames} [kNConnectorTypes+1]
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines the electric connection of a module. A module location defined by \doxyref{ModuleLocation}{p.}{classCALICE_1_1ModuleLocation} may be connected to a connector of a CERC board. The module location is identified by the index offset. 
+
+Definition at line 34 of file ModuleConnection.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::ModuleConnection@{CALICE::ModuleConnection}!getIndexOfLowerLeftCell@{getIndexOfLowerLeftCell}}
+\index{getIndexOfLowerLeftCell@{getIndexOfLowerLeftCell}!CALICE::ModuleConnection@{CALICE::ModuleConnection}}
+\subsubsection[{getIndexOfLowerLeftCell}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::ModuleConnection::getIndexOfLowerLeftCell () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1ModuleConnection_ae17fab0c7796c6924c8025dc651096fa}
+
+
+Get the cell index (Mokka specification) of the cell in the lower left corner. This index uniquely defines the module location. 
+
+Definition at line 116 of file ModuleConnection.hh.
+
+Referenced by CALICE::CellDescriptionGenerator::generate().\index{CALICE::ModuleConnection@{CALICE::ModuleConnection}!getModuleID@{getModuleID}}
+\index{getModuleID@{getModuleID}!CALICE::ModuleConnection@{CALICE::ModuleConnection}}
+\subsubsection[{getModuleID}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::ModuleConnection::getModuleID () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1ModuleConnection_ab2af8a960291746f02dc9b68fd5ec40f}
+
+
+Set the serial number of a module. \begin{DoxySeeAlso}{See also}
+\doxyref{setModuleID}{p.}{classCALICE_1_1ModuleConnection_a549e556e185e7596583710bcd4d5a9f0} 
+\end{DoxySeeAlso}
+
+
+Definition at line 172 of file ModuleConnection.hh.
+
+Referenced by CALICE::CellDescriptionGenerator::generate().\index{CALICE::ModuleConnection@{CALICE::ModuleConnection}!getModuleType@{getModuleType}}
+\index{getModuleType@{getModuleType}!CALICE::ModuleConnection@{CALICE::ModuleConnection}}
+\subsubsection[{getModuleType}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char CALICE::ModuleConnection::getModuleType () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1ModuleConnection_a0330ce4dd3f58a935030dc1ffd715730}
+
+
+Get the module type. The module type is not needed but this redundant information allows to verify the correctness of the configuration. \begin{Desc}
+\item[{\bf Todo}]remove this redundant information? \end{Desc}
+
+
+Definition at line 153 of file ModuleConnection.hh.
+
+Referenced by CALICE::CellDescriptionGenerator::generate().\index{CALICE::ModuleConnection@{CALICE::ModuleConnection}!setIndexOfLowerLeftCell@{setIndexOfLowerLeftCell}}
+\index{setIndexOfLowerLeftCell@{setIndexOfLowerLeftCell}!CALICE::ModuleConnection@{CALICE::ModuleConnection}}
+\subsubsection[{setIndexOfLowerLeftCell}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ModuleConnection}\& CALICE::ModuleConnection::setIndexOfLowerLeftCell (unsigned int {\em index\_\-offset})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1ModuleConnection_acd1f10a2137248c1a58e986013a7d1eb}
+
+
+Set the cell index (Mokka specification) of the cell in the lower left corner. The index offset is used to uniquely define the module location. 
+
+Definition at line 107 of file ModuleConnection.hh.\index{CALICE::ModuleConnection@{CALICE::ModuleConnection}!setModuleID@{setModuleID}}
+\index{setModuleID@{setModuleID}!CALICE::ModuleConnection@{CALICE::ModuleConnection}}
+\subsubsection[{setModuleID}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ModuleConnection}\& CALICE::ModuleConnection::setModuleID (int {\em module\_\-id})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1ModuleConnection_a549e556e185e7596583710bcd4d5a9f0}
+
+
+Set the serial number of a module. This number together with the module type is used to uniquely identfy a module. This unique identification is for example needed to get the correct calibration constants. 
+
+Definition at line 163 of file ModuleConnection.hh.\index{CALICE::ModuleConnection@{CALICE::ModuleConnection}!setModuleType@{setModuleType}}
+\index{setModuleType@{setModuleType}!CALICE::ModuleConnection@{CALICE::ModuleConnection}}
+\subsubsection[{setModuleType}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ModuleConnection}\& CALICE::ModuleConnection::setModuleType (unsigned char {\em type})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1ModuleConnection_a7c8661d2a87294ad724d63fc0c25d51d}
+
+
+Set the module type. The module type is not needed but this redundant information allows to some verification whether the configuration makes sense. \begin{Desc}
+\item[{\bf Todo}]remove this redundant information? \end{Desc}
+
+
+Definition at line 142 of file ModuleConnection.hh.
+
+\subsection{Field Documentation}
+\index{CALICE::ModuleConnection@{CALICE::ModuleConnection}!\_\-connectorNames@{\_\-connectorNames}}
+\index{\_\-connectorNames@{\_\-connectorNames}!CALICE::ModuleConnection@{CALICE::ModuleConnection}}
+\subsubsection[{\_\-connectorNames}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ CALICE::ModuleConnection::\_\-connectorNames\hspace{0.3cm}{\ttfamily  [static, private]}}\label{classCALICE_1_1ModuleConnection_a09739dae81b4b048bc08adfb249e0f48}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+
+  {
+    "left",
+    "right",
+    "full",
+    "unknwon"
+  }
+\end{DoxyCode}
+
+
+Definition at line 207 of file ModuleConnection.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+ModuleConnection.hh\item 
+ModuleConnection.cc\end{DoxyCompactItemize}

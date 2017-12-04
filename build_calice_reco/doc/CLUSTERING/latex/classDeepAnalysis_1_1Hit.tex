@@ -1,0 +1,107 @@
+\section{DeepAnalysis::Hit Class Reference}
+\label{classDeepAnalysis_1_1Hit}\index{DeepAnalysis::Hit@{DeepAnalysis::Hit}}
+
+
+Class for hit: consists of:.  
+
+
+{\ttfamily \#include $<$DeepAnalysis.hh$>$}Inheritance diagram for DeepAnalysis::Hit::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classDeepAnalysis_1_1Hit}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Hit} ()\label{classDeepAnalysis_1_1Hit_ae07a53b3fc9dc9ee0c3a7bcd6dadb748}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+void {\bf set} (unsigned \_\-idx, double \_\-x, double \_\-y, double \_\-z, double \_\-am, double \_\-ampl\_\-mip, double \_\-thr, unsigned \_\-lay, int \_\-addr)
+\begin{DoxyCompactList}\small\item\em Set hit parameters. \item\end{DoxyCompactList}\item 
+void {\bf draw} (unsigned type, unsigned size, unsigned color)
+\begin{DoxyCompactList}\small\item\em Draw hit. \item\end{DoxyCompactList}\item 
+{\bf KIND} {\bf get\_\-color} ({\bf DeepAnalysis} \&rs)
+\begin{DoxyCompactList}\small\item\em Get hit color. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+unsigned {\bf idx}\label{classDeepAnalysis_1_1Hit_adcc608658d5021b8acfd56f34d2e57cc}
+
+\begin{DoxyCompactList}\small\item\em index in input hits \item\end{DoxyCompactList}\item 
+Point3D {\bf cartesianPoint}\label{classDeepAnalysis_1_1Hit_a4be7f547d9bb071d195dbbcdbc8fe900}
+
+\begin{DoxyCompactList}\small\item\em cartesian coordinates \item\end{DoxyCompactList}\item 
+Sphere3D {\bf sphere3d}\label{classDeepAnalysis_1_1Hit_af2fa1f58d38c3a02f006f8b5289b7648}
+
+\begin{DoxyCompactList}\small\item\em spherical coordinates \item\end{DoxyCompactList}\item 
+double {\bf amplGeV}\label{classDeepAnalysis_1_1Hit_a3b8f817d02b3171fdb57c997ee9a558c}
+
+\begin{DoxyCompactList}\small\item\em amplitude [GeV] \item\end{DoxyCompactList}\item 
+double {\bf ampl\_\-mip}\label{classDeepAnalysis_1_1Hit_ae28b50dafae6721b055170d2d367c956}
+
+\begin{DoxyCompactList}\small\item\em amplitude in MIPs \item\end{DoxyCompactList}\item 
+double {\bf thr}\label{classDeepAnalysis_1_1Hit_a4dab2d64d7e398e42b8cb74f2bbb0fbc}
+
+\begin{DoxyCompactList}\small\item\em threshold in MIPs \item\end{DoxyCompactList}\item 
+unsigned {\bf lay}\label{classDeepAnalysis_1_1Hit_a31a55598c143d18d3443365e496e7515}
+
+\begin{DoxyCompactList}\small\item\em layer number \item\end{DoxyCompactList}\item 
+int {\bf addr}\label{classDeepAnalysis_1_1Hit_a8a8f5aae460bf9ba23eff1066aa72a99}
+
+\begin{DoxyCompactList}\small\item\em address in initial event array \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned {\bf RS\_\-TYPE} = 0\label{classDeepAnalysis_1_1Hit_a0da168f06fb6b3d48524db3f3b226d47}
+
+\begin{DoxyCompactList}\small\item\em type of \doxyref{RS}{p.}{classRS} object \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for hit: consists of:. 
+
+Definition at line 170 of file DeepAnalysis.hh.
+
+\subsection{Member Function Documentation}
+\index{DeepAnalysis::Hit@{DeepAnalysis::Hit}!draw@{draw}}
+\index{draw@{draw}!DeepAnalysis::Hit@{DeepAnalysis::Hit}}
+\subsubsection[{draw}]{\setlength{\rightskip}{0pt plus 5cm}void DeepAnalysis::Hit::draw (unsigned {\em type}, \/  unsigned {\em size}, \/  unsigned {\em color})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classDeepAnalysis_1_1Hit_a5ac3851b0250e454434733fd18923a56}
+
+
+Draw hit. 
+\begin{DoxyParams}{Parameters}
+\item[{\em type}]hit type \item[{\em size}]size of point/size of cross \item[{\em color}]color n RGB form (e.g. 0xff0000 is RED) \end{DoxyParams}
+
+
+Definition at line 216 of file DeepAnalysis.hh.\index{DeepAnalysis::Hit@{DeepAnalysis::Hit}!get\_\-color@{get\_\-color}}
+\index{get\_\-color@{get\_\-color}!DeepAnalysis::Hit@{DeepAnalysis::Hit}}
+\subsubsection[{get\_\-color}]{\setlength{\rightskip}{0pt plus 5cm}{\bf DeepAnalysis::KIND} DeepAnalysis::Hit::get\_\-color ({\bf DeepAnalysis} \& {\em deepAnalysis})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classDeepAnalysis_1_1Hit_a78087dea3baa8b9fd1ffcf99c820a496}
+
+
+Get hit color. 
+\begin{DoxyParams}{Parameters}
+\item[{\em deepAnalysis}]\end{DoxyParams}
+
+
+Definition at line 1633 of file DeepAnalysis.hh.
+
+References DeepAnalysis::EM, DeepAnalysis::HAD, DeepAnalysis::kind, DeepAnalysis::NEUTR, and DeepAnalysis::TRK.\index{DeepAnalysis::Hit@{DeepAnalysis::Hit}!set@{set}}
+\index{set@{set}!DeepAnalysis::Hit@{DeepAnalysis::Hit}}
+\subsubsection[{set}]{\setlength{\rightskip}{0pt plus 5cm}void DeepAnalysis::Hit::set (unsigned {\em \_\-idx}, \/  double {\em \_\-x}, \/  double {\em \_\-y}, \/  double {\em \_\-z}, \/  double {\em \_\-am}, \/  double {\em \_\-ampl\_\-mip}, \/  double {\em \_\-thr}, \/  unsigned {\em \_\-lay}, \/  int {\em \_\-addr})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classDeepAnalysis_1_1Hit_aee70433682ef0e0b4d33f374d8686fb8}
+
+
+Set hit parameters. 
+\begin{DoxyParams}{Parameters}
+\item[{\em \_\-idx}]index in input hits \item[{\em \_\-x}]x-\/coordinate \item[{\em \_\-y}]y-\/coordinate \item[{\em \_\-z}]z-\/coordinate \item[{\em \_\-am}]amplitude (in GeV) \item[{\em \_\-ampl\_\-mip}]amplitude (in MIPs) \item[{\em \_\-thr}]threshold in MIPs \item[{\em \_\-lay}]layer number \item[{\em \_\-addr}]address in initial event array \end{DoxyParams}
+
+
+Definition at line 198 of file DeepAnalysis.hh.
+
+References addr, ampl\_\-mip, amplGeV, cartesianPoint, idx, lay, sphere3d, and thr.
+
+Referenced by DeepAnalysis::add\_\-hit().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+DeepAnalysis.hh\end{DoxyCompactItemize}

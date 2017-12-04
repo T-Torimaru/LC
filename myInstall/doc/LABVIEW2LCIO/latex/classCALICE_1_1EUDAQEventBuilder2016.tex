@@ -1,0 +1,97 @@
+\section{CALICE::EUDAQEventBuilder2016 Class Reference}
+\label{classCALICE_1_1EUDAQEventBuilder2016}\index{CALICE::EUDAQEventBuilder2016@{CALICE::EUDAQEventBuilder2016}}
+
+
+Processor for reading the AHCAL EUDAQ SLCIO files.  
+
+
+{\ttfamily \#include $<$EUDAQEventBuilder2016.hh$>$}\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf rawData2016}
+\begin{DoxyCompactList}\small\item\em The slcio data format. \item\end{DoxyCompactList}\item 
+struct {\bf rawTemp}
+\begin{DoxyCompactList}\small\item\em The slcio data format for the temperature sensor. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Processor $\ast$ {\bf newProcessor} ()\label{classCALICE_1_1EUDAQEventBuilder2016_a1650bf1dce20b0a866b458e9ebdcda7e}
+
+\begin{DoxyCompactList}\small\item\em Implementation of new Processor returns pointer to processor. \item\end{DoxyCompactList}\item 
+void {\bf processEvent} (LCEvent $\ast$evt)\label{classCALICE_1_1EUDAQEventBuilder2016_a0bac760cc21f4b287c07da49eacc9ada}
+
+\begin{DoxyCompactList}\small\item\em Creates events with LCGenrealObject collections from the EUDAQ input file and calls all active processors' \doxyref{processEvent()}{p.}{classCALICE_1_1EUDAQEventBuilder2016_a0bac760cc21f4b287c07da49eacc9ada} and processRunHeader Method. \item\end{DoxyCompactList}\item 
+void {\bf writeSlowControl} ()\label{classCALICE_1_1EUDAQEventBuilder2016_a8f1baf4f107ff927b4812c64e2b860da}
+
+\begin{DoxyCompactList}\small\item\em work on slow control data, ASIC \item\end{DoxyCompactList}\item 
+virtual void {\bf init} ()\label{classCALICE_1_1EUDAQEventBuilder2016_aa94ddbbbf8c0ab9773a401a0473c0cf1}
+
+\begin{DoxyCompactList}\small\item\em init method \item\end{DoxyCompactList}\item 
+virtual void {\bf end} ()\label{classCALICE_1_1EUDAQEventBuilder2016_a045d43f47db2899fc71cf1c2b2d44b61}
+
+\begin{DoxyCompactList}\small\item\em end method \item\end{DoxyCompactList}\item 
+void {\bf printParameters} ()\label{classCALICE_1_1EUDAQEventBuilder2016_ab3c575b563f3d8d10b07d2c87eaa04e2}
+
+\begin{DoxyCompactList}\small\item\em print parameters \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bfseries \_\-inputColName}\label{classCALICE_1_1EUDAQEventBuilder2016_a2f42f94af561a2fd1766aceaa7fa2528}
+
+\item 
+std::string {\bfseries \_\-inputColNameTemp}\label{classCALICE_1_1EUDAQEventBuilder2016_a18c69aaf8fac9eb6eeb4825dfe0e60e6}
+
+\item 
+std::string {\bfseries \_\-inputColNameBIF}\label{classCALICE_1_1EUDAQEventBuilder2016_a8984943e80f1c4e61c4091a637682188}
+
+\item 
+std::string {\bfseries \_\-outputColNameECAL}\label{classCALICE_1_1EUDAQEventBuilder2016_a476ebbedcca110f1666be0b2e2617680}
+
+\item 
+std::string {\bfseries \_\-outputColNameHCAL}\label{classCALICE_1_1EUDAQEventBuilder2016_a56dc8c5a54e6be562c041bb09055ab38}
+
+\item 
+std::string {\bfseries \_\-detectorTypeName}\label{classCALICE_1_1EUDAQEventBuilder2016_a250584f99a8271429a73d4e954530621}
+
+\item 
+int {\bfseries \_\-bifoffset}\label{classCALICE_1_1EUDAQEventBuilder2016_aa6b08754345a70e2336ada9efdd17fd9}
+
+\item 
+int {\bf \_\-runNumber}\label{classCALICE_1_1EUDAQEventBuilder2016_aa103d69ec774f576dace869104b8faef}
+
+\begin{DoxyCompactList}\small\item\em The run number. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries LcioEventNr}\label{classCALICE_1_1EUDAQEventBuilder2016_a7573707103dd046dee93dfa0e2b1cab5}
+
+\item 
+int {\bfseries discarded\_\-events}\label{classCALICE_1_1EUDAQEventBuilder2016_a51f60c4d154832135bc98ea01c4208cc}
+
+\item 
+int {\bfseries all\_\-events}\label{classCALICE_1_1EUDAQEventBuilder2016_ae45de2261b7a553f8fd045989714d730}
+
+\item 
+bool {\bfseries temperaturecollection\_\-write}\label{classCALICE_1_1EUDAQEventBuilder2016_a35fe1ae4a3c82ba75b126e3c1a8025cb}
+
+\item 
+bool {\bfseries bifcollection\_\-write}\label{classCALICE_1_1EUDAQEventBuilder2016_af8b579cead4724009069f72686b79f4b}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Processor for reading the AHCAL EUDAQ SLCIO files. It processes the input data to create events with LCIO collections of the AHCAL EUDAQ SLCIO output (sorted by readout cycles). Based on F. Gaede's StdHepReader to be found in the marlin package. \begin{DoxyAuthor}{Author}
+: A. Irles (DESY), based on the S. Lu's (DESY Hamburg) LabviewConverter2 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+May 20 2015 
+\end{DoxyDate}
+
+
+Definition at line 22 of file EUDAQEventBuilder2016.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+EUDAQEventBuilder2016.hh\item 
+EUDAQEventBuilder2016.cc\end{DoxyCompactItemize}

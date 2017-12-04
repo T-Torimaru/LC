@@ -1,0 +1,56 @@
+\section{histmgr::RootWriterKit Class Reference}
+\label{classhistmgr_1_1RootWriterKit}\index{histmgr::RootWriterKit@{histmgr::RootWriterKit}}
+
+
+Create a histogram writer which writes the histograms to ROOT files.  
+
+
+{\ttfamily \#include $<$RootWriterKit.hh$>$}Inheritance diagram for histmgr::RootWriterKit::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classhistmgr_1_1RootWriterKit}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf HistWriter} $\ast$ {\bf createWriter} (const std::string \&name)
+\begin{DoxyCompactList}\small\item\em create a histogram write. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf RootWriterKit} $\ast$ {\bfseries \_\-\_\-instance} = new {\bf RootWriterKit}\label{classhistmgr_1_1RootWriterKit_a6bdad8f648703ed985ec28286a58b6ee}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Create a histogram writer which writes the histograms to ROOT files. \begin{DoxySeeAlso}{See also}
+\doxyref{RootWriter}{p.}{classhistmgr_1_1RootWriter}. 
+\end{DoxySeeAlso}
+
+
+Definition at line 12 of file RootWriterKit.hh.
+
+\subsection{Member Function Documentation}
+\index{histmgr::RootWriterKit@{histmgr::RootWriterKit}!createWriter@{createWriter}}
+\index{createWriter@{createWriter}!histmgr::RootWriterKit@{histmgr::RootWriterKit}}
+\subsubsection[{createWriter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf HistWriter}$\ast$ histmgr::RootWriterKit::createWriter (const std::string \& {\em name})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classhistmgr_1_1RootWriterKit_a480fb8728c4592098a59344922a58c71}
+
+
+create a histogram write. 
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]the name of the file to which the histograms should be written \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer a histogram writer which should be ready to write histograms. 
+\end{DoxyReturn}
+
+
+Implements {\bf histmgr::HistWriterKit} \doxyref{}{p.}{classhistmgr_1_1HistWriterKit_a4e07d5baf676d4af138d09f2e92b4001}.
+
+Definition at line 17 of file RootWriterKit.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+RootWriterKit.hh\item 
+RootWriterKit.cc\end{DoxyCompactItemize}

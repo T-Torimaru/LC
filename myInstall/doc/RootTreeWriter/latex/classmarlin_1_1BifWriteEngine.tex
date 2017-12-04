@@ -1,0 +1,150 @@
+\section{marlin::BifWriteEngine Class Reference}
+\label{classmarlin_1_1BifWriteEngine}\index{marlin::BifWriteEngine@{marlin::BifWriteEngine}}
+Inheritance diagram for marlin::BifWriteEngine:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classmarlin_1_1BifWriteEngine__inherit__graph}
+\end{center}
+\end{figure}
+Collaboration diagram for marlin::BifWriteEngine:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classmarlin_1_1BifWriteEngine__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries BifWriteEngine} ({\bf RootTreeWriter} $\ast$host)\label{classmarlin_1_1BifWriteEngine_a393c8ffc9c727aa3cb6f110464a8a9c3}
+
+\item 
+virtual const std::string \& {\bf getEngineName} ()
+\item 
+virtual void {\bf registerParameters} ()
+\item 
+virtual void {\bf registerBranches} (TTree $\ast$hostTree)
+\item 
+virtual void {\bf fillVariables} (EVENT::LCEvent $\ast$)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>unsigned long long int {\bf StartAcq}\\
+\>unsigned long long int {\bf StopAcq}\\
+\>int {\bf nTrigger}\\
+\>int {\bf source} [MAXTRIGGERS]\\
+\>int {\bf BXID} [MAXTRIGGERS]\\
+\>float {\bf Time} [MAXTRIGGERS]\\
+\} {\bfseries \_bifFill}\label{classmarlin_1_1BifWriteEngine_acf18f6765f90f6dd9f948931c1f14cd6}
+\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned int {\bfseries MAXTRIGGERS} = 100\label{classmarlin_1_1BifWriteEngine_ab2709146a56204c227071f925593d2ca}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 14 of file BifWriteEngine.hh.
+
+\subsection{Member Function Documentation}
+\index{marlin::BifWriteEngine@{marlin::BifWriteEngine}!fillVariables@{fillVariables}}
+\index{fillVariables@{fillVariables}!marlin::BifWriteEngine@{marlin::BifWriteEngine}}
+\subsubsection[{fillVariables}]{\setlength{\rightskip}{0pt plus 5cm}void marlin::BifWriteEngine::fillVariables (EVENT::LCEvent $\ast$ {\em evt})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classmarlin_1_1BifWriteEngine_a5945f044afb17e832cf63380d3aa4330}
+Implement this to extract the variables which you want to fill into the {\itshape ROOT\/} tree from the event. Write the value of the variables you want to add to the tree to the member variables, which you registered to the {\itshape ROOT\/} tree. The \doxyref{RootTreeWriter}{p.}{classmarlin_1_1RootTreeWriter} will call TTree::Fill() for you. 
+\begin{DoxyParams}{Parameters}
+\item[{\em evt}]the current event \end{DoxyParams}
+
+
+Implements {\bf marlin::RootWriteEngine} \doxyref{}{p.}{classmarlin_1_1RootWriteEngine_ace823bd839cee7e8c8755e60c4cc7134}.
+
+Definition at line 78 of file BifWriteEngine.cc.\index{marlin::BifWriteEngine@{marlin::BifWriteEngine}!getEngineName@{getEngineName}}
+\index{getEngineName@{getEngineName}!marlin::BifWriteEngine@{marlin::BifWriteEngine}}
+\subsubsection[{getEngineName}]{\setlength{\rightskip}{0pt plus 5cm}virtual const std::string\& marlin::BifWriteEngine::getEngineName ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classmarlin_1_1BifWriteEngine_a82eecc72c7824876b9bb6211d9055e68}
+Returns the name of the engine to the \doxyref{RootTreeWriter}{p.}{classmarlin_1_1RootTreeWriter} processor. \begin{DoxyReturn}{Returns}
+Must return a string with the engine name. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[{\bf Todo}]fixme: should be const, but must be declared const in implementations too. Need to fix all existing engines?!? \end{Desc}
+
+
+Implements {\bf marlin::RootWriteEngine} \doxyref{}{p.}{classmarlin_1_1RootWriteEngine_a31e38120fe60efcb15666fd569ba5862}.
+
+Definition at line 23 of file BifWriteEngine.hh.\index{marlin::BifWriteEngine@{marlin::BifWriteEngine}!registerBranches@{registerBranches}}
+\index{registerBranches@{registerBranches}!marlin::BifWriteEngine@{marlin::BifWriteEngine}}
+\subsubsection[{registerBranches}]{\setlength{\rightskip}{0pt plus 5cm}void marlin::BifWriteEngine::registerBranches (TTree $\ast$)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classmarlin_1_1BifWriteEngine_a7589d618bd6113f426333a1aede37855}
+Implement to register local variables to the output tree 
+\begin{DoxyParams}{Parameters}
+\item[{\em pointer}]to the {\itshape ROOT\/} tree, which the \doxyref{RootTreeWriter}{p.}{classmarlin_1_1RootTreeWriter} processor fills at the end of each event. Usually the implementation looks like \begin{DoxyVerb}
+    /// hostTree->Branch("variable",&_variable" ,"variable/F"  );
+    /// \end{DoxyVerb}
+. But you can add any type of branch you like. \end{DoxyParams}
+
+
+Implements {\bf marlin::RootWriteEngine} \doxyref{}{p.}{classmarlin_1_1RootWriteEngine_ad467dc6e73fdd9fd4311f7277fd02a89}.
+
+Definition at line 52 of file BifWriteEngine.cc.\index{marlin::BifWriteEngine@{marlin::BifWriteEngine}!registerParameters@{registerParameters}}
+\index{registerParameters@{registerParameters}!marlin::BifWriteEngine@{marlin::BifWriteEngine}}
+\subsubsection[{registerParameters}]{\setlength{\rightskip}{0pt plus 5cm}void marlin::BifWriteEngine::registerParameters ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classmarlin_1_1BifWriteEngine_a2f0940793cbb3314fe21843f9bde321b}
+Used to register steering parameters. Implement to register {\itshape \doxyref{marlin}{p.}{namespacemarlin}\/} steering file parameters. Use {\itshape \doxyref{marlin}{p.}{namespacemarlin}\/} syntax to register parameters for the calling \doxyref{RootTreeWriter}{p.}{classmarlin_1_1RootTreeWriter} processor.
+
+use \begin{DoxyVerb}
+    /// _hostProc.relayRegisterProcessorParameter(...)
+    /// _hostProc.relayRegister...()
+    /// \end{DoxyVerb}
+ instead of {\itshape \doxyref{marlin}{p.}{namespacemarlin}\/} processors \begin{DoxyVerb}register...() \end{DoxyVerb}
+ methods 
+
+Implements {\bf marlin::RootWriteEngine} \doxyref{}{p.}{classmarlin_1_1RootWriteEngine_ae12b70923768043fa5c1438f078c41d3}.
+
+Definition at line 33 of file BifWriteEngine.cc.
+
+References marlin::RootTreeWriter::relayRegisterInputCollection(), and marlin::RootTreeWriter::relayRegisterProcessorParameter().
+
+\subsection{Member Data Documentation}
+\index{marlin::BifWriteEngine@{marlin::BifWriteEngine}!BXID@{BXID}}
+\index{BXID@{BXID}!marlin::BifWriteEngine@{marlin::BifWriteEngine}}
+\subsubsection[{BXID}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf marlin::BifWriteEngine::BXID}[MAXTRIGGERS]}\label{classmarlin_1_1BifWriteEngine_ac35e4dfa1bf05cab9765ffd83580599c}
+BXID of the Trigger 
+
+Definition at line 40 of file BifWriteEngine.hh.\index{marlin::BifWriteEngine@{marlin::BifWriteEngine}!nTrigger@{nTrigger}}
+\index{nTrigger@{nTrigger}!marlin::BifWriteEngine@{marlin::BifWriteEngine}}
+\subsubsection[{nTrigger}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf marlin::BifWriteEngine::nTrigger}}\label{classmarlin_1_1BifWriteEngine_aa356c9b06febd7f97ab0bf0fe41462aa}
+Number of BIF Triggers 
+
+Definition at line 38 of file BifWriteEngine.hh.\index{marlin::BifWriteEngine@{marlin::BifWriteEngine}!source@{source}}
+\index{source@{source}!marlin::BifWriteEngine@{marlin::BifWriteEngine}}
+\subsubsection[{source}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf marlin::BifWriteEngine::source}[MAXTRIGGERS]}\label{classmarlin_1_1BifWriteEngine_a96e76f33457ffcd263fe36f8b5756c57}
+Source of the Trigger (3 for Scint) 
+
+Definition at line 39 of file BifWriteEngine.hh.\index{marlin::BifWriteEngine@{marlin::BifWriteEngine}!StartAcq@{StartAcq}}
+\index{StartAcq@{StartAcq}!marlin::BifWriteEngine@{marlin::BifWriteEngine}}
+\subsubsection[{StartAcq}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long long int {\bf marlin::BifWriteEngine::StartAcq}}\label{classmarlin_1_1BifWriteEngine_a18fc0ff0830989602c485b8004af0c93}
+Timestamp of the start acquisition 
+
+Definition at line 36 of file BifWriteEngine.hh.\index{marlin::BifWriteEngine@{marlin::BifWriteEngine}!StopAcq@{StopAcq}}
+\index{StopAcq@{StopAcq}!marlin::BifWriteEngine@{marlin::BifWriteEngine}}
+\subsubsection[{StopAcq}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long long int {\bf marlin::BifWriteEngine::StopAcq}}\label{classmarlin_1_1BifWriteEngine_ad65a5caebe02d633119beb5ffda2d49c}
+Timestamp of the stop acquisition 
+
+Definition at line 37 of file BifWriteEngine.hh.\index{marlin::BifWriteEngine@{marlin::BifWriteEngine}!Time@{Time}}
+\index{Time@{Time}!marlin::BifWriteEngine@{marlin::BifWriteEngine}}
+\subsubsection[{Time}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf marlin::BifWriteEngine::Time}[MAXTRIGGERS]}\label{classmarlin_1_1BifWriteEngine_a01b22dcf9615629cfa81794edb24f366}
+Absolute Time of the Trigger 
+
+Definition at line 41 of file BifWriteEngine.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+BifWriteEngine.hh\item 
+BifWriteEngine.cc\end{DoxyCompactItemize}

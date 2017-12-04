@@ -1,0 +1,97 @@
+\section{marlin::RootWriteEngine Class Reference}
+\label{classmarlin_1_1RootWriteEngine}\index{marlin::RootWriteEngine@{marlin::RootWriteEngine}}
+
+
+Abstract base class of callback classes for the RootTreeWrite processor Abstract interface for a RootTreeWriter-\/engine.  
+
+
+{\ttfamily \#include $<$RootWriteEngine.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf RootWriteEngine} (RootTreeWriter $\ast$host)
+\begin{DoxyCompactList}\small\item\em constructor \item\end{DoxyCompactList}\item 
+virtual const std::string \& {\bf getEngineName} ()=0
+\begin{DoxyCompactList}\small\item\em Returns the name of the engine to the RootTreeWriter processor. \item\end{DoxyCompactList}\item 
+virtual void {\bf registerParameters} ()=0
+\begin{DoxyCompactList}\small\item\em Used to register steering parameters. \item\end{DoxyCompactList}\item 
+virtual void {\bf registerBranches} (TTree $\ast$)=0
+\begin{DoxyCompactList}\small\item\em Implement to register local variables to the output tree. \item\end{DoxyCompactList}\item 
+virtual void {\bf fillVariables} (EVENT::LCEvent $\ast$evt)=0
+\begin{DoxyCompactList}\small\item\em Implement this to extract the variables which you want to fill into the {\itshape ROOT\/} tree from the event. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+RootTreeWriter \& {\bfseries \_\-hostProcessor}\label{classmarlin_1_1RootWriteEngine_ab53e690ff0f758b27f4ef45b87f3d3ce}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract base class of callback classes for the RootTreeWrite processor Abstract interface for a RootTreeWriter-\/engine. Implement an descendant of this class to add variables to the output tree of the RootTreeWriterProcessor. After that add the new {\itshape engine\/} to the list of writer engines in the RootTreeWriter processor 
+
+Definition at line 29 of file RootWriteEngine.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{marlin::RootWriteEngine@{marlin::RootWriteEngine}!RootWriteEngine@{RootWriteEngine}}
+\index{RootWriteEngine@{RootWriteEngine}!marlin::RootWriteEngine@{marlin::RootWriteEngine}}
+\subsubsection[{RootWriteEngine}]{\setlength{\rightskip}{0pt plus 5cm}marlin::RootWriteEngine::RootWriteEngine (RootTreeWriter $\ast$ {\em host})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classmarlin_1_1RootWriteEngine_a9a2f783fbd71d43487cb94feee09210a}
+
+
+constructor 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em host}]pointer to the RootTreeWriter processor the constructor of a derived class must pass this pointer to this base class e.g. \begin{DoxyVerb}
+    /// SomeeWriteEngine( RootTreeWriter* host ):RootWriteEngine(host),
+    ///                                          _engineName("SomeWriteEngine")
+    /// {} \end{DoxyVerb}
+ \end{DoxyParams}
+
+
+Definition at line 38 of file RootWriteEngine.hh.
+
+\subsection{Member Function Documentation}
+\index{marlin::RootWriteEngine@{marlin::RootWriteEngine}!fillVariables@{fillVariables}}
+\index{fillVariables@{fillVariables}!marlin::RootWriteEngine@{marlin::RootWriteEngine}}
+\subsubsection[{fillVariables}]{\setlength{\rightskip}{0pt plus 5cm}virtual void marlin::RootWriteEngine::fillVariables (EVENT::LCEvent $\ast$ {\em evt})\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classmarlin_1_1RootWriteEngine_ace823bd839cee7e8c8755e60c4cc7134}
+
+
+Implement this to extract the variables which you want to fill into the {\itshape ROOT\/} tree from the event. Write the value of the variables you want to add to the tree to the member variables, which you registered to the {\itshape ROOT\/} tree. The RootTreeWriter will call TTree::Fill() for you. 
+\begin{DoxyParams}{Parameters}
+\item[{\em evt}]the current event \end{DoxyParams}
+\index{marlin::RootWriteEngine@{marlin::RootWriteEngine}!getEngineName@{getEngineName}}
+\index{getEngineName@{getEngineName}!marlin::RootWriteEngine@{marlin::RootWriteEngine}}
+\subsubsection[{getEngineName}]{\setlength{\rightskip}{0pt plus 5cm}virtual const std::string\& marlin::RootWriteEngine::getEngineName ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classmarlin_1_1RootWriteEngine_a31e38120fe60efcb15666fd569ba5862}
+
+
+Returns the name of the engine to the RootTreeWriter processor. \begin{DoxyReturn}{Returns}
+Must return a string with the engine name. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[{\bf Todo}]fixme: should be const, but must be declared const in implementations too. Need to fix all existing engines?!? \end{Desc}
+\index{marlin::RootWriteEngine@{marlin::RootWriteEngine}!registerBranches@{registerBranches}}
+\index{registerBranches@{registerBranches}!marlin::RootWriteEngine@{marlin::RootWriteEngine}}
+\subsubsection[{registerBranches}]{\setlength{\rightskip}{0pt plus 5cm}virtual void marlin::RootWriteEngine::registerBranches (TTree $\ast$)\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classmarlin_1_1RootWriteEngine_ad467dc6e73fdd9fd4311f7277fd02a89}
+
+
+Implement to register local variables to the output tree. 
+\begin{DoxyParams}{Parameters}
+\item[{\em pointer}]to the {\itshape ROOT\/} tree, which the RootTreeWriter processor fills at the end of each event. Usually the implementation looks like \begin{DoxyVerb}
+    /// hostTree->Branch("variable",&_variable" ,"variable/F"  );
+    /// \end{DoxyVerb}
+. But you can add any type of branch you like. \end{DoxyParams}
+\index{marlin::RootWriteEngine@{marlin::RootWriteEngine}!registerParameters@{registerParameters}}
+\index{registerParameters@{registerParameters}!marlin::RootWriteEngine@{marlin::RootWriteEngine}}
+\subsubsection[{registerParameters}]{\setlength{\rightskip}{0pt plus 5cm}virtual void marlin::RootWriteEngine::registerParameters ()\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classmarlin_1_1RootWriteEngine_ae12b70923768043fa5c1438f078c41d3}
+
+
+Used to register steering parameters. Implement to register {\itshape marlin\/} steering file parameters. Use {\itshape marlin\/} syntax to register parameters for the calling RootTreeWriter processor.
+
+use \begin{DoxyVerb}
+    /// _hostProc.relayRegisterProcessorParameter(...)
+    /// _hostProc.relayRegister...()
+    /// \end{DoxyVerb}
+ instead of {\itshape marlin\/} processors \begin{DoxyVerb}register...() \end{DoxyVerb}
+ methods 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+RootWriteEngine.hh\end{DoxyCompactItemize}

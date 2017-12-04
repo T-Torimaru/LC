@@ -1,0 +1,64 @@
+\section{CALICE::SimpleValueVector Class Reference}
+\label{classCALICE_1_1SimpleValueVector}\index{CALICE::SimpleValueVector@{CALICE::SimpleValueVector}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf SimpleValueVector} ()\label{classCALICE_1_1SimpleValueVector_afa0be915e346466caa53324b6a6ae7a5}
+
+\begin{DoxyCompactList}\small\item\em Empty constructor. \item\end{DoxyCompactList}\item 
+{\bf SimpleValueVector} (const int id, const unsigned int nMemo, const std::vector$<$ float $>$ val, const std::vector$<$ float $>$ err, const std::vector$<$ int $>$ stat)\label{classCALICE_1_1SimpleValueVector_a42768fcda4122561a2ef28daeb184a38}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+{\bf SimpleValueVector} (EVENT::LCObject $\ast$obj)\label{classCALICE_1_1SimpleValueVector_af7c3b2490264f37cb1bc24044d2fb033}
+
+\begin{DoxyCompactList}\small\item\em Constructor from LCObject. \item\end{DoxyCompactList}\item 
+{\bf $\sim$SimpleValueVector} ()\label{classCALICE_1_1SimpleValueVector_a7f5753e348499618ee9b658608c4cdd6}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+int {\bf getCellID} () const \label{classCALICE_1_1SimpleValueVector_adb8b0be370008186ea3e4750edbb1496}
+
+\begin{DoxyCompactList}\small\item\em Return index identifier. \item\end{DoxyCompactList}\item 
+int {\bf getSize} () const \label{classCALICE_1_1SimpleValueVector_aa49ebdd8cc44aef01a259cb922bc3b54}
+
+\begin{DoxyCompactList}\small\item\em Return size array. \item\end{DoxyCompactList}\item 
+float {\bf getValue} (const unsigned int i) const \label{classCALICE_1_1SimpleValueVector_afc51755de318aad884abd119ba5f6a60}
+
+\begin{DoxyCompactList}\small\item\em Return the value. \item\end{DoxyCompactList}\item 
+float {\bf getError} (const unsigned int i) const \label{classCALICE_1_1SimpleValueVector_aaa1ef44b64800f632c44ee5e6415e5cf}
+
+\begin{DoxyCompactList}\small\item\em Return the error on the value. \item\end{DoxyCompactList}\item 
+int {\bf getStatus} (const unsigned int i) const \label{classCALICE_1_1SimpleValueVector_abeb48e79ede23512335a9b4c4a094e4b}
+
+\begin{DoxyCompactList}\small\item\em Return the status. \item\end{DoxyCompactList}\item 
+void {\bf setCellID} (const int ID)\label{classCALICE_1_1SimpleValueVector_a4465a0dbf03078fe8a4aafde0c90b2c7}
+
+\begin{DoxyCompactList}\small\item\em set index identifier \item\end{DoxyCompactList}\item 
+void {\bf setSize} (const int size)\label{classCALICE_1_1SimpleValueVector_a4b34a565e96ed25beea6d42458167259}
+
+\begin{DoxyCompactList}\small\item\em set size \item\end{DoxyCompactList}\item 
+void {\bf setValue} (const unsigned int i, const float val)\label{classCALICE_1_1SimpleValueVector_a69145f7cac58a0b27195625af458e2af}
+
+\begin{DoxyCompactList}\small\item\em set the value \item\end{DoxyCompactList}\item 
+void {\bf setError} (const unsigned int i, const float err)\label{classCALICE_1_1SimpleValueVector_aff7e70fd83747cd55597230fbd9ddcec}
+
+\begin{DoxyCompactList}\small\item\em set the error on the value \item\end{DoxyCompactList}\item 
+void {\bf setStatus} (const unsigned int i, const int stat)\label{classCALICE_1_1SimpleValueVector_aa25bc9084b4859751e49f17e45c01662}
+
+\begin{DoxyCompactList}\small\item\em set the status \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1SimpleValueVector_ad521e9fdf796c74a216d3028dad16883}
+
+\begin{DoxyCompactList}\small\item\em Implementation of LCGenericObject::getTypeName. \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1SimpleValueVector_a7c7524dbd63b69b0a6daa100f1f36421}
+
+\begin{DoxyCompactList}\small\item\em Implementation of LCGenericObject::getDataDescription. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 11 of file SimpleValueVector.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+SimpleValueVector.hh\item 
+SimpleValueVector.cc\end{DoxyCompactItemize}

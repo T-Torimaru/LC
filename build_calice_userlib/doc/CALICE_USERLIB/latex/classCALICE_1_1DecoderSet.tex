@@ -1,0 +1,169 @@
+\section{CALICE::DecoderSet Class Reference}
+\label{classCALICE_1_1DecoderSet}\index{CALICE::DecoderSet@{CALICE::DecoderSet}}
+
+
+class containing decoders for the three \doxyref{CALICE}{p.}{namespaceCALICE} coordinate systems  
+
+
+{\ttfamily \#include $<$DecoderSet.hh$>$}\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf MokkaID\_\-t}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf DecoderSet} ()
+\begin{DoxyCompactList}\small\item\em standard constructor \item\end{DoxyCompactList}\item 
+{\bf DecoderSet} (const std::string \&cellIDencoding, const std::string \&moduleEncoding, const std::string \&DAQencoding)
+\begin{DoxyCompactList}\small\item\em constructor with encoding strings \item\end{DoxyCompactList}\item 
+void {\bf setCellIDEncoding} (const std::string \&encoding)
+\begin{DoxyCompactList}\small\item\em set a new cell ID encoding string if an empty string is given the function will use the default encoding string \item\end{DoxyCompactList}\item 
+void {\bf setModuleEncoding} (const std::string \&encoding)
+\begin{DoxyCompactList}\small\item\em set a new Module tile encoding string if an empty string is given the function will use the default encoding string \item\end{DoxyCompactList}\item 
+void {\bf setDAQEncoding} (const std::string \&encoding)
+\begin{DoxyCompactList}\small\item\em set a new DAQ channel ID encoding string if an empty string is given the function will use the default encoding string \item\end{DoxyCompactList}\item 
+const std::string \& {\bf getCellIDEncoding} () const 
+\begin{DoxyCompactList}\small\item\em get the current cell ID encoding string \item\end{DoxyCompactList}\item 
+const std::string \& {\bf getModuleEncoding} () const 
+\begin{DoxyCompactList}\small\item\em get the current Module tile encoding string \item\end{DoxyCompactList}\item 
+const std::string \& {\bf getDAQEncoding} () const 
+\begin{DoxyCompactList}\small\item\em get the current DAQ channel ID encoding string \item\end{DoxyCompactList}\item 
+unsigned int {\bf getIFromCellID} (const int cellID) const 
+\begin{DoxyCompactList}\small\item\em get I from (Mokka) CellID The right encoding string has to be set before. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getJFromCellID} (const int cellID) const 
+\begin{DoxyCompactList}\small\item\em get J from (Mokka) CellID The right encoding string has to be set before. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getKFromCellID} (const int cellID) const 
+\begin{DoxyCompactList}\small\item\em get K from (Mokka) CellID The right encoding string has to be set before. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getModuleFromModuleID} (const int moduleID) const 
+\begin{DoxyCompactList}\small\item\em get module from (Module) channel ID The right encoding string has to be set before. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getChipFromModuleID} (const int moduleID) const 
+\begin{DoxyCompactList}\small\item\em get chip from (Module) channel ID The right encoding string has to be set before. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getChannelFromModuleID} (const int moduleID) const 
+\begin{DoxyCompactList}\small\item\em get channel from (Module) channel ID The right encoding string has to be set before. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getChannelFromDAQID} (const int {\bf DAQconnection}) const 
+\begin{DoxyCompactList}\small\item\em get channel from DAQ channel ID The right encoding string has to be set before. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getChipFromDAQID} (const int {\bf DAQconnection}) const 
+\begin{DoxyCompactList}\small\item\em get chip from DAQ channel ID The right encoding string has to be set before. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getFeFromDAQID} (const int {\bf DAQconnection}) const 
+\begin{DoxyCompactList}\small\item\em get fe from DAQ channel ID The right encoding string has to be set before. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getSlotFromDAQID} (const int {\bf DAQconnection}) const 
+\begin{DoxyCompactList}\small\item\em get slot from DAQ channel ID The right encoding string has to be set before. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getCrateFromDAQID} (const int {\bf DAQconnection}) const 
+\begin{DoxyCompactList}\small\item\em get crate from DAQ channel ID The right encoding string has to be set before. \item\end{DoxyCompactList}\item 
+int {\bf getCellID} (const unsigned int I, const unsigned int J, const unsigned int K) const 
+\begin{DoxyCompactList}\small\item\em get CellID from triple I,J,K \item\end{DoxyCompactList}\item 
+int {\bf getModuleID} (const unsigned int module, const unsigned int chip, const unsigned int channel) const 
+\begin{DoxyCompactList}\small\item\em get (Module) channel ID from triple module, chip, channel \item\end{DoxyCompactList}\item 
+int {\bf getDAQID} (const unsigned int crate, const unsigned int slot, const unsigned int fe, const unsigned int chip, const unsigned int channel) const 
+\begin{DoxyCompactList}\small\item\em get DAQ channel ID from crate, slot, fe, chip, channel \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::map$<$ std::string, {\bf MokkaID\_\-t} $>$ {\bfseries mokkaDecoderMap\_\-t}\label{classCALICE_1_1DecoderSet_aaa60db49451c3183f3b44c7738a3eb2e}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bfseries \_\-cellIDencodingString}\label{classCALICE_1_1DecoderSet_adabb4fa6971abdefb51e793dbd4afc80}
+
+\item 
+std::string {\bfseries \_\-moduleIDEncodingString}\label{classCALICE_1_1DecoderSet_a00fe23b51254c77dbc495dcec6075447}
+
+\item 
+std::string {\bfseries \_\-daqIDencodingString}\label{classCALICE_1_1DecoderSet_a1b8a88e2732336e6ac7a80acdf7d6f62}
+
+\item 
+{\bf FastDecoder} $\ast$ {\bfseries \_\-IFromCellID}\label{classCALICE_1_1DecoderSet_af543cade302a4724ddba67b313c39f76}
+
+\item 
+{\bf FastDecoder} $\ast$ {\bfseries \_\-JFromCellID}\label{classCALICE_1_1DecoderSet_a5c6c387c762f0e425e7477ee9cbb759e}
+
+\item 
+{\bf FastDecoder} $\ast$ {\bfseries \_\-KFromCellID}\label{classCALICE_1_1DecoderSet_acc617bd3d0f5ea5de5634c552d6c0d7c}
+
+\item 
+{\bf FastDecoder} $\ast$ {\bfseries \_\-moduleFromModuleID}\label{classCALICE_1_1DecoderSet_a480f62a678cdd42278f315455607a8dd}
+
+\item 
+{\bf FastDecoder} $\ast$ {\bfseries \_\-chipFromModuleID}\label{classCALICE_1_1DecoderSet_a8c22d248c09b54673a5333da4c410047}
+
+\item 
+{\bf FastDecoder} $\ast$ {\bfseries \_\-channelFromModuleID}\label{classCALICE_1_1DecoderSet_a5f7a75f6f5e1c663a9791c0bee9588a4}
+
+\item 
+{\bf FastDecoder} $\ast$ {\bfseries \_\-channelFromDAQID}\label{classCALICE_1_1DecoderSet_a943d0f42488e4aa6e3f965b0508578a4}
+
+\item 
+{\bf FastDecoder} $\ast$ {\bfseries \_\-chipFromDAQID}\label{classCALICE_1_1DecoderSet_ac11c29224b62198eec4305ca1dfadb6a}
+
+\item 
+{\bf FastDecoder} $\ast$ {\bfseries \_\-feFromDAQID}\label{classCALICE_1_1DecoderSet_a4c210127405c95009fe59cae8182c176}
+
+\item 
+{\bf FastDecoder} $\ast$ {\bfseries \_\-slotFromDAQID}\label{classCALICE_1_1DecoderSet_afe00087e59c1dad5fc1b6cf09e4fa943}
+
+\item 
+{\bf FastDecoder} $\ast$ {\bfseries \_\-crateFromDAQID}\label{classCALICE_1_1DecoderSet_ab968ef239f7ccf67e78b4c0d25be38df}
+
+\item 
+mokkaDecoderMap\_\-t {\bfseries \_\-mokkaDecoderMap}\label{classCALICE_1_1DecoderSet_a2264ad82f9cb4b731218d02e6d99d592}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const std::string {\bfseries \_\-defaultCellIDEncoding}\label{classCALICE_1_1DecoderSet_a416bb066df00dfe53a1220a22610a19e}
+
+\item 
+static const std::string {\bfseries \_\-defaultModuleEncoding}\label{classCALICE_1_1DecoderSet_a54a834f1bb6537816d7f5b5d88a36cac}
+
+\item 
+static const std::string {\bfseries \_\-defaultDAQEncoding}\label{classCALICE_1_1DecoderSet_a35f02dd35c4b49c13eea9a1c4ff5ca92}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+class containing decoders for the three \doxyref{CALICE}{p.}{namespaceCALICE} coordinate systems \begin{DoxyAuthor}{Author}
+{\tt Benjamin.Lutz@desy.de} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+November 2009 
+\end{DoxyDate}
+
+
+Definition at line 36 of file DecoderSet.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CALICE::DecoderSet@{CALICE::DecoderSet}!DecoderSet@{DecoderSet}}
+\index{DecoderSet@{DecoderSet}!CALICE::DecoderSet@{CALICE::DecoderSet}}
+\subsubsection[{DecoderSet}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::DecoderSet::DecoderSet ()}\label{classCALICE_1_1DecoderSet_a743f5958009c0c90f3be15eb073f155d}
+
+
+standard constructor encoding strings will be initialised to defaults 
+
+Definition at line 10 of file DecoderSet.cc.
+
+References setCellIDEncoding(), setDAQEncoding(), and setModuleEncoding().\index{CALICE::DecoderSet@{CALICE::DecoderSet}!DecoderSet@{DecoderSet}}
+\index{DecoderSet@{DecoderSet}!CALICE::DecoderSet@{CALICE::DecoderSet}}
+\subsubsection[{DecoderSet}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::DecoderSet::DecoderSet (const std::string \& {\em cellIDencoding}, \/  const std::string \& {\em moduleEncoding}, \/  const std::string \& {\em DAQencoding})}\label{classCALICE_1_1DecoderSet_a239661518de0a223cd7214c5bf49e69c}
+
+
+constructor with encoding strings 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em cellIDencoding}]encoding string for (Mokka) cell IDs \item[\mbox{$\leftarrow$} {\em moduleEncoding}]encoding string for module channel ID \item[\mbox{$\leftarrow$} {\em DAQencoding}]encoding string for DAQ channel ID \end{DoxyParams}
+
+
+Definition at line 21 of file DecoderSet.cc.
+
+References setCellIDEncoding(), setDAQEncoding(), and setModuleEncoding().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+DecoderSet.hh\item 
+DecoderSet.cc\end{DoxyCompactItemize}

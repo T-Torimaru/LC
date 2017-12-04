@@ -1,0 +1,157 @@
+\section{CALICE::FastDecoder Class Reference}
+\label{classCALICE_1_1FastDecoder}\index{CALICE::FastDecoder@{CALICE::FastDecoder}}
+
+
+decode IDs with encoding string  
+
+
+{\ttfamily \#include $<$FastDecoder.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf decode} (const int input) const 
+\begin{DoxyCompactList}\small\item\em decode signed \item\end{DoxyCompactList}\item 
+unsigned int {\bf decodeU} (const int input) const 
+\begin{DoxyCompactList}\small\item\em decode unsigned \item\end{DoxyCompactList}\item 
+int {\bf encode} (const int value) const 
+\begin{DoxyCompactList}\small\item\em encode signed \item\end{DoxyCompactList}\item 
+int {\bf encodeU} (const unsigned int value) const 
+\begin{DoxyCompactList}\small\item\em encode signed \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf FastDecoder} $\ast$ {\bf generateDecoder} (const std::string \&encodingString, const std::string \&variableName)
+\begin{DoxyCompactList}\small\item\em function to generate a specific decoder for one variable \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries FastDecoder} (const unsigned int position, const unsigned int mask, const bool isSigned, const int offset)\label{classCALICE_1_1FastDecoder_a8dd4a9cba8bd135cde30eedb79a2124d}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int {\bfseries \_\-position}\label{classCALICE_1_1FastDecoder_a0816f47f3a8f18fd72188f677186aa61}
+
+\item 
+unsigned int {\bfseries \_\-mask}\label{classCALICE_1_1FastDecoder_a50c16440e055dc2ccac513663046f888}
+
+\item 
+bool {\bfseries \_\-isSigned}\label{classCALICE_1_1FastDecoder_a6c672c775f1a89f2f6974c43b38577f4}
+
+\item 
+int {\bfseries \_\-offset}\label{classCALICE_1_1FastDecoder_ac479d02a9f742b3714eebda91d516b01}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+decode IDs with encoding string This class decodes a single value from a CELL ID. In differs to the LCIO::BitField in two ways.
+
+\begin{DoxyParagraph}{interpretation of Y-\/n}
+If the encoding string contains a variable name in the form of $ name\pm N $, $ N $ is interpreted as offset to variable $ name $. It will be subsracted automatically. Example: If encodingstring is \char`\"{}K-\/1:3,I:3,J:3\char`\"{} and variable name is \char`\"{}K\char`\"{}, $ value+1 $ will be returned.
+\end{DoxyParagraph}
+\begin{DoxyParagraph}{no string comparison in decoding}
+All necessary string comparison is done during the initialisation. This should give some performance increase, if the same decoder is used many times.
+\end{DoxyParagraph}
+The constructor is private. Use the \doxyref{FastDecoder::generateDecoder()}{p.}{classCALICE_1_1FastDecoder_a14d7a51184924b384caaad4b8e2504d0} function to get an object.
+
+\begin{DoxyAuthor}{Author}
+{\tt Benjamin.Lutz@desy.de} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+April 2009 
+\end{DoxyDate}
+
+
+Definition at line 28 of file FastDecoder.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::FastDecoder@{CALICE::FastDecoder}!decode@{decode}}
+\index{decode@{decode}!CALICE::FastDecoder@{CALICE::FastDecoder}}
+\subsubsection[{decode}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::FastDecoder::decode (const int {\em input}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1FastDecoder_a5e1250f5d77f611f2a204fe66cc2377a}
+
+
+decode signed 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em input}]ID to be interpreted \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value of the variable 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{WrongDataFormatException}{p.}{classCALICE_1_1WrongDataFormatException}}]if called for an unsigned variable \end{DoxyExceptions}
+
+
+Definition at line 43 of file FastDecoder.hh.\index{CALICE::FastDecoder@{CALICE::FastDecoder}!decodeU@{decodeU}}
+\index{decodeU@{decodeU}!CALICE::FastDecoder@{CALICE::FastDecoder}}
+\subsubsection[{decodeU}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::FastDecoder::decodeU (const int {\em input}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1FastDecoder_a4f7c9f305ee03237327dd0490edcb9f6}
+
+
+decode unsigned 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em input}]ID to be interpreted \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value of the variable 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{WrongDataFormatException}{p.}{classCALICE_1_1WrongDataFormatException}}]if called for a signed variable \end{DoxyExceptions}
+
+
+Definition at line 53 of file FastDecoder.hh.
+
+Referenced by CALICE::DecoderSet::getChannelFromDAQID(), CALICE::DecoderSet::getChannelFromModuleID(), CALICE::DecoderSet::getChipFromDAQID(), CALICE::DecoderSet::getChipFromModuleID(), CALICE::DecoderSet::getCrateFromDAQID(), CALICE::DecoderSet::getFeFromDAQID(), CALICE::DecoderSet::getIFromCellID(), CALICE::DecoderSet::getJFromCellID(), CALICE::DecoderSet::getKFromCellID(), CALICE::DecoderSet::getModuleFromModuleID(), CALICE::DecoderSet::getSlotFromDAQID(), and CALICE::TcmtEventIdentifier::process().\index{CALICE::FastDecoder@{CALICE::FastDecoder}!encode@{encode}}
+\index{encode@{encode}!CALICE::FastDecoder@{CALICE::FastDecoder}}
+\subsubsection[{encode}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::FastDecoder::encode (const int {\em value}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1FastDecoder_ad3d6f232a524261116577e945e669ed5}
+
+
+encode signed 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em value}]to encode \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ID with value set 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{WrongDataFormatException}{p.}{classCALICE_1_1WrongDataFormatException}}]if called for an unsigned variable \end{DoxyExceptions}
+
+
+Definition at line 63 of file FastDecoder.hh.\index{CALICE::FastDecoder@{CALICE::FastDecoder}!encodeU@{encodeU}}
+\index{encodeU@{encodeU}!CALICE::FastDecoder@{CALICE::FastDecoder}}
+\subsubsection[{encodeU}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::FastDecoder::encodeU (const unsigned int {\em value}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1FastDecoder_af2f9749ab6e82a364aa13fd44e26681f}
+
+
+encode signed 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em value}]to encode \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ID with value set 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \doxyref{WrongDataFormatException}{p.}{classCALICE_1_1WrongDataFormatException}}]if called for an unsigned variable \end{DoxyExceptions}
+
+
+Definition at line 73 of file FastDecoder.hh.
+
+Referenced by CALICE::DecoderSet::getCellID(), CALICE::DecoderSet::getDAQID(), and CALICE::DecoderSet::getModuleID().\index{CALICE::FastDecoder@{CALICE::FastDecoder}!generateDecoder@{generateDecoder}}
+\index{generateDecoder@{generateDecoder}!CALICE::FastDecoder@{CALICE::FastDecoder}}
+\subsubsection[{generateDecoder}]{\setlength{\rightskip}{0pt plus 5cm}{\bf FastDecoder} $\ast$ CALICE::FastDecoder::generateDecoder (const std::string \& {\em encodingString}, \/  const std::string \& {\em variableName})\hspace{0.3cm}{\ttfamily  [static]}}\label{classCALICE_1_1FastDecoder_a14d7a51184924b384caaad4b8e2504d0}
+
+
+function to generate a specific decoder for one variable 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em encodingString}]encoding string used to interprete the input \item[\mbox{$\leftarrow$} {\em variableName}]variable the encoder should extract \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+decoder for specific string and variable 
+\end{DoxyReturn}
+
+
+Definition at line 10 of file FastDecoder.cc.
+
+Referenced by CALICE::TcmtEventIdentifier::process(), CALICE::DecoderSet::setCellIDEncoding(), CALICE::DecoderSet::setDAQEncoding(), and CALICE::DecoderSet::setModuleEncoding().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+FastDecoder.hh\item 
+FastDecoder.cc\end{DoxyCompactItemize}

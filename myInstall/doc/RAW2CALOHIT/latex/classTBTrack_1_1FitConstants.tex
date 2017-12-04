@@ -1,0 +1,179 @@
+\section{TBTrack::FitConstants Class Reference}
+\label{classTBTrack_1_1FitConstants}\index{TBTrack::FitConstants@{TBTrack::FitConstants}}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries Particle} \{ {\bfseries electron}, 
+{\bfseries hadron}
+ \}
+\item 
+enum \{ {\bfseries numberOfInts} = 0
+ \}
+\item 
+enum \{ {\bfseries numberOfFloats} = 0
+ \}
+\item 
+enum \{ {\bfseries numberOfDoubles} = 3 + 2$\ast$2 + 2$\ast$3 + 2$\ast$4 + 2$\ast$2$\ast$21 + 2$\ast$2$\ast$21 + 2$\ast$4 + 4
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries FitConstants} (unsigned e=1, double err=0.0)\label{classTBTrack_1_1FitConstants_a47ddb6700da0d5c104eb0c369d80911e}
+
+\item 
+double {\bfseries pBeam} () const \label{classTBTrack_1_1FitConstants_a133ea6b18d89af235a741119259e0dbb}
+
+\item 
+void {\bfseries pBeam} (double p)\label{classTBTrack_1_1FitConstants_a9ce9a2d41aa782c4298a72d5c0eb209c}
+
+\item 
+void {\bfseries pBeamScale} (double p)\label{classTBTrack_1_1FitConstants_a6af5bc62244d18b251e7954368ecb9c9}
+
+\item 
+double {\bfseries zCalorimeter} () const \label{classTBTrack_1_1FitConstants_acdbec3521ff0b24abf68178cc2f2618b}
+
+\item 
+void {\bfseries zCalorimeter} (double z)\label{classTBTrack_1_1FitConstants_af8a150ebd1d2265be0a0640aa58fac87}
+
+\item 
+double {\bfseries zBeam} () const \label{classTBTrack_1_1FitConstants_a4375d97e5d050aebd2b9462bbf215c75}
+
+\item 
+void {\bfseries zBeam} (double z)\label{classTBTrack_1_1FitConstants_afe66619121004ae499b40341e0d78eaf}
+
+\item 
+double {\bfseries beamCoordinate} (unsigned d) const \label{classTBTrack_1_1FitConstants_ad67c0f98da288bdaa426ee94a25056e1}
+
+\item 
+void {\bfseries beamCoordinate} (unsigned d, double c)\label{classTBTrack_1_1FitConstants_a999f0fc68f7ddbf17fa49fc77b2ca542}
+
+\item 
+double {\bfseries beamAngle} (unsigned d) const \label{classTBTrack_1_1FitConstants_ada6619cbead5a277f3a99df287094fb5}
+
+\item 
+void {\bfseries beamAngle} (unsigned d, double a)\label{classTBTrack_1_1FitConstants_a52e266c03c76f8bc27b2eae2f731618d}
+
+\item 
+void {\bfseries beamAverage} (unsigned d, double c, double a)\label{classTBTrack_1_1FitConstants_a973118ce9e89a90aaa0453ad2693dc41}
+
+\item 
+TMatrixDSym {\bfseries beamSpread} (unsigned d) const \label{classTBTrack_1_1FitConstants_a92a42dc3339b8d8812aaf9b3e96d757d}
+
+\item 
+void {\bfseries beamSpread} (unsigned d, const TMatrixDSym \&e)\label{classTBTrack_1_1FitConstants_ad904d24cd02a69767b6935e5a3131aa2}
+
+\item 
+double {\bfseries zLayer} (unsigned d, unsigned l) const \label{classTBTrack_1_1FitConstants_a48d3c08ed8a147b4fe34bb0671650fda}
+
+\item 
+void {\bfseries zLayer} (unsigned d, unsigned l, double z)\label{classTBTrack_1_1FitConstants_afb9283b46152570709ecf4e2ceba940a}
+
+\item 
+TMatrixDSym {\bfseries forwardScattering} (unsigned d, Particle p) const \label{classTBTrack_1_1FitConstants_a5d182698ad7f662247a7f9bf15662cd7}
+
+\item 
+void {\bfseries forwardScattering} (unsigned d, Particle p, const TMatrixDSym \&e)\label{classTBTrack_1_1FitConstants_a1ba9942b8faf3f662fd5002a9b2f9d29}
+
+\item 
+TMatrixDSym {\bfseries backwardScattering} (unsigned d, Particle p) const \label{classTBTrack_1_1FitConstants_aa2760e9bcaf3ca95fd18d111c2789544}
+
+\item 
+void {\bfseries backwardScattering} (unsigned d, Particle p, const TMatrixDSym \&e)\label{classTBTrack_1_1FitConstants_ae3c4ce5580e332d5bcf1c53077f130f7}
+
+\item 
+double {\bfseries cError} (unsigned d, unsigned l) const \label{classTBTrack_1_1FitConstants_aa59b427cb93906ae61d18515e656ea05}
+
+\item 
+void {\bfseries cError} (unsigned d, unsigned l, double e)\label{classTBTrack_1_1FitConstants_aaa2f3eef3f50ce8ef1c3be75268024c7}
+
+\item 
+double {\bfseries probabilityCut} (unsigned nDof) const \label{classTBTrack_1_1FitConstants_a05ec4b2aba5904d2ba510d5b237e740a}
+
+\item 
+void {\bfseries probabilityCut} (unsigned nDof, double c)\label{classTBTrack_1_1FitConstants_a19530322178881f38211053231b8719c}
+
+\item 
+{\bf TrackFitInitialisation} {\bfseries fitInitialisation} (unsigned xy, unsigned fb, unsigned eh) const \label{classTBTrack_1_1FitConstants_a39d3a5bdfce8fe17387e1470d00543b6}
+
+\item 
+void {\bfseries writeIcc} () const \label{classTBTrack_1_1FitConstants_ac5738f5f948c0cee82dab1ca7b5b756b}
+
+\item 
+std::ostream \& {\bfseries print} (std::ostream \&o=std::cout, const std::string \&s=\char`\"{}\char`\"{}) const \label{classTBTrack_1_1FitConstants_ad62ddbd9b8fd5f827fccabf35691abf1}
+
+\item 
+const int $\ast$ {\bfseries intData} () const \label{classTBTrack_1_1FitConstants_a300c624cc611cb716f86dd7692c6f2ab}
+
+\item 
+int $\ast$ {\bfseries intData} ()\label{classTBTrack_1_1FitConstants_a40b7f0a0888a062b84b4c0f47e7aa932}
+
+\item 
+const float $\ast$ {\bfseries floatData} () const \label{classTBTrack_1_1FitConstants_ae20c4d5c95c45bad29c9b8f364614e78}
+
+\item 
+float $\ast$ {\bfseries floatData} ()\label{classTBTrack_1_1FitConstants_abb376a6b05cc1c2bafb24ba44a230348}
+
+\item 
+const double $\ast$ {\bfseries doubleData} () const \label{classTBTrack_1_1FitConstants_a05fa985c01f9de23dbffbe275afa0127}
+
+\item 
+double $\ast$ {\bfseries doubleData} ()\label{classTBTrack_1_1FitConstants_a53ba2da4d9d0a108988e207f665c88bd}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries convertErrorMatrix} (const double $\ast$d, TMatrixDSym \&e) const \label{classTBTrack_1_1FitConstants_a239bf750e8846e198310ccd5dfc27b51}
+
+\item 
+void {\bfseries convertErrorMatrix} (const TMatrixDSym \&e, double $\ast$d)\label{classTBTrack_1_1FitConstants_aed80acea11b9312ca325f0032c2aa624}
+
+\item 
+void {\bfseries pBeamScale} (double $\ast$mat, double p)\label{classTBTrack_1_1FitConstants_a9bb5f5ac9c07dfb702e48c48a1dce9ea}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double {\bfseries \_\-pBeam}\label{classTBTrack_1_1FitConstants_ad065c37d27302f166d583e92ff813e08}
+
+\item 
+double {\bfseries \_\-zCalorimeter}\label{classTBTrack_1_1FitConstants_aed3664e51cc6fc58c48e8b2f9ced4b32}
+
+\item 
+double {\bfseries \_\-zBeam}\label{classTBTrack_1_1FitConstants_a038e07323028e6f0307fa69685359301}
+
+\item 
+double {\bfseries \_\-beamAverage} [2][2]\label{classTBTrack_1_1FitConstants_a701a22a05bbfdc8678fbb11f0a4a6242}
+
+\item 
+double {\bfseries \_\-beamSpread} [2][3]\label{classTBTrack_1_1FitConstants_a4d9da5ca3637928a5248e53e6b42cef8}
+
+\item 
+double {\bfseries \_\-zLayer} [2][4]\label{classTBTrack_1_1FitConstants_a93f27485f5ce91ac23ffbb9febf4f8f7}
+
+\item 
+double {\bfseries \_\-forwardScattering} [2][2][21]\label{classTBTrack_1_1FitConstants_a4a9803ee41a2659da3513e4df42fd349}
+
+\item 
+double {\bfseries \_\-backwardScattering} [2][2][21]\label{classTBTrack_1_1FitConstants_ab45f453a56ff58df89b085202ee14bf3}
+
+\item 
+double {\bfseries \_\-cError} [2][4]\label{classTBTrack_1_1FitConstants_a2fafd67579669f4e2c291fd30370be36}
+
+\item 
+double {\bfseries \_\-probabilityCut} [4]\label{classTBTrack_1_1FitConstants_a7c1fb70c3f9c89d6213b34ccdf88dc67}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 18 of file FitConstants.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+FitConstants.hh\item 
+FitConstants.cc\end{DoxyCompactItemize}

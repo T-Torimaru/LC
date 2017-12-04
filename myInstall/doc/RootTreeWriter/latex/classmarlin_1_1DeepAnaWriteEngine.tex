@@ -1,0 +1,158 @@
+\section{marlin::DeepAnaWriteEngine Class Reference}
+\label{classmarlin_1_1DeepAnaWriteEngine}\index{marlin::DeepAnaWriteEngine@{marlin::DeepAnaWriteEngine}}
+Inheritance diagram for marlin::DeepAnaWriteEngine:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{classmarlin_1_1DeepAnaWriteEngine__inherit__graph}
+\end{center}
+\end{figure}
+Collaboration diagram for marlin::DeepAnaWriteEngine:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classmarlin_1_1DeepAnaWriteEngine__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries DeepAnaWriteEngine} ({\bf RootTreeWriter} $\ast$host)\label{classmarlin_1_1DeepAnaWriteEngine_af7280abd120c35885bb82a45a78b9d32}
+
+\item 
+virtual const std::string \& {\bf getEngineName} ()
+\item 
+virtual void {\bf registerParameters} ()
+\item 
+virtual void {\bf registerBranches} (TTree $\ast$hostTree)
+\item 
+virtual void {\bf fillVariables} (EVENT::LCEvent $\ast$)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int {\bf \_\-elmNoClusters}\label{classmarlin_1_1DeepAnaWriteEngine_aca49605aaeaf9f8b1511c78a381e7c44}
+
+\begin{DoxyCompactList}\small\item\em ! place the member variables to hold the ROOT TTree branches here !!; \item\end{DoxyCompactList}\item 
+unsigned int {\bfseries \_\-elmNoHits}\label{classmarlin_1_1DeepAnaWriteEngine_a26993881ac5d2e9b855fba85d7ea208a}
+
+\item 
+double {\bfseries \_\-elmEngySum}\label{classmarlin_1_1DeepAnaWriteEngine_aa7d28857da02a8d2b429f5955914669d}
+
+\item 
+unsigned int {\bfseries \_\-trkNoClusters}\label{classmarlin_1_1DeepAnaWriteEngine_a1abca1be5b1ca9d7e7db53a41af4e127}
+
+\item 
+unsigned int {\bfseries \_\-trkNoHits}\label{classmarlin_1_1DeepAnaWriteEngine_afd2268ec39b86bf356c99fa0cf687915}
+
+\item 
+double {\bfseries \_\-trkEngySum}\label{classmarlin_1_1DeepAnaWriteEngine_ae3de8e96baa3464c5b485ca606009c30}
+
+\item 
+unsigned int {\bfseries \_\-hadNoClusters}\label{classmarlin_1_1DeepAnaWriteEngine_a02ffeaed8c9e41740adcf22d09500386}
+
+\item 
+unsigned int {\bfseries \_\-hadNoHits}\label{classmarlin_1_1DeepAnaWriteEngine_ae297a6c2d2faf5e172ac9261c0ef0348}
+
+\item 
+double {\bfseries \_\-hadEngySum}\label{classmarlin_1_1DeepAnaWriteEngine_ae072724fa8177f7f20712dead1e1bbb8}
+
+\item 
+unsigned int {\bfseries \_\-neutrNoHits}\label{classmarlin_1_1DeepAnaWriteEngine_a0faa79a58bc077840c396f613984dc25}
+
+\item 
+double {\bfseries \_\-neutrEngySum}\label{classmarlin_1_1DeepAnaWriteEngine_a52d8f316284e964036931b1c8c52c73a}
+
+\item 
+double {\bfseries \_\-elmX}\label{classmarlin_1_1DeepAnaWriteEngine_aa0217dcc3006f49410d4f7ad9caa689b}
+
+\item 
+double {\bfseries \_\-elmY}\label{classmarlin_1_1DeepAnaWriteEngine_a977967fe6dfc9ba6f6fb5a3c6eb0b7cd}
+
+\item 
+double {\bfseries \_\-elmZ}\label{classmarlin_1_1DeepAnaWriteEngine_ae2459fc29b2a4545bb990911b131d469}
+
+\item 
+double {\bfseries \_\-trkX}\label{classmarlin_1_1DeepAnaWriteEngine_a80b166fb03c427a92b8f5fa202f696b9}
+
+\item 
+double {\bfseries \_\-trkY}\label{classmarlin_1_1DeepAnaWriteEngine_a35808f0e2b6100117f52d7e85406ad69}
+
+\item 
+double {\bfseries \_\-trkZ}\label{classmarlin_1_1DeepAnaWriteEngine_ac9bac299dd35b8129c088f6c7a6ad135}
+
+\item 
+double {\bfseries \_\-hadX}\label{classmarlin_1_1DeepAnaWriteEngine_adcf35e54d9321c7e1cb026de6d33aec6}
+
+\item 
+double {\bfseries \_\-hadY}\label{classmarlin_1_1DeepAnaWriteEngine_aab5db65045f127924788f62c504275bb}
+
+\item 
+double {\bfseries \_\-hadZ}\label{classmarlin_1_1DeepAnaWriteEngine_a84830c7ba3ad4928bb25795f5adde6f4}
+
+\item 
+double {\bfseries \_\-X}\label{classmarlin_1_1DeepAnaWriteEngine_a622e86e7f0d2614e26771aea8c692e66}
+
+\item 
+double {\bfseries \_\-Y}\label{classmarlin_1_1DeepAnaWriteEngine_a74dc25aac2fb941dd2121c1b22ef689e}
+
+\item 
+double {\bfseries \_\-Z}\label{classmarlin_1_1DeepAnaWriteEngine_a38610d44a5c8a783a27862e63b22f55b}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 16 of file DeepAnaWriteEngine.hh.
+
+\subsection{Member Function Documentation}
+\index{marlin::DeepAnaWriteEngine@{marlin::DeepAnaWriteEngine}!fillVariables@{fillVariables}}
+\index{fillVariables@{fillVariables}!marlin::DeepAnaWriteEngine@{marlin::DeepAnaWriteEngine}}
+\subsubsection[{fillVariables}]{\setlength{\rightskip}{0pt plus 5cm}virtual void marlin::DeepAnaWriteEngine::fillVariables (EVENT::LCEvent $\ast$ {\em evt})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classmarlin_1_1DeepAnaWriteEngine_a9cf77605dc60b01d00169c80c2df921d}
+Implement this to extract the variables which you want to fill into the {\itshape ROOT\/} tree from the event. Write the value of the variables you want to add to the tree to the member variables, which you registered to the {\itshape ROOT\/} tree. The \doxyref{RootTreeWriter}{p.}{classmarlin_1_1RootTreeWriter} will call TTree::Fill() for you. 
+\begin{DoxyParams}{Parameters}
+\item[{\em evt}]the current event \end{DoxyParams}
+
+
+Implements {\bf marlin::RootWriteEngine} \doxyref{}{p.}{classmarlin_1_1RootWriteEngine_ace823bd839cee7e8c8755e60c4cc7134}.\index{marlin::DeepAnaWriteEngine@{marlin::DeepAnaWriteEngine}!getEngineName@{getEngineName}}
+\index{getEngineName@{getEngineName}!marlin::DeepAnaWriteEngine@{marlin::DeepAnaWriteEngine}}
+\subsubsection[{getEngineName}]{\setlength{\rightskip}{0pt plus 5cm}virtual const std::string\& marlin::DeepAnaWriteEngine::getEngineName ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classmarlin_1_1DeepAnaWriteEngine_a3b67cb94563a6f930a28f71bba8833c1}
+Returns the name of the engine to the \doxyref{RootTreeWriter}{p.}{classmarlin_1_1RootTreeWriter} processor. \begin{DoxyReturn}{Returns}
+Must return a string with the engine name. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[{\bf Todo}]fixme: should be const, but must be declared const in implementations too. Need to fix all existing engines?!? \end{Desc}
+
+
+Implements {\bf marlin::RootWriteEngine} \doxyref{}{p.}{classmarlin_1_1RootWriteEngine_a31e38120fe60efcb15666fd569ba5862}.
+
+Definition at line 25 of file DeepAnaWriteEngine.hh.\index{marlin::DeepAnaWriteEngine@{marlin::DeepAnaWriteEngine}!registerBranches@{registerBranches}}
+\index{registerBranches@{registerBranches}!marlin::DeepAnaWriteEngine@{marlin::DeepAnaWriteEngine}}
+\subsubsection[{registerBranches}]{\setlength{\rightskip}{0pt plus 5cm}virtual void marlin::DeepAnaWriteEngine::registerBranches (TTree $\ast$)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classmarlin_1_1DeepAnaWriteEngine_afa0d65f082b588ef7d61c06aecd9afe4}
+Implement to register local variables to the output tree 
+\begin{DoxyParams}{Parameters}
+\item[{\em pointer}]to the {\itshape ROOT\/} tree, which the \doxyref{RootTreeWriter}{p.}{classmarlin_1_1RootTreeWriter} processor fills at the end of each event. Usually the implementation looks like \begin{DoxyVerb}
+    /// hostTree->Branch("variable",&_variable" ,"variable/F"  );
+    /// \end{DoxyVerb}
+. But you can add any type of branch you like. \end{DoxyParams}
+
+
+Implements {\bf marlin::RootWriteEngine} \doxyref{}{p.}{classmarlin_1_1RootWriteEngine_ad467dc6e73fdd9fd4311f7277fd02a89}.\index{marlin::DeepAnaWriteEngine@{marlin::DeepAnaWriteEngine}!registerParameters@{registerParameters}}
+\index{registerParameters@{registerParameters}!marlin::DeepAnaWriteEngine@{marlin::DeepAnaWriteEngine}}
+\subsubsection[{registerParameters}]{\setlength{\rightskip}{0pt plus 5cm}virtual void marlin::DeepAnaWriteEngine::registerParameters ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classmarlin_1_1DeepAnaWriteEngine_a757be550fb07212cfbe8cd2a9d6e26be}
+Used to register steering parameters. Implement to register {\itshape \doxyref{marlin}{p.}{namespacemarlin}\/} steering file parameters. Use {\itshape \doxyref{marlin}{p.}{namespacemarlin}\/} syntax to register parameters for the calling \doxyref{RootTreeWriter}{p.}{classmarlin_1_1RootTreeWriter} processor.
+
+use \begin{DoxyVerb}
+    /// _hostProc.relayRegisterProcessorParameter(...)
+    /// _hostProc.relayRegister...()
+    /// \end{DoxyVerb}
+ instead of {\itshape \doxyref{marlin}{p.}{namespacemarlin}\/} processors \begin{DoxyVerb}register...() \end{DoxyVerb}
+ methods 
+
+Implements {\bf marlin::RootWriteEngine} \doxyref{}{p.}{classmarlin_1_1RootWriteEngine_ae12b70923768043fa5c1438f078c41d3}.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+DeepAnaWriteEngine.hh\end{DoxyCompactItemize}

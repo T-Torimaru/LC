@@ -1,0 +1,49 @@
+\section{CALICE::FilterBadChannels Class Reference}
+\label{classCALICE_1_1FilterBadChannels}\index{CALICE::FilterBadChannels@{CALICE::FilterBadChannels}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf FilterBadChannels} $\ast$ {\bfseries newProcessor} ()\label{classCALICE_1_1FilterBadChannels_a06ad29f11701e24e64b82daa9b36b4ba}
+
+\item 
+virtual void {\bfseries init} ()\label{classCALICE_1_1FilterBadChannels_ad75699cb8a346a1dcf712a5c4a8709d9}
+
+\item 
+virtual void {\bfseries processEvent} (LCEvent $\ast$evt)\label{classCALICE_1_1FilterBadChannels_a96a8e4be917781a9f4612e44ad4f61c3}
+
+\item 
+virtual void {\bfseries end} ()\label{classCALICE_1_1FilterBadChannels_ac6a5d35d02c2b6c7dcd81a4c37126b2d}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef lccd::ConditionsMap$<$ const int, CellQuality $>$ {\bfseries Map\_\-t}\label{classCALICE_1_1FilterBadChannels_ac0393be0651c887dd3b47a40e186ddfa}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bfseries \_\-inColName}\label{classCALICE_1_1FilterBadChannels_a7febc615df3c8f9df80b96a3a23e629d}
+
+\item 
+std::string {\bfseries \_\-outColName}\label{classCALICE_1_1FilterBadChannels_af44ac7aeffb09195d2dc225ce3ce903b}
+
+\item 
+std::string {\bfseries \_\-statusColName}\label{classCALICE_1_1FilterBadChannels_a011f53f4dda0d7dbc98bf73579d05c95}
+
+\item 
+Map\_\-t $\ast$ {\bfseries \_\-statusMap}\label{classCALICE_1_1FilterBadChannels_aa6be96b02055f381369ec71ab5d989fd}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 13 of file FilterBadChannels.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+FilterBadChannels.hh\item 
+FilterBadChannels.cc\end{DoxyCompactItemize}

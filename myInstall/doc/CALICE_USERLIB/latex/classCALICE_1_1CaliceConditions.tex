@@ -1,0 +1,90 @@
+\section{CALICE::CaliceConditions Class Reference}
+\label{classCALICE_1_1CaliceConditions}\index{CALICE::CaliceConditions@{CALICE::CaliceConditions}}
+
+
+Class for the \doxyref{CALICE}{p.}{namespaceCALICE} Ahcal conditions information during the reconstruction.  
+
+
+{\ttfamily \#include $<$CaliceConditions.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CaliceConditions} ()\label{classCALICE_1_1CaliceConditions_a57ce28e582904dcf2ae3fa51b8b79349}
+
+\begin{DoxyCompactList}\small\item\em default constructor \item\end{DoxyCompactList}\item 
+{\bf CaliceConditions} (int moduleNr, unsigned moduleID, int calibStart, int calibWidth, bool calibEnable, int hold, int holdWidth, int multiplex, int vcalib, int verification, int sr[12])
+\begin{DoxyCompactList}\small\item\em constructor, CaliceCondition is initialized with the parameters given \item\end{DoxyCompactList}\item 
+{\bfseries CaliceConditions} (LCObject $\ast$obj)\label{classCALICE_1_1CaliceConditions_a9ff7c93b1ed0d3a138591cf301bf75d8}
+
+\item 
+unsigned {\bf getModuleID} () const \label{classCALICE_1_1CaliceConditions_aedaf26b7d1fb15c363c850f1f8c82b4c}
+
+\begin{DoxyCompactList}\small\item\em get module ID of config \item\end{DoxyCompactList}\item 
+unsigned {\bf getModuleNr} ()\label{classCALICE_1_1CaliceConditions_aff3abefa487659e235d319026855e0da}
+
+\begin{DoxyCompactList}\small\item\em get module number of config \item\end{DoxyCompactList}\item 
+unsigned {\bf getCalibStart} () const \label{classCALICE_1_1CaliceConditions_a63e3e50d28697586dba6649d23f09e86}
+
+\begin{DoxyCompactList}\small\item\em get calib start \item\end{DoxyCompactList}\item 
+unsigned {\bf getCalibWidth} () const \label{classCALICE_1_1CaliceConditions_ab8dd4e2da8c51aab6c2f2f2b5c297697}
+
+\begin{DoxyCompactList}\small\item\em get calib width \item\end{DoxyCompactList}\item 
+bool {\bf isCalibEnabled} () const \label{classCALICE_1_1CaliceConditions_afe4ca5760e990760a959fd4ed47fbd9c}
+
+\begin{DoxyCompactList}\small\item\em get if calib is enabled \item\end{DoxyCompactList}\item 
+float {\bf getHold} () const \label{classCALICE_1_1CaliceConditions_a55a69a52404fd1bc77991052db53ff8d}
+
+\begin{DoxyCompactList}\small\item\em get hold \item\end{DoxyCompactList}\item 
+unsigned {\bf getHoldWidth} () const \label{classCALICE_1_1CaliceConditions_a2898d9c3cea46e646016d31423cc2208}
+
+\begin{DoxyCompactList}\small\item\em get hold width \item\end{DoxyCompactList}\item 
+unsigned {\bf getMultiplex} () const \label{classCALICE_1_1CaliceConditions_a748f60dfba34117e777cef4f479b3ae1}
+
+\begin{DoxyCompactList}\small\item\em get order of multiplexing \item\end{DoxyCompactList}\item 
+unsigned {\bf getVcalib} () const \label{classCALICE_1_1CaliceConditions_a23a06d3340b909f021778df6c42f3572}
+
+\begin{DoxyCompactList}\small\item\em get vcalib \item\end{DoxyCompactList}\item 
+unsigned {\bf getVerification} () const \label{classCALICE_1_1CaliceConditions_a930fac5aac0b5e5f5e0d535144d9cb0b}
+
+\begin{DoxyCompactList}\small\item\em get verification data \item\end{DoxyCompactList}\item 
+unsigned {\bf getSR} (unsigned hab) const \label{classCALICE_1_1CaliceConditions_a7146de11fbfc7f531048ef41e7ea7ccf}
+
+\begin{DoxyCompactList}\small\item\em get hab sr \item\end{DoxyCompactList}\item 
+void {\bf print} (std::ostream \&os)\label{classCALICE_1_1CaliceConditions_aedb71bf9e2871d727c1dbb7828571639}
+
+\begin{DoxyCompactList}\small\item\em convenient print method \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1CaliceConditions_adc16043084a7beaff71c3b76a6ad6ac1}
+
+\begin{DoxyCompactList}\small\item\em return the type of the class \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1CaliceConditions_ae854b2d852e1c484246bf45544da38ae}
+
+\begin{DoxyCompactList}\small\item\em return a brief description of the data memeber \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for the \doxyref{CALICE}{p.}{namespaceCALICE} Ahcal conditions information during the reconstruction. Information is stored module wise \begin{DoxyAuthor}{Author}
+B. Lutz DESY 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Sep 11 2006 
+\end{DoxyDate}
+
+
+Definition at line 30 of file CaliceConditions.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CALICE::CaliceConditions@{CALICE::CaliceConditions}!CaliceConditions@{CaliceConditions}}
+\index{CaliceConditions@{CaliceConditions}!CALICE::CaliceConditions@{CALICE::CaliceConditions}}
+\subsubsection[{CaliceConditions}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::CaliceConditions::CaliceConditions (int {\em moduleNr}, \/  unsigned {\em moduleID}, \/  int {\em calibStart}, \/  int {\em calibWidth}, \/  bool {\em calibEnable}, \/  int {\em hold}, \/  int {\em holdWidth}, \/  int {\em multiplex}, \/  int {\em vcalib}, \/  int {\em verification}, \/  int {\em sr}[12])\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CaliceConditions_ad200640ef3e522d130e97c0982be7410}
+
+
+constructor, CaliceCondition is initialized with the parameters given 
+\begin{DoxyParams}{Parameters}
+\item[{\em moduleNr}]mdoule \char`\"{}stamp\char`\"{} \item[{\em moduleID}]module ID of the module the hit is in, low byte gives upper or lower half, high byte gives module \char`\"{}stamp\char`\"{}, used to find correct calibration \item[{\em calibStart}]starting time of Tcalib signal in ticks \item[{\em calibWidth}]duration of the Tcalib signal in ticks \item[{\em calibEnable}]has Tcalib signal been sent at all? \item[{\em hold}]starting time of the hold signal in ticks (6.25ns) \item[{\em holdWidth}]duration of the hold signal in ticks (6.25ns) \item[{\em multiplex}]number of multiplexed signals in the acquisition cycle \item[{\em vcalib}]Vcalib value \item[{\em verification}]shift register verification pattern \item[{\em sr}]shift registers \end{DoxyParams}
+
+
+Definition at line 52 of file CaliceConditions.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+CaliceConditions.hh\item 
+CaliceConditions.cc\end{DoxyCompactItemize}

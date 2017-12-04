@@ -1,0 +1,165 @@
+\section{CALICE::TcmtConnection Class Reference}
+\label{classCALICE_1_1TcmtConnection}\index{CALICE::TcmtConnection@{CALICE::TcmtConnection}}
+
+
+Defines the electronic connection of a TCMT strip.  
+
+
+{\ttfamily \#include $<$TcmtConnection.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf TcmtConnection} (LCObject $\ast$obj)\label{classCALICE_1_1TcmtConnection_a03da8aaf2ec5aa4510ea79aacb582bb3}
+
+\begin{DoxyCompactList}\small\item\em 'Copy constructor' needed to interpret LCCollection read from file/database. \item\end{DoxyCompactList}\item 
+{\bf TcmtConnection} \& {\bfseries setCrate} (int crate\_\-number)\label{classCALICE_1_1TcmtConnection_aa2dad1c3922255d97c122cc8358ff0cc}
+
+\item 
+int {\bfseries getCrate} () const \label{classCALICE_1_1TcmtConnection_a8e486b1dee416956553f1e5e612d1598}
+
+\item 
+{\bf TcmtConnection} \& {\bfseries setElecID} (int elecID)\label{classCALICE_1_1TcmtConnection_afbf6822d539949831e74e4c89acb785d}
+
+\item 
+int {\bfseries getElecID} () const \label{classCALICE_1_1TcmtConnection_a522878d5438544ecf95ecd0711bd9b78}
+
+\item 
+{\bf TcmtConnection} \& {\bfseries setFastID} (int fastID)\label{classCALICE_1_1TcmtConnection_aace5a7ce759c60cde3e6853712535f13}
+
+\item 
+int {\bfseries getFastID} () const \label{classCALICE_1_1TcmtConnection_a5225f34c9f8c1571e99008644e66b640}
+
+\item 
+{\bf TcmtConnection} \& {\bfseries setSlot} (int slot)\label{classCALICE_1_1TcmtConnection_a2b8d49f9898c86659b35a8a5d107ea1c}
+
+\item 
+int {\bfseries getSlot} () const \label{classCALICE_1_1TcmtConnection_a8f4e9fe658b93ed607e171bb4e6713c8}
+
+\item 
+{\bf TcmtConnection} \& {\bfseries setFrontEnd} (int fe)\label{classCALICE_1_1TcmtConnection_a40957bf7b8c7d927f4c9b133a1a2e9ea}
+
+\item 
+int {\bfseries getFrontEnd} () const \label{classCALICE_1_1TcmtConnection_a8010ced22d11e174a547a5a8697b5741}
+
+\item 
+{\bf TcmtConnection} \& {\bfseries setChip} (int chip)\label{classCALICE_1_1TcmtConnection_aa522b2b703571895602ad42194d892d6}
+
+\item 
+int {\bfseries getChip} () const \label{classCALICE_1_1TcmtConnection_a60ccf6c210685f4dd274f8b1392aec6b}
+
+\item 
+{\bf TcmtConnection} \& {\bfseries setChannel} (int channel)\label{classCALICE_1_1TcmtConnection_a2bff02914495fa424609b139a5227b11}
+
+\item 
+int {\bfseries getChannel} () const \label{classCALICE_1_1TcmtConnection_a95efc73df6836cec4c2d3407c239de49}
+
+\item 
+{\bf TcmtConnection} \& {\bf setIndexOfLowerLeftCell} (unsigned int index\_\-offset)
+\begin{DoxyCompactList}\small\item\em Set the cell index (Mokka specification) of the cell in the lower left corner. \item\end{DoxyCompactList}\item 
+int {\bf getIndexOfLowerLeftCell} () const 
+\begin{DoxyCompactList}\small\item\em Get the cell index (Mokka specification) of the cell in the lower left corner. \item\end{DoxyCompactList}\item 
+{\bf TcmtConnection} \& {\bf setModuleType} (unsigned char type)
+\begin{DoxyCompactList}\small\item\em Set the module type. \item\end{DoxyCompactList}\item 
+unsigned char {\bf getModuleType} () const 
+\begin{DoxyCompactList}\small\item\em Get the module type. \item\end{DoxyCompactList}\item 
+{\bf TcmtConnection} \& {\bf setModuleID} (int module\_\-id)
+\begin{DoxyCompactList}\small\item\em Set the serial number of a module. \item\end{DoxyCompactList}\item 
+int {\bf getModuleID} () const 
+\begin{DoxyCompactList}\small\item\em Get the serial number of a module. \item\end{DoxyCompactList}\item 
+{\bf TcmtConnection} \& {\bf setStripID} (int strip)
+\begin{DoxyCompactList}\small\item\em Set the strip ID inside module. \item\end{DoxyCompactList}\item 
+int {\bf getStripID} () const 
+\begin{DoxyCompactList}\small\item\em Get the strip ID inside module. \item\end{DoxyCompactList}\item 
+int {\bfseries getConnectorType} () const \label{classCALICE_1_1TcmtConnection_a9fbb08ae90c83b42ec2a3daf2d8e6862}
+
+\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1TcmtConnection_a3b904f247ae7b477d0f32beff38734ff}
+
+\begin{DoxyCompactList}\small\item\em Return the type of the class. \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1TcmtConnection_a46c32c47ea69cb99dfd26f7fab085e31}
+
+\begin{DoxyCompactList}\small\item\em Return a brief description of the data members. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines the electronic connection of a TCMT strip. A module location defined by \doxyref{ModuleLocation}{p.}{classCALICE_1_1ModuleLocation} may be connected to a connector of a CERC board. The module location is identified by the index offset. 
+
+Definition at line 43 of file TcmtConnection.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::TcmtConnection@{CALICE::TcmtConnection}!getIndexOfLowerLeftCell@{getIndexOfLowerLeftCell}}
+\index{getIndexOfLowerLeftCell@{getIndexOfLowerLeftCell}!CALICE::TcmtConnection@{CALICE::TcmtConnection}}
+\subsubsection[{getIndexOfLowerLeftCell}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::TcmtConnection::getIndexOfLowerLeftCell () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1TcmtConnection_a7ee0cb81b1edd21ad25fc1f97c86fe18}
+
+
+Get the cell index (Mokka specification) of the cell in the lower left corner. This index uniquely defines the module location. 
+
+Definition at line 132 of file TcmtConnection.hh.
+
+Referenced by CALICE::MappingAndAlignment::rebuildTcmtConnectionTree().\index{CALICE::TcmtConnection@{CALICE::TcmtConnection}!getModuleID@{getModuleID}}
+\index{getModuleID@{getModuleID}!CALICE::TcmtConnection@{CALICE::TcmtConnection}}
+\subsubsection[{getModuleID}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::TcmtConnection::getModuleID () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1TcmtConnection_a251eb0ae9477416e8b971c11d9dbae52}
+
+
+Get the serial number of a module. \begin{DoxySeeAlso}{See also}
+\doxyref{setModuleID}{p.}{classCALICE_1_1TcmtConnection_a94847e44e83e99862f55e156d38950ed} 
+\end{DoxySeeAlso}
+
+
+Definition at line 178 of file TcmtConnection.hh.
+
+Referenced by CALICE::MappingAndAlignment::rebuildTcmtConnectionTree().\index{CALICE::TcmtConnection@{CALICE::TcmtConnection}!getModuleType@{getModuleType}}
+\index{getModuleType@{getModuleType}!CALICE::TcmtConnection@{CALICE::TcmtConnection}}
+\subsubsection[{getModuleType}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char CALICE::TcmtConnection::getModuleType () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1TcmtConnection_a1bb330c1879d214925ba603813d7413a}
+
+
+Get the module type. The module type is not needed but this redundant information allows to verify the configuration correctness. \begin{Desc}
+\item[{\bf Todo}]remove this redundant information? \end{Desc}
+
+
+Definition at line 157 of file TcmtConnection.hh.
+
+Referenced by CALICE::MappingAndAlignment::rebuildTcmtConnectionTree().\index{CALICE::TcmtConnection@{CALICE::TcmtConnection}!getStripID@{getStripID}}
+\index{getStripID@{getStripID}!CALICE::TcmtConnection@{CALICE::TcmtConnection}}
+\subsubsection[{getStripID}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::TcmtConnection::getStripID () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1TcmtConnection_ad4769d432a400212ed56b97bcb006196}
+
+
+Get the strip ID inside module. \begin{DoxySeeAlso}{See also}
+\doxyref{setStripID}{p.}{classCALICE_1_1TcmtConnection_a3280d79a404e331fb9ccad76fb40d2c4} 
+\end{DoxySeeAlso}
+
+
+Definition at line 194 of file TcmtConnection.hh.\index{CALICE::TcmtConnection@{CALICE::TcmtConnection}!setIndexOfLowerLeftCell@{setIndexOfLowerLeftCell}}
+\index{setIndexOfLowerLeftCell@{setIndexOfLowerLeftCell}!CALICE::TcmtConnection@{CALICE::TcmtConnection}}
+\subsubsection[{setIndexOfLowerLeftCell}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TcmtConnection}\& CALICE::TcmtConnection::setIndexOfLowerLeftCell (unsigned int {\em index\_\-offset})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1TcmtConnection_aad13b7e910484c161666e7d7a6d0ae29}
+
+
+Set the cell index (Mokka specification) of the cell in the lower left corner. The index offset is used to uniquely define the module location. 
+
+Definition at line 123 of file TcmtConnection.hh.\index{CALICE::TcmtConnection@{CALICE::TcmtConnection}!setModuleID@{setModuleID}}
+\index{setModuleID@{setModuleID}!CALICE::TcmtConnection@{CALICE::TcmtConnection}}
+\subsubsection[{setModuleID}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TcmtConnection}\& CALICE::TcmtConnection::setModuleID (int {\em module\_\-id})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1TcmtConnection_a94847e44e83e99862f55e156d38950ed}
+
+
+Set the serial number of a module. This number together with the module type is used to uniquely identify a module. This unique identification is for example needed to get the correct calibration constants. 
+
+Definition at line 167 of file TcmtConnection.hh.\index{CALICE::TcmtConnection@{CALICE::TcmtConnection}!setModuleType@{setModuleType}}
+\index{setModuleType@{setModuleType}!CALICE::TcmtConnection@{CALICE::TcmtConnection}}
+\subsubsection[{setModuleType}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TcmtConnection}\& CALICE::TcmtConnection::setModuleType (unsigned char {\em type})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1TcmtConnection_aa2366c8893b9abccc17518192f536fa6}
+
+
+Set the module type. The module type is not needed but this redundant information allows to verify the configuration correctness. \begin{Desc}
+\item[{\bf Todo}]remove this redundant information? \end{Desc}
+
+
+Definition at line 146 of file TcmtConnection.hh.\index{CALICE::TcmtConnection@{CALICE::TcmtConnection}!setStripID@{setStripID}}
+\index{setStripID@{setStripID}!CALICE::TcmtConnection@{CALICE::TcmtConnection}}
+\subsubsection[{setStripID}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TcmtConnection}\& CALICE::TcmtConnection::setStripID (int {\em strip})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1TcmtConnection_a3280d79a404e331fb9ccad76fb40d2c4}
+
+
+Set the strip ID inside module. Strip ID runs from 0 to 19. 
+
+Definition at line 185 of file TcmtConnection.hh.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+TcmtConnection.hh\end{DoxyCompactItemize}

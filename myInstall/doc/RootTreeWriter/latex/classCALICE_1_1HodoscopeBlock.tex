@@ -1,0 +1,133 @@
+\section{CALICE::HodoscopeBlock Class Reference}
+\label{classCALICE_1_1HodoscopeBlock}\index{CALICE::HodoscopeBlock@{CALICE::HodoscopeBlock}}
+
+
+{\ttfamily \#include $<$hodoscopeBlock.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf HodoscopeBlock} (int header, int size, int trigN, int cycleN, int tdc, int data\_\-0, int data\_\-1, int data\_\-2, int data\_\-3, int data\_\-4, int data\_\-5, int data\_\-6, int data\_\-7, int data\_\-8, int data\_\-9, int data\_\-10, int data\_\-11, int data\_\-12, int data\_\-13, int data\_\-14, int data\_\-15, int data\_\-16, int data\_\-17, int data\_\-18, int data\_\-19, int data\_\-20, int data\_\-21, int data\_\-22, int data\_\-23, int data\_\-24, int data\_\-25, int data\_\-26, int data\_\-27, int data\_\-28, int data\_\-29, int data\_\-30, int data\_\-31, int data\_\-32, int data\_\-33, int data\_\-34, int data\_\-35, int data\_\-36, int data\_\-37, int data\_\-38, int data\_\-39, int data\_\-40, int data\_\-41, int data\_\-42, int data\_\-43, int data\_\-44, int data\_\-45, int data\_\-46, int data\_\-47, int data\_\-48, int data\_\-49, int data\_\-50, int data\_\-51, int data\_\-52, int data\_\-53, int data\_\-54, int data\_\-55, int data\_\-56, int data\_\-57, int data\_\-58, int data\_\-59, int data\_\-60, int data\_\-61, int data\_\-62, int data\_\-63)
+\item 
+{\bf HodoscopeBlock} (LCObject $\ast$obj)
+\item 
+virtual {\bf $\sim$HodoscopeBlock} ()
+\item 
+int {\bf GetHeader} () const 
+\item 
+int {\bf GetSize} () const 
+\item 
+int {\bf GetTrigN} () const 
+\item 
+int {\bf GetCycleN} () const 
+\item 
+int {\bf GetTDC} () const 
+\item 
+int {\bf GetAccept} () const 
+\item 
+std::vector$<$ int $>$ {\bf GetADC} () const 
+\item 
+std::vector$<$ int $>$ {\bf GetChannel} () const 
+\item 
+void {\bf print} (std::ostream \&os, int)
+\item 
+const std::string {\bf getTypeName} () const 
+\item 
+const std::string {\bf getDataDescription} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for the SLCIO hododscope as acquired by the EUDAQ system. \begin{DoxyAuthor}{Author}
+L. Liu, based on the EUDAQBlock writen by A. Irles DESY Hamburg 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+November 9 2017 Created for cosmic test hodoscope data format. 
+\end{DoxyDate}
+
+
+Definition at line 23 of file hodoscopeBlock.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CALICE::HodoscopeBlock@{CALICE::HodoscopeBlock}!HodoscopeBlock@{HodoscopeBlock}}
+\index{HodoscopeBlock@{HodoscopeBlock}!CALICE::HodoscopeBlock@{CALICE::HodoscopeBlock}}
+\subsubsection[{HodoscopeBlock}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::HodoscopeBlock::HodoscopeBlock (int {\em header}, \/  int {\em size}, \/  int {\em trigN}, \/  int {\em cycleN}, \/  int {\em tdc}, \/  int {\em data\_\-0}, \/  int {\em data\_\-1}, \/  int {\em data\_\-2}, \/  int {\em data\_\-3}, \/  int {\em data\_\-4}, \/  int {\em data\_\-5}, \/  int {\em data\_\-6}, \/  int {\em data\_\-7}, \/  int {\em data\_\-8}, \/  int {\em data\_\-9}, \/  int {\em data\_\-10}, \/  int {\em data\_\-11}, \/  int {\em data\_\-12}, \/  int {\em data\_\-13}, \/  int {\em data\_\-14}, \/  int {\em data\_\-15}, \/  int {\em data\_\-16}, \/  int {\em data\_\-17}, \/  int {\em data\_\-18}, \/  int {\em data\_\-19}, \/  int {\em data\_\-20}, \/  int {\em data\_\-21}, \/  int {\em data\_\-22}, \/  int {\em data\_\-23}, \/  int {\em data\_\-24}, \/  int {\em data\_\-25}, \/  int {\em data\_\-26}, \/  int {\em data\_\-27}, \/  int {\em data\_\-28}, \/  int {\em data\_\-29}, \/  int {\em data\_\-30}, \/  int {\em data\_\-31}, \/  int {\em data\_\-32}, \/  int {\em data\_\-33}, \/  int {\em data\_\-34}, \/  int {\em data\_\-35}, \/  int {\em data\_\-36}, \/  int {\em data\_\-37}, \/  int {\em data\_\-38}, \/  int {\em data\_\-39}, \/  int {\em data\_\-40}, \/  int {\em data\_\-41}, \/  int {\em data\_\-42}, \/  int {\em data\_\-43}, \/  int {\em data\_\-44}, \/  int {\em data\_\-45}, \/  int {\em data\_\-46}, \/  int {\em data\_\-47}, \/  int {\em data\_\-48}, \/  int {\em data\_\-49}, \/  int {\em data\_\-50}, \/  int {\em data\_\-51}, \/  int {\em data\_\-52}, \/  int {\em data\_\-53}, \/  int {\em data\_\-54}, \/  int {\em data\_\-55}, \/  int {\em data\_\-56}, \/  int {\em data\_\-57}, \/  int {\em data\_\-58}, \/  int {\em data\_\-59}, \/  int {\em data\_\-60}, \/  int {\em data\_\-61}, \/  int {\em data\_\-62}, \/  int {\em data\_\-63})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1HodoscopeBlock_ac1fc377a4debcaf515664a0c2ce34642}
+Very ugly constructor because we use a Generic Object with many integers 
+
+Definition at line 31 of file hodoscopeBlock.hh.\index{CALICE::HodoscopeBlock@{CALICE::HodoscopeBlock}!HodoscopeBlock@{HodoscopeBlock}}
+\index{HodoscopeBlock@{HodoscopeBlock}!CALICE::HodoscopeBlock@{CALICE::HodoscopeBlock}}
+\subsubsection[{HodoscopeBlock}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::HodoscopeBlock::HodoscopeBlock (LCObject $\ast$ {\em obj})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1HodoscopeBlock_a81a5b6d8579806ed24088cc154c1fe98}
+'Copy constructor' needed to interpret LCCollection read from file/database. 
+
+Definition at line 114 of file hodoscopeBlock.hh.\index{CALICE::HodoscopeBlock@{CALICE::HodoscopeBlock}!$\sim$HodoscopeBlock@{$\sim$HodoscopeBlock}}
+\index{$\sim$HodoscopeBlock@{$\sim$HodoscopeBlock}!CALICE::HodoscopeBlock@{CALICE::HodoscopeBlock}}
+\subsubsection[{$\sim$HodoscopeBlock}]{\setlength{\rightskip}{0pt plus 5cm}virtual CALICE::HodoscopeBlock::$\sim$HodoscopeBlock ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classCALICE_1_1HodoscopeBlock_a77c74643079308a155cd817f0b880240}
+Important for memory handling 
+
+Definition at line 117 of file hodoscopeBlock.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::HodoscopeBlock@{CALICE::HodoscopeBlock}!GetAccept@{GetAccept}}
+\index{GetAccept@{GetAccept}!CALICE::HodoscopeBlock@{CALICE::HodoscopeBlock}}
+\subsubsection[{GetAccept}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::HodoscopeBlock::GetAccept () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1HodoscopeBlock_ab95e3074f19f0cbc1cfc27276933f023}
+get the accept. 
+
+Definition at line 151 of file hodoscopeBlock.hh.
+
+Referenced by marlin::HodoscopeWriteEngine::fillVariables().\index{CALICE::HodoscopeBlock@{CALICE::HodoscopeBlock}!GetADC@{GetADC}}
+\index{GetADC@{GetADC}!CALICE::HodoscopeBlock@{CALICE::HodoscopeBlock}}
+\subsubsection[{GetADC}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$int$>$ CALICE::HodoscopeBlock::GetADC () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1HodoscopeBlock_a93aa4e2366ab5e2563eede8426586d19}
+get the ADC. 
+
+Definition at line 157 of file hodoscopeBlock.hh.
+
+Referenced by marlin::HodoscopeWriteEngine::fillVariables().\index{CALICE::HodoscopeBlock@{CALICE::HodoscopeBlock}!GetChannel@{GetChannel}}
+\index{GetChannel@{GetChannel}!CALICE::HodoscopeBlock@{CALICE::HodoscopeBlock}}
+\subsubsection[{GetChannel}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$int$>$ CALICE::HodoscopeBlock::GetChannel () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1HodoscopeBlock_a284c02352ae2c07e0f6d1922397c2d97}
+get the channel. 
+
+Definition at line 168 of file hodoscopeBlock.hh.\index{CALICE::HodoscopeBlock@{CALICE::HodoscopeBlock}!GetCycleN@{GetCycleN}}
+\index{GetCycleN@{GetCycleN}!CALICE::HodoscopeBlock@{CALICE::HodoscopeBlock}}
+\subsubsection[{GetCycleN}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::HodoscopeBlock::GetCycleN () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1HodoscopeBlock_afae379ffe6495dd74d2b085ca5997486}
+get the cycle number. 
+
+Definition at line 139 of file hodoscopeBlock.hh.
+
+Referenced by marlin::HodoscopeWriteEngine::fillVariables().\index{CALICE::HodoscopeBlock@{CALICE::HodoscopeBlock}!getDataDescription@{getDataDescription}}
+\index{getDataDescription@{getDataDescription}!CALICE::HodoscopeBlock@{CALICE::HodoscopeBlock}}
+\subsubsection[{getDataDescription}]{\setlength{\rightskip}{0pt plus 5cm}const std::string CALICE::HodoscopeBlock::getDataDescription () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1HodoscopeBlock_a73353b3f57c7a0e93fb64e85c671ff69}
+Return a brief description of the data members 
+
+Definition at line 200 of file hodoscopeBlock.hh.\index{CALICE::HodoscopeBlock@{CALICE::HodoscopeBlock}!GetHeader@{GetHeader}}
+\index{GetHeader@{GetHeader}!CALICE::HodoscopeBlock@{CALICE::HodoscopeBlock}}
+\subsubsection[{GetHeader}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::HodoscopeBlock::GetHeader () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1HodoscopeBlock_a9e899a0be94147400af123ca7b101572}
+get the header (0xffff7368 = -\/35992). 
+
+Definition at line 121 of file hodoscopeBlock.hh.\index{CALICE::HodoscopeBlock@{CALICE::HodoscopeBlock}!GetSize@{GetSize}}
+\index{GetSize@{GetSize}!CALICE::HodoscopeBlock@{CALICE::HodoscopeBlock}}
+\subsubsection[{GetSize}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::HodoscopeBlock::GetSize () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1HodoscopeBlock_a463e5fd470d7ee9adfe59060dd68ba58}
+get the size. 
+
+Definition at line 127 of file hodoscopeBlock.hh.\index{CALICE::HodoscopeBlock@{CALICE::HodoscopeBlock}!GetTDC@{GetTDC}}
+\index{GetTDC@{GetTDC}!CALICE::HodoscopeBlock@{CALICE::HodoscopeBlock}}
+\subsubsection[{GetTDC}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::HodoscopeBlock::GetTDC () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1HodoscopeBlock_a72f2fd78f6615ac3786850eb8ad82e26}
+get the tdc. 
+
+Definition at line 145 of file hodoscopeBlock.hh.
+
+Referenced by marlin::HodoscopeWriteEngine::fillVariables().\index{CALICE::HodoscopeBlock@{CALICE::HodoscopeBlock}!GetTrigN@{GetTrigN}}
+\index{GetTrigN@{GetTrigN}!CALICE::HodoscopeBlock@{CALICE::HodoscopeBlock}}
+\subsubsection[{GetTrigN}]{\setlength{\rightskip}{0pt plus 5cm}int CALICE::HodoscopeBlock::GetTrigN () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1HodoscopeBlock_a2afa2d94a5365a3d5fb5f4e95b0ac9c7}
+get the trigger number (up to 4095). 
+
+Definition at line 133 of file hodoscopeBlock.hh.\index{CALICE::HodoscopeBlock@{CALICE::HodoscopeBlock}!getTypeName@{getTypeName}}
+\index{getTypeName@{getTypeName}!CALICE::HodoscopeBlock@{CALICE::HodoscopeBlock}}
+\subsubsection[{getTypeName}]{\setlength{\rightskip}{0pt plus 5cm}const std::string CALICE::HodoscopeBlock::getTypeName () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1HodoscopeBlock_aa0c495b019c636a966c66d7078c1233f}
+Return the type of the class 
+
+Definition at line 194 of file hodoscopeBlock.hh.\index{CALICE::HodoscopeBlock@{CALICE::HodoscopeBlock}!print@{print}}
+\index{print@{print}!CALICE::HodoscopeBlock@{CALICE::HodoscopeBlock}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::HodoscopeBlock::print (std::ostream \& {\em os}, \/  int)}\label{classCALICE_1_1HodoscopeBlock_a88f8139e50bcc17ae72ad96d63b224cc}
+Convenient print method 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+hodoscopeBlock.hh\end{DoxyCompactItemize}

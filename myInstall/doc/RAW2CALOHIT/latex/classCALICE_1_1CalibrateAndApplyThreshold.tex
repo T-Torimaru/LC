@@ -1,0 +1,295 @@
+\section{CALICE::CalibrateAndApplyThreshold Class Reference}
+\label{classCALICE_1_1CalibrateAndApplyThreshold}\index{CALICE::CalibrateAndApplyThreshold@{CALICE::CalibrateAndApplyThreshold}}
+
+
+Marlin Processor to go from RawCalorimeterHit to calibrated CalorimeterHits.  
+
+
+{\ttfamily \#include $<$CalibrateAndApplyThreshold.hh$>$}Inheritance diagram for CALICE::CalibrateAndApplyThreshold::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCALICE_1_1CalibrateAndApplyThreshold}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Processor $\ast$ {\bf newProcessor} ()\label{classCALICE_1_1CalibrateAndApplyThreshold_a011ca53f853d3a6bc58d1a9a541a99da}
+
+\begin{DoxyCompactList}\small\item\em construct a new Processor (required by Marlin). \item\end{DoxyCompactList}\item 
+{\bf CalibrateAndApplyThreshold} ()
+\begin{DoxyCompactList}\small\item\em default constructor. \item\end{DoxyCompactList}\item 
+{\bf $\sim$CalibrateAndApplyThreshold} ()\label{classCALICE_1_1CalibrateAndApplyThreshold_a1318d9f3f1a695b1996c30c63c47d085}
+
+\begin{DoxyCompactList}\small\item\em destructor. \item\end{DoxyCompactList}\item 
+void {\bf init} ()
+\begin{DoxyCompactList}\small\item\em Called at the begin of the job before anything is read. \item\end{DoxyCompactList}\item 
+void {\bf processRunHeader} (LCRunHeader $\ast$run)
+\begin{DoxyCompactList}\small\item\em Called for every run (does nothing. \item\end{DoxyCompactList}\item 
+void {\bf processEvent} (LCEvent $\ast$evtP)
+\begin{DoxyCompactList}\small\item\em Reconstruct calorimeter hits. \item\end{DoxyCompactList}\item 
+void {\bfseries end} ()\label{classCALICE_1_1CalibrateAndApplyThreshold_a9779b4e112b4cae16dec00d158f656f2}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries detectorTransformationChanged} (lcio::LCCollection $\ast$col)\label{classCALICE_1_1CalibrateAndApplyThreshold_a160acdea77969ab85d10dfbf4ba6b719}
+
+\item 
+void {\bfseries referenceTransformationChanged} (lcio::LCCollection $\ast$col)\label{classCALICE_1_1CalibrateAndApplyThreshold_aca4443deb520f3c16061d3d2364ccf16}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Calibration} $\ast$ {\bfseries \_\-calibration}\label{classCALICE_1_1CalibrateAndApplyThreshold_a5f7e659b256a90f073328936dfca032d}
+
+\item 
+LCCollection $\ast$ {\bfseries \_\-cellCol}\label{classCALICE_1_1CalibrateAndApplyThreshold_a1379ee3029e35c09bcf02a555f79bce2}
+
+\item 
+std::string {\bfseries \_\-cellParameterCollectionName}\label{classCALICE_1_1CalibrateAndApplyThreshold_aaee3b361269a3d245228c6a7b0866f0e}
+
+\item 
+IntVec {\bfseries \_\-adcRange}\label{classCALICE_1_1CalibrateAndApplyThreshold_a930eaf481f0ed35420ee5a4c87e50bc5}
+
+\item 
+Float\_\-t {\bf \_\-signalThreshold}
+\begin{DoxyCompactList}\small\item\em Signals above the signal threshold and . \item\end{DoxyCompactList}\item 
+FloatVec {\bf \_\-noiseCutVec}
+\begin{DoxyCompactList}\small\item\em above the noise cut are considered to be hits. \item\end{DoxyCompactList}\item 
+Float\_\-t {\bf \_\-noiseCut}\label{classCALICE_1_1CalibrateAndApplyThreshold_a457ab672e3467ed409a58e42e4aa6229}
+
+\begin{DoxyCompactList}\small\item\em will be set by the first element of the \_\-noiseCutVec \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-rawhitColName}
+\begin{DoxyCompactList}\small\item\em Name of the hit collection (INPUT). \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-hitColName}
+\begin{DoxyCompactList}\small\item\em Name of the hit collection (OUTPUT). \item\end{DoxyCompactList}\item 
+bool {\bf \_\-linkRecToSim}\label{classCALICE_1_1CalibrateAndApplyThreshold_aba8a11b61c43b9339e3140839fc5b213}
+
+\begin{DoxyCompactList}\small\item\em kkk flag to disable/enable the creation of an LCRelation to simulated hit \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-RecToSimColName}
+\begin{DoxyCompactList}\small\item\em kkk: Name of the relation collection hit -\/$>$ simhit (OUTPUT). \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-RawToSimColName}
+\begin{DoxyCompactList}\small\item\em Name of the relation collection between Sim and Raw hits (INPUT). \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-calibrationObjectName}\label{classCALICE_1_1CalibrateAndApplyThreshold_a36efa661235242659c74a49235164662}
+
+\begin{DoxyCompactList}\small\item\em Name of the \doxyref{Calibration}{p.}{classCalibration} object to be used (will be created using the \doxyref{CalibrationFactory}{p.}{classCalibrationFactory}). \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-calibrationConstantColName}
+\begin{DoxyCompactList}\small\item\em Name of the conditions data collection containing the calibration constants. \item\end{DoxyCompactList}\item 
+Bool\_\-t {\bfseries \_\-calibrationOn}\label{classCALICE_1_1CalibrateAndApplyThreshold_a1381fda668d89ec76ac565580e7fca36}
+
+\item 
+UInt\_\-t {\bfseries \_\-lastEvent}\label{classCALICE_1_1CalibrateAndApplyThreshold_ab2f19b2717ad2afc75043a35478f3ceb}
+
+\item 
+UInt\_\-t {\bfseries \_\-nEventsWithoutRAWHITS}\label{classCALICE_1_1CalibrateAndApplyThreshold_acf199915d32e1c4cb6d9a87f4a0373ff}
+
+\item 
+UInt\_\-t {\bfseries \_\-nEventsWithoutSIMHITS}\label{classCALICE_1_1CalibrateAndApplyThreshold_ae3e308ce27f5c1dd19bfee64a4d68892}
+
+\item 
+UInt\_\-t {\bfseries \_\-nEvt}\label{classCALICE_1_1CalibrateAndApplyThreshold_a80c7d9d42453384e5f8b12eee3e6b377}
+
+\item 
+Int\_\-t {\bfseries \_\-saveHistograms}\label{classCALICE_1_1CalibrateAndApplyThreshold_a05f90325598b42ff4e8b0af45cedc99b}
+
+\item 
+RunInformation {\bfseries \_\-runInfo}\label{classCALICE_1_1CalibrateAndApplyThreshold_afa4a2e593f7eabd44817705637f2f5b8}
+
+\item 
+TString {\bfseries \_\-rootname}\label{classCALICE_1_1CalibrateAndApplyThreshold_ad54aa68d7f9f558d3556c1e387043e0b}
+
+\item 
+TFile $\ast$ {\bfseries \_\-hfile}\label{classCALICE_1_1CalibrateAndApplyThreshold_adfab3548f6b0c6e4cce5436cc679bfb6}
+
+\item 
+TH1F $\ast$ {\bfseries p\_\-noise} [30][324]\label{classCALICE_1_1CalibrateAndApplyThreshold_a2a1569bd1101d3c46b178524e2280953}
+
+\item 
+TH1F $\ast$ {\bfseries p\_\-rawAmpl} [30][324]\label{classCALICE_1_1CalibrateAndApplyThreshold_a0773507c8f06882bb5c7b62fd4ac533b}
+
+\item 
+TH1F $\ast$ {\bfseries p\_\-pedCorr} [30][324]\label{classCALICE_1_1CalibrateAndApplyThreshold_ae1a721c77f3bf49fffff7ec31fddb214}
+
+\item 
+TH1F $\ast$ {\bfseries p\_\-calVal} [30][324]\label{classCALICE_1_1CalibrateAndApplyThreshold_ae443cba04fd5819e9a42cd514fb9ca50}
+
+\item 
+TH1F $\ast$ {\bfseries p\_\-sig} [30][324]\label{classCALICE_1_1CalibrateAndApplyThreshold_a479cc39be89fcaa154f96571e63843d4}
+
+\item 
+TH1F $\ast$ {\bfseries p\_\-SoN} [30][324]\label{classCALICE_1_1CalibrateAndApplyThreshold_a8d5fb256bddd8b8aad93138bbf50c1d7}
+
+\item 
+std::string {\bf \_\-colNameDetectorTransformation}
+\begin{DoxyCompactList}\small\item\em Name of the conditions data collection which describes the position and the rotation of the detector. \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-colNameReferenceTransformation}
+\begin{DoxyCompactList}\small\item\em Name of the conditions data collection which describes the reference position and rotation. \item\end{DoxyCompactList}\item 
+ConditionsChangeDelegator$<$ {\bf CalibrateAndApplyThreshold} $>$ {\bf \_\-detectorTransformationChange}
+\begin{DoxyCompactList}\small\item\em helper class to listen for changes of the detector position or rotation. \item\end{DoxyCompactList}\item 
+ConditionsChangeDelegator$<$ {\bf CalibrateAndApplyThreshold} $>$ {\bf \_\-referenceTransformationChange}
+\begin{DoxyCompactList}\small\item\em helper class to listen for changes of the reference position or rotation. \item\end{DoxyCompactList}\item 
+float {\bfseries \_\-fallbackShift}\label{classCALICE_1_1CalibrateAndApplyThreshold_a23959025f1e0fb5c0a177cd6ebbaa217}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Marlin Processor to go from RawCalorimeterHit to calibrated CalorimeterHits. The hit position is calculated using information stored in a the cellID1. Moreover, the signal is calibrated if a proper calibration object exists. should run on Data as well as on MC after digisim. \begin{Desc}
+\item[{\bf Todo}](Re-\/)Verify its applicability for MC after modifs for this release!!!! \end{Desc}
+
+
+Definition at line 36 of file CalibrateAndApplyThreshold.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CALICE::CalibrateAndApplyThreshold@{CALICE::CalibrateAndApplyThreshold}!CalibrateAndApplyThreshold@{CalibrateAndApplyThreshold}}
+\index{CalibrateAndApplyThreshold@{CalibrateAndApplyThreshold}!CALICE::CalibrateAndApplyThreshold@{CALICE::CalibrateAndApplyThreshold}}
+\subsubsection[{CalibrateAndApplyThreshold}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::CalibrateAndApplyThreshold::CalibrateAndApplyThreshold ()}\label{classCALICE_1_1CalibrateAndApplyThreshold_ae2d615ca7797434d642f1ae6d6950974}
+
+
+default constructor. defines and registers its parameters. 
+
+Definition at line 46 of file CalibrateAndApplyThreshold.cc.
+
+References \_\-calibrationConstantColName, \_\-calibrationObjectName, \_\-colNameDetectorTransformation, \_\-colNameReferenceTransformation, \_\-hitColName, \_\-linkRecToSim, \_\-noiseCutVec, \_\-rawhitColName, \_\-RawToSimColName, \_\-RecToSimColName, and \_\-signalThreshold.
+
+\subsection{Member Function Documentation}
+\index{CALICE::CalibrateAndApplyThreshold@{CALICE::CalibrateAndApplyThreshold}!init@{init}}
+\index{init@{init}!CALICE::CalibrateAndApplyThreshold@{CALICE::CalibrateAndApplyThreshold}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CalibrateAndApplyThreshold::init ()}\label{classCALICE_1_1CalibrateAndApplyThreshold_a69d43c0be2a238e99828c918003bde74}
+
+
+Called at the begin of the job before anything is read. Use to initialize the processor, e.g. book histograms. 
+
+Reimplemented from {\bf CALICE::VRawADCValueProcessor} \doxyref{}{p.}{classCALICE_1_1VRawADCValueProcessor}.
+
+Definition at line 142 of file CalibrateAndApplyThreshold.cc.
+
+References \_\-calibrationConstantColName, \_\-calibrationObjectName, \_\-colNameDetectorTransformation, CALICE::VRawADCValueProcessor::\_\-colNameModuleDescription, \_\-colNameReferenceTransformation, \_\-detectorTransformationChange, \_\-noiseCut, \_\-noiseCutVec, \_\-referenceTransformationChange, CalibrationFactory::createCalibrationObject(), CalibrationFactory::getInstance(), and CalibrationFactory::listKits().\index{CALICE::CalibrateAndApplyThreshold@{CALICE::CalibrateAndApplyThreshold}!processEvent@{processEvent}}
+\index{processEvent@{processEvent}!CALICE::CalibrateAndApplyThreshold@{CALICE::CalibrateAndApplyThreshold}}
+\subsubsection[{processEvent}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CalibrateAndApplyThreshold::processEvent (LCEvent $\ast$ {\em evtP})}\label{classCALICE_1_1CalibrateAndApplyThreshold_a2c3e34db11fe08fab2b184cc87f4d7b5}
+
+
+Reconstruct calorimeter hits. The class needs as input the RawCalorimeterHit collection from \doxyref{SimpleHitSearch}{p.}{classCALICE_1_1SimpleHitSearch} or digisim and produces a CalorimeterHit collection. 
+
+Definition at line 247 of file CalibrateAndApplyThreshold.cc.
+
+References \_\-hitColName, \_\-linkRecToSim, \_\-noiseCut, \_\-rawhitColName, \_\-RawToSimColName, \_\-RecToSimColName, \_\-signalThreshold, Calibration::getCalibratedValue(), Calibration::getMiniumADCForMipThreshold(), CALICE::NoiseParameter::getNoise(), and CALICE::NoiseParameter::isDead().\index{CALICE::CalibrateAndApplyThreshold@{CALICE::CalibrateAndApplyThreshold}!processRunHeader@{processRunHeader}}
+\index{processRunHeader@{processRunHeader}!CALICE::CalibrateAndApplyThreshold@{CALICE::CalibrateAndApplyThreshold}}
+\subsubsection[{processRunHeader}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CalibrateAndApplyThreshold::processRunHeader (LCRunHeader $\ast$ {\em run})}\label{classCALICE_1_1CalibrateAndApplyThreshold_a3bd3d21d979363fa105e7cea54148502}
+
+
+Called for every run (does nothing. ) 
+
+Definition at line 217 of file CalibrateAndApplyThreshold.cc.
+
+References Calibration::isValid().
+
+\subsection{Field Documentation}
+\index{CALICE::CalibrateAndApplyThreshold@{CALICE::CalibrateAndApplyThreshold}!\_\-calibrationConstantColName@{\_\-calibrationConstantColName}}
+\index{\_\-calibrationConstantColName@{\_\-calibrationConstantColName}!CALICE::CalibrateAndApplyThreshold@{CALICE::CalibrateAndApplyThreshold}}
+\subsubsection[{\_\-calibrationConstantColName}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf CALICE::CalibrateAndApplyThreshold::\_\-calibrationConstantColName}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1CalibrateAndApplyThreshold_a79e5cf6fc879e14cdd3c68f88b1ff7c1}
+
+
+Name of the conditions data collection containing the calibration constants. 
+
+Definition at line 100 of file CalibrateAndApplyThreshold.hh.
+
+Referenced by CalibrateAndApplyThreshold(), and init().\index{CALICE::CalibrateAndApplyThreshold@{CALICE::CalibrateAndApplyThreshold}!\_\-colNameDetectorTransformation@{\_\-colNameDetectorTransformation}}
+\index{\_\-colNameDetectorTransformation@{\_\-colNameDetectorTransformation}!CALICE::CalibrateAndApplyThreshold@{CALICE::CalibrateAndApplyThreshold}}
+\subsubsection[{\_\-colNameDetectorTransformation}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf CALICE::CalibrateAndApplyThreshold::\_\-colNameDetectorTransformation}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1CalibrateAndApplyThreshold_a4a6e48e29b530ac9b80375776cd4af31}
+
+
+Name of the conditions data collection which describes the position and the rotation of the detector. 
+
+Definition at line 124 of file CalibrateAndApplyThreshold.hh.
+
+Referenced by CalibrateAndApplyThreshold(), and init().\index{CALICE::CalibrateAndApplyThreshold@{CALICE::CalibrateAndApplyThreshold}!\_\-colNameReferenceTransformation@{\_\-colNameReferenceTransformation}}
+\index{\_\-colNameReferenceTransformation@{\_\-colNameReferenceTransformation}!CALICE::CalibrateAndApplyThreshold@{CALICE::CalibrateAndApplyThreshold}}
+\subsubsection[{\_\-colNameReferenceTransformation}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf CALICE::CalibrateAndApplyThreshold::\_\-colNameReferenceTransformation}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1CalibrateAndApplyThreshold_a3e6c0435de64d50ae08374cf145c8c8b}
+
+
+Name of the conditions data collection which describes the reference position and rotation. 
+
+Definition at line 126 of file CalibrateAndApplyThreshold.hh.
+
+Referenced by CalibrateAndApplyThreshold(), and init().\index{CALICE::CalibrateAndApplyThreshold@{CALICE::CalibrateAndApplyThreshold}!\_\-detectorTransformationChange@{\_\-detectorTransformationChange}}
+\index{\_\-detectorTransformationChange@{\_\-detectorTransformationChange}!CALICE::CalibrateAndApplyThreshold@{CALICE::CalibrateAndApplyThreshold}}
+\subsubsection[{\_\-detectorTransformationChange}]{\setlength{\rightskip}{0pt plus 5cm}ConditionsChangeDelegator$<${\bf CalibrateAndApplyThreshold}$>$ {\bf CALICE::CalibrateAndApplyThreshold::\_\-detectorTransformationChange}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1CalibrateAndApplyThreshold_a9f46c5087b5975ec06c36e9da4f33378}
+
+
+helper class to listen for changes of the detector position or rotation. 
+
+Definition at line 130 of file CalibrateAndApplyThreshold.hh.
+
+Referenced by init().\index{CALICE::CalibrateAndApplyThreshold@{CALICE::CalibrateAndApplyThreshold}!\_\-hitColName@{\_\-hitColName}}
+\index{\_\-hitColName@{\_\-hitColName}!CALICE::CalibrateAndApplyThreshold@{CALICE::CalibrateAndApplyThreshold}}
+\subsubsection[{\_\-hitColName}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf CALICE::CalibrateAndApplyThreshold::\_\-hitColName}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1CalibrateAndApplyThreshold_a10dd53b4f7d1514791ec6c60329aaea4}
+
+
+Name of the hit collection (OUTPUT). 
+
+Definition at line 93 of file CalibrateAndApplyThreshold.hh.
+
+Referenced by CalibrateAndApplyThreshold(), and processEvent().\index{CALICE::CalibrateAndApplyThreshold@{CALICE::CalibrateAndApplyThreshold}!\_\-noiseCutVec@{\_\-noiseCutVec}}
+\index{\_\-noiseCutVec@{\_\-noiseCutVec}!CALICE::CalibrateAndApplyThreshold@{CALICE::CalibrateAndApplyThreshold}}
+\subsubsection[{\_\-noiseCutVec}]{\setlength{\rightskip}{0pt plus 5cm}FloatVec {\bf CALICE::CalibrateAndApplyThreshold::\_\-noiseCutVec}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1CalibrateAndApplyThreshold_adfacf11438d8b5f863f6e77722dc5e20}
+
+
+above the noise cut are considered to be hits. This vector contains a cut for the hit search and for the hit rejection during noise calculation 
+
+Definition at line 87 of file CalibrateAndApplyThreshold.hh.
+
+Referenced by CalibrateAndApplyThreshold(), and init().\index{CALICE::CalibrateAndApplyThreshold@{CALICE::CalibrateAndApplyThreshold}!\_\-rawhitColName@{\_\-rawhitColName}}
+\index{\_\-rawhitColName@{\_\-rawhitColName}!CALICE::CalibrateAndApplyThreshold@{CALICE::CalibrateAndApplyThreshold}}
+\subsubsection[{\_\-rawhitColName}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf CALICE::CalibrateAndApplyThreshold::\_\-rawhitColName}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1CalibrateAndApplyThreshold_a3a6f0a6d75fa972ac6303604bb515fc7}
+
+
+Name of the hit collection (INPUT). 
+
+Definition at line 92 of file CalibrateAndApplyThreshold.hh.
+
+Referenced by CalibrateAndApplyThreshold(), and processEvent().\index{CALICE::CalibrateAndApplyThreshold@{CALICE::CalibrateAndApplyThreshold}!\_\-RawToSimColName@{\_\-RawToSimColName}}
+\index{\_\-RawToSimColName@{\_\-RawToSimColName}!CALICE::CalibrateAndApplyThreshold@{CALICE::CalibrateAndApplyThreshold}}
+\subsubsection[{\_\-RawToSimColName}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf CALICE::CalibrateAndApplyThreshold::\_\-RawToSimColName}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1CalibrateAndApplyThreshold_a75f2b80baf0f8691c9d921d70bafb649}
+
+
+Name of the relation collection between Sim and Raw hits (INPUT). 
+
+Definition at line 97 of file CalibrateAndApplyThreshold.hh.
+
+Referenced by CalibrateAndApplyThreshold(), and processEvent().\index{CALICE::CalibrateAndApplyThreshold@{CALICE::CalibrateAndApplyThreshold}!\_\-RecToSimColName@{\_\-RecToSimColName}}
+\index{\_\-RecToSimColName@{\_\-RecToSimColName}!CALICE::CalibrateAndApplyThreshold@{CALICE::CalibrateAndApplyThreshold}}
+\subsubsection[{\_\-RecToSimColName}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf CALICE::CalibrateAndApplyThreshold::\_\-RecToSimColName}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1CalibrateAndApplyThreshold_a6ba0e8c707c10c6ace7b034293d34035}
+
+
+kkk: Name of the relation collection hit -\/$>$ simhit (OUTPUT). 
+
+Definition at line 96 of file CalibrateAndApplyThreshold.hh.
+
+Referenced by CalibrateAndApplyThreshold(), and processEvent().\index{CALICE::CalibrateAndApplyThreshold@{CALICE::CalibrateAndApplyThreshold}!\_\-referenceTransformationChange@{\_\-referenceTransformationChange}}
+\index{\_\-referenceTransformationChange@{\_\-referenceTransformationChange}!CALICE::CalibrateAndApplyThreshold@{CALICE::CalibrateAndApplyThreshold}}
+\subsubsection[{\_\-referenceTransformationChange}]{\setlength{\rightskip}{0pt plus 5cm}ConditionsChangeDelegator$<${\bf CalibrateAndApplyThreshold}$>$ {\bf CALICE::CalibrateAndApplyThreshold::\_\-referenceTransformationChange}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1CalibrateAndApplyThreshold_a1e6bdda0ecedd7a21053f54f178478b1}
+
+
+helper class to listen for changes of the reference position or rotation. 
+
+Definition at line 133 of file CalibrateAndApplyThreshold.hh.
+
+Referenced by init().\index{CALICE::CalibrateAndApplyThreshold@{CALICE::CalibrateAndApplyThreshold}!\_\-signalThreshold@{\_\-signalThreshold}}
+\index{\_\-signalThreshold@{\_\-signalThreshold}!CALICE::CalibrateAndApplyThreshold@{CALICE::CalibrateAndApplyThreshold}}
+\subsubsection[{\_\-signalThreshold}]{\setlength{\rightskip}{0pt plus 5cm}Float\_\-t {\bf CALICE::CalibrateAndApplyThreshold::\_\-signalThreshold}\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1CalibrateAndApplyThreshold_a7c318b024c59652ac1989c8c1486aa49}
+
+
+Signals above the signal threshold and . .. 
+
+Definition at line 86 of file CalibrateAndApplyThreshold.hh.
+
+Referenced by CalibrateAndApplyThreshold(), and processEvent().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+CalibrateAndApplyThreshold.hh\item 
+CalibrateAndApplyThreshold.cc\end{DoxyCompactItemize}

@@ -1,0 +1,62 @@
+\section{SpacePool Class Reference}
+\label{classSpacePool}\index{SpacePool@{SpacePool}}
+
+
+This class is to provide some base class for all templated implementations.  
+
+
+{\ttfamily \#include $<$RecoUtil.hh$>$}Inheritance diagram for SpacePool::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classSpacePool}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf SpacePool} (unsigned prealloc=256)\label{classSpacePool_a4778bf95fa19030a2eda2b9652ca66fb}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+{\bf SpacePool} ({\bf SpacePool} \&x, unsigned prealloc=256)\label{classSpacePool_ae5816739b4f2ed2b1a41a989e692a644}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$SpacePool} ()\label{classSpacePool_a8ddca1507b0d3112b5304572d4a83f97}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries connect\_\-to} ({\bf SpacePool} \&x)\label{classSpacePool_a3d1b4392f58b92aed09ac972b1244114}
+
+\item 
+{\bfseries SpacePool} ({\bf SpacePool} \&x, bool)\label{classSpacePool_ab80170ef5ee1fbc371ea2ff4ead7a38b}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned {\bf count}\label{classSpacePool_ae6b1754e19e2d105a2d3ea870bdca86f}
+
+\begin{DoxyCompactList}\small\item\em common data in all holders \item\end{DoxyCompactList}\item 
+unsigned {\bfseries alloced}\label{classSpacePool_a5acf9c577dd6d872d69c24916026f002}
+
+\item 
+unsigned {\bfseries \_\-prealloc}\label{classSpacePool_ab88631665439889f3c8981841f6c8ad1}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf SpacePool} $\ast$ {\bfseries next}\label{classSpacePool_acdbefd16991b86ea2397997074193484}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is to provide some base class for all templated implementations. 
+
+Definition at line 31 of file RecoUtil.hh.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+RecoUtil.hh\end{DoxyCompactItemize}

@@ -1,0 +1,110 @@
+\section{CALICE::ScECALMIPfit Class Reference}
+\label{classCALICE_1_1ScECALMIPfit}\index{CALICE::ScECALMIPfit@{CALICE::ScECALMIPfit}}
+
+
+Class to store the constant of a ScECAL MIP fit within the lcio framework.  
+
+
+{\ttfamily \#include $<$ScECALMIPfit.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ScECALMIPfit} ()\label{classCALICE_1_1ScECALMIPfit_a26510de92557f5e3c85ff4ed4d9fa708}
+
+\begin{DoxyCompactList}\small\item\em Empty constructor. \item\end{DoxyCompactList}\item 
+{\bfseries ScECALMIPfit} (lcio::LCObject $\ast$obj)\label{classCALICE_1_1ScECALMIPfit_acd5b5a6ed9c6f9adcce0f9cc9057578e}
+
+\item 
+{\bfseries ScECALMIPfit} (int ID0, int ID1, double mpv\_\-landau, double mpv\_\-error, double slope, double slope\_\-err, double setTemp, int nSuccess)\label{classCALICE_1_1ScECALMIPfit_a5efbc5b0fc0f418b071ec5ab079a0c3e}
+
+\item 
+{\bf $\sim$ScECALMIPfit} ()\label{classCALICE_1_1ScECALMIPfit_a6bab7edeb418297587dc05912acf23b9}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+int {\bf getID0} () const \label{classCALICE_1_1ScECALMIPfit_a506aa0f2441e5bbf73c185aa0440c74e}
+
+\begin{DoxyCompactList}\small\item\em Get the identifier. \item\end{DoxyCompactList}\item 
+int {\bfseries getID1} () const \label{classCALICE_1_1ScECALMIPfit_a0adbccb9d5c58f59550d210cf57b85ff}
+
+\item 
+double {\bf getmpv\_\-landau} () const \label{classCALICE_1_1ScECALMIPfit_a4ffa4a583185a6fb9616ce1a23be8040}
+
+\begin{DoxyCompactList}\small\item\em Get the constant/y-\/intercept of the fit. \item\end{DoxyCompactList}\item 
+double {\bf getmpv\_\-error} () const \label{classCALICE_1_1ScECALMIPfit_a849b6783d79e988cdf5f46b3502aedb2}
+
+\begin{DoxyCompactList}\small\item\em Get the error of the constant. \item\end{DoxyCompactList}\item 
+double {\bf getslope} () const \label{classCALICE_1_1ScECALMIPfit_a3cc2ee6c39ecb05eff8b42d677326e3a}
+
+\begin{DoxyCompactList}\small\item\em Get the error of the constant. \item\end{DoxyCompactList}\item 
+double {\bf getslope\_\-err} () const \label{classCALICE_1_1ScECALMIPfit_ae7dd36b75577b625bdc5e9ff4a190559}
+
+\begin{DoxyCompactList}\small\item\em Get the error of the constant. \item\end{DoxyCompactList}\item 
+double {\bf getsetTemp} () const \label{classCALICE_1_1ScECALMIPfit_afb9be9a27dc0bb69da904dc1cf595cf4}
+
+\begin{DoxyCompactList}\small\item\em Get the error of the constant. \item\end{DoxyCompactList}\item 
+int {\bf getnSuccess} () const \label{classCALICE_1_1ScECALMIPfit_a2bf9a88ad2a672f5072f05e3d04cd75c}
+
+\begin{DoxyCompactList}\small\item\em Get the reference point of the constant. \item\end{DoxyCompactList}\item 
+void {\bf setID0} (const int ID0)\label{classCALICE_1_1ScECALMIPfit_a6a1520a84d1f9ef8757ba0b2e9a919f2}
+
+\begin{DoxyCompactList}\small\item\em Sets an identifier. \item\end{DoxyCompactList}\item 
+void {\bfseries setID1} (const int ID1)\label{classCALICE_1_1ScECALMIPfit_a7f60fc8bcc590ff732b64a9f4cef7a18}
+
+\item 
+void {\bf setmpv\_\-landau} (const double mpv\_\-landau)\label{classCALICE_1_1ScECALMIPfit_a30e0f590d9a913e0dc6ccca41bfff98d}
+
+\begin{DoxyCompactList}\small\item\em Sets the constant. \item\end{DoxyCompactList}\item 
+void {\bf setmpv\_\-error} (const double mpv\_\-error)\label{classCALICE_1_1ScECALMIPfit_a3ee1e7a68474f8de89b975b67038c513}
+
+\begin{DoxyCompactList}\small\item\em Sets the constant. \item\end{DoxyCompactList}\item 
+void {\bf setslope} (const double slope)\label{classCALICE_1_1ScECALMIPfit_a4bf2f2f183ce8021bd48dc37968bd95a}
+
+\begin{DoxyCompactList}\small\item\em Sets the constant. \item\end{DoxyCompactList}\item 
+void {\bf setslope\_\-err} (const double slope\_\-err)\label{classCALICE_1_1ScECALMIPfit_aecdb9b8aea46b4bd13151fa5ae49884f}
+
+\begin{DoxyCompactList}\small\item\em Sets the constant. \item\end{DoxyCompactList}\item 
+void {\bf setsetTemp} (const double setTemp)\label{classCALICE_1_1ScECALMIPfit_ac73a4be0593d464fb7a2778b403f29d0}
+
+\begin{DoxyCompactList}\small\item\em Sets the constant. \item\end{DoxyCompactList}\item 
+void {\bfseries setnSuccess} (const int nSuccess)\label{classCALICE_1_1ScECALMIPfit_a76a07cc7097784181a189c24611287cf}
+
+\item 
+const std::string {\bf getTypeName} () const 
+\begin{DoxyCompactList}\small\item\em Get the type name. \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const 
+\begin{DoxyCompactList}\small\item\em Get the data description. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to store the constant of a ScECAL MIP fit within the lcio framework. \begin{DoxyAuthor}{Author}
+
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+05 May 2011 
+\end{DoxyDate}
+
+
+Definition at line 36 of file ScECALMIPfit.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::ScECALMIPfit@{CALICE::ScECALMIPfit}!getDataDescription@{getDataDescription}}
+\index{getDataDescription@{getDataDescription}!CALICE::ScECALMIPfit@{CALICE::ScECALMIPfit}}
+\subsubsection[{getDataDescription}]{\setlength{\rightskip}{0pt plus 5cm}const std::string CALICE::ScECALMIPfit::getDataDescription () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1ScECALMIPfit_ad23d23514974117e4749189e6e1cce6d}
+
+
+Get the data description. The data description gives the meaning of the data fields. 
+
+Definition at line 198 of file ScECALMIPfit.hh.\index{CALICE::ScECALMIPfit@{CALICE::ScECALMIPfit}!getTypeName@{getTypeName}}
+\index{getTypeName@{getTypeName}!CALICE::ScECALMIPfit@{CALICE::ScECALMIPfit}}
+\subsubsection[{getTypeName}]{\setlength{\rightskip}{0pt plus 5cm}const std::string CALICE::ScECALMIPfit::getTypeName () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1ScECALMIPfit_a981a323b301f58badb342432b3550d1d}
+
+
+Get the type name. The type name is used to determine which class interprets the LCGenericObject which holds the pure data. 
+
+Definition at line 189 of file ScECALMIPfit.hh.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+ScECALMIPfit.hh\end{DoxyCompactItemize}

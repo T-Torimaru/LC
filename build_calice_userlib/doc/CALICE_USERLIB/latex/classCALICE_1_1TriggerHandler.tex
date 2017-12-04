@@ -1,0 +1,46 @@
+\section{CALICE::TriggerHandler Class Reference}
+\label{classCALICE_1_1TriggerHandler}\index{CALICE::TriggerHandler@{CALICE::TriggerHandler}}
+
+
+Base Class for the user access to trigger decisions.  
+
+
+{\ttfamily \#include $<$TriggerHandler.hh$>$}Inheritance diagram for CALICE::TriggerHandler::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCALICE_1_1TriggerHandler}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf $\sim$TriggerHandler} ()\label{classCALICE_1_1TriggerHandler_ae815a5e2f183ac08424d831efc96f3c5}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual void {\bf setTrigger} (LCEvent $\ast$)=0\label{classCALICE_1_1TriggerHandler_a913c0bd1e9547b3cbc13a3e14ec27f48}
+
+\begin{DoxyCompactList}\small\item\em This adds the trigger information to the event. \item\end{DoxyCompactList}\item 
+virtual bool {\bf isValidTrigger} (const LCEvent $\ast$)=0\label{classCALICE_1_1TriggerHandler_a61534e8e29aa91800110270a8b3eef75}
+
+\begin{DoxyCompactList}\small\item\em Trigger Validation. \item\end{DoxyCompactList}\item 
+virtual void {\bf init} ()=0\label{classCALICE_1_1TriggerHandler_a95280df98e3e2d8b883cd3c3d1c4869d}
+
+\begin{DoxyCompactList}\small\item\em A initialization method Don't know whether it will be useful. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base Class for the user access to trigger decisions. It defines the core interface to the trigger information. The concrete implementations have to be singletons such that the TriggerHandling can be plugged in anywhere in
+
+\begin{DoxyAuthor}{Author}
+R. Pöschl DESY 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+May 9 2005 
+\end{DoxyDate}
+
+
+Definition at line 29 of file TriggerHandler.hh.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+TriggerHandler.hh\end{DoxyCompactItemize}

@@ -1,0 +1,92 @@
+\section{CALICE::BoardID Class Reference}
+\label{classCALICE_1_1BoardID}\index{CALICE::BoardID@{CALICE::BoardID}}
+
+
+Create a packed board id of crate, slot, component numbers and the label.  
+
+
+{\ttfamily \#include $<$BoardID.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf BoardID} ()
+\begin{DoxyCompactList}\small\item\em Create the packed id. \item\end{DoxyCompactList}\item 
+{\bf BoardID} (const short crateID, const short slotID, const short boardComponentNumber)\label{classCALICE_1_1BoardID_a7a77aa3cd232b76c491e51b97e70466e}
+
+\begin{DoxyCompactList}\small\item\em Label does not belong to the Device ID since it ony indicates whether data were written or read back. \item\end{DoxyCompactList}\item 
+{\bf BoardID} (const unsigned int packed\_\-id)
+\begin{DoxyCompactList}\small\item\em Wrap interface around packed id. \item\end{DoxyCompactList}\item 
+short {\bf getCrateID} () const \label{classCALICE_1_1BoardID_a21bcc5f005a519c857eb9084081a5076}
+
+\begin{DoxyCompactList}\small\item\em Unpack the crate id. \item\end{DoxyCompactList}\item 
+short {\bf getSlotID} () const \label{classCALICE_1_1BoardID_ad14869e733b4949a9266ae609cf31167}
+
+\begin{DoxyCompactList}\small\item\em Unpack the slot id. \item\end{DoxyCompactList}\item 
+short {\bf getBoardComponentNumber} () const \label{classCALICE_1_1BoardID_aeff4d82392ef0af0fe036e1dd7edad0b}
+
+\begin{DoxyCompactList}\small\item\em Unpack the board component number. \item\end{DoxyCompactList}\item 
+unsigned int {\bf id} () const 
+\begin{DoxyCompactList}\small\item\em Unpack the board label. \item\end{DoxyCompactList}\item 
+{\bf operator unsigned int} ()\label{classCALICE_1_1BoardID_a6d639d0cd155108c97a48ca5c368917a}
+
+\begin{DoxyCompactList}\small\item\em Get the packed id. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int {\bfseries \_\-id}\label{classCALICE_1_1BoardID_a77bc700e4cebf6b6a3dddb421ee5fd6b}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+bool const {\bf operator$<$} (const {\bf BoardID} \&b1, const {\bf BoardID} \&b2)\label{classCALICE_1_1BoardID_a53050a9db904e5e5bdbb5a167c5a29dd}
+
+\begin{DoxyCompactList}\small\item\em Compiler complained about missing $<$, $>$ operators when \doxyref{BoardID}{p.}{classCALICE_1_1BoardID} was directly used in a map, therefore we overload this operators. \item\end{DoxyCompactList}\item 
+bool const {\bf operator$>$} (const {\bf BoardID} \&b1, const {\bf BoardID} \&b2)
+\begin{DoxyCompactList}\small\item\em See above . \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Create a packed board id of crate, slot, component numbers and the label. Class is cheap and can be used to generate a packed board id: unsigned int packed\_\-id = BoardID(short crateID, short slotID, short boardComponentNumber, short boardLabel).\doxyref{id()}{p.}{classCALICE_1_1BoardID_a6079e4bcda24933f67f573b877c6746e}; or unsigned int packed\_\-id = BoardID(short crateID, short slotID, short boardComponentNumber, short boardLabel); 
+
+Definition at line 17 of file BoardID.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CALICE::BoardID@{CALICE::BoardID}!BoardID@{BoardID}}
+\index{BoardID@{BoardID}!CALICE::BoardID@{CALICE::BoardID}}
+\subsubsection[{BoardID}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::BoardID::BoardID ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1BoardID_a0bbfeabb419fbdf6823504cd844a9a91}
+
+
+Create the packed id. default constructor. The default constructor produces an illegal board id. 
+
+Definition at line 29 of file BoardID.hh.\index{CALICE::BoardID@{CALICE::BoardID}!BoardID@{BoardID}}
+\index{BoardID@{BoardID}!CALICE::BoardID@{CALICE::BoardID}}
+\subsubsection[{BoardID}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::BoardID::BoardID (const unsigned int {\em packed\_\-id})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1BoardID_a0c4690a0e17a9dc665e14525b70b3b24}
+
+
+Wrap interface around packed id. Cheap method to decode the packed components. slot\_\-id=BoardID(packed\_\-id).\doxyref{getSlotID()}{p.}{classCALICE_1_1BoardID_ad14869e733b4949a9266ae609cf31167}; 
+
+Definition at line 49 of file BoardID.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::BoardID@{CALICE::BoardID}!id@{id}}
+\index{id@{id}!CALICE::BoardID@{CALICE::BoardID}}
+\subsubsection[{id}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::BoardID::id () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1BoardID_a6079e4bcda24933f67f573b877c6746e}
+
+
+Unpack the board label. Get the packed id. 
+
+Definition at line 80 of file BoardID.hh.
+
+Referenced by CALICE::operator$>$().
+
+\subsection{Friends And Related Function Documentation}
+\index{CALICE::BoardID@{CALICE::BoardID}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!CALICE::BoardID@{CALICE::BoardID}}
+\subsubsection[{operator$>$}]{\setlength{\rightskip}{0pt plus 5cm}bool const operator$>$ (const {\bf BoardID} \& {\em b1}, \/  const {\bf BoardID} \& {\em b2})\hspace{0.3cm}{\ttfamily  [friend]}}\label{classCALICE_1_1BoardID_a434e3e7f9f569d6d01ff7e57aebbf3de}
+
+
+See above . .. 
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+BoardID.hh\end{DoxyCompactItemize}

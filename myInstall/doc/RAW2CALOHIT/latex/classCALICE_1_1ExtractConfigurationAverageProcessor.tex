@@ -1,0 +1,130 @@
+\section{CALICE::ExtractConfigurationAverageProcessor$<$ KEY, VALUE, OBJECT\_\-TO\_\-AVERAGE $>$ Class Template Reference}
+\label{classCALICE_1_1ExtractConfigurationAverageProcessor}\index{CALICE::ExtractConfigurationAverageProcessor@{CALICE::ExtractConfigurationAverageProcessor}}
+
+
+Processor to determine the channel-\/wise average over any type of configuration over an entire run.  
+
+
+{\ttfamily \#include $<$ExtractConfigurationAverageProcessor.hh$>$}\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::map$<$ KEY, AverageValue$<$ VALUE $>$ $>$ {\bfseries AverageValueMap\_\-t}\label{classCALICE_1_1ExtractConfigurationAverageProcessor_a9c98d937494a57cb0002414676ef0a0b}
+
+\item 
+typedef AverageValueMap\_\-t::iterator {\bfseries AVM\_\-iterator}\label{classCALICE_1_1ExtractConfigurationAverageProcessor_af2676889c0cabe4ef45a8d0a41953f22}
+
+\item 
+typedef AverageValueMap\_\-t::const\_\-iterator {\bfseries AVM\_\-const\_\-iterator}\label{classCALICE_1_1ExtractConfigurationAverageProcessor_ae898392ad5d30a3cf24636368c1f1817}
+
+\item 
+typedef KEY(OBJECT\_\-TO\_\-AVERAGE::$\ast$ {\bfseries PMF\_\-KEY} )() const \label{classCALICE_1_1ExtractConfigurationAverageProcessor_ac14ddbcd21b11b49846b2e9f6179806f}
+
+\item 
+typedef VALUE(OBJECT\_\-TO\_\-AVERAGE::$\ast$ {\bfseries PMF\_\-VALUE} )() const \label{classCALICE_1_1ExtractConfigurationAverageProcessor_a77c343fefe0aa8c92d90c2c841f2ba0f}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries ExtractConfigurationAverageProcessor} (const std::string name, PMF\_\-KEY pmf\_\-key, PMF\_\-VALUE pmf\_\-value)\label{classCALICE_1_1ExtractConfigurationAverageProcessor_a8035f64050859ba76161f1432b37b457}
+
+\item 
+{\bf ExtractConfigurationAverageProcessor} $\ast$ {\bf newProcessor} ()\label{classCALICE_1_1ExtractConfigurationAverageProcessor_a077ce7a15806f9843796b912eb8fbce7}
+
+\begin{DoxyCompactList}\small\item\em Implements marlin::Processor::newProcessor(). \item\end{DoxyCompactList}\item 
+virtual void {\bf init} ()\label{classCALICE_1_1ExtractConfigurationAverageProcessor_a28b4116dd4ec68e02db2c9f2ee17fc74}
+
+\begin{DoxyCompactList}\small\item\em Implements marlin::Processor::init(). \item\end{DoxyCompactList}\item 
+virtual void {\bf processEvent} (LCEvent $\ast$evt)\label{classCALICE_1_1ExtractConfigurationAverageProcessor_a7e74ff5efd13293e12977cd11787dbc7}
+
+\begin{DoxyCompactList}\small\item\em Implements marlin::Processor::processEvent(LCEvent$\ast$). \item\end{DoxyCompactList}\item 
+virtual void {\bf processRunHeader} (LCRunHeader $\ast$runHeader)\label{classCALICE_1_1ExtractConfigurationAverageProcessor_a3549b7175d1d32b2103f25ead4f5a5fa}
+
+\begin{DoxyCompactList}\small\item\em Implements marlin::Processor::processRunHeader(LCRunHeader$\ast$). \item\end{DoxyCompactList}\item 
+virtual void {\bf end} ()\label{classCALICE_1_1ExtractConfigurationAverageProcessor_a877b167e8302d7330d3b2a595ed0e824}
+
+\begin{DoxyCompactList}\small\item\em Implements marlin::Processor::end(). \item\end{DoxyCompactList}\item 
+void {\bf print} (std::ostream \&)\label{classCALICE_1_1ExtractConfigurationAverageProcessor_a6c7e3795c5dce5f4430a3fe53a577ff4}
+
+\begin{DoxyCompactList}\small\item\em Print channel wise mean and RMS to output stream. \item\end{DoxyCompactList}\item 
+void {\bf writeSimpleFile} (LCCollection $\ast$)\label{classCALICE_1_1ExtractConfigurationAverageProcessor_a6a64edef52110005a069deafdadabb30}
+
+\begin{DoxyCompactList}\small\item\em Store results in LCIO file to be read in by a SimpleFileHandler. \item\end{DoxyCompactList}\item 
+void {\bf writeDBFolder} (LCCollection $\ast$)\label{classCALICE_1_1ExtractConfigurationAverageProcessor_ad81f6e7290071ff7ad46f62a268b05a9}
+
+\begin{DoxyCompactList}\small\item\em Store results in LCCD database. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+LCCollection $\ast$ {\bfseries getCollection} ()\label{classCALICE_1_1ExtractConfigurationAverageProcessor_a723f985ee753e55a96b5a1d484e91769}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bfseries \_\-inColName}\label{classCALICE_1_1ExtractConfigurationAverageProcessor_a6d532e2cc4838f68332367733b4a0bd8}
+
+\item 
+std::string {\bfseries \_\-outColName}\label{classCALICE_1_1ExtractConfigurationAverageProcessor_a2c538c11dc9a34d75e7d2a843702f06b}
+
+\item 
+std::string {\bfseries \_\-outFileName}\label{classCALICE_1_1ExtractConfigurationAverageProcessor_ab9111f08e45c3959b0ed36aa49bc96aa}
+
+\item 
+std::string {\bfseries \_\-dbInit}\label{classCALICE_1_1ExtractConfigurationAverageProcessor_a63aa312d9fb326bd9b868eed4d5d0e70}
+
+\item 
+std::string {\bfseries \_\-dbFolder}\label{classCALICE_1_1ExtractConfigurationAverageProcessor_a634cc4a35f2b694cee63d1eff7e06ada}
+
+\item 
+std::string {\bfseries \_\-dbDescription}\label{classCALICE_1_1ExtractConfigurationAverageProcessor_a50d196cf146cde52ea5bb0481ce514a6}
+
+\item 
+lccd::LCCDTimeStamp {\bfseries \_\-from}\label{classCALICE_1_1ExtractConfigurationAverageProcessor_ab06f9eaf8c5bdfbecc67576231cf32cd}
+
+\item 
+lccd::LCCDTimeStamp {\bfseries \_\-till}\label{classCALICE_1_1ExtractConfigurationAverageProcessor_a6ca967970fd97f5134bb45760a1224f8}
+
+\item 
+int {\bfseries \_\-selectConf}\label{classCALICE_1_1ExtractConfigurationAverageProcessor_ac22b0611b66e8732f7b8927a8bbf70c6}
+
+\item 
+AverageValueMap\_\-t {\bfseries \_\-averageObjects}\label{classCALICE_1_1ExtractConfigurationAverageProcessor_a0fc2d84cee1e5dcb243653b8c2ac15fc}
+
+\item 
+const std::string {\bfseries \_\-defaultString}\label{classCALICE_1_1ExtractConfigurationAverageProcessor_a1f8e7e6467b59f155e0a50acfbf19859}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+PMF\_\-KEY {\bfseries \_\-pmf\_\-key}\label{classCALICE_1_1ExtractConfigurationAverageProcessor_a8b33481b90291e374ba3386bc462f378}
+
+\item 
+PMF\_\-VALUE {\bfseries \_\-pmf\_\-value}\label{classCALICE_1_1ExtractConfigurationAverageProcessor_a2b24536049c82fd0cbebaee159683451}
+
+\item 
+std::string {\bfseries \_\-name}\label{classCALICE_1_1ExtractConfigurationAverageProcessor_adc1336d4d2336e11746598d496e53f7e}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class KEY, class VALUE, class OBJECT\_\-TO\_\-AVERAGE$>$ class CALICE::ExtractConfigurationAverageProcessor$<$ KEY, VALUE, OBJECT\_\-TO\_\-AVERAGE $>$}
+
+Processor to determine the channel-\/wise average over any type of configuration over an entire run. This processor selects events of a pre-\/defined type of configuration (e.g. pedestal or LED block) and determined the channel-\/wise average over all these events utilizing the AverageValue class. The results get written to screen or stored to LCIO files/LCCD databases in form of SimpleValue objects. Cells are identified by the CellID of the input hits without any further interpretation of the meaning of this number.
+
+\begin{DoxyAuthor}{Author}
+{\tt Niels.Meyer@desy.de} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+January 2008 
+\end{DoxyDate}
+
+
+Definition at line 29 of file ExtractConfigurationAverageProcessor.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+ExtractConfigurationAverageProcessor.hh\item 
+ExtractConfigurationAverageProcessor.cc\end{DoxyCompactItemize}

@@ -1,0 +1,704 @@
+\section{histmgr::HistMgr Class Reference}
+\label{classhistmgr_1_1HistMgr}\index{histmgr::HistMgr@{histmgr::HistMgr}}
+
+
+Manages lists of histograms which can be written to prior assigned files.  
+
+
+{\ttfamily \#include $<$HistMgr.hh$>$}\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf Group\_\-t}
+\item 
+class {\bf HistogramGroupData\_\-t}
+\begin{DoxyCompactList}\small\item\em id, destination file and folder of a histogram group \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries ECollectionType} \{ \par
+{\bfseries kH1}, 
+{\bfseries kH2}, 
+{\bfseries kProfile}, 
+{\bfseries kGraph}, 
+\par
+{\bfseries kNTypes}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bfseries histogramGroupExists} (const {\bf Key\_\-t} \&group\_\-key) const \label{classhistmgr_1_1HistMgr_a4a125aa01302d6ee51520897f5280463}
+
+\item 
+{\bf Group\_\-t} \& {\bfseries histogramGroup} (const {\bf Key\_\-t} \&group\_\-key)\label{classhistmgr_1_1HistMgr_ab07a929a02b75ac6f13c08b36533bd9a}
+
+\item 
+const {\bf Group\_\-t} \& {\bfseries histogramGroup} (const {\bf Key\_\-t} \&group\_\-key) const \label{classhistmgr_1_1HistMgr_a4bb4d3ffbabd7070f791939a684bab6f}
+
+\item 
+{\bf Group\_\-t} \& {\bf getOrCreatehistogramGroup} (const {\bf Key\_\-t} \&group\_\-key)\label{classhistmgr_1_1HistMgr_a3cb22af451aabc860bcee44916d14e04}
+
+\begin{DoxyCompactList}\small\item\em Get the addressed histrogram group. \item\end{DoxyCompactList}\item 
+void {\bf createHistogramGroup} (const {\bf Key\_\-t} \&group\_\-key)
+\begin{DoxyCompactList}\small\item\em Create an empty histogram group to which histograms can be assigned. \item\end{DoxyCompactList}\item 
+lcio::LCCollection $\ast$ {\bf createHistograms} (const {\bf Key\_\-t} \&group\_\-key, const {\bf Key\_\-t} \&collection\_\-key, UInt\_\-t n\_\-hist, const {\bf HistPar} \&par, bool may\_\-overwrite=false)  throw (std::bad\_\-alloc,std::runtime\_\-error)
+\begin{DoxyCompactList}\small\item\em create several histograms which will have the same binning and the same name (except of a numeric extension). \item\end{DoxyCompactList}\item 
+lcio::LCCollection $\ast$ {\bf createHistograms} (const {\bf Key\_\-t} \&group\_\-key, const {\bf Key\_\-t} \&collection\_\-key, const EVENT::StringVec \&name\_\-list, UInt\_\-t n\_\-hist, const {\bf HistPar} \&par, bool may\_\-overwrite=false)  throw (std::bad\_\-alloc,std::runtime\_\-error)
+\begin{DoxyCompactList}\small\item\em create several histograms which will have the same binning and the same name (except of a numeric extension). \item\end{DoxyCompactList}\item 
+lcio::LCCollection $\ast$ {\bf createHistograms} (const {\bf Key\_\-t} \&group\_\-key, const {\bf Key\_\-t} \&collection\_\-key, const lcio::IntVec \&n\_\-hist\_\-list, const {\bf HistPar} \&par, bool may\_\-overwrite=false)  throw (std::bad\_\-alloc, std::runtime\_\-error)
+\begin{DoxyCompactList}\small\item\em create 2D array of histograms which will all have the same binning and the same name (except of a numeric extension). \item\end{DoxyCompactList}\item 
+lcio::LCCollection $\ast$ {\bf createHistograms} (const {\bf Key\_\-t} \&group\_\-key, const {\bf Key\_\-t} \&collection\_\-key, const EVENT::StringVec \&name\_\-list, const lcio::IntVec \&n\_\-hist\_\-list, const {\bf HistPar} \&par, bool may\_\-overwrite=false)  throw (std::bad\_\-alloc, std::runtime\_\-error)
+\begin{DoxyCompactList}\small\item\em create 2D array of histograms which will all have the same binning and the same name (except of a numeric extension). \item\end{DoxyCompactList}\item 
+lcio::LCCollection $\ast$ {\bf create2DHistograms} (const {\bf Key\_\-t} \&group\_\-key, const {\bf Key\_\-t} \&collection\_\-key, UInt\_\-t n\_\-hist, const {\bf HistPar} \&x\_\-par, const {\bf HistPar} \&y\_\-par, bool may\_\-overwrite=false)  throw (std::bad\_\-alloc,std::runtime\_\-error)
+\begin{DoxyCompactList}\small\item\em create several histograms which will have the same binning and the same name (except of a numeric extension). \item\end{DoxyCompactList}\item 
+lcio::LCCollection $\ast$ {\bf create2DHistograms} (const {\bf Key\_\-t} \&group\_\-key, const {\bf Key\_\-t} \&collection\_\-key, const EVENT::StringVec \&name\_\-list, UInt\_\-t n\_\-hist, const {\bf HistPar} \&x\_\-par, const {\bf HistPar} \&y\_\-par, bool may\_\-overwrite=false)  throw (std::bad\_\-alloc,std::runtime\_\-error)
+\begin{DoxyCompactList}\small\item\em create several histograms which will have the same binning and the same name (except of a numeric extension). \item\end{DoxyCompactList}\item 
+lcio::LCCollection $\ast$ {\bf create2DHistograms} (const {\bf Key\_\-t} \&group\_\-key, const {\bf Key\_\-t} \&collection\_\-key, const lcio::IntVec \&n\_\-hist\_\-list, const {\bf HistPar} \&x\_\-par, const {\bf HistPar} \&y\_\-par, bool may\_\-overwrite=false)  throw (std::bad\_\-alloc, std::runtime\_\-error)
+\begin{DoxyCompactList}\small\item\em create 2D array of histograms which will all have the same binning and the same name (except of a numeric extension). \item\end{DoxyCompactList}\item 
+lcio::LCCollection $\ast$ {\bf create2DHistograms} (const {\bf Key\_\-t} \&group\_\-key, const {\bf Key\_\-t} \&collection\_\-key, const EVENT::StringVec \&name\_\-list, const lcio::IntVec \&n\_\-hist\_\-list, const {\bf HistPar} \&x\_\-par, const {\bf HistPar} \&y\_\-par, bool may\_\-overwrite=false)  throw (std::bad\_\-alloc, std::runtime\_\-error)
+\begin{DoxyCompactList}\small\item\em create 2D array of histograms which will all have the same binning and the same name (except of a numeric extension). \item\end{DoxyCompactList}\item 
+lcio::LCCollection $\ast$ {\bf createProfile} (const {\bf Key\_\-t} \&group\_\-key, const {\bf Key\_\-t} \&collection\_\-key, UInt\_\-t n\_\-hist, const {\bf HistPar} \&par, bool may\_\-overwrite=false)  throw (std::bad\_\-alloc,std::runtime\_\-error)
+\begin{DoxyCompactList}\small\item\em create an array of profile histograms which will all have the same binning of the x-\/axis and the same name (except of a numeric extension). \item\end{DoxyCompactList}\item 
+lcio::LCCollection $\ast$ {\bf createProfile} (const {\bf Key\_\-t} \&group\_\-key, const {\bf Key\_\-t} \&collection\_\-key, const EVENT::StringVec \&name\_\-list, UInt\_\-t n\_\-hist, const {\bf HistPar} \&par, bool may\_\-overwrite=false)  throw (std::bad\_\-alloc,std::runtime\_\-error)
+\begin{DoxyCompactList}\small\item\em create an array of profile histograms which will all have the same binning of the x-\/axis and the same name (except of a numeric extension). \item\end{DoxyCompactList}\item 
+lcio::LCCollection $\ast$ {\bf createProfile} (const {\bf Key\_\-t} \&group\_\-key, const {\bf Key\_\-t} \&collection\_\-key, const lcio::IntVec \&n\_\-hist\_\-list, const {\bf HistPar} \&par, bool may\_\-overwrite=false)  throw (std::bad\_\-alloc, std::runtime\_\-error)
+\begin{DoxyCompactList}\small\item\em create 2D array of profile histograms which will all have the same binning and the same name (except of a numeric extension). \item\end{DoxyCompactList}\item 
+lcio::LCCollection $\ast$ {\bf createProfile} (const {\bf Key\_\-t} \&group\_\-key, const {\bf Key\_\-t} \&collection\_\-key, const EVENT::StringVec \&name\_\-list, const lcio::IntVec \&n\_\-hist\_\-list, const {\bf HistPar} \&par, bool may\_\-overwrite=false)  throw (std::bad\_\-alloc, std::runtime\_\-error)
+\begin{DoxyCompactList}\small\item\em create 2D array of profile histograms which will all have the same binning of the x-\/axis. \item\end{DoxyCompactList}\item 
+lcio::LCCollection $\ast$ {\bf createGraphCollection} (const {\bf Key\_\-t} \&group\_\-key, const {\bf Key\_\-t} \&collection\_\-key, unsigned int n\_\-graphs, const EVENT::StringVec \&type\_\-names, unsigned int n\_\-expected\_\-values, const EVENT::StringVec \&opt\_\-major\_\-names, bool may\_\-overwrite=false)  throw (std::bad\_\-alloc, std::runtime\_\-error)
+\begin{DoxyCompactList}\small\item\em Create a collection of graphs. \item\end{DoxyCompactList}\item 
+lcio::LCCollection $\ast$ {\bfseries createGraphCollection} (const {\bf Key\_\-t} \&group\_\-key, const {\bf Key\_\-t} \&collection\_\-key, const std::vector$<$ int $>$ \&n\_\-graphs, const std::vector$<$ std::string $>$ \&type\_\-names, unsigned int n\_\-expected\_\-values, const std::vector$<$ std::string $>$ \&opt\_\-major\_\-names, bool may\_\-overwrite=false)  throw (std::bad\_\-alloc, std::runtime\_\-error)\label{classhistmgr_1_1HistMgr_a547ce643d66e9a7eb3b2832156da1fdf}
+
+\item 
+Double\_\-t {\bf getNEntriesTotal} (const {\bf Key\_\-t} \&group\_\-key) const 
+\begin{DoxyCompactList}\small\item\em return the total number of entries in the whole histogram group. \item\end{DoxyCompactList}\item 
+{\bf FloatHistogram1D} $\ast$ {\bf getHistogram} (const {\bf Key\_\-t} \&group\_\-key, const {\bf Key\_\-t} \&hist\_\-key, UInt\_\-t index)
+\begin{DoxyCompactList}\small\item\em get a histogram of the collection with the given name. \item\end{DoxyCompactList}\item 
+const {\bf FloatHistogram1D} $\ast$ {\bf getHistogram} (const {\bf Key\_\-t} \&group\_\-key, const {\bf Key\_\-t} \&hist\_\-key, UInt\_\-t index) const 
+\begin{DoxyCompactList}\small\item\em get a histogram of the collection with the given name (read only). \item\end{DoxyCompactList}\item 
+const {\bf FloatHistogram1D} $\ast$ {\bf getHistogram} (const {\bf Key\_\-t} \&group\_\-key, const {\bf Key\_\-t} \&hist\_\-key, UInt\_\-t major\_\-index, UInt\_\-t minor\_\-index) const 
+\begin{DoxyCompactList}\small\item\em get a histogram of the collection which is organised as a two dimensional array (read only). \item\end{DoxyCompactList}\item 
+{\bf FloatHistogram1D} $\ast$ {\bf getHistogram} (const {\bf Key\_\-t} \&group\_\-key, const {\bf Key\_\-t} \&hist\_\-key, UInt\_\-t major\_\-index, UInt\_\-t minor\_\-index)
+\begin{DoxyCompactList}\small\item\em get a histogram of the collection which is organised as a two dimensional array. \item\end{DoxyCompactList}\item 
+{\bf FloatHistogram2D} $\ast$ {\bf get2DHistogram} (const {\bf Key\_\-t} \&group\_\-key, const {\bf Key\_\-t} \&hist\_\-key, UInt\_\-t index)
+\begin{DoxyCompactList}\small\item\em get a 2D histogram of the collection with the given name. \item\end{DoxyCompactList}\item 
+const {\bf FloatHistogram2D} $\ast$ {\bf get2DHistogram} (const {\bf Key\_\-t} \&group\_\-key, const {\bf Key\_\-t} \&hist\_\-key, UInt\_\-t index) const 
+\begin{DoxyCompactList}\small\item\em get a 2D histogram of the collection with the given name (read only). \item\end{DoxyCompactList}\item 
+const {\bf FloatHistogram2D} $\ast$ {\bf get2DHistogram} (const {\bf Key\_\-t} \&group\_\-key, const {\bf Key\_\-t} \&hist\_\-key, UInt\_\-t major\_\-index, UInt\_\-t minor\_\-index) const 
+\begin{DoxyCompactList}\small\item\em get a 2D histogram of the collection which is organised as a two dimensional array (read only). \item\end{DoxyCompactList}\item 
+{\bf FloatHistogram2D} $\ast$ {\bf get2DHistogram} (const {\bf Key\_\-t} \&group\_\-key, const {\bf Key\_\-t} \&hist\_\-key, UInt\_\-t major\_\-index, UInt\_\-t minor\_\-index)
+\begin{DoxyCompactList}\small\item\em get a 2D histogram of the collection which is organised as a two dimensional array. \item\end{DoxyCompactList}\item 
+bool {\bf exists} (const {\bf Key\_\-t} \&group\_\-key, const {\bf Key\_\-t} \&hist\_\-key) const \label{classhistmgr_1_1HistMgr_a8367d06ac7fb422b0b65f44d36e435b8}
+
+\begin{DoxyCompactList}\small\item\em verify if a histogram of the given name exists already. \item\end{DoxyCompactList}\item 
+{\bf HistogramCollection\_\-t} \& {\bf getHistogramCollection} (const {\bf Key\_\-t} \&group\_\-key, const {\bf Key\_\-t} \&hist\_\-key)\label{classhistmgr_1_1HistMgr_a8589f54841c46f4d807c7d14a944b21b}
+
+\begin{DoxyCompactList}\small\item\em get the one or two dimensional histogram collection. \item\end{DoxyCompactList}\item 
+const {\bf HistogramCollection\_\-t} \& {\bf getHistogramCollection} (const {\bf Key\_\-t} \&group\_\-key, const {\bf Key\_\-t} \&hist\_\-key) const \label{classhistmgr_1_1HistMgr_a706bda9b86fbfb7ea67645762c4dd16d}
+
+\begin{DoxyCompactList}\small\item\em get the one or two dimensional histogram collection (read only). \item\end{DoxyCompactList}\item 
+{\bf GraphCollection\_\-t} \& {\bf getGraphCollection} (const {\bf Key\_\-t} \&group\_\-key, const {\bf Key\_\-t} \&graph\_\-key)\label{classhistmgr_1_1HistMgr_a6c5ea89b82f7d9df93423976abdf6470}
+
+\begin{DoxyCompactList}\small\item\em Get a graph collection. \item\end{DoxyCompactList}\item 
+const {\bf GraphCollection\_\-t} \& {\bf getGraphCollection} (const {\bf Key\_\-t} \&group\_\-key, const {\bf Key\_\-t} \&graph\_\-key) const 
+\begin{DoxyCompactList}\small\item\em Get a graph collection. \item\end{DoxyCompactList}\item 
+{\bf Histogram2DCollection\_\-t} \& {\bf getHistogram2DCollection} (const {\bf Key\_\-t} \&group\_\-key, const {\bf Key\_\-t} \&histogram2D\_\-key)\label{classhistmgr_1_1HistMgr_a3daca1d8debe8c217365403d0fd6e6a4}
+
+\begin{DoxyCompactList}\small\item\em Get a histogram2D collection. \item\end{DoxyCompactList}\item 
+const {\bf Histogram2DCollection\_\-t} \& {\bf getHistogram2DCollection} (const {\bf Key\_\-t} \&group\_\-key, const {\bf Key\_\-t} \&histogram2D\_\-key) const 
+\begin{DoxyCompactList}\small\item\em Get a histogram2D collection. \item\end{DoxyCompactList}\item 
+{\bf ProfileCollection\_\-t} \& {\bf getProfileCollection} (const {\bf Key\_\-t} \&group\_\-key, const {\bf Key\_\-t} \&profile\_\-key)\label{classhistmgr_1_1HistMgr_a9580175c8b4af1862261acddd6f7b872}
+
+\begin{DoxyCompactList}\small\item\em Get a profile collection. \item\end{DoxyCompactList}\item 
+const {\bf ProfileCollection\_\-t} \& {\bf getProfileCollection} (const {\bf Key\_\-t} \&group\_\-key, const {\bf Key\_\-t} \&profile\_\-key) const 
+\begin{DoxyCompactList}\small\item\em Get a profile collection. \item\end{DoxyCompactList}\item 
+void {\bf assignFileName} (const {\bf Key\_\-t} \&group\_\-key, const std::string \&file\_\-name, const std::string \&folder\_\-name=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em get the histogram collection of the given name (read only) The collection must not be deleted. \item\end{DoxyCompactList}\item 
+void {\bf warnOnUnassigned} ()
+\begin{DoxyCompactList}\small\item\em Issue a warning for all histogram groups which are not assigned to a file. \item\end{DoxyCompactList}\item 
+void {\bf writeHistograms} (bool snapshot=false)
+\begin{DoxyCompactList}\small\item\em write all histograms groups to the assigned files. \item\end{DoxyCompactList}\item 
+void {\bf writeHistograms} (const {\bf Key\_\-t} \&group\_\-key, bool snapshot=false)
+\begin{DoxyCompactList}\small\item\em write all histograms of the specified group to the assigned root file. \item\end{DoxyCompactList}\item 
+void {\bf registerWriter} (const std::string \&name, {\bf HistWriterKit} $\ast$kit)
+\begin{DoxyCompactList}\small\item\em register a histogram writer. \item\end{DoxyCompactList}\item 
+void {\bfseries listRegisteredGroups} () const \label{classhistmgr_1_1HistMgr_a9454383d4576085b061e68e912dc1d09}
+
+\item 
+UInt\_\-t {\bf getNGroups} () const \label{classhistmgr_1_1HistMgr_a5e6a8a27e9e66d2e0d9e1fd4db24d922}
+
+\begin{DoxyCompactList}\small\item\em Get the number of groups. \item\end{DoxyCompactList}\item 
+void {\bf lockGroup} (const {\bf Key\_\-t} \&group\_\-key)
+\begin{DoxyCompactList}\small\item\em Lock a histogram group. \item\end{DoxyCompactList}\item 
+void {\bf unlockGroup} (const {\bf Key\_\-t} \&group\_\-key)
+\begin{DoxyCompactList}\small\item\em Release the lock on the histogram group. \item\end{DoxyCompactList}\item 
+bool {\bf hasLockedGroups} () const \label{classhistmgr_1_1HistMgr_a961080e7358f08fd2f5382038e6952ba}
+
+\begin{DoxyCompactList}\small\item\em Return true if some of the groups are locked. \item\end{DoxyCompactList}\item 
+void {\bf fillGroupList} (std::vector$<$ std::string $>$ \&dest\_\-group\_\-list) const 
+\begin{DoxyCompactList}\small\item\em Copy the groups names into the given vecotor. \item\end{DoxyCompactList}\item 
+void {\bf fillHistogramCollectionList} (const {\bf Key\_\-t} \&group\_\-key, ECollectionType type, std::vector$<$ std::string $>$ \&dest\_\-histogram\_\-collection\_\-list) const 
+\begin{DoxyCompactList}\small\item\em Copy the histogram collection names of the specified group to the given vector. \item\end{DoxyCompactList}\item 
+void {\bfseries deleteFolder} (const std::string \&folder)\label{classhistmgr_1_1HistMgr_a1e37c144ebe72c50db57d621ea98c476}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static ECollectionType {\bfseries findType} (const std::string \&type\_\-name)\label{classhistmgr_1_1HistMgr_a182d03588d16279b21ff07c0be7e38fd}
+
+\item 
+static std::pair$<$ std::string, HistMgr::ECollectionType $>$ {\bf getGroupNameAndCollectionType} (const std::string \&full\_\-name)\label{classhistmgr_1_1HistMgr_abb22cd102ac21320b04232816906e95c}
+
+\begin{DoxyCompactList}\small\item\em Split the name which combines the group name and the collection type into its components. \item\end{DoxyCompactList}\item 
+static {\bf HistMgr} $\ast$ {\bfseries getInstance} ()\label{classhistmgr_1_1HistMgr_ad7376a5e9e63da42eeef529fd6051650}
+
+\item 
+static void {\bfseries deleteInstance} ()\label{classhistmgr_1_1HistMgr_ac08368f8cfb3d0d4afe571076af93b82}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef {\bf KeyMap\_\-t}$<$ {\bf accounting\_\-ptr}$<$ {\bf Histogram2DCollection\_\-t} $>$ $>$ {\bfseries Histogram2DList\_\-t}\label{classhistmgr_1_1HistMgr_a877f8944a0165fd3f95f2c65e39e4136}
+
+\item 
+typedef {\bf KeyMap\_\-t}$<$ {\bf accounting\_\-ptr}$<$ {\bf HistogramCollection\_\-t} $>$ $>$ {\bfseries HistogramList\_\-t}\label{classhistmgr_1_1HistMgr_a2204af82055f6ff6c2b2d7e2d8d13c97}
+
+\item 
+typedef {\bf KeyMap\_\-t}$<$ {\bf accounting\_\-ptr}$<$ {\bf GraphCollection\_\-t} $>$ $>$ {\bfseries GraphList\_\-t}\label{classhistmgr_1_1HistMgr_a508a8bd989969595b11a6ee8f78b4f5c}
+
+\item 
+typedef {\bf KeyMap\_\-t}$<$ {\bf Group\_\-t} $>$ {\bfseries HistogramGroupList\_\-t}\label{classhistmgr_1_1HistMgr_a3479a617486a4ce270bb116364955885}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf HistMgr} ()\label{classhistmgr_1_1HistMgr_a8eca0ec734a691b3e5fda89af5c3ab37}
+
+\begin{DoxyCompactList}\small\item\em constructor \item\end{DoxyCompactList}\item 
+{\bf $\sim$HistMgr} ()\label{classhistmgr_1_1HistMgr_a31ee38afe9e57e67e2c1782a850509a1}
+
+\begin{DoxyCompactList}\small\item\em destructor \item\end{DoxyCompactList}\item 
+void {\bfseries writeHistograms} ({\bf Group\_\-t} \&group, const std::string \&group\_\-name, bool snapshot)\label{classhistmgr_1_1HistMgr_ac79771f2d10dca2e5c4b4a910d130c82}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf HistogramGroupList\_\-t} {\bfseries \_\-histogramGroupList}\label{classhistmgr_1_1HistMgr_a2bc34b78c8b85c0cfebb62805112e93b}
+
+\item 
+std::map$<$ std::string, {\bf HistWriterKit} $\ast$ $>$ {\bfseries \_\-writerKitList}\label{classhistmgr_1_1HistMgr_a2b0d5d491ad807e52aaeb1ee0678f6ec}
+
+\item 
+{\bf HistWriterKit} $\ast$ {\bfseries \_\-writerKit}\label{classhistmgr_1_1HistMgr_a552a6a8461b8d21135a8a8e1a16d05f8}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static {\bf HistMgr} $\ast$ {\bfseries \_\-\_\-histMgr} = 0\label{classhistmgr_1_1HistMgr_a287c31a96bcb8fad1e8b48f88e110510}
+
+\item 
+static const char $\ast$ {\bfseries \_\-\_\-typeName} [kNTypes]
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries HistMgrPtr}\label{classhistmgr_1_1HistMgr_a51e1423cf09cfc432956ca741f8ff236}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Manages lists of histograms which can be written to prior assigned files. 
+
+Definition at line 43 of file HistMgr.hh.
+
+\subsection{Member Function Documentation}
+\index{histmgr::HistMgr@{histmgr::HistMgr}!assignFileName@{assignFileName}}
+\index{assignFileName@{assignFileName}!histmgr::HistMgr@{histmgr::HistMgr}}
+\subsubsection[{assignFileName}]{\setlength{\rightskip}{0pt plus 5cm}void histmgr::HistMgr::assignFileName (const {\bf Key\_\-t} \& {\em group\_\-key}, \/  const std::string \& {\em file\_\-name}, \/  const std::string \& {\em folder\_\-name} = {\ttfamily \char`\"{}\char`\"{}})}\label{classhistmgr_1_1HistMgr_a20e3c96a8ba6175c8036918ca7acb1e2}
+
+
+get the histogram collection of the given name (read only) The collection must not be deleted. 
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]of the histogram collection \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the histogram collection or zero. get the histogram collection of the given name The collection must not be deleted. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em name}]of the histogram collection \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the histogram collection or zero. assign a histogram group to the file of the given name 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em group\_\-key}]the key of the histogram group \item[{\em file\_\-name}]the name of the file \item[{\em folder\_\-name}]the name of a folder insider the file \end{DoxyParams}
+
+
+Definition at line 270 of file HistMgr.cc.
+
+References histmgr::HistMgr::Group\_\-t::header().
+
+Referenced by histmgr::HistogramOutput::init().\index{histmgr::HistMgr@{histmgr::HistMgr}!create2DHistograms@{create2DHistograms}}
+\index{create2DHistograms@{create2DHistograms}!histmgr::HistMgr@{histmgr::HistMgr}}
+\subsubsection[{create2DHistograms}]{\setlength{\rightskip}{0pt plus 5cm}lcio::LCCollection $\ast$ histmgr::HistMgr::create2DHistograms (const {\bf Key\_\-t} \& {\em group\_\-key}, \/  const {\bf Key\_\-t} \& {\em collection\_\-key}, \/  const EVENT::StringVec \& {\em name\_\-list}, \/  const lcio::IntVec \& {\em n\_\-hist\_\-list}, \/  const {\bf HistPar} \& {\em x\_\-par}, \/  const {\bf HistPar} \& {\em y\_\-par}, \/  bool {\em may\_\-overwrite} = {\ttfamily false})  throw (std::bad\_\-alloc, std::runtime\_\-error)}\label{classhistmgr_1_1HistMgr_a5cf4267e08741cfa2a90f87e33f45e8c}
+
+
+create 2D array of histograms which will all have the same binning and the same name (except of a numeric extension). To create an array of 2x3 histograms {\ttfamily  lcio::IntVec index index.push\_\-back(3) index.push\_\-back(3) \doxyref{histmgr::Key\_\-t}{p.}{classhistmgr_1_1Key__t} hist\_\-arr\_\-2d\_\-key(\char`\"{}hist\_\-arr\_\-2d\char`\"{}) histogramList-\/$>$createHistograms(group\_\-key,hist\_\-arr\_\-2d\_\-key,index,\doxyref{HistPar}{p.}{classHistPar}(4,-\/.5,.5)); } The histograms are only written to a file if the histogram group, to which this histogram belongs, is assigned to a file (\doxyref{histmgr::HistMgr::assignFileName}{p.}{classhistmgr_1_1HistMgr_a20e3c96a8ba6175c8036918ca7acb1e2}). 
+\begin{DoxyParams}{Parameters}
+\item[{\em group\_\-key}]the name of the group this histogram belongs to \item[{\em collection\_\-key}]name of the collection to which the histogram belongs \item[{\em name\_\-list}]a vector containing the names of the histograms whose length is either one or equals the number of elements of n\_\-hist\_\-list \item[{\em n\_\-hist\_\-list}]an array of histograms per major index \item[{\em x\_\-par}]the binning of the x-\/axis of the histogram \item[{\em y\_\-par}]the binning of the y-\/axis the histogram \item[{\em may\_\-overwrite}]flag to overwrite or not the histogram (default: false)\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the index of the first histogram for 
+\end{DoxyReturn}
+
+
+Definition at line 195 of file HistMgr.cc.\index{histmgr::HistMgr@{histmgr::HistMgr}!create2DHistograms@{create2DHistograms}}
+\index{create2DHistograms@{create2DHistograms}!histmgr::HistMgr@{histmgr::HistMgr}}
+\subsubsection[{create2DHistograms}]{\setlength{\rightskip}{0pt plus 5cm}lcio::LCCollection$\ast$ histmgr::HistMgr::create2DHistograms (const {\bf Key\_\-t} \& {\em group\_\-key}, \/  const {\bf Key\_\-t} \& {\em collection\_\-key}, \/  const lcio::IntVec \& {\em n\_\-hist\_\-list}, \/  const {\bf HistPar} \& {\em x\_\-par}, \/  const {\bf HistPar} \& {\em y\_\-par}, \/  bool {\em may\_\-overwrite} = {\ttfamily false})  throw (std::bad\_\-alloc, std::runtime\_\-error)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1HistMgr_aece62701dda88171ed267d46d9a8e6f4}
+
+
+create 2D array of histograms which will all have the same binning and the same name (except of a numeric extension). The histograms are only written to a file if the histogram group, to which this histogram belongs, is assigned to a file (\doxyref{histmgr::HistMgr::assignFileName}{p.}{classhistmgr_1_1HistMgr_a20e3c96a8ba6175c8036918ca7acb1e2}). 
+\begin{DoxyParams}{Parameters}
+\item[{\em group\_\-key}]the name of the group this histogram belongs to \item[{\em collection\_\-key}]name of the collection to which the histogram belongs \item[{\em n\_\-hist\_\-list}]an array of histograms per major index \item[{\em x\_\-par}]the binning of the x-\/axis of the histogram \item[{\em y\_\-par}]the binning of the y-\/axis the histogram \item[{\em may\_\-overwrite}]flag to overwrite or not the histogram, if existing (default: false)\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the index of the first histogram for 
+\end{DoxyReturn}
+
+
+Definition at line 464 of file HistMgr.hh.
+
+References create2DHistograms().\index{histmgr::HistMgr@{histmgr::HistMgr}!create2DHistograms@{create2DHistograms}}
+\index{create2DHistograms@{create2DHistograms}!histmgr::HistMgr@{histmgr::HistMgr}}
+\subsubsection[{create2DHistograms}]{\setlength{\rightskip}{0pt plus 5cm}lcio::LCCollection $\ast$ histmgr::HistMgr::create2DHistograms (const {\bf Key\_\-t} \& {\em group\_\-key}, \/  const {\bf Key\_\-t} \& {\em collection\_\-key}, \/  const EVENT::StringVec \& {\em name\_\-list}, \/  UInt\_\-t {\em n\_\-hist}, \/  const {\bf HistPar} \& {\em x\_\-par}, \/  const {\bf HistPar} \& {\em y\_\-par}, \/  bool {\em may\_\-overwrite} = {\ttfamily false})  throw (std::bad\_\-alloc,std::runtime\_\-error)}\label{classhistmgr_1_1HistMgr_a71344ca5b0aafd020837375bd07b1a19}
+
+
+create several histograms which will have the same binning and the same name (except of a numeric extension). The histograms are only written to a file if the histogram group, to which this histogram belongs, is assigned to a file (\doxyref{histmgr::HistMgr::assignFileName}{p.}{classhistmgr_1_1HistMgr_a20e3c96a8ba6175c8036918ca7acb1e2}). 
+\begin{DoxyParams}{Parameters}
+\item[{\em group\_\-key}]the name of the group this histogram belongs to \item[{\em collection\_\-key}]the name of the histogram collection \item[{\em name\_\-list}]a vector containing the names of the histograms whose length is either equals n\_\-hist or is zero. In the latter case the collection name is used for the all histograms. \item[{\em n\_\-hist}]the number of histograms to be created \item[{\em x\_\-par}]the binning of the x-\/axis of the histogram \item[{\em y\_\-par}]the binning of the y-\/axis of the histogram \item[{\em may\_\-overwrite}]flag to overwrite or not the histogram, if already existing (default: false)\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the index of the first histogram for 
+\end{DoxyReturn}
+
+
+Definition at line 169 of file HistMgr.cc.\index{histmgr::HistMgr@{histmgr::HistMgr}!create2DHistograms@{create2DHistograms}}
+\index{create2DHistograms@{create2DHistograms}!histmgr::HistMgr@{histmgr::HistMgr}}
+\subsubsection[{create2DHistograms}]{\setlength{\rightskip}{0pt plus 5cm}lcio::LCCollection$\ast$ histmgr::HistMgr::create2DHistograms (const {\bf Key\_\-t} \& {\em group\_\-key}, \/  const {\bf Key\_\-t} \& {\em collection\_\-key}, \/  UInt\_\-t {\em n\_\-hist}, \/  const {\bf HistPar} \& {\em x\_\-par}, \/  const {\bf HistPar} \& {\em y\_\-par}, \/  bool {\em may\_\-overwrite} = {\ttfamily false})  throw (std::bad\_\-alloc,std::runtime\_\-error)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1HistMgr_ac469bfa1071a3bc053dc613aaba98676}
+
+
+create several histograms which will have the same binning and the same name (except of a numeric extension). The histograms are only written to a file if the histogram group, to which this histogram belongs, is assigned to a file (\doxyref{histmgr::HistMgr::assignFileName}{p.}{classhistmgr_1_1HistMgr_a20e3c96a8ba6175c8036918ca7acb1e2}). 
+\begin{DoxyParams}{Parameters}
+\item[{\em group\_\-key}]the name of the group this histogram belongs to \item[{\em collection\_\-key}]the of the histogram collection \item[{\em n\_\-hist}]the number of histograms to be created \item[{\em x\_\-par}]the binning of the histogram along x \item[{\em y\_\-par}]the binning of the histogram along x \item[{\em may\_\-overwrite}]flag to overwrite or not the histogram, if already existing (default: false)\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the index of the first histogram for 
+\end{DoxyReturn}
+
+
+Definition at line 425 of file HistMgr.hh.
+
+Referenced by create2DHistograms(), and CALICE::SquareFinder::init().\index{histmgr::HistMgr@{histmgr::HistMgr}!createGraphCollection@{createGraphCollection}}
+\index{createGraphCollection@{createGraphCollection}!histmgr::HistMgr@{histmgr::HistMgr}}
+\subsubsection[{createGraphCollection}]{\setlength{\rightskip}{0pt plus 5cm}lcio::LCCollection $\ast$ histmgr::HistMgr::createGraphCollection (const {\bf Key\_\-t} \& {\em group\_\-key}, \/  const {\bf Key\_\-t} \& {\em collection\_\-key}, \/  unsigned int {\em n\_\-graphs}, \/  const EVENT::StringVec \& {\em type\_\-names}, \/  unsigned int {\em n\_\-expected\_\-values}, \/  const EVENT::StringVec \& {\em opt\_\-major\_\-names}, \/  bool {\em may\_\-overwrite} = {\ttfamily false})  throw (std::bad\_\-alloc, std::runtime\_\-error)}\label{classhistmgr_1_1HistMgr_a9db9fef02a9f5b9d113278cfb9615202}
+
+
+Create a collection of graphs. The graphs are addressed by a major and a minor index. The graph collection can for example be used to create mean, rms, min,max graphs per module. The following parameters can be supplied to the collection: 
+\begin{DoxyItemize}
+\item minor\_\-width : a vector which contains the width for each minor index of the line to be drawn. 
+\item minor\_\-style : a vector which contains the style for each minor index used to draw the line. 
+\item minor\_\-color : a vector which contains the color for each minor index used to draw the line. 
+\item major\_\-color : a vector which contains the color for each major index used to draw the line. This color has precedence over the minor\_\-color 
+\end{DoxyItemize}
+
+Definition at line 222 of file HistMgr.cc.
+
+Referenced by CALICE::AverageHistoryGraphs::init().\index{histmgr::HistMgr@{histmgr::HistMgr}!createHistogramGroup@{createHistogramGroup}}
+\index{createHistogramGroup@{createHistogramGroup}!histmgr::HistMgr@{histmgr::HistMgr}}
+\subsubsection[{createHistogramGroup}]{\setlength{\rightskip}{0pt plus 5cm}void histmgr::HistMgr::createHistogramGroup (const {\bf Key\_\-t} \& {\em group\_\-key})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1HistMgr_a04aa842cbcd765c10fa47afd05a31b6f}
+
+
+Create an empty histogram group to which histograms can be assigned. 
+\begin{DoxyParams}{Parameters}
+\item[{\em group\_\-key}]the key to address the group \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ID assigned to the group of the given name The group name is uniqe. If the group exists already the id of the existing group is returned. 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+\doxyref{createHistograms}{p.}{classhistmgr_1_1HistMgr_a1cbde9ebd45e689772bd6851189740ae} 
+\end{DoxySeeAlso}
+
+
+Definition at line 313 of file HistMgr.hh.
+
+References getOrCreatehistogramGroup().
+
+Referenced by CALICE::HoldScanAnalysis::createHistograms(), CALICE::TriggerAnalysis::init(), CALICE::SimpleHitSearch::init(), CALICE::PedestalNoiseHistograms::init(), and CALICE::AverageHistoryGraphs::init().\index{histmgr::HistMgr@{histmgr::HistMgr}!createHistograms@{createHistograms}}
+\index{createHistograms@{createHistograms}!histmgr::HistMgr@{histmgr::HistMgr}}
+\subsubsection[{createHistograms}]{\setlength{\rightskip}{0pt plus 5cm}lcio::LCCollection $\ast$ histmgr::HistMgr::createHistograms (const {\bf Key\_\-t} \& {\em group\_\-key}, \/  const {\bf Key\_\-t} \& {\em collection\_\-key}, \/  const EVENT::StringVec \& {\em name\_\-list}, \/  const lcio::IntVec \& {\em n\_\-hist\_\-list}, \/  const {\bf HistPar} \& {\em par}, \/  bool {\em may\_\-overwrite} = {\ttfamily false})  throw (std::bad\_\-alloc, std::runtime\_\-error)}\label{classhistmgr_1_1HistMgr_ad55628ecf3fd006a665c792935e61f45}
+
+
+create 2D array of histograms which will all have the same binning and the same name (except of a numeric extension). To create an array of 2x3 histograms {\ttfamily  lcio::IntVec index index.push\_\-back(3) index.push\_\-back(3) \doxyref{histmgr::Key\_\-t}{p.}{classhistmgr_1_1Key__t} hist\_\-arr\_\-2d\_\-key(\char`\"{}hist\_\-arr\_\-2d\char`\"{}) histogramList-\/$>$createHistograms(group\_\-key,hist\_\-arr\_\-2d\_\-key,index,\doxyref{HistPar}{p.}{classHistPar}(4,-\/.5,3.5)); } The histograms are only written to a file if the histogram group, to which this histogram belongs, is assigned to a file (\doxyref{histmgr::HistMgr::assignFileName}{p.}{classhistmgr_1_1HistMgr_a20e3c96a8ba6175c8036918ca7acb1e2}). 
+\begin{DoxyParams}{Parameters}
+\item[{\em group\_\-key}]the name of the group this histogram belongs to \item[{\em collection\_\-key}]name of the collection to which the histogram belongs \item[{\em name\_\-list}]a vector containing the names of the histograms whose length is either one or equals the number of elements of n\_\-hist\_\-list \item[{\em n\_\-hist\_\-list}]an array of histograms per major index \item[{\em par}]the binning of the histogram \item[{\em may\_\-overwrite}]flag to overwrite or not the histogram, if already existing (default: false)\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the index of the first histogram for 
+\end{DoxyReturn}
+
+
+Definition at line 142 of file HistMgr.cc.\index{histmgr::HistMgr@{histmgr::HistMgr}!createHistograms@{createHistograms}}
+\index{createHistograms@{createHistograms}!histmgr::HistMgr@{histmgr::HistMgr}}
+\subsubsection[{createHistograms}]{\setlength{\rightskip}{0pt plus 5cm}lcio::LCCollection$\ast$ histmgr::HistMgr::createHistograms (const {\bf Key\_\-t} \& {\em group\_\-key}, \/  const {\bf Key\_\-t} \& {\em collection\_\-key}, \/  const lcio::IntVec \& {\em n\_\-hist\_\-list}, \/  const {\bf HistPar} \& {\em par}, \/  bool {\em may\_\-overwrite} = {\ttfamily false})  throw (std::bad\_\-alloc, std::runtime\_\-error)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1HistMgr_a2f831ffa2ca7c621b01d5be9a6fc9ea2}
+
+
+create 2D array of histograms which will all have the same binning and the same name (except of a numeric extension). The histograms are only written to a file if the histogram group, to which this histogram belongs, is assigned to a file (\doxyref{histmgr::HistMgr::assignFileName}{p.}{classhistmgr_1_1HistMgr_a20e3c96a8ba6175c8036918ca7acb1e2}). 
+\begin{DoxyParams}{Parameters}
+\item[{\em group\_\-key}]the name of the group this histogram belongs to \item[{\em collection\_\-key}]name of the collection to which the histogram belongs \item[{\em n\_\-hist\_\-list}]an array of histograms per major index \item[{\em par}]the binning of the histogram \item[{\em may\_\-overwrite}]flag to overwrite or not the histogram, if already existing (default: false)\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the index of the first histogram for 
+\end{DoxyReturn}
+
+
+Definition at line 378 of file HistMgr.hh.
+
+References createHistograms().\index{histmgr::HistMgr@{histmgr::HistMgr}!createHistograms@{createHistograms}}
+\index{createHistograms@{createHistograms}!histmgr::HistMgr@{histmgr::HistMgr}}
+\subsubsection[{createHistograms}]{\setlength{\rightskip}{0pt plus 5cm}lcio::LCCollection $\ast$ histmgr::HistMgr::createHistograms (const {\bf Key\_\-t} \& {\em group\_\-key}, \/  const {\bf Key\_\-t} \& {\em collection\_\-key}, \/  const EVENT::StringVec \& {\em name\_\-list}, \/  UInt\_\-t {\em n\_\-hist}, \/  const {\bf HistPar} \& {\em par}, \/  bool {\em may\_\-overwrite} = {\ttfamily false})  throw (std::bad\_\-alloc,std::runtime\_\-error)}\label{classhistmgr_1_1HistMgr_aede4f88aa0b8892895a3ae98dc95fecf}
+
+
+create several histograms which will have the same binning and the same name (except of a numeric extension). The histograms are only written to a file if the histogram group, to which this histogram belongs, is assigned to a file (\doxyref{histmgr::HistMgr::assignFileName}{p.}{classhistmgr_1_1HistMgr_a20e3c96a8ba6175c8036918ca7acb1e2}). 
+\begin{DoxyParams}{Parameters}
+\item[{\em group\_\-key}]the name of the group this histogram belongs to \item[{\em collection\_\-key}]the name of the histogram collection \item[{\em name\_\-list}]a vector containing the names of the histograms whose length is either equals n\_\-hist or is zero. In the latter case the collection name is used for the all histograms. \item[{\em n\_\-hist}]the number of histograms to be created \item[{\em par}]the binning of the histogram \item[{\em may\_\-overwrite}]flag to overwrite or not the histogram, if already existing (default: false)\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the index of the first histogram for 
+\end{DoxyReturn}
+
+
+Definition at line 117 of file HistMgr.cc.\index{histmgr::HistMgr@{histmgr::HistMgr}!createHistograms@{createHistograms}}
+\index{createHistograms@{createHistograms}!histmgr::HistMgr@{histmgr::HistMgr}}
+\subsubsection[{createHistograms}]{\setlength{\rightskip}{0pt plus 5cm}lcio::LCCollection$\ast$ histmgr::HistMgr::createHistograms (const {\bf Key\_\-t} \& {\em group\_\-key}, \/  const {\bf Key\_\-t} \& {\em collection\_\-key}, \/  UInt\_\-t {\em n\_\-hist}, \/  const {\bf HistPar} \& {\em par}, \/  bool {\em may\_\-overwrite} = {\ttfamily false})  throw (std::bad\_\-alloc,std::runtime\_\-error)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1HistMgr_a1cbde9ebd45e689772bd6851189740ae}
+
+
+create several histograms which will have the same binning and the same name (except of a numeric extension). The histograms are only written to a file if the histogram group, to which this histogram belongs, is assigned to a file (\doxyref{histmgr::HistMgr::assignFileName}{p.}{classhistmgr_1_1HistMgr_a20e3c96a8ba6175c8036918ca7acb1e2}). 
+\begin{DoxyParams}{Parameters}
+\item[{\em group\_\-key}]the name of the group this histogram belongs to \item[{\em collection\_\-key}]name the of the histogram collection \item[{\em n\_\-hist}]the number of histograms to be created \item[{\em par}]the binning of the histogram \item[{\em may\_\-overwrite}]flag to overwrite or not the histogram, if already existing (default: false)\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the index of the first histogram for 
+\end{DoxyReturn}
+
+
+Definition at line 341 of file HistMgr.hh.
+
+Referenced by CALICE::HoldScanAnalysis::createHistograms(), createHistograms(), CALICE::TriggerAnalysis::init(), CALICE::SquareFinder::init(), CALICE::HoldScanAnalysis::init(), and CALICE::Clusteriser::init().\index{histmgr::HistMgr@{histmgr::HistMgr}!createProfile@{createProfile}}
+\index{createProfile@{createProfile}!histmgr::HistMgr@{histmgr::HistMgr}}
+\subsubsection[{createProfile}]{\setlength{\rightskip}{0pt plus 5cm}lcio::LCCollection$\ast$ histmgr::HistMgr::createProfile (const {\bf Key\_\-t} \& {\em group\_\-key}, \/  const {\bf Key\_\-t} \& {\em collection\_\-key}, \/  const EVENT::StringVec \& {\em name\_\-list}, \/  const lcio::IntVec \& {\em n\_\-hist\_\-list}, \/  const {\bf HistPar} \& {\em par}, \/  bool {\em may\_\-overwrite} = {\ttfamily false})  throw (std::bad\_\-alloc, std::runtime\_\-error)}\label{classhistmgr_1_1HistMgr_a775afdd85a1a4c2da54695ed340bb9db}
+
+
+create 2D array of profile histograms which will all have the same binning of the x-\/axis. 
+\begin{DoxyParams}{Parameters}
+\item[{\em group\_\-key}]the name of the group this profile histogram belongs to \item[{\em collection\_\-key}]name of the collection to which the histogram belongs \item[{\em name\_\-list}]a vector containing the names of the profile histograms whose length is either one or equals the number of elements of n\_\-hist\_\-list \item[{\em n\_\-hist\_\-list}]an array of histograms per major index \item[{\em par}]the binning of the x-\/axis of the profile histogram \item[{\em may\_\-overwrite}]flag to overwrite or not the histogram, if already existing (default: false)\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the the profile histogram collection 
+\end{DoxyReturn}
+\index{histmgr::HistMgr@{histmgr::HistMgr}!createProfile@{createProfile}}
+\index{createProfile@{createProfile}!histmgr::HistMgr@{histmgr::HistMgr}}
+\subsubsection[{createProfile}]{\setlength{\rightskip}{0pt plus 5cm}lcio::LCCollection$\ast$ histmgr::HistMgr::createProfile (const {\bf Key\_\-t} \& {\em group\_\-key}, \/  const {\bf Key\_\-t} \& {\em collection\_\-key}, \/  const lcio::IntVec \& {\em n\_\-hist\_\-list}, \/  const {\bf HistPar} \& {\em par}, \/  bool {\em may\_\-overwrite} = {\ttfamily false})  throw (std::bad\_\-alloc, std::runtime\_\-error)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1HistMgr_a142d0d855cfdf527b8d4a9886ef4bba3}
+
+
+create 2D array of profile histograms which will all have the same binning and the same name (except of a numeric extension). 
+\begin{DoxyParams}{Parameters}
+\item[{\em group\_\-key}]the name of the group this profile histogram belongs to \item[{\em collection\_\-key}]name of the collection to which the histogram belongs \item[{\em n\_\-hist\_\-list}]an array of histograms per major index \item[{\em par}]the binning of the x-\/axis of the profile histogram \item[{\em may\_\-overwrite}]flag to overwrite or not the histogram, if already existing (default: false)\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the the profile histogram collection 
+\end{DoxyReturn}
+
+
+Definition at line 544 of file HistMgr.hh.
+
+References createProfile().\index{histmgr::HistMgr@{histmgr::HistMgr}!createProfile@{createProfile}}
+\index{createProfile@{createProfile}!histmgr::HistMgr@{histmgr::HistMgr}}
+\subsubsection[{createProfile}]{\setlength{\rightskip}{0pt plus 5cm}lcio::LCCollection$\ast$ histmgr::HistMgr::createProfile (const {\bf Key\_\-t} \& {\em group\_\-key}, \/  const {\bf Key\_\-t} \& {\em collection\_\-key}, \/  const EVENT::StringVec \& {\em name\_\-list}, \/  UInt\_\-t {\em n\_\-hist}, \/  const {\bf HistPar} \& {\em par}, \/  bool {\em may\_\-overwrite} = {\ttfamily false})  throw (std::bad\_\-alloc,std::runtime\_\-error)}\label{classhistmgr_1_1HistMgr_a46fd69e4b87a2e9fd4a64ca8643baac5}
+
+
+create an array of profile histograms which will all have the same binning of the x-\/axis and the same name (except of a numeric extension). 
+\begin{DoxyParams}{Parameters}
+\item[{\em group\_\-key}]the name of the group this profile histogram belongs to \item[{\em collection\_\-key}]name of the collection to which the histogram belongs \item[{\em name\_\-list}]a vector containing the names of the profile histograms whose length is either one or equals the number of elements of n\_\-hist\_\-list \item[{\em n\_\-hist}]the number of histograms to be created \item[{\em par}]the binning of the x-\/axis of the profile histogram \item[{\em may\_\-overwrite}]flag to overwrite or not the histogram, if already existing (default: false)\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the the profile histogram collection 
+\end{DoxyReturn}
+\index{histmgr::HistMgr@{histmgr::HistMgr}!createProfile@{createProfile}}
+\index{createProfile@{createProfile}!histmgr::HistMgr@{histmgr::HistMgr}}
+\subsubsection[{createProfile}]{\setlength{\rightskip}{0pt plus 5cm}lcio::LCCollection$\ast$ histmgr::HistMgr::createProfile (const {\bf Key\_\-t} \& {\em group\_\-key}, \/  const {\bf Key\_\-t} \& {\em collection\_\-key}, \/  UInt\_\-t {\em n\_\-hist}, \/  const {\bf HistPar} \& {\em par}, \/  bool {\em may\_\-overwrite} = {\ttfamily false})  throw (std::bad\_\-alloc,std::runtime\_\-error)\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1HistMgr_ab813fd273ea7274bf3e3628a62325c30}
+
+
+create an array of profile histograms which will all have the same binning of the x-\/axis and the same name (except of a numeric extension). 
+\begin{DoxyParams}{Parameters}
+\item[{\em group\_\-key}]the name of the group this profile histogram belongs to \item[{\em collection\_\-key}]name of the collection to which the histogram belongs \item[{\em n\_\-hist}]the number of histograms to be created \item[{\em par}]the binning of the x-\/axis of the profile histogram \item[{\em may\_\-overwrite}]flag to overwrite or not the histogram, if already existing (default: false)\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to the the profile histogram collection 
+\end{DoxyReturn}
+
+
+Definition at line 511 of file HistMgr.hh.
+
+Referenced by createProfile().\index{histmgr::HistMgr@{histmgr::HistMgr}!fillGroupList@{fillGroupList}}
+\index{fillGroupList@{fillGroupList}!histmgr::HistMgr@{histmgr::HistMgr}}
+\subsubsection[{fillGroupList}]{\setlength{\rightskip}{0pt plus 5cm}void histmgr::HistMgr::fillGroupList (std::vector$<$ std::string $>$ \& {\em dest\_\-group\_\-list}) const}\label{classhistmgr_1_1HistMgr_afe03f9a977b33e3d369a9c4133b74716}
+
+
+Copy the groups names into the given vecotor. 
+\begin{DoxyParams}{Parameters}
+\item[{\em dest\_\-group\_\-list}]the vector which will be filled with the group names. First the given vector will be cleared. Then all group names will be copied to it. \end{DoxyParams}
+
+
+Definition at line 317 of file HistMgr.cc.\index{histmgr::HistMgr@{histmgr::HistMgr}!fillHistogramCollectionList@{fillHistogramCollectionList}}
+\index{fillHistogramCollectionList@{fillHistogramCollectionList}!histmgr::HistMgr@{histmgr::HistMgr}}
+\subsubsection[{fillHistogramCollectionList}]{\setlength{\rightskip}{0pt plus 5cm}void histmgr::HistMgr::fillHistogramCollectionList (const {\bf Key\_\-t} \& {\em group\_\-key}, \/  ECollectionType {\em type}, \/  std::vector$<$ std::string $>$ \& {\em dest\_\-histogram\_\-collection\_\-list}) const}\label{classhistmgr_1_1HistMgr_aae8c3abe639e31993241569127fbff3e}
+
+
+Copy the histogram collection names of the specified group to the given vector. 
+\begin{DoxyParams}{Parameters}
+\item[{\em group\_\-key}]the name of the group whose histogram collection are considered. \item[{\em type}]type of the collection to which the histogram belongs \item[{\em dest\_\-histogram\_\-collection\_\-list}]the vector which will be filled with the names of the histgram collections which are associated to the specified group. First the given vector will be cleared. Then all the names of the histogram collections which are associated to the specfied group will be copied to it. \end{DoxyParams}
+
+
+Definition at line 354 of file HistMgr.cc.
+
+References histmgr::HistMgr::Group\_\-t::graphCollection(), histmgr::HistMgr::Group\_\-t::histogram2DCollection(), histmgr::HistMgr::Group\_\-t::histogramCollection(), histmgr::GraphCollection\_\-t::n(), histmgr::ProfileCollection\_\-t::n(), histmgr::Histogram2DCollection\_\-t::n(), histmgr::HistogramCollection\_\-t::n(), histmgr::HistMgr::Group\_\-t::nameListIterators(), and histmgr::HistMgr::Group\_\-t::profileCollection().\index{histmgr::HistMgr@{histmgr::HistMgr}!get2DHistogram@{get2DHistogram}}
+\index{get2DHistogram@{get2DHistogram}!histmgr::HistMgr@{histmgr::HistMgr}}
+\subsubsection[{get2DHistogram}]{\setlength{\rightskip}{0pt plus 5cm}{\bf FloatHistogram2D}$\ast$ histmgr::HistMgr::get2DHistogram (const {\bf Key\_\-t} \& {\em group\_\-key}, \/  const {\bf Key\_\-t} \& {\em hist\_\-key}, \/  UInt\_\-t {\em major\_\-index}, \/  UInt\_\-t {\em minor\_\-index})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1HistMgr_a8efc6e2c08e1a92d5a37690b04904cd3}
+
+
+get a 2D histogram of the collection which is organised as a two dimensional array. The histogram must not be deleted. Generally, the method does not check the validity of the indices. the method throws exceptions if the collection does not exist or If BOUNDARY\_\-CHECK is defined and the indices are out of range.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em group\_\-key}]name of the histogram's group \item[{\em hist\_\-key}]name of the histogram \item[{\em major\_\-index}]the major index within the collection \item[{\em minor\_\-index}]the major index within the collection \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the histogram collection or zero. 
+\end{DoxyReturn}
+
+
+Definition at line 797 of file HistMgr.hh.\index{histmgr::HistMgr@{histmgr::HistMgr}!get2DHistogram@{get2DHistogram}}
+\index{get2DHistogram@{get2DHistogram}!histmgr::HistMgr@{histmgr::HistMgr}}
+\subsubsection[{get2DHistogram}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf FloatHistogram2D}$\ast$ histmgr::HistMgr::get2DHistogram (const {\bf Key\_\-t} \& {\em group\_\-key}, \/  const {\bf Key\_\-t} \& {\em hist\_\-key}, \/  UInt\_\-t {\em major\_\-index}, \/  UInt\_\-t {\em minor\_\-index}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1HistMgr_a8cf0e7bc525eae6507dbc15805eed94c}
+
+
+get a 2D histogram of the collection which is organised as a two dimensional array (read only). The histogram must not be deleted. Generally, the method does not check the validity of the indices. the method throws exceptions if the collection does not exist or If BOUNDARY\_\-CHECK is defined and the indices are out of range.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em group\_\-key}]name of the histogram's group \item[{\em hist\_\-key}]name of the histogram \item[{\em major\_\-index}]the major index within the collection \item[{\em minor\_\-index}]the major index within the collection \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the histogram collection or zero. 
+\end{DoxyReturn}
+
+
+Definition at line 770 of file HistMgr.hh.\index{histmgr::HistMgr@{histmgr::HistMgr}!get2DHistogram@{get2DHistogram}}
+\index{get2DHistogram@{get2DHistogram}!histmgr::HistMgr@{histmgr::HistMgr}}
+\subsubsection[{get2DHistogram}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf FloatHistogram2D}$\ast$ histmgr::HistMgr::get2DHistogram (const {\bf Key\_\-t} \& {\em group\_\-key}, \/  const {\bf Key\_\-t} \& {\em hist\_\-key}, \/  UInt\_\-t {\em index}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1HistMgr_a7f3d08a4bcde4bc739ca9fc1642e8120}
+
+
+get a 2D histogram of the collection with the given name (read only). The histogram must not be deleted. Generally, the method does not check the validity of the index. the method throws exceptions if the collection does not exist or If BOUNDARY\_\-CHECK is defined and the index is out of range.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em group\_\-key}]name of the histogram's group \item[{\em hist\_\-key}]name of the histogram \item[{\em index}]the index within the collection \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the histogram collection or zero. 
+\end{DoxyReturn}
+
+
+Definition at line 744 of file HistMgr.hh.\index{histmgr::HistMgr@{histmgr::HistMgr}!get2DHistogram@{get2DHistogram}}
+\index{get2DHistogram@{get2DHistogram}!histmgr::HistMgr@{histmgr::HistMgr}}
+\subsubsection[{get2DHistogram}]{\setlength{\rightskip}{0pt plus 5cm}{\bf FloatHistogram2D}$\ast$ histmgr::HistMgr::get2DHistogram (const {\bf Key\_\-t} \& {\em group\_\-key}, \/  const {\bf Key\_\-t} \& {\em hist\_\-key}, \/  UInt\_\-t {\em index})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1HistMgr_ab4da74dcb5d34f186073d4a1fda4e831}
+
+
+get a 2D histogram of the collection with the given name. The histogram must not be deleted. Generally, the method does not check the validity of the index. the method throws exceptions if the collection does not exist or If BOUNDARY\_\-CHECK is defined and the index is out of range.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em group\_\-key}]name of the histogram's group \item[{\em hist\_\-key}]name of the histogram \item[{\em index}]the index within the collection \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the histogram collection or zero. 
+\end{DoxyReturn}
+
+
+Definition at line 718 of file HistMgr.hh.\index{histmgr::HistMgr@{histmgr::HistMgr}!getGraphCollection@{getGraphCollection}}
+\index{getGraphCollection@{getGraphCollection}!histmgr::HistMgr@{histmgr::HistMgr}}
+\subsubsection[{getGraphCollection}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf GraphCollection\_\-t}\& histmgr::HistMgr::getGraphCollection (const {\bf Key\_\-t} \& {\em group\_\-key}, \/  const {\bf Key\_\-t} \& {\em graph\_\-key}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1HistMgr_adceab95da3bf897045779682cbfff2d9}
+
+
+Get a graph collection. (read only). 
+
+Definition at line 865 of file HistMgr.hh.\index{histmgr::HistMgr@{histmgr::HistMgr}!getHistogram@{getHistogram}}
+\index{getHistogram@{getHistogram}!histmgr::HistMgr@{histmgr::HistMgr}}
+\subsubsection[{getHistogram}]{\setlength{\rightskip}{0pt plus 5cm}{\bf FloatHistogram1D}$\ast$ histmgr::HistMgr::getHistogram (const {\bf Key\_\-t} \& {\em group\_\-key}, \/  const {\bf Key\_\-t} \& {\em hist\_\-key}, \/  UInt\_\-t {\em major\_\-index}, \/  UInt\_\-t {\em minor\_\-index})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1HistMgr_a88b3f269d21c0bfd28671ca1bca8d47b}
+
+
+get a histogram of the collection which is organised as a two dimensional array. The histogram must not be deleted. Generally, the method does not check the validity of the indices. the method throws exceptions if the collection does not exist or If BOUNDARY\_\-CHECK is defined and the indices are out of range.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em group\_\-key}]name of the histogram's group \item[{\em hist\_\-key}]name of the histogram \item[{\em major\_\-index}]the major index within the collection \item[{\em minor\_\-index}]the major index within the collection \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the histogram collection or zero. 
+\end{DoxyReturn}
+
+
+Definition at line 693 of file HistMgr.hh.\index{histmgr::HistMgr@{histmgr::HistMgr}!getHistogram@{getHistogram}}
+\index{getHistogram@{getHistogram}!histmgr::HistMgr@{histmgr::HistMgr}}
+\subsubsection[{getHistogram}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf FloatHistogram1D}$\ast$ histmgr::HistMgr::getHistogram (const {\bf Key\_\-t} \& {\em group\_\-key}, \/  const {\bf Key\_\-t} \& {\em hist\_\-key}, \/  UInt\_\-t {\em major\_\-index}, \/  UInt\_\-t {\em minor\_\-index}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1HistMgr_a488e892b3b341d86992f3e52ddc2dfc6}
+
+
+get a histogram of the collection which is organised as a two dimensional array (read only). The histogram must not be deleted. Generally, the method does not check the validity of the indices. the method throws exceptions if the collection does not exist or If BOUNDARY\_\-CHECK is defined and the indices are out of range.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em group\_\-key}]name of the histogram's group \item[{\em hist\_\-key}]name of the histogram \item[{\em major\_\-index}]the major index within the collection \item[{\em minor\_\-index}]the major index within the collection \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the histogram collection or zero. 
+\end{DoxyReturn}
+
+
+Definition at line 666 of file HistMgr.hh.\index{histmgr::HistMgr@{histmgr::HistMgr}!getHistogram@{getHistogram}}
+\index{getHistogram@{getHistogram}!histmgr::HistMgr@{histmgr::HistMgr}}
+\subsubsection[{getHistogram}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf FloatHistogram1D}$\ast$ histmgr::HistMgr::getHistogram (const {\bf Key\_\-t} \& {\em group\_\-key}, \/  const {\bf Key\_\-t} \& {\em hist\_\-key}, \/  UInt\_\-t {\em index}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1HistMgr_ab85919d0fb60f4c9d3916a89822ffbfe}
+
+
+get a histogram of the collection with the given name (read only). The histogram must not be deleted. Generally, the method does not check the validity of the index. the method throws exceptions if the collection does not exist or If BOUNDARY\_\-CHECK is defined and the index is out of range.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em group\_\-key}]name of the histogram's group \item[{\em hist\_\-key}]name of the histogram \item[{\em index}]the index within the collection \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the histogram collection or zero. 
+\end{DoxyReturn}
+
+
+Definition at line 640 of file HistMgr.hh.\index{histmgr::HistMgr@{histmgr::HistMgr}!getHistogram@{getHistogram}}
+\index{getHistogram@{getHistogram}!histmgr::HistMgr@{histmgr::HistMgr}}
+\subsubsection[{getHistogram}]{\setlength{\rightskip}{0pt plus 5cm}{\bf FloatHistogram1D}$\ast$ histmgr::HistMgr::getHistogram (const {\bf Key\_\-t} \& {\em group\_\-key}, \/  const {\bf Key\_\-t} \& {\em hist\_\-key}, \/  UInt\_\-t {\em index})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1HistMgr_a797aae0e8ced26bca02e41ed4b83c72b}
+
+
+get a histogram of the collection with the given name. The histogram must not be deleted. Generally, the method does not check the validity of the index. the method throws exceptions if the collection does not exist or If BOUNDARY\_\-CHECK is defined and the index is out of range.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em group\_\-key}]name of the histogram's group \item[{\em hist\_\-key}]name of the histogram \item[{\em index}]the index within the collection \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the histogram collection or zero. 
+\end{DoxyReturn}
+
+
+Definition at line 614 of file HistMgr.hh.\index{histmgr::HistMgr@{histmgr::HistMgr}!getHistogram2DCollection@{getHistogram2DCollection}}
+\index{getHistogram2DCollection@{getHistogram2DCollection}!histmgr::HistMgr@{histmgr::HistMgr}}
+\subsubsection[{getHistogram2DCollection}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Histogram2DCollection\_\-t}\& histmgr::HistMgr::getHistogram2DCollection (const {\bf Key\_\-t} \& {\em group\_\-key}, \/  const {\bf Key\_\-t} \& {\em histogram2D\_\-key}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1HistMgr_a23378a9d9865d311a9dbfd163a66042c}
+
+
+Get a histogram2D collection. (read only). 
+
+Definition at line 883 of file HistMgr.hh.\index{histmgr::HistMgr@{histmgr::HistMgr}!getNEntriesTotal@{getNEntriesTotal}}
+\index{getNEntriesTotal@{getNEntriesTotal}!histmgr::HistMgr@{histmgr::HistMgr}}
+\subsubsection[{getNEntriesTotal}]{\setlength{\rightskip}{0pt plus 5cm}Double\_\-t histmgr::HistMgr::getNEntriesTotal (const {\bf Key\_\-t} \& {\em group\_\-key}) const}\label{classhistmgr_1_1HistMgr_a82abb61111cc4eda9f15a3d3a36a1114}
+
+
+return the total number of entries in the whole histogram group. 
+
+Definition at line 409 of file HistMgr.cc.
+
+References histmgr::Histogram1D::entries(), histmgr::HistogramCollection\_\-t::histogram(), histmgr::HistogramCollection\_\-t::is2D(), histmgr::HistogramCollection\_\-t::n(), histmgr::HistogramCollection\_\-t::nMajor(), and histmgr::HistogramCollection\_\-t::nMinor().\index{histmgr::HistMgr@{histmgr::HistMgr}!getProfileCollection@{getProfileCollection}}
+\index{getProfileCollection@{getProfileCollection}!histmgr::HistMgr@{histmgr::HistMgr}}
+\subsubsection[{getProfileCollection}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ProfileCollection\_\-t}\& histmgr::HistMgr::getProfileCollection (const {\bf Key\_\-t} \& {\em group\_\-key}, \/  const {\bf Key\_\-t} \& {\em profile\_\-key}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1HistMgr_a72f351d38692d3fe4717b25399bc4f06}
+
+
+Get a profile collection. (read only). 
+
+Definition at line 901 of file HistMgr.hh.\index{histmgr::HistMgr@{histmgr::HistMgr}!lockGroup@{lockGroup}}
+\index{lockGroup@{lockGroup}!histmgr::HistMgr@{histmgr::HistMgr}}
+\subsubsection[{lockGroup}]{\setlength{\rightskip}{0pt plus 5cm}void histmgr::HistMgr::lockGroup (const {\bf Key\_\-t} \& {\em group\_\-key})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1HistMgr_abe2360d4b53c1ac18f193be4e9428e3a}
+
+
+Lock a histogram group. If a group is locked it will not be deleted until the lock is released. \begin{DoxySeeAlso}{See also}
+\doxyref{unlockGroup}{p.}{classhistmgr_1_1HistMgr_a326c737841ccc507e44b27e26922686f} 
+\end{DoxySeeAlso}
+
+
+Definition at line 981 of file HistMgr.hh.
+
+Referenced by CALICE::TriggerAnalysis::init(), CALICE::SimpleHitSearch::init(), and CALICE::AverageHistoryGraphs::init().\index{histmgr::HistMgr@{histmgr::HistMgr}!registerWriter@{registerWriter}}
+\index{registerWriter@{registerWriter}!histmgr::HistMgr@{histmgr::HistMgr}}
+\subsubsection[{registerWriter}]{\setlength{\rightskip}{0pt plus 5cm}void histmgr::HistMgr::registerWriter (const std::string \& {\em name}, \/  {\bf HistWriterKit} $\ast$ {\em kit})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1HistMgr_a2c19c7a9ee9f04e070db16e507cebaec}
+
+
+register a histogram writer. At least one writer is needed to write histograms to disk. 
+
+Definition at line 964 of file HistMgr.hh.\index{histmgr::HistMgr@{histmgr::HistMgr}!unlockGroup@{unlockGroup}}
+\index{unlockGroup@{unlockGroup}!histmgr::HistMgr@{histmgr::HistMgr}}
+\subsubsection[{unlockGroup}]{\setlength{\rightskip}{0pt plus 5cm}void histmgr::HistMgr::unlockGroup (const {\bf Key\_\-t} \& {\em group\_\-key})}\label{classhistmgr_1_1HistMgr_a326c737841ccc507e44b27e26922686f}
+
+
+Release the lock on the histogram group. If a group is locked it will not be deleted until the lock is released. \begin{DoxySeeAlso}{See also}
+\doxyref{lockGroup}{p.}{classhistmgr_1_1HistMgr_abe2360d4b53c1ac18f193be4e9428e3a} 
+\end{DoxySeeAlso}
+
+
+Definition at line 101 of file HistMgr.cc.\index{histmgr::HistMgr@{histmgr::HistMgr}!warnOnUnassigned@{warnOnUnassigned}}
+\index{warnOnUnassigned@{warnOnUnassigned}!histmgr::HistMgr@{histmgr::HistMgr}}
+\subsubsection[{warnOnUnassigned}]{\setlength{\rightskip}{0pt plus 5cm}void histmgr::HistMgr::warnOnUnassigned ()}\label{classhistmgr_1_1HistMgr_a60e223159fbe1959cfee810063a224d0}
+
+
+Issue a warning for all histogram groups which are not assigned to a file. 
+
+Definition at line 306 of file HistMgr.cc.
+
+Referenced by histmgr::HistogramOutput::init().\index{histmgr::HistMgr@{histmgr::HistMgr}!writeHistograms@{writeHistograms}}
+\index{writeHistograms@{writeHistograms}!histmgr::HistMgr@{histmgr::HistMgr}}
+\subsubsection[{writeHistograms}]{\setlength{\rightskip}{0pt plus 5cm}void histmgr::HistMgr::writeHistograms (const {\bf Key\_\-t} \& {\em group\_\-key}, \/  bool {\em snapshot} = {\ttfamily false})}\label{classhistmgr_1_1HistMgr_a46a73c7bfb02fe01002b2db12aa20fdb}
+
+
+write all histograms of the specified group to the assigned root file. If no file name was \begin{DoxySeeAlso}{See also}
+\doxyref{HistWriter}{p.}{classhistmgr_1_1HistWriter}, \doxyref{HistWriterKit}{p.}{classhistmgr_1_1HistWriterKit} 
+\end{DoxySeeAlso}
+
+
+Definition at line 442 of file HistMgr.cc.
+
+References writeHistograms().\index{histmgr::HistMgr@{histmgr::HistMgr}!writeHistograms@{writeHistograms}}
+\index{writeHistograms@{writeHistograms}!histmgr::HistMgr@{histmgr::HistMgr}}
+\subsubsection[{writeHistograms}]{\setlength{\rightskip}{0pt plus 5cm}void histmgr::HistMgr::writeHistograms (bool {\em snapshot} = {\ttfamily false})}\label{classhistmgr_1_1HistMgr_ac3793935c147dc10f3ef167632794802}
+
+
+write all histograms groups to the assigned files. groups to which no file was assigned are not written \begin{DoxySeeAlso}{See also}
+\doxyref{HistWriter}{p.}{classhistmgr_1_1HistWriter}, \doxyref{HistWriterKit}{p.}{classhistmgr_1_1HistWriterKit} 
+\end{DoxySeeAlso}
+
+
+Definition at line 291 of file HistMgr.cc.
+
+References histmgr::HistMgr::Group\_\-t::header().
+
+Referenced by histmgr::HistogramOutput::end(), and writeHistograms().
+
+\subsection{Field Documentation}
+\index{histmgr::HistMgr@{histmgr::HistMgr}!\_\-\_\-typeName@{\_\-\_\-typeName}}
+\index{\_\-\_\-typeName@{\_\-\_\-typeName}!histmgr::HistMgr@{histmgr::HistMgr}}
+\subsubsection[{\_\-\_\-typeName}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ histmgr::HistMgr::\_\-\_\-typeName\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classhistmgr_1_1HistMgr_ae67155221c06ecccb24eca1017fbd19d}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+{
+    "1D",
+    "2D",
+    "Profile",
+    "Graph"
+  }
+\end{DoxyCode}
+
+
+Definition at line 1103 of file HistMgr.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+HistMgr.hh\item 
+HistMgr.cc\end{DoxyCompactItemize}

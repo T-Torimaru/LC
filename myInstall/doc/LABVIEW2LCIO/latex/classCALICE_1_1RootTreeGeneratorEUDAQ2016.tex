@@ -1,0 +1,117 @@
+\section{CALICE::RootTreeGeneratorEUDAQ2016 Class Reference}
+\label{classCALICE_1_1RootTreeGeneratorEUDAQ2016}\index{CALICE::RootTreeGeneratorEUDAQ2016@{CALICE::RootTreeGeneratorEUDAQ2016}}
+
+
+Class to process Labview raw.  
+
+
+{\ttfamily \#include $<$RootTreeGeneratorEUDAQ2016.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Processor $\ast$ {\bfseries newProcessor} ()\label{classCALICE_1_1RootTreeGeneratorEUDAQ2016_adb6517ac6d1e813d05d19d0a118caa8c}
+
+\item 
+void {\bfseries init} ()\label{classCALICE_1_1RootTreeGeneratorEUDAQ2016_a2eb9c18fbb3422bd9a6800565f4c9d07}
+
+\item 
+void {\bfseries processEvent} (LCEvent $\ast$evt)\label{classCALICE_1_1RootTreeGeneratorEUDAQ2016_a5d169a6cdf7f3471a2a150dd4723f377}
+
+\item 
+void {\bfseries end} ()\label{classCALICE_1_1RootTreeGeneratorEUDAQ2016_acc5e873edc240b1789ba394087e2c26e}
+
+\item 
+void {\bfseries registerBranches} (TTree $\ast$hostTree)\label{classCALICE_1_1RootTreeGeneratorEUDAQ2016_a56d658a01150d2c00b4a5c37807f17bf}
+
+\item 
+void {\bfseries FillVariable} (LCEvent $\ast$evt)\label{classCALICE_1_1RootTreeGeneratorEUDAQ2016_a1e983591213d74cf08fc48f0ac41bfe9}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bfseries \_\-inputColName}\label{classCALICE_1_1RootTreeGeneratorEUDAQ2016_ac2e510fb22f7812c6daee89b12ac9c3b}
+
+\item 
+std::string {\bfseries \_\-prefix}\label{classCALICE_1_1RootTreeGeneratorEUDAQ2016_a322f00e45091686e6d9b9c8ead72dd4a}
+
+\item 
+TFile $\ast$ {\bfseries \_\-rootFile}\label{classCALICE_1_1RootTreeGeneratorEUDAQ2016_a909e0073fa5d088d1c244d36268a31f0}
+
+\item 
+std::string {\bfseries \_\-rootFileName}\label{classCALICE_1_1RootTreeGeneratorEUDAQ2016_a8bfc2d4f1ab531348913b77c6ac1ee12}
+
+\item 
+TTree $\ast$ {\bfseries \_\-treeEUDAQBlock2016}\label{classCALICE_1_1RootTreeGeneratorEUDAQ2016_afa4dbf097c8ef24ba83e4a485d416d94}
+
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>int {\bfseries iEvt}\\
+\>int {\bfseries nHits}\\
+\>int {\bfseries BunchXID} [MAXCELLS]\\
+\>int {\bfseries CycleNr} [MAXCELLS]\\
+\>int {\bfseries ChipID} [MAXCELLS]\\
+\>int {\bfseries EvtNr} [MAXCELLS]\\
+\>int {\bfseries Channel} [MAXCELLS]\\
+\>int {\bfseries TDC} [MAXCELLS]\\
+\>int {\bfseries ADC} [MAXCELLS]\\
+\>int {\bfseries HitBit} [MAXCELLS]\\
+\>int {\bfseries GainBit} [MAXCELLS]\\
+\} {\bfseries \_hFill}\label{classCALICE_1_1RootTreeGeneratorEUDAQ2016_a4340cd1c609e3822224f574558068ecc}
+\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned int {\bfseries MAXCELLS} = 7609\label{classCALICE_1_1RootTreeGeneratorEUDAQ2016_abde558aa96b4b0d60af193c9aeef45c4}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries ievt}\label{classCALICE_1_1RootTreeGeneratorEUDAQ2016_a7a5b38d420f5c9bbffebed4a12fbc686}
+
+\item 
+int {\bfseries runNumber}\label{classCALICE_1_1RootTreeGeneratorEUDAQ2016_a9fa143e155360b6f645d0b19f5e83efa}
+
+\item 
+int {\bfseries eventNumber}\label{classCALICE_1_1RootTreeGeneratorEUDAQ2016_a87e4a3f01d9619d80dee5e3ce99e4bd3}
+
+\item 
+int {\bfseries Timestamp}\label{classCALICE_1_1RootTreeGeneratorEUDAQ2016_a9559dfea2413851744d5aa51f0634b25}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std::map$<$ TTree $\ast$, {\bf RootTreeGeneratorEUDAQ2016} $\ast$ $>$ {\bfseries \_\-treeFillerMap}\label{classCALICE_1_1RootTreeGeneratorEUDAQ2016_a903416643c6674afccaea80284251609}
+
+\item 
+static std::map$<$ TTree $\ast$, {\bf RootTreeGeneratorEUDAQ2016} $\ast$ $>$ {\bfseries \_\-treeOwnerMap}\label{classCALICE_1_1RootTreeGeneratorEUDAQ2016_a3308044bfa6b2926022e7b2d5c332535}
+
+\item 
+static std::map$<$ TFile $\ast$, {\bf RootTreeGeneratorEUDAQ2016} $\ast$ $>$ {\bfseries \_\-fileOwnerMap}\label{classCALICE_1_1RootTreeGeneratorEUDAQ2016_a15406fbbea39ab6fbca1f5feacfd2bfd}
+
+\item 
+static const double {\bfseries INVALID} = -\/FLT\_\-MAX\label{classCALICE_1_1RootTreeGeneratorEUDAQ2016_ab2522fe7595699b48a20555da4923c39}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to process Labview raw. \begin{DoxyAuthor}{Author}
+: Shaojun Lu DESY 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Nov 15 2012 
+\end{DoxyDate}
+
+
+Definition at line 21 of file RootTreeGeneratorEUDAQ2016.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+RootTreeGeneratorEUDAQ2016.hh\item 
+RootTreeGeneratorEUDAQ2016.cc\end{DoxyCompactItemize}

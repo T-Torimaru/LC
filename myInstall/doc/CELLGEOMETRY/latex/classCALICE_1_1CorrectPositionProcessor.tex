@@ -1,0 +1,83 @@
+\section{CALICE::CorrectPositionProcessor Class Reference}
+\label{classCALICE_1_1CorrectPositionProcessor}\index{CALICE::CorrectPositionProcessor@{CALICE::CorrectPositionProcessor}}
+
+
+{\ttfamily \#include $<$CorrectPositionProcessor.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Processor $\ast$ {\bfseries newProcessor} ()\label{classCALICE_1_1CorrectPositionProcessor_a2746de98b6d03b9eb77431df1016a062}
+
+\item 
+virtual void {\bf init} ()
+\item 
+virtual void {\bf processEvent} (LCEvent $\ast$evt)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf createSimRecRelation} (LCEvent $\ast$evt)
+\item 
+virtual void {\bf checkSimRecRelation} (LCEvent $\ast$evt)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Processor that generates a collection of CalorimeterHits with corrected position.
+
+\begin{DoxyParagraph}{processor parameters}
+\begin{TabularC}{2}
+\hline
+steering file parameter name &description  \\\cline{1-2}
+{\bfseries {\itshape  CellDescriptionProcessorName \/}}&name of the \doxyref{CellDescriptionProcessor}{p.}{classCALICE_1_1CellDescriptionProcessor} that provides position information \\\cline{1-2}
+{\bfseries {\itshape  InputCollection \/}}&name of the collection that contains the CalorimeterHits to be corrected \\\cline{1-2}
+{\bfseries {\itshape  OutputCollection \/}}&name of the collection that will contain the corrected CalorimeterHits \\\cline{1-2}
+{\bfseries {\itshape  ScaleEnergy \/}}&scale factor for the energy of the hits \\\cline{1-2}
+\end{TabularC}
+
+\end{DoxyParagraph}
+\begin{DoxyAuthor}{Author}
+{\tt Benjamin.Lutz@desy.de} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+June 2009 
+\end{DoxyDate}
+
+
+Definition at line 40 of file CorrectPositionProcessor.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::CorrectPositionProcessor@{CALICE::CorrectPositionProcessor}!checkSimRecRelation@{checkSimRecRelation}}
+\index{checkSimRecRelation@{checkSimRecRelation}!CALICE::CorrectPositionProcessor@{CALICE::CorrectPositionProcessor}}
+\subsubsection[{checkSimRecRelation}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CorrectPositionProcessor::checkSimRecRelation (LCEvent $\ast$ {\em evt})\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classCALICE_1_1CorrectPositionProcessor_a58578535a9a6c68351516650628c1c59}
+Check the LCRelation between Mokka SimCalorimeterHits and reconstructed CalorimeterHits 
+
+Definition at line 276 of file CorrectPositionProcessor.cc.\index{CALICE::CorrectPositionProcessor@{CALICE::CorrectPositionProcessor}!createSimRecRelation@{createSimRecRelation}}
+\index{createSimRecRelation@{createSimRecRelation}!CALICE::CorrectPositionProcessor@{CALICE::CorrectPositionProcessor}}
+\subsubsection[{createSimRecRelation}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CorrectPositionProcessor::createSimRecRelation (LCEvent $\ast$ {\em evt})\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1CorrectPositionProcessor_a6cb567824d023f735791b2cb2bb3a399}
+Create a collection of type LCRelation (relation between Mokka SimCalorimeterHits and reconstructed CalorimeterHits), if the processor parameter CreateSimRecRelation is true 
+
+Definition at line 202 of file CorrectPositionProcessor.cc.
+
+Referenced by processEvent().\index{CALICE::CorrectPositionProcessor@{CALICE::CorrectPositionProcessor}!init@{init}}
+\index{init@{init}!CALICE::CorrectPositionProcessor@{CALICE::CorrectPositionProcessor}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CorrectPositionProcessor::init ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCALICE_1_1CorrectPositionProcessor_aa53c287405b06abca48790751f5aaab4}
+Called at the begin of the job before anything is read. 
+
+Definition at line 84 of file CorrectPositionProcessor.cc.
+
+References CALICE::CellDescriptionProcessor::getCellDescriptions(), and CALICE::MappingProcessor::getMapper().\index{CALICE::CorrectPositionProcessor@{CALICE::CorrectPositionProcessor}!processEvent@{processEvent}}
+\index{processEvent@{processEvent}!CALICE::CorrectPositionProcessor@{CALICE::CorrectPositionProcessor}}
+\subsubsection[{processEvent}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CorrectPositionProcessor::processEvent (LCEvent $\ast$ {\em evt})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCALICE_1_1CorrectPositionProcessor_a8ec9f3ef853fb453faca1efd3b82d660}
+Called for every event. 
+
+Definition at line 119 of file CorrectPositionProcessor.cc.
+
+References createSimRecRelation().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+CorrectPositionProcessor.hh\item 
+CorrectPositionProcessor.cc\end{DoxyCompactItemize}

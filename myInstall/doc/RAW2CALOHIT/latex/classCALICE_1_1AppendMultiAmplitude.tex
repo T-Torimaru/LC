@@ -1,0 +1,88 @@
+\section{CALICE::AppendMultiAmplitude Class Reference}
+\label{classCALICE_1_1AppendMultiAmplitude}\index{CALICE::AppendMultiAmplitude@{CALICE::AppendMultiAmplitude}}
+
+
+Processor to add PAR\_\-MULTI\_\-AMPL (amplitude of the Multiplicity Counter) to the event.  
+
+
+{\ttfamily \#include $<$AppendMultiAmplitude.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Processor $\ast$ {\bfseries newProcessor} ()\label{classCALICE_1_1AppendMultiAmplitude_af5c8a3fce4bc7612157e3d6ad50872d6}
+
+\item 
+void {\bfseries init} ()\label{classCALICE_1_1AppendMultiAmplitude_a528565bad5c83a2677bc752f4d47d1f6}
+
+\item 
+void {\bfseries processRunHeader} (LCRunHeader $\ast$run)\label{classCALICE_1_1AppendMultiAmplitude_a6c147a934e7b60ecbf788f7de33bfde9}
+
+\item 
+void {\bfseries processEvent} (LCEvent $\ast$evt)\label{classCALICE_1_1AppendMultiAmplitude_a80b214680c8275820126d7826b2ca0e0}
+
+\item 
+void {\bfseries end} ()\label{classCALICE_1_1AppendMultiAmplitude_a9976e1ce7c039db675881af775f68986}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bfseries \_\-adcColName}\label{classCALICE_1_1AppendMultiAmplitude_a90acd521e292e3f2bdd9ff56b4606f55}
+
+\item 
+std::string {\bfseries \_\-connectionColName}\label{classCALICE_1_1AppendMultiAmplitude_a2902a95068d152cb11826aafe85f63bb}
+
+\item 
+std::string {\bfseries \_\-parNameMultiAmpl}\label{classCALICE_1_1AppendMultiAmplitude_a209412842c94a4ff6be9af6f7b41bf89}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries conditionsChanged} (lcio::LCCollection $\ast$col)\label{classCALICE_1_1AppendMultiAmplitude_ae04c6bc30a5a1bfc4700c2575ae09a76}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int {\bfseries \_\-crate}\label{classCALICE_1_1AppendMultiAmplitude_a4ecf8796bb93026dbf2d680b7dd70214}
+
+\item 
+unsigned int {\bfseries \_\-slot}\label{classCALICE_1_1AppendMultiAmplitude_a281f76046ded3a3aa7c5880242caf1bd}
+
+\item 
+unsigned int {\bfseries \_\-fe}\label{classCALICE_1_1AppendMultiAmplitude_a0b02671cdf754fc52ab8fa6348293431}
+
+\item 
+unsigned int {\bfseries \_\-chip}\label{classCALICE_1_1AppendMultiAmplitude_aa15678d8ba0780fad8c59e546087781d}
+
+\item 
+unsigned int {\bfseries \_\-channel}\label{classCALICE_1_1AppendMultiAmplitude_ab205e6309046702fb743238a594a14fd}
+
+\item 
+bool {\bfseries \_\-connectionAvailable}\label{classCALICE_1_1AppendMultiAmplitude_af350bb41fd000d9968f9097cb91ad771}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Processor to add PAR\_\-MULTI\_\-AMPL (amplitude of the Multiplicity Counter) to the event. This processor adds an event parameter containing the amplitude of the analog multiplicity counter readout. The mapping of the multiplicity counter connection is read from the LCIO stream.
+
+\begin{DoxyVersion}{Version}
+1.0 
+\end{DoxyVersion}
+\begin{DoxyAuthor}{Author}
+{\tt Benjamin.Lutz@desy.de} 
+
+{\tt Nils.Feege@desy.de} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+March 2010 
+\end{DoxyDate}
+
+
+Definition at line 25 of file AppendMultiAmplitude.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+AppendMultiAmplitude.hh\item 
+AppendMultiAmplitude.cc\end{DoxyCompactItemize}

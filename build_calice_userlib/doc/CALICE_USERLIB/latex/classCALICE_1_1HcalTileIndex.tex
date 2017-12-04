@@ -1,0 +1,123 @@
+\section{CALICE::HcalTileIndex Class Reference}
+\label{classCALICE_1_1HcalTileIndex}\index{CALICE::HcalTileIndex@{CALICE::HcalTileIndex}}
+
+
+Encodes/decodes hardware channel information for the \doxyref{CALICE}{p.}{namespaceCALICE} AHCAL prototype.  
+
+
+{\ttfamily \#include $<$HcalTileIndex.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf HcalTileIndex} ()
+\begin{DoxyCompactList}\small\item\em Empty constructor. \item\end{DoxyCompactList}\item 
+{\bf HcalTileIndex} (int index)\label{classCALICE_1_1HcalTileIndex_a0aa6c6fdae8c031ff1f83dd8efe9c6d6}
+
+\begin{DoxyCompactList}\small\item\em Constructor from an integer for decoding. \item\end{DoxyCompactList}\item 
+{\bf HcalTileIndex} (short mod, short chip, short chan)
+\begin{DoxyCompactList}\small\item\em Constructor from the minimum set of parameters required for unique identification. \item\end{DoxyCompactList}\item 
+{\bf HcalTileIndex} (short mod, short chip, short chan, short sipm)
+\begin{DoxyCompactList}\small\item\em Constructor from the full set of parameters. \item\end{DoxyCompactList}\item 
+{\bf $\sim$HcalTileIndex} ()\label{classCALICE_1_1HcalTileIndex_a398e94753c897c5d34d88b3401f5fd71}
+
+\begin{DoxyCompactList}\small\item\em Destructor -\/ does nothing. \item\end{DoxyCompactList}\item 
+unsigned short {\bf getModule} () const \label{classCALICE_1_1HcalTileIndex_a540b5492b1be53b703add6f02a2fed75}
+
+\begin{DoxyCompactList}\small\item\em Decode module identifier. \item\end{DoxyCompactList}\item 
+unsigned short {\bf getModuleType} () const \label{classCALICE_1_1HcalTileIndex_ad83da5fc1e46cb351b544ff9b4ed29b0}
+
+\begin{DoxyCompactList}\small\item\em Derive module type from module and chip identifier. \item\end{DoxyCompactList}\item 
+unsigned short {\bf getChip} () const \label{classCALICE_1_1HcalTileIndex_a0f64142ad01b7fef95ee8ee92727b9b7}
+
+\begin{DoxyCompactList}\small\item\em Decode ASIC identifier. \item\end{DoxyCompactList}\item 
+unsigned short {\bf getChannel} () const \label{classCALICE_1_1HcalTileIndex_a479e6ce42ffabcc633fb613ac01345fa}
+
+\begin{DoxyCompactList}\small\item\em Decode multiplex channel. \item\end{DoxyCompactList}\item 
+unsigned short {\bf getSipm} () const \label{classCALICE_1_1HcalTileIndex_ab488979a06db1ca13cdccbd43adc9308}
+
+\begin{DoxyCompactList}\small\item\em Decode SiPM number. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getIndex} () const \label{classCALICE_1_1HcalTileIndex_a29c1878383ea8593073db1478f3f1baf}
+
+\begin{DoxyCompactList}\small\item\em Return THE index. \item\end{DoxyCompactList}\item 
+{\bf HcalTileIndex} \& {\bf setModule} (short mod)\label{classCALICE_1_1HcalTileIndex_a1194d53c0179b3dd2a6c5e03ec9a0524}
+
+\begin{DoxyCompactList}\small\item\em Encode module identifier. \item\end{DoxyCompactList}\item 
+{\bf HcalTileIndex} \& {\bf setChip} (short chip)\label{classCALICE_1_1HcalTileIndex_ab2e3d8ecf1c8e623b45433c2742c6ca8}
+
+\begin{DoxyCompactList}\small\item\em Encode ASIC identifier. \item\end{DoxyCompactList}\item 
+{\bf HcalTileIndex} \& {\bf setChannel} (short chan)\label{classCALICE_1_1HcalTileIndex_a4f45965bc383f021d06a020d37f85799}
+
+\begin{DoxyCompactList}\small\item\em Encode multiplex channel. \item\end{DoxyCompactList}\item 
+{\bf HcalTileIndex} \& {\bf setSipm} (short sipm)\label{classCALICE_1_1HcalTileIndex_a1fb54613eea3444cd8308d742f78875c}
+
+\begin{DoxyCompactList}\small\item\em Encode SiPM number. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std::string {\bf getEncodingString} (const unsigned int startbit)\label{classCALICE_1_1HcalTileIndex_a869cd817ebbb8d5b542e7cfa61bd62f0}
+
+\begin{DoxyCompactList}\small\item\em Return the cellid encoding string according to an lcio BitField64. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int {\bfseries \_\-index}\label{classCALICE_1_1HcalTileIndex_aee8c8f51535723b3746d75ce49e54a81}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Encodes/decodes hardware channel information for the \doxyref{CALICE}{p.}{namespaceCALICE} AHCAL prototype. This class encodes and decodes module, chip and channel as well as the SiPM number into/from a single integer. This integer is intended to be stored in the CellID1 field of LCIO CalorimeterHit objects for easy reference to and unique identification of the hardware information of reconstructed hits.
+
+\begin{DoxyAuthor}{Author}
+{\tt Niels.Meyer@desy.de} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Nov. 17, 2007 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.0 
+\end{DoxyVersion}
+
+
+Definition at line 39 of file HcalTileIndex.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CALICE::HcalTileIndex@{CALICE::HcalTileIndex}!HcalTileIndex@{HcalTileIndex}}
+\index{HcalTileIndex@{HcalTileIndex}!CALICE::HcalTileIndex@{CALICE::HcalTileIndex}}
+\subsubsection[{HcalTileIndex}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::HcalTileIndex::HcalTileIndex ()\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1HcalTileIndex_a50664f3b0b2355edd5cd99d04005477d}
+
+
+Empty constructor. All parameters default to zero. 
+
+Definition at line 43 of file HcalTileIndex.hh.
+
+References setChannel(), setChip(), setModule(), and setSipm().\index{CALICE::HcalTileIndex@{CALICE::HcalTileIndex}!HcalTileIndex@{HcalTileIndex}}
+\index{HcalTileIndex@{HcalTileIndex}!CALICE::HcalTileIndex@{CALICE::HcalTileIndex}}
+\subsubsection[{HcalTileIndex}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::HcalTileIndex::HcalTileIndex (short {\em mod}, \/  short {\em chip}, \/  short {\em chan})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1HcalTileIndex_aad5b0d551d3733fabf0d9e086dfe5794}
+
+
+Constructor from the minimum set of parameters required for unique identification. The SiPM number defaults to zero.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em mod}]Module identifier \item[{\em chip}]ASIC chip identifier \item[{\em chan}]Multiplex channel identifier \end{DoxyParams}
+
+
+Definition at line 60 of file HcalTileIndex.hh.
+
+References setChannel(), setChip(), setModule(), and setSipm().\index{CALICE::HcalTileIndex@{CALICE::HcalTileIndex}!HcalTileIndex@{HcalTileIndex}}
+\index{HcalTileIndex@{HcalTileIndex}!CALICE::HcalTileIndex@{CALICE::HcalTileIndex}}
+\subsubsection[{HcalTileIndex}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::HcalTileIndex::HcalTileIndex (short {\em mod}, \/  short {\em chip}, \/  short {\em chan}, \/  short {\em sipm})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1HcalTileIndex_a0bfbc207ddb962b86ab31991b504645b}
+
+
+Constructor from the full set of parameters. 
+\begin{DoxyParams}{Parameters}
+\item[{\em mod}]Module identifier \item[{\em chip}]ASIC chip identifier \item[{\em chan}]Multiplex channel identifier \item[{\em sipm}]SiPM identifier \end{DoxyParams}
+
+
+Definition at line 71 of file HcalTileIndex.hh.
+
+References setChannel(), setChip(), setModule(), and setSipm().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+HcalTileIndex.hh\end{DoxyCompactItemize}

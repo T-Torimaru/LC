@@ -1,0 +1,261 @@
+\section{FitLikelihood Class Reference}
+\label{classFitLikelihood}\index{FitLikelihood@{FitLikelihood}}
+
+
+Class for finding initial parameters of fit and providing an output of fit.  
+
+
+{\ttfamily \#include $<$Fitlikelihood.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf FitLikelihood} (TH1 $\ast$h)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+TH1 $\ast$ {\bfseries getHistogram} ()\label{classFitLikelihood_aa4c63d0446450ca3b91370ebb2452b4b}
+
+\item 
+double {\bf findPeakInitBezier} (int order, int rebin)
+\begin{DoxyCompactList}\small\item\em Find the peak position from stored histogram using \doxyref{Bezier}{p.}{classBezier} function in class \doxyref{Bezier}{p.}{classBezier}. \item\end{DoxyCompactList}\item 
+{\bf Bezier} $\ast$ {\bfseries getBezier} ()\label{classFitLikelihood_a0b836541302dd5569e3692a0c2df835b}
+
+\item 
+double {\bfseries getPeakInit} ()\label{classFitLikelihood_aec3aa66556a81830df6aef46b0fda113}
+
+\item 
+double {\bf findRangeMin} (const TH1 $\ast$h)
+\begin{DoxyCompactList}\small\item\em Find the proper low value of fit range of histogram h to avoid of pedestal influence. \item\end{DoxyCompactList}\item 
+{\bf FitLikelihood} \& {\bfseries setPeakInit} (const double iniPeak)\label{classFitLikelihood_aec8b401c5a47a07a5b158a5f4d2aa9aa}
+
+\item 
+{\bf FitLikelihood} \& {\bf setRange} (double minRange, double maxRange)
+\begin{DoxyCompactList}\small\item\em Set a fixed range $\left< minRange,maxRange\right>$. \item\end{DoxyCompactList}\item 
+const double $\ast$ {\bfseries getRange} () const \label{classFitLikelihood_acecfe1d288fcd8da3acb45c8bceeeb93}
+
+\item 
+double {\bfseries getRangeMin} () const \label{classFitLikelihood_a788a0b07da50e3d3ffa9f1b2f4df1d52}
+
+\item 
+{\bf FitLikelihood} \& {\bf setIniValues} (const double $\ast$iniValues)\label{classFitLikelihood_a4b15abcebcad793602bc5912081ce04b}
+
+\begin{DoxyCompactList}\small\item\em Set initial values of fitting parameters (Landau sigma, Landau mean, Gaus sigma). \item\end{DoxyCompactList}\item 
+double $\ast$ {\bfseries getIniValues} ()\label{classFitLikelihood_a6557165afafa1ba236ebc8a5f2e18baa}
+
+\item 
+{\bf FitLikelihood} \& {\bf setParlimitslo} (double minSl, double minMl, double minSg)
+\begin{DoxyCompactList}\small\item\em Set lower limits of fitting parameters (Landau sigma, Landau mean, Gaus sigma). \item\end{DoxyCompactList}\item 
+{\bf FitLikelihood} \& {\bf setParlimitshi} (double maxSl, double maxMl, double maxSg)
+\begin{DoxyCompactList}\small\item\em Set upper limits of fitting parameters (Landau sigma, Landau mean, Gaus sigma). \item\end{DoxyCompactList}\item 
+const double $\ast$ {\bf getParMin} () const 
+\begin{DoxyCompactList}\small\item\em Get array of minimal values of fitting parameters (Landau sigma, Landau mean, Gaus sigma). \item\end{DoxyCompactList}\item 
+const double $\ast$ {\bf getParMax} () const 
+\begin{DoxyCompactList}\small\item\em Get array of maximal values of fitting parameters (Landau sigma, Landau mean, Gaus sigma). \item\end{DoxyCompactList}\item 
+RooPlot $\ast$ {\bf writeRooroot} (const TH1 $\ast$h, const {\bf Langaus} $\ast$lxg)
+\begin{DoxyCompactList}\small\item\em Writing root output of histogram h, fitted with created object lxg of class \doxyref{Langaus}{p.}{classLangaus} on frame rooFrame, canvas with name nameCan. \item\end{DoxyCompactList}\item 
+TH1 $\ast$ {\bf cloneHisto} (int rbn, int rng, int lps)
+\begin{DoxyCompactList}\small\item\em Modification of histogram stored by constructor. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double {\bf \_\-peakInit}\label{classFitLikelihood_ade2aadd176fb1d663323d7a33b95f020}
+
+\begin{DoxyCompactList}\small\item\em rough estimation of peak position. Used as initial value for Landau mean. \item\end{DoxyCompactList}\item 
+double {\bf \_\-rangeMin}\label{classFitLikelihood_ab7e4aa5ffbebff2174809fabc8859348}
+
+\begin{DoxyCompactList}\small\item\em minimum of range of fit. Position of minimum between zero and rough peak position estimation. Used \item\end{DoxyCompactList}\item 
+double {\bf \_\-rangeInit} [2]\label{classFitLikelihood_a771848551cef1de117d34995bdeca67e}
+
+\begin{DoxyCompactList}\small\item\em range of fit \item\end{DoxyCompactList}\item 
+double {\bf \_\-parlimitslo} [3]
+\begin{DoxyCompactList}\small\item\em low limit of parameters \item\end{DoxyCompactList}\item 
+double {\bf \_\-parlimitshi} [3]
+\begin{DoxyCompactList}\small\item\em high limit of parameters \item\end{DoxyCompactList}\item 
+double {\bf \_\-fitValues} [3]
+\begin{DoxyCompactList}\small\item\em obtained parameters from fit \item\end{DoxyCompactList}\item 
+double {\bf \_\-efitValue} [3]\label{classFitLikelihood_a6fbb0613804e14de66989e74808d6a24}
+
+\begin{DoxyCompactList}\small\item\em errors of obtained parameters from fit \item\end{DoxyCompactList}\item 
+double {\bf \_\-iniValues} [3]\label{classFitLikelihood_a8c60d3a5becc218cd5b54ab442e80513}
+
+\begin{DoxyCompactList}\small\item\em initial values of parameters \item\end{DoxyCompactList}\item 
+double {\bf \_\-peak}
+\begin{DoxyCompactList}\small\item\em obtained peak from fit function \item\end{DoxyCompactList}\item 
+double {\bf \_\-epeak}
+\begin{DoxyCompactList}\small\item\em obtained error of found peak position \item\end{DoxyCompactList}\item 
+TH1 $\ast$ {\bfseries \_\-histogram}\label{classFitLikelihood_ac7962c639e1961bca83534b3750a5895}
+
+\item 
+{\bf Bezier} $\ast$ {\bfseries \_\-bezier}\label{classFitLikelihood_a6a89b7bd8ac3f4c299b9b7fd4c5dbb7b}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for finding initial parameters of fit and providing an output of fit. Fitting function is $ (l\otimes g)(x)=\int_{-\infty}^{\infty}\mbox{d}y\ l(x-y)\cdot g(y)$, where $l(x)$ is a Landau function and $ g(x)$ is a Gaus function. The class for creation and handling with function $(l\otimes g)$, created using Fast Fourier transformation(FFT) or direct numerical computation(NC), is \doxyref{Langaus}{p.}{classLangaus}. There are advantages and also disadvantages for using either FFT or NC. For functions, which can be complete to circular functions, or which have same value for left and right corner (0) are proper for FFT. There is a problem with NC when the sigma of Gaus is going to zero (cutoff for integral range). Functions, which are not \char`\"{}circular-\/like\char`\"{} in fit range are improper for FFT (not precise results) and is better to use NC. If it is used NC, it is inevitable to adjust lower limit of gaus sigma via \doxyref{setParlimitslo}{p.}{classFitLikelihood_aa1fa3e114aaa9836ff78a45ba0ce4d0c}.
+
+Detailed description follows here. \begin{DoxyAuthor}{Author}
+Boris Bulanek, DESY 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+June 2010 
+\end{DoxyDate}
+
+
+Definition at line 43 of file Fitlikelihood.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{FitLikelihood@{FitLikelihood}!FitLikelihood@{FitLikelihood}}
+\index{FitLikelihood@{FitLikelihood}!FitLikelihood@{FitLikelihood}}
+\subsubsection[{FitLikelihood}]{\setlength{\rightskip}{0pt plus 5cm}FitLikelihood::FitLikelihood (TH1 $\ast$ {\em h})}\label{classFitLikelihood_a26f5cef0db795d02fe5f9be649a53457}
+
+
+Constructor. 
+\begin{DoxyParams}{Parameters}
+\item[{\em h}]-\/ histogram for fitting. \end{DoxyParams}
+
+
+Definition at line 6 of file Fitlikelihood.cc.
+
+References \_\-iniValues, \_\-peakInit, \_\-rangeInit, and \_\-rangeMin.
+
+\subsection{Member Function Documentation}
+\index{FitLikelihood@{FitLikelihood}!cloneHisto@{cloneHisto}}
+\index{cloneHisto@{cloneHisto}!FitLikelihood@{FitLikelihood}}
+\subsubsection[{cloneHisto}]{\setlength{\rightskip}{0pt plus 5cm}TH1 $\ast$ FitLikelihood::cloneHisto (int {\em rbn}, \/  int {\em rng}, \/  int {\em lps})}\label{classFitLikelihood_a2cb6dae3ddcbc1f7325599741273eea5}
+
+
+Modification of histogram stored by constructor. Value for every bin of histogram is changed by mean of neighbouring bins. 
+\begin{DoxyParams}{Parameters}
+\item[{\em rbn}]-\/ rebining of datas from \_\-histogram. \item[{\em rng}]-\/ mean for bin \char`\"{}i\char`\"{} is created from bins in range $\left<i-rng,i+rng\right>$. \item[{\em lps}]-\/ number of smoothing repetitions. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+mdified histogram 
+\end{DoxyReturn}
+
+
+Definition at line 116 of file Fitlikelihood.cc.\index{FitLikelihood@{FitLikelihood}!findPeakInitBezier@{findPeakInitBezier}}
+\index{findPeakInitBezier@{findPeakInitBezier}!FitLikelihood@{FitLikelihood}}
+\subsubsection[{findPeakInitBezier}]{\setlength{\rightskip}{0pt plus 5cm}double FitLikelihood::findPeakInitBezier (int {\em order}, \/  int {\em rebin})}\label{classFitLikelihood_aff8aef86dc169f4a16177a3b17903a0c}
+
+
+Find the peak position from stored histogram using \doxyref{Bezier}{p.}{classBezier} function in class \doxyref{Bezier}{p.}{classBezier}. 
+\begin{DoxyParams}{Parameters}
+\item[{\em order}]-\/ Order of \doxyref{Bezier}{p.}{classBezier} function \item[{\em rebin}]-\/ rebining of histogram (stored e.g. by calling constructor) \end{DoxyParams}
+
+
+Definition at line 39 of file Fitlikelihood.cc.
+
+References \_\-iniValues, \_\-parlimitshi, \_\-parlimitslo, \_\-peakInit, \_\-rangeMin, and Bezier::findPeak().\index{FitLikelihood@{FitLikelihood}!findRangeMin@{findRangeMin}}
+\index{findRangeMin@{findRangeMin}!FitLikelihood@{FitLikelihood}}
+\subsubsection[{findRangeMin}]{\setlength{\rightskip}{0pt plus 5cm}double FitLikelihood::findRangeMin (const TH1 $\ast$ {\em h})}\label{classFitLikelihood_a4c117e4b3a1aacb2b0575e4d065c3cc0}
+
+
+Find the proper low value of fit range of histogram h to avoid of pedestal influence. 
+
+Definition at line 16 of file Fitlikelihood.cc.
+
+References \_\-peakInit, and \_\-rangeMin.\index{FitLikelihood@{FitLikelihood}!getParMax@{getParMax}}
+\index{getParMax@{getParMax}!FitLikelihood@{FitLikelihood}}
+\subsubsection[{getParMax}]{\setlength{\rightskip}{0pt plus 5cm}const double$\ast$ FitLikelihood::getParMax () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classFitLikelihood_aac097e2d15770de55c7a93149d3722a7}
+
+
+Get array of maximal values of fitting parameters (Landau sigma, Landau mean, Gaus sigma). 
+
+Definition at line 88 of file Fitlikelihood.hh.
+
+References \_\-parlimitshi.\index{FitLikelihood@{FitLikelihood}!getParMin@{getParMin}}
+\index{getParMin@{getParMin}!FitLikelihood@{FitLikelihood}}
+\subsubsection[{getParMin}]{\setlength{\rightskip}{0pt plus 5cm}const double$\ast$ FitLikelihood::getParMin () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classFitLikelihood_a399ab42c4bdf8fb381c6a3bf3dc0e599}
+
+
+Get array of minimal values of fitting parameters (Landau sigma, Landau mean, Gaus sigma). 
+
+Definition at line 85 of file Fitlikelihood.hh.
+
+References \_\-parlimitslo.\index{FitLikelihood@{FitLikelihood}!setParlimitshi@{setParlimitshi}}
+\index{setParlimitshi@{setParlimitshi}!FitLikelihood@{FitLikelihood}}
+\subsubsection[{setParlimitshi}]{\setlength{\rightskip}{0pt plus 5cm}{\bf FitLikelihood} \& FitLikelihood::setParlimitshi (double {\em maxSl}, \/  double {\em maxMl}, \/  double {\em maxSg})}\label{classFitLikelihood_ab8ac78e875657bfde81511b0c0a5308d}
+
+
+Set upper limits of fitting parameters (Landau sigma, Landau mean, Gaus sigma). 
+
+Definition at line 92 of file Fitlikelihood.cc.
+
+References \_\-parlimitshi.\index{FitLikelihood@{FitLikelihood}!setParlimitslo@{setParlimitslo}}
+\index{setParlimitslo@{setParlimitslo}!FitLikelihood@{FitLikelihood}}
+\subsubsection[{setParlimitslo}]{\setlength{\rightskip}{0pt plus 5cm}{\bf FitLikelihood} \& FitLikelihood::setParlimitslo (double {\em minSl}, \/  double {\em minMl}, \/  double {\em minSg})}\label{classFitLikelihood_aa1fa3e114aaa9836ff78a45ba0ce4d0c}
+
+
+Set lower limits of fitting parameters (Landau sigma, Landau mean, Gaus sigma). 
+
+Definition at line 85 of file Fitlikelihood.cc.
+
+References \_\-parlimitslo.\index{FitLikelihood@{FitLikelihood}!setRange@{setRange}}
+\index{setRange@{setRange}!FitLikelihood@{FitLikelihood}}
+\subsubsection[{setRange}]{\setlength{\rightskip}{0pt plus 5cm}{\bf FitLikelihood} \& FitLikelihood::setRange (double {\em minRange}, \/  double {\em maxRange})}\label{classFitLikelihood_add9028e5c4e137a86d8de29d91b752a3}
+
+
+Set a fixed range $\left< minRange,maxRange\right>$. 
+
+Definition at line 67 of file Fitlikelihood.cc.
+
+References \_\-rangeInit.\index{FitLikelihood@{FitLikelihood}!writeRooroot@{writeRooroot}}
+\index{writeRooroot@{writeRooroot}!FitLikelihood@{FitLikelihood}}
+\subsubsection[{writeRooroot}]{\setlength{\rightskip}{0pt plus 5cm}RooPlot $\ast$ FitLikelihood::writeRooroot (const TH1 $\ast$ {\em h}, \/  const {\bf Langaus} $\ast$ {\em lxg})}\label{classFitLikelihood_a4b59eda34ea36dbb5be1fc3e72e80caf}
+
+
+Writing root output of histogram h, fitted with created object lxg of class \doxyref{Langaus}{p.}{classLangaus} on frame rooFrame, canvas with name nameCan. Output directory is output. 
+
+Definition at line 104 of file Fitlikelihood.cc.
+
+References Langaus::getLangausBase().
+
+\subsection{Field Documentation}
+\index{FitLikelihood@{FitLikelihood}!\_\-epeak@{\_\-epeak}}
+\index{\_\-epeak@{\_\-epeak}!FitLikelihood@{FitLikelihood}}
+\subsubsection[{\_\-epeak}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf FitLikelihood::\_\-epeak}\hspace{0.3cm}{\ttfamily  [private]}}\label{classFitLikelihood_abe8f277f85be9e0fbeb5b019674b1bce}
+
+
+obtained error of found peak position \begin{DoxySeeAlso}{See also}
+findePeak 
+\end{DoxySeeAlso}
+
+
+Definition at line 130 of file Fitlikelihood.hh.\index{FitLikelihood@{FitLikelihood}!\_\-fitValues@{\_\-fitValues}}
+\index{\_\-fitValues@{\_\-fitValues}!FitLikelihood@{FitLikelihood}}
+\subsubsection[{\_\-fitValues}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf FitLikelihood::\_\-fitValues}[3]\hspace{0.3cm}{\ttfamily  [private]}}\label{classFitLikelihood_af30256fdc6b70f70bb5f52ea43e172d9}
+
+
+obtained parameters from fit (Landau sigma, Landau mean, Gaus sigma) 
+
+Definition at line 120 of file Fitlikelihood.hh.\index{FitLikelihood@{FitLikelihood}!\_\-parlimitshi@{\_\-parlimitshi}}
+\index{\_\-parlimitshi@{\_\-parlimitshi}!FitLikelihood@{FitLikelihood}}
+\subsubsection[{\_\-parlimitshi}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf FitLikelihood::\_\-parlimitshi}[3]\hspace{0.3cm}{\ttfamily  [private]}}\label{classFitLikelihood_ad4998d3432d9f4057a07928e07c5e45c}
+
+
+high limit of parameters (Landau sigma, Landau mean, Gaus sigma) 
+
+Definition at line 117 of file Fitlikelihood.hh.
+
+Referenced by findPeakInitBezier(), getParMax(), and setParlimitshi().\index{FitLikelihood@{FitLikelihood}!\_\-parlimitslo@{\_\-parlimitslo}}
+\index{\_\-parlimitslo@{\_\-parlimitslo}!FitLikelihood@{FitLikelihood}}
+\subsubsection[{\_\-parlimitslo}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf FitLikelihood::\_\-parlimitslo}[3]\hspace{0.3cm}{\ttfamily  [private]}}\label{classFitLikelihood_a4f072ecced8e179b3a0ccbcbd224a7cf}
+
+
+low limit of parameters (Landau sigma, Landau mean, Gaus sigma) 
+
+Definition at line 114 of file Fitlikelihood.hh.
+
+Referenced by findPeakInitBezier(), getParMin(), and setParlimitslo().\index{FitLikelihood@{FitLikelihood}!\_\-peak@{\_\-peak}}
+\index{\_\-peak@{\_\-peak}!FitLikelihood@{FitLikelihood}}
+\subsubsection[{\_\-peak}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf FitLikelihood::\_\-peak}\hspace{0.3cm}{\ttfamily  [private]}}\label{classFitLikelihood_a6cbeadcc570c5e68a2bb6afe11019733}
+
+
+obtained peak from fit function \begin{DoxySeeAlso}{See also}
+findPeak() 
+\end{DoxySeeAlso}
+
+
+Definition at line 127 of file Fitlikelihood.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+Fitlikelihood.hh\item 
+Fitlikelihood.cc\end{DoxyCompactItemize}

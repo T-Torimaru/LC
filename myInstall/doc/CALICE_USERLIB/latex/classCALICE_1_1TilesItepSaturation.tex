@@ -1,0 +1,48 @@
+\section{CALICE::TilesItepSaturation Class Reference}
+\label{classCALICE_1_1TilesItepSaturation}\index{CALICE::TilesItepSaturation@{CALICE::TilesItepSaturation}}
+
+
+Parameters of the sipm delivered by ITEP.  
+
+
+{\ttfamily \#include $<$TilesItepSaturation.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf TilesItepSaturation} (int SIPM, float \_\-SipmPixelSat[20], float \_\-PmtMipSat[20])\label{classCALICE_1_1TilesItepSaturation_a137e2d51af34a1e2da83760a187b5190}
+
+\begin{DoxyCompactList}\small\item\em Convenient c'tor. \item\end{DoxyCompactList}\item 
+{\bf TilesItepSaturation} (LCObject $\ast$obj)\label{classCALICE_1_1TilesItepSaturation_a0dc9854db9d9e2a0bcf771004db6497b}
+
+\begin{DoxyCompactList}\small\item\em 'Copy constructor' needed to interpret LCCollection read from file/database. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$TilesItepSaturation} ()\label{classCALICE_1_1TilesItepSaturation_afe66e11277de87e0f32a18718d936537}
+
+\begin{DoxyCompactList}\small\item\em Important for memory handling. \item\end{DoxyCompactList}\item 
+int {\bf getSIPMID} ()\label{classCALICE_1_1TilesItepSaturation_a652ac3e86905397910764be8679fc1c0}
+
+\begin{DoxyCompactList}\small\item\em the class interface: \item\end{DoxyCompactList}\item 
+float {\bfseries getSipmPixelSat} (unsigned point)\label{classCALICE_1_1TilesItepSaturation_a092ef805416c5a4fa2c42d6e05755365}
+
+\item 
+float {\bfseries getPmtMipSat} (unsigned point)\label{classCALICE_1_1TilesItepSaturation_abef08955e261b0c3b419ba56ece1d5df}
+
+\item 
+void {\bf print} (std::ostream \&os)\label{classCALICE_1_1TilesItepSaturation_a4b40234c9e0d1c22c2a13fa47b4fad7d}
+
+\begin{DoxyCompactList}\small\item\em convenient print function \item\end{DoxyCompactList}\item 
+const std::string {\bfseries getTypeName} () const \label{classCALICE_1_1TilesItepSaturation_a3e451bde21fa2a6341f2a419015db1a6}
+
+\item 
+const std::string {\bfseries getDataDescription} () const \label{classCALICE_1_1TilesItepSaturation_a488b198fa1cb769b3023669cf23a1200}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Parameters of the sipm delivered by ITEP. 
+
+Definition at line 23 of file TilesItepSaturation.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+TilesItepSaturation.hh\item 
+TilesItepSaturation.cc\end{DoxyCompactItemize}

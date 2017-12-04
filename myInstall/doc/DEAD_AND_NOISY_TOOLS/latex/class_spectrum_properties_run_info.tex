@@ -1,0 +1,546 @@
+\hypertarget{class_spectrum_properties_run_info}{
+\section{SpectrumPropertiesRunInfo Class Reference}
+\label{class_spectrum_properties_run_info}\index{SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}}
+}
+
+
+The \hyperlink{class_spectrum_properties_run_info}{SpectrumPropertiesRunInfo} is a utility class to access the spectrum properties for all channels of one specific run.  
+
+
+{\ttfamily \#include $<$SpectrumPropertiesRunInfo.h$>$}\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_spectrum_properties_run_info_1_1_channel_i_d}{ChannelID}
+\begin{DoxyCompactList}\small\item\em A channel identifier helper class. The key in the map. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_spectrum_properties_run_info_a21d9494b3f2b982c546c240375fdc89b}{SpectrumPropertiesRunInfo} (Int\_\-t runNumber, std::string AHCConfigFileName=\char`\"{}\char`\"{}, bool apply5RMSCut=false, std::string runFileName=\char`\"{}\char`\"{}, unsigned int moduleTypes=\hyperlink{class_module_type_aab41c936717bfb248a8bf1f38138db0b}{ModuleType::AHC}$|$\hyperlink{class_module_type_a9cbd6a48fabe66ed9d47d23e53d8c9b9}{ModuleType::AHC8})
+\begin{DoxyCompactList}\small\item\em This constructor opens a root file with histograms containing the spectrum per channel, named 'runNumber.root', and instantiates an \hyperlink{class_simple_mapper}{SimpleMapper} from the AHCConfigFileName. \item\end{DoxyCompactList}\item 
+\hyperlink{class_spectrum_properties_run_info_a282a3cf9cc345986c7e9852b8e8a23ec}{SpectrumPropertiesRunInfo} (Int\_\-t runNumber, TTree $\ast$spectrumPropertiesTree)
+\begin{DoxyCompactList}\small\item\em A constructor to initialise the class from a previously calculated spectrum properties tree. \item\end{DoxyCompactList}\item 
+\hyperlink{class_spectrum_properties_run_info_a34cac3093acb09c6603bbbe941a1e496}{$\sim$SpectrumPropertiesRunInfo} ()
+\begin{DoxyCompactList}\small\item\em The destructor to clean up the allocated objects. \item\end{DoxyCompactList}\item 
+TTree $\ast$ \hyperlink{class_spectrum_properties_run_info_aca0dfbac309a9619d04ce536855a89a2}{getSpectrumPropertiesTree} ()
+\begin{DoxyCompactList}\small\item\em Get a pointer to the spectrum properties tree. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_spectrum_properties_run_info_a585bf973ed2708d8095ad7510cb67724}{print} (std::string fileName=\char`\"{}\char`\"{}) const 
+\begin{DoxyCompactList}\small\item\em Print the spectrum properties tree. \item\end{DoxyCompactList}\item 
+std::vector$<$ \hyperlink{class_spectrum_properties_run_info_1_1_channel_i_d}{SpectrumPropertiesRunInfo::ChannelID} $>$ \hyperlink{class_spectrum_properties_run_info_a224a09a5da8dd40b3b368ce11811a816}{getNoisyChannels} (Double\_\-t noisyCut) const 
+\begin{DoxyCompactList}\small\item\em Returns a vector with all ChannelIDs of channels which have an rms larger or equal to {\ttfamily noisyCut}. \item\end{DoxyCompactList}\item 
+std::vector$<$ \hyperlink{class_spectrum_properties_run_info_1_1_channel_i_d}{SpectrumPropertiesRunInfo::ChannelID} $>$ \hyperlink{class_spectrum_properties_run_info_aa2d88f63b3ea5d414bbe98708689a706}{getChannelsWithRMSCut} (Double\_\-t lowerCut=0, Double\_\-t upperCut=DBL\_\-MAX) const 
+\begin{DoxyCompactList}\small\item\em Returns all channels with an RMS in the cut range (rms $>$= lowerCut) and (rms $<$=upperCut). \item\end{DoxyCompactList}\item 
+std::vector$<$ \hyperlink{class_spectrum_properties_run_info_1_1_channel_i_d}{SpectrumPropertiesRunInfo::ChannelID} $>$ \hyperlink{class_spectrum_properties_run_info_a29a7ddfe9965e36250ea137b9b981496}{getChannelsWithMeanCut} (Double\_\-t lowerCut=-\/DBL\_\-MAX, Double\_\-t upperCut=DBL\_\-MAX) const 
+\begin{DoxyCompactList}\small\item\em Returns all channels with a mean value in the cut range (mean $>$= lowerCut) and (mean $<$=upperCut). \item\end{DoxyCompactList}\item 
+void \hyperlink{class_spectrum_properties_run_info_aae84c9751a720ce8ec1fa702b54713d1}{printChannels} (std::vector$<$ \hyperlink{class_spectrum_properties_run_info_1_1_channel_i_d}{SpectrumPropertiesRunInfo::ChannelID} $>$ const \&listOfChannels)
+\begin{DoxyCompactList}\small\item\em Convenience function to print a list of channels to the console. \item\end{DoxyCompactList}\item 
+TH1D $\ast$ \hyperlink{class_spectrum_properties_run_info_a7465313bd615a37ae548fecb6d2b11df}{getChannelHisto} (\hyperlink{class_spectrum_properties_run_info_1_1_channel_i_d}{SpectrumPropertiesRunInfo::ChannelID} channelID)
+\begin{DoxyCompactList}\small\item\em Get the ADC spectrum histogram of a specific channel. \item\end{DoxyCompactList}\item 
+TH1D $\ast$ \hyperlink{class_spectrum_properties_run_info_a62d810cc68f737fc7504bc0efdbb1a32}{getChannelHisto} (Int\_\-t module, Int\_\-t chip, Int\_\-t channel)
+\begin{DoxyCompactList}\small\item\em Convenience function to call \hyperlink{class_spectrum_properties_run_info_a7465313bd615a37ae548fecb6d2b11df}{getChannelHisto( ChannelID )} from the three identifying integers. \item\end{DoxyCompactList}\item 
+TH1D $\ast$ \hyperlink{class_spectrum_properties_run_info_a3674726bcbfef46f67f6c280de88457f}{getChannelHisto} (Int\_\-t globalChannelNumber)
+\begin{DoxyCompactList}\small\item\em Convenience function to call \hyperlink{class_spectrum_properties_run_info_a7465313bd615a37ae548fecb6d2b11df}{getChannelHisto( ChannelID )} from the global channel number. \item\end{DoxyCompactList}\item 
+\hyperlink{class_t_channel_spectrum_properties}{TChannelSpectrumProperties} \hyperlink{class_spectrum_properties_run_info_a95e79ffad497b11ae35155f516ef7c9b}{getChannelSpectrumProperties} (\hyperlink{class_spectrum_properties_run_info_1_1_channel_i_d}{ChannelID} const \&channelID) const 
+\begin{DoxyCompactList}\small\item\em Get the channel's spectrum properties knowing the channel ID. \item\end{DoxyCompactList}\item 
+\hyperlink{class_t_channel_spectrum_properties}{TChannelSpectrumProperties} \hyperlink{class_spectrum_properties_run_info_aa3a3a6c0169bffdc12b9940cd085344c}{getChannelSpectrumProperties} (Int\_\-t globalChannelNumber) const 
+\begin{DoxyCompactList}\small\item\em Get the channel's spectrum properties knowing the global channel number. \item\end{DoxyCompactList}\item 
+\hyperlink{class_t_channel_spectrum_properties}{TChannelSpectrumProperties} const $\ast$const $\ast$ \hyperlink{class_spectrum_properties_run_info_a13a12de80cf8fce594345616da473856}{getSpectrumPropertiesTreeObject} ()
+\begin{DoxyCompactList}\small\item\em Get the object in memory which is in the branch address of the channel properties tree. \item\end{DoxyCompactList}\item 
+THStack $\ast$ \hyperlink{class_spectrum_properties_run_info_a4cce9dcb12a35b4c43d6e6efdd906b01}{drawGetDeadChannelsPlot} (Double\_\-t deadCut=20.5, Double\_\-t xAxisMax=70.)
+\begin{DoxyCompactList}\small\item\em Returns a THStack containing two histograms: One with the RMS spectrum and the second only with the part being cut as dead (in red). \item\end{DoxyCompactList}\item 
+Int\_\-t \hyperlink{class_spectrum_properties_run_info_a54c0276d0cfdda159644c833ef35a492}{getRunNumber} () const 
+\begin{DoxyCompactList}\small\item\em Returns the run number. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static Int\_\-t \hyperlink{class_spectrum_properties_run_info_a37a1ce79abc052318a89ada72699058c}{getGlobalChannelNumber} (\hyperlink{class_spectrum_properties_run_info_1_1_channel_i_d}{ChannelID} const \&channelID)
+\begin{DoxyCompactList}\small\item\em Get the global channel number $( moduleID \cdot nChipsPerModule + chipID ) \cdot nChannelsPerChip + channelNumber $ from the channelID. \item\end{DoxyCompactList}\item 
+static \hyperlink{class_spectrum_properties_run_info_1_1_channel_i_d}{ChannelID} \hyperlink{class_spectrum_properties_run_info_a0183a3e0b2724b37e0221aee0ef8195a}{getChannelID} (Int\_\-t globalChannelNumber)
+\begin{DoxyCompactList}\small\item\em Get a \hyperlink{class_spectrum_properties_run_info_1_1_channel_i_d}{ChannelID} class from the global channel number. \item\end{DoxyCompactList}\item 
+static void \hyperlink{class_spectrum_properties_run_info_a5436dc62d308bcbea52a034a001e1555}{setNChipsPerModule} (Int\_\-t nChipsPerModule)
+\begin{DoxyCompactList}\small\item\em Set the number of chips per module. \item\end{DoxyCompactList}\item 
+static void \hyperlink{class_spectrum_properties_run_info_aee98003379da6688bd2e2cfca86b8ebc}{setNChannelsPerChip} (Int\_\-t nChannelsPerChip)
+\begin{DoxyCompactList}\small\item\em Set the number of channels per chip. \item\end{DoxyCompactList}\item 
+static Int\_\-t \hyperlink{class_spectrum_properties_run_info_a3d9d8e0ae2cef40794561409120e257c}{getNChannelsPerChip} ()
+\begin{DoxyCompactList}\small\item\em Get the number of channels per chip. \item\end{DoxyCompactList}\item 
+static Int\_\-t \hyperlink{class_spectrum_properties_run_info_aaac273064e2d136ef58e589c677aec94}{getNChipsPerModule} ()
+\begin{DoxyCompactList}\small\item\em Get the number of chips per module. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_spectrum_properties_run_info_a8253f12715497ad525f27104c8ce4a85}{openRunFile} (std::string runFileName)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Int\_\-t \hyperlink{class_spectrum_properties_run_info_af3b62d094196da758718fbc1d05eed96}{\_\-runNumber}
+\item 
+TFile $\ast$ \hyperlink{class_spectrum_properties_run_info_aab03a803b16b50f0d444f031b41ffebc}{\_\-runFile}
+\item 
+\hyperlink{class_simple_mapper}{SimpleMapper} $\ast$ \hyperlink{class_spectrum_properties_run_info_a1a2747ac99761940eb128ca041014dc2}{\_\-simpleMapper}
+\item 
+TTree $\ast$ \hyperlink{class_spectrum_properties_run_info_ae3cb4e7dd3f4d8fc02094738ba60cfca}{\_\-spectrumPropertiesTree}
+\item 
+\hyperlink{class_t_channel_spectrum_properties}{TChannelSpectrumProperties} $\ast$ \hyperlink{class_spectrum_properties_run_info_a905d33381539ab3737b6c55261e0fc1f}{\_\-channelSpectrumProperties}
+\item 
+std::map$<$ \hyperlink{class_spectrum_properties_run_info_1_1_channel_i_d}{ChannelID}, std::string $>$ \hyperlink{class_spectrum_properties_run_info_a9e75eca5cf3a61ec892a62862d159111}{\_\-histogramTitleMap}
+\begin{DoxyCompactList}\small\item\em A map to store the \hyperlink{class_spectrum_properties_run_info_1_1_channel_i_d}{ChannelID} and the associated histogram titles. \item\end{DoxyCompactList}\item 
+std::map$<$ \hyperlink{class_spectrum_properties_run_info_1_1_channel_i_d}{ChannelID}, \hyperlink{class_t_channel_spectrum_properties}{TChannelSpectrumProperties} $>$ \hyperlink{class_spectrum_properties_run_info_a673b97ff771527ce85493856e80e7b83}{\_\-channelSpectrumPropertiesMap}
+\begin{DoxyCompactList}\small\item\em A map for random access to the TChannelSpectrumPropertiess. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_spectrum_properties_run_info_afcbed8adc08c7cfbca19df402943a770}{createdTree}
+\item 
+unsigned int \hyperlink{class_spectrum_properties_run_info_a4d7328dfa2acc72cbaaf1b897c975b62}{\_\-moduleTypeMask}
+\begin{DoxyCompactList}\small\item\em The mask for the module types to accept. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static Int\_\-t \hyperlink{class_spectrum_properties_run_info_ac56bc4e28473056ac6daad4a7645fbf9}{\_\-nChannelsPerChip} = 18
+\item 
+static Int\_\-t \hyperlink{class_spectrum_properties_run_info_a67b550f7e4ba507ae8953f57c15f62f3}{\_\-nChipsPerModule} = 12
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_spectrum_properties_run_info}{SpectrumPropertiesRunInfo} is a utility class to access the spectrum properties for all channels of one specific run. It uses a global channel number which is calculated as $( moduleID \cdot nChipsPerModule + chipID ) \cdot nChannelsPerChip + channelNumber $, for instance for the channel number on the x-\/axis of the plots. You can used the getChannelID( int globalChannelNumber ) to retrieve the module, chip, and channel number. The default values for {\ttfamily nChipsPerModule} and {\ttfamily nChannelsPerChip} are: \begin{DoxyItemize}
+\item {\ttfamily nChipsPerModule} = 12 \item {\ttfamily nChannelsPerChip} = 18\end{DoxyItemize}
+You can change this during runtime. You should do it immediately after using the conctructor to avoid inconsistencies. In order not to overcomplicate the constructor it is not in there. These values can only change with new readout hardware.\hypertarget{class_spectrum_properties_run_info_FiveRMSCut}{}\subsection{The 5$\ast$RMS cut}\label{class_spectrum_properties_run_info_FiveRMSCut}
+In the spectrum there might be very few outliers which are extremely far away. To cut them away a \char`\"{}5RMSCut\char`\"{} can be turned on in the conctructor. Here the RMS of the histogram is taken and the histogam is limited to $mean \pm 5\cdot rms$. Afterwards the new rms is calculated. This procedure is repeated iteratively until it converges (maximal 10 times). Usually the convergense needs less than 5 iterations. 
+
+Definition at line 42 of file SpectrumPropertiesRunInfo.h.
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_spectrum_properties_run_info_a21d9494b3f2b982c546c240375fdc89b}{
+\index{SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}!SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}}
+\index{SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}!SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}}
+\subsubsection[{SpectrumPropertiesRunInfo}]{\setlength{\rightskip}{0pt plus 5cm}SpectrumPropertiesRunInfo::SpectrumPropertiesRunInfo (Int\_\-t {\em runNumber}, \/  std::string {\em AHCConfigFileName} = {\ttfamily \char`\"{}\char`\"{}}, \/  bool {\em apply5RMSCut} = {\ttfamily false}, \/  std::string {\em runFileName} = {\ttfamily \char`\"{}\char`\"{}}, \/  unsigned int {\em moduleTypes} = {\ttfamily {\bf ModuleType::AHC}~$|$~{\bf ModuleType::AHC8}})}}
+\label{class_spectrum_properties_run_info_a21d9494b3f2b982c546c240375fdc89b}
+
+
+This constructor opens a root file with histograms containing the spectrum per channel, named 'runNumber.root', and instantiates an \hyperlink{class_simple_mapper}{SimpleMapper} from the AHCConfigFileName. From this it fills the spectrumPropertiesTree. If no file name for the AHCConfig is given, the mapping has to be one in ahcBinHst.
+
+The 5RMSCut is off by default to avoid cutting information. But usually it's a good idea to turn it on.
+
+The runFileName for the file with the input histograms is optional. If not given or empty it tries to open 'runNumber.root'.
+
+You can select the module type be providing a word with the \hyperlink{class_module_type}{ModuleType} bits. Default is the calorimeter ( HCAL and HCAL8 ). 
+
+Definition at line 23 of file SpectrumPropertiesRunInfo.cxx.
+
+References \_\-channelSpectrumProperties, \_\-channelSpectrumPropertiesMap, \_\-histogramTitleMap, \_\-moduleTypeMask, \_\-runFile, \_\-runNumber, \_\-simpleMapper, \_\-spectrumPropertiesTree, SimpleMapper::getModuleLayerID(), SimpleMapper::getModuleType(), SimpleMapper::isAHC8(), MAX\_\-ITERATIONS, openRunFile(), and TChannelSpectrumProperties::Set().\hypertarget{class_spectrum_properties_run_info_a282a3cf9cc345986c7e9852b8e8a23ec}{
+\index{SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}!SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}}
+\index{SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}!SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}}
+\subsubsection[{SpectrumPropertiesRunInfo}]{\setlength{\rightskip}{0pt plus 5cm}SpectrumPropertiesRunInfo::SpectrumPropertiesRunInfo (Int\_\-t {\em runNumber}, \/  TTree $\ast$ {\em spectrumPropertiesTree})}}
+\label{class_spectrum_properties_run_info_a282a3cf9cc345986c7e9852b8e8a23ec}
+
+
+A constructor to initialise the class from a previously calculated spectrum properties tree. This is much faster and less memory consuming than creating it from the input file with the per-\/channel histograms. 
+
+Definition at line 233 of file SpectrumPropertiesRunInfo.cxx.
+
+References TChannelSpectrumProperties::\_\-channel, \_\-channelSpectrumProperties, \_\-channelSpectrumPropertiesMap, TChannelSpectrumProperties::\_\-chip, TChannelSpectrumProperties::\_\-module, \_\-runFile, and \_\-spectrumPropertiesTree.\hypertarget{class_spectrum_properties_run_info_a34cac3093acb09c6603bbbe941a1e496}{
+\index{SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}!$\sim$SpectrumPropertiesRunInfo@{$\sim$SpectrumPropertiesRunInfo}}
+\index{$\sim$SpectrumPropertiesRunInfo@{$\sim$SpectrumPropertiesRunInfo}!SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}}
+\subsubsection[{$\sim$SpectrumPropertiesRunInfo}]{\setlength{\rightskip}{0pt plus 5cm}SpectrumPropertiesRunInfo::$\sim$SpectrumPropertiesRunInfo ()}}
+\label{class_spectrum_properties_run_info_a34cac3093acb09c6603bbbe941a1e496}
+
+
+The destructor to clean up the allocated objects. 
+
+Definition at line 217 of file SpectrumPropertiesRunInfo.cxx.
+
+References \_\-runFile, \_\-simpleMapper, \_\-spectrumPropertiesTree, and createdTree.
+
+\subsection{Member Function Documentation}
+\hypertarget{class_spectrum_properties_run_info_a4cce9dcb12a35b4c43d6e6efdd906b01}{
+\index{SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}!drawGetDeadChannelsPlot@{drawGetDeadChannelsPlot}}
+\index{drawGetDeadChannelsPlot@{drawGetDeadChannelsPlot}!SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}}
+\subsubsection[{drawGetDeadChannelsPlot}]{\setlength{\rightskip}{0pt plus 5cm}THStack $\ast$ SpectrumPropertiesRunInfo::drawGetDeadChannelsPlot (Double\_\-t {\em deadCut} = {\ttfamily 20.5}, \/  Double\_\-t {\em xAxisMax} = {\ttfamily 70.})}}
+\label{class_spectrum_properties_run_info_a4cce9dcb12a35b4c43d6e6efdd906b01}
+
+
+Returns a THStack containing two histograms: One with the RMS spectrum and the second only with the part being cut as dead (in red). For convenience they are put into a THStack to draw them using {\ttfamily hStack-\/$>$Draw}(\char`\"{}nostack\char`\"{}). Please note that drawing the histograms stacked (i. e. without the {\ttfamily nostack} option) does not make sense.
+
+The Draw command is executed before the THStack is returned. It just draws to the currently active pad. The stack with the histograms is returned to facilitate modifications.
+
+The function hands over the ownership of the THStack and of the histograms. The histograms are not owned by the stack. Delete the histograms and the stack if you don't need them any more to avoid memory leaks. 
+
+Definition at line 478 of file SpectrumPropertiesRunInfo.cxx.
+
+References \_\-channelSpectrumPropertiesMap, TChannelSpectrumProperties::\_\-rms, and \_\-runNumber.\hypertarget{class_spectrum_properties_run_info_a3674726bcbfef46f67f6c280de88457f}{
+\index{SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}!getChannelHisto@{getChannelHisto}}
+\index{getChannelHisto@{getChannelHisto}!SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}}
+\subsubsection[{getChannelHisto}]{\setlength{\rightskip}{0pt plus 5cm}TH1D $\ast$ SpectrumPropertiesRunInfo::getChannelHisto (Int\_\-t {\em globalChannelNumber})}}
+\label{class_spectrum_properties_run_info_a3674726bcbfef46f67f6c280de88457f}
+
+
+Convenience function to call \hyperlink{class_spectrum_properties_run_info_a7465313bd615a37ae548fecb6d2b11df}{getChannelHisto( ChannelID )} from the global channel number. 
+
+Definition at line 410 of file SpectrumPropertiesRunInfo.cxx.
+
+References getChannelHisto(), and getChannelID().\hypertarget{class_spectrum_properties_run_info_a62d810cc68f737fc7504bc0efdbb1a32}{
+\index{SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}!getChannelHisto@{getChannelHisto}}
+\index{getChannelHisto@{getChannelHisto}!SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}}
+\subsubsection[{getChannelHisto}]{\setlength{\rightskip}{0pt plus 5cm}TH1D $\ast$ SpectrumPropertiesRunInfo::getChannelHisto (Int\_\-t {\em module}, \/  Int\_\-t {\em chip}, \/  Int\_\-t {\em channel})}}
+\label{class_spectrum_properties_run_info_a62d810cc68f737fc7504bc0efdbb1a32}
+
+
+Convenience function to call \hyperlink{class_spectrum_properties_run_info_a7465313bd615a37ae548fecb6d2b11df}{getChannelHisto( ChannelID )} from the three identifying integers. 
+
+Definition at line 405 of file SpectrumPropertiesRunInfo.cxx.
+
+References getChannelHisto().\hypertarget{class_spectrum_properties_run_info_a7465313bd615a37ae548fecb6d2b11df}{
+\index{SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}!getChannelHisto@{getChannelHisto}}
+\index{getChannelHisto@{getChannelHisto}!SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}}
+\subsubsection[{getChannelHisto}]{\setlength{\rightskip}{0pt plus 5cm}TH1D $\ast$ SpectrumPropertiesRunInfo::getChannelHisto ({\bf SpectrumPropertiesRunInfo::ChannelID} {\em channelID})}}
+\label{class_spectrum_properties_run_info_a7465313bd615a37ae548fecb6d2b11df}
+
+
+Get the ADC spectrum histogram of a specific channel. The histogram is loaded from the input file. Keep in mind that the histogram stays in memory if you don't delete it. It is safe to delete it after usage. The \hyperlink{class_spectrum_properties_run_info}{SpectrumPropertiesRunInfo} class does have the ownership over the histogram, only root does the usual bookkeeping.
+
+When using the constructor which takes the tree as input the file name 'runNumber.root' is assumed as source for the histograms. If this file could not be opened the return value is 0. 
+
+Definition at line 383 of file SpectrumPropertiesRunInfo.cxx.
+
+References \_\-histogramTitleMap, and \_\-runFile.
+
+Referenced by getChannelHisto().\hypertarget{class_spectrum_properties_run_info_a0183a3e0b2724b37e0221aee0ef8195a}{
+\index{SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}!getChannelID@{getChannelID}}
+\index{getChannelID@{getChannelID}!SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}}
+\subsubsection[{getChannelID}]{\setlength{\rightskip}{0pt plus 5cm}{\bf SpectrumPropertiesRunInfo::ChannelID} SpectrumPropertiesRunInfo::getChannelID (Int\_\-t {\em globalChannelNumber})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_spectrum_properties_run_info_a0183a3e0b2724b37e0221aee0ef8195a}
+
+
+Get a \hyperlink{class_spectrum_properties_run_info_1_1_channel_i_d}{ChannelID} class from the global channel number. 
+
+Definition at line 426 of file SpectrumPropertiesRunInfo.cxx.
+
+References SpectrumPropertiesRunInfo::ChannelID::\_\-channel, SpectrumPropertiesRunInfo::ChannelID::\_\-chip, SpectrumPropertiesRunInfo::ChannelID::\_\-module, \_\-nChannelsPerChip, and \_\-nChipsPerModule.
+
+Referenced by getChannelHisto(), getChannelSpectrumProperties(), and printChannelStatusMap().\hypertarget{class_spectrum_properties_run_info_aa3a3a6c0169bffdc12b9940cd085344c}{
+\index{SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}!getChannelSpectrumProperties@{getChannelSpectrumProperties}}
+\index{getChannelSpectrumProperties@{getChannelSpectrumProperties}!SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}}
+\subsubsection[{getChannelSpectrumProperties}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TChannelSpectrumProperties} SpectrumPropertiesRunInfo::getChannelSpectrumProperties (Int\_\-t {\em globalChannelNumber}) const}}
+\label{class_spectrum_properties_run_info_aa3a3a6c0169bffdc12b9940cd085344c}
+
+
+Get the channel's spectrum properties knowing the global channel number. 
+
+Definition at line 468 of file SpectrumPropertiesRunInfo.cxx.
+
+References getChannelID(), and getChannelSpectrumProperties().\hypertarget{class_spectrum_properties_run_info_a95e79ffad497b11ae35155f516ef7c9b}{
+\index{SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}!getChannelSpectrumProperties@{getChannelSpectrumProperties}}
+\index{getChannelSpectrumProperties@{getChannelSpectrumProperties}!SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}}
+\subsubsection[{getChannelSpectrumProperties}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TChannelSpectrumProperties} SpectrumPropertiesRunInfo::getChannelSpectrumProperties ({\bf ChannelID} const \& {\em channelID}) const}}
+\label{class_spectrum_properties_run_info_a95e79ffad497b11ae35155f516ef7c9b}
+
+
+Get the channel's spectrum properties knowing the channel ID. 
+
+Definition at line 452 of file SpectrumPropertiesRunInfo.cxx.
+
+References \_\-channelSpectrumPropertiesMap.
+
+Referenced by getChannelSpectrumProperties(), and RunComparator::prepareGraph().\hypertarget{class_spectrum_properties_run_info_a29a7ddfe9965e36250ea137b9b981496}{
+\index{SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}!getChannelsWithMeanCut@{getChannelsWithMeanCut}}
+\index{getChannelsWithMeanCut@{getChannelsWithMeanCut}!SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}}
+\subsubsection[{getChannelsWithMeanCut}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$ {\bf SpectrumPropertiesRunInfo::ChannelID} $>$ SpectrumPropertiesRunInfo::getChannelsWithMeanCut (Double\_\-t {\em lowerCut} = {\ttfamily -\/DBL\_\-MAX}, \/  Double\_\-t {\em upperCut} = {\ttfamily DBL\_\-MAX}) const}}
+\label{class_spectrum_properties_run_info_a29a7ddfe9965e36250ea137b9b981496}
+
+
+Returns all channels with a mean value in the cut range (mean $>$= lowerCut) and (mean $<$=upperCut). The default maximal value of DBL\_\-MAX (the highest number a double can hold in C++) allows to conveniently use only a lower cut. To apply only an upper cut use -\/DBL\_\-MAX for the lower cut. This is the smallest negative number a double can hold. Note that DBL\_\-MIN is the smallest positive number a double can hold, i.e. the smallest value that can be ditinguished from 0. Do not use this or 0 if you do not want to cut. Mean values can be negative! 
+
+Definition at line 347 of file SpectrumPropertiesRunInfo.cxx.
+
+References TChannelSpectrumProperties::\_\-channel, \_\-channelSpectrumProperties, TChannelSpectrumProperties::\_\-chip, TChannelSpectrumProperties::\_\-mean, TChannelSpectrumProperties::\_\-module, and \_\-spectrumPropertiesTree.\hypertarget{class_spectrum_properties_run_info_aa2d88f63b3ea5d414bbe98708689a706}{
+\index{SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}!getChannelsWithRMSCut@{getChannelsWithRMSCut}}
+\index{getChannelsWithRMSCut@{getChannelsWithRMSCut}!SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}}
+\subsubsection[{getChannelsWithRMSCut}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$ {\bf SpectrumPropertiesRunInfo::ChannelID} $>$ SpectrumPropertiesRunInfo::getChannelsWithRMSCut (Double\_\-t {\em lowerCut} = {\ttfamily 0}, \/  Double\_\-t {\em upperCut} = {\ttfamily DBL\_\-MAX}) const}}
+\label{class_spectrum_properties_run_info_aa2d88f63b3ea5d414bbe98708689a706}
+
+
+Returns all channels with an RMS in the cut range (rms $>$= lowerCut) and (rms $<$=upperCut). The default maximal value of DBL\_\-MAX (the highest number a double can hold in C++) allows to conveniently use only a lower cut. The lower cut of 0 should be fine since the rms by definition is larger or equals zero. 
+
+Definition at line 325 of file SpectrumPropertiesRunInfo.cxx.
+
+References TChannelSpectrumProperties::\_\-channel, \_\-channelSpectrumProperties, TChannelSpectrumProperties::\_\-chip, TChannelSpectrumProperties::\_\-module, TChannelSpectrumProperties::\_\-rms, and \_\-spectrumPropertiesTree.
+
+Referenced by getNoisyChannels(), and RunComparator::prepareGraph().\hypertarget{class_spectrum_properties_run_info_a37a1ce79abc052318a89ada72699058c}{
+\index{SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}!getGlobalChannelNumber@{getGlobalChannelNumber}}
+\index{getGlobalChannelNumber@{getGlobalChannelNumber}!SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}}
+\subsubsection[{getGlobalChannelNumber}]{\setlength{\rightskip}{0pt plus 5cm}Int\_\-t SpectrumPropertiesRunInfo::getGlobalChannelNumber ({\bf ChannelID} const \& {\em channelID})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_spectrum_properties_run_info_a37a1ce79abc052318a89ada72699058c}
+
+
+Get the global channel number $( moduleID \cdot nChipsPerModule + chipID ) \cdot nChannelsPerChip + channelNumber $ from the channelID. 
+
+Definition at line 420 of file SpectrumPropertiesRunInfo.cxx.
+
+References SpectrumPropertiesRunInfo::ChannelID::\_\-channel, SpectrumPropertiesRunInfo::ChannelID::\_\-chip, SpectrumPropertiesRunInfo::ChannelID::\_\-module, \_\-nChannelsPerChip, and \_\-nChipsPerModule.
+
+Referenced by RunComparator::calculateChannelAndPedestalCorrectedMean(), and main().\hypertarget{class_spectrum_properties_run_info_a3d9d8e0ae2cef40794561409120e257c}{
+\index{SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}!getNChannelsPerChip@{getNChannelsPerChip}}
+\index{getNChannelsPerChip@{getNChannelsPerChip}!SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}}
+\subsubsection[{getNChannelsPerChip}]{\setlength{\rightskip}{0pt plus 5cm}Int\_\-t SpectrumPropertiesRunInfo::getNChannelsPerChip ()\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_spectrum_properties_run_info_a3d9d8e0ae2cef40794561409120e257c}
+
+
+Get the number of channels per chip. 
+
+Definition at line 448 of file SpectrumPropertiesRunInfo.cxx.
+
+References \_\-nChannelsPerChip.\hypertarget{class_spectrum_properties_run_info_aaac273064e2d136ef58e589c677aec94}{
+\index{SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}!getNChipsPerModule@{getNChipsPerModule}}
+\index{getNChipsPerModule@{getNChipsPerModule}!SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}}
+\subsubsection[{getNChipsPerModule}]{\setlength{\rightskip}{0pt plus 5cm}Int\_\-t SpectrumPropertiesRunInfo::getNChipsPerModule ()\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_spectrum_properties_run_info_aaac273064e2d136ef58e589c677aec94}
+
+
+Get the number of chips per module. 
+
+Definition at line 450 of file SpectrumPropertiesRunInfo.cxx.
+
+References \_\-nChipsPerModule.\hypertarget{class_spectrum_properties_run_info_a224a09a5da8dd40b3b368ce11811a816}{
+\index{SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}!getNoisyChannels@{getNoisyChannels}}
+\index{getNoisyChannels@{getNoisyChannels}!SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}}
+\subsubsection[{getNoisyChannels}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$ {\bf SpectrumPropertiesRunInfo::ChannelID} $>$ SpectrumPropertiesRunInfo::getNoisyChannels (Double\_\-t {\em noisyCut}) const}}
+\label{class_spectrum_properties_run_info_a224a09a5da8dd40b3b368ce11811a816}
+
+
+Returns a vector with all ChannelIDs of channels which have an rms larger or equal to {\ttfamily noisyCut}. Just calls getChannelsWithRMSCut( noisyCut); Kept for convenience and backward conpatiblility. 
+
+Definition at line 320 of file SpectrumPropertiesRunInfo.cxx.
+
+References getChannelsWithRMSCut().\hypertarget{class_spectrum_properties_run_info_a54c0276d0cfdda159644c833ef35a492}{
+\index{SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}!getRunNumber@{getRunNumber}}
+\index{getRunNumber@{getRunNumber}!SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}}
+\subsubsection[{getRunNumber}]{\setlength{\rightskip}{0pt plus 5cm}Int\_\-t SpectrumPropertiesRunInfo::getRunNumber () const}}
+\label{class_spectrum_properties_run_info_a54c0276d0cfdda159644c833ef35a492}
+
+
+Returns the run number. 
+
+Definition at line 520 of file SpectrumPropertiesRunInfo.cxx.
+
+References \_\-runNumber.
+
+Referenced by RunComparator::prepareGraph().\hypertarget{class_spectrum_properties_run_info_aca0dfbac309a9619d04ce536855a89a2}{
+\index{SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}!getSpectrumPropertiesTree@{getSpectrumPropertiesTree}}
+\index{getSpectrumPropertiesTree@{getSpectrumPropertiesTree}!SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}}
+\subsubsection[{getSpectrumPropertiesTree}]{\setlength{\rightskip}{0pt plus 5cm}TTree $\ast$ SpectrumPropertiesRunInfo::getSpectrumPropertiesTree ()}}
+\label{class_spectrum_properties_run_info_aca0dfbac309a9619d04ce536855a89a2}
+
+
+Get a pointer to the spectrum properties tree. \begin{DoxyAttention}{Attention}
+You do not get the ownership of this tree. It belongs to the \hyperlink{class_spectrum_properties_run_info}{SpectrumPropertiesRunInfo} class which will delete the tree in its destructor. After that the pointer is no longer valid.
+
+Do not use TTree-\/$>$SetBranchAddress()! There is the \_\-channelSpectrumProperties variable of \hyperlink{class_spectrum_properties_run_info}{SpectrumPropertiesRunInfo} which is already set. You can access it with \hyperlink{class_spectrum_properties_run_info_a13a12de80cf8fce594345616da473856}{getSpectrumPropertiesTreeObject()}. If you change the branch address of the tree getNoisyChannels will fail, might even cause a segfault. 
+\end{DoxyAttention}
+
+
+Definition at line 256 of file SpectrumPropertiesRunInfo.cxx.
+
+References \_\-spectrumPropertiesTree.
+
+Referenced by main().\hypertarget{class_spectrum_properties_run_info_a13a12de80cf8fce594345616da473856}{
+\index{SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}!getSpectrumPropertiesTreeObject@{getSpectrumPropertiesTreeObject}}
+\index{getSpectrumPropertiesTreeObject@{getSpectrumPropertiesTreeObject}!SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}}
+\subsubsection[{getSpectrumPropertiesTreeObject}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TChannelSpectrumProperties} const $\ast$const $\ast$ SpectrumPropertiesRunInfo::getSpectrumPropertiesTreeObject ()}}
+\label{class_spectrum_properties_run_info_a13a12de80cf8fce594345616da473856}
+
+
+Get the object in memory which is in the branch address of the channel properties tree. With this you can access data from the tree by saying {\ttfamily tree-\/$>$GetEntry(i)}.
+
+This function returns a pointer to a const pointer to a const \hyperlink{class_t_channel_spectrum_properties}{TChannelSpectrumProperties}. The reason for this is that ROOT modifies the contents of the pointer {\ttfamily \hyperlink{class_t_channel_spectrum_properties}{TChannelSpectrumProperties}} {\ttfamily $\ast$} {\ttfamily \_\-channelSpectrumProperties} with every call of {\ttfamily tree-\/$>$GetEntry(i)}. If it would just return the pointer you would have to call getChannelPropertiesTreeObject() after every call of {\ttfamily tree-\/$>$GetEntry(i)}. 
+\begin{DoxyCode}
+  mySpectrumPropertiesRunInfo.getChannelPropertiesTree()->GetEntry(1); // get one
+       object in the tree
+
+  TChannelSpectrumProperties const * const * channelSpectrumPropertiesObjectHandl
+      er 
+                                                   = mySpectrumPropertiesRunInfo.
+      getChannelPropertiesTreeObject();
+
+  // Attention: Do not dereference the handler and save the pointer
+  TChannelSpectrumProperties const * const channelSpectrumPropertiesPointer = * c
+      hannelSpectrumPropertiesObjectHandler; // It it BAD to store the pointer;
+  
+  mySpectrumPropertiesRunInfo.getChannelPropertiesTree()->GetEntry(2); // get ano
+      ther object in the tree
+
+  // Attention: channelSpectrumPropertiesPointer still points to the first object
+      , which might be
+  // invalid. A nive way to create segfaults if you access it.
+
+  // correct: dereference when accessising the data
+  Double_t mean = (*channelSpectrumPropertiesObjectHandler)->_mean;
+\end{DoxyCode}
+ 
+
+Definition at line 473 of file SpectrumPropertiesRunInfo.cxx.
+
+References \_\-channelSpectrumProperties.\hypertarget{class_spectrum_properties_run_info_a8253f12715497ad525f27104c8ce4a85}{
+\index{SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}!openRunFile@{openRunFile}}
+\index{openRunFile@{openRunFile}!SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}}
+\subsubsection[{openRunFile}]{\setlength{\rightskip}{0pt plus 5cm}bool SpectrumPropertiesRunInfo::openRunFile (std::string {\em runFileName})\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_spectrum_properties_run_info_a8253f12715497ad525f27104c8ce4a85}
+
+
+Definition at line 526 of file SpectrumPropertiesRunInfo.cxx.
+
+References \_\-runFile, and \_\-runNumber.
+
+Referenced by SpectrumPropertiesRunInfo().\hypertarget{class_spectrum_properties_run_info_a585bf973ed2708d8095ad7510cb67724}{
+\index{SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}!print@{print}}
+\index{print@{print}!SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}void SpectrumPropertiesRunInfo::print (std::string {\em fileName} = {\ttfamily \char`\"{}\char`\"{}}) const}}
+\label{class_spectrum_properties_run_info_a585bf973ed2708d8095ad7510cb67724}
+
+
+Print the spectrum properties tree. Give the name of the file as argument. The file will be recreated, not appended. If the file name is empty print to stdout. 
+
+Definition at line 262 of file SpectrumPropertiesRunInfo.cxx.
+
+References TChannelSpectrumProperties::\_\-channel, \_\-channelSpectrumProperties, TChannelSpectrumProperties::\_\-chip, TChannelSpectrumProperties::\_\-mean, TChannelSpectrumProperties::\_\-module, TChannelSpectrumProperties::\_\-rms, \_\-runNumber, and \_\-spectrumPropertiesTree.\hypertarget{class_spectrum_properties_run_info_aae84c9751a720ce8ec1fa702b54713d1}{
+\index{SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}!printChannels@{printChannels}}
+\index{printChannels@{printChannels}!SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}}
+\subsubsection[{printChannels}]{\setlength{\rightskip}{0pt plus 5cm}void SpectrumPropertiesRunInfo::printChannels (std::vector$<$ {\bf SpectrumPropertiesRunInfo::ChannelID} $>$ const \& {\em listOfChannels})}}
+\label{class_spectrum_properties_run_info_aae84c9751a720ce8ec1fa702b54713d1}
+
+
+Convenience function to print a list of channels to the console. 
+
+Definition at line 369 of file SpectrumPropertiesRunInfo.cxx.\hypertarget{class_spectrum_properties_run_info_aee98003379da6688bd2e2cfca86b8ebc}{
+\index{SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}!setNChannelsPerChip@{setNChannelsPerChip}}
+\index{setNChannelsPerChip@{setNChannelsPerChip}!SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}}
+\subsubsection[{setNChannelsPerChip}]{\setlength{\rightskip}{0pt plus 5cm}void SpectrumPropertiesRunInfo::setNChannelsPerChip (Int\_\-t {\em nChannelsPerChip})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_spectrum_properties_run_info_aee98003379da6688bd2e2cfca86b8ebc}
+
+
+Set the number of channels per chip. This is used to calculate the global channel number. 
+
+Definition at line 443 of file SpectrumPropertiesRunInfo.cxx.
+
+References \_\-nChannelsPerChip.\hypertarget{class_spectrum_properties_run_info_a5436dc62d308bcbea52a034a001e1555}{
+\index{SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}!setNChipsPerModule@{setNChipsPerModule}}
+\index{setNChipsPerModule@{setNChipsPerModule}!SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}}
+\subsubsection[{setNChipsPerModule}]{\setlength{\rightskip}{0pt plus 5cm}void SpectrumPropertiesRunInfo::setNChipsPerModule (Int\_\-t {\em nChipsPerModule})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_spectrum_properties_run_info_a5436dc62d308bcbea52a034a001e1555}
+
+
+Set the number of chips per module. This is used to calculate the global channel number. 
+
+Definition at line 438 of file SpectrumPropertiesRunInfo.cxx.
+
+References \_\-nChipsPerModule.
+
+\subsection{Field Documentation}
+\hypertarget{class_spectrum_properties_run_info_a905d33381539ab3737b6c55261e0fc1f}{
+\index{SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}!\_\-channelSpectrumProperties@{\_\-channelSpectrumProperties}}
+\index{\_\-channelSpectrumProperties@{\_\-channelSpectrumProperties}!SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}}
+\subsubsection[{\_\-channelSpectrumProperties}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TChannelSpectrumProperties}$\ast$ {\bf SpectrumPropertiesRunInfo::\_\-channelSpectrumProperties}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_spectrum_properties_run_info_a905d33381539ab3737b6c55261e0fc1f}
+
+
+Definition at line 257 of file SpectrumPropertiesRunInfo.h.
+
+Referenced by getChannelsWithMeanCut(), getChannelsWithRMSCut(), getSpectrumPropertiesTreeObject(), print(), and SpectrumPropertiesRunInfo().\hypertarget{class_spectrum_properties_run_info_a673b97ff771527ce85493856e80e7b83}{
+\index{SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}!\_\-channelSpectrumPropertiesMap@{\_\-channelSpectrumPropertiesMap}}
+\index{\_\-channelSpectrumPropertiesMap@{\_\-channelSpectrumPropertiesMap}!SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}}
+\subsubsection[{\_\-channelSpectrumPropertiesMap}]{\setlength{\rightskip}{0pt plus 5cm}std::map$<$ {\bf ChannelID}, {\bf TChannelSpectrumProperties} $>$ {\bf SpectrumPropertiesRunInfo::\_\-channelSpectrumPropertiesMap}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_spectrum_properties_run_info_a673b97ff771527ce85493856e80e7b83}
+
+
+A map for random access to the TChannelSpectrumPropertiess. This is a duplication of the data in the tree. We pay this price for fast random access, not having to search the tree for every request. 
+
+Definition at line 277 of file SpectrumPropertiesRunInfo.h.
+
+Referenced by drawGetDeadChannelsPlot(), getChannelSpectrumProperties(), and SpectrumPropertiesRunInfo().\hypertarget{class_spectrum_properties_run_info_a9e75eca5cf3a61ec892a62862d159111}{
+\index{SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}!\_\-histogramTitleMap@{\_\-histogramTitleMap}}
+\index{\_\-histogramTitleMap@{\_\-histogramTitleMap}!SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}}
+\subsubsection[{\_\-histogramTitleMap}]{\setlength{\rightskip}{0pt plus 5cm}std::map$<$ {\bf ChannelID}, std::string $>$ {\bf SpectrumPropertiesRunInfo::\_\-histogramTitleMap}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_spectrum_properties_run_info_a9e75eca5cf3a61ec892a62862d159111}
+
+
+A map to store the \hyperlink{class_spectrum_properties_run_info_1_1_channel_i_d}{ChannelID} and the associated histogram titles. This is necessary as the title contains the serial number which is never mapped anywhere and discarded when reading in the histo. This map avoids scanning all keys of the file when accessing individual histograms. 
+
+Definition at line 265 of file SpectrumPropertiesRunInfo.h.
+
+Referenced by getChannelHisto(), and SpectrumPropertiesRunInfo().\hypertarget{class_spectrum_properties_run_info_a4d7328dfa2acc72cbaaf1b897c975b62}{
+\index{SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}!\_\-moduleTypeMask@{\_\-moduleTypeMask}}
+\index{\_\-moduleTypeMask@{\_\-moduleTypeMask}!SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}}
+\subsubsection[{\_\-moduleTypeMask}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf SpectrumPropertiesRunInfo::\_\-moduleTypeMask}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_spectrum_properties_run_info_a4d7328dfa2acc72cbaaf1b897c975b62}
+
+
+The mask for the module types to accept. 
+
+Definition at line 287 of file SpectrumPropertiesRunInfo.h.
+
+Referenced by SpectrumPropertiesRunInfo().\hypertarget{class_spectrum_properties_run_info_ac56bc4e28473056ac6daad4a7645fbf9}{
+\index{SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}!\_\-nChannelsPerChip@{\_\-nChannelsPerChip}}
+\index{\_\-nChannelsPerChip@{\_\-nChannelsPerChip}!SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}}
+\subsubsection[{\_\-nChannelsPerChip}]{\setlength{\rightskip}{0pt plus 5cm}Int\_\-t {\bf SpectrumPropertiesRunInfo::\_\-nChannelsPerChip} = 18\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{class_spectrum_properties_run_info_ac56bc4e28473056ac6daad4a7645fbf9}
+
+
+Definition at line 279 of file SpectrumPropertiesRunInfo.h.
+
+Referenced by getChannelID(), getGlobalChannelNumber(), getNChannelsPerChip(), and setNChannelsPerChip().\hypertarget{class_spectrum_properties_run_info_a67b550f7e4ba507ae8953f57c15f62f3}{
+\index{SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}!\_\-nChipsPerModule@{\_\-nChipsPerModule}}
+\index{\_\-nChipsPerModule@{\_\-nChipsPerModule}!SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}}
+\subsubsection[{\_\-nChipsPerModule}]{\setlength{\rightskip}{0pt plus 5cm}Int\_\-t {\bf SpectrumPropertiesRunInfo::\_\-nChipsPerModule} = 12\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{class_spectrum_properties_run_info_a67b550f7e4ba507ae8953f57c15f62f3}
+
+
+Definition at line 280 of file SpectrumPropertiesRunInfo.h.
+
+Referenced by getChannelID(), getGlobalChannelNumber(), getNChipsPerModule(), and setNChipsPerModule().\hypertarget{class_spectrum_properties_run_info_aab03a803b16b50f0d444f031b41ffebc}{
+\index{SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}!\_\-runFile@{\_\-runFile}}
+\index{\_\-runFile@{\_\-runFile}!SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}}
+\subsubsection[{\_\-runFile}]{\setlength{\rightskip}{0pt plus 5cm}TFile$\ast$ {\bf SpectrumPropertiesRunInfo::\_\-runFile}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_spectrum_properties_run_info_aab03a803b16b50f0d444f031b41ffebc}
+
+
+Definition at line 252 of file SpectrumPropertiesRunInfo.h.
+
+Referenced by getChannelHisto(), openRunFile(), SpectrumPropertiesRunInfo(), and $\sim$SpectrumPropertiesRunInfo().\hypertarget{class_spectrum_properties_run_info_af3b62d094196da758718fbc1d05eed96}{
+\index{SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}!\_\-runNumber@{\_\-runNumber}}
+\index{\_\-runNumber@{\_\-runNumber}!SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}}
+\subsubsection[{\_\-runNumber}]{\setlength{\rightskip}{0pt plus 5cm}Int\_\-t {\bf SpectrumPropertiesRunInfo::\_\-runNumber}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_spectrum_properties_run_info_af3b62d094196da758718fbc1d05eed96}
+
+
+Definition at line 250 of file SpectrumPropertiesRunInfo.h.
+
+Referenced by drawGetDeadChannelsPlot(), getRunNumber(), openRunFile(), print(), and SpectrumPropertiesRunInfo().\hypertarget{class_spectrum_properties_run_info_a1a2747ac99761940eb128ca041014dc2}{
+\index{SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}!\_\-simpleMapper@{\_\-simpleMapper}}
+\index{\_\-simpleMapper@{\_\-simpleMapper}!SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}}
+\subsubsection[{\_\-simpleMapper}]{\setlength{\rightskip}{0pt plus 5cm}{\bf SimpleMapper}$\ast$ {\bf SpectrumPropertiesRunInfo::\_\-simpleMapper}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_spectrum_properties_run_info_a1a2747ac99761940eb128ca041014dc2}
+
+
+Definition at line 254 of file SpectrumPropertiesRunInfo.h.
+
+Referenced by SpectrumPropertiesRunInfo(), and $\sim$SpectrumPropertiesRunInfo().\hypertarget{class_spectrum_properties_run_info_ae3cb4e7dd3f4d8fc02094738ba60cfca}{
+\index{SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}!\_\-spectrumPropertiesTree@{\_\-spectrumPropertiesTree}}
+\index{\_\-spectrumPropertiesTree@{\_\-spectrumPropertiesTree}!SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}}
+\subsubsection[{\_\-spectrumPropertiesTree}]{\setlength{\rightskip}{0pt plus 5cm}TTree$\ast$ {\bf SpectrumPropertiesRunInfo::\_\-spectrumPropertiesTree}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_spectrum_properties_run_info_ae3cb4e7dd3f4d8fc02094738ba60cfca}
+
+
+Definition at line 256 of file SpectrumPropertiesRunInfo.h.
+
+Referenced by getChannelsWithMeanCut(), getChannelsWithRMSCut(), getSpectrumPropertiesTree(), print(), SpectrumPropertiesRunInfo(), and $\sim$SpectrumPropertiesRunInfo().\hypertarget{class_spectrum_properties_run_info_afcbed8adc08c7cfbca19df402943a770}{
+\index{SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}!createdTree@{createdTree}}
+\index{createdTree@{createdTree}!SpectrumPropertiesRunInfo@{SpectrumPropertiesRunInfo}}
+\subsubsection[{createdTree}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf SpectrumPropertiesRunInfo::createdTree}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_spectrum_properties_run_info_afcbed8adc08c7cfbca19df402943a770}
+
+
+Definition at line 284 of file SpectrumPropertiesRunInfo.h.
+
+Referenced by $\sim$SpectrumPropertiesRunInfo().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_spectrum_properties_run_info_8h}{SpectrumPropertiesRunInfo.h}\item 
+\hyperlink{_spectrum_properties_run_info_8cxx}{SpectrumPropertiesRunInfo.cxx}\end{DoxyCompactItemize}

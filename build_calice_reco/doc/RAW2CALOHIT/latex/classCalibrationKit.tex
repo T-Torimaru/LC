@@ -1,0 +1,41 @@
+\section{CalibrationKit Class Reference}
+\label{classCalibrationKit}\index{CalibrationKit@{CalibrationKit}}
+
+
+Abstract interface of a calibration kit which can create calibration objects.  
+
+
+{\ttfamily \#include $<$CalibrationKit.hh$>$}Inheritance diagram for CalibrationKit::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=1.80354cm]{classCalibrationKit}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bf Calibration} $\ast$ {\bf create} (const std::string \&module\_\-type\_\-col\_\-name, const std::string \&module\_\-calibration\_\-col\_\-name) const =0
+\begin{DoxyCompactList}\small\item\em create calibration object. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract interface of a calibration kit which can create calibration objects. 
+
+Definition at line 11 of file CalibrationKit.hh.
+
+\subsection{Member Function Documentation}
+\index{CalibrationKit@{CalibrationKit}!create@{create}}
+\index{create@{create}!CalibrationKit@{CalibrationKit}}
+\subsubsection[{create}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Calibration}$\ast$ CalibrationKit::create (const std::string \& {\em module\_\-type\_\-col\_\-name}, \/  const std::string \& {\em module\_\-calibration\_\-col\_\-name}) const\hspace{0.3cm}{\ttfamily  [pure virtual]}}\label{classCalibrationKit_ab3aea5671d91a7b6f5e839324cf45a70}
+
+
+create calibration object. 
+\begin{DoxyParams}{Parameters}
+\item[{\em module\_\-type\_\-col\_\-name}]the name of the conditions data collection with the module types. \item[{\em module\_\-calibration\_\-col\_\-name}]the name of the conditions data collection which contains the calibration constants. FIXME: There should be a better method to hand parameters to \doxyref{Calibration}{p.}{classCalibration} objects. \end{DoxyParams}
+
+
+Implemented in {\bf CALICE::CaliceEcalCalibrationKit} \doxyref{}{p.}{classCALICE_1_1CaliceEcalCalibrationKit_aa8754032807fe2e3d7d8dc4225464829}, {\bf ConstantCalibrationKit} \doxyref{}{p.}{classConstantCalibrationKit_a3b84989011be10b816104fdc58963882}, and {\bf NoOpCalibrationKit} \doxyref{}{p.}{classNoOpCalibrationKit_ac197f7bf5528b484d5b70e664655474b}.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+CalibrationKit.hh\end{DoxyCompactItemize}

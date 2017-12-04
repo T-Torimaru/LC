@@ -1,0 +1,194 @@
+\section{DeepAnalysis::Cluster Class Reference}
+\label{classDeepAnalysis_1_1Cluster}\index{DeepAnalysis::Cluster@{DeepAnalysis::Cluster}}
+
+
+\doxyref{Cluster}{p.}{classDeepAnalysis_1_1Cluster} is the main object to work with and to keep the main results of the analisys \doxyref{Cluster}{p.}{classDeepAnalysis_1_1Cluster} consists of its properties: like parameters of the inertia tensor, average density, whole volume, a few topological Chisq and pointers to first and last hits in cluster.  
+
+
+{\ttfamily \#include $<$DeepAnalysis.hh$>$}Inheritance diagram for DeepAnalysis::Cluster::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classDeepAnalysis_1_1Cluster}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ \par
+{\bf EMPTY}, 
+{\bf ONEHIT}, 
+{\bf CL2D}, 
+{\bf CHAIN}, 
+\par
+{\bf JOINED}, 
+{\bf EXT}
+ \}
+\begin{DoxyCompactList}\small\item\em An enumeration. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Cluster} ()\label{classDeepAnalysis_1_1Cluster_ab9a273e3a8e188deaf3edc3d9ec20ab0}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+void {\bf calc\_\-color} ({\bf DeepAnalysis} \&rs)\label{classDeepAnalysis_1_1Cluster_ae51c00039fbcf1b6308a3a596a371fd2}
+
+\begin{DoxyCompactList}\small\item\em Set the cluster color depending on the hit and cluster type and colors. \item\end{DoxyCompactList}\item 
+void {\bf inertia\_\-3d} (float $\ast$wr)\label{classDeepAnalysis_1_1Cluster_a53d3ab2e062c3c05de19a5bb977f0b91}
+
+\begin{DoxyCompactList}\small\item\em Calculate cluster tensor of inertia and its principal axes. \item\end{DoxyCompactList}\item 
+void {\bf calc\_\-prop} ({\bf DeepAnalysis} \&rs, bool for\_\-em=false)\label{classDeepAnalysis_1_1Cluster_a1b6a9b571ebf340ddba682a51be515e4}
+
+\begin{DoxyCompactList}\small\item\em Calculate properties of \doxyref{Cluster}{p.}{classDeepAnalysis_1_1Cluster}. \item\end{DoxyCompactList}\item 
+void {\bf finalize} ({\bf DeepAnalysis} \&rs)\label{classDeepAnalysis_1_1Cluster_ab88af1f7e158cfa3ffd262ad28fd5c3d}
+
+\begin{DoxyCompactList}\small\item\em Finalize: mainly works with the rest of the hits that do not belongs to any cluster and also recolored some of the clusters. \item\end{DoxyCompactList}\item 
+void {\bf rotate\_\-point} (Point3D \&point)
+\begin{DoxyCompactList}\small\item\em Rotate 3D point. \item\end{DoxyCompactList}\item 
+void {\bf print} ()\label{classDeepAnalysis_1_1Cluster_ace18b07f58322eac1dbc7a234b377e31}
+
+\begin{DoxyCompactList}\small\item\em Print out info. \item\end{DoxyCompactList}\item 
+void {\bf line} (const Point3D \&p0, const Point3D \&p1, unsigned {\bf type}, unsigned size, unsigned color)\label{classDeepAnalysis_1_1Cluster_a89f061c2bc38c88fbf842f3c694f01db}
+
+\begin{DoxyCompactList}\small\item\em Draw line between 2 points. \item\end{DoxyCompactList}\item 
+void {\bf draw\_\-star} (unsigned {\bf type}, unsigned color)\label{classDeepAnalysis_1_1Cluster_ac516666e7c03195b1e1fa11787552494}
+
+\begin{DoxyCompactList}\small\item\em Draw star. \item\end{DoxyCompactList}\item 
+void {\bf draw\_\-tree} (unsigned {\bf type}, unsigned color)
+\begin{DoxyCompactList}\small\item\em Draw tree. \item\end{DoxyCompactList}\item 
+void {\bf draw\_\-ellipse} (unsigned {\bf type}, unsigned color)\label{classDeepAnalysis_1_1Cluster_a9d7f5c176df6785e8dcf8f1d3ead0eea}
+
+\begin{DoxyCompactList}\small\item\em Draw ellipsoid. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+enum DeepAnalysis::Cluster:: \{ ... \}  {\bf type}\label{classDeepAnalysis_1_1Cluster_ad204dc8ea429d6bafbedc19aab8299a0}
+
+\begin{DoxyCompactList}\small\item\em An enumeration. \item\end{DoxyCompactList}\item 
+Sphere3D {\bf sp2d}\label{classDeepAnalysis_1_1Cluster_a4a293fe7d9a0d78506c4d13fbdb0c13f}
+
+\begin{DoxyCompactList}\small\item\em temporary variable, for use in 2D clustering \item\end{DoxyCompactList}\item 
+double {\bf e2d}\label{classDeepAnalysis_1_1Cluster_a4cec96aed3a9af9653b6412406ae95be}
+
+\begin{DoxyCompactList}\small\item\em temporary variable, for use in 2D clustering \item\end{DoxyCompactList}\item 
+{\bf KIND} {\bf col}\label{classDeepAnalysis_1_1Cluster_adeb3b57d6dd388878ca239508beec600}
+
+\begin{DoxyCompactList}\small\item\em type (M\_\-cl\_\-col) \item\end{DoxyCompactList}\item 
+Vector3D {\bf clusterAxisVector}\label{classDeepAnalysis_1_1Cluster_a3425bd5baead7b66119095fd75067b7f}
+
+\begin{DoxyCompactList}\small\item\em main principal axis (Cx\_\-clust) \item\end{DoxyCompactList}\item 
+double {\bf clusterRadius}\label{classDeepAnalysis_1_1Cluster_ad4975a52e8c168074ce7493c57271420}
+
+\begin{DoxyCompactList}\small\item\em radius vector length (R\_\-clust) \item\end{DoxyCompactList}\item 
+double {\bf clusterLongestRadius}\label{classDeepAnalysis_1_1Cluster_a6fb307299011bdd227c81bd429672206}
+
+\begin{DoxyCompactList}\small\item\em longest radius (r1\_\-clust) \item\end{DoxyCompactList}\item 
+double {\bf forwRadius}\label{classDeepAnalysis_1_1Cluster_a36fc7d171877ef8084e7ab3f944d4018}
+
+\begin{DoxyCompactList}\small\item\em forward radius \item\end{DoxyCompactList}\item 
+double {\bf backwRadius}\label{classDeepAnalysis_1_1Cluster_ac7ae47244c3cbd8c2b6e63412cb3fe2f}
+
+\begin{DoxyCompactList}\small\item\em backward radius \item\end{DoxyCompactList}\item 
+double {\bf r2}\label{classDeepAnalysis_1_1Cluster_a4e918af2cb90f1a9b91cb8d94d2180aa}
+
+\begin{DoxyCompactList}\small\item\em short one \item\end{DoxyCompactList}\item 
+double {\bf r3}\label{classDeepAnalysis_1_1Cluster_a2d16c60415ab31b3a90d37abb4252de9}
+
+\begin{DoxyCompactList}\small\item\em short two \item\end{DoxyCompactList}\item 
+double {\bf ecc}\label{classDeepAnalysis_1_1Cluster_a980eb35cf5fa3c1fda5857ad911f37ec}
+
+\begin{DoxyCompactList}\small\item\em eccentricity (ecc\_\-clust) \item\end{DoxyCompactList}\item 
+double {\bf ellipAverageRadius}\label{classDeepAnalysis_1_1Cluster_a3801c3f27c4a245951c99bcacaa74b68}
+
+\begin{DoxyCompactList}\small\item\em elipsoid average radius \item\end{DoxyCompactList}\item 
+double {\bf volume}\label{classDeepAnalysis_1_1Cluster_aac8bbd1695898f7c5f0367d33301bb8c}
+
+\begin{DoxyCompactList}\small\item\em elipsoid volume \item\end{DoxyCompactList}\item 
+double {\bf density}\label{classDeepAnalysis_1_1Cluster_aada07d33993528136a3815783a006db3}
+
+\begin{DoxyCompactList}\small\item\em cluster density \item\end{DoxyCompactList}\item 
+double {\bf chi} [3]\label{classDeepAnalysis_1_1Cluster_a4bdb105189350d277eb669bd1be45f66}
+
+\begin{DoxyCompactList}\small\item\em Chisquare W -\/ quadratic, W linear, W=1 -\/ pure spatial. \item\end{DoxyCompactList}\item 
+{\bf Hit} $\ast$ {\bf begn}\label{classDeepAnalysis_1_1Cluster_a7c1a3b2beb89d28a926e975a3889aacf}
+
+\begin{DoxyCompactList}\small\item\em address of first cluster point (L\_\-cl\_\-begn) \item\end{DoxyCompactList}\item 
+{\bf Hit} $\ast$ {\bf last}\label{classDeepAnalysis_1_1Cluster_a6b72c48bea2c4fe6cd6f5d6b80cc45c1}
+
+\begin{DoxyCompactList}\small\item\em address of last cluster point (L\_\-cl\_\-last) \item\end{DoxyCompactList}\item 
+double {\bfseries v1} [3]\label{classDeepAnalysis_1_1Cluster_a03fd541ee1458241de240db5432b36f6}
+
+\item 
+double {\bfseries v2} [3]\label{classDeepAnalysis_1_1Cluster_aeec5e4fedcbf07aa8fe10dc451ed7941}
+
+\item 
+double {\bf v3} [3]\label{classDeepAnalysis_1_1Cluster_a8b748f394bfee834ad0441d107b2accd}
+
+\begin{DoxyCompactList}\small\item\em elipsoid axis \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned {\bf RS\_\-TYPE} = 6\label{classDeepAnalysis_1_1Cluster_aa72122f9aef00ce8f424dc6484449937}
+
+\begin{DoxyCompactList}\small\item\em type of \doxyref{RS}{p.}{classRS} object \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\doxyref{Cluster}{p.}{classDeepAnalysis_1_1Cluster} is the main object to work with and to keep the main results of the analisys \doxyref{Cluster}{p.}{classDeepAnalysis_1_1Cluster} consists of its properties: like parameters of the inertia tensor, average density, whole volume, a few topological Chisq and pointers to first and last hits in cluster. 
+
+Definition at line 325 of file DeepAnalysis.hh.
+
+\subsection{Member Enumeration Documentation}
+\subsubsection[{"@0}]{\setlength{\rightskip}{0pt plus 5cm}anonymous enum}\label{classDeepAnalysis_1_1Cluster_af5293b0f3ebc5caf2273b669e5645077}
+
+
+An enumeration. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{EMPTY@{EMPTY}!DeepAnalysis::Cluster@{DeepAnalysis::Cluster}}\index{DeepAnalysis::Cluster@{DeepAnalysis::Cluster}!EMPTY@{EMPTY}}\item[{\em 
+EMPTY\label{classDeepAnalysis_1_1Cluster_af5293b0f3ebc5caf2273b669e5645077a72a88701d4eca87d7a4d10718ec58713}
+}]empty (no hit) \index{ONEHIT@{ONEHIT}!DeepAnalysis::Cluster@{DeepAnalysis::Cluster}}\index{DeepAnalysis::Cluster@{DeepAnalysis::Cluster}!ONEHIT@{ONEHIT}}\item[{\em 
+ONEHIT\label{classDeepAnalysis_1_1Cluster_af5293b0f3ebc5caf2273b669e5645077ab47d5f340993268b096bdcad05af9bb1}
+}]contains one hit \index{CL2D@{CL2D}!DeepAnalysis::Cluster@{DeepAnalysis::Cluster}}\index{DeepAnalysis::Cluster@{DeepAnalysis::Cluster}!CL2D@{CL2D}}\item[{\em 
+CL2D\label{classDeepAnalysis_1_1Cluster_af5293b0f3ebc5caf2273b669e5645077adf70ce9e9700cddc5edd761a4fef0464}
+}]2D cluster \index{CHAIN@{CHAIN}!DeepAnalysis::Cluster@{DeepAnalysis::Cluster}}\index{DeepAnalysis::Cluster@{DeepAnalysis::Cluster}!CHAIN@{CHAIN}}\item[{\em 
+CHAIN\label{classDeepAnalysis_1_1Cluster_af5293b0f3ebc5caf2273b669e5645077a1e5debab6e368782edb56427399cb41b}
+}]chain \index{JOINED@{JOINED}!DeepAnalysis::Cluster@{DeepAnalysis::Cluster}}\index{DeepAnalysis::Cluster@{DeepAnalysis::Cluster}!JOINED@{JOINED}}\item[{\em 
+JOINED\label{classDeepAnalysis_1_1Cluster_af5293b0f3ebc5caf2273b669e5645077a81c25157b39debd5e46d8f2cc87805cb}
+}]joined \index{EXT@{EXT}!DeepAnalysis::Cluster@{DeepAnalysis::Cluster}}\index{DeepAnalysis::Cluster@{DeepAnalysis::Cluster}!EXT@{EXT}}\item[{\em 
+EXT\label{classDeepAnalysis_1_1Cluster_af5293b0f3ebc5caf2273b669e5645077a1f478e59def62f3981ba8ae6c1ce1da7}
+}]external \end{description}
+\end{Desc}
+
+
+
+Definition at line 330 of file DeepAnalysis.hh.
+
+\subsection{Member Function Documentation}
+\index{DeepAnalysis::Cluster@{DeepAnalysis::Cluster}!draw\_\-tree@{draw\_\-tree}}
+\index{draw\_\-tree@{draw\_\-tree}!DeepAnalysis::Cluster@{DeepAnalysis::Cluster}}
+\subsubsection[{draw\_\-tree}]{\setlength{\rightskip}{0pt plus 5cm}void DeepAnalysis::Cluster::draw\_\-tree (unsigned {\em type}, \/  unsigned {\em color})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classDeepAnalysis_1_1Cluster_a869d6edc0f3b1bffb5e27804662531c4}
+
+
+Draw tree. .. 
+
+Definition at line 678 of file DeepAnalysis.hh.
+
+References begn, DeepAnalysis::Hit::cartesianPoint, and line().\index{DeepAnalysis::Cluster@{DeepAnalysis::Cluster}!rotate\_\-point@{rotate\_\-point}}
+\index{rotate\_\-point@{rotate\_\-point}!DeepAnalysis::Cluster@{DeepAnalysis::Cluster}}
+\subsubsection[{rotate\_\-point}]{\setlength{\rightskip}{0pt plus 5cm}void DeepAnalysis::Cluster::rotate\_\-point (Point3D \& {\em point})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classDeepAnalysis_1_1Cluster_aa639336101fc5d3a49fa32ce35fc69c2}
+
+
+Rotate 3D point. 
+\begin{DoxyParams}{Parameters}
+\item[{\em point}]3D point where to rotate \end{DoxyParams}
+
+
+Definition at line 633 of file DeepAnalysis.hh.
+
+References DeepAnalysis::HitGroup::centerOfGravity, and v3.
+
+Referenced by draw\_\-ellipse().
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+DeepAnalysis.hh\end{DoxyCompactItemize}

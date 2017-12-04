@@ -1,0 +1,70 @@
+\section{CALICE::CellDescriptionGenerator Class Reference}
+\label{classCALICE_1_1CellDescriptionGenerator}\index{CALICE::CellDescriptionGenerator@{CALICE::CellDescriptionGenerator}}
+
+
+class that generates cell descriptions objects  
+
+
+{\ttfamily \#include $<$CellDescriptionGenerator.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CellDescriptionGenerator} (const {\bf Mapper} $\ast$mapper)
+\begin{DoxyCompactList}\small\item\em constructor \item\end{DoxyCompactList}\item 
+void {\bf generate} (const lcio::LCCollection $\ast$modDescriptionCol, const lcio::LCCollection $\ast$modConnectionCol, const lcio::LCCollection $\ast$modLocationCol, const lcio::LCCollection $\ast$detTransformationCol, {\bf MappedContainer}$<$ {\bf CellDescription} $>$ $\ast$container) const 
+\begin{DoxyCompactList}\small\item\em function that updates a \doxyref{MappedContainer}{p.}{classCALICE_1_1MappedContainer} of \doxyref{CellDescription}{p.}{classCALICE_1_1CellDescription} objects \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const {\bf Mapper} $\ast$ {\bfseries \_\-mapper}\label{classCALICE_1_1CellDescriptionGenerator_a612bebfd873ffb78cb9489ef14c9c6b6}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+class that generates cell descriptions objects \begin{DoxyAuthor}{Author}
+{\tt Benjamin.Lutz@desy.de} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+June 2009 
+\end{DoxyDate}
+
+
+Definition at line 20 of file CellDescriptionGenerator.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CALICE::CellDescriptionGenerator@{CALICE::CellDescriptionGenerator}!CellDescriptionGenerator@{CellDescriptionGenerator}}
+\index{CellDescriptionGenerator@{CellDescriptionGenerator}!CALICE::CellDescriptionGenerator@{CALICE::CellDescriptionGenerator}}
+\subsubsection[{CellDescriptionGenerator}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::CellDescriptionGenerator::CellDescriptionGenerator (const {\bf Mapper} $\ast$ {\em mapper})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CellDescriptionGenerator_ab341ed384a42223944cd22ad60a66a3b}
+
+
+constructor 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em mapper}]mapper \end{DoxyParams}
+
+
+Definition at line 29 of file CellDescriptionGenerator.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::CellDescriptionGenerator@{CALICE::CellDescriptionGenerator}!generate@{generate}}
+\index{generate@{generate}!CALICE::CellDescriptionGenerator@{CALICE::CellDescriptionGenerator}}
+\subsubsection[{generate}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CellDescriptionGenerator::generate (const lcio::LCCollection $\ast$ {\em modDescriptionCol}, \/  const lcio::LCCollection $\ast$ {\em modConnectionCol}, \/  const lcio::LCCollection $\ast$ {\em modLocationCol}, \/  const lcio::LCCollection $\ast$ {\em detTransformationCol}, \/  {\bf MappedContainer}$<$ {\bf CellDescription} $>$ $\ast$ {\em container}) const}\label{classCALICE_1_1CellDescriptionGenerator_ac9c0e3d7554036c256892c90aca53c27}
+
+
+function that updates a \doxyref{MappedContainer}{p.}{classCALICE_1_1MappedContainer} of \doxyref{CellDescription}{p.}{classCALICE_1_1CellDescription} objects The cell positions are calculated the following way: \[ r_{detector} + r_{module} \cdot M_{zshift} + r_{cell} \cdot M_{rot} \\ \quad\mathrm{where}\quad M_{rot}= \begin{array}{ccc} cos(\theta) & 0 & sin(\theta) \\ 0 & 1 & 0 \\ -sin(\theta) & 0 & cos(\theta) \end{array} \quad\mathrm{and}\quad M_{zshift}= \begin{array}{ccc} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1/cos(\theta) \end{array} \]
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em modDescriptionCol}]\item[\mbox{$\leftarrow$} {\em modConnectionCol}]\item[\mbox{$\leftarrow$} {\em modLocationCol}]\item[\mbox{$\leftarrow$} {\em detTransformationCol}]\item[\mbox{$\rightarrow$} {\em container}]\end{DoxyParams}
+
+
+Definition at line 19 of file CellDescriptionGenerator.cc.
+
+References CALICE::MappedContainer$<$ T $>$::clear(), CALICE::MappedContainer$<$ T $>$::fillByCellID(), CALICE::ModuleLocation::getCellIndexOffset(), CALICE::Mapper::getDecoder(), CALICE::DetectorTransformation::getDetectorAngleZX(), CALICE::DetectorTransformation::getDetectorX0(), CALICE::DetectorTransformation::getDetectorY0(), CALICE::DetectorTransformation::getDetectorZ0(), CALICE::DecoderSet::getIFromCellID(), CALICE::ModuleConnection::getIndexOfLowerLeftCell(), CALICE::DecoderSet::getJFromCellID(), CALICE::DecoderSet::getKFromCellID(), CALICE::ModuleConnection::getModuleID(), CALICE::ModuleConnection::getModuleType(), CALICE::ModuleLocation::getModuleType(), CALICE::CellDescription::setAngle(), CALICE::CellDescription::setPosition(), and CALICE::CellDescription::setSize().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+CellDescriptionGenerator.hh\item 
+CellDescriptionGenerator.cc\end{DoxyCompactItemize}

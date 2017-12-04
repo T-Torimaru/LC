@@ -1,0 +1,87 @@
+\section{marlin::RunTimeProcessor Class Reference}
+\label{classmarlin_1_1RunTimeProcessor}\index{marlin::RunTimeProcessor@{marlin::RunTimeProcessor}}
+
+
+Simple processor which allows for an eay relation bwetween runnumbers and runtime and therefore a convenient browsing of the database.  
+
+
+{\ttfamily \#include $<$RunTimeProcessor.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Processor $\ast$ {\bfseries newProcessor} ()\label{classmarlin_1_1RunTimeProcessor_abb4e168d5fbedd389700c6a49d3cda16}
+
+\item 
+void {\bf init} ()
+\begin{DoxyCompactList}\small\item\em Called at the begin of the job before anything is read. \item\end{DoxyCompactList}\item 
+void {\bf processRunHeader} (LCRunHeader $\ast$run)
+\begin{DoxyCompactList}\small\item\em Called for every run, e.g. \item\end{DoxyCompactList}\item 
+void {\bf processEvent} (LCEvent $\ast$evtP)
+\begin{DoxyCompactList}\small\item\em Called for every event -\/ the working horse. \item\end{DoxyCompactList}\item 
+void {\bfseries end} ()\label{classmarlin_1_1RunTimeProcessor_a67b683b9715712a534b86e365f551e5b}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries \_\-runnum}\label{classmarlin_1_1RunTimeProcessor_a226602232ec99af268c81e0b928aa785}
+
+\item 
+long64 {\bfseries \_\-beginofrun}\label{classmarlin_1_1RunTimeProcessor_a2801c1b8c0d4daa85e436ea969549629}
+
+\item 
+long64 {\bfseries \_\-endofrun}\label{classmarlin_1_1RunTimeProcessor_a1769a8281ce2531d7e486bd852dc5fd6}
+
+\item 
+bool {\bfseries \_\-beginOfRunFetched}\label{classmarlin_1_1RunTimeProcessor_a064ab19d742cc513c1c3415e7fbba7b5}
+
+\item 
+std::string {\bfseries \_\-colRuntime}\label{classmarlin_1_1RunTimeProcessor_a6526b4be2886ba43df9208122a1ebf96}
+
+\item 
+std::string {\bfseries \_\-dbinit}\label{classmarlin_1_1RunTimeProcessor_ae1fe5999ff7a51f6eb2bfb21670fd4d5}
+
+\item 
+bool {\bfseries \_\-flag}\label{classmarlin_1_1RunTimeProcessor_afba9e89de5bf364a966fe0b920c346ad}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Simple processor which allows for an eay relation bwetween runnumbers and runtime and therefore a convenient browsing of the database. \begin{DoxyAuthor}{Author}
+: R.Poeschl LAL
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Jun 2007 
+\end{DoxyDate}
+
+
+Definition at line 18 of file RunTimeProcessor.hh.
+
+\subsection{Member Function Documentation}
+\index{marlin::RunTimeProcessor@{marlin::RunTimeProcessor}!init@{init}}
+\index{init@{init}!marlin::RunTimeProcessor@{marlin::RunTimeProcessor}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void marlin::RunTimeProcessor::init ()}\label{classmarlin_1_1RunTimeProcessor_a864e65299205a751d64242464e61159c}
+
+
+Called at the begin of the job before anything is read. Use to initialize the processor, e.g. book histograms. 
+
+Definition at line 66 of file RunTimeProcessor.cc.\index{marlin::RunTimeProcessor@{marlin::RunTimeProcessor}!processEvent@{processEvent}}
+\index{processEvent@{processEvent}!marlin::RunTimeProcessor@{marlin::RunTimeProcessor}}
+\subsubsection[{processEvent}]{\setlength{\rightskip}{0pt plus 5cm}void marlin::RunTimeProcessor::processEvent (LCEvent $\ast$ {\em evtP})}\label{classmarlin_1_1RunTimeProcessor_ab0ec7ef8923b3a6115658a69800aeb0f}
+
+
+Called for every event -\/ the working horse. 
+
+Definition at line 89 of file RunTimeProcessor.cc.\index{marlin::RunTimeProcessor@{marlin::RunTimeProcessor}!processRunHeader@{processRunHeader}}
+\index{processRunHeader@{processRunHeader}!marlin::RunTimeProcessor@{marlin::RunTimeProcessor}}
+\subsubsection[{processRunHeader}]{\setlength{\rightskip}{0pt plus 5cm}void marlin::RunTimeProcessor::processRunHeader (LCRunHeader $\ast$ {\em run})}\label{classmarlin_1_1RunTimeProcessor_a7fe5dbba9ba3b2566bbfbf971acc3e7a}
+
+
+Called for every run, e.g. overwrite to initialize run dependent histograms. 
+
+Definition at line 78 of file RunTimeProcessor.cc.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+RunTimeProcessor.hh\item 
+RunTimeProcessor.cc\end{DoxyCompactItemize}

@@ -1,0 +1,146 @@
+\section{CALICE::Mapper Class Reference}
+\label{classCALICE_1_1Mapper}\index{CALICE::Mapper@{CALICE::Mapper}}
+
+
+Mapping for \doxyref{CALICE}{p.}{namespaceCALICE} detectors (currently: HCAL support only).  
+
+
+{\ttfamily \#include $<$Mapper.hh$>$}Inheritance diagram for CALICE::Mapper::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCALICE_1_1Mapper}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Mapper} ()\label{classCALICE_1_1Mapper_a4ba6fed133ff6a41f0faf11c9417309f}
+
+\begin{DoxyCompactList}\small\item\em constructor (default encoding strings) \item\end{DoxyCompactList}\item 
+{\bf Mapper} (const std::string \&cellIDencoding, const std::string \&moduleEncoding, const std::string \&DAQencoding)
+\begin{DoxyCompactList}\small\item\em constructor that takes encoding strings \item\end{DoxyCompactList}\item 
+{\bf DecoderSet} $\ast$ {\bf getDecoder} () const 
+\begin{DoxyCompactList}\small\item\em get class which handles the bit en/decoding of the different IDs \item\end{DoxyCompactList}\item 
+virtual unsigned int {\bf getModuleFromCellID} (const int cellID) const =0
+\begin{DoxyCompactList}\small\item\em get module (number) in which this cell is included from (Mokka) cellID \item\end{DoxyCompactList}\item 
+virtual unsigned int {\bf getModuleFromDAQID} (const int DAQchannel) const =0
+\begin{DoxyCompactList}\small\item\em get module (number) in which this (DAQ) channel is included \item\end{DoxyCompactList}\item 
+virtual unsigned int {\bf getModuleFromCellID} (const int cellID, bool \&valid) const =0
+\begin{DoxyCompactList}\small\item\em get module (number) in which this cell is included from (Mokka) cellID \item\end{DoxyCompactList}\item 
+virtual unsigned int {\bf getModuleFromDAQID} (const int DAQchannel, bool \&valid) const =0
+\begin{DoxyCompactList}\small\item\em get module (number) in which this (DAQ) channel is included \item\end{DoxyCompactList}\item 
+virtual unsigned int {\bf getModuleFromModuleID} (const int moduleID, bool \&valid) const =0
+\begin{DoxyCompactList}\small\item\em get module (number) from this (module) channel ID \item\end{DoxyCompactList}\item 
+virtual unsigned int {\bf getISizeFromCellID} (const int cellID) const =0
+\begin{DoxyCompactList}\small\item\em get cell size in I direction of (Mokka) CellID coordinate \item\end{DoxyCompactList}\item 
+virtual unsigned int {\bf getJSizeFromCellID} (const int cellID) const =0
+\begin{DoxyCompactList}\small\item\em get cell size in J direction of (Mokka) CellID coordinate \item\end{DoxyCompactList}\item 
+virtual int {\bf getTrueCellID} (const int virtualCellIndex) const =0
+\begin{DoxyCompactList}\small\item\em return identifying index of cell \item\end{DoxyCompactList}\item 
+{\bf CellIterator} {\bf begin} () const 
+\begin{DoxyCompactList}\small\item\em get an iterator to the first (Mokka) cell ID \item\end{DoxyCompactList}\item 
+{\bf CellIterator} {\bf end} () const 
+\begin{DoxyCompactList}\small\item\em get an iterator one after the last (Mokka) cell ID \item\end{DoxyCompactList}\item 
+unsigned int {\bf getVersion} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf mappingModified} ()\label{classCALICE_1_1Mapper_a79b01e5b51d0c1cdf5d2eb4605eed916}
+
+\begin{DoxyCompactList}\small\item\em If this function is called the version will be increased to indicate a change in the mapping. \item\end{DoxyCompactList}\item 
+virtual unsigned int {\bf getIndexByCellID} (const int cellID) const =0
+\begin{DoxyCompactList}\small\item\em get a compact index for storing data in vectors \item\end{DoxyCompactList}\item 
+virtual unsigned int {\bf getIndexByDAQID} (const int ID) const =0
+\begin{DoxyCompactList}\small\item\em get a compact index for storing data in vectors \item\end{DoxyCompactList}\item 
+virtual unsigned int {\bf getIndexByModuleID} (const int ID) const =0
+\begin{DoxyCompactList}\small\item\em get a compact index for storing data in vectors \item\end{DoxyCompactList}\item 
+virtual unsigned int {\bf getMaxIndex} () const =0
+\begin{DoxyCompactList}\small\item\em get the maximum value of the compact index for storing data in vectors \item\end{DoxyCompactList}\item 
+virtual int {\bf getCellIDOfIndex} (unsigned int index) const =0
+\begin{DoxyCompactList}\small\item\em get the cell ID of a certain compact index \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int {\bfseries \_\-version}\label{classCALICE_1_1Mapper_a5f295c0c602899957663bd5bc51a689d}
+
+\item 
+{\bf DecoderSet} $\ast$ {\bfseries \_\-decoderSet}\label{classCALICE_1_1Mapper_ac511da0c8982d94ac4d34d67daf81ba1}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries MappedContainer}\label{classCALICE_1_1Mapper_a739ad27fe6e87106032e70290cf573d7}
+
+\item 
+class {\bfseries CellIterator}\label{classCALICE_1_1Mapper_a80561741e66173db4e12554c3740d185}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Mapping for \doxyref{CALICE}{p.}{namespaceCALICE} detectors (currently: HCAL support only). \begin{DoxyAuthor}{Author}
+{\tt Benjamin.Lutz@desy.de} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.4 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+January 2010 
+\end{DoxyDate}
+
+
+Definition at line 19 of file Mapper.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CALICE::Mapper@{CALICE::Mapper}!Mapper@{Mapper}}
+\index{Mapper@{Mapper}!CALICE::Mapper@{CALICE::Mapper}}
+\subsubsection[{Mapper}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::Mapper::Mapper (const std::string \& {\em cellIDencoding}, \/  const std::string \& {\em moduleEncoding}, \/  const std::string \& {\em DAQencoding})}\label{classCALICE_1_1Mapper_aec489612321d2a1cd619012cc7246e21}
+
+
+constructor that takes encoding strings 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em cellIDencoding}]encoding string for (Mokka) cell IDs \item[\mbox{$\leftarrow$} {\em moduleEncoding}]encoding string for module channel ID \item[\mbox{$\leftarrow$} {\em DAQencoding}]encoding string for DAQ channel ID \end{DoxyParams}
+
+
+Definition at line 11 of file Mapper.cc.
+
+\subsection{Member Function Documentation}
+\index{CALICE::Mapper@{CALICE::Mapper}!getDecoder@{getDecoder}}
+\index{getDecoder@{getDecoder}!CALICE::Mapper@{CALICE::Mapper}}
+\subsubsection[{getDecoder}]{\setlength{\rightskip}{0pt plus 5cm}{\bf DecoderSet}$\ast$ CALICE::Mapper::getDecoder () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1Mapper_ac5989c1b376d938897806ee197f68375}
+
+
+get class which handles the bit en/decoding of the different IDs The encoding strings can be set there. 
+
+Definition at line 45 of file Mapper.hh.
+
+Referenced by CALICE::CellDescriptionGenerator::generate(), CALICE::AhcMapper::getCellIDFromModChipChan(), CALICE::Ahc2Mapper::getCellIDFromModChipChan(), CALICE::AhcMapper::getCellIDOfIndex(), CALICE::Ahc2Mapper::getCellIDOfIndex(), CALICE::AhcMapper::getChanFromCellID(), CALICE::Ahc2Mapper::getChanFromCellID(), CALICE::AhcMapper::getChipFromCellID(), CALICE::Ahc2Mapper::getChipFromCellID(), CALICE::AhcMapper::getCrateFromModuleID(), CALICE::Ahc2Mapper::getCrateFromModuleID(), CALICE::MappedContainer$<$ T $>$::getDecoder(), CALICE::AhcMapper::getFeFromModuleID(), CALICE::Ahc2Mapper::getFeFromModuleID(), CALICE::AhcMapper::getIFromDAQID(), CALICE::Ahc2Mapper::getIFromDAQID(), CALICE::AhcMapper::getIFromModuleID(), CALICE::Ahc2Mapper::getIFromModuleID(), CALICE::AhcMapper::getIndexByCellID(), CALICE::Ahc2Mapper::getIndexByCellID(), CALICE::AhcMapper::getIndexByDAQID(), CALICE::Ahc2Mapper::getIndexByDAQID(), CALICE::AhcMapper::getIndexByModuleID(), CALICE::Ahc2Mapper::getIndexByModuleID(), CALICE::AhcMapper::getISizeFromCellID(), CALICE::Ahc2Mapper::getISizeFromCellID(), CALICE::AhcMapper::getISizeFromDAQID(), CALICE::Ahc2Mapper::getISizeFromDAQID(), CALICE::AhcMapper::getISizeFromModuleID(), CALICE::Ahc2Mapper::getISizeFromModuleID(), CALICE::AhcMapper::getJFromDAQID(), CALICE::Ahc2Mapper::getJFromDAQID(), CALICE::AhcMapper::getJFromModuleID(), CALICE::Ahc2Mapper::getJFromModuleID(), CALICE::AhcMapper::getJSizeFromCellID(), CALICE::Ahc2Mapper::getJSizeFromCellID(), CALICE::AhcMapper::getJSizeFromDAQID(), CALICE::Ahc2Mapper::getJSizeFromDAQID(), CALICE::AhcMapper::getJSizeFromModuleID(), CALICE::Ahc2Mapper::getJSizeFromModuleID(), CALICE::AhcMapper::getKFromModuleID(), CALICE::Ahc2Mapper::getKFromModuleID(), CALICE::AhcMapper::getModule(), CALICE::Ahc2Mapper::getModule(), CALICE::AhcMapper::getModuleFromCellID(), CALICE::Ahc2Mapper::getModuleFromCellID(), CALICE::AhcMapper::getModuleFromDAQID(), CALICE::Ahc2Mapper::getModuleFromDAQID(), CALICE::AhcMapper::getSlotFromModuleID(), CALICE::Ahc2Mapper::getSlotFromModuleID(), CALICE::AhcMapper::getTrueCellID(), CALICE::Ahc2Mapper::getTrueCellID(), CALICE::AhcMapper::getTrueIFromCellID(), CALICE::Ahc2Mapper::getTrueIFromCellID(), CALICE::AhcMapper::getTrueJFromCellID(), and CALICE::Ahc2Mapper::getTrueJFromCellID().\index{CALICE::Mapper@{CALICE::Mapper}!getMaxIndex@{getMaxIndex}}
+\index{getMaxIndex@{getMaxIndex}!CALICE::Mapper@{CALICE::Mapper}}
+\subsubsection[{getMaxIndex}]{\setlength{\rightskip}{0pt plus 5cm}virtual unsigned int CALICE::Mapper::getMaxIndex () const\hspace{0.3cm}{\ttfamily  [protected, pure virtual]}}\label{classCALICE_1_1Mapper_a34292aca2d87f6fc7f10094b5f7cab0e}
+
+
+get the maximum value of the compact index for storing data in vectors \begin{DoxyReturn}{Returns}
+maximum compact index 
+\end{DoxyReturn}
+
+
+Implemented in {\bf CALICE::Ahc2Mapper} \doxyref{}{p.}{classCALICE_1_1Ahc2Mapper_a628441b11caa652f1d13599675b8da6d}, and {\bf CALICE::AhcMapper} \doxyref{}{p.}{classCALICE_1_1AhcMapper_a9b0644605c525dd581d8d8098764120e}.
+
+Referenced by CALICE::MappedContainer$<$ T $>$::clear(), end(), CALICE::MappedContainer$<$ T $>$::MappedContainer(), and CALICE::CellIterator::operator++().\index{CALICE::Mapper@{CALICE::Mapper}!getVersion@{getVersion}}
+\index{getVersion@{getVersion}!CALICE::Mapper@{CALICE::Mapper}}
+\subsubsection[{getVersion}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int CALICE::Mapper::getVersion () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1Mapper_a378ddc78df439bcc38f0400ae5989d77}
+\begin{DoxyReturn}{Returns}
+a version number that increases with changes in the mapping 
+\end{DoxyReturn}
+
+
+Definition at line 187 of file Mapper.hh.
+
+Referenced by CALICE::MappedContainer$<$ T $>$::MappedContainer().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+Mapper.hh\item 
+Mapper.cc\end{DoxyCompactItemize}

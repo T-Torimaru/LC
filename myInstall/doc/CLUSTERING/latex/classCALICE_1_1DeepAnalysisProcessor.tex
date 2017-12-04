@@ -1,0 +1,377 @@
+\section{CALICE::DeepAnalysisProcessor Class Reference}
+\label{classCALICE_1_1DeepAnalysisProcessor}\index{CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}}
+
+
+Processor for the deep analysis according to the algorithm developed by Vasiliy Morgunov.  
+
+
+{\ttfamily \#include $<$DeepAnalysisProcessor.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Processor $\ast$ {\bf newProcessor} ()
+\begin{DoxyCompactList}\small\item\em Return a new instance of the processor. \item\end{DoxyCompactList}\item 
+{\bf DeepAnalysisProcessor} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \item\end{DoxyCompactList}\item 
+virtual void {\bf init} ()
+\begin{DoxyCompactList}\small\item\em Called at the begin of the job before anything is read. \item\end{DoxyCompactList}\item 
+virtual void {\bf processRunHeader} (LCRunHeader $\ast$run)
+\begin{DoxyCompactList}\small\item\em Called for every run. \item\end{DoxyCompactList}\item 
+virtual void {\bf processEvent} (LCEvent $\ast$evt)\label{classCALICE_1_1DeepAnalysisProcessor_a8bb1c75b7e2cd2cd78a06f3e2844c7f5}
+
+\begin{DoxyCompactList}\small\item\em Classification of hits into clusters, according to the deep analysis algorithm, on an event by event basis. \item\end{DoxyCompactList}\item 
+virtual double {\bf GeVperMip} (unsigned detectorIndex, unsigned layerIndex)
+\item 
+virtual unsigned {\bf PopulatedLayerIndex} (unsigned detectorIndex, unsigned layerIndex)
+\item 
+virtual void {\bf check} (LCEvent $\ast$evt)
+\begin{DoxyCompactList}\small\item\em Called for every event -\/ right after \doxyref{processEvent()}{p.}{classCALICE_1_1DeepAnalysisProcessor_a8bb1c75b7e2cd2cd78a06f3e2844c7f5} has been called for all processors. \item\end{DoxyCompactList}\item 
+std::vector$<$ float $>$ {\bf GetRotatedPositionIfRquested} (bool switchRotation, CalorimeterHit $\ast$a\_\-hit)
+\begin{DoxyCompactList}\small\item\em The coordinate system used in \doxyref{DeepAnalysis}{p.}{classDeepAnalysis} is different from the one used in Calice. \item\end{DoxyCompactList}\item 
+virtual void {\bf end} ()
+\begin{DoxyCompactList}\small\item\em Called after data processing for clean up in the inverse order of the \doxyref{init()}{p.}{classCALICE_1_1DeepAnalysisProcessor_a11f1a2deda4534e902e57dd599f23f61} method so that resources allocated in the first processor also will be available for all following processors. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf updateCorrelations} ()\label{classCALICE_1_1DeepAnalysisProcessor_aa4f944063dd8cd11af71b356a999a617}
+
+\begin{DoxyCompactList}\small\item\em Check out which layers contain hits, and fill the \doxyref{\_\-gevPerMip}{p.}{classCALICE_1_1DeepAnalysisProcessor_a16a1b8281abc3829debe0bb943c046c2} vectors. \item\end{DoxyCompactList}\item 
+virtual void {\bf moduleTypeChanged} (lcio::LCCollection $\ast$col, unsigned int detectorIndex)
+\begin{DoxyCompactList}\small\item\em Listen to changes of the module type (needed to correctly map the DAQ signals to cells and to calculate the 3D spacial coordinates for hits). \item\end{DoxyCompactList}\item 
+virtual void {\bf moduleLocationChanged} (lcio::LCCollection $\ast$col, unsigned int detectorIndex)
+\begin{DoxyCompactList}\small\item\em Listen to changes of the module location (needed to correctly map the DAQ signals to cells and to calculate the 3D spacial coordinates for hits). \item\end{DoxyCompactList}\item 
+virtual void {\bf moduleConnectionChanged} (lcio::LCCollection $\ast$col, unsigned int detectorIndex)
+\begin{DoxyCompactList}\small\item\em Listen to changes of the module connection (needed to correctly map the DAQ signals to cells and to calculate the 3D spacial coordinates for hits). \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+lcio::FloatVec {\bf \_\-thresholds}
+\begin{DoxyCompactList}\small\item\em Thresholds to be put into deep analysis algorithm. \item\end{DoxyCompactList}\item 
+lcio::StringVec {\bf \_\-inputCollectionNames}
+\begin{DoxyCompactList}\small\item\em List of input hit collection names (default: CalorimeterHits). \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-outputCollectionName}\label{classCALICE_1_1DeepAnalysisProcessor_abf2ff400523e0d0d643232ba24b274df}
+
+\begin{DoxyCompactList}\small\item\em Name of output collection (default: AhcClusters). \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-outputNeutrCollectionName}\label{classCALICE_1_1DeepAnalysisProcessor_a65f26be8425efe29b7d90211c7b631c8}
+
+\begin{DoxyCompactList}\small\item\em Name of neutral output collection (default: AhcNeutrClusters). \item\end{DoxyCompactList}\item 
+lcio::StringVec {\bf \_\-colNamesModuleDescription}\label{classCALICE_1_1DeepAnalysisProcessor_ae66c855547e22a6915532a79fd44f86a}
+
+\begin{DoxyCompactList}\small\item\em Name of the conditions data collection containing module descriptions. \item\end{DoxyCompactList}\item 
+lcio::StringVec {\bf \_\-colNamesModuleLocation}
+\begin{DoxyCompactList}\small\item\em Name of the conditions data collection containing module location. \item\end{DoxyCompactList}\item 
+lcio::StringVec {\bf \_\-colNamesModuleConnection}
+\begin{DoxyCompactList}\small\item\em Name of the conditions data collection containing module connection. \item\end{DoxyCompactList}\item 
+std::vector$<$ MultipleConditionsChangeDelegator$<$ {\bf DeepAnalysisProcessor} $>$ $>$ {\bf \_\-moduleTypeChange}
+\begin{DoxyCompactList}\small\item\em Helper to listen for module type change (conditions data). \item\end{DoxyCompactList}\item 
+std::vector$<$ MultipleConditionsChangeDelegator$<$ {\bf DeepAnalysisProcessor} $>$ $>$ {\bf \_\-moduleLocationChange}
+\begin{DoxyCompactList}\small\item\em Helper to listen for module location change (conditions data). \item\end{DoxyCompactList}\item 
+std::vector$<$ MultipleConditionsChangeDelegator$<$ {\bf DeepAnalysisProcessor} $>$ $>$ {\bf \_\-moduleConnectionChange}
+\begin{DoxyCompactList}\small\item\em Helper to listen for module connection change (conditions data). \item\end{DoxyCompactList}\item 
+std::vector$<$ MappingAndAlignment $>$ {\bf \_\-mapping}
+\begin{DoxyCompactList}\small\item\em Vector of MappingAndAlignment (which handles the translation into unique layer/cell ids and 3D space coordinates). \item\end{DoxyCompactList}\item 
+int {\bf \_\-viewConnectionTree}
+\begin{DoxyCompactList}\small\item\em View the mapping between channels and modules whenever the module location or module connection conditions data change (set to 0 or !=0). \item\end{DoxyCompactList}\item 
+std::vector$<$ std::vector$<$ float $>$ $>$ {\bf \_\-gevPerMip}
+\begin{DoxyCompactList}\small\item\em Store the conversion factors from E[MIPs] to E[GeV] (depend on the sampling fractions and on the index of the occupied layer). \item\end{DoxyCompactList}\item 
+std::vector$<$ std::vector$<$ int $>$ $>$ {\bf \_\-populatedLayerIndex}
+\begin{DoxyCompactList}\small\item\em Store the index of layers containing hits. \item\end{DoxyCompactList}\item 
+lcio::FloatVec {\bf \_\-samplingFractionA}
+\begin{DoxyCompactList}\small\item\em First part of parametrisation of the sampling fraction. \item\end{DoxyCompactList}\item 
+lcio::FloatVec {\bf \_\-samplingFractionB}
+\begin{DoxyCompactList}\small\item\em Second part of parametrisation of the sampling fraction. \item\end{DoxyCompactList}\item 
+double {\bf \_\-samplingFactor}
+\begin{DoxyCompactList}\small\item\em Sampling factor (in GeV) for transforming E[GeV] in E[MIPs], default MC value 875 keV. \item\end{DoxyCompactList}\item 
+int {\bf \_\-switchRotation}\label{classCALICE_1_1DeepAnalysisProcessor_a763658ffcef0344381719245edf455ae}
+
+\begin{DoxyCompactList}\small\item\em Switch rotation ON/OFF. \item\end{DoxyCompactList}\item 
+double {\bf \_\-mipThreshold}\label{classCALICE_1_1DeepAnalysisProcessor_a5e24ceb1ccb0fd90f0f70b272477030f}
+
+\begin{DoxyCompactList}\small\item\em Minimal energy deposition in units of MIPs to keep the hit (default 0.5). \item\end{DoxyCompactList}\item 
+bool {\bfseries \_\-fIsMC}\label{classCALICE_1_1DeepAnalysisProcessor_a3d1adc1b1061a356d7bf585dfe2440b2}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Processor for the deep analysis according to the algorithm developed by Vasiliy Morgunov. Input: calibrated CalorimeterHits, output: AhcClusters -\/ collection of classified clusters, according to their energy. For details, see {\tt http://www.desy.de/$\sim$garutti/DOCU/deepanalysis.pdf}
+
+\begin{DoxyAuthor}{Author}
+S. Schmidt, DESY 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Apr 4 2007 
+\end{DoxyDate}
+
+
+Definition at line 41 of file DeepAnalysisProcessor.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}!DeepAnalysisProcessor@{DeepAnalysisProcessor}}
+\index{DeepAnalysisProcessor@{DeepAnalysisProcessor}!CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}}
+\subsubsection[{DeepAnalysisProcessor}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::DeepAnalysisProcessor::DeepAnalysisProcessor ()}\label{classCALICE_1_1DeepAnalysisProcessor_af0f7402850bf0d1c75294e285756efe0}
+
+
+Default constructor. 
+
+Definition at line 29 of file DeepAnalysisProcessor.cc.
+
+References \_\-colNamesModuleConnection, \_\-colNamesModuleDescription, \_\-colNamesModuleLocation, \_\-inputCollectionNames, \_\-mipThreshold, \_\-outputCollectionName, \_\-outputNeutrCollectionName, \_\-samplingFactor, \_\-samplingFractionA, \_\-samplingFractionB, \_\-switchRotation, \_\-thresholds, and \_\-viewConnectionTree.
+
+\subsection{Member Function Documentation}
+\index{CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}!check@{check}}
+\index{check@{check}!CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}}
+\subsubsection[{check}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::DeepAnalysisProcessor::check (LCEvent $\ast$ {\em evt})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCALICE_1_1DeepAnalysisProcessor_a6cced09085aae251c4864a6af6520ab0}
+
+
+Called for every event -\/ right after \doxyref{processEvent()}{p.}{classCALICE_1_1DeepAnalysisProcessor_a8bb1c75b7e2cd2cd78a06f3e2844c7f5} has been called for all processors. Use to check processing and/or produce check plots. 
+
+Definition at line 574 of file DeepAnalysisProcessor.cc.\index{CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}!end@{end}}
+\index{end@{end}!CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}}
+\subsubsection[{end}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::DeepAnalysisProcessor::end ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCALICE_1_1DeepAnalysisProcessor_afea0f203cb78214cfb45a36d6693ca4a}
+
+
+Called after data processing for clean up in the inverse order of the \doxyref{init()}{p.}{classCALICE_1_1DeepAnalysisProcessor_a11f1a2deda4534e902e57dd599f23f61} method so that resources allocated in the first processor also will be available for all following processors. 
+
+Definition at line 614 of file DeepAnalysisProcessor.cc.\index{CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}!GetRotatedPositionIfRquested@{GetRotatedPositionIfRquested}}
+\index{GetRotatedPositionIfRquested@{GetRotatedPositionIfRquested}!CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}}
+\subsubsection[{GetRotatedPositionIfRquested}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$ float $>$ CALICE::DeepAnalysisProcessor::GetRotatedPositionIfRquested (bool {\em switchRotation}, \/  CalorimeterHit $\ast$ {\em a\_\-hit})}\label{classCALICE_1_1DeepAnalysisProcessor_a82046cb494d223d964fbac5aba9295f3}
+
+
+The coordinate system used in \doxyref{DeepAnalysis}{p.}{classDeepAnalysis} is different from the one used in Calice. The relations are: x\_\-deepAnalysis = -\/x\_\-calice y\_\-deepAnalysis = y\_\-calice z\_\-deepAnalysis = -\/z\_\-calice
+
+double x\_\-calice = a\_\-hit-\/$>$getPosition()[0]; double y\_\-calice = a\_\-hit-\/$>$getPosition()[1]; double z\_\-calice = a\_\-hit-\/$>$getPosition()[2];
+
+double x\_\-deepAnalysis = -\/x\_\-calice; double y\_\-deepAnalysis = y\_\-calice; double z\_\-deepAnalysis = -\/z\_\-calice; 
+
+Definition at line 581 of file DeepAnalysisProcessor.cc.
+
+Referenced by processEvent().\index{CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}!GeVperMip@{GeVperMip}}
+\index{GeVperMip@{GeVperMip}!CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}}
+\subsubsection[{GeVperMip}]{\setlength{\rightskip}{0pt plus 5cm}double CALICE::DeepAnalysisProcessor::GeVperMip (unsigned {\em detectorIndex}, \/  unsigned {\em layerIndex})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCALICE_1_1DeepAnalysisProcessor_a7195518a4115255e9d91e10b1f7ee224}
+\begin{DoxyReturn}{Returns}
+\doxyref{\_\-gevPerMip}{p.}{classCALICE_1_1DeepAnalysisProcessor_a16a1b8281abc3829debe0bb943c046c2} 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em detectorIndex}]index of the input collections \item[{\em layerIndex}]index of the layer \end{DoxyParams}
+
+
+Definition at line 490 of file DeepAnalysisProcessor.cc.
+
+References \_\-gevPerMip.
+
+Referenced by processEvent().\index{CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}!init@{init}}
+\index{init@{init}!CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::DeepAnalysisProcessor::init ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCALICE_1_1DeepAnalysisProcessor_a11f1a2deda4534e902e57dd599f23f61}
+
+
+Called at the begin of the job before anything is read. Used to initialize the processor. 
+
+Definition at line 120 of file DeepAnalysisProcessor.cc.
+
+References \_\-colNamesModuleConnection, \_\-colNamesModuleDescription, \_\-colNamesModuleLocation, \_\-inputCollectionNames, \_\-mapping, \_\-moduleConnectionChange, \_\-moduleLocationChange, \_\-moduleTypeChange, \_\-samplingFractionA, \_\-samplingFractionB, \_\-thresholds, \_\-viewConnectionTree, moduleConnectionChanged(), moduleLocationChanged(), and moduleTypeChanged().\index{CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}!moduleConnectionChanged@{moduleConnectionChanged}}
+\index{moduleConnectionChanged@{moduleConnectionChanged}!CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}}
+\subsubsection[{moduleConnectionChanged}]{\setlength{\rightskip}{0pt plus 5cm}virtual void CALICE::DeepAnalysisProcessor::moduleConnectionChanged (lcio::LCCollection $\ast$ {\em col}, \/  unsigned int {\em detectorIndex})\hspace{0.3cm}{\ttfamily  [inline, protected, virtual]}}\label{classCALICE_1_1DeepAnalysisProcessor_a4ff699042d1bd0f80c4057a87015b4c4}
+
+
+Listen to changes of the module connection (needed to correctly map the DAQ signals to cells and to calculate the 3D spacial coordinates for hits). 
+\begin{DoxyParams}{Parameters}
+\item[{\em col}]input collections names \item[{\em detectorIndex}]index of the input collections \end{DoxyParams}
+
+
+Definition at line 179 of file DeepAnalysisProcessor.hh.
+
+References \_\-mapping, and updateCorrelations().
+
+Referenced by init().\index{CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}!moduleLocationChanged@{moduleLocationChanged}}
+\index{moduleLocationChanged@{moduleLocationChanged}!CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}}
+\subsubsection[{moduleLocationChanged}]{\setlength{\rightskip}{0pt plus 5cm}virtual void CALICE::DeepAnalysisProcessor::moduleLocationChanged (lcio::LCCollection $\ast$ {\em col}, \/  unsigned int {\em detectorIndex})\hspace{0.3cm}{\ttfamily  [inline, protected, virtual]}}\label{classCALICE_1_1DeepAnalysisProcessor_acaf0d0c6883f4783b398712d4c17bea2}
+
+
+Listen to changes of the module location (needed to correctly map the DAQ signals to cells and to calculate the 3D spacial coordinates for hits). 
+\begin{DoxyParams}{Parameters}
+\item[{\em col}]input collections names \item[{\em detectorIndex}]index of the input collections \end{DoxyParams}
+
+
+Definition at line 167 of file DeepAnalysisProcessor.hh.
+
+References \_\-mapping, and updateCorrelations().
+
+Referenced by init().\index{CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}!moduleTypeChanged@{moduleTypeChanged}}
+\index{moduleTypeChanged@{moduleTypeChanged}!CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}}
+\subsubsection[{moduleTypeChanged}]{\setlength{\rightskip}{0pt plus 5cm}virtual void CALICE::DeepAnalysisProcessor::moduleTypeChanged (lcio::LCCollection $\ast$ {\em col}, \/  unsigned int {\em detectorIndex})\hspace{0.3cm}{\ttfamily  [inline, protected, virtual]}}\label{classCALICE_1_1DeepAnalysisProcessor_a1e6a910a439fc62c183039ab50ef2eca}
+
+
+Listen to changes of the module type (needed to correctly map the DAQ signals to cells and to calculate the 3D spacial coordinates for hits). 
+\begin{DoxyParams}{Parameters}
+\item[{\em col}]input collections names \item[{\em detectorIndex}]index of the input collections \end{DoxyParams}
+
+
+Definition at line 156 of file DeepAnalysisProcessor.hh.
+
+References \_\-mapping, and updateCorrelations().
+
+Referenced by init().\index{CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}!newProcessor@{newProcessor}}
+\index{newProcessor@{newProcessor}!CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}}
+\subsubsection[{newProcessor}]{\setlength{\rightskip}{0pt plus 5cm}virtual Processor$\ast$ CALICE::DeepAnalysisProcessor::newProcessor ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classCALICE_1_1DeepAnalysisProcessor_a8c48cc1b602f4ecb5bdd253ffc796f14}
+
+
+Return a new instance of the processor. 
+
+Definition at line 46 of file DeepAnalysisProcessor.hh.\index{CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}!PopulatedLayerIndex@{PopulatedLayerIndex}}
+\index{PopulatedLayerIndex@{PopulatedLayerIndex}!CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}}
+\subsubsection[{PopulatedLayerIndex}]{\setlength{\rightskip}{0pt plus 5cm}unsigned CALICE::DeepAnalysisProcessor::PopulatedLayerIndex (unsigned {\em detectorIndex}, \/  unsigned {\em layerIndex})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCALICE_1_1DeepAnalysisProcessor_aa2e6f47b82d17cee7226faa2e427214e}
+\begin{DoxyReturn}{Returns}
+\doxyref{\_\-populatedLayerIndex}{p.}{classCALICE_1_1DeepAnalysisProcessor_aa8c5ca35a74569b33c641242eb559cc5} 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em detectorIndex}]index of the input collections \item[{\em layerIndex}]index of the layer \end{DoxyParams}
+
+
+Definition at line 499 of file DeepAnalysisProcessor.cc.
+
+References \_\-populatedLayerIndex.
+
+Referenced by processEvent().\index{CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}!processRunHeader@{processRunHeader}}
+\index{processRunHeader@{processRunHeader}!CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}}
+\subsubsection[{processRunHeader}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::DeepAnalysisProcessor::processRunHeader (LCRunHeader $\ast$ {\em run})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCALICE_1_1DeepAnalysisProcessor_aa95f1ffefdea07fd542085667f469588}
+
+
+Called for every run. 
+
+Definition at line 193 of file DeepAnalysisProcessor.cc.
+
+\subsection{Field Documentation}
+\index{CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}!\_\-colNamesModuleConnection@{\_\-colNamesModuleConnection}}
+\index{\_\-colNamesModuleConnection@{\_\-colNamesModuleConnection}!CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}}
+\subsubsection[{\_\-colNamesModuleConnection}]{\setlength{\rightskip}{0pt plus 5cm}lcio::StringVec {\bf CALICE::DeepAnalysisProcessor::\_\-colNamesModuleConnection}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1DeepAnalysisProcessor_a765b1b5e6845a77acfd690b482a7d3de}
+
+
+Name of the conditions data collection containing module connection. 
+
+Definition at line 111 of file DeepAnalysisProcessor.hh.
+
+Referenced by DeepAnalysisProcessor(), and init().\index{CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}!\_\-colNamesModuleLocation@{\_\-colNamesModuleLocation}}
+\index{\_\-colNamesModuleLocation@{\_\-colNamesModuleLocation}!CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}}
+\subsubsection[{\_\-colNamesModuleLocation}]{\setlength{\rightskip}{0pt plus 5cm}lcio::StringVec {\bf CALICE::DeepAnalysisProcessor::\_\-colNamesModuleLocation}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1DeepAnalysisProcessor_a7968c4389c0d106e7d9779c42ba95c2e}
+
+
+Name of the conditions data collection containing module location. 
+
+Definition at line 109 of file DeepAnalysisProcessor.hh.
+
+Referenced by DeepAnalysisProcessor(), and init().\index{CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}!\_\-gevPerMip@{\_\-gevPerMip}}
+\index{\_\-gevPerMip@{\_\-gevPerMip}!CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}}
+\subsubsection[{\_\-gevPerMip}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$std::vector$<$float$>$ $>$ {\bf CALICE::DeepAnalysisProcessor::\_\-gevPerMip}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1DeepAnalysisProcessor_a16a1b8281abc3829debe0bb943c046c2}
+
+
+Store the conversion factors from E[MIPs] to E[GeV] (depend on the sampling fractions and on the index of the occupied layer). 
+
+Definition at line 130 of file DeepAnalysisProcessor.hh.
+
+Referenced by GeVperMip(), and updateCorrelations().\index{CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}!\_\-inputCollectionNames@{\_\-inputCollectionNames}}
+\index{\_\-inputCollectionNames@{\_\-inputCollectionNames}!CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}}
+\subsubsection[{\_\-inputCollectionNames}]{\setlength{\rightskip}{0pt plus 5cm}lcio::StringVec {\bf CALICE::DeepAnalysisProcessor::\_\-inputCollectionNames}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1DeepAnalysisProcessor_ac7000e5b7e29c0d18a43a3860cbcab06}
+
+
+List of input hit collection names (default: CalorimeterHits). 
+
+Definition at line 103 of file DeepAnalysisProcessor.hh.
+
+Referenced by DeepAnalysisProcessor(), init(), processEvent(), and updateCorrelations().\index{CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}!\_\-mapping@{\_\-mapping}}
+\index{\_\-mapping@{\_\-mapping}!CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}}
+\subsubsection[{\_\-mapping}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$MappingAndAlignment$>$ {\bf CALICE::DeepAnalysisProcessor::\_\-mapping}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1DeepAnalysisProcessor_a8eb73fb7bc4baec3832dfe7f51c3ae7c}
+
+
+Vector of MappingAndAlignment (which handles the translation into unique layer/cell ids and 3D space coordinates). 
+
+Definition at line 124 of file DeepAnalysisProcessor.hh.
+
+Referenced by init(), moduleConnectionChanged(), moduleLocationChanged(), moduleTypeChanged(), and updateCorrelations().\index{CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}!\_\-moduleConnectionChange@{\_\-moduleConnectionChange}}
+\index{\_\-moduleConnectionChange@{\_\-moduleConnectionChange}!CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}}
+\subsubsection[{\_\-moduleConnectionChange}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$MultipleConditionsChangeDelegator$<${\bf DeepAnalysisProcessor}$>$ $>$ {\bf CALICE::DeepAnalysisProcessor::\_\-moduleConnectionChange}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1DeepAnalysisProcessor_a214ca8e9c5941d2b760e94d18e5cfec2}
+
+
+Helper to listen for module connection change (conditions data). 
+
+Definition at line 120 of file DeepAnalysisProcessor.hh.
+
+Referenced by init().\index{CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}!\_\-moduleLocationChange@{\_\-moduleLocationChange}}
+\index{\_\-moduleLocationChange@{\_\-moduleLocationChange}!CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}}
+\subsubsection[{\_\-moduleLocationChange}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$MultipleConditionsChangeDelegator$<${\bf DeepAnalysisProcessor}$>$ $>$ {\bf CALICE::DeepAnalysisProcessor::\_\-moduleLocationChange}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1DeepAnalysisProcessor_a95b27435a9ac32c1f1410a87de569383}
+
+
+Helper to listen for module location change (conditions data). 
+
+Definition at line 117 of file DeepAnalysisProcessor.hh.
+
+Referenced by init().\index{CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}!\_\-moduleTypeChange@{\_\-moduleTypeChange}}
+\index{\_\-moduleTypeChange@{\_\-moduleTypeChange}!CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}}
+\subsubsection[{\_\-moduleTypeChange}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$MultipleConditionsChangeDelegator$<${\bf DeepAnalysisProcessor}$>$ $>$ {\bf CALICE::DeepAnalysisProcessor::\_\-moduleTypeChange}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1DeepAnalysisProcessor_a6edf54b93f74b7488426301b1f5d71b0}
+
+
+Helper to listen for module type change (conditions data). 
+
+Definition at line 114 of file DeepAnalysisProcessor.hh.
+
+Referenced by init().\index{CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}!\_\-populatedLayerIndex@{\_\-populatedLayerIndex}}
+\index{\_\-populatedLayerIndex@{\_\-populatedLayerIndex}!CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}}
+\subsubsection[{\_\-populatedLayerIndex}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$std::vector$<$int$>$ $>$ {\bf CALICE::DeepAnalysisProcessor::\_\-populatedLayerIndex}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1DeepAnalysisProcessor_aa8c5ca35a74569b33c641242eb559cc5}
+
+
+Store the index of layers containing hits. 
+
+Definition at line 133 of file DeepAnalysisProcessor.hh.
+
+Referenced by PopulatedLayerIndex(), and updateCorrelations().\index{CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}!\_\-samplingFactor@{\_\-samplingFactor}}
+\index{\_\-samplingFactor@{\_\-samplingFactor}!CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}}
+\subsubsection[{\_\-samplingFactor}]{\setlength{\rightskip}{0pt plus 5cm}double {\bf CALICE::DeepAnalysisProcessor::\_\-samplingFactor}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1DeepAnalysisProcessor_a8f722ccb18f82134e2197547eee6244c}
+
+
+Sampling factor (in GeV) for transforming E[GeV] in E[MIPs], default MC value 875 keV. 
+
+Definition at line 137 of file DeepAnalysisProcessor.hh.
+
+Referenced by DeepAnalysisProcessor(), and updateCorrelations().\index{CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}!\_\-samplingFractionA@{\_\-samplingFractionA}}
+\index{\_\-samplingFractionA@{\_\-samplingFractionA}!CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}}
+\subsubsection[{\_\-samplingFractionA}]{\setlength{\rightskip}{0pt plus 5cm}lcio::FloatVec {\bf CALICE::DeepAnalysisProcessor::\_\-samplingFractionA}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1DeepAnalysisProcessor_a386ae896d3e81b1e8e5335bdd99ef639}
+
+
+First part of parametrisation of the sampling fraction. 
+
+Definition at line 135 of file DeepAnalysisProcessor.hh.
+
+Referenced by DeepAnalysisProcessor(), init(), and updateCorrelations().\index{CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}!\_\-samplingFractionB@{\_\-samplingFractionB}}
+\index{\_\-samplingFractionB@{\_\-samplingFractionB}!CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}}
+\subsubsection[{\_\-samplingFractionB}]{\setlength{\rightskip}{0pt plus 5cm}lcio::FloatVec {\bf CALICE::DeepAnalysisProcessor::\_\-samplingFractionB}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1DeepAnalysisProcessor_ae663c30fc08de31bedc6792110247b15}
+
+
+Second part of parametrisation of the sampling fraction. 
+
+Definition at line 136 of file DeepAnalysisProcessor.hh.
+
+Referenced by DeepAnalysisProcessor(), init(), and updateCorrelations().\index{CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}!\_\-thresholds@{\_\-thresholds}}
+\index{\_\-thresholds@{\_\-thresholds}!CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}}
+\subsubsection[{\_\-thresholds}]{\setlength{\rightskip}{0pt plus 5cm}lcio::FloatVec {\bf CALICE::DeepAnalysisProcessor::\_\-thresholds}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1DeepAnalysisProcessor_abced7b7536bce66e026bf27acb7f02a3}
+
+
+Thresholds to be put into deep analysis algorithm. 
+
+Definition at line 102 of file DeepAnalysisProcessor.hh.
+
+Referenced by DeepAnalysisProcessor(), init(), and processEvent().\index{CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}!\_\-viewConnectionTree@{\_\-viewConnectionTree}}
+\index{\_\-viewConnectionTree@{\_\-viewConnectionTree}!CALICE::DeepAnalysisProcessor@{CALICE::DeepAnalysisProcessor}}
+\subsubsection[{\_\-viewConnectionTree}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf CALICE::DeepAnalysisProcessor::\_\-viewConnectionTree}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1DeepAnalysisProcessor_a6f07cd4ccd368734695eecc8692c2e3f}
+
+
+View the mapping between channels and modules whenever the module location or module connection conditions data change (set to 0 or !=0). 
+
+Definition at line 127 of file DeepAnalysisProcessor.hh.
+
+Referenced by DeepAnalysisProcessor(), and init().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+DeepAnalysisProcessor.hh\item 
+DeepAnalysisProcessor.cc\end{DoxyCompactItemize}

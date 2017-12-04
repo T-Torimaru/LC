@@ -1,0 +1,126 @@
+\section{fitMIP.cc File Reference}
+\label{fitMIP_8cc}\index{fitMIP.cc@{fitMIP.cc}}
+
+
+Example of main function for finding the MIP calibration values using classes \doxyref{Langaus}{p.}{classLangaus}, \doxyref{Bezier}{p.}{classBezier} and Fitlikelihood.  
+{\ttfamily \#include \char`\"{}Fitlikelihood.hh\char`\"{}}\par
+{\ttfamily \#include \char`\"{}Langaus.hh\char`\"{}}\par
+{\ttfamily \#include $<$fstream$>$}\par
+{\ttfamily \#include $<$iostream$>$}\par
+{\ttfamily \#include $<$cstdlib$>$}\par
+{\ttfamily \#include $<$stdexcept$>$}\par
+{\ttfamily \#include $<$vector$>$}\par
+{\ttfamily \#include \char`\"{}RooFit.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}RooPlot.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}TGraph.h\char`\"{}}\par
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries setParameters} (int argc, char $\ast$argv[$\,$])\label{fitMIP_8cc_ab4c8bbfdf14fcf9df807354625066d9e}
+
+\item 
+void {\bfseries printParameters} ()\label{fitMIP_8cc_a452435a1d80fe91993338af59a9302ef}
+
+\item 
+void {\bfseries printHelp} ()\label{fitMIP_8cc_a0d20b69b0ad703df78459e1033d5c1d4}
+
+\item 
+int {\bfseries main} (int argc, char $\ast$argv[$\,$])\label{fitMIP_8cc_a0ddf1224851353fc92bfbff6f499fa97}
+
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const unsigned {\bf \_\-minEntries} = 10\label{fitMIP_8cc_a7443a64a7573acee22295d1b67ab3a29}
+
+\begin{DoxyCompactList}\small\item\em minimal number of entries for one cell. \item\end{DoxyCompactList}\item 
+const double {\bf \_\-minMean} = 0\label{fitMIP_8cc_a16706f112e996cac7fd9366a878ab815}
+
+\begin{DoxyCompactList}\small\item\em minimal value of mean of deposited energy for one cell. \item\end{DoxyCompactList}\item 
+const double {\bf \_\-parMax} [3] = \{400,2000,400\}\label{fitMIP_8cc_aa13b1b1c4f2eb2502a5cb82b8f3fb944}
+
+\begin{DoxyCompactList}\small\item\em upper limits for parameters of fit (Landau sigma, Landau mean, Gaus sigma). \item\end{DoxyCompactList}\item 
+const double {\bf \_\-parMin} [3] = \{0, 0, 0\}\label{fitMIP_8cc_a93f448a5d4f24a239c7aaaa01c9170ec}
+
+\begin{DoxyCompactList}\small\item\em lower limits for parameters of fit (Landau sigma, Landau mean, Gaus sigma). \item\end{DoxyCompactList}\item 
+const char $\ast$ {\bfseries \_\-infilename}\label{fitMIP_8cc_a4790d221be08201b9e633f72c16c1b7a}
+
+\item 
+const char $\ast$ {\bfseries \_\-histoname}\label{fitMIP_8cc_aa599be76b790451e9e5a791f16a48753}
+
+\item 
+const char $\ast$ {\bfseries \_\-outroot}\label{fitMIP_8cc_a0332fda46e65171dcf6e3254dffe4a83}
+
+\item 
+const char $\ast$ {\bfseries \_\-outfileName}\label{fitMIP_8cc_a02d38e3be01d5b7c838fa084b7fdad2c}
+
+\item 
+ofstream {\bfseries \_\-outfile}\label{fitMIP_8cc_aa77135d492b7d33298949a166bb59fef}
+
+\item 
+double {\bfseries \_\-range} = 3\label{fitMIP_8cc_a56e7ea6c5ceeed3983f71ccf0e79f336}
+
+\item 
+double {\bfseries \_\-leftRange}\label{fitMIP_8cc_a9a0d26f3fe660e2bcb87aba202a659f1}
+
+\item 
+double {\bfseries \_\-rightRange}\label{fitMIP_8cc_a46620d74858262c2e00dc592e4f551e4}
+
+\item 
+bool {\bfseries \_\-rangeExplicit} = 0\label{fitMIP_8cc_ac09d1489922db6ab2c8f3b362efe21ef}
+
+\item 
+int {\bfseries \_\-mod}\label{fitMIP_8cc_a5beae06a41d6d1defed35ef8c4627387}
+
+\item 
+int {\bfseries \_\-chip}\label{fitMIP_8cc_a8804812bd68d3a383ac0083a1c6b3646}
+
+\item 
+int {\bfseries \_\-chan}\label{fitMIP_8cc_a2a96bc51a6453df1fb38c1a97a1d3b50}
+
+\item 
+const int {\bfseries SHIFT} = 8\label{fitMIP_8cc_aa77c755bcebcae64b7b19461a74435c2}
+
+\item 
+int {\bf \_\-rebin} = 8\label{fitMIP_8cc_a9607576d2834b61c56893a694de6055f}
+
+\begin{DoxyCompactList}\small\item\em rebining of input histogram for fit. \item\end{DoxyCompactList}\item 
+int {\bf \_\-Bezierorder} = 20\label{fitMIP_8cc_ab4887120b9f196288b44ee0973a5c6f4}
+
+\begin{DoxyCompactList}\small\item\em order of \doxyref{Bezier}{p.}{classBezier} curve. \item\end{DoxyCompactList}\item 
+int {\bf \_\-Bezierrebin} = 18\label{fitMIP_8cc_a9cd2969bf40e425c94ea073bdad6dbe2}
+
+\begin{DoxyCompactList}\small\item\em rebining of input histogram for \doxyref{Bezier}{p.}{classBezier} curve. \item\end{DoxyCompactList}\item 
+bool {\bfseries \_\-isRootfile}\label{fitMIP_8cc_a64acc40a2ab30c2483b486413baa8d99}
+
+\item 
+bool {\bfseries \_\-isOutfile}\label{fitMIP_8cc_a759aca23cf5fbe2c447e253db60d5e57}
+
+\item 
+bool {\bfseries \_\-useFFT} = 0\label{fitMIP_8cc_af06e46e62b5c3fa57b7dfee47d8ffbd0}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Example of main function for finding the MIP calibration values using classes \doxyref{Langaus}{p.}{classLangaus}, \doxyref{Bezier}{p.}{classBezier} and Fitlikelihood. The mip calibration value is found by fitting the histogram by function defined like convolution of Landau and Gaus function. The mip calibration value is then the most probable value of function (MPV). For rough estimation of MPV is used \doxyref{Bezier}{p.}{classBezier} curve implemented in class \doxyref{Bezier}{p.}{classBezier}. Be aware with tuning your own main program, especially with tuning of direct numerical calculation of convolution integral. Particulary with fine tuning of lower limit of Gaus sigma. More in \doxyref{Langaus}{p.}{classLangaus}.
+
+Detailed description follows here. \begin{DoxyAuthor}{Author}
+Boris Bulanek, DESY 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+June 2010
+\end{DoxyDate}
+
+\begin{DoxyCode}
+ fitMipRun -infile <root file input> -histoname <name of histogram> [ -outtxt <tx
+      t output> -outroot <root file output>   -range <range(float)> -rebin <rebin> ]
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em inFile}]Relative entry to the input root file with histograms. \item[\mbox{$\rightarrow$} {\em outpath}]Relative path for the output files. \item[{\em range}]Range of fit given as $\left<\mbox{left},\mbox{right}\cdot\mbox{peakInit}\right>$, where peakInit is roughly found peak. \end{DoxyParams}
+
+
+Definition in file {\bf fitMIP.cc}.

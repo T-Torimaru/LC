@@ -1,0 +1,72 @@
+\section{CALICE::SaturationConstants Class Reference}
+\label{classCALICE_1_1SaturationConstants}\index{CALICE::SaturationConstants@{CALICE::SaturationConstants}}
+
+
+Class to store the parametrisation of the saturation curve (no error yet) for a certain chip/channel for a fixed moduleID.  
+
+
+{\ttfamily \#include $<$SaturationConstants.hh$>$}Inheritance diagram for CALICE::SaturationConstants::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCALICE_1_1SaturationConstants}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries SaturationConstants} (unsigned chip, unsigned channel, float value, float error)\label{classCALICE_1_1SaturationConstants_ab78ca41a50dc74eddb2b82274dda4b96}
+
+\item 
+{\bfseries SaturationConstants} (LCObject $\ast$obj)\label{classCALICE_1_1SaturationConstants_a327dd2cc0ea1c5d5160e6693593d6587}
+
+\item 
+float {\bf getSaturationValue} () const \label{classCALICE_1_1SaturationConstants_a692c4d27fbada5699cb12c91c38653ab}
+
+\begin{DoxyCompactList}\small\item\em get parametrisation value \item\end{DoxyCompactList}\item 
+float {\bf getSaturationError} () const \label{classCALICE_1_1SaturationConstants_a9079460ba4174a3f95d12b0b647af98b}
+
+\begin{DoxyCompactList}\small\item\em get parametrisation error \item\end{DoxyCompactList}\item 
+float {\bf applyCalibration} (float inputValue, float inputParameter) const \label{classCALICE_1_1SaturationConstants_a9ffdaea1fa36d7f63483fa5438e870fc}
+
+\begin{DoxyCompactList}\small\item\em apply calibration to energy value \item\end{DoxyCompactList}\item 
+float {\bf cancelCalibration} (float outputValue, float inputParameter) const \label{classCALICE_1_1SaturationConstants_a551dcb6656eac067e5f88113eb443322}
+
+\begin{DoxyCompactList}\small\item\em cancel an applied calibration from energy value \item\end{DoxyCompactList}\item 
+float {\bf applyCalibrationError} (float inputValue, float inputError, float inputParameter, float inputParameterError) const \label{classCALICE_1_1SaturationConstants_a62846bb8c332310f5db4d2c31333ce11}
+
+\begin{DoxyCompactList}\small\item\em apply calibration error to current error \item\end{DoxyCompactList}\item 
+float {\bf cancelCalibrationError} (float outputValue, float outputError, float inputParameter, float inputParameterError) const \label{classCALICE_1_1SaturationConstants_a19d0bb585843573555df4e63c6038acd}
+
+\begin{DoxyCompactList}\small\item\em apply error due to canceling a calibration to current error \item\end{DoxyCompactList}\item 
+bool {\bf calibrationValid} () const \label{classCALICE_1_1SaturationConstants_a7fdebcaa3ebf3b099aa11524e347ace3}
+
+\begin{DoxyCompactList}\small\item\em check if a valid calibration is available \item\end{DoxyCompactList}\item 
+bool {\bf keepEvent} (float resultValue, float resultError) const \label{classCALICE_1_1SaturationConstants_a4df07d49bfccab7e7586bffddee8583c}
+
+\begin{DoxyCompactList}\small\item\em no cut for the moment \item\end{DoxyCompactList}\item 
+void {\bf print} (std::ostream \&os)\label{classCALICE_1_1SaturationConstants_a874667af6a08bd188c53dfa36757b915}
+
+\begin{DoxyCompactList}\small\item\em convenient print method \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1SaturationConstants_a6868223cd0a1232d1cafee7032f47fc0}
+
+\begin{DoxyCompactList}\small\item\em return type of the class \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1SaturationConstants_a1f4ea94ddbcb2aed522fc35ea20a8d78}
+
+\begin{DoxyCompactList}\small\item\em return a brief description of the data member \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to store the parametrisation of the saturation curve (no error yet) for a certain chip/channel for a fixed moduleID. \begin{DoxyAuthor}{Author}
+S. Schmidt DESY 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Aug 18 2006 
+\end{DoxyDate}
+
+
+Definition at line 25 of file SaturationConstants.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+SaturationConstants.hh\item 
+SaturationConstants.cc\end{DoxyCompactItemize}

@@ -1,0 +1,81 @@
+\section{AverageValue$<$ T $>$ Class Template Reference}
+\label{classAverageValue}\index{AverageValue@{AverageValue}}
+
+
+Collect input values and calculate mean/RMS upon request.  
+
+
+{\ttfamily \#include $<$AverageValue.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf AverageValue} \& {\bfseries addValue} (T e)\label{classAverageValue_a761e96e88901b8660ed3144e62111d1e}
+
+\item 
+{\bf AverageValue} \& {\bfseries reset} ()\label{classAverageValue_a8402a0c0c5684e70ab5b2f01d316d695}
+
+\item 
+const unsigned int {\bfseries getNumberOfValues} () const \label{classAverageValue_a8ec1cb0f2a04a199f8993025859573e1}
+
+\item 
+const T {\bfseries getSum} () const \label{classAverageValue_a7b92383c27eb1897f0fa4ab9b48dc7d6}
+
+\item 
+const T {\bfseries getSumOfSquares} () const \label{classAverageValue_a085cb76103bddc0030d95d704f5913b1}
+
+\item 
+const T {\bfseries getMean} () const \label{classAverageValue_af500336a4650b1ee612e39dfa06687e4}
+
+\item 
+const T {\bfseries getMeanUncertainty} () const \label{classAverageValue_a0dd1de27ea460d4c77f807e95b554589}
+
+\item 
+const T {\bfseries getRMS} () const \label{classAverageValue_a463d2278f5223cae4c2d4aafbbbbd390}
+
+\item 
+const T {\bfseries getRMSUncertainty} () const \label{classAverageValue_a746c0c5ca150856c7f0a3b4dbe0e9906}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const double {\bfseries getSumSquared} () const \label{classAverageValue_ad6b203c7b59b20a41eeb1583cd13d860}
+
+\item 
+const double {\bfseries getMeanSquared} () const \label{classAverageValue_a2bc4c1917b65d3e0059fdef4cc5483b7}
+
+\item 
+const double {\bfseries getMeanOfSquares} () const \label{classAverageValue_a7ebd28e0898ddb72fed239a8ef0aad27}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int {\bfseries \_\-num}\label{classAverageValue_a889761bd8e0c8677fb24fdd867cc6f36}
+
+\item 
+T {\bfseries \_\-sum}\label{classAverageValue_a1b42f1de1fbe48182dc99f5a29bc80e7}
+
+\item 
+T {\bfseries \_\-sum2}\label{classAverageValue_ade9ce93c3c9fbba50e9462e43e5b0e0e}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$ class AverageValue$<$ T $>$}
+
+Collect input values and calculate mean/RMS upon request. This class keeps sum, sum-\/of-\/squares and number of input values to calculate mean/RMS. Templated value data type allows for flexible memory managemant, while internal calculations are done in double precision to avoid numerical cut-\/offs.
+
+\begin{DoxyAuthor}{Author}
+{\tt Niels.Meyer@desy.de} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+January 2008 
+\end{DoxyDate}
+
+
+Definition at line 19 of file AverageValue.hh.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+AverageValue.hh\end{DoxyCompactItemize}

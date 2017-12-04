@@ -1,0 +1,191 @@
+\section{marlin::RunInfoProcessor Class Reference}
+\label{classmarlin_1_1RunInfoProcessor}\index{marlin::RunInfoProcessor@{marlin::RunInfoProcessor}}
+
+
+Preprocessor which is supposed to run at the !very! beginning of the processor chain.  
+
+
+{\ttfamily \#include $<$RunInfoProcessor.hh$>$}\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf LCRunModifier}
+\begin{DoxyCompactList}\small\item\em Helper class to for the modification of the Run Header. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Processor $\ast$ {\bfseries newProcessor} ()\label{classmarlin_1_1RunInfoProcessor_ab8aa029e7fee27866206787f322b3616}
+
+\item 
+virtual void {\bf init} ()
+\begin{DoxyCompactList}\small\item\em Called at the begin of the job before anything is read. \item\end{DoxyCompactList}\item 
+virtual void {\bf processRunHeader} (LCRunHeader $\ast$run)\label{classmarlin_1_1RunInfoProcessor_a037d6642c5effd5ea57ef2d3dec2ce47}
+
+\begin{DoxyCompactList}\small\item\em Called for every run. \item\end{DoxyCompactList}\item 
+virtual void {\bf processEvent} (LCEvent $\ast$evt)\label{classmarlin_1_1RunInfoProcessor_a44b26122c6d673c48d5c2e0dfc5a10fd}
+
+\begin{DoxyCompactList}\small\item\em Called for every event -\/ the working horse. \item\end{DoxyCompactList}\item 
+virtual const std::string \& {\bf name} () const \label{classmarlin_1_1RunInfoProcessor_a4e0b06142a6fe83a607f8fbbfc5f3a07}
+
+\begin{DoxyCompactList}\small\item\em Needed for modifyEvent. \item\end{DoxyCompactList}\item 
+virtual void {\bfseries modifyEvent} (LCEvent $\ast$evt)\label{classmarlin_1_1RunInfoProcessor_a87835b19afc2566d1edf358c49060243}
+
+\item 
+virtual void {\bfseries check} (LCEvent $\ast$evt)\label{classmarlin_1_1RunInfoProcessor_a13101be4c139383d19a2578cac39fc21}
+
+\item 
+virtual void {\bf end} ()\label{classmarlin_1_1RunInfoProcessor_a8c82fcf3504ddc1d1cd83bd3df48b8a1}
+
+\begin{DoxyCompactList}\small\item\em Called after data processing for clean up. \item\end{DoxyCompactList}\item 
+void {\bf printRunParameters} (const LCRunHeader $\ast$run)\label{classmarlin_1_1RunInfoProcessor_ae0df13a558cff819a125d7da430d3ca8}
+
+\begin{DoxyCompactList}\small\item\em Method to write the histograms in a ROOT file. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf setVersString} (std::string)\label{classmarlin_1_1RunInfoProcessor_ac7333b2dd94c0dfaf019efda7d51783c}
+
+\begin{DoxyCompactList}\small\item\em The function which sets the version string. \item\end{DoxyCompactList}\item 
+unsigned int {\bf handleBeamParameters} (LCCDTimeStamp)
+\begin{DoxyCompactList}\small\item\em Handling of beam parameters to extract energy. \item\end{DoxyCompactList}\item 
+float {\bf timeCor} ()
+\begin{DoxyCompactList}\small\item\em A helper function which determines corrections to be applied when check for r/o time of (cern) database of cern beam parameters. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getBeamEnergy} (const LCCDTimeStamp)\label{classmarlin_1_1RunInfoProcessor_af25973c2f75e0cc7d1a2e963ae6f1ae0}
+
+\begin{DoxyCompactList}\small\item\em Method to get the beam energy from the database for a given time stamp (default). \item\end{DoxyCompactList}\item 
+unsigned int {\bf getBeamEnergyUser} (const LCCDTimeStamp)\label{classmarlin_1_1RunInfoProcessor_a2a9f3d4420e6d5413b52aa4a9f909ab2}
+
+\begin{DoxyCompactList}\small\item\em Method to get the beam energy from the database for a given time stamp (user defined settings). \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bf \_\-dbInit}\label{classmarlin_1_1RunInfoProcessor_a65053a1bdf8789ad7285a32739a69807}
+
+\begin{DoxyCompactList}\small\item\em dbinit string, note that in this Processor we cannot make use of the ConditionsDataProcessor Mechanism as it may run also on MC where the event time has to be set by this processor \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-folderRunTime}\label{classmarlin_1_1RunInfoProcessor_aeb0c70371d7b4e0cd37581188894103e}
+
+\begin{DoxyCompactList}\small\item\em The variable holding the folder name from which we fetch the runinfo. \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-folderBeamParameter}\label{classmarlin_1_1RunInfoProcessor_adbdb31a2fc1c90aa15700d0906a15b15}
+
+\begin{DoxyCompactList}\small\item\em The folder which holds the information on the beam parameter. \item\end{DoxyCompactList}\item 
+float {\bf \_\-currentTolerance}\label{classmarlin_1_1RunInfoProcessor_aab826ec0a4e9dde1f2b2d4e9a079ee22}
+
+\begin{DoxyCompactList}\small\item\em Tolerance in \% allowed until current reading at run begin and run end is considered to be inconsinstent. \item\end{DoxyCompactList}\item 
+float {\bf \_\-timeTolerance}\label{classmarlin_1_1RunInfoProcessor_abdd63cb1e6b5a847089182c30929ccb8}
+
+\begin{DoxyCompactList}\small\item\em Tolerance in s allowed until reading of beam parameters is considered to be outdated. \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-folderBeamParameterException}
+\begin{DoxyCompactList}\small\item\em The variable which holds the folder name for the BeamParameterException, i.e. \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-folderLocation}\label{classmarlin_1_1RunInfoProcessor_a1570d9cda3d532a23820e09b9da4210d}
+
+\begin{DoxyCompactList}\small\item\em The variable which holds the name of the folder to look up the run location. \item\end{DoxyCompactList}\item 
+RunLocationWhizard $\ast$ {\bf \_\-runlocationwhizard}\label{classmarlin_1_1RunInfoProcessor_a04731b4d9bb5e6635449ae5e997ea54e}
+
+\begin{DoxyCompactList}\small\item\em The object which holds the information on the run location. \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-vers\_\-string}\label{classmarlin_1_1RunInfoProcessor_a281b035be172c5f29b4406256e6ff660}
+
+\begin{DoxyCompactList}\small\item\em A string which contains the version of the converter and therefore of the db entry. \item\end{DoxyCompactList}\item 
+int {\bf \_\-vers\_\-length}\label{classmarlin_1_1RunInfoProcessor_ab39f8a9b1988e14a2aeb1879d2ff2eab}
+
+\begin{DoxyCompactList}\small\item\em The length of the version string. \item\end{DoxyCompactList}\item 
+int {\bf \_\-runNumber}\label{classmarlin_1_1RunInfoProcessor_ac765ef550fc7ae185901ab1766afd0f8}
+
+\begin{DoxyCompactList}\small\item\em Obvious variables. \item\end{DoxyCompactList}\item 
+unsigned int {\bfseries \_\-beamEnergy}\label{classmarlin_1_1RunInfoProcessor_a06b6da5104e1817215b1588452dd1dd8}
+
+\item 
+int {\bf \_\-bendingCurrentToCheck}\label{classmarlin_1_1RunInfoProcessor_ad17af4643c8798dab2642df821a87952}
+
+\begin{DoxyCompactList}\small\item\em variables needed to convert current to energy \item\end{DoxyCompactList}\item 
+float {\bfseries \_\-currentToEnergy}\label{classmarlin_1_1RunInfoProcessor_aec2e8768e37e8807479bec91314b7742}
+
+\item 
+float {\bfseries \_\-toMeV}\label{classmarlin_1_1RunInfoProcessor_abbcb57bbb8ed02b4cfd48e81e5792d60}
+
+\item 
+int {\bf \_\-safetyMargin}\label{classmarlin_1_1RunInfoProcessor_aaf0d50434eb4366d31750a485d105294}
+
+\begin{DoxyCompactList}\small\item\em Variable which can be used to ensure validity of conditions data in case of MC. \item\end{DoxyCompactList}\item 
+int {\bf \_\-nRun}\label{classmarlin_1_1RunInfoProcessor_a424bd272282d83451deec7a1b3ed65d6}
+
+\begin{DoxyCompactList}\small\item\em Obvious counter variables, needed? \item\end{DoxyCompactList}\item 
+int {\bfseries \_\-nEvt}\label{classmarlin_1_1RunInfoProcessor_abfcb80607e137bb4cac4a50cb0704a07}
+
+\item 
+RunInformation $\ast$ {\bf \_\-runInformation}\label{classmarlin_1_1RunInfoProcessor_ac4fc44266d6145b8190937b9cce47c8e}
+
+\begin{DoxyCompactList}\small\item\em An object which assembles run information. \item\end{DoxyCompactList}\item 
+UTIL::LCTime {\bf \_\-eventTime}\label{classmarlin_1_1RunInfoProcessor_a892d2aa27765a45ee078d8bc713aa88f}
+
+\begin{DoxyCompactList}\small\item\em The event time, created for MC, not in use for real data. \item\end{DoxyCompactList}\item 
+bool {\bfseries \_\-overwriteRunNumber}\label{classmarlin_1_1RunInfoProcessor_ad5d607ab4fe985cfad5e419a4ea513a8}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Preprocessor which is supposed to run at the !very! beginning of the processor chain. Adding information to the Run and EventHeader, for data and MC. In partcular the beam energy is extracted from the database for a given run and the MC events get assigned a timestamp. \begin{DoxyAuthor}{Author}
+: A.M. Magnan Imperial College, modifs R.Poeschl LAL
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Apr 2007 
+\end{DoxyDate}
+\begin{Desc}
+\item[{\bf Todo}]reduce even more the dependency on hardcoded, god given parameters in the code (valid for many processors)\end{Desc}
+
+
+Definition at line 52 of file RunInfoProcessor.hh.
+
+\subsection{Member Function Documentation}
+\index{marlin::RunInfoProcessor@{marlin::RunInfoProcessor}!handleBeamParameters@{handleBeamParameters}}
+\index{handleBeamParameters@{handleBeamParameters}!marlin::RunInfoProcessor@{marlin::RunInfoProcessor}}
+\subsubsection[{handleBeamParameters}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int marlin::RunInfoProcessor::handleBeamParameters (LCCDTimeStamp {\em starttime})\hspace{0.3cm}{\ttfamily  [private]}}\label{classmarlin_1_1RunInfoProcessor_a6f3f736a349f45536e3fc13344536950}
+
+
+Handling of beam parameters to extract energy. \begin{Desc}
+\item[{\bf Todo}]extend scope of function and maybe turn into dedicated class \end{Desc}
+
+
+Definition at line 429 of file RunInfoProcessor.cc.
+
+References \_\-bendingCurrentToCheck, \_\-currentTolerance, \_\-dbInit, \_\-folderBeamParameter, \_\-folderBeamParameterException, \_\-runNumber, \_\-timeTolerance, and timeCor().
+
+Referenced by getBeamEnergy().\index{marlin::RunInfoProcessor@{marlin::RunInfoProcessor}!init@{init}}
+\index{init@{init}!marlin::RunInfoProcessor@{marlin::RunInfoProcessor}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void marlin::RunInfoProcessor::init ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classmarlin_1_1RunInfoProcessor_a51fa73bd662dbffa2d89a04fdd2e92da}
+
+
+Called at the begin of the job before anything is read. Use to initialize the processor, e.g. book histograms. 
+
+Definition at line 153 of file RunInfoProcessor.cc.
+
+References \_\-nRun.\index{marlin::RunInfoProcessor@{marlin::RunInfoProcessor}!timeCor@{timeCor}}
+\index{timeCor@{timeCor}!marlin::RunInfoProcessor@{marlin::RunInfoProcessor}}
+\subsubsection[{timeCor}]{\setlength{\rightskip}{0pt plus 5cm}float marlin::RunInfoProcessor::timeCor ()\hspace{0.3cm}{\ttfamily  [private]}}\label{classmarlin_1_1RunInfoProcessor_a0070ee9315271f15a55ae80c4bb50acc}
+
+
+A helper function which determines corrections to be applied when check for r/o time of (cern) database of cern beam parameters. \begin{Desc}
+\item[{\bf Todo}]remove hardcoded times \end{Desc}
+
+
+Definition at line 570 of file RunInfoProcessor.cc.
+
+References \_\-runInformation.
+
+Referenced by handleBeamParameters().
+
+\subsection{Field Documentation}
+\index{marlin::RunInfoProcessor@{marlin::RunInfoProcessor}!\_\-folderBeamParameterException@{\_\-folderBeamParameterException}}
+\index{\_\-folderBeamParameterException@{\_\-folderBeamParameterException}!marlin::RunInfoProcessor@{marlin::RunInfoProcessor}}
+\subsubsection[{\_\-folderBeamParameterException}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf marlin::RunInfoProcessor::\_\-folderBeamParameterException}\hspace{0.3cm}{\ttfamily  [private]}}\label{classmarlin_1_1RunInfoProcessor_a36e4d01591a54d222092bd583b231f56}
+
+
+The variable which holds the folder name for the BeamParameterException, i.e. to be queried in case of pbs. with automatic r/o of beam parameters. 
+
+Definition at line 108 of file RunInfoProcessor.hh.
+
+Referenced by getBeamEnergy(), and handleBeamParameters().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+RunInfoProcessor.hh\item 
+RunInfoProcessor.cc\end{DoxyCompactItemize}

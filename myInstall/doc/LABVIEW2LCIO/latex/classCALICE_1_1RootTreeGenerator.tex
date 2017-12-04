@@ -1,0 +1,108 @@
+\section{CALICE::RootTreeGenerator Class Reference}
+\label{classCALICE_1_1RootTreeGenerator}\index{CALICE::RootTreeGenerator@{CALICE::RootTreeGenerator}}
+
+
+Class to process Labview raw.  
+
+
+{\ttfamily \#include $<$RootTreeGenerator.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Processor $\ast$ {\bfseries newProcessor} ()\label{classCALICE_1_1RootTreeGenerator_a190c4a59fb38f29b4d21ecf4c27758c3}
+
+\item 
+void {\bfseries init} ()\label{classCALICE_1_1RootTreeGenerator_a4e25c5be1410bed1779b7c48db8861ae}
+
+\item 
+void {\bfseries processEvent} (LCEvent $\ast$evt)\label{classCALICE_1_1RootTreeGenerator_a4f7d659ca6c9d90f60a13e698d16d369}
+
+\item 
+void {\bfseries end} ()\label{classCALICE_1_1RootTreeGenerator_a4659e1ed27fa7d1ce4863945ab3c32ed}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bfseries \_\-inputColName}\label{classCALICE_1_1RootTreeGenerator_a45697ed70cf6e099a2020dd714504e97}
+
+\item 
+std::string {\bfseries \_\-prefix}\label{classCALICE_1_1RootTreeGenerator_a40fa892791255b3cf185ae01fc1df8a8}
+
+\item 
+TFile $\ast$ {\bfseries \_\-rootFile}\label{classCALICE_1_1RootTreeGenerator_aedbcdb07e45e1b40d7cd8212cba0629f}
+
+\item 
+std::string {\bfseries \_\-rootFileName}\label{classCALICE_1_1RootTreeGenerator_ac0f4cfe564f803f8c1c3ced97d8ce0d1}
+
+\item 
+TTree $\ast$ {\bfseries \_\-treeLabviewBlock}\label{classCALICE_1_1RootTreeGenerator_a9a706fe7be21b16d3a4a8fd1f58ced1f}
+
+\item 
+int {\bfseries \_\-nHits}\label{classCALICE_1_1RootTreeGenerator_afeb6f7f6fa7f8f90f98556dab8e4843e}
+
+\item 
+int {\bfseries \_\-BunchXID}\label{classCALICE_1_1RootTreeGenerator_a263bd06e050d66020d71346b7fe17f94}
+
+\item 
+int {\bfseries \_\-CycleNr}\label{classCALICE_1_1RootTreeGenerator_a7a11796d640791a6015a9ef546c828cb}
+
+\item 
+int {\bfseries \_\-ChipID}\label{classCALICE_1_1RootTreeGenerator_acff8c71e037b9886df76290fd718a2fc}
+
+\item 
+int {\bfseries \_\-ASICNr}\label{classCALICE_1_1RootTreeGenerator_a2fa8cff4b18af909633f82a4abb417f3}
+
+\item 
+int {\bfseries \_\-EvtNr}\label{classCALICE_1_1RootTreeGenerator_a5ecdacceba84880bda93af94d9ed8e64}
+
+\item 
+int {\bfseries \_\-Channel}\label{classCALICE_1_1RootTreeGenerator_ac5c4be539f3cca086c6e84861b7dc1fc}
+
+\item 
+int {\bfseries \_\-TDC}\label{classCALICE_1_1RootTreeGenerator_afe617610463d32361b66694ee8b0eb81}
+
+\item 
+int {\bfseries \_\-ADC}\label{classCALICE_1_1RootTreeGenerator_a17be8de3b6d4141fc160b9786d8a490a}
+
+\item 
+int {\bfseries \_\-xPos}\label{classCALICE_1_1RootTreeGenerator_a5cb40db584a71f4fee52632af926d557}
+
+\item 
+int {\bfseries \_\-yPos}\label{classCALICE_1_1RootTreeGenerator_a3b7c14462377dbf7f2aa7b567df36f07}
+
+\item 
+int {\bfseries \_\-HitBit}\label{classCALICE_1_1RootTreeGenerator_afb3bc01afed020817d8a85d4f44cdb9a}
+
+\item 
+int {\bfseries \_\-GainBit}\label{classCALICE_1_1RootTreeGenerator_ae14d571f1c455371bc5bc3ae391b9f22}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static std::map$<$ TTree $\ast$, {\bf RootTreeGenerator} $\ast$ $>$ {\bfseries \_\-treeFillerMap}\label{classCALICE_1_1RootTreeGenerator_a1edff2386c6a6051202d21be447fea69}
+
+\item 
+static std::map$<$ TTree $\ast$, {\bf RootTreeGenerator} $\ast$ $>$ {\bfseries \_\-treeOwnerMap}\label{classCALICE_1_1RootTreeGenerator_a331544fd3dfee404ad0d1c5492741ad4}
+
+\item 
+static std::map$<$ TFile $\ast$, {\bf RootTreeGenerator} $\ast$ $>$ {\bfseries \_\-fileOwnerMap}\label{classCALICE_1_1RootTreeGenerator_aaabe9bfde58f05c43dfa886545fa68ee}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to process Labview raw. \begin{DoxyAuthor}{Author}
+: Shaojun Lu DESY 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Nov 15 2012 
+\end{DoxyDate}
+
+
+Definition at line 24 of file RootTreeGenerator.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+RootTreeGenerator.hh\item 
+RootTreeGenerator.cc\end{DoxyCompactItemize}

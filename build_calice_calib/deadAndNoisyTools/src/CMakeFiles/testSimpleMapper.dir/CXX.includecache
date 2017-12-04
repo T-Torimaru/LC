@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/afs/desy.de/user/t/torimart/work/CosmiTestLCIO/calice_calib/deadAndNoisyTools/include/SimpleMapper.h
+string
+-
+map
+-
+
+/afs/desy.de/user/t/torimart/work/CosmiTestLCIO/calice_calib/deadAndNoisyTools/src/testSimpleMapper.cpp
+SimpleMapper.h
+/afs/desy.de/user/t/torimart/work/CosmiTestLCIO/calice_calib/deadAndNoisyTools/src/SimpleMapper.h
+iostream
+-
+string
+-
+

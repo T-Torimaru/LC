@@ -1,0 +1,349 @@
+\section{CALICE::Alignment Class Reference}
+\label{classCALICE_1_1Alignment}\index{CALICE::Alignment@{CALICE::Alignment}}
+
+
+Class to comunicate/handle the translation into unique layer/cell ids and 3D spacial coordinates.  
+
+
+{\ttfamily \#include $<$Alignment.hh$>$}Inheritance diagram for CALICE::Alignment::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCALICE_1_1Alignment}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Alignment} ()
+\begin{DoxyCompactList}\small\item\em default constructor. \item\end{DoxyCompactList}\item 
+void {\bf init} ()\label{classCALICE_1_1Alignment_adad093be57011962ceaa0dc6fd597759}
+
+\begin{DoxyCompactList}\small\item\em Does nothing for the time being. \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bf getGeometricalCellIndex} (UInt\_\-t module\_\-index, UInt\_\-t cell\_\-index) const 
+\begin{DoxyCompactList}\small\item\em Get the unique cell index of the cell specified by the module and the cell index. \item\end{DoxyCompactList}\item 
+bool {\bf isValid} (UInt\_\-t module\_\-index) const 
+\begin{DoxyCompactList}\small\item\em Return true if the type of the given module is valid. \item\end{DoxyCompactList}\item 
+UChar\_\-t {\bf getModuleType} (UInt\_\-t module\_\-index) const 
+\begin{DoxyCompactList}\small\item\em Get the type of a certain module. \item\end{DoxyCompactList}\item 
+{\bf ThreeVector\_\-t} {\bfseries getPosition} (UInt\_\-t module\_\-index, UInt\_\-t cell\_\-index) const \label{classCALICE_1_1Alignment_a3ddad6c8a5aeaed18d3529d212d3ba1b}
+
+\item 
+{\bf ThreeVector\_\-t} {\bfseries transformPosition} ({\bf ThreeVector\_\-t} \&a\_\-position) const \label{classCALICE_1_1Alignment_a77b2bfc80a819a597a8e451a2bbf7655}
+
+\item 
+UInt\_\-t {\bfseries getNModules} () const \label{classCALICE_1_1Alignment_a439df763fea328d7f58336f3b97ca786}
+
+\item 
+Bool\_\-t {\bf isModule} (UInt\_\-t module\_\-index) const \label{classCALICE_1_1Alignment_a4860425f1c86fbc897920647f0dd7451}
+
+\begin{DoxyCompactList}\small\item\em Return false if the module index is out of range. \item\end{DoxyCompactList}\item 
+const {\bf ModuleDescription} \& {\bf getModuleDescription} (UInt\_\-t module\_\-index) const 
+\begin{DoxyCompactList}\small\item\em Return the description object for the given module. \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bfseries getNCellsPerModule} (UInt\_\-t module\_\-index) const \label{classCALICE_1_1Alignment_a67d96a33524e3dd7e4c151943caa103c}
+
+\item 
+Float\_\-t {\bf getModuleWidth} (UInt\_\-t module\_\-index) const \label{classCALICE_1_1Alignment_a2a3b34cd5399e9d4c6c34737314a42e7}
+
+\begin{DoxyCompactList}\small\item\em Get the cell width of the given module and cell. \item\end{DoxyCompactList}\item 
+Float\_\-t {\bf getModuleHeight} (UInt\_\-t module\_\-index) const \label{classCALICE_1_1Alignment_a5112553b1a361f609e186c85f97d0f7f}
+
+\begin{DoxyCompactList}\small\item\em Get the cell width of the given module and cell. \item\end{DoxyCompactList}\item 
+Float\_\-t {\bf getCellWidth} (UInt\_\-t module\_\-index, UInt\_\-t cell\_\-index) const \label{classCALICE_1_1Alignment_a7ed4ffe8bed99bed35d69c0ac431bc67}
+
+\begin{DoxyCompactList}\small\item\em Get the cell width of the given module and cell. \item\end{DoxyCompactList}\item 
+Float\_\-t {\bf getCellHeight} (UInt\_\-t module\_\-index, UInt\_\-t cell\_\-index) const 
+\begin{DoxyCompactList}\small\item\em Get the cell width of the given module. \item\end{DoxyCompactList}\item 
+{\bf ThreeVector\_\-t} {\bf getPosition} () const \label{classCALICE_1_1Alignment_a8264e5dd81a84e2362f8cc4d26a4c41f}
+
+\begin{DoxyCompactList}\small\item\em Get the position of the detector in its proper coordinate system. \item\end{DoxyCompactList}\item 
+{\bf ThreeVector\_\-t} {\bf getModuleProperCenter} (UInt\_\-t module\_\-index) const \label{classCALICE_1_1Alignment_a696dfaa32cdaf473b07c981934598958}
+
+\begin{DoxyCompactList}\small\item\em Get the upper right corner of a module. \item\end{DoxyCompactList}\item 
+{\bf ThreeVector\_\-t} {\bf getModuleProperPosition} (UInt\_\-t module\_\-index) const \label{classCALICE_1_1Alignment_ab46ad7e1e3e78dc47fcc4549a231c23e}
+
+\begin{DoxyCompactList}\small\item\em Get the position of a module in the proper coordinate system of the detector. \item\end{DoxyCompactList}\item 
+{\bf ThreeVector\_\-t} {\bf getModulePosition} (UInt\_\-t module\_\-index) const \label{classCALICE_1_1Alignment_a1ecf26def8a818e1f6035c9e18653d28}
+
+\begin{DoxyCompactList}\small\item\em Get the position of a module in the reference coordinate system. \item\end{DoxyCompactList}\item 
+{\bf ThreeVector\_\-t} {\bf getModuleCenter} (UInt\_\-t module\_\-index) const \label{classCALICE_1_1Alignment_a4dd6c5cde6371a0b26c6438adf54414f}
+
+\begin{DoxyCompactList}\small\item\em Get the center of a module in the reference coordinate system. \item\end{DoxyCompactList}\item 
+Float\_\-t {\bf getDetectorAngleZX} () const \label{classCALICE_1_1Alignment_a10d5e1ddf0c26a74421c22774248671d}
+
+\begin{DoxyCompactList}\small\item\em Return the effective rotation angle of the detector. \item\end{DoxyCompactList}\item 
+virtual void {\bf moduleTypeChanged} (lcio::LCCollection $\ast$col)
+\begin{DoxyCompactList}\small\item\em Inform the object about changes of the module types. \item\end{DoxyCompactList}\item 
+virtual void {\bf moduleLocationChanged} (lcio::LCCollection $\ast$col)
+\begin{DoxyCompactList}\small\item\em Inform the object about changes of the module locations. \item\end{DoxyCompactList}\item 
+virtual void {\bf stagePositionChanged} (lcio::LCCollection $\ast$col)
+\begin{DoxyCompactList}\small\item\em Inform the object about changes in the stage positions on which the detector is mounted. \item\end{DoxyCompactList}\item 
+virtual void {\bf detectorTransformation} (lcio::LCCollection $\ast$col)
+\begin{DoxyCompactList}\small\item\em Inform the object about changes of the detector position and rotation. \item\end{DoxyCompactList}\item 
+virtual void {\bf referenceTransformation} (lcio::LCCollection $\ast$col)
+\begin{DoxyCompactList}\small\item\em Inform the object about changes of the reference position and rotation. \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bf getCellIndexOffset} (UInt\_\-t module\_\-index) const \label{classCALICE_1_1Alignment_ad07573bf525c2271792bc040242632a2}
+
+\begin{DoxyCompactList}\small\item\em Get the cell index offset of a module. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef {\bf SimpleArray\_\-t}$<$ pair$<$ UInt\_\-t, {\bf ModuleLocation} $>$ $>$ {\bf ModuleList\_\-t}
+\begin{DoxyCompactList}\small\item\em Defined module locations (not necessarily connected to a front-\/end. \item\end{DoxyCompactList}\item 
+typedef {\bf SimpleArray\_\-t}$<$ {\bf ModuleDescription} $>$ {\bfseries ModuleTypeList\_\-t}\label{classCALICE_1_1Alignment_a10d63d19612d0b5384bfc7f9b7f84bbd}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ModuleList\_\-t} {\bfseries \_\-moduleLocationList}\label{classCALICE_1_1Alignment_a7038cce4a5b2baf25597867f0b5407c5}
+
+\item 
+{\bf ModuleTypeList\_\-t} {\bfseries \_\-moduleTypeList}\label{classCALICE_1_1Alignment_a975a8333c0f374f44dee0fa6c37cf732}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries ETransformation} \{ {\bfseries kDetector}, 
+{\bfseries kReference}, 
+{\bfseries kEffective}, 
+{\bfseries kNTransformations}
+ \}
+\item 
+typedef void(Alignment::$\ast$ {\bf StageChangeHandleFunc\_\-t} )(lcio::LCCollection $\ast$col)\label{classCALICE_1_1Alignment_a5131ddec8fd42fefa45de5826aecd4c1}
+
+\begin{DoxyCompactList}\small\item\em A map which holds pointers to functions to access the parameters of teh movable stage(s). \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf setTransformation} (lcio::LCCollection $\ast$col, ETransformation transformation\_\-type)\label{classCALICE_1_1Alignment_adb7fd43e529d374f41e8be0a1610faf9}
+
+\begin{DoxyCompactList}\small\item\em Set the transformation parameters from the conditions data collection. \item\end{DoxyCompactList}\item 
+void {\bf calculateEffectiveTransformation} ()
+\begin{DoxyCompactList}\small\item\em Calculate the effective transformation from the detector and reference transformation. \item\end{DoxyCompactList}\item 
+void {\bfseries handleEmcStage} (LCCollection $\ast$)\label{classCALICE_1_1Alignment_abf5097c7e86a04e285cd59ddf8848c47}
+
+\item 
+void {\bfseries handleAhcStage} (LCCollection $\ast$)\label{classCALICE_1_1Alignment_a907fd80bfc25e5f98b6ebab3fb7533fa}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Float\_\-t {\bf \_\-detectorPos} [kNTransformations][3]\label{classCALICE_1_1Alignment_a6f73f5a4df2e1b7fd2a3da7c99d70d51}
+
+\begin{DoxyCompactList}\small\item\em the position of the detector \item\end{DoxyCompactList}\item 
+Float\_\-t {\bf \_\-detectorAngleZX} [kNTransformations]
+\begin{DoxyCompactList}\small\item\em configuration angle w.r.t. \item\end{DoxyCompactList}\item 
+Double\_\-t {\bf \_\-detectorAngleZXSin}\label{classCALICE_1_1Alignment_a398120953f6f68d96563c57dd95e12aa}
+
+\begin{DoxyCompactList}\small\item\em sin of the effective rotation angle in the z-\/x plane \item\end{DoxyCompactList}\item 
+Double\_\-t {\bf \_\-detectorAngleZXCos}\label{classCALICE_1_1Alignment_a4b7a1cc57b53c53a0f251dae7782f675}
+
+\begin{DoxyCompactList}\small\item\em cos of the effective rotation angle in the z-\/x plane \item\end{DoxyCompactList}\item 
+Float\_\-t {\bf \_\-detectorRotationX0} [kNTransformations]\label{classCALICE_1_1Alignment_a5b7bee79b2ad35a2e7b128f841a1fd64}
+
+\begin{DoxyCompactList}\small\item\em origin of the detector ratation (x-\/direction) \item\end{DoxyCompactList}\item 
+Float\_\-t {\bf \_\-detectorRotationZ0} [kNTransformations]\label{classCALICE_1_1Alignment_a2faba0894844b8779abd31d7e8a56854}
+
+\begin{DoxyCompactList}\small\item\em origin of the detector ratation (z-\/direction) \item\end{DoxyCompactList}\item 
+std::map$<$ std::string, {\bf StageChangeHandleFunc\_\-t} $>$ {\bfseries \_\-knownStageTypes}\label{classCALICE_1_1Alignment_a3b409667846fdd3b1b36abca4e74ba8d}
+
+\item 
+float {\bf \_\-stageOffset\_\-x}\label{classCALICE_1_1Alignment_a38bc228c141775137178ab1c171a4c92}
+
+\begin{DoxyCompactList}\small\item\em The offsets due to the movable stage. \item\end{DoxyCompactList}\item 
+float {\bfseries \_\-stageOffset\_\-y}\label{classCALICE_1_1Alignment_a734151cd0b80de77cd16cce5b7ae9106}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const Double\_\-t {\bfseries \_\-\_\-degToRad} = M\_\-PI/180.\label{classCALICE_1_1Alignment_af48cedd060a33b725e5f14f81f3033d1}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to comunicate/handle the translation into unique layer/cell ids and 3D spacial coordinates. The class has to be informed about changes of the detector configuration using the methods \doxyref{CALICE::Alignment::moduleTypeChanged}{p.}{classCALICE_1_1Alignment_adc041696a184db384a57bca51df7bc25}, \doxyref{CALICE::Alignment::moduleLocationChanged}{p.}{classCALICE_1_1Alignment_a3ea188d0a90c7e0881d735cf55ef5604}, \doxyref{CALICE::MappingAndAlignment::moduleConnectionChanged}{p.}{classCALICE_1_1MappingAndAlignment_a3717c2ea27a5a60ff2a41d17803ff148} and Alignment::experimentalSetup. This information is used to map the DAQ signals to cells and calculate 3D spacial coordinates for hits.
+
+The class performs range checks only if BOUNDARY\_\-CHECK is defined. 
+
+Definition at line 42 of file Alignment.hh.
+
+\subsection{Member Typedef Documentation}
+\index{CALICE::Alignment@{CALICE::Alignment}!ModuleList\_\-t@{ModuleList\_\-t}}
+\index{ModuleList\_\-t@{ModuleList\_\-t}!CALICE::Alignment@{CALICE::Alignment}}
+\subsubsection[{ModuleList\_\-t}]{\setlength{\rightskip}{0pt plus 5cm}typedef {\bf SimpleArray\_\-t}$<$pair$<$UInt\_\-t,{\bf ModuleLocation}$>$ $>$ {\bf CALICE::Alignment::ModuleList\_\-t}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1Alignment_ad0153c70861a5bc9976bc21983ac319f}
+
+
+Defined module locations (not necessarily connected to a front-\/end. First component contains the module ID, the second the module location information. 
+
+Definition at line 475 of file Alignment.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CALICE::Alignment@{CALICE::Alignment}!Alignment@{Alignment}}
+\index{Alignment@{Alignment}!CALICE::Alignment@{CALICE::Alignment}}
+\subsubsection[{Alignment}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::Alignment::Alignment ()}\label{classCALICE_1_1Alignment_a9301ea57c3cf0bf16154f67e45023385}
+
+
+default constructor. The default constructor configures the conditions data change delegators. 
+
+Definition at line 29 of file Alignment.cc.
+
+References setTransformation().
+
+\subsection{Member Function Documentation}
+\index{CALICE::Alignment@{CALICE::Alignment}!calculateEffectiveTransformation@{calculateEffectiveTransformation}}
+\index{calculateEffectiveTransformation@{calculateEffectiveTransformation}!CALICE::Alignment@{CALICE::Alignment}}
+\subsubsection[{calculateEffectiveTransformation}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::Alignment::calculateEffectiveTransformation ()\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1Alignment_af778a021450c0087cbf459eb291aa8f1}
+
+
+Calculate the effective transformation from the detector and reference transformation. 
+
+Definition at line 171 of file Alignment.cc.
+
+References \_\-detectorAngleZX, \_\-detectorAngleZXCos, \_\-detectorAngleZXSin, \_\-detectorPos, \_\-detectorRotationX0, and \_\-detectorRotationZ0.
+
+Referenced by setTransformation().\index{CALICE::Alignment@{CALICE::Alignment}!detectorTransformation@{detectorTransformation}}
+\index{detectorTransformation@{detectorTransformation}!CALICE::Alignment@{CALICE::Alignment}}
+\subsubsection[{detectorTransformation}]{\setlength{\rightskip}{0pt plus 5cm}virtual void CALICE::Alignment::detectorTransformation (lcio::LCCollection $\ast$ {\em col})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classCALICE_1_1Alignment_a85a9ad1e7e95e2ade18f30e6373eadfa}
+
+
+Inform the object about changes of the detector position and rotation. 
+\begin{DoxyParams}{Parameters}
+\item[{\em col}]collection of \doxyref{DetectorTransformation}{p.}{classCALICE_1_1DetectorTransformation} objects This class must be called before querying the postion of cells. The position is calculated in the reference coorindate system. \end{DoxyParams}
+
+
+Definition at line 457 of file Alignment.hh.
+
+References setTransformation().\index{CALICE::Alignment@{CALICE::Alignment}!getCellHeight@{getCellHeight}}
+\index{getCellHeight@{getCellHeight}!CALICE::Alignment@{CALICE::Alignment}}
+\subsubsection[{getCellHeight}]{\setlength{\rightskip}{0pt plus 5cm}Float\_\-t CALICE::Alignment::getCellHeight (UInt\_\-t {\em module\_\-index}, \/  UInt\_\-t {\em cell\_\-index}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1Alignment_a84ad3b3ffba7850de98971a51eeba82f}
+
+
+Get the cell width of the given module. It is assumed that the cells of one module all have the same width. 
+
+Definition at line 325 of file Alignment.hh.\index{CALICE::Alignment@{CALICE::Alignment}!getGeometricalCellIndex@{getGeometricalCellIndex}}
+\index{getGeometricalCellIndex@{getGeometricalCellIndex}!CALICE::Alignment@{CALICE::Alignment}}
+\subsubsection[{getGeometricalCellIndex}]{\setlength{\rightskip}{0pt plus 5cm}UInt\_\-t CALICE::Alignment::getGeometricalCellIndex (UInt\_\-t {\em module\_\-index}, \/  UInt\_\-t {\em cell\_\-index}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1Alignment_add6b290637455010456ce6f643ccb34f}
+
+
+Get the unique cell index of the cell specified by the module and the cell index. 
+\begin{DoxyParams}{Parameters}
+\item[{\em module\_\-index}]unique index for modules which should run from 0..total number of modules \item[{\em cell\_\-index}]within the module (0.. number of cells of this module type) \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unique cell index. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em range\_\-error}]if the module index is out of range and BOUNDARY\_\-CHECK is defined\end{DoxyExceptions}
+The cell index conforms to the Mokka specification (see for example \doxyref{CellIndex}{p.}{classCALICE_1_1CellIndex}). It is composed of the layer number, the wafer column and row, and the pad column and row. 
+
+Definition at line 68 of file Alignment.hh.\index{CALICE::Alignment@{CALICE::Alignment}!getModuleDescription@{getModuleDescription}}
+\index{getModuleDescription@{getModuleDescription}!CALICE::Alignment@{CALICE::Alignment}}
+\subsubsection[{getModuleDescription}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ModuleDescription}\& CALICE::Alignment::getModuleDescription (UInt\_\-t {\em module\_\-index}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1Alignment_a6ac1899ddab2b35464b85ec39a67ede7}
+
+
+Return the description object for the given module. 
+\begin{DoxyParams}{Parameters}
+\item[{\em module\_\-index}]the index of the moduel. \end{DoxyParams}
+
+
+Definition at line 229 of file Alignment.hh.\index{CALICE::Alignment@{CALICE::Alignment}!getModuleType@{getModuleType}}
+\index{getModuleType@{getModuleType}!CALICE::Alignment@{CALICE::Alignment}}
+\subsubsection[{getModuleType}]{\setlength{\rightskip}{0pt plus 5cm}UChar\_\-t CALICE::Alignment::getModuleType (UInt\_\-t {\em module\_\-index}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1Alignment_a6347626acbfc5dfcbca3c97c89fcad70}
+
+
+Get the type of a certain module. The module type together with the module ID uniquly identifies a module. Different modules of one type always have different IDs but modules of different types may have the same ID. In case of the ECAL the module ID is the serial number of the PCBs. 
+\begin{DoxyParams}{Parameters}
+\item[{\em module\_\-index}]the index of the module within the detector (not necessarily the same as the module ID) \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the module type 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em range\_\-error}]if the module specified by module\_\-index is not defined but only if BOUNDARY\_\-CHECK is defined. \end{DoxyExceptions}
+\begin{DoxySeeAlso}{See also}
+getModuleID() 
+\end{DoxySeeAlso}
+
+
+Definition at line 114 of file Alignment.hh.
+
+Referenced by CALICE::MappingAndAlignment::print().\index{CALICE::Alignment@{CALICE::Alignment}!isValid@{isValid}}
+\index{isValid@{isValid}!CALICE::Alignment@{CALICE::Alignment}}
+\subsubsection[{isValid}]{\setlength{\rightskip}{0pt plus 5cm}bool CALICE::Alignment::isValid (UInt\_\-t {\em module\_\-index}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1Alignment_a3b3a82a744ce67860086203baef3ddff}
+
+
+Return true if the type of the given module is valid. 
+\begin{DoxyParams}{Parameters}
+\item[{\em module\_\-index}]the index of the given module. \end{DoxyParams}
+
+
+Definition at line 90 of file Alignment.hh.
+
+Referenced by CALICE::MappingAndAlignment::print().\index{CALICE::Alignment@{CALICE::Alignment}!moduleLocationChanged@{moduleLocationChanged}}
+\index{moduleLocationChanged@{moduleLocationChanged}!CALICE::Alignment@{CALICE::Alignment}}
+\subsubsection[{moduleLocationChanged}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::Alignment::moduleLocationChanged (lcio::LCCollection $\ast$ {\em col})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCALICE_1_1Alignment_a3ea188d0a90c7e0881d735cf55ef5604}
+
+
+Inform the object about changes of the module locations. 
+\begin{DoxyParams}{Parameters}
+\item[{\em col}]collection of \doxyref{ModuleLocation}{p.}{classCALICE_1_1ModuleLocation} objects This class must be called before using any(most) of the other methods. The function call will cause a rebuild of the module DAQ front-\/end connection tree. \end{DoxyParams}
+
+
+Reimplemented in {\bf CALICE::MappingAndAlignment} \doxyref{}{p.}{classCALICE_1_1MappingAndAlignment_ab9d17873aeb090388556547cb6b67ba8}.
+
+Definition at line 76 of file Alignment.cc.\index{CALICE::Alignment@{CALICE::Alignment}!moduleTypeChanged@{moduleTypeChanged}}
+\index{moduleTypeChanged@{moduleTypeChanged}!CALICE::Alignment@{CALICE::Alignment}}
+\subsubsection[{moduleTypeChanged}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::Alignment::moduleTypeChanged (lcio::LCCollection $\ast$ {\em col})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCALICE_1_1Alignment_adc041696a184db384a57bca51df7bc25}
+
+
+Inform the object about changes of the module types. 
+\begin{DoxyParams}{Parameters}
+\item[{\em col}]collection of \doxyref{ModuleDescription}{p.}{classCALICE_1_1ModuleDescription} objects This class must be called before using any(most) of the other methods. The function call will cause a rebuild of the module DAQ front-\/end connection tree. \end{DoxyParams}
+
+
+Reimplemented in {\bf CALICE::MappingAndAlignment} \doxyref{}{p.}{classCALICE_1_1MappingAndAlignment_a5564c399de481a023b702a39a04fea7f}.
+
+Definition at line 47 of file Alignment.cc.\index{CALICE::Alignment@{CALICE::Alignment}!referenceTransformation@{referenceTransformation}}
+\index{referenceTransformation@{referenceTransformation}!CALICE::Alignment@{CALICE::Alignment}}
+\subsubsection[{referenceTransformation}]{\setlength{\rightskip}{0pt plus 5cm}virtual void CALICE::Alignment::referenceTransformation (lcio::LCCollection $\ast$ {\em col})\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classCALICE_1_1Alignment_aedf5694bbb286510411e1de986e51ac5}
+
+
+Inform the object about changes of the reference position and rotation. 
+\begin{DoxyParams}{Parameters}
+\item[{\em col}]collection of \doxyref{DetectorTransformation}{p.}{classCALICE_1_1DetectorTransformation} objects This class must be called before querying the postion of cells. The position is calculated in the reference coordinate system. \end{DoxyParams}
+
+
+Definition at line 466 of file Alignment.hh.
+
+References setTransformation().\index{CALICE::Alignment@{CALICE::Alignment}!stagePositionChanged@{stagePositionChanged}}
+\index{stagePositionChanged@{stagePositionChanged}!CALICE::Alignment@{CALICE::Alignment}}
+\subsubsection[{stagePositionChanged}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::Alignment::stagePositionChanged (lcio::LCCollection $\ast$ {\em col})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCALICE_1_1Alignment_ab018d115126785360ec8e70fb710409b}
+
+
+Inform the object about changes in the stage positions on which the detector is mounted. 
+\begin{DoxyParams}{Parameters}
+\item[{\em col}]collection of StageParameters objects This class must be called before calculating the actual cell positions The function will provide the xy values for a correct transversal alignment of the detectors. \end{DoxyParams}
+
+
+Definition at line 218 of file Alignment.cc.
+
+\subsection{Field Documentation}
+\index{CALICE::Alignment@{CALICE::Alignment}!\_\-detectorAngleZX@{\_\-detectorAngleZX}}
+\index{\_\-detectorAngleZX@{\_\-detectorAngleZX}!CALICE::Alignment@{CALICE::Alignment}}
+\subsubsection[{\_\-detectorAngleZX}]{\setlength{\rightskip}{0pt plus 5cm}Float\_\-t {\bf CALICE::Alignment::\_\-detectorAngleZX}[kNTransformations]\hspace{0.3cm}{\ttfamily  [private]}}\label{classCALICE_1_1Alignment_a7580f22b535e4538967b0ef80f22f3ed}
+
+
+configuration angle w.r.t. to the beam axis in the horizontal plane 
+
+Definition at line 501 of file Alignment.hh.
+
+Referenced by calculateEffectiveTransformation(), getDetectorAngleZX(), and setTransformation().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+Alignment.hh\item 
+Alignment.cc\end{DoxyCompactItemize}

@@ -1,0 +1,235 @@
+\section{Ahc2MipTrackFinder Class Reference}
+\label{classAhc2MipTrackFinder}\index{Ahc2MipTrackFinder@{Ahc2MipTrackFinder}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Processor $\ast$ {\bfseries newProcessor} ()\label{classAhc2MipTrackFinder_a0256c784c23379a534a1834e94d82f27}
+
+\item 
+{\bf Ahc2MipTrackFinder} ()\label{classAhc2MipTrackFinder_a8757b045cbc705bb82cfe8536dddf72e}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. \item\end{DoxyCompactList}\item 
+{\bf $\sim$Ahc2MipTrackFinder} ()\label{classAhc2MipTrackFinder_adff2034892ccb8427a3d812b566fa206}
+
+\begin{DoxyCompactList}\small\item\em Default destructor. \item\end{DoxyCompactList}\item 
+virtual void {\bf init} ()\label{classAhc2MipTrackFinder_a00ae45fba69736e63a3c5f0a04631c94}
+
+\begin{DoxyCompactList}\small\item\em Marlin \doxyref{init()}{p.}{classAhc2MipTrackFinder_a00ae45fba69736e63a3c5f0a04631c94} function. \item\end{DoxyCompactList}\item 
+virtual void {\bf processRunHeader} (LCEvent $\ast$evt)\label{classAhc2MipTrackFinder_a31d0fabce12e738197dae9b6f0fc3df5}
+
+\begin{DoxyCompactList}\small\item\em Marlin \doxyref{processRunHeader()}{p.}{classAhc2MipTrackFinder_a31d0fabce12e738197dae9b6f0fc3df5} function. \item\end{DoxyCompactList}\item 
+virtual void {\bf processEvent} (LCEvent $\ast$evt)\label{classAhc2MipTrackFinder_a5a25f8ca7c7a3e7e083c5bbf8bcb4c38}
+
+\begin{DoxyCompactList}\small\item\em Marlin \doxyref{processEvent()}{p.}{classAhc2MipTrackFinder_a5a25f8ca7c7a3e7e083c5bbf8bcb4c38} function. \item\end{DoxyCompactList}\item 
+virtual void {\bf check} (LCEvent $\ast$evt)\label{classAhc2MipTrackFinder_ac108cb9587263b9877dc80d81bc1548a}
+
+\begin{DoxyCompactList}\small\item\em Marlin \doxyref{check()}{p.}{classAhc2MipTrackFinder_ac108cb9587263b9877dc80d81bc1548a} function. \item\end{DoxyCompactList}\item 
+virtual void {\bf end} ()\label{classAhc2MipTrackFinder_a2967396eb150a9fc32ca4414ed6301d8}
+
+\begin{DoxyCompactList}\small\item\em Marlin \doxyref{end()}{p.}{classAhc2MipTrackFinder_a2967396eb150a9fc32ca4414ed6301d8} function. \item\end{DoxyCompactList}\item 
+void {\bfseries printParameters} ()\label{classAhc2MipTrackFinder_a04d6877bfc8101ecece5ff28594b7445}
+
+\item 
+int {\bf Fill2DMap} (TowerHitVectorHCAL \&TowerMap, int I, int J, int K, float x, float y, float z, Float\_\-t ahc\_\-hitEnergy, Float\_\-t ahc\_\-hitTime, Int\_\-t ahc\_\-hitType, int CellID0)
+\begin{DoxyCompactList}\small\item\em Fill HCAL Towers. \item\end{DoxyCompactList}\item 
+int {\bf Fill2DMap} (TowerHitVectorECAL \&TowerMap, int I, int J, int K, float x, float y, float z, Float\_\-t emc\_\-hitEnergy, Float\_\-t emc\_\-hitTime, Int\_\-t emc\_\-hitType, int CellID0)
+\begin{DoxyCompactList}\small\item\em Fill ECAL Towers. \item\end{DoxyCompactList}\item 
+int {\bf selectTowerNHits} (TowerHitVectorHCAL \&towers, unsigned int MinNHits)
+\begin{DoxyCompactList}\small\item\em Select HCAL Towers with number of hits over MinNHits. \item\end{DoxyCompactList}\item 
+bool {\bf Check\_\-T0} (int Ihit, int Jhit, int Khit)
+\begin{DoxyCompactList}\small\item\em Reject T0 hits. \item\end{DoxyCompactList}\item 
+bool {\bf Check\_\-Cherenkow} (int Ihit, int Jhit, int Khit)
+\begin{DoxyCompactList}\small\item\em Reject Cherenkow hits. \item\end{DoxyCompactList}\item 
+bool {\bf CheckOverlap} (pair$<$ float, float $>$ Coordinates\_\-ECAL, pair$<$ float, float $>$ Coordinates\_\-HCAL)
+\begin{DoxyCompactList}\small\item\em Check ECAL Strip overlap with HCAL Tower. \item\end{DoxyCompactList}\item 
+int {\bf IncrementOverlap} (vector$<$ {\bf EcalSingleHit} $>$ \&ECALHits)
+\begin{DoxyCompactList}\small\item\em Increment Overlap parameter of a ECAL Hit. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TowerHitVectorHCAL {\bf \_\-towerHCALHits}\label{classAhc2MipTrackFinder_a5f33d06e9624290d728f2bf1a52498bf}
+
+\begin{DoxyCompactList}\small\item\em HCAL Tower. \item\end{DoxyCompactList}\item 
+TowerHitVectorECAL {\bf \_\-towerECALHits}\label{classAhc2MipTrackFinder_abba8352972ee2b87a2fe9e773f4f28a1}
+
+\begin{DoxyCompactList}\small\item\em ECAL Tower. \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-ahcinputColName}\label{classAhc2MipTrackFinder_af7abccb82ee7ab200473b2eb3ca88b27}
+
+\begin{DoxyCompactList}\small\item\em HCAL input Collection. \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-emcinputColName}\label{classAhc2MipTrackFinder_add143db43629dd17b179d359d5ae3e5a}
+
+\begin{DoxyCompactList}\small\item\em ECAL input Collection. \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-ahcHitOutputColName}\label{classAhc2MipTrackFinder_a45086d9f8c9892ee54d50e6544840763}
+
+\begin{DoxyCompactList}\small\item\em HCAL output Collection. \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-emcHitOutputColName}\label{classAhc2MipTrackFinder_a4f55b4dc04e17168c33e349a556e8ab0}
+
+\begin{DoxyCompactList}\small\item\em ECAL output Collection. \item\end{DoxyCompactList}\item 
+std::string {\bfseries \_\-encodingECAL}\label{classAhc2MipTrackFinder_a05ad775608ce9d70dfdae48756b36c82}
+
+\item 
+std::string {\bfseries \_\-encodingHCAL}\label{classAhc2MipTrackFinder_a75911ea13aa65e559b256b0887a523d6}
+
+\item 
+bool {\bfseries \_\-keepT0Cherenkow}\label{classAhc2MipTrackFinder_ab3ef40b963a91986f28dba9bcd817ccc}
+
+\item 
+int {\bf \_\-cutNTowerHits}
+\begin{DoxyCompactList}\small\item\em keep T0 and Cherenkow in output collection \item\end{DoxyCompactList}\item 
+int {\bf \_\-cutNLayerHits}\label{classAhc2MipTrackFinder_af8e1dad24d51f622a4b6ffc97337be09}
+
+\begin{DoxyCompactList}\small\item\em Cut on Number of hits in a Layer. \item\end{DoxyCompactList}\item 
+int {\bf \_\-nMaxHits}\label{classAhc2MipTrackFinder_a358ea560c80ae158ddef3f7f8072327c}
+
+\begin{DoxyCompactList}\small\item\em Maximum number of hits per event. \item\end{DoxyCompactList}\item 
+int {\bf \_\-nMinHits}\label{classAhc2MipTrackFinder_a773a83d2634d654d9d3510e150c0ae56}
+
+\begin{DoxyCompactList}\small\item\em Minimum number of hits per event. \item\end{DoxyCompactList}\item 
+StringVec {\bf \_\-T0Vector}\label{classAhc2MipTrackFinder_a97d9f69dad58f11abf3b447e7af82a45}
+
+\begin{DoxyCompactList}\small\item\em Vector containing T0s. \item\end{DoxyCompactList}\item 
+StringVec {\bf \_\-CherenkowVector}\label{classAhc2MipTrackFinder_a546a544b370f3524820bb616dc7c779d}
+
+\begin{DoxyCompactList}\small\item\em Vector containing Cherenkows. \item\end{DoxyCompactList}\item 
+vector$<$ int $>$ {\bf \_\-mapT0s}\label{classAhc2MipTrackFinder_a652a66e5a9cf9e6467cc7261c138c216}
+
+\begin{DoxyCompactList}\small\item\em map for T0s \item\end{DoxyCompactList}\item 
+vector$<$ int $>$ {\bf \_\-mapCherenkows}\label{classAhc2MipTrackFinder_a29462e353cab93b227f1ef92edb9f8d0}
+
+\begin{DoxyCompactList}\small\item\em map for Cherenkows \item\end{DoxyCompactList}\item 
+vector$<$ int $>$ {\bf HitPerlayer}\label{classAhc2MipTrackFinder_a824c3cdd65b0b903f331d78d93ba6059}
+
+\begin{DoxyCompactList}\small\item\em Number of hits per layer before tracking to reject late pion showers. \item\end{DoxyCompactList}\item 
+int {\bfseries nHCALtracks}\label{classAhc2MipTrackFinder_aa83d1d1d65865e56991ad5f0c40e74de}
+
+\item 
+int {\bfseries \_\-nEvt}\label{classAhc2MipTrackFinder_a542724bf3cc0745407ce97e785951167}
+
+\item 
+int {\bfseries \_\-nRun}\label{classAhc2MipTrackFinder_a45930d24e5ea2dbeade5ce877de8a9f8}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 27 of file Ahc2MipTrackFinder.hh.
+
+\subsection{Member Function Documentation}
+\index{Ahc2MipTrackFinder@{Ahc2MipTrackFinder}!Check\_\-Cherenkow@{Check\_\-Cherenkow}}
+\index{Check\_\-Cherenkow@{Check\_\-Cherenkow}!Ahc2MipTrackFinder@{Ahc2MipTrackFinder}}
+\subsubsection[{Check\_\-Cherenkow}]{\setlength{\rightskip}{0pt plus 5cm}bool Ahc2MipTrackFinder::Check\_\-Cherenkow (int {\em Ihit}, \/  int {\em Jhit}, \/  int {\em Khit})}\label{classAhc2MipTrackFinder_ac4fab0956d6a015ff1e1de4ec6eb4fd7}
+
+
+Reject Cherenkow hits. 
+\begin{DoxyParams}{Parameters}
+\item[{\em Ihit}]-\/ I coordinate of the hit \item[{\em Jhit}]-\/ J coordinate of the hit \item[{\em Khit}]-\/ K coordinate of the hit \item[{\em ahc\_\-hitEnergy}]-\/ Energy of the hit \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ true if Cherenkow Hit otherwise false 
+\end{DoxyReturn}
+
+
+Definition at line 661 of file Ahc2MipTrackFinder.cc.
+
+References \_\-mapCherenkows.
+
+Referenced by processEvent().\index{Ahc2MipTrackFinder@{Ahc2MipTrackFinder}!Check\_\-T0@{Check\_\-T0}}
+\index{Check\_\-T0@{Check\_\-T0}!Ahc2MipTrackFinder@{Ahc2MipTrackFinder}}
+\subsubsection[{Check\_\-T0}]{\setlength{\rightskip}{0pt plus 5cm}bool Ahc2MipTrackFinder::Check\_\-T0 (int {\em Ihit}, \/  int {\em Jhit}, \/  int {\em Khit})}\label{classAhc2MipTrackFinder_a8b95ddc6aaa65392ae2acab94ae1871f}
+
+
+Reject T0 hits. 
+\begin{DoxyParams}{Parameters}
+\item[{\em Ihit}]-\/ I coordinate of the hit \item[{\em Jhit}]-\/ J coordinate of the hit \item[{\em Khit}]-\/ K coordinate of the hit \item[{\em ahc\_\-hitEnergy}]-\/ Energy of the hit \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ true if T0 Hit otherwise false 
+\end{DoxyReturn}
+
+
+Definition at line 639 of file Ahc2MipTrackFinder.cc.
+
+References \_\-mapT0s.
+
+Referenced by processEvent().\index{Ahc2MipTrackFinder@{Ahc2MipTrackFinder}!CheckOverlap@{CheckOverlap}}
+\index{CheckOverlap@{CheckOverlap}!Ahc2MipTrackFinder@{Ahc2MipTrackFinder}}
+\subsubsection[{CheckOverlap}]{\setlength{\rightskip}{0pt plus 5cm}bool Ahc2MipTrackFinder::CheckOverlap (pair$<$ float, float $>$ {\em Coordinates\_\-ECAL}, \/  pair$<$ float, float $>$ {\em Coordinates\_\-HCAL})}\label{classAhc2MipTrackFinder_a52af0355bb75e7f7b096c2809b1be24f}
+
+
+Check ECAL Strip overlap with HCAL Tower. 
+\begin{DoxyParams}{Parameters}
+\item[{\em Coordinates\_\-ECAL}]-\/ x,y coordinates of the ECAL hit \item[{\em Coordinates\_\-HCAL}]-\/ x,y coordinates of the HCAL hit \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ true if overlap otherwise false 
+\end{DoxyReturn}
+
+
+Definition at line 620 of file Ahc2MipTrackFinder.cc.
+
+Referenced by processEvent().\index{Ahc2MipTrackFinder@{Ahc2MipTrackFinder}!Fill2DMap@{Fill2DMap}}
+\index{Fill2DMap@{Fill2DMap}!Ahc2MipTrackFinder@{Ahc2MipTrackFinder}}
+\subsubsection[{Fill2DMap}]{\setlength{\rightskip}{0pt plus 5cm}int Ahc2MipTrackFinder::Fill2DMap (TowerHitVectorECAL \& {\em TowerMap}, \/  int {\em I}, \/  int {\em J}, \/  int {\em K}, \/  float {\em x}, \/  float {\em y}, \/  float {\em z}, \/  Float\_\-t {\em emc\_\-hitEnergy}, \/  Float\_\-t {\em emc\_\-hitTime}, \/  Int\_\-t {\em emc\_\-hitType}, \/  int {\em CellID0})}\label{classAhc2MipTrackFinder_a4133250e906d292eb5e63c6796d0204f}
+
+
+Fill ECAL Towers. 
+\begin{DoxyParams}{Parameters}
+\item[{\em TowerMap}]-\/ ECAL TowerMap \item[{\em I}]-\/ I coordinate of the hit \item[{\em J}]-\/ J coordinate of the hit \item[{\em K}]-\/ K coordinate of the hit \item[{\em x}]-\/ x coordinate of the hit \item[{\em y}]-\/ y coordinate of the hit \item[{\em z}]-\/ z coordinate of the hit \item[{\em emc\_\-hitEnergy}]-\/ Energy of the hit \item[{\em emc\_\-hitTime}]-\/ Time of the hit \item[{\em emc\_\-hitType}]-\/ Type of the hit \item[{\em CellID0}]-\/ CellID of the hit \end{DoxyParams}
+
+
+Definition at line 536 of file Ahc2MipTrackFinder.cc.\index{Ahc2MipTrackFinder@{Ahc2MipTrackFinder}!Fill2DMap@{Fill2DMap}}
+\index{Fill2DMap@{Fill2DMap}!Ahc2MipTrackFinder@{Ahc2MipTrackFinder}}
+\subsubsection[{Fill2DMap}]{\setlength{\rightskip}{0pt plus 5cm}int Ahc2MipTrackFinder::Fill2DMap (TowerHitVectorHCAL \& {\em TowerMap}, \/  int {\em I}, \/  int {\em J}, \/  int {\em K}, \/  float {\em x}, \/  float {\em y}, \/  float {\em z}, \/  Float\_\-t {\em ahc\_\-hitEnergy}, \/  Float\_\-t {\em ahc\_\-hitTime}, \/  Int\_\-t {\em ahc\_\-hitType}, \/  int {\em CellID0})}\label{classAhc2MipTrackFinder_aa87ebbfea543c6d8631ff274b480acd9}
+
+
+Fill HCAL Towers. 
+\begin{DoxyParams}{Parameters}
+\item[{\em TowerMap}]-\/ HCAL TowerMap \item[{\em I}]-\/ I coordinate of the hit \item[{\em J}]-\/ J coordinate of the hit \item[{\em K}]-\/ K coordinate of the hit \item[{\em x}]-\/ x coordinate of the hit \item[{\em y}]-\/ y coordinate of the hit \item[{\em z}]-\/ z coordinate of the hit \item[{\em ahc\_\-hitEnergy}]-\/ Energy of the hit \item[{\em ahc\_\-hitTime}]-\/ Time of the hit \item[{\em ahc\_\-hitType}]-\/ Type of the hit \item[{\em CellID0}]-\/ CellID of the hit \end{DoxyParams}
+
+
+Definition at line 509 of file Ahc2MipTrackFinder.cc.
+
+Referenced by processEvent().\index{Ahc2MipTrackFinder@{Ahc2MipTrackFinder}!IncrementOverlap@{IncrementOverlap}}
+\index{IncrementOverlap@{IncrementOverlap}!Ahc2MipTrackFinder@{Ahc2MipTrackFinder}}
+\subsubsection[{IncrementOverlap}]{\setlength{\rightskip}{0pt plus 5cm}int Ahc2MipTrackFinder::IncrementOverlap (vector$<$ {\bf EcalSingleHit} $>$ \& {\em ECALHits})}\label{classAhc2MipTrackFinder_afe6b54cb68bc697386b875696d75a97d}
+
+
+Increment Overlap parameter of a ECAL Hit. 
+\begin{DoxyParams}{Parameters}
+\item[{\em ECALHits}]-\/ vector containing ECAL hits \end{DoxyParams}
+
+
+Definition at line 603 of file Ahc2MipTrackFinder.cc.
+
+Referenced by processEvent().\index{Ahc2MipTrackFinder@{Ahc2MipTrackFinder}!selectTowerNHits@{selectTowerNHits}}
+\index{selectTowerNHits@{selectTowerNHits}!Ahc2MipTrackFinder@{Ahc2MipTrackFinder}}
+\subsubsection[{selectTowerNHits}]{\setlength{\rightskip}{0pt plus 5cm}int Ahc2MipTrackFinder::selectTowerNHits (TowerHitVectorHCAL \& {\em towers}, \/  unsigned int {\em MinNHits})}\label{classAhc2MipTrackFinder_a09ca0edbf3c8911ccf76167d1e8048ee}
+
+
+Select HCAL Towers with number of hits over MinNHits. 
+\begin{DoxyParams}{Parameters}
+\item[{\em towers}]-\/ HCAL Towers \item[{\em MinNHits}]-\/ Minimum on Number of hits in a Tower \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+-\/ Number of Towers left 
+\end{DoxyReturn}
+
+
+Definition at line 565 of file Ahc2MipTrackFinder.cc.
+
+Referenced by processEvent().
+
+\subsection{Field Documentation}
+\index{Ahc2MipTrackFinder@{Ahc2MipTrackFinder}!\_\-cutNTowerHits@{\_\-cutNTowerHits}}
+\index{\_\-cutNTowerHits@{\_\-cutNTowerHits}!Ahc2MipTrackFinder@{Ahc2MipTrackFinder}}
+\subsubsection[{\_\-cutNTowerHits}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf Ahc2MipTrackFinder::\_\-cutNTowerHits}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classAhc2MipTrackFinder_ac4a5ee1f4675658f8136ee1f5b1a1c2e}
+
+
+keep T0 and Cherenkow in output collection Cut on Number of hits in a Tower 
+
+Definition at line 144 of file Ahc2MipTrackFinder.hh.
+
+Referenced by Ahc2MipTrackFinder(), and processEvent().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+Ahc2MipTrackFinder.hh\item 
+Ahc2MipTrackFinder.cc\end{DoxyCompactItemize}

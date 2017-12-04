@@ -1,0 +1,56 @@
+\section{CALICE::RunTimeWhizard Class Reference}
+\label{classCALICE_1_1RunTimeWhizard}\index{CALICE::RunTimeWhizard@{CALICE::RunTimeWhizard}}
+
+
+Simple interface class to retrieve the run start and stop times by means of the runnumber.  
+
+
+{\ttfamily \#include $<$RunTimeWhizard.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf RunTimeWhizard} (std::string, std::string)\label{classCALICE_1_1RunTimeWhizard_a9f6df1c3d32cb94179623c5f0ef37b10}
+
+\begin{DoxyCompactList}\small\item\em Constructor taking db collection name and the string to access the db as input. \item\end{DoxyCompactList}\item 
+{\bf RunTimeWhizard} ()\label{classCALICE_1_1RunTimeWhizard_ae510dd43ef03f8439200e9f43d00d4f2}
+
+\begin{DoxyCompactList}\small\item\em Simple Constructor with using defaults for the values. \item\end{DoxyCompactList}\item 
+{\bf $\sim$RunTimeWhizard} ()\label{classCALICE_1_1RunTimeWhizard_a10803722fc623d7788f6f62ed4d040b9}
+
+\begin{DoxyCompactList}\small\item\em Important for memory handling. \item\end{DoxyCompactList}\item 
+long64 {\bf getRunStartTime} (int)\label{classCALICE_1_1RunTimeWhizard_a5d5c407669853902aa6ded39232b8aad}
+
+\begin{DoxyCompactList}\small\item\em get the run start time, input is runnumber \item\end{DoxyCompactList}\item 
+long64 {\bf getRunStopTime} (int)\label{classCALICE_1_1RunTimeWhizard_a252ee65830f1acb99daea7cb2a1c9ec6}
+
+\begin{DoxyCompactList}\small\item\em get the run stop time input is runnumber \item\end{DoxyCompactList}\item 
+void {\bf print} (int, std::ostream \&os)\label{classCALICE_1_1RunTimeWhizard_a0cba359955aea2f3150d831125d6a89e}
+
+\begin{DoxyCompactList}\small\item\em Convenient print method. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bf \_\-folder}\label{classCALICE_1_1RunTimeWhizard_ab91fd651f9cd8632b8209b115e5648d0}
+
+\begin{DoxyCompactList}\small\item\em Folder name. \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-dbinit}\label{classCALICE_1_1RunTimeWhizard_a5ad19b8ae7c918d6092a929894a66410}
+
+\begin{DoxyCompactList}\small\item\em dbinit string \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Simple interface class to retrieve the run start and stop times by means of the runnumber. It accesses the runtime info folder in the database. The access to this should happen via this class. 
+
+\begin{DoxyAuthor}{Author}
+R. Poeschl LAL 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Jun. 2007 
+\end{DoxyDate}
+
+
+Definition at line 24 of file RunTimeWhizard.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+RunTimeWhizard.hh\item 
+RunTimeWhizard.cc\end{DoxyCompactItemize}

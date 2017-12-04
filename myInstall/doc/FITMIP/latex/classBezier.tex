@@ -1,0 +1,121 @@
+\section{Bezier Class Reference}
+\label{classBezier}\index{Bezier@{Bezier}}
+
+
+Class for creation of \doxyref{Bezier}{p.}{classBezier} curve with maximum order 32.  
+
+
+{\ttfamily \#include $<$Bezier.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Bezier} (std::vector$<$ float $>$ \&x, std::vector$<$ float $>$ \&y, int order, bool zero)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+{\bf Bezier} (TH1 $\ast$histogram, int rebin, int order, bool zero)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+void {\bf setPrecision} (float precision)
+\begin{DoxyCompactList}\small\item\em Set the precision for \doxyref{Bezier}{p.}{classBezier} curve as a function. \item\end{DoxyCompactList}\item 
+float {\bf evaluate} (float x)\label{classBezier_a9ff362fe7019433a41b0222454bd29d8}
+
+\begin{DoxyCompactList}\small\item\em \doxyref{Bezier}{p.}{classBezier} curve as a function of x. \item\end{DoxyCompactList}\item 
+float {\bf evaluate2} (float x)\label{classBezier_a46c2f06bbfcec2e68446e06de7e045e5}
+
+\begin{DoxyCompactList}\small\item\em \doxyref{Bezier}{p.}{classBezier} curve as a function of x. More proper for finding peak. \item\end{DoxyCompactList}\item 
+float {\bf findPeak} ()\label{classBezier_a1ccaafe5dbb3ecf73123b78c8c33730b}
+
+\begin{DoxyCompactList}\small\item\em Finding the maximum value of a \doxyref{Bezier}{p.}{classBezier} function. \item\end{DoxyCompactList}\item 
+TMultiGraph $\ast$ {\bfseries plotBezier} ()\label{classBezier_a26107643e3ce2925f909c0dc1efc5683}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+float $\ast$ {\bfseries getPoint} (float t, unsigned from)\label{classBezier_a6b7d74bca2f301530736b555ed0e84c9}
+
+\item 
+float {\bfseries findPeak2} ()\label{classBezier_aa550ddeb605b6a38fb0f8c4408cab424}
+
+\item 
+float {\bfseries evaluate} (float x, unsigned where)\label{classBezier_a5fcbd5e8dc9aad20584b8cc11a2e6945}
+
+\item 
+int {\bfseries binomic} (int n, int k)\label{classBezier_a57164c69564804d831c88606eff6ecf9}
+
+\item 
+{\footnotesize template$<$class T $>$ }\\T {\bfseries signum} (T n)\label{classBezier_a397eb10588356e8e8e3c20b7ab37d488}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+TH1 $\ast$ {\bfseries \_\-histogram}\label{classBezier_aa3724a80533399b896864aa9ca1129ff}
+
+\item 
+unsigned {\bfseries \_\-order}\label{classBezier_a85103e31f5f90b5fef99077ce7a08038}
+
+\item 
+std::vector$<$ float $>$ {\bfseries \_\-xV}\label{classBezier_a13da1e9d40fb5f328b87c7cce543cb38}
+
+\item 
+std::vector$<$ float $>$ {\bfseries \_\-yV}\label{classBezier_a2061b6ba0f0844d6409c86070b07dcbd}
+
+\item 
+bool {\bfseries \_\-zero}\label{classBezier_a1cb62c0fa63cc5b384eaa89ee44541dc}
+
+\item 
+float {\bfseries \_\-point} [2]\label{classBezier_a69c6a6f293284c601c0c65f9142d3be5}
+
+\item 
+float {\bfseries \_\-precision}\label{classBezier_a67d9e7065dffad5fce88b3af42a47250}
+
+\item 
+float {\bfseries \_\-peak}\label{classBezier_a1609c4024c361cfc6845d065cd809923}
+
+\item 
+int {\bfseries \_\-wherePeak}\label{classBezier_ab47391e8951c0b28449a5638539b25e2}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for creation of \doxyref{Bezier}{p.}{classBezier} curve with maximum order 32. If there would be implemented function for calculating with big numbers, it could be better. \begin{DoxyAuthor}{Author}
+Boris Bulanek, DESY 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+06/23/10 
+\end{DoxyDate}
+
+
+Definition at line 21 of file Bezier.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Bezier@{Bezier}!Bezier@{Bezier}}
+\index{Bezier@{Bezier}!Bezier@{Bezier}}
+\subsubsection[{Bezier}]{\setlength{\rightskip}{0pt plus 5cm}Bezier::Bezier (std::vector$<$ float $>$ \& {\em x}, \/  std::vector$<$ float $>$ \& {\em y}, \/  int {\em order}, \/  bool {\em zero})}\label{classBezier_a1dc05c073f5e09aaa38ee2020bd8e4c0}
+
+
+Constructor. 
+\begin{DoxyParams}{Parameters}
+\item[{\em x}]-\/ vector of x-\/axis values of dataset. \item[{\em y}]-\/ vector of y-\/axis values of dataset. \item[{\em order}]-\/ order of \doxyref{Bezier}{p.}{classBezier} curve. \item[{\em zero}]-\/ use also zero y-\/values from dataset (1). \end{DoxyParams}
+\index{Bezier@{Bezier}!Bezier@{Bezier}}
+\index{Bezier@{Bezier}!Bezier@{Bezier}}
+\subsubsection[{Bezier}]{\setlength{\rightskip}{0pt plus 5cm}Bezier::Bezier (TH1 $\ast$ {\em histogram}, \/  int {\em rebin}, \/  int {\em order}, \/  bool {\em zero})}\label{classBezier_a74391b515a2abc98d2efcc79da600069}
+
+
+Constructor. Constructor for creating the \doxyref{Bezier}{p.}{classBezier} curve from data extracted from TH1 histogram. 
+
+Definition at line 20 of file Bezier.cc.
+
+\subsection{Member Function Documentation}
+\index{Bezier@{Bezier}!setPrecision@{setPrecision}}
+\index{setPrecision@{setPrecision}!Bezier@{Bezier}}
+\subsubsection[{setPrecision}]{\setlength{\rightskip}{0pt plus 5cm}void Bezier::setPrecision (float {\em precision})}\label{classBezier_a0dc15f3d3b3d746816da92794bae1ee9}
+
+
+Set the precision for \doxyref{Bezier}{p.}{classBezier} curve as a function. The \doxyref{Bezier}{p.}{classBezier} curve as an function $f(x)$ is evaluating the value in range $\left<x-\mbox{precision}, x+\mbox{precision}\right>$. 
+
+Definition at line 38 of file Bezier.cc.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+Bezier.hh\item 
+Bezier.cc\end{DoxyCompactItemize}

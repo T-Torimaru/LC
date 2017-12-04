@@ -1,0 +1,274 @@
+\section{CALICE::BmlSlowRunDataBlock Class Reference}
+\label{classCALICE_1_1BmlSlowRunDataBlock}\index{CALICE::BmlSlowRunDataBlock@{CALICE::BmlSlowRunDataBlock}}
+
+
+Interface Class to access the BmlSlowRun Data Here we handle ahc voltages, temperatures et al.  
+
+
+{\ttfamily \#include $<$BmlSlowRunDataBlock.hh$>$}Inheritance diagram for CALICE::BmlSlowRunDataBlock::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3cm]{classCALICE_1_1BmlSlowRunDataBlock}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf BmlSlowRunDataBlock} ()\label{classCALICE_1_1BmlSlowRunDataBlock_a25c7a935d4873ff7065def913bf1c77c}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+{\bf BmlSlowRunDataBlock} (LCObject $\ast$obj)\label{classCALICE_1_1BmlSlowRunDataBlock_ae4960ae7344e47dd4061e4a97067cce9}
+
+\begin{DoxyCompactList}\small\item\em 'Copy constructor' needed to interpret LCCollection read from file/database. \item\end{DoxyCompactList}\item 
+{\bf BmlSlowRunDataBlock} \& {\bf setAbsorberPosition} (double abspos)
+\begin{DoxyCompactList}\small\item\em Store the aborber position device in cern h6b beamline to purify beam, ie. \item\end{DoxyCompactList}\item 
+double {\bf getAbsorberPosition} () const \label{classCALICE_1_1BmlSlowRunDataBlock_a2eeaa6e8341b068b991d1c7ec42a0e8c}
+
+\begin{DoxyCompactList}\small\item\em Retrieve the absorber position. \item\end{DoxyCompactList}\item 
+{\bf BmlSlowRunDataBlock} \& {\bf setTimeStamp} (struct tm $\ast$timestamp)\label{classCALICE_1_1BmlSlowRunDataBlock_aaeaa4c4d05400ff8e10dca94acde6b5d}
+
+\begin{DoxyCompactList}\small\item\em Sets the time stamp We store Year, Month, Day and Hour, Minute, Second We store UTC!!!! \item\end{DoxyCompactList}\item 
+LCTime {\bf getTimeStamp} () const \label{classCALICE_1_1BmlSlowRunDataBlock_ae4bf5b8cb65578245c68add8a874e5a4}
+
+\begin{DoxyCompactList}\small\item\em returns the start stamp \item\end{DoxyCompactList}\item 
+LCTime {\bf getTimeStampBml} ()\label{classCALICE_1_1BmlSlowRunDataBlock_aa8e2d5f73a3ee0de0c6a0ebd972b4f23}
+
+\begin{DoxyCompactList}\small\item\em Implementation of the method to obtain the timestamp as given by the beamline operators here identical to the only timestamp which was stored. \item\end{DoxyCompactList}\item 
+LCTime {\bf getTimeStampDaq} ()\label{classCALICE_1_1BmlSlowRunDataBlock_a04c8788e599ae8873d81b515d67c9f93}
+
+\begin{DoxyCompactList}\small\item\em Implementation of the method to obtain the timestamp as given by the calice daq Here 0 as no timestamp has been stored. \item\end{DoxyCompactList}\item 
+{\bf BmlSlowRunDataBlock} \& {\bf setT4Position} (double t4pos)\label{classCALICE_1_1BmlSlowRunDataBlock_ac16185be4c02fc71f31e8773bebc9e19}
+
+\begin{DoxyCompactList}\small\item\em Store the t4 position device in cern h6b beamline to produce desired particles out of the secondary beam. \item\end{DoxyCompactList}\item 
+double {\bf getT4Position} () const \label{classCALICE_1_1BmlSlowRunDataBlock_a608e9bbb5084e0960e608fd9b3ece877}
+
+\begin{DoxyCompactList}\small\item\em Retrieve the absorber position. \item\end{DoxyCompactList}\item 
+{\bf BmlSlowRunDataBlock} \& {\bf setTargetPosition} (double targetpos)\label{classCALICE_1_1BmlSlowRunDataBlock_af3938577d279f22be257af9838c3e34e}
+
+\begin{DoxyCompactList}\small\item\em Store the target position primary target hit by ythe SPS beam. \item\end{DoxyCompactList}\item 
+double {\bf getTargetPosition} () const \label{classCALICE_1_1BmlSlowRunDataBlock_a8da787f3406d21c331f11fb449fe33a2}
+
+\begin{DoxyCompactList}\small\item\em Retrieve the target position. \item\end{DoxyCompactList}\item 
+const std::vector$<$ double $>$ \& {\bf getSextapoleCurrents} () const 
+\begin{DoxyCompactList}\small\item\em Retrieve the sextapole currents The values are stored in the sequence 'Measurement, Reference e.g. \item\end{DoxyCompactList}\item 
+const std::vector$<$ double $>$ \& {\bf getBendCurrents} () const 
+\begin{DoxyCompactList}\small\item\em Retrieve the bending magnet currents. \item\end{DoxyCompactList}\item 
+const std::vector$<$ double $>$ \& {\bf getCollimatorPositions} () const 
+\begin{DoxyCompactList}\small\item\em Retrieve the collimator positions The values are stored in the sequence 'Measurement x, Reference x, Meaurement y, Reference y e.g. \item\end{DoxyCompactList}\item 
+const std::vector$<$ double $>$ \& {\bf getQuadrupoleCurrents} () const 
+\begin{DoxyCompactList}\small\item\em Retrieve the quadrupole currents. \item\end{DoxyCompactList}\item 
+const std::vector$<$ double $>$ \& {\bf getTrimCurrents} () const 
+\begin{DoxyCompactList}\small\item\em Retrieve the trim currents. \item\end{DoxyCompactList}\item 
+const std::vector$<$ int $>$ \& {\bf getH6aExperimentCounts} () const \label{classCALICE_1_1BmlSlowRunDataBlock_a2b07ebc901bf88e683528599b036b725}
+
+\begin{DoxyCompactList}\small\item\em Retrieve the h6a experiment count. \item\end{DoxyCompactList}\item 
+const std::vector$<$ int $>$ \& {\bf getH6bExperimentCounts} () const \label{classCALICE_1_1BmlSlowRunDataBlock_a045906ccd4541632f32c0225b48a0ed6}
+
+\begin{DoxyCompactList}\small\item\em Retrieve the h6b experiment count. \item\end{DoxyCompactList}\item 
+const std::vector$<$ int $>$ \& {\bf getH6cExperimentCounts} () const \label{classCALICE_1_1BmlSlowRunDataBlock_a28ff6638d17e96f8f30563baef733163}
+
+\begin{DoxyCompactList}\small\item\em Retrieve the h6c experiment count. \item\end{DoxyCompactList}\item 
+const std::vector$<$ int $>$ \& {\bf getRpExperimentCounts} () const \label{classCALICE_1_1BmlSlowRunDataBlock_af567cfeefd9feb1ecab1a2c2b139e1f0}
+
+\begin{DoxyCompactList}\small\item\em Retrieve the rp experiment count. \item\end{DoxyCompactList}\item 
+const std::vector$<$ int $>$ \& {\bf getScintillatorCounts} () const \label{classCALICE_1_1BmlSlowRunDataBlock_a03765d06e1ca48d6d9529b6ea856e3ae}
+
+\begin{DoxyCompactList}\small\item\em Retrieve the scintillator count. \item\end{DoxyCompactList}\item 
+void {\bf setDblArrays} (const {\bf DaqTypeDataDblMap\_\-t} \&)\label{classCALICE_1_1BmlSlowRunDataBlock_ad45a9c9a2b9ed10dc062dd68b60838d1}
+
+\begin{DoxyCompactList}\small\item\em These methods receive the vectors with the measured values Mainly to store large arrays of a given datatype but in principle this can be extended to every entry in the interface class. \item\end{DoxyCompactList}\item 
+void {\bfseries setFloatArrays} (const DaqTypeDataFloatMap\_\-t \&)\label{classCALICE_1_1BmlSlowRunDataBlock_afeec6359c43f0e651899ca13d713846c}
+
+\item 
+void {\bfseries setIntArrays} (const DaqTypeDataUIntMap\_\-t \&)\label{classCALICE_1_1BmlSlowRunDataBlock_a188d4b95271b83a3a439aa6ffc15efd8}
+
+\item 
+const double {\bf getBeamEnergy} ()\label{classCALICE_1_1BmlSlowRunDataBlock_a2894d5f9fe5b2cb47c59984a8d98340f}
+
+\begin{DoxyCompactList}\small\item\em Implementation of the method to get the beam energy. \item\end{DoxyCompactList}\item 
+void {\bf print} (std::ostream \&)
+\begin{DoxyCompactList}\small\item\em convenient print method \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1BmlSlowRunDataBlock_a634733a4540fed14c4a967db1eb065e2}
+
+\begin{DoxyCompactList}\small\item\em Return the type of the class. \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1BmlSlowRunDataBlock_a6e1e0b78c1419825b0aed68058596001}
+
+\begin{DoxyCompactList}\small\item\em Return a brief description of the data members. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::map$<$ string, std::pair$<$ int, std::vector$<$ double $>$ $\ast$ $>$ $>$ {\bf BmlSroTypesDblMap\_\-t}\label{classCALICE_1_1BmlSlowRunDataBlock_a5b364de391c94a82921db206b900186e}
+
+\begin{DoxyCompactList}\small\item\em Relation between the datatype its position among the tuple of double vals and the vector the data are readinto. \item\end{DoxyCompactList}\item 
+typedef std::map$<$ string, std::pair$<$ int, std::vector$<$ int $>$ $\ast$ $>$ $>$ {\bfseries BmlSroTypesIntMap\_\-t}\label{classCALICE_1_1BmlSlowRunDataBlock_a813a5320e33a8d2d56356fbeefd2773c}
+
+\item 
+typedef std::map$<$ string, std::pair$<$ int, std::vector$<$ float $>$ $\ast$ $>$ $>$ {\bfseries BmlSroTypesFloatMap\_\-t}\label{classCALICE_1_1BmlSlowRunDataBlock_ae6c9fd754e494387de40e650475b5bf4}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bf setNumPos} (int posindex, int pos, int numvals)\label{classCALICE_1_1BmlSlowRunDataBlock_a6870f445e1d13706fcfc2debe4ef1cc8}
+
+\begin{DoxyCompactList}\small\item\em Store the position and number of measured values for a given datatype. \item\end{DoxyCompactList}\item 
+int {\bf getPos} (int posindex) const \label{classCALICE_1_1BmlSlowRunDataBlock_a06931182e3ea56d8e529251cd432dd68}
+
+\begin{DoxyCompactList}\small\item\em get the position of the given datatype within the array of values \item\end{DoxyCompactList}\item 
+int {\bf getNum} (int posindex) const \label{classCALICE_1_1BmlSlowRunDataBlock_a223ca19f8e3d33c6914aa70d8372a456}
+
+\begin{DoxyCompactList}\small\item\em Retrieve the number of measured values for a given datatype. \item\end{DoxyCompactList}\item 
+void {\bf setTypes} ()\label{classCALICE_1_1BmlSlowRunDataBlock_a1dc8f0b8e9b03d789d339e7788350cf4}
+
+\begin{DoxyCompactList}\small\item\em This method defines the (general) types of the measured values A type not present here will not be treated!!! \item\end{DoxyCompactList}\item 
+void {\bf prepareOutputVecs} ()\label{classCALICE_1_1BmlSlowRunDataBlock_ac84a8ae4e7d3c4a0d7fd3a00f5870b9e}
+
+\begin{DoxyCompactList}\small\item\em A method which prepares the output vectors. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf BmlSroTypesDblMap\_\-t} {\bf \_\-theDblTypes}\label{classCALICE_1_1BmlSlowRunDataBlock_aea4514391e28cac4c31080c73a4b2bea}
+
+\begin{DoxyCompactList}\small\item\em The vector which contains the types and to the position and values of the types doubles. \item\end{DoxyCompactList}\item 
+BmlSroTypesIntMap\_\-t {\bfseries \_\-theIntTypes}\label{classCALICE_1_1BmlSlowRunDataBlock_a7d0b680fa737df9349fcccd0db4b4e8f}
+
+\item 
+BmlSroTypesFloatMap\_\-t {\bfseries \_\-theFloatTypes}\label{classCALICE_1_1BmlSlowRunDataBlock_a71e936bfa00fbd092a8612d38232b645}
+
+\item 
+std::vector$<$ double $>$ {\bf \_\-sextapoleCurrents}\label{classCALICE_1_1BmlSlowRunDataBlock_a6c50465fa94d760a83e74340c9f1fcc5}
+
+\begin{DoxyCompactList}\small\item\em The output vectors. \item\end{DoxyCompactList}\item 
+std::vector$<$ double $>$ {\bf \_\-bendCurrents}\label{classCALICE_1_1BmlSlowRunDataBlock_af5573bc33aef8a7f88778066531dbb89}
+
+\begin{DoxyCompactList}\small\item\em Bending Magnets currents. \item\end{DoxyCompactList}\item 
+std::vector$<$ double $>$ {\bf \_\-colPositions}\label{classCALICE_1_1BmlSlowRunDataBlock_afc0cde9f2ff3c9eec2a21fd33af16e3d}
+
+\begin{DoxyCompactList}\small\item\em Collimator Positions. \item\end{DoxyCompactList}\item 
+std::vector$<$ double $>$ {\bf \_\-quadrupoleCurrents}\label{classCALICE_1_1BmlSlowRunDataBlock_a7cd4f230b7fc52d6d23ba10d16ae4936}
+
+\begin{DoxyCompactList}\small\item\em Quadrupole Magnets Current. \item\end{DoxyCompactList}\item 
+std::vector$<$ double $>$ {\bf \_\-trimCurrents}\label{classCALICE_1_1BmlSlowRunDataBlock_ae60f6f97b266b9fc573404fbd6821541}
+
+\begin{DoxyCompactList}\small\item\em Trim Magnets Current. \item\end{DoxyCompactList}\item 
+std::vector$<$ int $>$ {\bfseries \_\-h6aExpCounts}\label{classCALICE_1_1BmlSlowRunDataBlock_a32ae594ff07ea83ab20f57aefd862820}
+
+\item 
+std::vector$<$ int $>$ {\bfseries \_\-h6bExpCounts}\label{classCALICE_1_1BmlSlowRunDataBlock_ab585417272e850290aa9cb5635cac09a}
+
+\item 
+std::vector$<$ int $>$ {\bfseries \_\-h6cExpCounts}\label{classCALICE_1_1BmlSlowRunDataBlock_a45c08f992d5e1f52259c65c02d877535}
+
+\item 
+std::vector$<$ int $>$ {\bfseries \_\-rpExpCounts}\label{classCALICE_1_1BmlSlowRunDataBlock_a6a57670546525f6f2b72ae16a092134e}
+
+\item 
+std::vector$<$ int $>$ {\bfseries \_\-scintCounts}\label{classCALICE_1_1BmlSlowRunDataBlock_aff82cd4c1be4a45b6e35986c1ebe3466}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interface Class to access the BmlSlowRun Data Here we handle ahc voltages, temperatures et al. when filling the class the string identifying the measured values has to be given first, a warning is issued if no indentifier is given for a given datatype. On the other hand this concerns just the filler of the class, i.e. the conversion where it is done once for all. See the print method at the end of the class for the meaning of the fields (as of 31/7/06) Use the interface methods to retrieve the data fields Note that the implemented functionality is essentially kept for backward compatibility only i.e. that if ever the cern 06/07 data will be converted again the data will be written in the same way into the db as before. In principle the functionality like writing to the db is to be made by the base class. Beamline parameters for datataking period $>$ 2007 should be written into the db using the methods of the base class. \begin{DoxyAuthor}{Author}
+: Roman Pöschl LAL/Orsay 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Aug 2006, modified Sept. 2008 
+\end{DoxyDate}
+
+
+Definition at line 71 of file BmlSlowRunDataBlock.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::BmlSlowRunDataBlock@{CALICE::BmlSlowRunDataBlock}!getBendCurrents@{getBendCurrents}}
+\index{getBendCurrents@{getBendCurrents}!CALICE::BmlSlowRunDataBlock@{CALICE::BmlSlowRunDataBlock}}
+\subsubsection[{getBendCurrents}]{\setlength{\rightskip}{0pt plus 5cm}const std::vector$<$double$>$\& CALICE::BmlSlowRunDataBlock::getBendCurrents () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1BmlSlowRunDataBlock_a5e5c3b31bdca8c61adbec66c1e4eb06b}
+
+
+Retrieve the bending magnet currents. \begin{DoxySeeAlso}{See also}
+\doxyref{getSextapoleCurrents()}{p.}{classCALICE_1_1BmlSlowRunDataBlock_a10397850ce61e30a9ebe7cb4c71958d5} 
+\end{DoxySeeAlso}
+
+
+Definition at line 248 of file BmlSlowRunDataBlock.hh.
+
+References \_\-bendCurrents.
+
+Referenced by CALICE::BeamMomentum::BeamMomentum(), getBeamEnergy(), and print().\index{CALICE::BmlSlowRunDataBlock@{CALICE::BmlSlowRunDataBlock}!getCollimatorPositions@{getCollimatorPositions}}
+\index{getCollimatorPositions@{getCollimatorPositions}!CALICE::BmlSlowRunDataBlock@{CALICE::BmlSlowRunDataBlock}}
+\subsubsection[{getCollimatorPositions}]{\setlength{\rightskip}{0pt plus 5cm}const std::vector$<$double$>$\& CALICE::BmlSlowRunDataBlock::getCollimatorPositions () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1BmlSlowRunDataBlock_a948e24e50bd1e30f45b115694ef70786}
+
+
+Retrieve the collimator positions The values are stored in the sequence 'Measurement x, Reference x, Meaurement y, Reference y e.g. \_\-colPositions[0] = measured value of coll. 1 -\/ x coord. (counting from 1) e.g. \_\-colPositions[1] = reference value of coll. 1 -\/ x coord. (counting from 1) e.g. \_\-colPositions[2] = measured value of coll. 1 -\/ y coord. (counting from 1) e.g. \_\-colPositions[3] = reference value of coll. 1 -\/ y coord. (counting from 1) 
+
+Definition at line 258 of file BmlSlowRunDataBlock.hh.
+
+References \_\-colPositions.
+
+Referenced by CALICE::BeamMomentum::BeamMomentum(), and print().\index{CALICE::BmlSlowRunDataBlock@{CALICE::BmlSlowRunDataBlock}!getQuadrupoleCurrents@{getQuadrupoleCurrents}}
+\index{getQuadrupoleCurrents@{getQuadrupoleCurrents}!CALICE::BmlSlowRunDataBlock@{CALICE::BmlSlowRunDataBlock}}
+\subsubsection[{getQuadrupoleCurrents}]{\setlength{\rightskip}{0pt plus 5cm}const std::vector$<$double$>$\& CALICE::BmlSlowRunDataBlock::getQuadrupoleCurrents () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1BmlSlowRunDataBlock_aaad60dbe13efa032b18a52a2eb246ec3}
+
+
+Retrieve the quadrupole currents. \begin{DoxySeeAlso}{See also}
+\doxyref{getSextapoleCurrents()}{p.}{classCALICE_1_1BmlSlowRunDataBlock_a10397850ce61e30a9ebe7cb4c71958d5} 
+\end{DoxySeeAlso}
+
+
+Definition at line 264 of file BmlSlowRunDataBlock.hh.
+
+References \_\-quadrupoleCurrents.
+
+Referenced by print().\index{CALICE::BmlSlowRunDataBlock@{CALICE::BmlSlowRunDataBlock}!getSextapoleCurrents@{getSextapoleCurrents}}
+\index{getSextapoleCurrents@{getSextapoleCurrents}!CALICE::BmlSlowRunDataBlock@{CALICE::BmlSlowRunDataBlock}}
+\subsubsection[{getSextapoleCurrents}]{\setlength{\rightskip}{0pt plus 5cm}const std::vector$<$double$>$\& CALICE::BmlSlowRunDataBlock::getSextapoleCurrents () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1BmlSlowRunDataBlock_a10397850ce61e30a9ebe7cb4c71958d5}
+
+
+Retrieve the sextapole currents The values are stored in the sequence 'Measurement, Reference e.g. \_\-sextapoleCurrents[0] = measured value of sextupole 1 (counting from 1) e.g. \_\-sextapoleCurrents[1] = reference value of sextupole 1 (counting from 1) 
+
+Definition at line 242 of file BmlSlowRunDataBlock.hh.
+
+References \_\-sextapoleCurrents.
+
+Referenced by print().\index{CALICE::BmlSlowRunDataBlock@{CALICE::BmlSlowRunDataBlock}!getTrimCurrents@{getTrimCurrents}}
+\index{getTrimCurrents@{getTrimCurrents}!CALICE::BmlSlowRunDataBlock@{CALICE::BmlSlowRunDataBlock}}
+\subsubsection[{getTrimCurrents}]{\setlength{\rightskip}{0pt plus 5cm}const std::vector$<$double$>$\& CALICE::BmlSlowRunDataBlock::getTrimCurrents () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1BmlSlowRunDataBlock_a5a9b74416b5affcf70342f662cb52b5b}
+
+
+Retrieve the trim currents. \begin{DoxySeeAlso}{See also}
+\doxyref{getSextapoleCurrents()}{p.}{classCALICE_1_1BmlSlowRunDataBlock_a10397850ce61e30a9ebe7cb4c71958d5} 
+\end{DoxySeeAlso}
+
+
+Definition at line 270 of file BmlSlowRunDataBlock.hh.
+
+References \_\-trimCurrents.
+
+Referenced by print().\index{CALICE::BmlSlowRunDataBlock@{CALICE::BmlSlowRunDataBlock}!print@{print}}
+\index{print@{print}!CALICE::BmlSlowRunDataBlock@{CALICE::BmlSlowRunDataBlock}}
+\subsubsection[{print}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::BmlSlowRunDataBlock::print (std::ostream \& {\em os})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCALICE_1_1BmlSlowRunDataBlock_ae6fbf1de7c0528d67d77fb55e9c32eea}
+
+
+convenient print method Convenient print method. 
+
+Reimplemented from {\bf CALICE::DaqTypeDataBlock} \doxyref{}{p.}{classCALICE_1_1DaqTypeDataBlock_a0ab5d656a67220cfc75fd842c29e1ac7}.
+
+Definition at line 177 of file BmlSlowRunDataBlock.cc.
+
+References getAbsorberPosition(), getBendCurrents(), getCollimatorPositions(), getH6aExperimentCounts(), getH6bExperimentCounts(), getH6cExperimentCounts(), getQuadrupoleCurrents(), getRpExperimentCounts(), getScintillatorCounts(), getSextapoleCurrents(), getT4Position(), getTargetPosition(), getTimeStamp(), getTrimCurrents(), and prepareOutputVecs().\index{CALICE::BmlSlowRunDataBlock@{CALICE::BmlSlowRunDataBlock}!setAbsorberPosition@{setAbsorberPosition}}
+\index{setAbsorberPosition@{setAbsorberPosition}!CALICE::BmlSlowRunDataBlock@{CALICE::BmlSlowRunDataBlock}}
+\subsubsection[{setAbsorberPosition}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BmlSlowRunDataBlock}\& CALICE::BmlSlowRunDataBlock::setAbsorberPosition (double {\em abspos})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1BmlSlowRunDataBlock_a6d982078b6aea53f9ec91cd2410dc3db}
+
+
+Store the aborber position device in cern h6b beamline to purify beam, ie. to get rid of electrons 
+
+Definition at line 134 of file BmlSlowRunDataBlock.hh.
+
+References CALICE::LCGenericObjectImplExt::obj().
+
+Referenced by BmlSlowRunDataBlock().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+BmlSlowRunDataBlock.hh\item 
+BmlSlowRunDataBlock.cc\end{DoxyCompactItemize}

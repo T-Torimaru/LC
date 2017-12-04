@@ -1,0 +1,72 @@
+\section{CALICE::InterConstants Class Reference}
+\label{classCALICE_1_1InterConstants}\index{CALICE::InterConstants@{CALICE::InterConstants}}
+
+
+Class to store the results of a inter calibration measurement, i.e.  
+
+
+{\ttfamily \#include $<$InterConstants.hh$>$}Inheritance diagram for CALICE::InterConstants::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCALICE_1_1InterConstants}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries InterConstants} (unsigned chip, unsigned channel, float value, float error)\label{classCALICE_1_1InterConstants_a9130ab502198dc16813f62f591155900}
+
+\item 
+{\bfseries InterConstants} (LCObject $\ast$obj)\label{classCALICE_1_1InterConstants_a8275f0285c5080d4024de5557e0d0709}
+
+\item 
+float {\bf getInterValue} () const \label{classCALICE_1_1InterConstants_a2da8b23255795109983569198e70bfd7}
+
+\begin{DoxyCompactList}\small\item\em get conversion factor value \item\end{DoxyCompactList}\item 
+float {\bf getInterError} () const \label{classCALICE_1_1InterConstants_a17d72b981677ced2bc941119dcd19b2f}
+
+\begin{DoxyCompactList}\small\item\em get conversion factor error \item\end{DoxyCompactList}\item 
+float {\bf applyCalibration} (float inputValue) const \label{classCALICE_1_1InterConstants_ac4e54f423b0048db8e79b745a53a5209}
+
+\begin{DoxyCompactList}\small\item\em apply calibration to energy value \item\end{DoxyCompactList}\item 
+float {\bf cancelCalibration} (float outputValue) const \label{classCALICE_1_1InterConstants_a2f2d1a18b5136f7e2772d25629b4ccb2}
+
+\begin{DoxyCompactList}\small\item\em cancel an applied calibration from energy value \item\end{DoxyCompactList}\item 
+float {\bf applyCalibrationError} (float inputValue, float inputError) const \label{classCALICE_1_1InterConstants_ad102c242709f9229f3936d04bb356be7}
+
+\begin{DoxyCompactList}\small\item\em apply calibration error to current error \item\end{DoxyCompactList}\item 
+float {\bf cancelCalibrationError} (float outputValue, float outputError) const \label{classCALICE_1_1InterConstants_a513532d0848335a04f9a58c314ff32ee}
+
+\begin{DoxyCompactList}\small\item\em apply error due to canceling a calibration to current error \item\end{DoxyCompactList}\item 
+bool {\bf calibrationValid} () const \label{classCALICE_1_1InterConstants_ab184f4d15b941b5ac67474b02eaab138}
+
+\begin{DoxyCompactList}\small\item\em check if a valid calibration is available \item\end{DoxyCompactList}\item 
+bool {\bf keepEvent} (float resultValue, float resultError) const \label{classCALICE_1_1InterConstants_a919e037d3e03029486c2a3c9713e772a}
+
+\begin{DoxyCompactList}\small\item\em no cut for the moment \item\end{DoxyCompactList}\item 
+void {\bf print} (std::ostream \&os)\label{classCALICE_1_1InterConstants_a8e10cd6994b21d613a8bd5e00ac3fdec}
+
+\begin{DoxyCompactList}\small\item\em convenient print method \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1InterConstants_ab8640910bfa5d47de555ab6b5f2bb8d6}
+
+\begin{DoxyCompactList}\small\item\em return type of the class \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1InterConstants_a7e992cec8e1b2c2e3914b9cb9e8c9c10}
+
+\begin{DoxyCompactList}\small\item\em return a brief description of the data member \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class to store the results of a inter calibration measurement, i.e. conversion factor between calibration mode and physics mode plus the error of it for a certain chip/channel for a fixed moduleID \begin{DoxyAuthor}{Author}
+S. Schmidt DESY 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Aug 24 2006 
+\end{DoxyDate}
+
+
+Definition at line 25 of file InterConstants.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+InterConstants.hh\item 
+InterConstants.cc\end{DoxyCompactItemize}

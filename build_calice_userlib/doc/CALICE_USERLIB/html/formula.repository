@@ -1,0 +1,11 @@
+\form#0:\[ \frac{\Delta p}{p} = \frac{\sqrt{C_{3}^2+C_{8}^2}}{19.4} [\%] \]
+\form#1:$ C_{i} $
+\form#2:$i$
+\form#3:$C_{8}$
+\form#4:$ C_{8} = $
+\form#5:\[ \sigma = \frac{\Delta p}{2\sqrt{2\ln{2}}} \approx \frac{\Delta p}{2.35482} \]
+\form#6:$ name\pm N $
+\form#7:$ N $
+\form#8:$ name $
+\form#9:$ value+1 $
+\form#10:\[ r_{detector} + r_{module} \cdot M_{zshift} + r_{cell} \cdot M_{rot} \\ \quad\mathrm{where}\quad M_{rot}= \begin{array}{ccc} cos(\theta) & 0 & sin(\theta) \\ 0 & 1 & 0 \\ -sin(\theta) & 0 & cos(\theta) \end{array} \quad\mathrm{and}\quad M_{zshift}= \begin{array}{ccc} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1/cos(\theta) \end{array} \]

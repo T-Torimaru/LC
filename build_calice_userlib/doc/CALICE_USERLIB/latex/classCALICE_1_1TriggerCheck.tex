@@ -1,0 +1,51 @@
+\section{CALICE::TriggerCheck Class Reference}
+\label{classCALICE_1_1TriggerCheck}\index{CALICE::TriggerCheck@{CALICE::TriggerCheck}}
+
+
+Example for a simple class based on the LCFixedObject template.  
+
+
+{\ttfamily \#include $<$TriggerCheck.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf TriggerCheck} (int main\_\-word, int tolerance, int up, int down)\label{classCALICE_1_1TriggerCheck_a5c6ad83c6479b1155434bd966137761e}
+
+\begin{DoxyCompactList}\small\item\em Convenient c'tor. \item\end{DoxyCompactList}\item 
+{\bf TriggerCheck} (LCObject $\ast$obj)\label{classCALICE_1_1TriggerCheck_a212c6fc6145b9283fabe58679d934f74}
+
+\begin{DoxyCompactList}\small\item\em 'Copy constructor' needed to interpret LCCollection read from file/database. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$TriggerCheck} ()\label{classCALICE_1_1TriggerCheck_afcadb8b8d10fb40e64ec9656e1984e01}
+
+\begin{DoxyCompactList}\small\item\em Important for memory handling. \item\end{DoxyCompactList}\item 
+int {\bf getMainWord} ()\label{classCALICE_1_1TriggerCheck_a3f9131b5775e8b27f6808f0e3b93acbb}
+
+\begin{DoxyCompactList}\small\item\em get the 'main fifo word' \item\end{DoxyCompactList}\item 
+int {\bf getTolerance} ()\label{classCALICE_1_1TriggerCheck_afc050c6e51084f4e76a20d694bc73126}
+
+\begin{DoxyCompactList}\small\item\em get the distance word (see above) \item\end{DoxyCompactList}\item 
+int {\bf getUpSearch} ()\label{classCALICE_1_1TriggerCheck_af8a0117bed3941cb353693a7c3eface2}
+
+\begin{DoxyCompactList}\small\item\em number of words to be searched in upwards direction \item\end{DoxyCompactList}\item 
+int {\bf getDownSearch} ()\label{classCALICE_1_1TriggerCheck_a450b5f31d4d643303621dac8a09455bf}
+
+\begin{DoxyCompactList}\small\item\em number of words to be searched in downwards direction \item\end{DoxyCompactList}\item 
+void {\bf print} (std::ostream \&os)\label{classCALICE_1_1TriggerCheck_a2a2fd0d5f304e7d5c0ba892617bd84a1}
+
+\begin{DoxyCompactList}\small\item\em Convenient print method. \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1TriggerCheck_aaf8cece5cd4817d233e328c941c09563}
+
+\begin{DoxyCompactList}\small\item\em Return type name. \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1TriggerCheck_a29fbc7d9375224b05332c577ef3279a5}
+
+\begin{DoxyCompactList}\small\item\em Return data description. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Example for a simple class based on the LCFixedObject template. This is an interface to the parameters needed for the trigger checking. Trigger Checking consists of a) the word in the fifo where we expect the fired trigger (main word) b) the distance from the last appearance of the pattern in the main word where we allow one the mainword bits to be set 'Tolerance' This accounts for finite propagation time of signals in the hardware c) The number of words upwards and downwards of the mainword to be checked 
+
+Definition at line 30 of file TriggerCheck.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+TriggerCheck.hh\item 
+TriggerCheck.cc\end{DoxyCompactItemize}

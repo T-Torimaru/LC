@@ -1,0 +1,88 @@
+\section{CALICE::AdcBlock Class Reference}
+\label{classCALICE_1_1AdcBlock}\index{CALICE::AdcBlock@{CALICE::AdcBlock}}
+
+
+Class for the ADC Data as acquired by the \doxyref{CALICE}{p.}{namespaceCALICE} DAQ.  
+
+
+{\ttfamily \#include $<$AdcBlock.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf AdcBlock} (int boardID, int label, int Fe, int Imul, const AdcBlockArray \&adcBlock, int status)\label{classCALICE_1_1AdcBlock_a6cfc92f7005861497f3da19929b3305c}
+
+\begin{DoxyCompactList}\small\item\em Convenient c'tor. \item\end{DoxyCompactList}\item 
+{\bf AdcBlock} (LCObject $\ast$obj)\label{classCALICE_1_1AdcBlock_ab78d098d531e821e759f4f82db0942de}
+
+\begin{DoxyCompactList}\small\item\em 'Copy constructor' needed to interpret LCCollection read from file/database. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$AdcBlock} ()\label{classCALICE_1_1AdcBlock_af3dc2bf5b9ef534971a256f5b15d51dd}
+
+\begin{DoxyCompactList}\small\item\em Important for memory handling. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getBoardID} () const \label{classCALICE_1_1AdcBlock_a9a8352cd4be0a403b477ac602217ca3a}
+
+\begin{DoxyCompactList}\small\item\em get the board id. \item\end{DoxyCompactList}\item 
+unsigned {\bf getElecChannel} (int) const 
+\begin{DoxyCompactList}\small\item\em the class interface: \item\end{DoxyCompactList}\item 
+short {\bf getAdcVal} (int i) const \label{classCALICE_1_1AdcBlock_a3c78cb752efdb526d69c64f17c880616}
+
+\begin{DoxyCompactList}\small\item\em and the actual ADC calue \item\end{DoxyCompactList}\item 
+short {\bf getBoardFrontEnd} () const \label{classCALICE_1_1AdcBlock_aeba50c8fb0cb56a399027c1a24254d96}
+
+\begin{DoxyCompactList}\small\item\em Information on the FE chip the data was received. \item\end{DoxyCompactList}\item 
+short {\bf getMultiplexPosition} () const \label{classCALICE_1_1AdcBlock_a2978073ea8348f69e62bb0cbe15cab10}
+
+\begin{DoxyCompactList}\small\item\em and the position within the series of transmissions \item\end{DoxyCompactList}\item 
+short {\bf getCrateID} () const \label{classCALICE_1_1AdcBlock_a6bcccdc816b7c0cf695a7853071ffe6f}
+
+\begin{DoxyCompactList}\small\item\em Some general information on the board on which the data was received on the Crate Id. \item\end{DoxyCompactList}\item 
+short {\bf getSlotID} () const \label{classCALICE_1_1AdcBlock_a13560d4d9931ac08b13052580f67969a}
+
+\begin{DoxyCompactList}\small\item\em on the Slot Id \item\end{DoxyCompactList}\item 
+short {\bf getBoardComponentNumber} () const \label{classCALICE_1_1AdcBlock_ab782b69f80d4226d89a8b98221935c1b}
+
+\begin{DoxyCompactList}\small\item\em on the BoardComponent Number \item\end{DoxyCompactList}\item 
+short {\bf getRecordLabel} () const \label{classCALICE_1_1AdcBlock_af22b4a1cedb615b08899904eed3725bc}
+
+\begin{DoxyCompactList}\small\item\em on the Board Label \item\end{DoxyCompactList}\item 
+short {\bf getTransmissionStatus} () const \label{classCALICE_1_1AdcBlock_a8e9c8c2fe91eeed4f202aee8497c1854}
+
+\begin{DoxyCompactList}\small\item\em Transmission of data from piggy back to FE. \item\end{DoxyCompactList}\item 
+void {\bf print} (std::ostream \&os, int)\label{classCALICE_1_1AdcBlock_a6bd9f304b2fada336341073e07c41f13}
+
+\begin{DoxyCompactList}\small\item\em Convenient print method. \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1AdcBlock_aeba86a15ac0ad04d3564bae5aec911fb}
+
+\begin{DoxyCompactList}\small\item\em Return the type of the class. \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1AdcBlock_a0f2e508485b4214ab454b72fc0c591ed}
+
+\begin{DoxyCompactList}\small\item\em Return a brief description of the data members. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for the ADC Data as acquired by the \doxyref{CALICE}{p.}{namespaceCALICE} DAQ. The class reflects that the data are received in chunks of 12 ADC's within a series of 18 transmissions (multiplexing).
+
+ADC data are stored together with the indices of the board by which they were received, the FE (0-\/8) and their position within the multiplexed series (0-\/17). The class provides interface functions to get the adc value within the adc block as well as an associated electronic channel id: ElecChannelID = CrateID , SlotID, FE, Multipl., ADC\_\-i: Bit: 31-\/24 , 23-\/16, 15-\/12, 11-\/4 , 3-\/0 \begin{DoxyAuthor}{Author}
+R. Pöschl DESY 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Mar 5 2005 
+\end{DoxyDate}
+
+
+Definition at line 34 of file AdcBlock.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::AdcBlock@{CALICE::AdcBlock}!getElecChannel@{getElecChannel}}
+\index{getElecChannel@{getElecChannel}!CALICE::AdcBlock@{CALICE::AdcBlock}}
+\subsubsection[{getElecChannel}]{\setlength{\rightskip}{0pt plus 5cm}unsigned CALICE::AdcBlock::getElecChannel (int {\em i}) const}\label{classCALICE_1_1AdcBlock_af03eee5e03977fbab76d5fc98d113ef8}
+
+
+the class interface: get electronic channel id assigned to the adc 
+
+Definition at line 9 of file AdcBlock.cc.
+
+Referenced by print().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+AdcBlock.hh\item 
+AdcBlock.cc\end{DoxyCompactItemize}

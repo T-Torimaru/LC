@@ -1,0 +1,73 @@
+\section{HistogrammPT Class Reference}
+\label{classHistogrammPT}\index{HistogrammPT@{HistogrammPT}}
+
+
+Histogram class.  
+
+
+{\ttfamily \#include $<$HistogrammPT.h$>$}Inheritance diagram for HistogrammPT::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classHistogrammPT}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf AxisRange}
+\begin{DoxyCompactList}\small\item\em Class for axis range. \item\end{DoxyCompactList}\item 
+struct {\bf HCell}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf HistogrammPT} ()\label{classHistogrammPT_a5eb56dc8f443470d3f2e64261adfcf68}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$HistogrammPT} ()\label{classHistogrammPT_a919d7136a094d78a3160f82796ddc390}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual bool {\bf Book} (const {\bf MinMaxRange}$<$ double $>$ \&p\_\-lim, const {\bf MinMaxRange}$<$ double $>$ \&t\_\-lim, double \_\-step=0.006)\label{classHistogrammPT_a9f55c84ff9433921ad550901d77a40ce}
+
+\begin{DoxyCompactList}\small\item\em Book histogram. \item\end{DoxyCompactList}\item 
+bool {\bf Fill} (const Sphere3D \&sp, double e)\label{classHistogrammPT_a6f2b6c655ae17e89360f57de164c6e67}
+
+\begin{DoxyCompactList}\small\item\em Fill histogram. \item\end{DoxyCompactList}\item 
+{\bf HCell} $\ast$ {\bf get} (const Sphere3D \&sp)\label{classHistogrammPT_afde466a0d65f230d96919bdccce12042}
+
+\begin{DoxyCompactList}\small\item\em Get ? \item\end{DoxyCompactList}\item 
+{\bf HCell} $\ast$ {\bf get\_\-by\_\-index} (unsigned p\_\-i, unsigned t\_\-i)\label{classHistogrammPT_ab553651b0281a37e947f6326e72f05bf}
+
+\begin{DoxyCompactList}\small\item\em Get by index ? \item\end{DoxyCompactList}\item 
+double {\bf get\_\-t} (const {\bf HCell} \&c)\label{classHistogrammPT_a3649641c88c82a93e12339a21de0379d}
+
+\begin{DoxyCompactList}\small\item\em Get t ? \item\end{DoxyCompactList}\item 
+double {\bf get\_\-p} (const {\bf HCell} \&c)\label{classHistogrammPT_ac979daa0f17d147c523e2e927617738e}
+
+\begin{DoxyCompactList}\small\item\em Get p ? \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+{\bf HCell} $\ast$ {\bfseries c}\label{classHistogrammPT_a7ef98513afbbef61a4a764082dec2dc2}
+
+\item 
+unsigned {\bfseries c\_\-count}\label{classHistogrammPT_a253cf428378cf4d9b11aac5344a4e5ed}
+
+\item 
+{\bf AxisRange} {\bfseries p}\label{classHistogrammPT_a785c1c78da66f092a60351a39e9661bb}
+
+\item 
+{\bf AxisRange} {\bfseries t}\label{classHistogrammPT_a35d3ffa3da74524aeb263212286d2988}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Histogram class. 
+
+Definition at line 16 of file HistogrammPT.h.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+HistogrammPT.h\item 
+HistogrammPT.cc\end{DoxyCompactItemize}

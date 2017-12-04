@@ -1,0 +1,75 @@
+\section{CALICE::CellNeighboursProcessor Class Reference}
+\label{classCALICE_1_1CellNeighboursProcessor}\index{CALICE::CellNeighboursProcessor@{CALICE::CellNeighboursProcessor}}
+
+
+{\ttfamily \#include $<$CellNeighboursProcessor.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Processor $\ast$ {\bfseries newProcessor} ()\label{classCALICE_1_1CellNeighboursProcessor_a5d8124b69f81b41bee91e95b96996b52}
+
+\item 
+virtual void {\bfseries init} ()\label{classCALICE_1_1CellNeighboursProcessor_acf6e2a5cc1d4592d1e49ab7f03b219e9}
+
+\item 
+virtual void {\bfseries processEvent} (LCEvent $\ast$evt)\label{classCALICE_1_1CellNeighboursProcessor_a07e3fc15bdb5db75f978e2bee0eb57a1}
+
+\item 
+virtual void {\bfseries end} ()\label{classCALICE_1_1CellNeighboursProcessor_adea30d7fda35bdfc4de28600f2ee40b3}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static MappedContainer$<$ CellNeighbours $>$ $\ast$ {\bf getNeighbours} (const std::string \&processorName)
+\item 
+static const std::string \& {\bfseries getEncodingString} (const std::string \&processorName)\label{classCALICE_1_1CellNeighboursProcessor_ad963125fee09e610050846bace559a10}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Processor that provides cell neighbours information
+
+To obtain the object in other processors use: \doxyref{CellNeighboursProcessor::getNeighbours}{p.}{classCALICE_1_1CellNeighboursProcessor_a9385534f41a3c60a91ba6cde01289f40}( \char`\"{}cellNeighbours processor name\char`\"{} )
+
+\begin{DoxyParagraph}{processor parameters}
+\begin{TabularC}{2}
+\hline
+steering file parameter name &description  \\\cline{1-2}
+{\bfseries {\itshape  MappingProcessorName \/}}&name of the mapping processor that provides the necessary Mapper class \\\cline{1-2}
+\end{TabularC}
+
+\end{DoxyParagraph}
+\begin{DoxyAuthor}{Author}
+{\tt Benjamin.Lutz@desy.de} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+June 2009 
+\end{DoxyDate}
+
+
+Definition at line 41 of file CellNeighboursProcessor.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::CellNeighboursProcessor@{CALICE::CellNeighboursProcessor}!getNeighbours@{getNeighbours}}
+\index{getNeighbours@{getNeighbours}!CALICE::CellNeighboursProcessor@{CALICE::CellNeighboursProcessor}}
+\subsubsection[{getNeighbours}]{\setlength{\rightskip}{0pt plus 5cm}MappedContainer$<$ CellNeighbours $>$ $\ast$ CALICE::CellNeighboursProcessor::getNeighbours (const std::string \& {\em processorName})\hspace{0.3cm}{\ttfamily  [static]}}\label{classCALICE_1_1CellNeighboursProcessor_a9385534f41a3c60a91ba6cde01289f40}
+static function to obtain a MappedContainer with cell neighbours
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em processorName}]name of the \doxyref{CellNeighboursProcessor}{p.}{classCALICE_1_1CellNeighboursProcessor} that takes care of this CellNeighbours. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the MappedContainer including CellNeighbours 
+\end{DoxyReturn}
+
+
+Definition at line 17 of file CellNeighboursProcessor.cc.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+CellNeighboursProcessor.hh\item 
+CellNeighboursProcessor.cc\end{DoxyCompactItemize}

@@ -1,0 +1,59 @@
+\section{marlin::TBTrackRemover Class Reference}
+\label{classmarlin_1_1TBTrackRemover}\index{marlin::TBTrackRemover@{marlin::TBTrackRemover}}
+
+
+Preprocessor which is supposed to run at the !very! beginning of the processor chain.  
+
+
+{\ttfamily \#include $<$TBTrackRemover.hh$>$}\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf LCEventModifier}
+\begin{DoxyCompactList}\small\item\em Helper class to for the modification of the Event Header. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Processor $\ast$ {\bfseries newProcessor} ()\label{classmarlin_1_1TBTrackRemover_aabd6f4686ad80cd4dc5c00ad485532ab}
+
+\item 
+virtual void {\bf init} ()
+\begin{DoxyCompactList}\small\item\em Called at the begin of the job before anything is read. \item\end{DoxyCompactList}\item 
+virtual void {\bf processRunHeader} (LCRunHeader $\ast$run)\label{classmarlin_1_1TBTrackRemover_a7a4a783bba99c63bf4dfd424a39b461a}
+
+\begin{DoxyCompactList}\small\item\em Called for every run. \item\end{DoxyCompactList}\item 
+virtual void {\bf processEvent} (LCEvent $\ast$evt)\label{classmarlin_1_1TBTrackRemover_a6a9ccb473b3383d1ccb978e3ba8a7760}
+
+\begin{DoxyCompactList}\small\item\em Called for every event -\/ the working horse. \item\end{DoxyCompactList}\item 
+virtual void {\bfseries check} (LCEvent $\ast$evt)\label{classmarlin_1_1TBTrackRemover_a24007dc2befc665be3688fc38683e002}
+
+\item 
+virtual void {\bf end} ()\label{classmarlin_1_1TBTrackRemover_af53b200afa75c5e10cc2fe2ccb19672b}
+
+\begin{DoxyCompactList}\small\item\em Called after data processing for clean up. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Preprocessor which is supposed to run at the !very! beginning of the processor chain. Adding information to the Run and EventHeader.for data and MC. In partcular the beam energy is extracted from the database for a given run and the MC events get assigned a timestamp. \begin{DoxyAuthor}{Author}
+: A.M. Magnan Imperial College, modifs R.Poeschl LAL
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Apr 2007 
+\end{DoxyDate}
+
+
+Definition at line 38 of file TBTrackRemover.hh.
+
+\subsection{Member Function Documentation}
+\index{marlin::TBTrackRemover@{marlin::TBTrackRemover}!init@{init}}
+\index{init@{init}!marlin::TBTrackRemover@{marlin::TBTrackRemover}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void marlin::TBTrackRemover::init ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classmarlin_1_1TBTrackRemover_a48e9f5ce74d8a9798a533dd276c988c0}
+
+
+Called at the begin of the job before anything is read. Use to initialize the processor, e.g. book histograms. 
+
+Definition at line 82 of file TBTrackRemover.cc.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+TBTrackRemover.hh\item 
+TBTrackRemover.cc\end{DoxyCompactItemize}

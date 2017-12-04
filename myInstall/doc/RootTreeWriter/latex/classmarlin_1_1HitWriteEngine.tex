@@ -1,0 +1,280 @@
+\section{marlin::HitWriteEngine Class Reference}
+\label{classmarlin_1_1HitWriteEngine}\index{marlin::HitWriteEngine@{marlin::HitWriteEngine}}
+Inheritance diagram for marlin::HitWriteEngine:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{classmarlin_1_1HitWriteEngine__inherit__graph}
+\end{center}
+\end{figure}
+Collaboration diagram for marlin::HitWriteEngine:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classmarlin_1_1HitWriteEngine__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries HitWriteEngine} ({\bf RootTreeWriter} $\ast$host)\label{classmarlin_1_1HitWriteEngine_a27a4e92d6197606067508fd4ff38680f}
+
+\item 
+virtual const std::string \& {\bf getEngineName} ()
+\item 
+virtual void {\bf registerParameters} ()
+\item 
+virtual void {\bf registerBranches} (TTree $\ast$hostTree)
+\item 
+virtual void {\bf fillVariables} (EVENT::LCEvent $\ast$)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\begin{tabbing}
+xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=xx\=\kill
+struct \{\\
+\>int {\bfseries iEvt}\\
+\>int {\bfseries nHits}\\
+\>int {\bf nLayers}\\
+\>float {\bfseries energySum}\\
+\>float {\bfseries energyDensity}\\
+\>float {\bf cogX}\\
+\>float {\bfseries cogY}\\
+\>float {\bfseries cogZ}\\
+\>float {\bf cogI}\\
+\>float {\bf cogJ}\\
+\>float {\bf cogIGeom}\\
+\>float {\bf cogJGeom}\\
+\>float {\bf radius}\\
+\>float {\bf radiusEw}\\
+\>int {\bfseries cellID} [MAXCELLS]\\
+\>int {\bfseries hitI} [MAXCELLS]\\
+\>int {\bfseries hitJ} [MAXCELLS]\\
+\>int {\bfseries hitK} [MAXCELLS]\\
+\>float {\bfseries hitEnergy} [MAXCELLS]\\
+\>float {\bfseries hitTime} [MAXCELLS]\\
+\>int {\bfseries hitType} [MAXCELLS]\\
+\>float {\bf hitRadius} [MAXCELLS]\\
+\>float {\bf hitEnergyDensity} [MAXCELLS]\\
+\>float {\bfseries hitPos} [MAXCELLS][3]\\
+\>int {\bfseries cellSize} [MAXCELLS]\\
+\>float {\bfseries cellTemperature} [MAXCELLS]\\
+\>float {\bfseries hitAmplRawADC} [MAXCELLS]\\
+\>float {\bfseries hitAmplRawMinusPedestalADC} [MAXCELLS]\\
+\>int {\bf lNHits} [MAXLAYERS]\\
+\>float {\bf lEnergy} [MAXLAYERS]\\
+\>float {\bf lEnergy\_err} [MAXLAYERS]\\
+\>float {\bf lCogX} [MAXLAYERS]\\
+\>float {\bfseries lCogY} [MAXLAYERS]\\
+\>float {\bf lCogI} [MAXLAYERS]\\
+\>float {\bfseries lCogJ} [MAXLAYERS]\\
+\>float {\bf lCogIGeom} [MAXLAYERS]\\
+\>float {\bfseries lCogJGeom} [MAXLAYERS]\\
+\>float {\bf lRadius} [MAXLAYERS]\\
+\>float {\bf lRadiusEw} [MAXLAYERS]\\
+\>float {\bf energySum5Layer}\\
+\>int {\bf nHits5Layer}\\
+\>float {\bf cogX5Layer}\\
+\>float {\bfseries cogY5Layer}\\
+\>float {\bfseries cogZ5Layer}\\
+\} {\bfseries \_hitsFill}\label{classmarlin_1_1HitWriteEngine_a282f5a0cd8e3a1bad466a62deafb25d5}
+\\
+
+\end{tabbing}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned int {\bfseries MAXCELLS} = 7609\label{classmarlin_1_1HitWriteEngine_ae82379925369e9e2acf59996206f8149}
+
+\item 
+static const unsigned int {\bfseries MAXLAYERS} = 39\label{classmarlin_1_1HitWriteEngine_ae772b112d07d36d2840a2045b71011c8}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 15 of file HitWriteEngine.hh.
+
+\subsection{Member Function Documentation}
+\index{marlin::HitWriteEngine@{marlin::HitWriteEngine}!fillVariables@{fillVariables}}
+\index{fillVariables@{fillVariables}!marlin::HitWriteEngine@{marlin::HitWriteEngine}}
+\subsubsection[{fillVariables}]{\setlength{\rightskip}{0pt plus 5cm}void marlin::HitWriteEngine::fillVariables (EVENT::LCEvent $\ast$ {\em evt})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classmarlin_1_1HitWriteEngine_a1ee46edbad4693ee7213c153c30dd2d9}
+Implement this to extract the variables which you want to fill into the {\itshape ROOT\/} tree from the event. Write the value of the variables you want to add to the tree to the member variables, which you registered to the {\itshape ROOT\/} tree. The \doxyref{RootTreeWriter}{p.}{classmarlin_1_1RootTreeWriter} will call TTree::Fill() for you. 
+\begin{DoxyParams}{Parameters}
+\item[{\em evt}]the current event \end{DoxyParams}
+
+
+Implements {\bf marlin::RootWriteEngine} \doxyref{}{p.}{classmarlin_1_1RootWriteEngine_ace823bd839cee7e8c8755e60c4cc7134}.
+
+Definition at line 258 of file HitWriteEngine.cc.
+
+References cogI, cogIGeom, cogJ, cogJGeom, radius, and radiusEw.\index{marlin::HitWriteEngine@{marlin::HitWriteEngine}!getEngineName@{getEngineName}}
+\index{getEngineName@{getEngineName}!marlin::HitWriteEngine@{marlin::HitWriteEngine}}
+\subsubsection[{getEngineName}]{\setlength{\rightskip}{0pt plus 5cm}virtual const std::string\& marlin::HitWriteEngine::getEngineName ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classmarlin_1_1HitWriteEngine_a13d17e1b000f55fd5819659426ece2f0}
+Returns the name of the engine to the \doxyref{RootTreeWriter}{p.}{classmarlin_1_1RootTreeWriter} processor. \begin{DoxyReturn}{Returns}
+Must return a string with the engine name. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[{\bf Todo}]fixme: should be const, but must be declared const in implementations too. Need to fix all existing engines?!? \end{Desc}
+
+
+Implements {\bf marlin::RootWriteEngine} \doxyref{}{p.}{classmarlin_1_1RootWriteEngine_a31e38120fe60efcb15666fd569ba5862}.
+
+Definition at line 24 of file HitWriteEngine.hh.\index{marlin::HitWriteEngine@{marlin::HitWriteEngine}!registerBranches@{registerBranches}}
+\index{registerBranches@{registerBranches}!marlin::HitWriteEngine@{marlin::HitWriteEngine}}
+\subsubsection[{registerBranches}]{\setlength{\rightskip}{0pt plus 5cm}void marlin::HitWriteEngine::registerBranches (TTree $\ast$)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classmarlin_1_1HitWriteEngine_a9de31f39b17a9e782cc7d41d07fce547}
+Implement to register local variables to the output tree 
+\begin{DoxyParams}{Parameters}
+\item[{\em pointer}]to the {\itshape ROOT\/} tree, which the \doxyref{RootTreeWriter}{p.}{classmarlin_1_1RootTreeWriter} processor fills at the end of each event. Usually the implementation looks like \begin{DoxyVerb}
+    /// hostTree->Branch("variable",&_variable" ,"variable/F"  );
+    /// \end{DoxyVerb}
+. But you can add any type of branch you like. \end{DoxyParams}
+
+
+Implements {\bf marlin::RootWriteEngine} \doxyref{}{p.}{classmarlin_1_1RootWriteEngine_ad467dc6e73fdd9fd4311f7277fd02a89}.
+
+Definition at line 114 of file HitWriteEngine.cc.\index{marlin::HitWriteEngine@{marlin::HitWriteEngine}!registerParameters@{registerParameters}}
+\index{registerParameters@{registerParameters}!marlin::HitWriteEngine@{marlin::HitWriteEngine}}
+\subsubsection[{registerParameters}]{\setlength{\rightskip}{0pt plus 5cm}void marlin::HitWriteEngine::registerParameters ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classmarlin_1_1HitWriteEngine_a54f5c814d074396779ba6d21b2acff6c}
+Used to register steering parameters. Implement to register {\itshape \doxyref{marlin}{p.}{namespacemarlin}\/} steering file parameters. Use {\itshape \doxyref{marlin}{p.}{namespacemarlin}\/} syntax to register parameters for the calling \doxyref{RootTreeWriter}{p.}{classmarlin_1_1RootTreeWriter} processor.
+
+use \begin{DoxyVerb}
+    /// _hostProc.relayRegisterProcessorParameter(...)
+    /// _hostProc.relayRegister...()
+    /// \end{DoxyVerb}
+ instead of {\itshape \doxyref{marlin}{p.}{namespacemarlin}\/} processors \begin{DoxyVerb}register...() \end{DoxyVerb}
+ methods 
+
+Implements {\bf marlin::RootWriteEngine} \doxyref{}{p.}{classmarlin_1_1RootWriteEngine_ae12b70923768043fa5c1438f078c41d3}.
+
+Definition at line 57 of file HitWriteEngine.cc.
+
+References marlin::RootTreeWriter::relayRegisterInputCollection(), and marlin::RootTreeWriter::relayRegisterProcessorParameter().
+
+\subsection{Member Data Documentation}
+\index{marlin::HitWriteEngine@{marlin::HitWriteEngine}!cogI@{cogI}}
+\index{cogI@{cogI}!marlin::HitWriteEngine@{marlin::HitWriteEngine}}
+\subsubsection[{cogI}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf marlin::HitWriteEngine::cogI}}\label{classmarlin_1_1HitWriteEngine_a0d5739077e6cb790b40956af1df73d68}
+center of gravity with cell index I (column) 
+
+Definition at line 46 of file HitWriteEngine.hh.
+
+Referenced by fillVariables().\index{marlin::HitWriteEngine@{marlin::HitWriteEngine}!cogIGeom@{cogIGeom}}
+\index{cogIGeom@{cogIGeom}!marlin::HitWriteEngine@{marlin::HitWriteEngine}}
+\subsubsection[{cogIGeom}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf marlin::HitWriteEngine::cogIGeom}}\label{classmarlin_1_1HitWriteEngine_a5adaa9d2becfcdd609da4e6305bfa604}
+geometrical (not weighted) center of gravity with cell index I (column) 
+
+Definition at line 48 of file HitWriteEngine.hh.
+
+Referenced by fillVariables().\index{marlin::HitWriteEngine@{marlin::HitWriteEngine}!cogJ@{cogJ}}
+\index{cogJ@{cogJ}!marlin::HitWriteEngine@{marlin::HitWriteEngine}}
+\subsubsection[{cogJ}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf marlin::HitWriteEngine::cogJ}}\label{classmarlin_1_1HitWriteEngine_a5d4f9d6403bf2c717ea72d41e6221266}
+center of gravity with cell index J (row) 
+
+Definition at line 47 of file HitWriteEngine.hh.
+
+Referenced by fillVariables().\index{marlin::HitWriteEngine@{marlin::HitWriteEngine}!cogJGeom@{cogJGeom}}
+\index{cogJGeom@{cogJGeom}!marlin::HitWriteEngine@{marlin::HitWriteEngine}}
+\subsubsection[{cogJGeom}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf marlin::HitWriteEngine::cogJGeom}}\label{classmarlin_1_1HitWriteEngine_ac3cc354d17d8adb8237dd86e1467b450}
+geometrical (not weighted) center of gravity with cell index J (row) 
+
+Definition at line 49 of file HitWriteEngine.hh.
+
+Referenced by fillVariables().\index{marlin::HitWriteEngine@{marlin::HitWriteEngine}!cogX@{cogX}}
+\index{cogX@{cogX}!marlin::HitWriteEngine@{marlin::HitWriteEngine}}
+\subsubsection[{cogX}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf marlin::HitWriteEngine::cogX}}\label{classmarlin_1_1HitWriteEngine_a320557965f98c1fd3e49ff9e24e9771e}
+center of gravity weighted by energy on whole calo 
+
+Definition at line 43 of file HitWriteEngine.hh.\index{marlin::HitWriteEngine@{marlin::HitWriteEngine}!cogX5Layer@{cogX5Layer}}
+\index{cogX5Layer@{cogX5Layer}!marlin::HitWriteEngine@{marlin::HitWriteEngine}}
+\subsubsection[{cogX5Layer}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf marlin::HitWriteEngine::cogX5Layer}}\label{classmarlin_1_1HitWriteEngine_ab38ac9d94c3d04471fde8605ffd83d3a}
+center of gravity weighted by energy over the first 5 layers 
+
+Definition at line 86 of file HitWriteEngine.hh.\index{marlin::HitWriteEngine@{marlin::HitWriteEngine}!energySum5Layer@{energySum5Layer}}
+\index{energySum5Layer@{energySum5Layer}!marlin::HitWriteEngine@{marlin::HitWriteEngine}}
+\subsubsection[{energySum5Layer}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf marlin::HitWriteEngine::energySum5Layer}}\label{classmarlin_1_1HitWriteEngine_acc1807823e03b6af70ad9af1897e1510}
+energy Sum for the first 5 layer outside 28 cm 
+
+Definition at line 83 of file HitWriteEngine.hh.\index{marlin::HitWriteEngine@{marlin::HitWriteEngine}!hitEnergyDensity@{hitEnergyDensity}}
+\index{hitEnergyDensity@{hitEnergyDensity}!marlin::HitWriteEngine@{marlin::HitWriteEngine}}
+\subsubsection[{hitEnergyDensity}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf marlin::HitWriteEngine::hitEnergyDensity}[MAXCELLS]}\label{classmarlin_1_1HitWriteEngine_abea4cae193c1f717f3dda6c6495ac73c}
+hit energy weighted by tile\_\-size$^\wedge$2$\ast$hitRadius (dimention: E/mm$^\wedge$3) 
+
+Definition at line 62 of file HitWriteEngine.hh.\index{marlin::HitWriteEngine@{marlin::HitWriteEngine}!hitRadius@{hitRadius}}
+\index{hitRadius@{hitRadius}!marlin::HitWriteEngine@{marlin::HitWriteEngine}}
+\subsubsection[{hitRadius}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf marlin::HitWriteEngine::hitRadius}[MAXCELLS]}\label{classmarlin_1_1HitWriteEngine_a0dbb839a7a50f567c36c8df3e1cd5b31}
+hit distance to the cog (ideally one wants to replace the cog with the DC track) 
+
+Definition at line 60 of file HitWriteEngine.hh.\index{marlin::HitWriteEngine@{marlin::HitWriteEngine}!lCogI@{lCogI}}
+\index{lCogI@{lCogI}!marlin::HitWriteEngine@{marlin::HitWriteEngine}}
+\subsubsection[{lCogI}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf marlin::HitWriteEngine::lCogI}[MAXLAYERS]}\label{classmarlin_1_1HitWriteEngine_ac9a4792f453a3890865ea82c329f27f7}
+center of gravity in I,J weighted by energy in one layer 
+
+Definition at line 76 of file HitWriteEngine.hh.\index{marlin::HitWriteEngine@{marlin::HitWriteEngine}!lCogIGeom@{lCogIGeom}}
+\index{lCogIGeom@{lCogIGeom}!marlin::HitWriteEngine@{marlin::HitWriteEngine}}
+\subsubsection[{lCogIGeom}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf marlin::HitWriteEngine::lCogIGeom}[MAXLAYERS]}\label{classmarlin_1_1HitWriteEngine_a846a42abe297857cbfbb5f5e0f8df1d9}
+geometrical (not weighted) center of gravity in I,J 
+
+Definition at line 78 of file HitWriteEngine.hh.\index{marlin::HitWriteEngine@{marlin::HitWriteEngine}!lCogX@{lCogX}}
+\index{lCogX@{lCogX}!marlin::HitWriteEngine@{marlin::HitWriteEngine}}
+\subsubsection[{lCogX}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf marlin::HitWriteEngine::lCogX}[MAXLAYERS]}\label{classmarlin_1_1HitWriteEngine_ae47587843322dd09f09ddfbf3ed9928a}
+center of gravity weighted by energy in one layer 
+
+Definition at line 74 of file HitWriteEngine.hh.\index{marlin::HitWriteEngine@{marlin::HitWriteEngine}!lEnergy@{lEnergy}}
+\index{lEnergy@{lEnergy}!marlin::HitWriteEngine@{marlin::HitWriteEngine}}
+\subsubsection[{lEnergy}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf marlin::HitWriteEngine::lEnergy}[MAXLAYERS]}\label{classmarlin_1_1HitWriteEngine_a20fd28cf87ddf0023ae0903310dc39da}
+layer by layer Energy 
+
+Definition at line 71 of file HitWriteEngine.hh.\index{marlin::HitWriteEngine@{marlin::HitWriteEngine}!lEnergy\_\-err@{lEnergy\_\-err}}
+\index{lEnergy\_\-err@{lEnergy\_\-err}!marlin::HitWriteEngine@{marlin::HitWriteEngine}}
+\subsubsection[{lEnergy\_\-err}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf marlin::HitWriteEngine::lEnergy\_\-err}[MAXLAYERS]}\label{classmarlin_1_1HitWriteEngine_a53d2e797f0ff0912a7083721a2ff16e9}
+layer by layer Energy error (not yet filled in CalorimeterHit class) 
+
+Definition at line 72 of file HitWriteEngine.hh.\index{marlin::HitWriteEngine@{marlin::HitWriteEngine}!lNHits@{lNHits}}
+\index{lNHits@{lNHits}!marlin::HitWriteEngine@{marlin::HitWriteEngine}}
+\subsubsection[{lNHits}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf marlin::HitWriteEngine::lNHits}[MAXLAYERS]}\label{classmarlin_1_1HitWriteEngine_afebb48781e9c4200df2405f82bc9782b}
+layer by layer number of hits 
+
+Definition at line 70 of file HitWriteEngine.hh.\index{marlin::HitWriteEngine@{marlin::HitWriteEngine}!lRadius@{lRadius}}
+\index{lRadius@{lRadius}!marlin::HitWriteEngine@{marlin::HitWriteEngine}}
+\subsubsection[{lRadius}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf marlin::HitWriteEngine::lRadius}[MAXLAYERS]}\label{classmarlin_1_1HitWriteEngine_a91e4cd8108ffc2a46bd7102869b79b5f}
+shower radius (in x,y plane) in one layer calculated w.r.t. the cog 
+
+Definition at line 80 of file HitWriteEngine.hh.\index{marlin::HitWriteEngine@{marlin::HitWriteEngine}!lRadiusEw@{lRadiusEw}}
+\index{lRadiusEw@{lRadiusEw}!marlin::HitWriteEngine@{marlin::HitWriteEngine}}
+\subsubsection[{lRadiusEw}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf marlin::HitWriteEngine::lRadiusEw}[MAXLAYERS]}\label{classmarlin_1_1HitWriteEngine_a0bcc2ea03945bbaba56ea700a67af06d}
+energy weighted shower radius (in x,y plane) in one layer calculated w.r.t. the cog 
+
+Definition at line 81 of file HitWriteEngine.hh.\index{marlin::HitWriteEngine@{marlin::HitWriteEngine}!nHits5Layer@{nHits5Layer}}
+\index{nHits5Layer@{nHits5Layer}!marlin::HitWriteEngine@{marlin::HitWriteEngine}}
+\subsubsection[{nHits5Layer}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf marlin::HitWriteEngine::nHits5Layer}}\label{classmarlin_1_1HitWriteEngine_a9dbc035b7760b149eff932d42e1af0d9}
+number of Hits for the first 5 layer outside 28 cm 
+
+Definition at line 84 of file HitWriteEngine.hh.\index{marlin::HitWriteEngine@{marlin::HitWriteEngine}!nLayers@{nLayers}}
+\index{nLayers@{nLayers}!marlin::HitWriteEngine@{marlin::HitWriteEngine}}
+\subsubsection[{nLayers}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf marlin::HitWriteEngine::nLayers}}\label{classmarlin_1_1HitWriteEngine_a20e42247cd3ad25b094953620c8e52a6}
+number of layers $<$ MAXLAYERS ! 
+
+Definition at line 40 of file HitWriteEngine.hh.\index{marlin::HitWriteEngine@{marlin::HitWriteEngine}!radius@{radius}}
+\index{radius@{radius}!marlin::HitWriteEngine@{marlin::HitWriteEngine}}
+\subsubsection[{radius}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf marlin::HitWriteEngine::radius}}\label{classmarlin_1_1HitWriteEngine_ac63a4a884b40f19840a7e62467164a0e}
+shower radius (in x,y plane) calculated w.r.t. the cog 
+
+Definition at line 50 of file HitWriteEngine.hh.
+
+Referenced by fillVariables().\index{marlin::HitWriteEngine@{marlin::HitWriteEngine}!radiusEw@{radiusEw}}
+\index{radiusEw@{radiusEw}!marlin::HitWriteEngine@{marlin::HitWriteEngine}}
+\subsubsection[{radiusEw}]{\setlength{\rightskip}{0pt plus 5cm}float {\bf marlin::HitWriteEngine::radiusEw}}\label{classmarlin_1_1HitWriteEngine_a621a3f9340ef096f9aa9baa0d9ae364b}
+shower radius (in x,y plane) calculated w.r.t. the cog energy weighted 
+
+Definition at line 51 of file HitWriteEngine.hh.
+
+Referenced by fillVariables().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+HitWriteEngine.hh\item 
+HitWriteEngine.cc\end{DoxyCompactItemize}

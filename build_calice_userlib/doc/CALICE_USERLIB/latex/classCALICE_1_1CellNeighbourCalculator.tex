@@ -1,0 +1,93 @@
+\section{CALICE::CellNeighbourCalculator Class Reference}
+\label{classCALICE_1_1CellNeighbourCalculator}\index{CALICE::CellNeighbourCalculator@{CALICE::CellNeighbourCalculator}}
+
+
+class to calculate all neighbour cells  
+
+
+{\ttfamily \#include $<$CellNeighbourCalculator.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CellNeighbourCalculator} (const {\bf Mapper} $\ast$mapper)
+\begin{DoxyCompactList}\small\item\em constructor \item\end{DoxyCompactList}\item 
+lcio::LCCollection $\ast$ {\bf getNeighbours} () const 
+\begin{DoxyCompactList}\small\item\em get cell neighbours for all valid cells \item\end{DoxyCompactList}\item 
+void {\bf getNeighbours} ({\bf MappedContainer}$<$ {\bf CellNeighbours} $>$ $\ast$container) const 
+\begin{DoxyCompactList}\small\item\em get cell neighbours for all valid cells \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries checkForCell} (const unsigned int i, const unsigned int j, const unsigned int k, std::set$<$ int $>$ \&cellIDset) const \label{classCALICE_1_1CellNeighbourCalculator_af07fc90a40e8baaf67fac09d53ee2988}
+
+\item 
+{\bf CellNeighbours} $\ast$ {\bfseries getNeighbours} (const int cellID) const \label{classCALICE_1_1CellNeighbourCalculator_a687feccba274d8aa4ab40b2c37bf4261}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const {\bf Mapper} $\ast$ {\bfseries \_\-mapper}\label{classCALICE_1_1CellNeighbourCalculator_a73c7934a2879e61cf0946e5539067181}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+class to calculate all neighbour cells \begin{DoxyAuthor}{Author}
+{\tt Benjamin.Lutz@desy.de} 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+June 2009 
+\end{DoxyDate}
+
+
+Definition at line 22 of file CellNeighbourCalculator.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CALICE::CellNeighbourCalculator@{CALICE::CellNeighbourCalculator}!CellNeighbourCalculator@{CellNeighbourCalculator}}
+\index{CellNeighbourCalculator@{CellNeighbourCalculator}!CALICE::CellNeighbourCalculator@{CALICE::CellNeighbourCalculator}}
+\subsubsection[{CellNeighbourCalculator}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::CellNeighbourCalculator::CellNeighbourCalculator (const {\bf Mapper} $\ast$ {\em mapper})}\label{classCALICE_1_1CellNeighbourCalculator_abd2c59c1797a382c0518df7efd9a3108}
+
+
+constructor 
+\begin{DoxyParams}{Parameters}
+\item[{\em mapper}]\doxyref{Mapper}{p.}{classCALICE_1_1Mapper} that holds the mapping information from which the neighbours can be generated. \end{DoxyParams}
+
+
+Definition at line 10 of file CellNeighbourCalculator.cc.
+
+\subsection{Member Function Documentation}
+\index{CALICE::CellNeighbourCalculator@{CALICE::CellNeighbourCalculator}!getNeighbours@{getNeighbours}}
+\index{getNeighbours@{getNeighbours}!CALICE::CellNeighbourCalculator@{CALICE::CellNeighbourCalculator}}
+\subsubsection[{getNeighbours}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CellNeighbourCalculator::getNeighbours ({\bf MappedContainer}$<$ {\bf CellNeighbours} $>$ $\ast$ {\em container}) const}\label{classCALICE_1_1CellNeighbourCalculator_ad17cd5438d923800b419794ffa853386}
+
+
+get cell neighbours for all valid cells 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\rightarrow$} {\em container}]\doxyref{MappedContainer}{p.}{classCALICE_1_1MappedContainer} where the \doxyref{CellNeighbours}{p.}{classCALICE_1_1CellNeighbours} objects should be stored \end{DoxyParams}
+
+
+Definition at line 103 of file CellNeighbourCalculator.cc.
+
+References CALICE::Mapper::begin(), CALICE::MappedContainer$<$ T $>$::clear(), CALICE::Mapper::end(), CALICE::MappedContainer$<$ T $>$::fillByCellID(), and getNeighbours().\index{CALICE::CellNeighbourCalculator@{CALICE::CellNeighbourCalculator}!getNeighbours@{getNeighbours}}
+\index{getNeighbours@{getNeighbours}!CALICE::CellNeighbourCalculator@{CALICE::CellNeighbourCalculator}}
+\subsubsection[{getNeighbours}]{\setlength{\rightskip}{0pt plus 5cm}lcio::LCCollection $\ast$ CALICE::CellNeighbourCalculator::getNeighbours () const}\label{classCALICE_1_1CellNeighbourCalculator_a029af1aa53034010a443d205c554e92b}
+
+
+get cell neighbours for all valid cells \begin{DoxyReturn}{Returns}
+LCCollection of \doxyref{CellNeighbours}{p.}{classCALICE_1_1CellNeighbours} objects 
+\end{DoxyReturn}
+
+
+Definition at line 88 of file CellNeighbourCalculator.cc.
+
+References CALICE::Mapper::begin(), and CALICE::Mapper::end().
+
+Referenced by getNeighbours().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+CellNeighbourCalculator.hh\item 
+CellNeighbourCalculator.cc\end{DoxyCompactItemize}

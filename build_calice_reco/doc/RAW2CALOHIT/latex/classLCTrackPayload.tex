@@ -1,0 +1,113 @@
+\section{LCTrackPayload$<$ Payload $>$ Class Template Reference}
+\label{classLCTrackPayload}\index{LCTrackPayload@{LCTrackPayload}}
+
+
+Specific LCIO implementation of the interface to store generic user data.  
+
+
+{\ttfamily \#include $<$LCTrackPayload.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf LCTrackPayload} ()\label{classLCTrackPayload_a10aabc99033fe1163ec4bacd1f683e52}
+
+\begin{DoxyCompactList}\small\item\em Constructors. \item\end{DoxyCompactList}\item 
+{\bfseries LCTrackPayload} (const EVENT::LCGenericObject $\ast$obj)\label{classLCTrackPayload_a995d11dd83d9e9f10c2c178425ab96dc}
+
+\item 
+{\bfseries LCTrackPayload} (const Payload \&c)\label{classLCTrackPayload_ac7283dc42793904ea2e6a61ad47e760f}
+
+\item 
+{\bfseries LCTrackPayload} (const Payload \&p, IMPL::LCGenericObjectImpl \&obj)\label{classLCTrackPayload_a64e99cf37fab6f26835ee47464379444}
+
+\item 
+virtual {\bf $\sim$LCTrackPayload} ()\label{classLCTrackPayload_a76b84074f0064c45f8473662820d481d}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual void {\bf update} (const EVENT::LCGenericObject $\ast$obj)\label{classLCTrackPayload_aea1a5317f1a5abd198c127638c2505da}
+
+\begin{DoxyCompactList}\small\item\em Update values within the object from an LCGenericObject. \item\end{DoxyCompactList}\item 
+virtual EVENT::LCGenericObject $\ast$ {\bf output} () const \label{classLCTrackPayload_ad6359058eb2c59c82b10ca98fa90424a}
+
+\begin{DoxyCompactList}\small\item\em Create a new LCGenericObject and fill it. \item\end{DoxyCompactList}\item 
+virtual int {\bf getNInt} () const \label{classLCTrackPayload_ac6ce3cdeab53d7c8c098279a9598f3c1}
+
+\begin{DoxyCompactList}\small\item\em Number of integer values stored in this object. \item\end{DoxyCompactList}\item 
+virtual int {\bf getNFloat} () const \label{classLCTrackPayload_a1eb3d42fd2ac6eac76dd2b0c76c54689}
+
+\begin{DoxyCompactList}\small\item\em Number of float values stored in this object. \item\end{DoxyCompactList}\item 
+virtual int {\bf getNDouble} () const \label{classLCTrackPayload_a8c5dfa41f6430205758fa8eb30868771}
+
+\begin{DoxyCompactList}\small\item\em Number of double values stored in this object. \item\end{DoxyCompactList}\item 
+virtual int {\bf getIntVal} (int index) const \label{classLCTrackPayload_a4f6dc00e5a78eb37534c29545efad2d7}
+
+\begin{DoxyCompactList}\small\item\em Returns the integer value for the given index. \item\end{DoxyCompactList}\item 
+virtual float {\bf getFloatVal} (int index) const \label{classLCTrackPayload_a47c0f1771fcfb56e86941c90449f88c8}
+
+\begin{DoxyCompactList}\small\item\em Returns the float value for the given index. \item\end{DoxyCompactList}\item 
+virtual double {\bf getDoubleVal} (int index) const \label{classLCTrackPayload_a7d2682a798e967dd00363dc90a1b1dcc}
+
+\begin{DoxyCompactList}\small\item\em Returns the double value for the given index. \item\end{DoxyCompactList}\item 
+virtual void {\bf setIntVal} (unsigned index, int value)\label{classLCTrackPayload_a4e92e7bfa326b29e1bc0bb8888d700e1}
+
+\begin{DoxyCompactList}\small\item\em Sets the integer value at the given index. \item\end{DoxyCompactList}\item 
+virtual void {\bf setFloatVal} (unsigned index, float value)\label{classLCTrackPayload_ad92a24649bec4959158a57f709a35423}
+
+\begin{DoxyCompactList}\small\item\em Sets the float value at the given index. \item\end{DoxyCompactList}\item 
+virtual void {\bf setDoubleVal} (unsigned index, double value)\label{classLCTrackPayload_a23161fdc6b57a9fcd4d3a900bd333310}
+
+\begin{DoxyCompactList}\small\item\em Sets the double value at the given index. \item\end{DoxyCompactList}\item 
+virtual bool {\bf isFixedSize} () const \label{classLCTrackPayload_aabc45cbe4ecf99f2031378c9cedfc804}
+
+\begin{DoxyCompactList}\small\item\em True if objects of the implementation class have a fixed size, i.e getNInt, getNFloat and getNDouble will return values that are constant during the lifetime of the object. \item\end{DoxyCompactList}\item 
+virtual const std::string {\bf getTypeName} () const \label{classLCTrackPayload_ab56a3408c7013b69adf621b0813fbbf9}
+
+\begin{DoxyCompactList}\small\item\em The type name of the user class (typically the class name). \item\end{DoxyCompactList}\item 
+virtual const std::string {\bf getDataDescription} () const 
+\begin{DoxyCompactList}\small\item\em The description string. \item\end{DoxyCompactList}\item 
+virtual const Payload \& {\bf constants} () const \label{classLCTrackPayload_a1d0364cf45deb6c764ffecbe08e0cf84}
+
+\begin{DoxyCompactList}\small\item\em Access the actual data for read or write. \item\end{DoxyCompactList}\item 
+virtual void {\bfseries constants} (const Payload \&p)\label{classLCTrackPayload_a572f1162e50700b9f241e7ba0d80219f}
+
+\item 
+virtual const Payload \& {\bfseries payload} () const \label{classLCTrackPayload_a65557857fdc305d92c0e99b740effa9e}
+
+\item 
+virtual void {\bfseries payload} (const Payload \&p)\label{classLCTrackPayload_ab78efc5558a8c4a60776f37ce9a3982a}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Payload {\bfseries \_\-payload}\label{classLCTrackPayload_a89353b7b9de237aa375f1a7a94e59ad7}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class Payload$>$ class LCTrackPayload$<$ Payload $>$}
+
+Specific LCIO implementation of the interface to store generic user data. \begin{DoxyAuthor}{Author}
+dauncey 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+
+\end{DoxyVersion}
+Id}
+\doxyref{LCTrackPayload.hh}{p.}{LCTrackPayload_8hh_source},v 1.1 2007-\/04-\/26 14:34:28 poeschl Exp 
+
+Definition at line 19 of file LCTrackPayload.hh.
+
+\subsection{Member Function Documentation}
+\index{LCTrackPayload@{LCTrackPayload}!getDataDescription@{getDataDescription}}
+\index{getDataDescription@{getDataDescription}!LCTrackPayload@{LCTrackPayload}}
+\subsubsection[{getDataDescription}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class Payload $>$ const std::string {\bf LCTrackPayload}$<$ Payload $>$::getDataDescription () const\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classLCTrackPayload_acad8e51a5ce7ccd79dc652c03177f091}
+
+
+The description string. A comma separated list of pairs of type identifier, one of 'i','f','d' followed by ':' and an attribute name, e.g. \char`\"{}i:cellId,f:offset,f:gain\char`\"{}. 
+
+Definition at line 252 of file LCTrackPayload.hh.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+LCTrackPayload.hh\end{DoxyCompactItemize}

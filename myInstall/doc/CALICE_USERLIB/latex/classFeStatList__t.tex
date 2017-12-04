@@ -1,0 +1,45 @@
+\section{FeStatList\_\-t$<$ T\_\-StatObj\_\-t $>$ Class Template Reference}
+\label{classFeStatList__t}\index{FeStatList\_\-t@{FeStatList\_\-t}}
+
+
+Template container which stores specific statistics objects per front-\/end.  
+
+
+{\ttfamily \#include $<$FeStatList\_\-t.hh$>$}Inheritance diagram for FeStatList\_\-t$<$ T\_\-StatObj\_\-t $>$::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classFeStatList__t}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+T\_\-StatObj\_\-t \& {\bf getStat} (unsigned int board\_\-id)
+\begin{DoxyCompactList}\small\item\em Get a statistics object for the given front-\/end. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T\_\-StatObj\_\-t$>$ class FeStatList\_\-t$<$ T\_\-StatObj\_\-t $>$}
+
+Template container which stores specific statistics objects per front-\/end. The statistics can be printed 
+
+Definition at line 144 of file FeStatList\_\-t.hh.
+
+\subsection{Member Function Documentation}
+\index{FeStatList\_\-t@{FeStatList\_\-t}!getStat@{getStat}}
+\index{getStat@{getStat}!FeStatList_t@{FeStatList\_\-t}}
+\subsubsection[{getStat}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T\_\-StatObj\_\-t $>$ T\_\-StatObj\_\-t\& {\bf FeStatList\_\-t}$<$ T\_\-StatObj\_\-t $>$::getStat (unsigned int {\em board\_\-id})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classFeStatList__t_a5b29ca60859d52c5e2279f9636ac6b01}
+
+
+Get a statistics object for the given front-\/end. 
+\begin{DoxyParams}{Parameters}
+\item[{\em board\_\-id}]the id of the crate,slot and front-\/end. If no statistics object exists for the given front-\/end then a new object is created using the default constructor i.e. the objects T\_\-StatObj\_\-t must implement a default constructor. \end{DoxyParams}
+
+
+Reimplemented from {\bf FeStatListBase\_\-t} \doxyref{}{p.}{classFeStatListBase__t_af736c1e9e3e131095ac69d5b7448ce6f}.
+
+Definition at line 153 of file FeStatList\_\-t.hh.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+FeStatList\_\-t.hh\end{DoxyCompactItemize}

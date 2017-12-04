@@ -1,0 +1,153 @@
+\section{CALICE::SquareFinder Class Reference}
+\label{classCALICE_1_1SquareFinder}\index{CALICE::SquareFinder@{CALICE::SquareFinder}}
+
+
+Processor to search for events where the whole border of a wafer is firing.  
+
+
+{\ttfamily \#include $<$SquareFinder.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Processor $\ast$ {\bfseries newProcessor} ()\label{classCALICE_1_1SquareFinder_a3f2f49aba9c7f0d76d62de5a6c9e5ee1}
+
+\item 
+{\bf SquareFinder} ()
+\begin{DoxyCompactList}\small\item\em Select Mips . \item\end{DoxyCompactList}\item 
+void {\bf init} ()
+\begin{DoxyCompactList}\small\item\em Called at the begin of the job before anything is read. \item\end{DoxyCompactList}\item 
+void {\bf processRunHeader} (LCRunHeader $\ast$run)
+\begin{DoxyCompactList}\small\item\em Called for every run, e.g. \item\end{DoxyCompactList}\item 
+void {\bf processEvent} (LCEvent $\ast$evtP)\label{classCALICE_1_1SquareFinder_ac15ccd383747f853c1480d687f9dba7f}
+
+\begin{DoxyCompactList}\small\item\em Called for every event -\/ the working horse. \item\end{DoxyCompactList}\item 
+void {\bfseries end} ()\label{classCALICE_1_1SquareFinder_a93abe832b780c7ce5616ca29d16c72ac}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Int\_\-t {\bf \_\-nHitsMin}\label{classCALICE_1_1SquareFinder_a2c9c17a9f50875e1762b5c2347209d3c}
+
+\begin{DoxyCompactList}\small\item\em minimum number of hits on the border of the wafer \item\end{DoxyCompactList}\item 
+Int\_\-t {\bf \_\-nInsidedHitsMax}
+\begin{DoxyCompactList}\small\item\em maximum number of hits inside the wafer. \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-colName}
+\begin{DoxyCompactList}\small\item\em name of the hit input collection (Marlin processor parameter). \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-clusterColName}
+\begin{DoxyCompactList}\small\item\em name of the square cluster collection. \item\end{DoxyCompactList}\item 
+std::string {\bf \_\-squareFlagName}
+\begin{DoxyCompactList}\small\item\em name of the event parameter which flags square events. \item\end{DoxyCompactList}\item 
+FloatVec {\bf \_\-signalHistPar}
+\begin{DoxyCompactList}\small\item\em binning of the border and total border signal histograms. \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bf \_\-nSquareEvents}
+\begin{DoxyCompactList}\small\item\em Number of square event candidates. \item\end{DoxyCompactList}\item 
+UInt\_\-t {\bf \_\-nEvents}
+\begin{DoxyCompactList}\small\item\em Total number of events with hits. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Processor to search for events where the whole border of a wafer is firing. 
+
+Definition at line 27 of file SquareFinder.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{CALICE::SquareFinder@{CALICE::SquareFinder}!SquareFinder@{SquareFinder}}
+\index{SquareFinder@{SquareFinder}!CALICE::SquareFinder@{CALICE::SquareFinder}}
+\subsubsection[{SquareFinder}]{\setlength{\rightskip}{0pt plus 5cm}CALICE::SquareFinder::SquareFinder ()}\label{classCALICE_1_1SquareFinder_a048810eab2155fd081f4ce775c49ff11}
+
+
+Select Mips . Mip tracks are search within the calorimeter hits. Developped for cosmics. 
+
+Definition at line 44 of file SquareFinder.cc.
+
+References \_\-clusterColName, \_\-colName, \_\-nHitsMin, \_\-nInsidedHitsMax, \_\-signalHistPar, and \_\-squareFlagName.
+
+\subsection{Member Function Documentation}
+\index{CALICE::SquareFinder@{CALICE::SquareFinder}!init@{init}}
+\index{init@{init}!CALICE::SquareFinder@{CALICE::SquareFinder}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::SquareFinder::init ()}\label{classCALICE_1_1SquareFinder_aebcf72e750bcecb0304266a9a5449dba}
+
+
+Called at the begin of the job before anything is read. Use to initialize the processor, e.g. book histograms. 
+
+Definition at line 112 of file SquareFinder.cc.
+
+References \_\-clusterColName, \_\-nEvents, \_\-nSquareEvents, \_\-signalHistPar, histmgr::HistMgr::create2DHistograms(), and histmgr::HistMgr::createHistograms().\index{CALICE::SquareFinder@{CALICE::SquareFinder}!processRunHeader@{processRunHeader}}
+\index{processRunHeader@{processRunHeader}!CALICE::SquareFinder@{CALICE::SquareFinder}}
+\subsubsection[{processRunHeader}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::SquareFinder::processRunHeader (LCRunHeader $\ast$ {\em run})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1SquareFinder_a876db4e7ce9e481a7bba79a5c543372f}
+
+
+Called for every run, e.g. overwrite to initialize run dependent histograms. 
+
+Definition at line 45 of file SquareFinder.hh.
+
+\subsection{Field Documentation}
+\index{CALICE::SquareFinder@{CALICE::SquareFinder}!\_\-clusterColName@{\_\-clusterColName}}
+\index{\_\-clusterColName@{\_\-clusterColName}!CALICE::SquareFinder@{CALICE::SquareFinder}}
+\subsubsection[{\_\-clusterColName}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf CALICE::SquareFinder::\_\-clusterColName}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1SquareFinder_ad92613a91542bc47728aa0b37b46ea09}
+
+
+name of the square cluster collection. 
+
+Definition at line 57 of file SquareFinder.hh.
+
+Referenced by init(), processEvent(), and SquareFinder().\index{CALICE::SquareFinder@{CALICE::SquareFinder}!\_\-colName@{\_\-colName}}
+\index{\_\-colName@{\_\-colName}!CALICE::SquareFinder@{CALICE::SquareFinder}}
+\subsubsection[{\_\-colName}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf CALICE::SquareFinder::\_\-colName}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1SquareFinder_a8f394987f130f4e495032fd256257ac0}
+
+
+name of the hit input collection (Marlin processor parameter). 
+
+Definition at line 56 of file SquareFinder.hh.
+
+Referenced by processEvent(), and SquareFinder().\index{CALICE::SquareFinder@{CALICE::SquareFinder}!\_\-nEvents@{\_\-nEvents}}
+\index{\_\-nEvents@{\_\-nEvents}!CALICE::SquareFinder@{CALICE::SquareFinder}}
+\subsubsection[{\_\-nEvents}]{\setlength{\rightskip}{0pt plus 5cm}UInt\_\-t {\bf CALICE::SquareFinder::\_\-nEvents}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1SquareFinder_a5110e34b92e02a21bf870ff104e59745}
+
+
+Total number of events with hits. 
+
+Definition at line 62 of file SquareFinder.hh.
+
+Referenced by init(), and processEvent().\index{CALICE::SquareFinder@{CALICE::SquareFinder}!\_\-nInsidedHitsMax@{\_\-nInsidedHitsMax}}
+\index{\_\-nInsidedHitsMax@{\_\-nInsidedHitsMax}!CALICE::SquareFinder@{CALICE::SquareFinder}}
+\subsubsection[{\_\-nInsidedHitsMax}]{\setlength{\rightskip}{0pt plus 5cm}Int\_\-t {\bf CALICE::SquareFinder::\_\-nInsidedHitsMax}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1SquareFinder_ab81ff4d872972c06c2d072c9e681b321}
+
+
+maximum number of hits inside the wafer. 
+
+Definition at line 55 of file SquareFinder.hh.
+
+Referenced by processEvent(), and SquareFinder().\index{CALICE::SquareFinder@{CALICE::SquareFinder}!\_\-nSquareEvents@{\_\-nSquareEvents}}
+\index{\_\-nSquareEvents@{\_\-nSquareEvents}!CALICE::SquareFinder@{CALICE::SquareFinder}}
+\subsubsection[{\_\-nSquareEvents}]{\setlength{\rightskip}{0pt plus 5cm}UInt\_\-t {\bf CALICE::SquareFinder::\_\-nSquareEvents}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1SquareFinder_a85c4e30fac259f17c8bbcb789b28d871}
+
+
+Number of square event candidates. 
+
+Definition at line 61 of file SquareFinder.hh.
+
+Referenced by init(), and processEvent().\index{CALICE::SquareFinder@{CALICE::SquareFinder}!\_\-signalHistPar@{\_\-signalHistPar}}
+\index{\_\-signalHistPar@{\_\-signalHistPar}!CALICE::SquareFinder@{CALICE::SquareFinder}}
+\subsubsection[{\_\-signalHistPar}]{\setlength{\rightskip}{0pt plus 5cm}FloatVec {\bf CALICE::SquareFinder::\_\-signalHistPar}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1SquareFinder_ad1db2cd08984b84ab549c2631b2e679d}
+
+
+binning of the border and total border signal histograms. 
+
+Definition at line 59 of file SquareFinder.hh.
+
+Referenced by init(), and SquareFinder().\index{CALICE::SquareFinder@{CALICE::SquareFinder}!\_\-squareFlagName@{\_\-squareFlagName}}
+\index{\_\-squareFlagName@{\_\-squareFlagName}!CALICE::SquareFinder@{CALICE::SquareFinder}}
+\subsubsection[{\_\-squareFlagName}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf CALICE::SquareFinder::\_\-squareFlagName}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1SquareFinder_a559678746ea01e5a0b4dc1c09901493d}
+
+
+name of the event parameter which flags square events. 
+
+Definition at line 58 of file SquareFinder.hh.
+
+Referenced by processEvent(), and SquareFinder().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+SquareFinder.hh\item 
+SquareFinder.cc\end{DoxyCompactItemize}

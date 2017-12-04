@@ -1,0 +1,79 @@
+This package contains the interface classes need to analyse the lcio files which are produced out\par
+ of the calice native raw data. In addition it contains the data type classes for the \par
+ calice conditions data. The library being produced out of the sources has to be\par
+ linked to the analysis applications. \par
+ Versions of other packages to build the library:\par
+ \par
+ lcio v01-\/08 (or higher)\par
+ \doxyref{marlin}{p.}{namespacemarlin} v00-\/09-\/07 (or higher)\par
+ -\/-\/-\/-\/ In case database accesses (conditions data) are needed -\/-\/-\/\par
+ lccd v00-\/03 (or higher, v00-\/03-\/05 recommended)\par
+ CondDBMySQLLisbon-\/0-\/5-\/6 (or higher, CondDBMySQL\_\-ILC-\/0-\/5-\/10 recommended, available in calice cvs repository)\par
+ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\par
+ \par
+ Links to older releases (links do currently not work, to be solved!!!!):\par
+ \par
+ {\tt v01-\/02} \par
+ {\tt v02-\/00-\/pre3} \par
+ {\tt v03-\/05} \par
+ {\tt v03-\/05-\/01} \par
+ {\tt v03-\/06} \par
+ {\tt v03-\/06-\/01} \par
+ {\tt v03-\/07} \par
+ {\tt v04-\/01-\/01} \par
+ {\tt v04-\/02} \par
+ {\tt v04-\/03} \par
+ {\tt v04-\/03-\/01} \par
+ {\tt v04-\/04-\/02} \par
+ {\tt v04-\/04-\/03} \par
+ {\tt v04-\/04-\/04} \par
+ {\tt v04-\/04-\/05} \par
+ {\tt v04-\/05-\/01} \par
+ {\tt v04-\/05-\/02} \par
+ {\tt v04-\/05-\/03} \par
+ {\tt v04-\/06-\/00} \par
+ {\tt v04-\/06-\/01} \par
+ {\tt v04-\/06-\/02} \par
+ {\tt v04-\/07} \par
+ {\tt v04-\/07-\/01} \par
+ {\tt v04-\/07-\/02} \par
+ {\tt v04-\/08} \par
+ {\tt v04-\/09} \par
+ {\tt v04-\/10} \par
+ {\tt v04-\/10-\/mc03} \par
+  Changes implemented on 30/10/10  \par
+
+\begin{DoxyItemize}
+\item BmlEventDataSup -\/ New class for supplementary tdc information. \par
+
+\item BmlEventData -\/ Access to BmlEventDataSup implemented. \par
+
+\item BmlCaenConfigurationBlock -\/ Replaces BmlCaen767ConfigurationBlock on advent of Can 1290 in 2010. \par
+
+\item BmlCaenReadoutConfigurationBlock -\/ typedef to existing BmlCaen767ReadoutConfigurationBlock (identical for 767 and 1290 TDC). \par
+
+\item TriggerHandlerCalice -\/ FeConfiguration changes include and minor bug fixes. \par
+
+\item collection\_\-names -\/ Generic Caen TDC collection names added plus a collection name for supplementary information. Names for handling 767 Caen TDC kept for backward compatibility.\par
+
+\end{DoxyItemize}
+
+Changes implemented on 7/12/10  \par
+
+\begin{DoxyItemize}
+\item AcquisitionData -\/ Dif counter implemented and restructuration after bug fixes in converter. \par
+
+\item collection\_\-names -\/ New collection COL\_\-DIFTRIGGER.\par
+
+\item ErrorBits -\/ New error bit kCorruptDifTrigCounter, bool corruptDifTrigCounter() \par
+  Changes implemented on 22/1/11  \par
+
+\item DhcRawChipContent: New interface classe for dhcal raw data
+\item collection\_\-names -\/ Collection names for dhc data added (raw and conditions data)  Changes implemented on 12/5/11  \par
+
+\item DhcRawChipContent: returns now the VerSum
+\item DhcReadoutConfBlock: New class which is the interface class to the DhcReadoutConfigurationData
+\item collection\_\-names -\/ Collection name COL\_\-DHCRO\_\-CONF for DhcReadoutconfigurationData  Changes implemented on 03/06/11  \par
+
+\item TriggerBits, TriggerHandlerCalice: Preparation for cern 2011 whcal running. 
+\end{DoxyItemize}

@@ -1,0 +1,132 @@
+\section{CellAnalysisProcessor Class Reference}
+\label{classCellAnalysisProcessor}\index{CellAnalysisProcessor@{CellAnalysisProcessor}}
+
+
+Processor filling histograms for every cell identified by module, chip, channel.  
+
+
+{\ttfamily \#include $<$CellAnalysisProcessor.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf CellAnalysisProcessor} $\ast$ {\bfseries newProcessor} ()\label{classCellAnalysisProcessor_a06ea545c77c9679962952e4ecc85036e}
+
+\item 
+virtual void {\bfseries init} ()\label{classCellAnalysisProcessor_a1b00ce42ce45eba2ec8837e56387fde1}
+
+\item 
+virtual void {\bfseries processEvent} (lcio::LCEvent $\ast$)\label{classCellAnalysisProcessor_a331ece10359e29da6318bd9dc52e9d14}
+
+\item 
+virtual void {\bfseries end} ()\label{classCellAnalysisProcessor_a0cdbbf21c86f123832b12bf55f0c89cd}
+
+\item 
+virtual void {\bfseries openInputCollections} (lcio::LCEvent $\ast$)\label{classCellAnalysisProcessor_a2075341b4d90ce2d23f547c10b920702}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries writeHistograms} ()\label{classCellAnalysisProcessor_a25f161fbb939b83c8b6d257716cffe03}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bfseries \_\-inputMuonHcalColName}\label{classCellAnalysisProcessor_a192ef14533dd5e962c6b58f56393ed76}
+
+\item 
+std::string {\bfseries \_\-inputMuonTcmtColName}\label{classCellAnalysisProcessor_ae0e2834703e39e3fa9aab2007d56440e}
+
+\item 
+std::string {\bfseries \_\-rootfilename}\label{classCellAnalysisProcessor_a7cdb93f7abacb1ada4ad4ed421493e0b}
+
+\item 
+std::string {\bfseries \_\-treeName}\label{classCellAnalysisProcessor_a587be2086799cd234637c08946a7499b}
+
+\item 
+std::string {\bfseries \_\-mappingProcessorName}\label{classCellAnalysisProcessor_a913b95ba8bbe5eccf8253928b50a16fe}
+
+\item 
+LCCollection $\ast$ {\bf \_\-tcmtInputCol}\label{classCellAnalysisProcessor_aca9af286c2a95ce17648ea2ecefed3ef}
+
+\begin{DoxyCompactList}\small\item\em TCMT input collection. \item\end{DoxyCompactList}\item 
+LCCollection $\ast$ {\bf \_\-hcalInputCol}\label{classCellAnalysisProcessor_a2fb10b5b1cc09ca4608868c5658279e7}
+
+\begin{DoxyCompactList}\small\item\em HCAL input collection. \item\end{DoxyCompactList}\item 
+TFile $\ast$ {\bfseries \_\-rootout}\label{classCellAnalysisProcessor_a63dad02fbdf1a06166effdd1b09ba0bf}
+
+\item 
+TH1F $\ast$ {\bfseries \_\-tcmtenergyhistos} [MAXTCMTLAYERS][MAXTCMTSTRIPS]\label{classCellAnalysisProcessor_a93ffb20f66c77d0d634861972c80433a}
+
+\item 
+TH1F $\ast$ {\bfseries \_\-tcmtlayerenergyhistos} [MAXTCMTLAYERS]\label{classCellAnalysisProcessor_a171505082bf368dfe059d7c5ea636ec1}
+
+\item 
+TH1F $\ast$ {\bfseries \_\-hitenergyhistos} [MAXNRMODULES][MAXNRCHIPS][MAXNRCHANNELS]\label{classCellAnalysisProcessor_abe9cc1725be61c389b70abd43791a8ef}
+
+\item 
+TH1F $\ast$ {\bfseries \_\-hitenergyPerModulehistos} [MAXNRMODULES]\label{classCellAnalysisProcessor_ac421ca529c9c5f59d9f30ae91976a19d}
+
+\item 
+TH1F $\ast$ {\bfseries \_\-hitenergyAll}\label{classCellAnalysisProcessor_a9dbc72d25ba3ea61afad091824bb0d23}
+
+\item 
+TH1F $\ast$ {\bfseries \_\-histo\_\-angle}\label{classCellAnalysisProcessor_a54963d51732ca11c544d28d2b46a4481}
+
+\item 
+TH2F $\ast$ {\bfseries \_\-histo\_\-angle\_\-length}\label{classCellAnalysisProcessor_aae093b58b62c4bedd21d65a3d167e15e}
+
+\item 
+TH1F $\ast$ {\bfseries \_\-histo\_\-length}\label{classCellAnalysisProcessor_a98dddeb420929ad38af64a28a60464a8}
+
+\item 
+TH1F $\ast$ {\bfseries \_\-hMuonHcalESum}\label{classCellAnalysisProcessor_a79e268c370d2149184071b1b57b5591f}
+
+\item 
+int {\bfseries \_\-hitenergyhistobins}\label{classCellAnalysisProcessor_a568909800005abf7c332e9e015de3da5}
+
+\item 
+float {\bfseries \_\-hitenergyhistomin}\label{classCellAnalysisProcessor_a948d7a77688d1ea74f84bad154af22fa}
+
+\item 
+float {\bfseries \_\-hitenergyhistomax}\label{classCellAnalysisProcessor_a73d5f3effdc45d019b71c73feb9ef7ad}
+
+\item 
+int {\bfseries \_\-calibrationSpectra}\label{classCellAnalysisProcessor_a75de8ff1fc14d9ae09721819c3aff65d}
+
+\item 
+bool {\bfseries \_\-useTCMT}\label{classCellAnalysisProcessor_af0fcd0ebc329224397f66672642d7ee6}
+
+\item 
+const CALICE::AhcMapper $\ast$ {\bfseries \_\-ahcMapper}\label{classCellAnalysisProcessor_a0cabfd5fcde81a59e8b22f55fb468f2d}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned int {\bfseries MAXNRMODULES} = 38\label{classCellAnalysisProcessor_a2dfcec3ca068b0f9a2855d5e20985150}
+
+\item 
+static const unsigned int {\bfseries MAXNRCHIPS} = 12\label{classCellAnalysisProcessor_a7d6d32672684ef32a52ab06fd81a180b}
+
+\item 
+static const unsigned int {\bfseries MAXNRCHANNELS} = 18\label{classCellAnalysisProcessor_a40721bcdbc533caa0e84417544e7a43c}
+
+\item 
+static const unsigned int {\bfseries MAXTCMTLAYERS} = 16\label{classCellAnalysisProcessor_aafc3097ebf7f58966a5e5b2ec122ccba}
+
+\item 
+static const unsigned int {\bfseries MAXTCMTSTRIPS} = 20\label{classCellAnalysisProcessor_a276eab4e0cd0901968f659a727dd18a0}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Processor filling histograms for every cell identified by module, chip, channel. 
+
+Definition at line 33 of file CellAnalysisProcessor.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+CellAnalysisProcessor.hh\item 
+CellAnalysisProcessor.cc\end{DoxyCompactItemize}

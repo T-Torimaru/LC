@@ -1,0 +1,163 @@
+\section{histmgr::Profile1D Class Reference}
+\label{classhistmgr_1_1Profile1D}\index{histmgr::Profile1D@{histmgr::Profile1D}}
+
+
+A 1-\/dimensional histogram using float values for the bins.  
+
+
+{\ttfamily \#include $<$Profile1D.hh$>$}Inheritance diagram for histmgr::Profile1D::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classhistmgr_1_1Profile1D}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf Profile1D} (UInt\_\-t id, const {\bf HistPar} \&binning)
+\begin{DoxyCompactList}\small\item\em Create a histogram with a certain binning. \item\end{DoxyCompactList}\item 
+{\bfseries Profile1D} (lcio::LCObject $\ast$a\_\-obj)\label{classhistmgr_1_1Profile1D_a4789d7e34227713903e379a1ec7d3962}
+
+\item 
+{\bfseries Profile1D} (const {\bf Profile1D} \&a)\label{classhistmgr_1_1Profile1D_a7a6d403d74f7d436a5cbb68016580511}
+
+\item 
+void {\bf fill} (Float\_\-t x\_\-value, Double\_\-t value, Double\_\-t weight=1.)\label{classhistmgr_1_1Profile1D_a85d6672aca865b96e557323d3095b94c}
+
+\begin{DoxyCompactList}\small\item\em fill a value into the histogram \item\end{DoxyCompactList}\item 
+void {\bf reset} ()\label{classhistmgr_1_1Profile1D_a0aff38e965618142af8ecda50b721d4f}
+
+\begin{DoxyCompactList}\small\item\em reset the histograms and the number of entries \item\end{DoxyCompactList}\item 
+Double\_\-t {\bf sum} (UInt\_\-t bin\_\-index) const 
+\item 
+Double\_\-t {\bfseries sum2} (UInt\_\-t bin\_\-index) const \label{classhistmgr_1_1Profile1D_a27a5f854b0de6cd760a1be589a9165ef}
+
+\item 
+Double\_\-t {\bfseries mean} (UInt\_\-t bin\_\-index) const \label{classhistmgr_1_1Profile1D_a3aabceab2ad741e243aedea0bb3598d7}
+
+\item 
+Double\_\-t {\bf sigma} (UInt\_\-t bin\_\-index) const 
+\begin{DoxyCompactList}\small\item\em Return the rms of the bin. \item\end{DoxyCompactList}\item 
+Double\_\-t {\bfseries rms} (UInt\_\-t bin\_\-index) const \label{classhistmgr_1_1Profile1D_a25ee461c0728a5bed40dc6b020b5b220}
+
+\item 
+Double\_\-t {\bfseries min} (UInt\_\-t bin\_\-index) const \label{classhistmgr_1_1Profile1D_a5d07ca25d79482dd7d8d98178d746784}
+
+\item 
+Double\_\-t {\bfseries max} (UInt\_\-t bin\_\-index) const \label{classhistmgr_1_1Profile1D_af8406fba0e42d7c9ffcdcf66d5d193c5}
+
+\item 
+Double\_\-t {\bfseries sumOfWeights} (UInt\_\-t bin\_\-index) const \label{classhistmgr_1_1Profile1D_ac62849819ee902dffddb7aebc7536691}
+
+\item 
+void {\bfseries calculate} ()\label{classhistmgr_1_1Profile1D_ac1fc5c2662bcab8be68b5e3a5b388453}
+
+\item 
+Float\_\-t {\bfseries mean} () const \label{classhistmgr_1_1Profile1D_af5aa05e5008c1c1bae8f2c4bba9dd904}
+
+\item 
+Float\_\-t {\bf rms} () const 
+\begin{DoxyCompactList}\small\item\em Root mean square as defined by ROOT. \item\end{DoxyCompactList}\item 
+Float\_\-t {\bf variance} () const 
+\begin{DoxyCompactList}\small\item\em Variance. \item\end{DoxyCompactList}\item 
+lcio::LCObject $\ast$ {\bfseries clone} () const \label{classhistmgr_1_1Profile1D_a23277a8a779ce572ed770317146bc7ae}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bfseries EBinType} \{ \par
+{\bfseries kSum}, 
+{\bfseries kSum2}, 
+{\bfseries kMin}, 
+{\bfseries kMax}, 
+\par
+{\bfseries kWeightSum}, 
+{\bfseries kNBinTypes}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries addToBinContent} (UInt\_\-t type\_\-i, UInt\_\-t bin\_\-index, Double\_\-t value)\label{classhistmgr_1_1Profile1D_aadc85fd4d567c7eb28a7b4da4741ebc4}
+
+\item 
+void {\bfseries setBinContent} (UInt\_\-t type\_\-i, UInt\_\-t bin\_\-index, Double\_\-t value)\label{classhistmgr_1_1Profile1D_a7a35e0ae5777ff5f9b96c7cd19c68a23}
+
+\item 
+Double\_\-t {\bfseries binContent} (UInt\_\-t type\_\-i, UInt\_\-t bin\_\-index) const \label{classhistmgr_1_1Profile1D_a25ff38a444a39ce2105c287e0acf3955}
+
+\item 
+bool {\bfseries isCalculated} (UInt\_\-t bin\_\-index) const \label{classhistmgr_1_1Profile1D_affb2a5a6c6de2b2629ba827fff24876c}
+
+\item 
+UInt\_\-t {\bfseries getValueIndex} (UInt\_\-t type\_\-i, UInt\_\-t bin\_\-index) const \label{classhistmgr_1_1Profile1D_a27b869379f7ac5024adadf2c3a6ff848}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A 1-\/dimensional histogram using float values for the bins. 
+
+Definition at line 13 of file Profile1D.hh.
+
+\subsection{Constructor \& Destructor Documentation}
+\index{histmgr::Profile1D@{histmgr::Profile1D}!Profile1D@{Profile1D}}
+\index{Profile1D@{Profile1D}!histmgr::Profile1D@{histmgr::Profile1D}}
+\subsubsection[{Profile1D}]{\setlength{\rightskip}{0pt plus 5cm}histmgr::Profile1D::Profile1D (UInt\_\-t {\em id}, \/  const {\bf HistPar} \& {\em binning})}\label{classhistmgr_1_1Profile1D_a89f879d24c7404f5ac2514baa2038a54}
+
+
+Create a histogram with a certain binning. 
+\begin{DoxyParams}{Parameters}
+\item[{\em id}]a unique histogram ID, \item[{\em binning}]number of bins and range of the axis \end{DoxyParams}
+\begin{Desc}
+\item[{\bf Todo}]a name would be better than an ID but a string can not be easily stored in an LCGenericObject \end{Desc}
+
+
+Definition at line 8 of file Profile1D.cc.
+
+References HistPar::nBins(), reset(), and histmgr::Histogram1D::setBinning().
+
+\subsection{Member Function Documentation}
+\index{histmgr::Profile1D@{histmgr::Profile1D}!rms@{rms}}
+\index{rms@{rms}!histmgr::Profile1D@{histmgr::Profile1D}}
+\subsubsection[{rms}]{\setlength{\rightskip}{0pt plus 5cm}Float\_\-t histmgr::Profile1D::rms () const}\label{classhistmgr_1_1Profile1D_a79200e6ccc8ce76412dfcd9655319605}
+
+
+Root mean square as defined by ROOT. divided by n 
+
+Definition at line 63 of file Profile1D.cc.
+
+References histmgr::Histogram1D::firstBinIndex(), histmgr::Histogram1D::lastBinIndex(), histmgr::Histogram1D::nBins(), sum(), histmgr::Histogram1D::xMax(), and histmgr::Histogram1D::xMin().
+
+Referenced by sigma().\index{histmgr::Profile1D@{histmgr::Profile1D}!sigma@{sigma}}
+\index{sigma@{sigma}!histmgr::Profile1D@{histmgr::Profile1D}}
+\subsubsection[{sigma}]{\setlength{\rightskip}{0pt plus 5cm}Double\_\-t histmgr::Profile1D::sigma (UInt\_\-t {\em bin\_\-index}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1Profile1D_acfc518a1e2e4bb73ab7e696eafd1c12a}
+
+
+Return the rms of the bin. deprecated. 
+
+Definition at line 81 of file Profile1D.hh.
+
+References rms().\index{histmgr::Profile1D@{histmgr::Profile1D}!sum@{sum}}
+\index{sum@{sum}!histmgr::Profile1D@{histmgr::Profile1D}}
+\subsubsection[{sum}]{\setlength{\rightskip}{0pt plus 5cm}Double\_\-t histmgr::Profile1D::sum (UInt\_\-t {\em bin\_\-index}) const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classhistmgr_1_1Profile1D_a6abef8f36f84aa8580def449b7741753}
+manipulate a histogram bin 
+
+Definition at line 201 of file Profile1D.hh.
+
+Referenced by rms(), and variance().\index{histmgr::Profile1D@{histmgr::Profile1D}!variance@{variance}}
+\index{variance@{variance}!histmgr::Profile1D@{histmgr::Profile1D}}
+\subsubsection[{variance}]{\setlength{\rightskip}{0pt plus 5cm}Float\_\-t histmgr::Profile1D::variance () const}\label{classhistmgr_1_1Profile1D_afb01c1ced0cf5541fd8928ab07c78e5e}
+
+
+Variance. divided by n-\/1 
+
+Definition at line 94 of file Profile1D.cc.
+
+References histmgr::Histogram1D::firstBinIndex(), histmgr::Histogram1D::lastBinIndex(), histmgr::Histogram1D::nBins(), sum(), histmgr::Histogram1D::xMax(), and histmgr::Histogram1D::xMin().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+Profile1D.hh\item 
+Profile1D.cc\end{DoxyCompactItemize}

@@ -1,0 +1,140 @@
+\section{CALICE::CollectionHistogramer Class Reference}
+\label{classCALICE_1_1CollectionHistogramer}\index{CALICE::CollectionHistogramer@{CALICE::CollectionHistogramer}}
+
+
+Collect the names of all collections which appear in the LCIO stream.  
+
+
+{\ttfamily \#include $<$CollectionHistogramer.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Processor $\ast$ {\bfseries newProcessor} ()\label{classCALICE_1_1CollectionHistogramer_ab0f528c9dbae6df5c5daad1c4a79fdce}
+
+\item 
+void {\bf init} ()
+\begin{DoxyCompactList}\small\item\em Called at the begin of the job before anything is read. \item\end{DoxyCompactList}\item 
+void {\bf processRunHeader} (LCRunHeader $\ast$run)
+\begin{DoxyCompactList}\small\item\em Called for every run, e.g. \item\end{DoxyCompactList}\item 
+void {\bf processEvent} (LCEvent $\ast$evtP)\label{classCALICE_1_1CollectionHistogramer_a35914ac7c3eb21bcb71c09ca1ae011f5}
+
+\begin{DoxyCompactList}\small\item\em Called for every event -\/ the working horse. \item\end{DoxyCompactList}\item 
+void {\bfseries end} ()\label{classCALICE_1_1CollectionHistogramer_a59fc5c8e1e396b6bd4268549181b2035}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Types}
+\begin{DoxyCompactItemize}
+\item 
+enum {\bf EParMaps} \{ \par
+{\bf kCollectionMap}, 
+{\bf kTransientCollectionMap}, 
+{\bf kIntParMap}, 
+{\bf kFloatParMap}, 
+\par
+{\bf kStringParMap}, 
+{\bfseries kNParMaps}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf \_\-histogramParameters}
+\begin{DoxyCompactList}\small\item\em Set to !=0 to also histogram event parameters. \item\end{DoxyCompactList}\item 
+std::map$<$ std::string, Average\_\-t $>$ {\bf \_\-hist} [kNParMaps]
+\begin{DoxyCompactList}\small\item\em collection, parameter histograms. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const char $\ast$ {\bf \_\-\_\-histogramTypeName} [kNParMaps]
+\begin{DoxyCompactList}\small\item\em Names for the histrogams. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Collect the names of all collections which appear in the LCIO stream. Moreover some statistics are gathered about the number of elements of all the collections. 
+
+Definition at line 16 of file CollectionHistogramer.hh.
+
+\subsection{Member Enumeration Documentation}
+\index{CALICE::CollectionHistogramer@{CALICE::CollectionHistogramer}!EParMaps@{EParMaps}}
+\index{EParMaps@{EParMaps}!CALICE::CollectionHistogramer@{CALICE::CollectionHistogramer}}
+\subsubsection[{EParMaps}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf CALICE::CollectionHistogramer::EParMaps}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1CollectionHistogramer_aa8e603a270748b41657cbdfc32a26f19}
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{kCollectionMap@{kCollectionMap}!CALICE::CollectionHistogramer@{CALICE::CollectionHistogramer}}\index{CALICE::CollectionHistogramer@{CALICE::CollectionHistogramer}!kCollectionMap@{kCollectionMap}}\item[{\em 
+kCollectionMap\label{classCALICE_1_1CollectionHistogramer_aa8e603a270748b41657cbdfc32a26f19ab623283b54710c255031397d08b2873b}
+}]Normal collections. \index{kTransientCollectionMap@{kTransientCollectionMap}!CALICE::CollectionHistogramer@{CALICE::CollectionHistogramer}}\index{CALICE::CollectionHistogramer@{CALICE::CollectionHistogramer}!kTransientCollectionMap@{kTransientCollectionMap}}\item[{\em 
+kTransientCollectionMap\label{classCALICE_1_1CollectionHistogramer_aa8e603a270748b41657cbdfc32a26f19a89b047498083c3856b872694aab339d9}
+}]Transient collections. \index{kIntParMap@{kIntParMap}!CALICE::CollectionHistogramer@{CALICE::CollectionHistogramer}}\index{CALICE::CollectionHistogramer@{CALICE::CollectionHistogramer}!kIntParMap@{kIntParMap}}\item[{\em 
+kIntParMap\label{classCALICE_1_1CollectionHistogramer_aa8e603a270748b41657cbdfc32a26f19a54df6edc6ca90f387fc046e5528c1c2a}
+}]int parameters. \index{kFloatParMap@{kFloatParMap}!CALICE::CollectionHistogramer@{CALICE::CollectionHistogramer}}\index{CALICE::CollectionHistogramer@{CALICE::CollectionHistogramer}!kFloatParMap@{kFloatParMap}}\item[{\em 
+kFloatParMap\label{classCALICE_1_1CollectionHistogramer_aa8e603a270748b41657cbdfc32a26f19aae5db92e092f27c75ae0fe2a9a159eba}
+}]float parameters. \index{kStringParMap@{kStringParMap}!CALICE::CollectionHistogramer@{CALICE::CollectionHistogramer}}\index{CALICE::CollectionHistogramer@{CALICE::CollectionHistogramer}!kStringParMap@{kStringParMap}}\item[{\em 
+kStringParMap\label{classCALICE_1_1CollectionHistogramer_aa8e603a270748b41657cbdfc32a26f19a0da7715bd0efd6aca685b31e3516f34c}
+}]string parameters. \end{description}
+\end{Desc}
+
+
+
+Definition at line 47 of file CollectionHistogramer.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::CollectionHistogramer@{CALICE::CollectionHistogramer}!init@{init}}
+\index{init@{init}!CALICE::CollectionHistogramer@{CALICE::CollectionHistogramer}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CollectionHistogramer::init ()}\label{classCALICE_1_1CollectionHistogramer_acbc3acffe6b5a999540387f8afb6cb36}
+
+
+Called at the begin of the job before anything is read. Use to initialize the processor, e.g. book histograms. 
+
+Definition at line 33 of file CollectionHistogramer.cc.
+
+References \_\-hist.\index{CALICE::CollectionHistogramer@{CALICE::CollectionHistogramer}!processRunHeader@{processRunHeader}}
+\index{processRunHeader@{processRunHeader}!CALICE::CollectionHistogramer@{CALICE::CollectionHistogramer}}
+\subsubsection[{processRunHeader}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::CollectionHistogramer::processRunHeader (LCRunHeader $\ast$ {\em run})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1CollectionHistogramer_ae055ee45bf5b4fea658805219b6cfa5c}
+
+
+Called for every run, e.g. overwrite to initialize run dependent histograms. 
+
+Definition at line 35 of file CollectionHistogramer.hh.
+
+\subsection{Field Documentation}
+\index{CALICE::CollectionHistogramer@{CALICE::CollectionHistogramer}!\_\-\_\-histogramTypeName@{\_\-\_\-histogramTypeName}}
+\index{\_\-\_\-histogramTypeName@{\_\-\_\-histogramTypeName}!CALICE::CollectionHistogramer@{CALICE::CollectionHistogramer}}
+\subsubsection[{\_\-\_\-histogramTypeName}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ {\bf CALICE::CollectionHistogramer::\_\-\_\-histogramTypeName}\hspace{0.3cm}{\ttfamily  [static, protected]}}\label{classCALICE_1_1CollectionHistogramer_a81e846127f3559c1e127748408ced91d}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+{
+    "Collections", 
+    "Transient Collections",
+    "Integer Parameters",
+    "Float Parameters",
+    "String Parameters"
+  }
+\end{DoxyCode}
+
+
+Names for the histrogams. 
+
+Definition at line 55 of file CollectionHistogramer.hh.\index{CALICE::CollectionHistogramer@{CALICE::CollectionHistogramer}!\_\-hist@{\_\-hist}}
+\index{\_\-hist@{\_\-hist}!CALICE::CollectionHistogramer@{CALICE::CollectionHistogramer}}
+\subsubsection[{\_\-hist}]{\setlength{\rightskip}{0pt plus 5cm}std::map$<$std::string,Average\_\-t$>$ {\bf CALICE::CollectionHistogramer::\_\-hist}[kNParMaps]\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1CollectionHistogramer_a9f492bba67d841ac03bdf3beeb646d8e}
+
+
+collection, parameter histograms. 
+
+Definition at line 54 of file CollectionHistogramer.hh.
+
+Referenced by init(), and processEvent().\index{CALICE::CollectionHistogramer@{CALICE::CollectionHistogramer}!\_\-histogramParameters@{\_\-histogramParameters}}
+\index{\_\-histogramParameters@{\_\-histogramParameters}!CALICE::CollectionHistogramer@{CALICE::CollectionHistogramer}}
+\subsubsection[{\_\-histogramParameters}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf CALICE::CollectionHistogramer::\_\-histogramParameters}\hspace{0.3cm}{\ttfamily  [protected]}}\label{classCALICE_1_1CollectionHistogramer_ac12fee356ac0d035722040ca71751aa1}
+
+
+Set to !=0 to also histogram event parameters. 
+
+Definition at line 45 of file CollectionHistogramer.hh.
+
+Referenced by processEvent().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+CollectionHistogramer.hh\item 
+CollectionHistogramer.cc\end{DoxyCompactItemize}

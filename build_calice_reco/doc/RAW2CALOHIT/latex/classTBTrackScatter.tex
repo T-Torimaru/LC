@@ -1,0 +1,117 @@
+\section{TBTrackScatter Class Reference}
+\label{classTBTrackScatter}\index{TBTrackScatter@{TBTrackScatter}}
+Inheritance diagram for TBTrackScatter::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classTBTrackScatter}
+\end{center}
+\end{figure}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+class {\bf TBEvent}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Processor $\ast$ {\bfseries newProcessor} ()\label{classTBTrackScatter_add1e78763f106644f161ba177f5f21e3}
+
+\item 
+virtual void {\bfseries Init} ()\label{classTBTrackScatter_a82431b4518ed55dbdf953ac15cdfc710}
+
+\item 
+virtual void {\bfseries ProcessRunHeader} (LCRunHeader $\ast$run)\label{classTBTrackScatter_ae27794c29359577e8278753bb7c74ead}
+
+\item 
+virtual void {\bfseries ProcessEvent} (LCEvent $\ast$evt)\label{classTBTrackScatter_a328a0b121402a3779882e39ecc575934}
+
+\item 
+virtual void {\bfseries End} ()\label{classTBTrackScatter_a1c5d977fb520115d85706dd7f3794edd}
+
+\item 
+TMatrixDSym {\bfseries findError} (const std::vector$<$ TVectorD $>$ \&v, double cutProb=0.1, bool mean=true)\label{classTBTrackScatter_aa6ff59b2691627b05c8726740215c81a}
+
+\item 
+void {\bfseries findError2} ()\label{classTBTrackScatter_a4350eab83583bce7b782f95bf9ffca20}
+
+\item 
+virtual void {\bfseries initHists} ()\label{classTBTrackScatter_ac27b4d5c266645c0b7869ec8301bb6af}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \{ {\bfseries NLAYER} = 4, 
+{\bfseries NPM} = 14, 
+{\bfseries NDM} = 6, 
+{\bfseries NEXTRAP} = 3
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries getHitInfo} (LCEvent $\ast$evt)\label{classTBTrackScatter_ab1ea6e233c8bb77220d359f12a9c9157}
+
+\item 
+void {\bfseries fillHistograms} ({\bf TBEvent} $\ast$tbEvent)\label{classTBTrackScatter_a640bc27626ee6e00e65c38065a2d358a}
+
+\item 
+void {\bfseries fillHistograms} ()\label{classTBTrackScatter_ab72d09b02640fe451b58f87989b6b6bc}
+
+\item 
+double {\bfseries getTruncatedRMS} (TH1F $\ast$h, float factor=20.)\label{classTBTrackScatter_aece42b823239fe34a46c3497718acb76}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries \_\-oldRun}\label{classTBTrackScatter_a2372dac837987cb91190c765e88afe5e}
+
+\item 
+std::string {\bfseries \_\-simFakeTrackerHitCollection}\label{classTBTrackScatter_aa6588dd0c39bb7233713e0316aa79bf1}
+
+\item 
+std::vector$<$ TVectorD $>$ {\bfseries \_\-vDelta} [2]\label{classTBTrackScatter_a4cc08b20f1c47a776a17b0fbdf3b5cde}
+
+\item 
+std::vector$<$ {\bf TBEvent} $>$ {\bfseries \_\-vTBEvent}\label{classTBTrackScatter_a8b5488d90a4609d9ad0c76bd8b9eafc0}
+
+\item 
+TMatrixD {\bfseries \_\-rotation}\label{classTBTrackScatter_a6e0f3f493843e958a26f97abdf016719}
+
+\item 
+TH1F $\ast$ {\bfseries \_\-hZpos} [2][NLAYER+1]\label{classTBTrackScatter_a6346d26d8e806ce65a0c2c4988f0c4c1}
+
+\item 
+TH1F $\ast$ {\bfseries \_\-NEW\_\-hPos1d\_\-fake} [2]\label{classTBTrackScatter_a97015843273ab4a90ebeb8cdb69a4992}
+
+\item 
+TH1F $\ast$ {\bfseries \_\-NEW\_\-hPos1d\_\-mc} [2]\label{classTBTrackScatter_a19bbb91bc1540399f5eaee549556f316}
+
+\item 
+TH1F $\ast$ {\bfseries \_\-NEW\_\-hPos1d} [2][NEXTRAP][NLAYER]\label{classTBTrackScatter_a97b84e856a277819cd7f247ea60d44a6}
+
+\item 
+TH2F $\ast$ {\bfseries \_\-NEW\_\-hPos2d} [2][NEXTRAP][NLAYER $\ast$(NLAYER-\/1)/2]\label{classTBTrackScatter_a6603bd7007c65e8d0c1629f2aea1f28e}
+
+\item 
+TH2F $\ast$ {\bfseries \_\-NEW\_\-hPos2d\_\-rot} [2][NEXTRAP][NLAYER $\ast$(NLAYER-\/1)/2]\label{classTBTrackScatter_ad1e3af55a110dbf0643010d441081184}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const float {\bfseries \_\-rotationAngle} = TMath::Pi()/4.\label{classTBTrackScatter_afc07015eaaeb5336f43d061ab54dfc67}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 27 of file TBTrackScatter.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+TBTrackScatter.hh\item 
+TBTrackScatter.cc\end{DoxyCompactItemize}

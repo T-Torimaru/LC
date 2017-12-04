@@ -1,0 +1,173 @@
+\section{CALICE::SatCorrItep Class Reference}
+\label{classCALICE_1_1SatCorrItep}\index{CALICE::SatCorrItep@{CALICE::SatCorrItep}}
+Inheritance diagram for CALICE::SatCorrItep::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCALICE_1_1SatCorrItep}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries SatCorrItep} (EVENT::LCObject $\ast$obj)\label{classCALICE_1_1SatCorrItep_a36932377a96da55554655d52c8ab51f3}
+
+\item 
+{\bfseries SatCorrItep} (const {\bf HcalTileIndex} \&hti, const unsigned int nPoints, const float $\ast$pixs, const float $\ast$pmts)\label{classCALICE_1_1SatCorrItep_a4209f0b71cd8b3fe6c763e8488081486}
+
+\item 
+const int {\bfseries getIndex} () const \label{classCALICE_1_1SatCorrItep_ae348c8e773d11613a68f6aa94f56035f}
+
+\item 
+float {\bf getScaling} () const \label{classCALICE_1_1SatCorrItep_ac848631bf428bdd9362b2055a77d36ff}
+
+\begin{DoxyCompactList}\small\item\em get the applied scaling \item\end{DoxyCompactList}\item 
+float {\bf deSaturate} (const float saturatedSignal) const 
+\begin{DoxyCompactList}\small\item\em apply saturation correction to a signal amplitude \item\end{DoxyCompactList}\item 
+float {\bf deSaturatedError} (const float saturatedSignal, const float saturatedSignalError) const 
+\begin{DoxyCompactList}\small\item\em error after application of saturation correction to a signal \item\end{DoxyCompactList}\item 
+float {\bf saturate} (const float unsaturatedSignal) const 
+\begin{DoxyCompactList}\small\item\em apply saturation to a signal amplitude \item\end{DoxyCompactList}\item 
+float {\bf saturatedError} (const float unsaturatedSignal, const float unsaturatedSignalError) const 
+\begin{DoxyCompactList}\small\item\em error after application of saturation to a signal \item\end{DoxyCompactList}\item 
+const std::string {\bfseries getTypeName} () const \label{classCALICE_1_1SatCorrItep_ac7344438cdc99ade41dea19429f2942c}
+
+\item 
+const std::string {\bfseries getDataDescription} () const \label{classCALICE_1_1SatCorrItep_af8af7759c6bb7c63023e0b110ca57781}
+
+\item 
+void {\bfseries setIndex} (const {\bf HcalTileIndex} \&hti)\label{classCALICE_1_1SatCorrItep_aba4524c22c28073841fe3af53e6a4487}
+
+\item 
+void {\bfseries setScaling} (const float scaling)\label{classCALICE_1_1SatCorrItep_a2a7b13b83fd35fa39df802e97bc3d713}
+
+\item 
+void {\bfseries setProcedureType} (const int procedureType)\label{classCALICE_1_1SatCorrItep_a11bdaa9dfeb0a2ddc2459b1028e925ee}
+
+\item 
+int {\bfseries getProcedureType} () const \label{classCALICE_1_1SatCorrItep_a8b60267373d676f9753f588cc0c6a6b1}
+
+\item 
+float {\bfseries getPix} (const unsigned int i) const \label{classCALICE_1_1SatCorrItep_accb42a0d845d9aeb3b192a9a8e6f9075}
+
+\item 
+float {\bfseries getPmt} (const unsigned int i) const \label{classCALICE_1_1SatCorrItep_a789ea61674506567502f6b1ecd9d0334}
+
+\item 
+void {\bfseries setPix} (const unsigned int i, const float pix)\label{classCALICE_1_1SatCorrItep_ae9346916bf90e463bb6ac5181b34e09e}
+
+\item 
+void {\bfseries setPmt} (const unsigned int i, const float pmt)\label{classCALICE_1_1SatCorrItep_a9120288abb0bfe01342b870806d49180}
+
+\item 
+float {\bfseries getFunParam0} () const \label{classCALICE_1_1SatCorrItep_afe5d6dd101b1d23dd7379ee5d769215b}
+
+\item 
+float {\bfseries getFunParam1} () const \label{classCALICE_1_1SatCorrItep_a2f6ce467676a3e35b613469188e9d4c6}
+
+\item 
+float {\bfseries getFunParam2} () const \label{classCALICE_1_1SatCorrItep_ae3c24704e9a0d5bb8e4f1a528751bca4}
+
+\item 
+void {\bfseries setFunParameters} (const float p0, const float p1, const float p2)\label{classCALICE_1_1SatCorrItep_a63189e211191b1c9427c486f7c7c7803}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float {\bfseries \_\-scaling}\label{classCALICE_1_1SatCorrItep_aa81089c5e2fd8e3e393cfd121cb9512c}
+
+\item 
+int {\bfseries \_\-procedureType}\label{classCALICE_1_1SatCorrItep_a8538df08df9bc4a928c9b1d0a0aedf82}
+
+\item 
+float {\bfseries \_\-funParam0}\label{classCALICE_1_1SatCorrItep_a96aa7f4148099dd4970090e8565b33b1}
+
+\item 
+float {\bfseries \_\-funParam1}\label{classCALICE_1_1SatCorrItep_a8edcaa4609ed76511bbe134c2a5975c5}
+
+\item 
+float {\bfseries \_\-funParam2}\label{classCALICE_1_1SatCorrItep_ae81872048f23d8597b81b77c4a47111b}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 13 of file SatCorrItep.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::SatCorrItep@{CALICE::SatCorrItep}!deSaturate@{deSaturate}}
+\index{deSaturate@{deSaturate}!CALICE::SatCorrItep@{CALICE::SatCorrItep}}
+\subsubsection[{deSaturate}]{\setlength{\rightskip}{0pt plus 5cm}float CALICE::SatCorrItep::deSaturate (const float {\em saturatedSignal}) const\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCALICE_1_1SatCorrItep_a2a5321d98210f31824f04e9e5b332160}
+
+
+apply saturation correction to a signal amplitude 
+\begin{DoxyParams}{Parameters}
+\item[{\em saturatedSignal}]saturated signal \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+unsaturated signal 
+\end{DoxyReturn}
+
+
+Implements {\bf CALICE::SatCorrFunction} \doxyref{}{p.}{classCALICE_1_1SatCorrFunction_ae71bc6eba8efc85127996112dea69aa8}.
+
+Definition at line 59 of file SatCorrItep.cc.
+
+Referenced by deSaturatedError().\index{CALICE::SatCorrItep@{CALICE::SatCorrItep}!deSaturatedError@{deSaturatedError}}
+\index{deSaturatedError@{deSaturatedError}!CALICE::SatCorrItep@{CALICE::SatCorrItep}}
+\subsubsection[{deSaturatedError}]{\setlength{\rightskip}{0pt plus 5cm}float CALICE::SatCorrItep::deSaturatedError (const float {\em saturatedSignal}, \/  const float {\em saturatedSignalError}) const\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCALICE_1_1SatCorrItep_a6585460faf23fbf59b80608ee1953f72}
+
+
+error after application of saturation correction to a signal 
+\begin{DoxyParams}{Parameters}
+\item[{\em saturatedSignal}]saturated signal \item[{\em saturatedSignalError}]error of the saturated signal \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error of the unsaturated signal 
+\end{DoxyReturn}
+
+
+Implements {\bf CALICE::SatCorrFunction} \doxyref{}{p.}{classCALICE_1_1SatCorrFunction_af31b1717f04b58362c90e091ed9ffcac}.
+
+Definition at line 128 of file SatCorrItep.cc.
+
+References deSaturate().\index{CALICE::SatCorrItep@{CALICE::SatCorrItep}!saturate@{saturate}}
+\index{saturate@{saturate}!CALICE::SatCorrItep@{CALICE::SatCorrItep}}
+\subsubsection[{saturate}]{\setlength{\rightskip}{0pt plus 5cm}float CALICE::SatCorrItep::saturate (const float {\em unsaturatedSignal}) const\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCALICE_1_1SatCorrItep_aaaafd96272be710ff140b1a0d6e21707}
+
+
+apply saturation to a signal amplitude 
+\begin{DoxyParams}{Parameters}
+\item[{\em unsaturatedSignal}]unsaturated signal \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+saturated signal 
+\end{DoxyReturn}
+
+
+Implements {\bf CALICE::SatCorrFunction} \doxyref{}{p.}{classCALICE_1_1SatCorrFunction_a2245a5a516d3ae361af416f8dacf25f2}.
+
+Definition at line 140 of file SatCorrItep.cc.
+
+Referenced by saturatedError().\index{CALICE::SatCorrItep@{CALICE::SatCorrItep}!saturatedError@{saturatedError}}
+\index{saturatedError@{saturatedError}!CALICE::SatCorrItep@{CALICE::SatCorrItep}}
+\subsubsection[{saturatedError}]{\setlength{\rightskip}{0pt plus 5cm}float CALICE::SatCorrItep::saturatedError (const float {\em unsaturatedSignal}, \/  const float {\em unsaturatedSignalError}) const\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCALICE_1_1SatCorrItep_a2f48fa8fe8f1be17a984101b42935f72}
+
+
+error after application of saturation to a signal 
+\begin{DoxyParams}{Parameters}
+\item[{\em unsaturatedSignal}]unsaturated signal \item[{\em unsaturatedSignalError}]error of the unsaturated signal \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+error of saturated signal 
+\end{DoxyReturn}
+
+
+Implements {\bf CALICE::SatCorrFunction} \doxyref{}{p.}{classCALICE_1_1SatCorrFunction_a735f5369890f1ca8fa4de8153207a442}.
+
+Definition at line 218 of file SatCorrItep.cc.
+
+References saturate().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+SatCorrItep.hh\item 
+SatCorrItep.cc\end{DoxyCompactItemize}

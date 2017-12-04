@@ -1,0 +1,62 @@
+\hypertarget{create_bad_channels_list_8cpp}{
+\section{createBadChannelsList.cpp File Reference}
+\label{create_bad_channels_list_8cpp}\index{createBadChannelsList.cpp@{createBadChannelsList.cpp}}
+}
+{\ttfamily \#include \char`\"{}SpectrumPropertiesRunInfo.h\char`\"{}}\par
+{\ttfamily \#include \char`\"{}ChannelExpertQuality.h\char`\"{}}\par
+{\ttfamily \#include $<$cstdlib$>$}\par
+{\ttfamily \#include $<$iostream$>$}\par
+{\ttfamily \#include $<$fstream$>$}\par
+{\ttfamily \#include $<$sstream$>$}\par
+{\ttfamily \#include $<$vector$>$}\par
+{\ttfamily \#include $<$TGraph.h$>$}\par
+{\ttfamily \#include $<$TVector.h$>$}\par
+{\ttfamily \#include $<$TCanvas.h$>$}\par
+{\ttfamily \#include $<$TLegend.h$>$}\par
+{\ttfamily \#include $<$TStyle.h$>$}\par
+{\ttfamily \#include $<$TTree.h$>$}\par
+{\ttfamily \#include $<$TDirectory.h$>$}\par
+{\ttfamily \#include $<$TROOT.h$>$}\par
+{\ttfamily \#include $<$TFile.h$>$}\par
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{create_bad_channels_list_8cpp_a6c144793f464f5d739a3f6409653db66}{printUsage} (void)
+\item 
+void \hyperlink{create_bad_channels_list_8cpp_a1f8e5e6ed3679bbb4b70c661327c4f94}{printChannelStatusMap} (std::map$<$ int, int $>$ const \&channelStatusMap, std::ostream \&s=std::cout)
+\item 
+int \hyperlink{create_bad_channels_list_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\hypertarget{create_bad_channels_list_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{
+\index{createBadChannelsList.cpp@{createBadChannelsList.cpp}!main@{main}}
+\index{main@{main}!createBadChannelsList.cpp@{createBadChannelsList.cpp}}
+\subsubsection[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (int {\em argc}, \/  char $\ast$ {\em argv}\mbox{[}$\,$\mbox{]})}}
+\label{create_bad_channels_list_8cpp_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+Definition at line 58 of file createBadChannelsList.cpp.
+
+References ChannelExpertQuality::dead, SpectrumPropertiesRunInfo::getGlobalChannelNumber(), ChannelExpertQuality::highRMS, printChannelStatusMap(), and printUsage().\hypertarget{create_bad_channels_list_8cpp_a1f8e5e6ed3679bbb4b70c661327c4f94}{
+\index{createBadChannelsList.cpp@{createBadChannelsList.cpp}!printChannelStatusMap@{printChannelStatusMap}}
+\index{printChannelStatusMap@{printChannelStatusMap}!createBadChannelsList.cpp@{createBadChannelsList.cpp}}
+\subsubsection[{printChannelStatusMap}]{\setlength{\rightskip}{0pt plus 5cm}void printChannelStatusMap (std::map$<$ int, int $>$ const \& {\em channelStatusMap}, \/  std::ostream \& {\em s} = {\ttfamily std::cout})}}
+\label{create_bad_channels_list_8cpp_a1f8e5e6ed3679bbb4b70c661327c4f94}
+
+
+Definition at line 39 of file createBadChannelsList.cpp.
+
+References SpectrumPropertiesRunInfo::ChannelID::\_\-channel, SpectrumPropertiesRunInfo::ChannelID::\_\-chip, SpectrumPropertiesRunInfo::ChannelID::\_\-module, and SpectrumPropertiesRunInfo::getChannelID().
+
+Referenced by main().\hypertarget{create_bad_channels_list_8cpp_a6c144793f464f5d739a3f6409653db66}{
+\index{createBadChannelsList.cpp@{createBadChannelsList.cpp}!printUsage@{printUsage}}
+\index{printUsage@{printUsage}!createBadChannelsList.cpp@{createBadChannelsList.cpp}}
+\subsubsection[{printUsage}]{\setlength{\rightskip}{0pt plus 5cm}void printUsage (void)}}
+\label{create_bad_channels_list_8cpp_a6c144793f464f5d739a3f6409653db66}
+
+
+Definition at line 19 of file createBadChannelsList.cpp.
+
+Referenced by main().

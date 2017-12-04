@@ -1,0 +1,68 @@
+\section{CALICE::HodoscopeBlock Class Reference}
+\label{classCALICE_1_1HodoscopeBlock}\index{CALICE::HodoscopeBlock@{CALICE::HodoscopeBlock}}
+
+
+Class for the SLCIO hododscope as acquired by the EUDAQ system.  
+
+
+{\ttfamily \#include $<$hodoscopeBlock.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf HodoscopeBlock} (int header, int size, int trigN, int cycleN, int tdc, int data\_\-0, int data\_\-1, int data\_\-2, int data\_\-3, int data\_\-4, int data\_\-5, int data\_\-6, int data\_\-7, int data\_\-8, int data\_\-9, int data\_\-10, int data\_\-11, int data\_\-12, int data\_\-13, int data\_\-14, int data\_\-15, int data\_\-16, int data\_\-17, int data\_\-18, int data\_\-19, int data\_\-20, int data\_\-21, int data\_\-22, int data\_\-23, int data\_\-24, int data\_\-25, int data\_\-26, int data\_\-27, int data\_\-28, int data\_\-29, int data\_\-30, int data\_\-31, int data\_\-32, int data\_\-33, int data\_\-34, int data\_\-35, int data\_\-36, int data\_\-37, int data\_\-38, int data\_\-39, int data\_\-40, int data\_\-41, int data\_\-42, int data\_\-43, int data\_\-44, int data\_\-45, int data\_\-46, int data\_\-47, int data\_\-48, int data\_\-49, int data\_\-50, int data\_\-51, int data\_\-52, int data\_\-53, int data\_\-54, int data\_\-55, int data\_\-56, int data\_\-57, int data\_\-58, int data\_\-59, int data\_\-60, int data\_\-61, int data\_\-62, int data\_\-63)\label{classCALICE_1_1HodoscopeBlock_ac1fc377a4debcaf515664a0c2ce34642}
+
+\begin{DoxyCompactList}\small\item\em Very ugly constructor because we use a Generic Object with many integers. \item\end{DoxyCompactList}\item 
+{\bf HodoscopeBlock} (LCObject $\ast$obj)\label{classCALICE_1_1HodoscopeBlock_a81a5b6d8579806ed24088cc154c1fe98}
+
+\begin{DoxyCompactList}\small\item\em 'Copy constructor' needed to interpret LCCollection read from file/database. \item\end{DoxyCompactList}\item 
+virtual {\bf $\sim$HodoscopeBlock} ()\label{classCALICE_1_1HodoscopeBlock_a77c74643079308a155cd817f0b880240}
+
+\begin{DoxyCompactList}\small\item\em Important for memory handling. \item\end{DoxyCompactList}\item 
+int {\bf GetHeader} () const \label{classCALICE_1_1HodoscopeBlock_a9e899a0be94147400af123ca7b101572}
+
+\begin{DoxyCompactList}\small\item\em get the header (0xffff7368 = -\/35992). \item\end{DoxyCompactList}\item 
+int {\bf GetSize} () const \label{classCALICE_1_1HodoscopeBlock_a463e5fd470d7ee9adfe59060dd68ba58}
+
+\begin{DoxyCompactList}\small\item\em get the size. \item\end{DoxyCompactList}\item 
+int {\bf GetTrigN} () const \label{classCALICE_1_1HodoscopeBlock_a2afa2d94a5365a3d5fb5f4e95b0ac9c7}
+
+\begin{DoxyCompactList}\small\item\em get the trigger number (up to 4095). \item\end{DoxyCompactList}\item 
+int {\bf GetCycleN} () const \label{classCALICE_1_1HodoscopeBlock_afae379ffe6495dd74d2b085ca5997486}
+
+\begin{DoxyCompactList}\small\item\em get the cycle number. \item\end{DoxyCompactList}\item 
+int {\bf GetTDC} () const \label{classCALICE_1_1HodoscopeBlock_a72f2fd78f6615ac3786850eb8ad82e26}
+
+\begin{DoxyCompactList}\small\item\em get the tdc. \item\end{DoxyCompactList}\item 
+int {\bf GetAccept} () const \label{classCALICE_1_1HodoscopeBlock_ab95e3074f19f0cbc1cfc27276933f023}
+
+\begin{DoxyCompactList}\small\item\em get the accept. \item\end{DoxyCompactList}\item 
+std::vector$<$ int $>$ {\bf GetADC} () const \label{classCALICE_1_1HodoscopeBlock_a93aa4e2366ab5e2563eede8426586d19}
+
+\begin{DoxyCompactList}\small\item\em get the ADC. \item\end{DoxyCompactList}\item 
+std::vector$<$ int $>$ {\bf GetChannel} () const \label{classCALICE_1_1HodoscopeBlock_a284c02352ae2c07e0f6d1922397c2d97}
+
+\begin{DoxyCompactList}\small\item\em get the channel. \item\end{DoxyCompactList}\item 
+void {\bf print} (std::ostream \&os, int)\label{classCALICE_1_1HodoscopeBlock_a88f8139e50bcc17ae72ad96d63b224cc}
+
+\begin{DoxyCompactList}\small\item\em Convenient print method. \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1HodoscopeBlock_aa0c495b019c636a966c66d7078c1233f}
+
+\begin{DoxyCompactList}\small\item\em Return the type of the class. \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1HodoscopeBlock_a73353b3f57c7a0e93fb64e85c671ff69}
+
+\begin{DoxyCompactList}\small\item\em Return a brief description of the data members. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for the SLCIO hododscope as acquired by the EUDAQ system. \begin{DoxyAuthor}{Author}
+L. Liu, based on the \doxyref{EUDAQBlock}{p.}{classCALICE_1_1EUDAQBlock} writen by A. Irles DESY Hamburg 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+November 9 2017 Created for cosmic test hodoscope data format. 
+\end{DoxyDate}
+
+
+Definition at line 23 of file hodoscopeBlock.hh.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+hodoscopeBlock.hh\end{DoxyCompactItemize}

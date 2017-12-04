@@ -1,0 +1,88 @@
+\section{CALICE::FastCalib2DProcessor$<$ T, str, M $>$ Class Template Reference}
+\label{classCALICE_1_1FastCalib2DProcessor}\index{CALICE::FastCalib2DProcessor@{CALICE::FastCalib2DProcessor}}
+
+
+Class which handles the application of a certain type T:LCHcalCalibrationObject to an input collection of CaliceHit and writes an output collection of CaliceHit.  
+
+
+{\ttfamily \#include $<$Fast2DCalibrationProcessor.hh$>$}\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std::map$<$ int, int $>$ {\bfseries parameterMap}\label{classCALICE_1_1FastCalib2DProcessor_a1a398176ac86386375acd10b92a890df}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Processor $\ast$ {\bfseries newProcessor} ()\label{classCALICE_1_1FastCalib2DProcessor_aba8e344351415f1bfdc0a0ab54173c27}
+
+\item 
+virtual void {\bfseries init} ()\label{classCALICE_1_1FastCalib2DProcessor_a6e39f004ac66605fac85eaf3c2303066}
+
+\item 
+void {\bfseries calibrationChanged} (lcio::LCCollection $\ast$col)\label{classCALICE_1_1FastCalib2DProcessor_af9b944cab5d25801f3de9538ca58a5fb}
+
+\item 
+void {\bfseries ahcSroModDataColChanged} (lcio::LCCollection $\ast$col)\label{classCALICE_1_1FastCalib2DProcessor_ab5ffcf2162e4d6c1356e19637e407c2c}
+
+\item 
+virtual void {\bfseries processEvent} (LCEvent $\ast$evt)\label{classCALICE_1_1FastCalib2DProcessor_a9c91ffa8449e011e0f99d9e2334050ee}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::string {\bfseries \_\-inputColName}\label{classCALICE_1_1FastCalib2DProcessor_ad2a51e143d704ff9d9d33d155381fa2b}
+
+\item 
+std::string {\bfseries \_\-parameterColName}\label{classCALICE_1_1FastCalib2DProcessor_aeeddf47e62b3ffa578893b3e040a46c9}
+
+\item 
+std::string {\bfseries \_\-outputColName}\label{classCALICE_1_1FastCalib2DProcessor_a67e450d381f338c512bfb61950adc5d8}
+
+\item 
+std::string {\bfseries \_\-calColName}\label{classCALICE_1_1FastCalib2DProcessor_acea129179d4f2e8c00901817a63448ab}
+
+\item 
+std::string {\bfseries \_\-ahcSroModDataColName}\label{classCALICE_1_1FastCalib2DProcessor_aa1d4ac2e926484e24dd1dbdaf72ea2d5}
+
+\item 
+IntVec {\bfseries \_\-modules}\label{classCALICE_1_1FastCalib2DProcessor_a510d4c71eeac41329b513092d81f37e4}
+
+\item 
+bool {\bfseries \_\-overwrite}\label{classCALICE_1_1FastCalib2DProcessor_ad4f708e7935bc324ce4df8a2ab97cae2}
+
+\item 
+int {\bfseries \_\-zeroSuppression}\label{classCALICE_1_1FastCalib2DProcessor_a3ced223e8bc88a1530a2edd1a2336b5e}
+
+\item 
+{\bf CalibrationSet}$<$ T $>$ $\ast$ {\bfseries \_\-calibSet}\label{classCALICE_1_1FastCalib2DProcessor_a8bc3270235a8c869a5b8d72d74709bce}
+
+\item 
+M $\ast$ {\bfseries \_\-tempModel}\label{classCALICE_1_1FastCalib2DProcessor_a12febd0f31953e9426311be25b2a4aaa}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ConditionsChangeDelegator$<$ {\bf FastCalib2DProcessor}$<$ T, str, M $>$ $>$ {\bfseries \_\-calibrationChange}\label{classCALICE_1_1FastCalib2DProcessor_a54d843931315ba73e99210c44c5fca78}
+
+\item 
+ConditionsChangeDelegator$<$ {\bf FastCalib2DProcessor}$<$ T, str, M $>$ $>$ {\bfseries \_\-ahcSroModDataChange}\label{classCALICE_1_1FastCalib2DProcessor_a407c59825c0f396ed42aa93e2fa1f3b9}
+
+\item 
+lcio::LCCollection $\ast$ {\bfseries \_\-ahcSroModDataCol}\label{classCALICE_1_1FastCalib2DProcessor_ae08612f9f4ea6ec8638027e52549fbe7}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T, const char $\ast$ str, class M$>$ class CALICE::FastCalib2DProcessor$<$ T, str, M $>$}
+
+Class which handles the application of a certain type T:LCHcalCalibrationObject to an input collection of CaliceHit and writes an output collection of CaliceHit. 
+
+Definition at line 44 of file Fast2DCalibrationProcessor.hh.
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+Fast2DCalibrationProcessor.hh\end{DoxyCompactItemize}

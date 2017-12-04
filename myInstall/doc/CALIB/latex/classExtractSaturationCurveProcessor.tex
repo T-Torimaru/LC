@@ -1,0 +1,98 @@
+\section{ExtractSaturationCurveProcessor Class Reference}
+\label{classExtractSaturationCurveProcessor}\index{ExtractSaturationCurveProcessor@{ExtractSaturationCurveProcessor}}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct {\bf condpoint}
+\item 
+struct {\bf datapoint}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf ExtractSaturationCurveProcessor} $\ast$ {\bfseries newProcessor} ()\label{classExtractSaturationCurveProcessor_ac1cb6cef4f5a0a82ab72e103082a580d}
+
+\item 
+virtual void {\bfseries init} ()\label{classExtractSaturationCurveProcessor_a7feca5d6491897eb4a0642745c568049}
+
+\item 
+void {\bfseries processEvent} (LCEvent $\ast$evt)\label{classExtractSaturationCurveProcessor_a54c0e4af7a3c2c35c367035faedaf50c}
+
+\item 
+virtual void {\bfseries end} ()\label{classExtractSaturationCurveProcessor_aedeae6bf28cea73d8dbfb07307e8caa3}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries updateMapper} ()\label{classExtractSaturationCurveProcessor_aae75a6b00dd5dc100b72aa560c1ee56c}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::map$<$ unsigned, std::map$<$ unsigned, {\bf datapoint} $>$ $>$ {\bfseries \_\-data}\label{classExtractSaturationCurveProcessor_a9489d528a0de4bc27112d94c2c521e63}
+
+\item 
+std::map$<$ unsigned, {\bf condpoint} $>$ {\bfseries \_\-cond}\label{classExtractSaturationCurveProcessor_ad25bcf441fa19842d9c5c308833ba76f}
+
+\item 
+std::string {\bfseries \_\-inColName}\label{classExtractSaturationCurveProcessor_a50a69322210ddb62c82e3893169fa3ff}
+
+\item 
+std::string {\bfseries \_\-condColName}\label{classExtractSaturationCurveProcessor_af34cd07d0d5edc67db05c9c397ac4e83}
+
+\item 
+std::string {\bfseries \_\-outFileName}\label{classExtractSaturationCurveProcessor_ab0cc84c9082e3d56fd66a84454b9a1a8}
+
+\item 
+std::string {\bfseries \_\-datFileName}\label{classExtractSaturationCurveProcessor_aac6032684847dec6c51f8000895c906c}
+
+\item 
+bool {\bfseries \_\-doFit}\label{classExtractSaturationCurveProcessor_a5a9f91b2696b05338c42acd717d396ec}
+
+\item 
+bool {\bfseries \_\-subtractPedestal}\label{classExtractSaturationCurveProcessor_a81c12c771d8715003b68cdd155b93ede}
+
+\item 
+int {\bfseries \_\-nPointsUsed}\label{classExtractSaturationCurveProcessor_a83bcac5b9e763bc07522c99028dc4da3}
+
+\item 
+int {\bfseries \_\-ledType}\label{classExtractSaturationCurveProcessor_a788ccfcf2d60cdd98fa58b8a25960870}
+
+\item 
+unsigned int {\bfseries vcell}\label{classExtractSaturationCurveProcessor_a6b92dcd2b25a6e15a9c5e54c964c448a}
+
+\item 
+unsigned int {\bf \_\-ahcMaxNumberOfChips}\label{classExtractSaturationCurveProcessor_a6504d810d836fce199cb3a0672c0e7b8}
+
+\begin{DoxyCompactList}\small\item\em AHCAL maximum number of chips. \item\end{DoxyCompactList}\item 
+unsigned int {\bf \_\-ahcMaxNumberOfModules}\label{classExtractSaturationCurveProcessor_a27dadca929860032628e9e5984c4635b}
+
+\begin{DoxyCompactList}\small\item\em AHCAL maximum number of modules (39). \item\end{DoxyCompactList}\item 
+unsigned int {\bf \_\-ahcMaxNumberOfCells}\label{classExtractSaturationCurveProcessor_a78254103bebe4692ff7113e20be44381}
+
+\begin{DoxyCompactList}\small\item\em AHCAL maximum number of cells. \item\end{DoxyCompactList}\item 
+unsigned int {\bf \_\-ahcMaxNumberOfChannels}\label{classExtractSaturationCurveProcessor_ab4e53af430d5dd5ccf667a4d3f3c2176}
+
+\begin{DoxyCompactList}\small\item\em AHCAL maximum number of channels. \item\end{DoxyCompactList}\item 
+const CALICE::AhcMapper $\ast$ {\bfseries \_\-ahcMapper}\label{classExtractSaturationCurveProcessor_aad14e61b12d09a38bdbb0128ea8dc2c8}
+
+\item 
+unsigned int {\bfseries \_\-mapperVersion}\label{classExtractSaturationCurveProcessor_ae74dd1f33b1ff0ae67e32384bd33d0bf}
+
+\item 
+std::string {\bfseries \_\-mappingProcessorName}\label{classExtractSaturationCurveProcessor_a46e5e0f8be8ef1842cd478b8be63558c}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 14 of file ExtractSaturationCurveProcessor.hh.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+ExtractSaturationCurveProcessor.hh\item 
+ExtractSaturationCurveProcessor.cc\end{DoxyCompactItemize}

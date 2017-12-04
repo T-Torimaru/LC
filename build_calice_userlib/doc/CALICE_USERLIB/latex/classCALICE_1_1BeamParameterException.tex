@@ -1,0 +1,62 @@
+\section{CALICE::BeamParameterException Class Reference}
+\label{classCALICE_1_1BeamParameterException}\index{CALICE::BeamParameterException@{CALICE::BeamParameterException}}
+
+
+This class handles beam parameters which have been written by hand into the database.  
+
+
+{\ttfamily \#include $<$BeamParameterException.hh$>$}Inheritance diagram for CALICE::BeamParameterException::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCALICE_1_1BeamParameterException}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf BeamParameterException} (LCObject $\ast$obj)\label{classCALICE_1_1BeamParameterException_a8ae0f2f91f0d1a8d757cfafc6f9040b7}
+
+\begin{DoxyCompactList}\small\item\em 'Copy constructor' needed to interpret LCCollection read from file/database. \item\end{DoxyCompactList}\item 
+{\bf BeamParameterException} \& {\bf setBeamEnergy} (unsigned int energy)
+\begin{DoxyCompactList}\small\item\em Set the particle type. \item\end{DoxyCompactList}\item 
+unsigned int {\bf getBeamEnergy} () const \label{classCALICE_1_1BeamParameterException_a207e7eed23b2eb26389e20af3a4a4d6d}
+
+\begin{DoxyCompactList}\small\item\em Get the maximum of the beam energy distribution. \item\end{DoxyCompactList}\item 
+void {\bf print} (std::ostream \&os)\label{classCALICE_1_1BeamParameterException_ad198507745bc2607d95f62d671f3ae56}
+
+\begin{DoxyCompactList}\small\item\em Print all members (for debugging). \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1BeamParameterException_a03e95b25675a8b394ae4e75781c52a46}
+
+\begin{DoxyCompactList}\small\item\em Return the type of the class. \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1BeamParameterException_ad3e64e3f1fa0fabe6689639f0a2f6c68}
+
+\begin{DoxyCompactList}\small\item\em Return a brief description of the data members. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class handles beam parameters which have been written by hand into the database. It is to be used if beam parameters are either not available at all or if the analysis of the r/o has revealed some odds. This class might evolve with time, for the time being it constains only the beam energy. \begin{DoxyAuthor}{Author}
+R. Pöschl LAL 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Oct 2007 
+\end{DoxyDate}
+
+
+Definition at line 28 of file BeamParameterException.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::BeamParameterException@{CALICE::BeamParameterException}!setBeamEnergy@{setBeamEnergy}}
+\index{setBeamEnergy@{setBeamEnergy}!CALICE::BeamParameterException@{CALICE::BeamParameterException}}
+\subsubsection[{setBeamEnergy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf BeamParameterException}\& CALICE::BeamParameterException::setBeamEnergy (unsigned int {\em energy})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1BeamParameterException_a157244f293c4ee00795aec9992e3771e}
+
+
+Set the particle type. Get the particle type. Return the beam type name for a given type id. Return the beam type name. Set the nominal beam energy. 
+
+Definition at line 65 of file BeamParameterException.hh.
+
+References CALICE::kBeamParameterExceptionIntBeamEnergy, and CALICE::LCGenericObjectImplExt::obj().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+BeamParameterException.hh\item 
+BeamParameterException.cc\end{DoxyCompactItemize}

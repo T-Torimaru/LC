@@ -1,0 +1,121 @@
+\section{CALICE::AhcMedianFilterTempProvider Class Reference}
+\label{classCALICE_1_1AhcMedianFilterTempProvider}\index{CALICE::AhcMedianFilterTempProvider@{CALICE::AhcMedianFilterTempProvider}}
+
+
+This is a very simple temperature provider for the ahcal.  
+
+
+{\ttfamily \#include $<$AhcMedianFilterTempProvider.hh$>$}Inheritance diagram for CALICE::AhcMedianFilterTempProvider::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classCALICE_1_1AhcMedianFilterTempProvider}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries AhcMedianFilterTempProvider} ({\bf AhcMapper} const $\ast$mapper)\label{classCALICE_1_1AhcMedianFilterTempProvider_afc6895b4468f12307c2da9f64c3eb5ed}
+
+\item 
+virtual float {\bf getCellTemp} (int module, int chip, int chan)
+\begin{DoxyCompactList}\small\item\em Returns the temperature for the cell in the specified module connected to the given chip and channel. \item\end{DoxyCompactList}\item 
+virtual float {\bf getCellTempError} (int module, int chip, int chan)\label{classCALICE_1_1AhcMedianFilterTempProvider_ace083f026078087a40383dd051d34843}
+
+\begin{DoxyCompactList}\small\item\em Returns the error on the temperature for the cell in the specified module connected to the given chip and channel. \item\end{DoxyCompactList}\item 
+virtual float {\bf getAvgTemp} ()\label{classCALICE_1_1AhcMedianFilterTempProvider_a237fba51962e5102c9580cfa9ed431fa}
+
+\begin{DoxyCompactList}\small\item\em Returns the average calorimeter temperature. \item\end{DoxyCompactList}\item 
+virtual float {\bf getAvgModuleTemp} (unsigned module)\label{classCALICE_1_1AhcMedianFilterTempProvider_a5395b7d6095c39af7e0b80b133ba400d}
+
+\begin{DoxyCompactList}\small\item\em Returns the average module temperature. \item\end{DoxyCompactList}\item 
+float {\bf getSensorTemp} (int module, int sensor)\label{classCALICE_1_1AhcMedianFilterTempProvider_ac9f730849a87bda3106773b7dc869f2e}
+
+\begin{DoxyCompactList}\small\item\em Return the temperature for the specified module and sensor. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void {\bf applyCorrection} ()
+\begin{DoxyCompactList}\small\item\em This function applies the correction to the internal 'cache' for the temperature values from the five sensors. \item\end{DoxyCompactList}\item 
+bool {\bf isBadValue} (float t)\label{classCALICE_1_1AhcMedianFilterTempProvider_a708c84d516d63059ba6665dae2da147e}
+
+\begin{DoxyCompactList}\small\item\em Returns true if argument value is outside the sanity range. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int {\bf getSensor} (int chip, int chan)\label{classCALICE_1_1AhcMedianFilterTempProvider_a23a23ba36d563be88a3f1a20a51b28c9}
+
+\begin{DoxyCompactList}\small\item\em Returns the closest sensor to cell connected to chip, chan according to DESY-\/THESIS-\/2008-\/050. \item\end{DoxyCompactList}\item 
+double {\bfseries median} (float a[$\,$], int n)\label{classCALICE_1_1AhcMedianFilterTempProvider_acab9513cd7e4395371bde8d433177cdb}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+{\bf AhcMapper} const $\ast$ {\bfseries \_\-mapper}\label{classCALICE_1_1AhcMedianFilterTempProvider_aa401791e44b7cc8c0c9093b66d84ac6a}
+
+\item 
+float {\bfseries \_\-caloMeanTemp}\label{classCALICE_1_1AhcMedianFilterTempProvider_a76bfbd1b9fd6deead5eeaf572f2498ef}
+
+\item 
+float {\bfseries \_\-caloMeanTempRMS}\label{classCALICE_1_1AhcMedianFilterTempProvider_a73f567416a0bcb8b5f8a130df8cad1f3}
+
+\item 
+int {\bfseries \_\-caloMeanCount}\label{classCALICE_1_1AhcMedianFilterTempProvider_abfa3e2672c774bc6814b5f44eda6ba9a}
+
+\item 
+std::vector$<$ float $>$ {\bfseries \_\-moduleMeanTemp}\label{classCALICE_1_1AhcMedianFilterTempProvider_a20f5463fcf3ba997a6b081615830940f}
+
+\item 
+std::vector$<$ float $>$ {\bfseries \_\-moduleMeanTempRMS}\label{classCALICE_1_1AhcMedianFilterTempProvider_aecb3f33637742eb7af6b9e0cbdb276a8}
+
+\item 
+std::vector$<$ int $>$ {\bfseries \_\-moduleMeanCount}\label{classCALICE_1_1AhcMedianFilterTempProvider_a17ece36832271a1590d721aabc0ce7ed}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This is a very simple temperature provider for the ahcal. What it does:
+\begin{DoxyItemize}
+\item the calibration set is applied
+\item if a temperature sensor gives a value outside the defined sanity range the value is replaced by the average of the four sensors in that module
+\item for each cell the temperature value from the 'closest' sensor, according to the table 3.1, DESY-\/THESIS-\/2008-\/050 is returned
+\end{DoxyItemize}
+
+Also see the documentation for the several functions for more detailed information. This new temperature provider with median filter created: Date: August 2013 Author: Sergey Morozov The temperature provider is based on the \doxyref{AhcSimpleTempProvider}{p.}{classCALICE_1_1AhcSimpleTempProvider} with some updates:
+\begin{DoxyItemize}
+\item all temperature sensors are set to the layer average temperature.
+\item the median filter to layer-\/by-\/layer profile has been introduced. This will help to remove the out-\/layers with wrong temperature measurements in some layers of AHCAL. Note: you need smooth (median filtered for example) MIP and gain temperature profiles in the MIP and gain calibrations to use this tempetarure provider for data reconstruction! 
+\end{DoxyItemize}
+
+Definition at line 38 of file AhcMedianFilterTempProvider.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::AhcMedianFilterTempProvider@{CALICE::AhcMedianFilterTempProvider}!applyCorrection@{applyCorrection}}
+\index{applyCorrection@{applyCorrection}!CALICE::AhcMedianFilterTempProvider@{CALICE::AhcMedianFilterTempProvider}}
+\subsubsection[{applyCorrection}]{\setlength{\rightskip}{0pt plus 5cm}void CALICE::AhcMedianFilterTempProvider::applyCorrection ()\hspace{0.3cm}{\ttfamily  [protected, virtual]}}\label{classCALICE_1_1AhcMedianFilterTempProvider_a9ffdad9db5836b0ceb55f317095cfe8c}
+
+
+This function applies the correction to the internal 'cache' for the temperature values from the five sensors. It should be called everytime a new collection of temperatures or calibrations have been at set or the sanity range has been changed, i.e. if one of newSroModCol, newCalibCol or newSanityRange is true. This is done in \doxyref{getCellTemp()}{p.}{classCALICE_1_1AhcMedianFilterTempProvider_a2d5865711d94a975e593df2713608880} and \doxyref{getCellTempError()}{p.}{classCALICE_1_1AhcMedianFilterTempProvider_ace083f026078087a40383dd051d34843}. 
+
+Definition at line 97 of file AhcMedianFilterTempProvider.cc.
+
+References CALICE::AhcTempProvider::\_\-sroModCol, CALICE::AhcMapper::getK(), isBadValue(), CALICE::AhcTempProvider::newCalibCol, CALICE::AhcTempProvider::newSanityRange, CALICE::AhcTempProvider::newSroModCol, CALICE::AhcTempProvider::sensorTemp, CALICE::AhcTempProvider::sensorTempError, and CALICE::AhcTempProvider::updateCache().
+
+Referenced by getAvgModuleTemp(), getAvgTemp(), getCellTemp(), getCellTempError(), and getSensorTemp().\index{CALICE::AhcMedianFilterTempProvider@{CALICE::AhcMedianFilterTempProvider}!getCellTemp@{getCellTemp}}
+\index{getCellTemp@{getCellTemp}!CALICE::AhcMedianFilterTempProvider@{CALICE::AhcMedianFilterTempProvider}}
+\subsubsection[{getCellTemp}]{\setlength{\rightskip}{0pt plus 5cm}float CALICE::AhcMedianFilterTempProvider::getCellTemp (int {\em module}, \/  int {\em chip}, \/  int {\em chan})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classCALICE_1_1AhcMedianFilterTempProvider_a2d5865711d94a975e593df2713608880}
+
+
+Returns the temperature for the cell in the specified module connected to the given chip and channel. For each cell the temperature value from the 'closest' sensor, according to the table 3.1, DESY-\/THESIS-\/2008-\/050 is returned. 
+
+Implements {\bf CALICE::AhcTempProvider} \doxyref{}{p.}{classCALICE_1_1AhcTempProvider_aa12c75d45d7ade54316dd113a6bab2d1}.
+
+Definition at line 19 of file AhcMedianFilterTempProvider.cc.
+
+References applyCorrection(), getSensor(), CALICE::AhcTempProvider::newCalibCol, CALICE::AhcTempProvider::newSanityRange, CALICE::AhcTempProvider::newSroModCol, and CALICE::AhcTempProvider::sensorTemp.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+AhcMedianFilterTempProvider.hh\item 
+AhcMedianFilterTempProvider.cc\end{DoxyCompactItemize}

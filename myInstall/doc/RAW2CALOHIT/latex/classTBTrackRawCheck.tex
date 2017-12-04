@@ -1,0 +1,69 @@
+\section{TBTrackRawCheck Class Reference}
+\label{classTBTrackRawCheck}\index{TBTrackRawCheck@{TBTrackRawCheck}}
+Inheritance diagram for TBTrackRawCheck::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classTBTrackRawCheck}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual Processor $\ast$ {\bfseries newProcessor} ()\label{classTBTrackRawCheck_af6d15c223523fea01a128d1ac3f01ae8}
+
+\item 
+virtual void {\bf Init} ()
+\begin{DoxyCompactList}\small\item\em Called at the begin of the job before anything is read. \item\end{DoxyCompactList}\item 
+virtual void {\bf ProcessRunHeader} (LCRunHeader $\ast$run)\label{classTBTrackRawCheck_a4f53d3aaff6320d3bab282cacde1e8bb}
+
+\begin{DoxyCompactList}\small\item\em Called for every run. \item\end{DoxyCompactList}\item 
+virtual void {\bf ProcessEvent} (LCEvent $\ast$evt)\label{classTBTrackRawCheck_ad8ced9850a3da2532df3a65375678d0f}
+
+\begin{DoxyCompactList}\small\item\em Called for every event -\/ the working horse. \item\end{DoxyCompactList}\item 
+virtual void {\bf End} ()\label{classTBTrackRawCheck_a0b2e05deaa1a9e475894473bfe34a4c5}
+
+\begin{DoxyCompactList}\small\item\em Called after data processing for clean up. \item\end{DoxyCompactList}\item 
+virtual void {\bfseries initHists} (bool real)\label{classTBTrackRawCheck_a8fe77bfd27cd1d49f13b87127723131e}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool {\bf \_\-cern}\label{classTBTrackRawCheck_a5072e5d27ead3cb9d0265658081d4588}
+
+\begin{DoxyCompactList}\small\item\em Method to write the histograms in a ROOT file. \item\end{DoxyCompactList}\item 
+TH1F $\ast$ {\bfseries hDist} [16]\label{classTBTrackRawCheck_ae377100f20e9ff77dff6efa691ebea3b}
+
+\item 
+TH2F $\ast$ {\bfseries hDi2d} [16]\label{classTBTrackRawCheck_af8a6fffae88fb979618e72d43b066894}
+
+\item 
+TH1F $\ast$ {\bfseries hDi2p} [16]\label{classTBTrackRawCheck_a8be318c350a3894f49227751b6bae9b7}
+
+\item 
+TH1F $\ast$ {\bfseries hDi2m} [16]\label{classTBTrackRawCheck_ad125fd66e3abb8bb028309fea49190d7}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 22 of file TBTrackRawCheck.hh.
+
+\subsection{Member Function Documentation}
+\index{TBTrackRawCheck@{TBTrackRawCheck}!Init@{Init}}
+\index{Init@{Init}!TBTrackRawCheck@{TBTrackRawCheck}}
+\subsubsection[{Init}]{\setlength{\rightskip}{0pt plus 5cm}void TBTrackRawCheck::Init ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classTBTrackRawCheck_ad50f762bb554e9b827d9a921e2f1de9c}
+
+
+Called at the begin of the job before anything is read. Use to initialize the processor, e.g. book histograms. 
+
+Implements {\bf TBTrackBaseProcessor} \doxyref{}{p.}{classTBTrackBaseProcessor}.
+
+Definition at line 81 of file TBTrackRawCheck.cc.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+TBTrackRawCheck.hh\item 
+TBTrackRawCheck.cc\end{DoxyCompactItemize}

@@ -1,0 +1,102 @@
+\section{CALICE::DetectorTransformation Class Reference}
+\label{classCALICE_1_1DetectorTransformation}\index{CALICE::DetectorTransformation@{CALICE::DetectorTransformation}}
+
+
+Define the experimental setup: beam energy, position, angle and detector position, angle.  
+
+
+{\ttfamily \#include $<$DetectorTransformation.hh$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bf DetectorTransformation} (LCObject $\ast$obj)\label{classCALICE_1_1DetectorTransformation_aa0cecf48097264a6a6cc0af071008d0b}
+
+\begin{DoxyCompactList}\small\item\em 'Copy constructor' needed to interpret LCCollection read from file/database. \item\end{DoxyCompactList}\item 
+{\bf DetectorTransformation} \& {\bf setDetectorAngleZX} (float detector\_\-angle\_\-zx)
+\begin{DoxyCompactList}\small\item\em Set the angle of the detector w.r.t. \item\end{DoxyCompactList}\item 
+float {\bf getDetectorAngleZX} () const 
+\begin{DoxyCompactList}\small\item\em Get the angle of the detector w.r.t. \item\end{DoxyCompactList}\item 
+{\bf DetectorTransformation} \& {\bf setDetectorRotationX0} (float rotation\_\-origin\_\-x0)\label{classCALICE_1_1DetectorTransformation_a2eef8fc060f0844f2c58dd406e236dcf}
+
+\begin{DoxyCompactList}\small\item\em Set the origin of the detector rotation in the ZX-\/plane. \item\end{DoxyCompactList}\item 
+float {\bf getDetectorRotationX0} () const \label{classCALICE_1_1DetectorTransformation_afcbf82cfdf8f7e59f8eb9d0dbbcacaf2}
+
+\begin{DoxyCompactList}\small\item\em Get the origin of the detector rotation in the ZX-\/plane. \item\end{DoxyCompactList}\item 
+{\bf DetectorTransformation} \& {\bf setDetectorRotationZ0} (float rotation\_\-origin\_\-z0)\label{classCALICE_1_1DetectorTransformation_aec6ee5baab95ce9cb39df88ca04e0e80}
+
+\begin{DoxyCompactList}\small\item\em Set the origin of the detector rotation in the ZX-\/plane. \item\end{DoxyCompactList}\item 
+float {\bf getDetectorRotationZ0} () const \label{classCALICE_1_1DetectorTransformation_afd32ba2a1636520f713cee65d6f5b5dc}
+
+\begin{DoxyCompactList}\small\item\em Get the origin of the detector rotation in the ZX-\/plane. \item\end{DoxyCompactList}\item 
+{\bf DetectorTransformation} \& {\bf setDetectorTransformation} (float origin\_\-x0, float origin\_\-y0, float origin\_\-z0)\label{classCALICE_1_1DetectorTransformation_aff20896660ff50a94ffe067ccdc56ac6}
+
+\begin{DoxyCompactList}\small\item\em Set the origin of the detector in the 3D-\/space (convenience method). \item\end{DoxyCompactList}\item 
+{\bf DetectorTransformation} \& {\bf setDetectorTransformation} (float $\ast$origin\_\-three\_\-vector)\label{classCALICE_1_1DetectorTransformation_ae390bbf318d5747c72d77b6cd364540b}
+
+\begin{DoxyCompactList}\small\item\em Set the origin of the detector in the 3D-\/space (convenience method). \item\end{DoxyCompactList}\item 
+{\bf DetectorTransformation} \& {\bf setDetectorX0} (float origin\_\-x0)\label{classCALICE_1_1DetectorTransformation_a12be9cd46f36fbd4995afb93b0001630}
+
+\begin{DoxyCompactList}\small\item\em Set the origin of the detector in the 3D-\/space. \item\end{DoxyCompactList}\item 
+float {\bf getDetectorX0} () const \label{classCALICE_1_1DetectorTransformation_ad3b792347abe29df128864f8d93db90b}
+
+\begin{DoxyCompactList}\small\item\em Get the origin of the detector in the 3D-\/space. \item\end{DoxyCompactList}\item 
+{\bf DetectorTransformation} \& {\bf setDetectorY0} (float origin\_\-y0)\label{classCALICE_1_1DetectorTransformation_a8aa19f83e78ce547f6144b0ca055f5b4}
+
+\begin{DoxyCompactList}\small\item\em Set the origin of the detector in the 3D-\/space. \item\end{DoxyCompactList}\item 
+float {\bf getDetectorY0} () const \label{classCALICE_1_1DetectorTransformation_a8b40f70eab9c5f3f7246d881757fc8e9}
+
+\begin{DoxyCompactList}\small\item\em Get the origin of the detector in the 3D-\/space. \item\end{DoxyCompactList}\item 
+{\bf DetectorTransformation} \& {\bf setDetectorZ0} (float origin\_\-z0)\label{classCALICE_1_1DetectorTransformation_a74831156933ee18369f6ea48d90e8f29}
+
+\begin{DoxyCompactList}\small\item\em Set the origin of the detector in the 3D-\/space. \item\end{DoxyCompactList}\item 
+float {\bf getDetectorZ0} () const \label{classCALICE_1_1DetectorTransformation_aed697370c5d136d4424867598c79421d}
+
+\begin{DoxyCompactList}\small\item\em Get the origin of the detector in the 3D-\/space. \item\end{DoxyCompactList}\item 
+void {\bf print} (std::ostream \&os)\label{classCALICE_1_1DetectorTransformation_a53146e49344a9995016d521d423959fc}
+
+\begin{DoxyCompactList}\small\item\em Print all members (for debugging). \item\end{DoxyCompactList}\item 
+const std::string {\bf getTypeName} () const \label{classCALICE_1_1DetectorTransformation_a32750bb0d4ebc5fe3a62871a4b6a427a}
+
+\begin{DoxyCompactList}\small\item\em Return the type of the class. \item\end{DoxyCompactList}\item 
+const std::string {\bf getDataDescription} () const \label{classCALICE_1_1DetectorTransformation_a5c2acba9e28ad26da43444e39bc220a7}
+
+\begin{DoxyCompactList}\small\item\em Return a brief description of the data members. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Define the experimental setup: beam energy, position, angle and detector position, angle. The experimental setup should be written into the conditions database at least twice: 
+\begin{DoxyItemize}
+\item the nominal values with the tag NOMINAL 
+\item the measured values 
+\end{DoxyItemize}\begin{Desc}
+\item[{\bf Todo}]\{Should this class be split into two? One for the beam and one for the detector parameters? Should the nominal and measured values be stored in separate folders?\} \end{Desc}
+
+
+Definition at line 37 of file DetectorTransformation.hh.
+
+\subsection{Member Function Documentation}
+\index{CALICE::DetectorTransformation@{CALICE::DetectorTransformation}!getDetectorAngleZX@{getDetectorAngleZX}}
+\index{getDetectorAngleZX@{getDetectorAngleZX}!CALICE::DetectorTransformation@{CALICE::DetectorTransformation}}
+\subsubsection[{getDetectorAngleZX}]{\setlength{\rightskip}{0pt plus 5cm}float CALICE::DetectorTransformation::getDetectorAngleZX () const\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1DetectorTransformation_a457ff79d33057315b535678a89c93baa}
+
+
+Get the angle of the detector w.r.t. z-\/axis in the ZX-\/plane. 
+
+Definition at line 56 of file DetectorTransformation.hh.
+
+References CALICE::kDetectorTransformationFloatDetectorAngleZX.
+
+Referenced by CALICE::CellDescriptionGenerator::generate(), and print().\index{CALICE::DetectorTransformation@{CALICE::DetectorTransformation}!setDetectorAngleZX@{setDetectorAngleZX}}
+\index{setDetectorAngleZX@{setDetectorAngleZX}!CALICE::DetectorTransformation@{CALICE::DetectorTransformation}}
+\subsubsection[{setDetectorAngleZX}]{\setlength{\rightskip}{0pt plus 5cm}{\bf DetectorTransformation}\& CALICE::DetectorTransformation::setDetectorAngleZX (float {\em detector\_\-angle\_\-zx})\hspace{0.3cm}{\ttfamily  [inline]}}\label{classCALICE_1_1DetectorTransformation_abda40c896fba1eb47056f69774f058b0}
+
+
+Set the angle of the detector w.r.t. z-\/axis in the ZX-\/plane. 
+
+Definition at line 48 of file DetectorTransformation.hh.
+
+References CALICE::kDetectorTransformationFloatDetectorAngleZX.
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+DetectorTransformation.hh\item 
+DetectorTransformation.cc\end{DoxyCompactItemize}

@@ -1,0 +1,13 @@
+\hypertarget{createbadchannelslist_exe_ListGeneration}{}\section{Creating a list of bad channels from a number of runs}\label{createbadchannelslist_exe_ListGeneration}
+Run the {\ttfamily createBadChannelsList} command with a list of run numbers (or a single run number) as arguments. The programme has to be run in the same directory as the input files, which have to be named RUNNUMBER.root.
+
+There is an option {\ttfamily -\/-\/with5RMSCut} to turn on the 5$\ast$RMS cut for the channel spectra (see \hyperlink{class_spectrum_properties_run_info_FiveRMSCut}{The 5$\ast$RMS cut section} of \hyperlink{class_spectrum_properties_run_info}{SpectrumPropertiesRunInfo} class). This option has to be the first argument, the list of run numbers follows.
+
+\begin{DoxyNote}{Note}
+Currently also an ahc.cfg file is needed, the name AHCforCERN2010.cfg is hard coded. This will change once the modified version of ahcBinHst is fully working and the mapping is already included in the histgram names.
+\end{DoxyNote}
+The executable produces the list of bad channels. The file is named {\ttfamily badChannels.txt}. The channel status is according to \begin{Desc}
+\item[\hyperlink{todo__todo000005}{Todo}]make channel status the one in userlib::CellQuality.\end{Desc}
+In addition you get a plot of the number of dead, noisy and bad (=dead + noisy) channels versus the run number, to monitor the history and see if all runs are ok or individual runs have to be excluded. You get a pdf and a C makro. The makro is useful to zoom into certain regions and identify \begin{Desc}
+\item[\hyperlink{todo__todo000006}{Todo}]Fix the hardcoded offset of 360000 in the run number for the x-\/axis on the history plot.\end{Desc}
+From the history plot you can easily identify if there exceptionally few or many dead or noisy channels. Having a closer look at a run is done using the \hyperlink{rootlib}{root library}. 

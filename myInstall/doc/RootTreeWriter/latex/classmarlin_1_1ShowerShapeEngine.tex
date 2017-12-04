@@ -1,0 +1,101 @@
+\section{marlin::ShowerShapeEngine Class Reference}
+\label{classmarlin_1_1ShowerShapeEngine}\index{marlin::ShowerShapeEngine@{marlin::ShowerShapeEngine}}
+Inheritance diagram for marlin::ShowerShapeEngine:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{classmarlin_1_1ShowerShapeEngine__inherit__graph}
+\end{center}
+\end{figure}
+Collaboration diagram for marlin::ShowerShapeEngine:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=232pt]{classmarlin_1_1ShowerShapeEngine__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries ShowerShapeEngine} ({\bf RootTreeWriter} $\ast$host)\label{classmarlin_1_1ShowerShapeEngine_a155b21d556221e1a8ddd6544249c2b2d}
+
+\item 
+virtual const std::string \& {\bf getEngineName} ()
+\item 
+virtual void {\bf registerParameters} ()
+\item 
+virtual void {\bf registerBranches} (TTree $\ast$hostTree)
+\item 
+virtual void {\bf fillVariables} (EVENT::LCEvent $\ast$)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned int {\bfseries MAX\_\-CLUSTERS} = 20\label{classmarlin_1_1ShowerShapeEngine_abe9c6ed78e7c7cbfd0b8b4cd540b7b38}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 15 of file ShowerShapeEngine.hh.
+
+\subsection{Member Function Documentation}
+\index{marlin::ShowerShapeEngine@{marlin::ShowerShapeEngine}!fillVariables@{fillVariables}}
+\index{fillVariables@{fillVariables}!marlin::ShowerShapeEngine@{marlin::ShowerShapeEngine}}
+\subsubsection[{fillVariables}]{\setlength{\rightskip}{0pt plus 5cm}void marlin::ShowerShapeEngine::fillVariables (EVENT::LCEvent $\ast$ {\em evt})\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classmarlin_1_1ShowerShapeEngine_a02d946fe7bb758c32cff7206109d6882}
+Implement this to extract the variables which you want to fill into the {\itshape ROOT\/} tree from the event. Write the value of the variables you want to add to the tree to the member variables, which you registered to the {\itshape ROOT\/} tree. The \doxyref{RootTreeWriter}{p.}{classmarlin_1_1RootTreeWriter} will call TTree::Fill() for you. 
+\begin{DoxyParams}{Parameters}
+\item[{\em evt}]the current event \end{DoxyParams}
+
+
+Implements {\bf marlin::RootWriteEngine} \doxyref{}{p.}{classmarlin_1_1RootWriteEngine_ace823bd839cee7e8c8755e60c4cc7134}.
+
+Definition at line 70 of file ShowerShapeEngine.cc.\index{marlin::ShowerShapeEngine@{marlin::ShowerShapeEngine}!getEngineName@{getEngineName}}
+\index{getEngineName@{getEngineName}!marlin::ShowerShapeEngine@{marlin::ShowerShapeEngine}}
+\subsubsection[{getEngineName}]{\setlength{\rightskip}{0pt plus 5cm}virtual const std::string\& marlin::ShowerShapeEngine::getEngineName ()\hspace{0.3cm}{\ttfamily  [inline, virtual]}}\label{classmarlin_1_1ShowerShapeEngine_ab379dcbe94700542c8a05c302d80231d}
+Returns the name of the engine to the \doxyref{RootTreeWriter}{p.}{classmarlin_1_1RootTreeWriter} processor. \begin{DoxyReturn}{Returns}
+Must return a string with the engine name. 
+\end{DoxyReturn}
+\begin{Desc}
+\item[{\bf Todo}]fixme: should be const, but must be declared const in implementations too. Need to fix all existing engines?!? \end{Desc}
+
+
+Implements {\bf marlin::RootWriteEngine} \doxyref{}{p.}{classmarlin_1_1RootWriteEngine_a31e38120fe60efcb15666fd569ba5862}.
+
+Definition at line 24 of file ShowerShapeEngine.hh.\index{marlin::ShowerShapeEngine@{marlin::ShowerShapeEngine}!registerBranches@{registerBranches}}
+\index{registerBranches@{registerBranches}!marlin::ShowerShapeEngine@{marlin::ShowerShapeEngine}}
+\subsubsection[{registerBranches}]{\setlength{\rightskip}{0pt plus 5cm}void marlin::ShowerShapeEngine::registerBranches (TTree $\ast$)\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classmarlin_1_1ShowerShapeEngine_aa9b11fb1cee4af0d4dc90a687932c341}
+Implement to register local variables to the output tree 
+\begin{DoxyParams}{Parameters}
+\item[{\em pointer}]to the {\itshape ROOT\/} tree, which the \doxyref{RootTreeWriter}{p.}{classmarlin_1_1RootTreeWriter} processor fills at the end of each event. Usually the implementation looks like \begin{DoxyVerb}
+    /// hostTree->Branch("variable",&_variable" ,"variable/F"  );
+    /// \end{DoxyVerb}
+. But you can add any type of branch you like. \end{DoxyParams}
+
+
+Implements {\bf marlin::RootWriteEngine} \doxyref{}{p.}{classmarlin_1_1RootWriteEngine_ad467dc6e73fdd9fd4311f7277fd02a89}.
+
+Definition at line 38 of file ShowerShapeEngine.cc.\index{marlin::ShowerShapeEngine@{marlin::ShowerShapeEngine}!registerParameters@{registerParameters}}
+\index{registerParameters@{registerParameters}!marlin::ShowerShapeEngine@{marlin::ShowerShapeEngine}}
+\subsubsection[{registerParameters}]{\setlength{\rightskip}{0pt plus 5cm}void marlin::ShowerShapeEngine::registerParameters ()\hspace{0.3cm}{\ttfamily  [virtual]}}\label{classmarlin_1_1ShowerShapeEngine_a861065f4f0a4a91af65a700820cec207}
+Used to register steering parameters. Implement to register {\itshape \doxyref{marlin}{p.}{namespacemarlin}\/} steering file parameters. Use {\itshape \doxyref{marlin}{p.}{namespacemarlin}\/} syntax to register parameters for the calling \doxyref{RootTreeWriter}{p.}{classmarlin_1_1RootTreeWriter} processor.
+
+use \begin{DoxyVerb}
+    /// _hostProc.relayRegisterProcessorParameter(...)
+    /// _hostProc.relayRegister...()
+    /// \end{DoxyVerb}
+ instead of {\itshape \doxyref{marlin}{p.}{namespacemarlin}\/} processors \begin{DoxyVerb}register...() \end{DoxyVerb}
+ methods 
+
+Implements {\bf marlin::RootWriteEngine} \doxyref{}{p.}{classmarlin_1_1RootWriteEngine_ae12b70923768043fa5c1438f078c41d3}.
+
+Definition at line 17 of file ShowerShapeEngine.cc.
+
+References marlin::RootTreeWriter::relayRegisterProcessorParameter().
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+ShowerShapeEngine.hh\item 
+ShowerShapeEngine.cc\end{DoxyCompactItemize}
