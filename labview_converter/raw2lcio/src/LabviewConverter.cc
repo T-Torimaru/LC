@@ -40,7 +40,8 @@ namespace marlin{
     registerProcessorParameter( "Data" , 
 				"Initial String to the ahcal data file. i.e. 'Run'"  ,
 				_data ,
-				std::string("run270001.txt") ) ;
+				//				std::string("run270001.txt") ) ;
+				std::string("test__06p12p2017__18o59o18.txt") ) ;
   
     registerProcessorParameter ( "Runnumber", "Runnumber", _runNumber, 270000);    
  

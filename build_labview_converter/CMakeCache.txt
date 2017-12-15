@@ -119,7 +119,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELEASE:STRING=
 CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO:STRING=
 
 //Path to CMake Modules
-CMAKE_MODULE_PATH:PATH=/afs/desy.de/user/t/torimart/work/CosmiTestLCIO/calice_cmake
+CMAKE_MODULE_PATH:PATH=/afs/desy.de/user/t/torimart/work/CosmiTestLCIO/calice_cmake;/afs/desy.de/user/t/torimart/work/CosmiTestLCIO/calice_cmake
 
 //Path to a program.
 CMAKE_NM:FILEPATH=/usr/bin/nm

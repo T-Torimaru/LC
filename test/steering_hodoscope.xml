@@ -28,11 +28,11 @@
 
   <global>
     <parameter name="LCIOInputFiles">
-      <!--/nfs/dust/ilc/group/flchcal/AHCAL_Cosmic_2017_November/LCIO/171130180406_run000082.raw.slcio-->
+      /afs/desy.de/user/t/torimart/work/CosmiTestLCIO/test/slcio/171202101112_run000093.raw.slcio
     </parameter>
     <!-- limit the number of processed records (run+evt): -->
-    <parameter name="MaxRecordNumber" value="0" />
-    <parameter name="SkipNEvents" value="46676" />
+    <parameter name="MaxRecordNumber" value="15000" />
+    <parameter name="SkipNEvents" value="0" />
     <parameter name="SupressCheck" value="false" />
     <parameter name="Verbosity" options="DEBUG0-4,MESSAGE0-4,WARNING0-4,ERROR0-4,SILENT"> ERROR </parameter>
   </global>
@@ -196,7 +196,7 @@
   <processor name="HcalRootTreeWriter" type="RootTreeWriter">
     <!--Name of the output ROOT file-->
     <parameter name="OutFileName" type="string">
-      /afs/desy.de/user/t/torimart/work/CosmiTestLCIO/test/result/test82.root
+      /afs/desy.de/user/t/torimart/work/CosmiTestLCIO/test/result/test93.root
     </parameter>
     <parameter name="HodoscopeWriteEngine_enable" type="int"> 1 </parameter>
     <parameter name="HodoscopeWriteEngine_isModInverted" type="bool"> false </parameter>
@@ -245,13 +245,13 @@
     <!--force keep of the named collections - overrules DropCollectionTypes (and DropCollectionNames)-->
     <!--parameter name="KeepCollectionNames" type="StringVec">MyPreciousSimTrackerHits  </parameter-->
     <!-- name of output file -->
-    <parameter name="LCIOOutputFile" type="string"> 
+    <!--parameter name="LCIOOutputFile" type="string"> 
 <<<<<<< HEAD
       /afs/desy.de/user/t/torimart/work/CosmiTestLCIO/test/test.slico
 =======
       /directorypath/test/result/test.slico
 >>>>>>> f0096c47abd4c1484ea0a069518023dfc7d994d0
-    </parameter>
+    </parameter-->
     <!--write mode for output file:  WRITE_APPEND or WRITE_NEW-->
     <parameter name="LCIOWriteMode" type="string"> WRITE_NEW </parameter>
     <!--will split output file if size in kB exceeds given value - doesn't work with APPEND and NEW-->
@@ -269,7 +269,7 @@
     <parameter name="BranchPrefix" type="string"> ahc </parameter>
     <!--Name of the output root file-->
     <parameter name="OutputRootFileName" type="string">
-      /directorypath/test/result/temp.root
+      /afs/desy.de/user/t/torimart/work/CosmiTestLCIO/test/result/temp.root
     </parameter>
     <!--verbosity level of this processor                                                                                                                      
           ("DEBUG0-4,MESSAGE0-4,WARNING0-4,ERROR0-4,SILENT")-->
