@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/desy/flchcalsoftware/!svn/ver/10/trunk/convert_root_eventbuilding/Debug
+END
+objects.mk
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/desy/flchcalsoftware/!svn/ver/10/trunk/convert_root_eventbuilding/Debug/objects.mk
+END
+convert_job.sh
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/desy/flchcalsoftware/!svn/ver/10/trunk/convert_root_eventbuilding/Debug/convert_job.sh
+END
+sources.mk
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/desy/flchcalsoftware/!svn/ver/10/trunk/convert_root_eventbuilding/Debug/sources.mk
+END
+makefile
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/desy/flchcalsoftware/!svn/ver/10/trunk/convert_root_eventbuilding/Debug/makefile
+END

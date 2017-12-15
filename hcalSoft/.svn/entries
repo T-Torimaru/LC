@@ -1,0 +1,95 @@
+10
+
+dir
+22
+https://svnsrv.desy.de/desy/flchcalsoftware/trunk
+https://svnsrv.desy.de/desy/flchcalsoftware
+
+
+
+2016-07-18T15:34:28.684524Z
+22
+ebrianne
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+a4f25ce0-941b-4cb4-81ba-38dfbcabe58d
+
+GainMean
+dir
+
+pedestal_memcell
+dir
+
+Threshold_scan
+dir
+
+convert_root_eventbuilding
+dir
+
+ADCdistribution_properties
+dir
+
+convert_root
+dir
+
+findholdvalue
+dir
+
+Holdscan_soft
+dir
+
+gain_ledcalib_ver2
+dir
+
+InterCalib
+dir
+
+DCR_Measurement
+dir
+
+README
+file
+
+
+
+
+2017-12-15T17:07:52.000000Z
+a14fd6045c2cb08ee82b4dd38faba431
+2016-07-14T09:22:22.273467Z
+19
+ebrianne
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+4284
+

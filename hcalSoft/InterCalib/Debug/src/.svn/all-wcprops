@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/desy/flchcalsoftware/!svn/ver/18/trunk/InterCalib/Debug/src
+END
+HistoGenerator.d
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/desy/flchcalsoftware/!svn/ver/18/trunk/InterCalib/Debug/src/HistoGenerator.d
+END
+RunFolderParser.d
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/desy/flchcalsoftware/!svn/ver/18/trunk/InterCalib/Debug/src/RunFolderParser.d
+END
+style.d
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/desy/flchcalsoftware/!svn/ver/18/trunk/InterCalib/Debug/src/style.d
+END
+PedestalCalibrator.d
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/desy/flchcalsoftware/!svn/ver/18/trunk/InterCalib/Debug/src/PedestalCalibrator.d
+END
+InterCalib.d
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/desy/flchcalsoftware/!svn/ver/18/trunk/InterCalib/Debug/src/InterCalib.d
+END
+subdir.mk
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/desy/flchcalsoftware/!svn/ver/18/trunk/InterCalib/Debug/src/subdir.mk
+END

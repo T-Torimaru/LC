@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/desy/flchcalsoftware/!svn/ver/19/trunk/gain_ledcalib_ver2/Debug/src
+END
+CalibSpectrum.d
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/desy/flchcalsoftware/!svn/ver/19/trunk/gain_ledcalib_ver2/Debug/src/CalibSpectrum.d
+END
+gain_ledcalib.d
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/desy/flchcalsoftware/!svn/ver/19/trunk/gain_ledcalib_ver2/Debug/src/gain_ledcalib.d
+END
+UHHExtractGain.d
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/desy/flchcalsoftware/!svn/ver/19/trunk/gain_ledcalib_ver2/Debug/src/UHHExtractGain.d
+END
+style.d
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/desy/flchcalsoftware/!svn/ver/19/trunk/gain_ledcalib_ver2/Debug/src/style.d
+END
+mpf.d
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/desy/flchcalsoftware/!svn/ver/19/trunk/gain_ledcalib_ver2/Debug/src/mpf.d
+END
+PedestalCalibrator.d
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/desy/flchcalsoftware/!svn/ver/19/trunk/gain_ledcalib_ver2/Debug/src/PedestalCalibrator.d
+END
+GainHistoGenerator.d
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/desy/flchcalsoftware/!svn/ver/2/trunk/gain_ledcalib_ver2/Debug/src/GainHistoGenerator.d
+END
+GainRunFolderParser.d
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/desy/flchcalsoftware/!svn/ver/19/trunk/gain_ledcalib_ver2/Debug/src/GainRunFolderParser.d
+END
+subdir.mk
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/desy/flchcalsoftware/!svn/ver/14/trunk/gain_ledcalib_ver2/Debug/src/subdir.mk
+END

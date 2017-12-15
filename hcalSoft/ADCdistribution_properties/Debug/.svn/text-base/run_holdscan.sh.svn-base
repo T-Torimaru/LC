@@ -1,0 +1,14 @@
+./ADCdistribution_properties ../../../Rootfiles_holdscan/holdscan_LED3800_Hold00.root n
+./ADCdistribution_properties ../../../Rootfiles_holdscan/holdscan_LED3800_Hold04.root n
+./ADCdistribution_properties ../../../Rootfiles_holdscan/holdscan_LED3800_Hold08.root n
+./ADCdistribution_properties ../../../Rootfiles_holdscan/holdscan_LED3800_Hold13.root n
+./ADCdistribution_properties ../../../Rootfiles_holdscan/holdscan_LED3800_Hold17.root n
+./ADCdistribution_properties ../../../Rootfiles_holdscan/holdscan_LED3800_Hold21.root n
+./ADCdistribution_properties ../../../Rootfiles_holdscan/holdscan_LED3800_Hold25.root n
+./ADCdistribution_properties ../../../Rootfiles_holdscan/holdscan_LED3800_Hold29.root n
+./ADCdistribution_properties ../../../Rootfiles_holdscan/holdscan_LED3800_Hold34.root n
+./ADCdistribution_properties ../../../Rootfiles_holdscan/holdscan_LED3800_Hold38.root n
+./ADCdistribution_properties ../../../Rootfiles_holdscan/holdscan_LED3800_Hold42.root n
+./ADCdistribution_properties ../../../Rootfiles_holdscan/holdscan_LED3800_Hold46.root n
+./ADCdistribution_properties ../../../Rootfiles_holdscan/holdscan_LED3800_Hold50.root n
+./ADCdistribution_properties ../../../Rootfiles_holdscan/holdscan_LED3800_Hold55.root n

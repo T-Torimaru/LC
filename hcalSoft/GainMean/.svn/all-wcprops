@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/desy/flchcalsoftware/!svn/ver/22/trunk/GainMean
+END
+Gain_Mean.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/desy/flchcalsoftware/!svn/ver/22/trunk/GainMean/Gain_Mean.cpp
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/desy/flchcalsoftware/!svn/ver/19/trunk/GainMean/Makefile
+END
+gain_mean
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/desy/flchcalsoftware/!svn/ver/22/trunk/GainMean/gain_mean
+END

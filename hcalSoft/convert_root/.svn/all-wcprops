@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/desy/flchcalsoftware/!svn/ver/18/trunk/convert_root
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/desy/flchcalsoftware/!svn/ver/2/trunk/convert_root/.project
+END
+.cproject
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/desy/flchcalsoftware/!svn/ver/2/trunk/convert_root/.cproject
+END

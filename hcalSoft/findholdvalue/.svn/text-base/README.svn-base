@@ -1,0 +1,16 @@
+findholdvalue.C
+root -l
+.L findholdvalue.C+
+ findholdvalue("inputfile",first_chip_number,"output directory")
+e.g. findholdvalue("Plots_comp.root",241,"./")
+
+if you do not need to see histograms, put -b option
+root -l -b
+
+or 
+
+root -l -b -q findholdvalue.C+'("inputfile",first_chip_number,"output directory")'
+e.g.
+root -l -b -q findholdvalue.C+'("Plots_comp.root",241,"./")'
+
+tmpoutput_holdtime.txt .root .pdf will be created.

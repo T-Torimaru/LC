@@ -1,0 +1,25 @@
+############################################
+# flchcalsoftware readme
+# 8-April-2016
+# Adrian Irles, DESY
+############################################
+To use the program:
+
+1)
+go to src, and modify, in Holdscan_plots.cpp, these lines
+
+TString directory = "../../../Rootfiles_holdscan/";//PATH INPUT root files
+string PATH_OUT = "../../../output_holdscan2/";//PATH output results   
+
+and 
+
+TSubString hold_str = rootfile(21,2);
+
+In our case is 21,2 because the name of the holdscan text files, before the hold value (2 digits), have 21 characters.
+
+2) go to Debug
+make holdscan
+./holdscan
+
+
+Please visit: http://flcwiki.desy.de/AHCALHBU2ElectronicBringupGuide/Analysis This page contains and step by step instructions to use the standalone gain calibration software that we use for the current engineering prototype and inherits from the AHCAL HBU Electronic Bringup guide page.

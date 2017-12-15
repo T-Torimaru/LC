@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/desy/flchcalsoftware/!svn/ver/21/trunk/Threshold_scan
+END
+threshold_scan
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/desy/flchcalsoftware/!svn/ver/21/trunk/Threshold_scan/threshold_scan
+END
+threshold_scan.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/desy/flchcalsoftware/!svn/ver/21/trunk/Threshold_scan/threshold_scan.cpp
+END
+makefile
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/desy/flchcalsoftware/!svn/ver/21/trunk/Threshold_scan/makefile
+END

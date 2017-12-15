@@ -1,0 +1,20 @@
+############################################
+# flchcalsoftware readme
+# 8-April-2016
+# Adrian Irles, DESY
+############################################
+To use the program:
+
+1) modify the input file name string in example.h
+
+ if (!f || !f->IsOpen()) {
+        f = new TFile("../../../Rootfiles_Sr90/sr90_threshold200_hold30__2016p04p12__12o33o28.root");
+ }
+
+2) run it:
+
+root -l example.C+
+root [0] example a
+root [1] a.loop()
+
+Visit: http://flcwiki.desy.de/AHCALHBU2ElectronicBringupGuide/Analysis This page contains and step by step instructions to use the standalone gain calibration software that we use for the current engineering prototype and inherits from the AHCAL HBU Electronic Bringup guide page.
