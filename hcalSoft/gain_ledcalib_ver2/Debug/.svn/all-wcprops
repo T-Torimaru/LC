@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/desy/flchcalsoftware/!svn/ver/21/trunk/gain_ledcalib_ver2/Debug
+END
+nohup.out
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/desy/flchcalsoftware/!svn/ver/2/trunk/gain_ledcalib_ver2/Debug/nohup.out
+END
+objects.mk
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/desy/flchcalsoftware/!svn/ver/2/trunk/gain_ledcalib_ver2/Debug/objects.mk
+END
+loop_gain.sh
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/desy/flchcalsoftware/!svn/ver/14/trunk/gain_ledcalib_ver2/Debug/loop_gain.sh
+END
+PathLED_20150704.txt
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/desy/flchcalsoftware/!svn/ver/2/trunk/gain_ledcalib_ver2/Debug/PathLED_20150704.txt
+END
+PathLED_20150705.txt
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/desy/flchcalsoftware/!svn/ver/2/trunk/gain_ledcalib_ver2/Debug/PathLED_20150705.txt
+END
+sources.mk
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/desy/flchcalsoftware/!svn/ver/2/trunk/gain_ledcalib_ver2/Debug/sources.mk
+END
+gain_ledcalib
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/desy/flchcalsoftware/!svn/ver/21/trunk/gain_ledcalib_ver2/Debug/gain_ledcalib
+END
+makefile
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/desy/flchcalsoftware/!svn/ver/4/trunk/gain_ledcalib_ver2/Debug/makefile
+END

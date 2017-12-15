@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/desy/flchcalsoftware/!svn/ver/5/trunk/ADCdistribution_properties
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/desy/flchcalsoftware/!svn/ver/5/trunk/ADCdistribution_properties/.project
+END
+.cproject
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/desy/flchcalsoftware/!svn/ver/5/trunk/ADCdistribution_properties/.cproject
+END
+holdscan_plots.C
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/desy/flchcalsoftware/!svn/ver/5/trunk/ADCdistribution_properties/holdscan_plots.C
+END

@@ -1,0 +1,43 @@
+############################################
+# flchcalsoftware readme
+# 8-April-2016
+# Adrian Irles, DESY
+############################################
+
+Please visit: http://flcwiki.desy.de/AHCALHBU2ElectronicBringupGuide/Analysis This page contains and step by step instructions to use the standalone gain calibration software that we use for the current engineering prototype and inherits from the AHCAL HBU Electronic Bringup guide page.
+
+This software is used to perform the gain calibration and the pedestal offset calibration of the detector when running in laboratory mode with forced trigger conditions (standard LED runs).
+
+This code is no longer used as baseline code for the Engineering Prototype since 2016 since all the code is being exported to the main Calice software repository (see next bullet point) but is very useful for small setups or groups that begin to handle the AHCAL setup since it only needs a root installation (it has been tested with several root 5 versions) and is easily exportable.
+
+    The code is available via svn: https://svnsrv.desy.de/desy/flchcalsoftware If there is any modification needed to the current software that is relevant for the current prototype, please contact Lan ( huong.tran.lan@desy.de ), Eldwan ( eldwan.brianne@desy.de ) or Adrian ( adrian.irles@desy.de ) or ask (to any of them) to be on the developer list for the svn.
+
+    If you are only interested in a short review of the code or into an introduction to the main calice software (based in Marlin), please visit this other page. The standalone repository might not follow all the changes included in the main Calice software repository: use it with careful. 
+
+The standalone code is divided in three main parts: a text to root file converter, the pedestal offset extractor and the gain calibrator. Is important to notice that this code is though to study only standard LED calibration runs taken in Lab mode (forced trigger).
+
+The only requirement to run it is a root installation (the code is tested in latest versions of root 5) and standard compilers (required by root, in any case).
+
+#############################################
+
+Code pieces:
+
+-  convert_root --> text files data converter to root files. Is not applied any event building.
+
+-  pedestal_memcell --> program that read the root files and extract the pedestal offset for each mempory cell. The ouptut is a text file with the pedestal memory cell offsets.
+
+-  gain_ledcalib_ver2 --> program that reads the root files for different calibration LED runs (in forced trigger mode), corrects the distribution for the different (by memory cell)  
+pedestal offset and calculates the gain of the distribution (using two methods: a fit to a multigaussian and fast fourier transform). The main output is a text file with the gain for every chip and channel. Need a pedestal text file to run. A basic example of examinating the results ins found in gain_average.C
+
+-  ADCdistribution_properties --> Simplified version of the gain_ledcalib_ver2, is used for Holdscans since it collects the main properties of the ADC distribution (mean, rms and gain). An example file to read the results for a simple HBU is found in holdscan_plots.C . Works with single files.
+ 
+- Holdscan_soft --> Tool developed for holdscans. Very similar to ADCdistribution_properties but automated for mutifile.
+
+- convert_root_eventbuilding --> tool to convert text file data into root files applying event building. The event building is basically a sorting in bunch-crossing id since every readoutcycle contains several (every chip can save up to 16 events in the memory cells). Another important feature of this code is that it corrects for the memory cell number which is inverted in the USB Labview program.
+
+- InterCalib --> tool developped by Dima Mironov for obtaining HG/LG Intercalibration factors. Was modified by Eldwan Brianne to work on a folder and running correctly on rootfiles HG/LG. 
+The output is a list of calibration factors per channels.
+
+- Threshold Scan --> tool developped by Lloyd and Oskar in order to determine the Threshold at 0.5 MIP using AT/ET LED runs. The output is a list of Threshold values per Chip.
+
+- GainMean --> Compute the average Gain per Chn and create a root file containing the histogram plot

@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/desy/flchcalsoftware/!svn/ver/21/trunk/gain_ledcalib_ver2/src
+END
+style.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/desy/flchcalsoftware/!svn/ver/2/trunk/gain_ledcalib_ver2/src/style.cpp
+END
+CalibSpectrum.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/desy/flchcalsoftware/!svn/ver/4/trunk/gain_ledcalib_ver2/src/CalibSpectrum.h
+END
+PedestalCalibrator.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/desy/flchcalsoftware/!svn/ver/2/trunk/gain_ledcalib_ver2/src/PedestalCalibrator.cpp
+END
+style.h
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/desy/flchcalsoftware/!svn/ver/2/trunk/gain_ledcalib_ver2/src/style.h
+END
+onepf.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/desy/flchcalsoftware/!svn/ver/13/trunk/gain_ledcalib_ver2/src/onepf.cpp
+END
+PedestalCalibrator.h
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/desy/flchcalsoftware/!svn/ver/2/trunk/gain_ledcalib_ver2/src/PedestalCalibrator.h
+END
+onepf.h
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/desy/flchcalsoftware/!svn/ver/13/trunk/gain_ledcalib_ver2/src/onepf.h
+END
+GainRunFolderParser.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/desy/flchcalsoftware/!svn/ver/19/trunk/gain_ledcalib_ver2/src/GainRunFolderParser.cpp
+END
+Autocorrelation.cc
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/desy/flchcalsoftware/!svn/ver/2/trunk/gain_ledcalib_ver2/src/Autocorrelation.cc
+END
+UHHExtractGain.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/desy/flchcalsoftware/!svn/ver/2/trunk/gain_ledcalib_ver2/src/UHHExtractGain.cpp
+END
+autocorrelation.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/desy/flchcalsoftware/!svn/ver/2/trunk/gain_ledcalib_ver2/src/autocorrelation.py
+END
+GainRunFolderParser.h
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/desy/flchcalsoftware/!svn/ver/2/trunk/gain_ledcalib_ver2/src/GainRunFolderParser.h
+END
+mpf.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/desy/flchcalsoftware/!svn/ver/2/trunk/gain_ledcalib_ver2/src/mpf.cpp
+END
+UHHExtractGain.h
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/desy/flchcalsoftware/!svn/ver/2/trunk/gain_ledcalib_ver2/src/UHHExtractGain.h
+END
+mpf.h
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/desy/flchcalsoftware/!svn/ver/2/trunk/gain_ledcalib_ver2/src/mpf.h
+END
+gain_ledcalib.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/desy/flchcalsoftware/!svn/ver/21/trunk/gain_ledcalib_ver2/src/gain_ledcalib.cpp
+END
+CalibSpectrum.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/desy/flchcalsoftware/!svn/ver/14/trunk/gain_ledcalib_ver2/src/CalibSpectrum.cpp
+END

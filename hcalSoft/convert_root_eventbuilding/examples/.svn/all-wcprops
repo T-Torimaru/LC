@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/desy/flchcalsoftware/!svn/ver/11/trunk/convert_root_eventbuilding/examples
+END
+example.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/desy/flchcalsoftware/!svn/ver/10/trunk/convert_root_eventbuilding/examples/example.h
+END
+example.C
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/desy/flchcalsoftware/!svn/ver/10/trunk/convert_root_eventbuilding/examples/example.C
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/desy/flchcalsoftware/!svn/ver/11/trunk/convert_root_eventbuilding/examples/README
+END

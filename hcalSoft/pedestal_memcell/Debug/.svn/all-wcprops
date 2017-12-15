@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/desy/flchcalsoftware/!svn/ver/21/trunk/pedestal_memcell/Debug
+END
+objects.mk
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/desy/flchcalsoftware/!svn/ver/2/trunk/pedestal_memcell/Debug/objects.mk
+END
+pedestal_memcell
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/desy/flchcalsoftware/!svn/ver/21/trunk/pedestal_memcell/Debug/pedestal_memcell
+END
+sources.mk
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/desy/flchcalsoftware/!svn/ver/2/trunk/pedestal_memcell/Debug/sources.mk
+END
+makefile
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/desy/flchcalsoftware/!svn/ver/4/trunk/pedestal_memcell/Debug/makefile
+END

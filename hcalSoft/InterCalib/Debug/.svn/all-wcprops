@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/desy/flchcalsoftware/!svn/ver/18/trunk/InterCalib/Debug
+END
+objects.mk
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/desy/flchcalsoftware/!svn/ver/18/trunk/InterCalib/Debug/objects.mk
+END
+sources.mk
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/desy/flchcalsoftware/!svn/ver/18/trunk/InterCalib/Debug/sources.mk
+END
+intercalib
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/desy/flchcalsoftware/!svn/ver/18/trunk/InterCalib/Debug/intercalib
+END
+makefile
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/desy/flchcalsoftware/!svn/ver/18/trunk/InterCalib/Debug/makefile
+END

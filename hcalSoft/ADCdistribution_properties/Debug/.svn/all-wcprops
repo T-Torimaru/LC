@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/desy/flchcalsoftware/!svn/ver/5/trunk/ADCdistribution_properties/Debug
+END
+nohup.out
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/desy/flchcalsoftware/!svn/ver/5/trunk/ADCdistribution_properties/Debug/nohup.out
+END
+objects.mk
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/desy/flchcalsoftware/!svn/ver/5/trunk/ADCdistribution_properties/Debug/objects.mk
+END
+loop_gain.sh
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/desy/flchcalsoftware/!svn/ver/5/trunk/ADCdistribution_properties/Debug/loop_gain.sh
+END
+PathLED_20150704.txt
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/desy/flchcalsoftware/!svn/ver/5/trunk/ADCdistribution_properties/Debug/PathLED_20150704.txt
+END
+PathLED_20150705.txt
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/desy/flchcalsoftware/!svn/ver/5/trunk/ADCdistribution_properties/Debug/PathLED_20150705.txt
+END
+run_holdscan.sh
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/desy/flchcalsoftware/!svn/ver/5/trunk/ADCdistribution_properties/Debug/run_holdscan.sh
+END
+sources.mk
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/desy/flchcalsoftware/!svn/ver/5/trunk/ADCdistribution_properties/Debug/sources.mk
+END
+makefile
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/desy/flchcalsoftware/!svn/ver/5/trunk/ADCdistribution_properties/Debug/makefile
+END

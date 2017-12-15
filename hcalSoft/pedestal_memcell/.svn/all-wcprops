@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/desy/flchcalsoftware/!svn/ver/21/trunk/pedestal_memcell
+END
+.project
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/desy/flchcalsoftware/!svn/ver/2/trunk/pedestal_memcell/.project
+END
+.cproject
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/desy/flchcalsoftware/!svn/ver/2/trunk/pedestal_memcell/.cproject
+END

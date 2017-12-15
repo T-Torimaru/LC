@@ -1,0 +1,107 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/desy/flchcalsoftware/!svn/ver/5/trunk/ADCdistribution_properties/src
+END
+style.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/desy/flchcalsoftware/!svn/ver/5/trunk/ADCdistribution_properties/src/style.cpp
+END
+CalibSpectrum.h
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/desy/flchcalsoftware/!svn/ver/5/trunk/ADCdistribution_properties/src/CalibSpectrum.h
+END
+ADCdistribution_properties.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/desy/flchcalsoftware/!svn/ver/5/trunk/ADCdistribution_properties/src/ADCdistribution_properties.cpp
+END
+PedestalCalibrator.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/desy/flchcalsoftware/!svn/ver/5/trunk/ADCdistribution_properties/src/PedestalCalibrator.cpp
+END
+style.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/desy/flchcalsoftware/!svn/ver/5/trunk/ADCdistribution_properties/src/style.h
+END
+onepf.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/desy/flchcalsoftware/!svn/ver/5/trunk/ADCdistribution_properties/src/onepf.cpp
+END
+PedestalCalibrator.h
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/desy/flchcalsoftware/!svn/ver/5/trunk/ADCdistribution_properties/src/PedestalCalibrator.h
+END
+onepf.h
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/desy/flchcalsoftware/!svn/ver/5/trunk/ADCdistribution_properties/src/onepf.h
+END
+GainRunFolderParser.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/desy/flchcalsoftware/!svn/ver/5/trunk/ADCdistribution_properties/src/GainRunFolderParser.cpp
+END
+Autocorrelation.cc
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/desy/flchcalsoftware/!svn/ver/5/trunk/ADCdistribution_properties/src/Autocorrelation.cc
+END
+UHHExtractGain.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/desy/flchcalsoftware/!svn/ver/5/trunk/ADCdistribution_properties/src/UHHExtractGain.cpp
+END
+autocorrelation.py
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/desy/flchcalsoftware/!svn/ver/5/trunk/ADCdistribution_properties/src/autocorrelation.py
+END
+GainRunFolderParser.h
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/desy/flchcalsoftware/!svn/ver/5/trunk/ADCdistribution_properties/src/GainRunFolderParser.h
+END
+mpf.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/desy/flchcalsoftware/!svn/ver/5/trunk/ADCdistribution_properties/src/mpf.cpp
+END
+UHHExtractGain.h
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/desy/flchcalsoftware/!svn/ver/5/trunk/ADCdistribution_properties/src/UHHExtractGain.h
+END
+mpf.h
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/desy/flchcalsoftware/!svn/ver/5/trunk/ADCdistribution_properties/src/mpf.h
+END
+CalibSpectrum.cpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/desy/flchcalsoftware/!svn/ver/5/trunk/ADCdistribution_properties/src/CalibSpectrum.cpp
+END
