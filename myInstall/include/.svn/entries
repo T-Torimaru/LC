@@ -2,14 +2,24 @@
 
 dir
 4758
+<<<<<<< HEAD
 https://svnsrv.desy.de/public/calice/calice_tools/labview_converter/trunk/raw2lcio/include
+=======
+https://svnsrv.desy.de/public/calice/calice_calib/trunk/fitmip/include
+>>>>>>> 61ee8a49f17bf490f5d24a65bcc074f82aefb511
 https://svnsrv.desy.de/public/calice
 
 
 
+<<<<<<< HEAD
 2016-08-15T15:40:54.232908Z
 4703
 airqui
+=======
+2011-08-31T08:56:55.975866Z
+3888
+lucaci
+>>>>>>> 61ee8a49f17bf490f5d24a65bcc074f82aefb511
 
 
 
@@ -26,17 +36,29 @@ airqui
 
 d1deb40d-bcc4-47cc-9d27-f84b3a1afcb8
 
+<<<<<<< HEAD
 LabviewConverter.hh
+=======
+Fitlikelihood.hh
+>>>>>>> 61ee8a49f17bf490f5d24a65bcc074f82aefb511
 file
 
 
 
 
+<<<<<<< HEAD
 2017-06-08T17:43:50.000000Z
 a967fcbe95200166320548ad4ed057c1
 2015-12-08T10:47:56.322635Z
 4610
 ebrianne
+=======
+2017-06-08T17:44:17.000000Z
+e774471dedba375766cd66c36becb856
+2011-03-22T08:49:40.454932Z
+3643
+shaojun
+>>>>>>> 61ee8a49f17bf490f5d24a65bcc074f82aefb511
 
 
 
@@ -58,19 +80,33 @@ ebrianne
 
 
 
+<<<<<<< HEAD
 1983
 
 EUDAQEventBuilder2016.hh
+=======
+5534
+
+Langaus.hh
+>>>>>>> 61ee8a49f17bf490f5d24a65bcc074f82aefb511
 file
 
 
 
 
+<<<<<<< HEAD
 2017-06-08T17:43:50.000000Z
 63e857da309180256072d8c09d0d35f8
 2016-08-15T15:40:54.232908Z
 4703
 airqui
+=======
+2017-06-08T17:44:17.000000Z
+5cd2ca63c07eddea7c57185f15814033
+2011-08-31T08:56:55.975866Z
+3888
+lucaci
+>>>>>>> 61ee8a49f17bf490f5d24a65bcc074f82aefb511
 
 
 
@@ -92,19 +128,33 @@ airqui
 
 
 
+<<<<<<< HEAD
 2881
 
 LConverter.hh
+=======
+8051
+
+Bezier.hh
+>>>>>>> 61ee8a49f17bf490f5d24a65bcc074f82aefb511
 file
 
 
 
 
+<<<<<<< HEAD
 2017-06-08T17:43:50.000000Z
 a2ac740848d78902a43628d4f0cb9fe6
 2015-12-08T10:47:56.322635Z
 4610
 ebrianne
+=======
+2017-06-08T17:44:17.000000Z
+9f14831e35909fc686ac0eb5276a866f
+2011-03-22T08:49:40.454932Z
+3643
+shaojun
+>>>>>>> 61ee8a49f17bf490f5d24a65bcc074f82aefb511
 
 
 
@@ -126,6 +176,7 @@ ebrianne
 
 
 
+<<<<<<< HEAD
 8510
 
 EUDAQBlock2016.hh
@@ -807,4 +858,7 @@ ebrianne
 
 
 2350
+=======
+2009
+>>>>>>> 61ee8a49f17bf490f5d24a65bcc074f82aefb511
 

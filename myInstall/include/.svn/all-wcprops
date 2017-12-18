@@ -1,5 +1,6 @@
 K 25
 svn:wc:ra_dav:version-url
+<<<<<<< HEAD
 V 82
 /public/calice/!svn/ver/4705/calice_tools/labview_converter/trunk/raw2lcio/include
 END
@@ -140,4 +141,26 @@ K 25
 svn:wc:ra_dav:version-url
 V 94
 /public/calice/!svn/ver/4705/calice_tools/labview_converter/trunk/raw2lcio/include/BIFBlock.hh
+=======
+V 62
+/public/calice/!svn/ver/3888/calice_calib/trunk/fitmip/include
+END
+Fitlikelihood.hh
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/public/calice/!svn/ver/3643/calice_calib/trunk/fitmip/include/Fitlikelihood.hh
+END
+Langaus.hh
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/public/calice/!svn/ver/3888/calice_calib/trunk/fitmip/include/Langaus.hh
+END
+Bezier.hh
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/public/calice/!svn/ver/3643/calice_calib/trunk/fitmip/include/Bezier.hh
+>>>>>>> 61ee8a49f17bf490f5d24a65bcc074f82aefb511
 END

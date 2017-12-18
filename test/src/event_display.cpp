@@ -1,6 +1,10 @@
 void event_display(int evenum = 12348){
   TString matchfile;
+<<<<<<< HEAD
   matchfile.Form("../result/test93.root");
+=======
+  matchfile.Form("../result/test82.root");
+>>>>>>> 61ee8a49f17bf490f5d24a65bcc074f82aefb511
   TFile *fmatch = new TFile(matchfile.Data(), "read");
   TTree *tmatch = (TTree*)fmatch->Get("bigtree");
   Int_t HhitI[256],HhitJ[256],HhitK[256],Hnhit;
