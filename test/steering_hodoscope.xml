@@ -28,19 +28,11 @@
 
   <global>
     <parameter name="LCIOInputFiles">
-<<<<<<< HEAD
       /afs/desy.de/user/t/torimart/work/CosmiTestLCIO/test/slcio/171202101112_run000093.raw.slcio
     </parameter>
     <!-- limit the number of processed records (run+evt): -->
-    <parameter name="MaxRecordNumber" value="15000" />
-    <parameter name="SkipNEvents" value="0" />
-=======
-      <!--/nfs/dust/ilc/group/flchcal/AHCAL_Cosmic_2017_November/LCIO/171130180406_run000082.raw.slcio-->
-    </parameter>
-    <!-- limit the number of processed records (run+evt): -->
     <parameter name="MaxRecordNumber" value="0" />
-    <parameter name="SkipNEvents" value="46676" />
->>>>>>> 61ee8a49f17bf490f5d24a65bcc074f82aefb511
+    <parameter name="SkipNEvents" value="0" />
     <parameter name="SupressCheck" value="false" />
     <parameter name="Verbosity" options="DEBUG0-4,MESSAGE0-4,WARNING0-4,ERROR0-4,SILENT"> ERROR </parameter>
   </global>
